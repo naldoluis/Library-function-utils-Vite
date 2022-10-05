@@ -20,7 +20,7 @@ import com.library.naldo.service.impl.IService;
 
 @RestController
 @RequestMapping("/books")
-@CrossOrigin(origins="http://localhost:3000")
+@CrossOrigin(origins="http://127.0.0.1:5173")
 public class BookController implements Resource<Book> {
 
 	@Autowired
