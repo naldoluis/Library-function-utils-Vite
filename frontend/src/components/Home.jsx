@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import authToken from '../utils/authToken'
 import { Alert } from 'react-bootstrap'
 
-export const Home = () => {
+const Home = () => {
   if (localStorage.jwtToken) {
     authToken(localStorage.jwtToken)
   }
@@ -16,3 +16,4 @@ export const Home = () => {
     </Alert>
   )
 }
+export default Home

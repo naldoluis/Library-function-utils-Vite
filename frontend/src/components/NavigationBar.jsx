@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserPlus, faSignInAlt, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
 import { logoutUser } from '../services/index'
 
-export const NavigationBar = () => {
+const NavigationBar = () => {
   const auth = useSelector(state => state.auth)
   const dispatch = useDispatch()
 
@@ -58,3 +58,4 @@ export const NavigationBar = () => {
     </Navbar>
   )
 }
+export default NavigationBar

@@ -5,7 +5,7 @@ const initialState = {
   error: ""
 }
 
-export const reducer = (state = initialState, action) => {
+const reducer = (state = initialState, action) => {
   switch (action.type) {
     case BT.SAVE_BOOK_REQUEST:
     case BT.FETCH_BOOK_REQUEST:
@@ -50,3 +50,4 @@ export const reducer = (state = initialState, action) => {
       return state
   }
 }
+export default reducer

@@ -5,7 +5,7 @@ const initialState = {
   isLoggedIn: ""
 }
 
-export const reducer = (state = initialState, action) => {
+const reducer = (state = initialState, action) => {
   switch (action.type) {
     case LOGIN_REQUEST:
     case LOGOUT_REQUEST:
@@ -22,3 +22,4 @@ export const reducer = (state = initialState, action) => {
       return state
   }
 }
+export default reducer

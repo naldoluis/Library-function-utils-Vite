@@ -5,7 +5,7 @@ const initialState = {
   error: ""
 }
 
-export const reducer = (state = initialState, action) => {
+const reducer = (state = initialState, action) => {
   switch (action.type) {
     case UT.USER_REQUEST:
       return {
@@ -30,3 +30,4 @@ export const reducer = (state = initialState, action) => {
       return state
   }
 }
+export default reducer

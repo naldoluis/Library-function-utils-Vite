@@ -1,7 +1,7 @@
 import React from 'react'
 import { Toast } from 'react-bootstrap'
 
-export const MyToast = props => {
+const MyToast = props => {
   const toastCss = {
     position: "fixed",
     top: "10px",
@@ -33,3 +33,4 @@ export const MyToast = props => {
     </div>
   )
 }
+export default MyToast
