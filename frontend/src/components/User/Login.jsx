@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSignInAlt, faEnvelope, faLock, faUndo } from '@fortawesome/free-solid-svg-icons'
 import { authenticateUser } from '../../services/index'
 
-const Login = props => {
+export const Login = props => {
   const [error, setError] = useState()
   const [show, setShow] = useState(true)
 
@@ -127,4 +127,3 @@ const Login = props => {
     </Row>
   )
 }
-export default Login

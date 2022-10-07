@@ -12,7 +12,7 @@ import Footer from './components/Footer'
 import Home from './components/Home'
 import './App.css'
 
-const App = () => {
+export const App = () => {
   window.onbeforeunload = event => {
     const e = event || window.event
     e.preventDefault()
@@ -43,4 +43,3 @@ const App = () => {
       <Footer/>
     </Router>
   )}
-export default App
