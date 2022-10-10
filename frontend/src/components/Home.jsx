@@ -1,4 +1,3 @@
-import React from 'react'
 import { useSelector } from 'react-redux'
 import authToken from '../utils/authToken'
 import { Alert } from 'react-bootstrap'

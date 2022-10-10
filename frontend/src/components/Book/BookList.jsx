@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 import { connect } from 'react-redux'
 import { deleteBook } from '../../services/index'
 import { Card, Table, Image, ButtonGroup, Button, InputGroup, FormControl } from 'react-bootstrap'

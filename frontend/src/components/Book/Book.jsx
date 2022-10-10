@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 import { connect } from 'react-redux'
 import { saveBook, fetchBook, updateBook, fetchLanguages, fetchGenres } from '../../services/index'
 import { Card, Form, Button, Col, InputGroup, Image } from 'react-bootstrap'

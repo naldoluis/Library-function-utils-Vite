@@ -1,4 +1,3 @@
-import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import NavigationBar from './components/NavigationBar'

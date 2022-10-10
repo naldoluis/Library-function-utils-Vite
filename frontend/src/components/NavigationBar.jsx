@@ -1,4 +1,3 @@
-import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Navbar, Nav } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
