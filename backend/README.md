@@ -1,6 +1,7 @@
 # GET
 	http://localhost:8080/rest/user/authenticate
 	cd C:\Library-Vite\frontend  yarn install  yarn audit fix   yarn upgrade
+	funcoes e recursos para projetos futuro
 # Requests
 
 	{
