@@ -1,5 +1,5 @@
 import { Container, Row, Col } from 'react-bootstrap'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import NavigationBar from './components/NavigationBar'
 import Welcome from './components/Welcome'
 import Book from './components/Book/Book'
@@ -22,11 +22,12 @@ const App = () => {
   }
 
   return (
-    <Router>
+    <BrowserRouter>
       <NavigationBar/>
       <Container>
         <Row>
           <Col lg={12} className={"margin-top"}>
+          <Routes>
               <Route path="/" exact component={Welcome}/>
               <Route path="/home" exact component={Home}/>
               <Route path="/add" exact component={Book}/>
@@ -36,10 +37,11 @@ const App = () => {
               <Route path="/register" exact component={Register}/>
               <Route path="/login" exact component={Login}/>
               <Route path="/logout" exact component={() => (<Login message="User Logged Out Successfully."/>)}/>
+          </Routes>
           </Col>
         </Row>
       </Container>
       <Footer/>
-    </Router>
+    </BrowserRouter>
   )}
 export default App

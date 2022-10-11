@@ -10,7 +10,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,7 +19,6 @@ import com.library.naldo.service.impl.IService;
 
 @RestController
 @RequestMapping("/books")
-@CrossOrigin(origins="http://127.0.0.1:5173")
 public class BookController implements Resource<Book> {
 
 	@Autowired

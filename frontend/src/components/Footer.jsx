@@ -13,7 +13,7 @@ const Footer = () => {
       <Container>
         <Col lg={12} className="text-center text-muted">
           <div>
-            {fullYear}-{fullYear + 1}, All Rights Reserved by Naldo Luis
+            {fullYear}-{fullYear + 1}, All Left Reserved by Naldo Luis
           </div>
         </Col>
       </Container>
