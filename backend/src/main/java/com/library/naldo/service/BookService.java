@@ -4,10 +4,10 @@ import java.util.Collection;
 import java.util.Optional;
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
 import com.library.naldo.domain.Book;
 import com.library.naldo.repository.BookRepository;
 import com.library.naldo.service.impl.IPageService;
@@ -18,7 +18,7 @@ public class BookService implements IService<Book>, IPageService<Book> {
 
 	@Autowired
 	private BookRepository bookRepository;
-	
+
 	@Override
 	public Collection<Book> findAll() {
 		return (Collection<Book>) bookRepository.findAll();

@@ -11,15 +11,14 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Component;
-import com.library.naldo.domain.Role;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import com.library.naldo.domain.Role;
 
 @Component
 public class JwtTokenProvider implements Serializable {
-
-	private static final long serialVersionUID = 2569800841756370596L;
+	public static final long serialVersionUID = 1L;
 
 	@Value("${jwt.secret-key}")
 	private String secretKey;
