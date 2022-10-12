@@ -1,5 +1,5 @@
-import * as BT from './bookTypes'
 import axios from 'axios'
+import * as BT from './bookTypes'
 import { BASE_URL } from '../../utils/requests'
 
 export const saveBook = book => {
@@ -90,7 +90,7 @@ export const fetchLanguages = () => {
           type: BT.LANGUAGES_FAILURE,
           payload: error
         })
-      })
+     })
   }}
 
 export const fetchGenres = () => {
@@ -110,5 +110,5 @@ export const fetchGenres = () => {
           type: BT.GENRES_FAILURE,
           payload: error
         })
-      })
+     })
   }}

@@ -1,5 +1,5 @@
-import * as UT from './userTypes'
 import axios from 'axios'
+import * as UT from './userTypes'
 import { BASE_URL } from '../../utils/requests'
 
 const REGISTER_URL = `${BASE_URL}/rest/user/register`

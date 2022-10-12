@@ -50,7 +50,7 @@ const NavigationBar = () => {
 
   return (
     <Navbar bg="dark" variant="dark">
-      <Link to="/home" /* to={auth.isLoggedIn ? "home" : ""} */ className="navbar-brand">
+      <Link to="/" /* to={auth.isLoggedIn ? "home" : ""} */ className="navbar-brand">
         <img src={Book} width="25" height="25"/>{" "}
         Book Store
       </Link>

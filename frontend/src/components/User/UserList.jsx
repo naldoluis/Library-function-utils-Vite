@@ -1,9 +1,9 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchUsers } from '../../services/index'
 import { Card, Table, InputGroup, FormControl, Button, Alert } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUsers, faStepBackward, faFastBackward, faStepForward, faFastForward } from '@fortawesome/free-solid-svg-icons'
+import { fetchUsers } from '../../services/index'
 import '../../assets/css/Style.css'
 
 class UserList extends Component {

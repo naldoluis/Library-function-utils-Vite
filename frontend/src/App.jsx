@@ -27,7 +27,7 @@ const App = () => {
       <Container>
         <Row>
           <Col lg={12} className={"margin-top"}>
-          <Routes>
+            <Routes>
               <Route path="/" exact component={Welcome}/>
               <Route path="/home" exact component={Home}/>
               <Route path="/add" exact component={Book}/>
@@ -36,8 +36,8 @@ const App = () => {
               <Route path="/users" exact component={UserList}/>
               <Route path="/register" exact component={Register}/>
               <Route path="/login" exact component={Login}/>
-              <Route path="/logout" exact component={() => (<Login message="User Logged Out Successfully."/>)}/>
-          </Routes>
+              <Route path="/logout" exact component={() => <Login message="User Logged Out Successfully."/>}/>
+            </Routes>
           </Col>
         </Row>
       </Container>
