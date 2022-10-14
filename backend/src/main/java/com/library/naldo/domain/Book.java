@@ -24,10 +24,10 @@ public class Book {
 	private String author;
 
 	@Column(nullable = false)
-	private String coverPhotoURL;
+	private String photo;
 
 	@Column(nullable = false)
-	private Long isbnNumber;
+	private Long isbn;
 
 	@Column(nullable = false)
 	private Double price;

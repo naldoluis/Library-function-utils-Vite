@@ -21,8 +21,8 @@ class Book extends Component {
     id: "",
     title: "",
     author: "",
-    coverPhotoURL: "",
-    isbnNumber: "",
+    photo: "",
+    isbn: "",
     price: "",
     language: "",
     genre: ""
@@ -76,8 +76,8 @@ class Book extends Component {
           id: book.id,
           title: book.title,
           author: book.author,
-          coverPhotoURL: book.coverPhotoURL,
-          isbnNumber: book.isbnNumber,
+          photo: book.photo,
+          isbn: book.isbn,
           price: book.price,
           language: book.language,
           genre: book.genre
@@ -96,8 +96,8 @@ class Book extends Component {
     const book = {
       title: this.state.title,
       author: this.state.author,
-      coverPhotoURL: this.state.coverPhotoURL,
-      isbnNumber: this.state.isbnNumber,
+      photo: this.state.photo,
+      isbn: this.state.isbn,
       price: this.state.price,
       language: this.state.language,
       genre: this.state.genre
@@ -122,8 +122,8 @@ class Book extends Component {
       id: this.state.id,
       title: this.state.title,
       author: this.state.author,
-      coverPhotoURL: this.state.coverPhotoURL,
-      isbnNumber: this.state.isbnNumber,
+      photo: this.state.photo,
+      isbn: this.state.isbn,
       price: this.state.price,
       language: this.state.language,
       genre: this.state.genre
@@ -151,7 +151,7 @@ class Book extends Component {
   }
 
   render() {
-    const { title, author, coverPhotoURL, isbnNumber, price, language, genre } = this.state
+    const { title, author, photo, isbn, price, language, genre } = this.state
 
     return (
       <div>
@@ -202,34 +202,34 @@ class Book extends Component {
                 </Form.Group>
               </Form.Row>
               <Form.Row>
-                <Form.Group as={Col} controlId="formGridCoverPhotoURL">
+                <Form.Group as={Col} controlId="formGridphoto">
                   <Form.Label>Cover Photo URL</Form.Label>
                   <InputGroup>
                     <Form.Control
                       required
                       autoComplete="off"
                       type="test"
-                      name="coverPhotoURL"
-                      value={coverPhotoURL}
+                      name="photo"
+                      value={photo}
                       onChange={this.bookChange}
                       className={"bg-dark text-white"}
                       placeholder="Enter Book Cover Photo URL"
                     />
                     <InputGroup.Append>
-                      {this.state.coverPhotoURL !== "" && (
-                        <Image src={this.state.coverPhotoURL} roundedRight width="40" height="38"/>
+                      {this.state.photo !== "" && (
+                        <Image src={this.state.photo} roundedRight width="40" height="38"/>
                       )}
                     </InputGroup.Append>
                   </InputGroup>
                 </Form.Group>
-                <Form.Group as={Col} controlId="formGridISBNNumber">
+                <Form.Group as={Col} controlId="formGridISBN">
                   <Form.Label>ISBN Number</Form.Label>
                   <Form.Control
                     required
                     autoComplete="off"
                     type="test"
-                    name="isbnNumber"
-                    value={isbnNumber}
+                    name="isbn"
+                    value={isbn}
                     onChange={this.bookChange}
                     className={"bg-dark text-white"}
                     placeholder="Enter Book ISBN Number"

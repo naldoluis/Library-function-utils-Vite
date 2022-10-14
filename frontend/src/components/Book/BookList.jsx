@@ -239,11 +239,11 @@ class BookList extends Component {
                   books.map(book => (
                     <tr key={book.id}>
                       <td>
-                        <Image src={book.coverPhotoURL} roundedCircle width="25" height="25"/>{" "}
+                        <Image src={book.photo} roundedCircle width="25" height="25"/>{" "}
                         {book.title}
                       </td>
                       <td>{book.author}</td>
-                      <td>{book.isbnNumber}</td>
+                      <td>{book.isbn}</td>
                       <td>{book.price}</td>
                       <td>{book.language}</td>
                       <td>{book.genre}</td>
