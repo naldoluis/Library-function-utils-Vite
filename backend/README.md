@@ -1,9 +1,9 @@
 # GET
-	http://localhost:8080/rest/user/authenticate
+	http://localhost:8080/user/authenticate
 
 	cd C:\Library-Vite\frontend  yarn install  yarn audit fix   yarn upgrade
 
-	git commit: "funcoes e recursos para projetos futuro"
+	git commit: funcoes e recursos para projetos futuro
 
 # Requests
 
@@ -18,19 +18,19 @@
 	}
 
 # GET
-	http://localhost:8080/rest/books
+	http://localhost:8080/books
 
 # GET By ID
-	http://localhost:8080/rest/books/1
+	http://localhost:8080/books/1
 
 # POST
-	http://localhost:8080/rest/books
+	http://localhost:8080/books
 
 # PUT
-	http://localhost:8080/rest/books
+	http://localhost:8080/books
 
 # DELETE
-	http://localhost:8080/rest/books/1
+	http://localhost:8080/books/1
 
 # Requests
 
