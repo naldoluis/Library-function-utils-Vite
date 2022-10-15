@@ -2,7 +2,7 @@ import axios from 'axios'
 import * as UT from './userTypes'
 import { BASE_URL } from '../../utils/requests'
 
-const REGISTER_URL = `${BASE_URL}/rest/user/register`
+const REGISTER_URL = `${BASE_URL}/user/register`
 
 export const fetchUsers = () => {
   return dispatch => {

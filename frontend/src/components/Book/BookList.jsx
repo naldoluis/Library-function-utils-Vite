@@ -37,7 +37,7 @@ class BookList extends Component {
 
   findAllBooks(currentPage) {
     currentPage -= 1
-    axios(`${BASE_URL}/rest/books?pageNumber=` +
+    axios(`${BASE_URL}/books?pageNumber=` +
           currentPage +
           "&pageSize=" +
           this.state.booksPerPage +
@@ -141,7 +141,7 @@ class BookList extends Component {
 
   searchData = currentPage => {
     currentPage -= 1
-    axios(`${BASE_URL}/rest/books/search` +
+    axios(`${BASE_URL}/books/search` +
           this.state.search +
           "?page=" +
           currentPage +

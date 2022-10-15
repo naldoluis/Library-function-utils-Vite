@@ -17,16 +17,7 @@ class Book extends Component {
     }
   }
 
-  initialState = {
-    id: "",
-    title: "",
-    author: "",
-    photo: "",
-    isbn: "",
-    price: "",
-    language: "",
-    genre: ""
-  }
+  initialState = { id: "", title: "", author: "", photo: "", isbn: "", price: "", language: "", genre: "" }
 
   componentDidMount() {
     const bookId = +this.props.match.params.id

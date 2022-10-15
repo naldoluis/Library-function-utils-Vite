@@ -9,10 +9,7 @@ const Login = props => {
   const [error, setError] = useState()
   const [show, setShow] = useState(true)
 
-  const initialState = {
-    email: "",
-    password: ""
-  }
+  const initialState = { email: "", password: "" }
 
   const [user, setUser] = useState(initialState)
 

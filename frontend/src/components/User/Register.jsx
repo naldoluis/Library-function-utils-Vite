@@ -10,12 +10,7 @@ const Register = props => {
   const [show, setShow] = useState(false)
   const [message, setMessage] = useState("")
 
-  const initialState = {
-    name: "",
-    email: "",
-    password: "",
-    mobile: ""
-  }
+  const initialState = { name: "", email: "", password: "", mobile: "" }
 
   const [user, setUser] = useState(initialState)
 
