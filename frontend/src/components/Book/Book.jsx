@@ -84,16 +84,6 @@ class Book extends Component {
   submitBook = event => {
     event.preventDefault()
 
-    const book = {
-      title: this.state.title,
-      author: this.state.author,
-      photo: this.state.photo,
-      isbn: this.state.isbn,
-      price: this.state.price,
-      language: this.state.language,
-      genre: this.state.genre
-    }
-
     this.props.saveBook(book)
     setTimeout(() => {
       if (this.props.bookObject.book != null) {
@@ -119,6 +109,7 @@ class Book extends Component {
       language: this.state.language,
       genre: this.state.genre
     }
+
     this.props.updateBook(book)
     setTimeout(() => {
       if (this.props.bookObject.book != null) {

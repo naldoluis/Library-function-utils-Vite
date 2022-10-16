@@ -7,10 +7,8 @@ const AUTH_URL = `${BASE_URL}/user/authenticate`
 export const authenticateUser = (email, password) => async dispatch => {
   dispatch(loginRequest())
   try {
-    const response = await axios.post(AUTH_URL, {
-      email: email,
-      password: password
-    })
+    const response = await axios.post(AUTH_URL, { email, password })
+
     localStorage.setItem("jwtToken", response.data.token)
     dispatch(success({ username: response.data.name, isLoggedIn: true }))
     return Promise.resolve(response.data)
