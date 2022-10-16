@@ -2,12 +2,10 @@ import * as AT from './authTypes'
 import axios from 'axios'
 import { BASE_URL } from '../../../utils/requests'
 
-const AUTH_URL = `${BASE_URL}/user/authenticate`
-
 export const authenticateUser = (email, password) => async dispatch => {
   dispatch(loginRequest())
   try {
-    const response = await axios.post(AUTH_URL, { email, password })
+    const response = await axios.post(`${BASE_URL}/user/authenticate`, { email, password })
 
     localStorage.setItem("jwtToken", response.data.token)
     dispatch(success({ username: response.data.name, isLoggedIn: true }))
