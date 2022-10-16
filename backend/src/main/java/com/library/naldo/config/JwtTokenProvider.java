@@ -37,7 +37,7 @@ public class JwtTokenProvider implements Serializable {
 		Date now = new Date();
 		return Jwts.builder().setClaims(claims).setIssuedAt(now)
 				.setExpiration(new Date(now.getTime() + validityInMilliseconds))
-				.signWith(SignatureAlgorithm.HS256, secretKey).compact();
+				.signWith(SignatureAlgorithm.HS512, secretKey).compact();
 	}
  
  	@Autowired
