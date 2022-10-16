@@ -77,8 +77,8 @@
 
 ------------------------------------import.sql-----------------------------------
 
-INSERT INTO tb_user(name, email, mobile, "password") VALUES ('Maria', 'maria@gmail.com', '9787456540', (SELECT ENCODE(DIGEST('1234', 'sha512'), 'hex')))
-INSERT INTO tb_user(name, email, mobile, "password") VALUES ('Joao', 'joao@gmail.com', '9787456541', (SELECT ENCODE(DIGEST('1235', 'sha512'), 'hex')))
-INSERT INTO tb_user(name, email, mobile, "password") VALUES ('Cida', 'cida@gmail.com', '9787456542', (SELECT ENCODE(DIGEST('1236', 'sha512'), 'hex')))
-INSERT INTO tb_user(name, email, mobile, "password") VALUES ('Natalia', 'natalia@gmail.com', '9787456543', (SELECT ENCODE(DIGEST('1237', 'sha512'), 'hex')))
-INSERT INTO tb_user(name, email, mobile, "password") VALUES ('Talita', 'tata@gmail.com', '9787456544', (SELECT ENCODE(DIGEST('1238', 'sha512'), 'hex')))
+INSERT INTO tb_user(name, email, mobile, password) VALUES ('Maria', 'maria@gmail.com', '9787456540', (SELECT ENCODE(DIGEST('1234', 'sha512'), 'hex')))
+INSERT INTO tb_user(name, email, mobile, password) VALUES ('Joao', 'joao@gmail.com', '9787456541', (SELECT ENCODE(DIGEST('1235', 'sha512'), 'hex')))
+INSERT INTO tb_user(name, email, mobile, password) VALUES ('Cida', 'cida@gmail.com', '9787456542', (SELECT ENCODE(DIGEST('1236', 'sha512'), 'hex')))
+INSERT INTO tb_user(name, email, mobile, password) VALUES ('Natalia', 'natalia@gmail.com', '9787456543', (SELECT ENCODE(DIGEST('1237', 'sha512'), 'hex')))
+INSERT INTO tb_user(name, email, mobile, password) VALUES ('Talita', 'tata@gmail.com', '9787456544', (SELECT ENCODE(DIGEST('1238', 'sha512'), 'hex')))

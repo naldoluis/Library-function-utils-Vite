@@ -45,8 +45,7 @@ public class JwtTokenProvider implements Serializable {
 
 	public Authentication getAuthentication(String username) {
 		UserDetails userDetails = userDetailsService.loadUserByUsername(username);
-		return new UsernamePasswordAuthenticationToken(userDetails.getUsername(), userDetails.getPassword(),
-				userDetails.getAuthorities());
+		return new UsernamePasswordAuthenticationToken(userDetails.getUsername(), userDetails.getPassword(), userDetails.getAuthorities());
 	}
 
 	public Claims getClaimsFromToken(String token) {
