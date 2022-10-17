@@ -8,7 +8,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,41 +28,41 @@ public class BookController implements Resource<Book> {
 
 	@Override
 	public ResponseEntity<Page<Book>> findAll(Pageable pageable, String searchText) {
-		return new ResponseEntity<>(bookPageService.findAll(pageable, searchText), HttpStatus.OK);
+		return ResponseEntity.ok(bookPageService.findAll(pageable, searchText));
 	}
 
 	@Override
 	public ResponseEntity<Page<Book>> findAll(int pageNumber, int pageSize, String sortBy, String sortDir) {
-		return new ResponseEntity<>(bookPageService.findAll(PageRequest.of(pageNumber, pageSize, sortDir.equalsIgnoreCase("asc") ? Sort.by(sortBy).ascending() : Sort.by(sortBy).descending())), HttpStatus.OK);
+		return ResponseEntity.ok(bookPageService.findAll(PageRequest.of(pageNumber, pageSize, sortDir.equalsIgnoreCase("asc") ? Sort.by(sortBy).ascending() : Sort.by(sortBy).descending())));
 	}
 
 	@Override
 	public ResponseEntity<Book> findById(Long id) {
-		return new ResponseEntity<>(bookService.findById(id).get(), HttpStatus.OK);
+		return ResponseEntity.ok(bookService.findById(id).get());
 	}
 
 	@Override
 	public ResponseEntity<Book> save(Book book) {
-		return new ResponseEntity<>(bookService.saveOrUpdate(book), HttpStatus.CREATED);
+		return ResponseEntity.ok(bookService.saveOrUpdate(book));
 	}
 
 	@Override
 	public ResponseEntity<Book> update(Book book) {
-		return new ResponseEntity<>(bookService.saveOrUpdate(book), HttpStatus.OK);
+		return ResponseEntity.ok(bookService.saveOrUpdate(book));
 	}
 
 	@Override
 	public ResponseEntity<String> deleteById(Long id) {
-		return new ResponseEntity<>(bookService.deleteById(id), HttpStatus.OK);
+		return ResponseEntity.ok(bookService.deleteById(id));
 	}
 
 	@GetMapping("/languages")
 	public  ResponseEntity<Set<String>> findAllLanguages() {
-        return new ResponseEntity<>(new TreeSet<>(Arrays.asList("French", "Portuguese", "English", "Russian", "Hindi", "Arabic", "Spanish", "Chinese")), HttpStatus.OK);
+        return ResponseEntity.ok(new TreeSet<>(Arrays.asList("French", "Portuguese", "English", "Russian", "Hindi", "Arabic", "Spanish", "Chinese")));
     }
 
     @GetMapping("/genres")
     public  ResponseEntity<Set<String>> findAllGenres() {
-        return new ResponseEntity<>(new TreeSet<>(Arrays.asList("Technology", "Science", "History", "Fantasy", "Biography", "Horror", "Romance")), HttpStatus.OK);
+        return ResponseEntity.ok(new TreeSet<>(Arrays.asList("Technology", "Science", "History", "Fantasy", "Biography", "Horror", "Romance")));
     }
 }

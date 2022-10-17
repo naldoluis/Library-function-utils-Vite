@@ -10,6 +10,7 @@ import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.OncePerRequestFilter;
@@ -19,6 +20,7 @@ public class JwtTokenFilter extends OncePerRequestFilter {
 
 	private static Logger log = LoggerFactory.getLogger(JwtTokenFilter.class);
 
+	@Autowired
 	private JwtTokenProvider tokenProvider;
 
 	public JwtTokenFilter(JwtTokenProvider tokenProvider) {
@@ -44,8 +46,7 @@ public class JwtTokenFilter extends OncePerRequestFilter {
 					SecurityContextHolder.clearContext();
 					response.setContentType("application/json");
 					response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-					response.getWriter().println(
-							new JSONObject().put("exception", "expired or invalid JWT token " + e.getMessage()));
+					response.getWriter().println(new JSONObject().put("exception", "expired or invalid JWT token " + e.getMessage()));
 				} catch (IOException | JSONException e1) {
 					e1.printStackTrace();
 				}
