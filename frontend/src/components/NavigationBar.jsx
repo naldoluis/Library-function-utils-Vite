@@ -27,6 +27,7 @@ const NavigationBar = () => {
       </Nav>
     </>
   )
+  
   const userLinks = (
     <>
       <Nav className="mr-auto">
