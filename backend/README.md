@@ -1,12 +1,19 @@
 # GET
 
-	Using generated security password: 27b35cb3-51e6-46e5-b74e-42faa8e458d7
-
 	http://localhost:8080/user/authenticate
 
-	cd C:\Library-Vite\frontend  yarn install  yarn audit fix   yarn upgrade
+	Using generated security password: 27b35cb3-51e6-46e5-b74e-42faa8e458d7
 
-	git commit: funcoes e recursos para projetos futuro
+# Local
+		cd C:\Library-Vite\frontend
+
+		yarn install
+		yarn audit fix
+		yarn upgrade
+		yarn dev
+
+# GitHub
+		git commit -m "funcoes e recursos para projetos futuro"
 
 # Requests
 
@@ -21,7 +28,7 @@
 	}
 
 # GET
-	http://localhost:8080/books
+	http://localhost:8080/books            --> Busca Paginada  http://localhost:8080/books?size=7&page=5
 
 # GET By ID
 	http://localhost:8080/books/1
@@ -43,6 +50,7 @@
 	    "photo": "https://images-na.ssl-images-amazon.com/images/I/51gHy16h5TL.jpg",
 	    "isbn": 935119797,
 	    "price": 630,
+		"genre": "Fantasy",
 	    "language": "English"
 	}
 	{
@@ -51,6 +59,7 @@
 	    "photo": "https://images.manning.com/720/960/resize/book/d/2ea186d-c683-4d54-95f9-cca25b6fe49e/bauer2.png",
 	    "isbn": 951199193,
 	    "price": 771,
+		"genre": "Biography",
 	    "language": "English"
 	}
 	{
@@ -59,6 +68,7 @@
 	    "photo": "https://images.manning.com/720/960/resize/book/6/3e9d5ed-4155-466d-ab46-538bb355948d/gsmith2.png",
 	    "isbn": 167290963,
 	    "price": 907,
+		"genre": "Technology",
 	    "language": "English"
 	}
 	{
@@ -67,6 +77,7 @@
 	    "photo": "https://images.manning.com/720/960/resize/book/6/bb80688-f898-4df7-838a-253b1de123c4/Walls-SpringBoot-HI.png",
 	    "isbn": 117292540,
 	    "price": 149,
+		"genre": "Science",
 	    "language": "English"
 	}
 	{
@@ -75,10 +86,11 @@
 	    "photo": "https://covers.oreillystatic.com/images/9780596004651/lrg.jpg",
 	    "isbn": 873666024,
 	    "price": 498,
+		"genre": "Romance",
 	    "language": "English"
 	}
 
--------------------------------------------------import.sql-----------------------------------------------------------------------
+# ----------------------------------------------------import.sql-----------------------------------------------------------------
 
 INSERT INTO tb_user(name, email, mobile, password) VALUES ('Maria', 'maria@gmail.com', '9787456540', (SELECT ENCODE(DIGEST('1234', 'sha512'), 'hex')))
 INSERT INTO tb_user(name, email, mobile, password) VALUES ('Joao', 'joao@gmail.com', '9787456541', (SELECT ENCODE(DIGEST('1235', 'sha512'), 'hex')))
@@ -88,7 +100,7 @@ INSERT INTO tb_user(name, email, mobile, password) VALUES ('Talita', 'tata@gmail
 
 ----------------------------------------------------------------------------------------------------------------------------------
 
-                        Application.java --> (Simula o arquivo import.sql na busca de Livros)
+#                  Application.java --> (Simula o arquivo import.sql na busca de livros no banco de dados)
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -155,3 +167,59 @@ public class Application implements CommandLineRunner {
 				book.setGenre("Technology");
 				bookService.saveOrUpdate(book);
 			}}}}
+
+!J------------------------------------------------------------------------------------------------------------------------------J!
+
+# UserDTO Method 2
+
+package com.library.naldo.service;
+
+import org.codehaus.jettison.json.JSONException;
+import org.codehaus.jettison.json.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.stereotype.Service;
+import com.library.naldo.domain.User;
+import com.library.naldo.dto.UserDTO;
+import com.library.naldo.repository.UserRepository;
+import com.library.naldo.service.impl.IServiceUser;
+
+@Service
+public class UserService implements IServiceUser<User> {
+
+	@Autowired
+	private UserRepository userRepository;
+
+	@Transactional(readOnly = true)
+	public Page<UserDTO> findAll(Pageable pageable) {
+		Page<User> result = userRepository.findAll(pageable);
+		Page<UserDTO> pageU = result.map(u -> new UserDTO(u));
+		return pageU;
+	}
+
+	@Transactional(readOnly = true)
+	public UserDTO findById(Long id) {
+		User result = userRepository.findById(id).get();
+		UserDTO dtoU = new UserDTO(result);
+		return dtoU;
+	}
+
+	@Override
+	public User saveOrUpdate(User user) {
+		return userRepository.saveAndFlush(user);
+	}
+
+	@Override
+	public String deleteById(Long id) {
+		JSONObject jsonObject = new JSONObject();
+		try {
+			userRepository.deleteById(id);
+			jsonObject.put("message", "User deleted successfully");
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+		return jsonObject.toString();
+	}
+}

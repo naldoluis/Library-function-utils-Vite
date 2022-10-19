@@ -26,9 +26,8 @@ import org.springframework.web.bind.annotation.RestController;
 //import com.library.naldo.service.impl.IPageService;
 //import com.library.naldo.service.impl.IService;
 
-
 @RestController
-@RequestMapping(path = "/book")
+@RequestMapping(path = "/books")
 public class BookController {
 
     @Autowired
@@ -38,9 +37,9 @@ public class BookController {
     private BookRepository repository;
 
 /* 	@Autowired
-	private IPageService<Book> bookPageService; */
+	private IPageService<Book> bookPageService;
 
-/* 	@Override
+	@Override
 	public ResponseEntity<Page<Book>> findAll(Pageable pageable, String searchText) {
 		return ResponseEntity.ok(bookPageService.findAll(pageable, searchText));
 	}
@@ -61,19 +60,20 @@ public class BookController {
     }
 
     @DeleteMapping("{id}")
+	@ResponseStatus(code = HttpStatus.OK)
 	public void deleteBook(@PathVariable Long id) {
 		service.deleteById(id);
 	}
 
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
-	public Book create(@RequestBody Book book) {
+	public Book createBook(@RequestBody Book book) {
 		return repository.save(book);
 	}
 
 	@PutMapping
-	public ResponseEntity<Book> saveBook(@RequestBody Book product) {
-		return ResponseEntity.ok(repository.save(product));
+	public ResponseEntity<Book> saveBook(@RequestBody Book book) {
+		return ResponseEntity.ok(repository.save(book));
 	}
 
 	@GetMapping("/languages")
