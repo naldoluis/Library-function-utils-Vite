@@ -1,4 +1,4 @@
-package com.library.naldo.controller;
+/* package com.library.naldo.controller;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -30,4 +30,4 @@ public interface Resource<T> {
 
 	@DeleteMapping("{id}")
 	ResponseEntity<String> deleteById(@PathVariable Long id);
-}
+} */

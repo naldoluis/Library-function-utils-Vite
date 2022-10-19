@@ -1,4 +1,7 @@
 # GET
+
+	Using generated security password: 27b35cb3-51e6-46e5-b74e-42faa8e458d7
+
 	http://localhost:8080/user/authenticate
 
 	cd C:\Library-Vite\frontend  yarn install  yarn audit fix   yarn upgrade
@@ -75,10 +78,80 @@
 	    "language": "English"
 	}
 
-------------------------------------import.sql-----------------------------------
+-------------------------------------------------import.sql-----------------------------------------------------------------------
 
 INSERT INTO tb_user(name, email, mobile, password) VALUES ('Maria', 'maria@gmail.com', '9787456540', (SELECT ENCODE(DIGEST('1234', 'sha512'), 'hex')))
 INSERT INTO tb_user(name, email, mobile, password) VALUES ('Joao', 'joao@gmail.com', '9787456541', (SELECT ENCODE(DIGEST('1235', 'sha512'), 'hex')))
 INSERT INTO tb_user(name, email, mobile, password) VALUES ('Cida', 'cida@gmail.com', '9787456542', (SELECT ENCODE(DIGEST('1236', 'sha512'), 'hex')))
 INSERT INTO tb_user(name, email, mobile, password) VALUES ('Natalia', 'natalia@gmail.com', '9787456543', (SELECT ENCODE(DIGEST('1237', 'sha512'), 'hex')))
 INSERT INTO tb_user(name, email, mobile, password) VALUES ('Talita', 'tata@gmail.com', '9787456544', (SELECT ENCODE(DIGEST('1238', 'sha512'), 'hex')))
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+                        Application.java --> (Simula o arquivo import.sql na busca de Livros)
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import com.library.naldo.domain.Book;
+import com.library.naldo.domain.Role;
+import com.library.naldo.domain.User;
+import com.library.naldo.service.impl.IRoleService;
+import com.library.naldo.service.impl.IService;
+import com.library.naldo.utils.ConstantUtils;
+
+@SpringBootApplication
+public class Application implements CommandLineRunner {
+
+	@Autowired
+	private IService<User> userService;
+
+	@Autowired
+	private IRoleService<Role> roleService;
+
+	@Autowired
+	private IService<Book> bookService;
+
+	public static void main(String[] args) {
+		SpringApplication.run(Application.class, args);
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+		if (roleService.findAll().isEmpty()) {
+			roleService.saveOrUpdate(new Role(ConstantUtils.ADMIN.toString()));
+			roleService.saveOrUpdate(new Role(ConstantUtils.USER.toString()));
+		}
+
+		if (userService.findAll().isEmpty()) {
+			User user1 = new User();
+			user1.setEmail("test@user.com");
+			user1.setName("Test User");
+			user1.setMobile("9787456545");
+			user1.setRole(roleService.findByName(ConstantUtils.USER.toString()));
+			user1.setPassword(new BCryptPasswordEncoder().encode("testuser"));
+			userService.saveOrUpdate(user1);
+
+			User user2 = new User();
+			user2.setEmail("test@admin.com");
+			user2.setName("Test Admin");
+			user2.setMobile("9787456545");
+			user2.setRole(roleService.findByName(ConstantUtils.ADMIN.toString()));
+			user2.setPassword(new BCryptPasswordEncoder().encode("testadmin"));
+			userService.saveOrUpdate(user2);
+		}
+
+		if (bookService.findAll().isEmpty()) {
+			for (int i = 1; i <= 1000; i++) {
+				Book book = new Book();
+				book.setTitle("Spring Microservices in Action " + i);
+				book.setAuthor("John Carnell " + i);
+				book.setPhoto("https://images-na.ssl-images-amazon.com/images/I/417zLTa1uqL._SX397_BO1,204,203,200_.jpg");
+				book.setIsbn(17293989L + i);
+				book.setPrice(76.00 + i);
+				book.setLanguage("English");
+				book.setGenre("Technology");
+				bookService.saveOrUpdate(book);
+			}}}}
