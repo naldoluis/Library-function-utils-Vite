@@ -27,7 +27,7 @@ import org.springframework.web.bind.annotation.RestController;
 //import com.library.naldo.service.impl.IService;
 
 @RestController
-@RequestMapping(path = "/books")
+@RequestMapping("/books")
 public class BookController {
 
     @Autowired

@@ -98,6 +98,10 @@ INSERT INTO tb_user(name, email, mobile, password) VALUES ('Cida', 'cida@gmail.c
 INSERT INTO tb_user(name, email, mobile, password) VALUES ('Natalia', 'natalia@gmail.com', '9787456543', (SELECT ENCODE(DIGEST('1237', 'sha512'), 'hex')))
 INSERT INTO tb_user(name, email, mobile, password) VALUES ('Talita', 'tata@gmail.com', '9787456544', (SELECT ENCODE(DIGEST('1238', 'sha512'), 'hex')))
 
+
+INSERT INTO tb_user VALUES ('f051a0ab-5d4e-41e4-967d-2827d948d57a', '$2a$10$2KeflGXrfayDYOZlNzSrgeRTG/26lwjiuKAhsZxAk2lkPjLuZlNaG', 'maria')
+INSERT INTO tb_user VALUES ('05efdfb1-e1b9-4f09-8abc-968905db6b11', '$2a$10$2KeflGXrfayDYOZlNzSrgeRTG/26lwjiuKAhsZxAk2lkPjLuZlNaG', 'joao')
+                                    	UUID													PASSWORD			
 ----------------------------------------------------------------------------------------------------------------------------------
 
 #                  Application.java --> (Simula o arquivo import.sql na busca de livros no banco de dados)

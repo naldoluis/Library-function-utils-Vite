@@ -13,7 +13,7 @@ import com.library.naldo.domain.User;
 import com.library.naldo.repository.UserRepository;
 
 @Service
-public class UserDetailsServicei implements UserDetailsService {
+public class UserDetailsServiceImpl implements UserDetailsService {
 
 	@Autowired
 	private UserRepository userRepository;
