@@ -8,10 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.library.naldo.domain.User;
 import com.library.naldo.repository.UserRepository;
-import com.library.naldo.service.impl.IServiceUser;
+import com.library.naldo.service.impl.IService;
 
 @Service
-public class UserService implements IServiceUser<User> {
+public class UserService implements IService<User> {
 
 	@Autowired
 	private UserRepository userRepository;

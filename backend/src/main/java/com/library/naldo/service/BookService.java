@@ -5,8 +5,8 @@ import org.codehaus.jettison.json.JSONObject;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.beans.factory.annotation.Autowired;
 import com.library.naldo.domain.Book;
 import com.library.naldo.dto.BookDTO;
 import com.library.naldo.repository.BookRepository;
@@ -30,6 +30,11 @@ public class BookService implements IServiceBook<Book> {
 		Book result = bookRepository.findById(id).get();
 		BookDTO dto = new BookDTO(result);
 		return dto;
+	}
+
+	@Override
+	public Book saveOrUpdate(Book book) {
+		return bookRepository.save(book);
 	}
 
 	@Override
