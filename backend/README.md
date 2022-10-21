@@ -90,7 +90,7 @@
 	    "language": "English"
 	}
 
-# ----------------------------------------------------import.sql-----------------------------------------------------------------
+# --------------------------------------import.sql------------------------------------
 
 INSERT INTO tb_user(name, email, mobile, password) VALUES ('Maria', 'maria@gmail.com', '9787456540', (SELECT ENCODE(DIGEST('1234', 'sha512'), 'hex')))
 INSERT INTO tb_user(name, email, mobile, password) VALUES ('Joao', 'joao@gmail.com', '9787456541', (SELECT ENCODE(DIGEST('1235', 'sha512'), 'hex')))
@@ -100,9 +100,9 @@ INSERT INTO tb_user(name, email, mobile, password) VALUES ('Talita', 'tata@gmail
 
 
 INSERT INTO tb_user VALUES ('f051a0ab-5d4e-41e4-967d-2827d948d57a', '$2a$10$2KeflGXrfayDYOZlNzSrgeRTG/26lwjiuKAhsZxAk2lkPjLuZlNaG', 'maria')
-INSERT INTO tb_user VALUES ('05efdfb1-e1b9-4f09-8abc-968905db6b11', '$2a$10$2KeflGXrfayDYOZlNzSrgeRTG/26lwjiuKAhsZxAk2lkPjLuZlNaG', 'joao')
-                                    	UUID													PASSWORD			
-----------------------------------------------------------------------------------------------------------------------------------
+INSERT INTO tb_user VALUES ('05efdfb1-e1b9-4f09-8abc-968905db6b11', '$2a$10$2KeflGXrfayDYOZlNzSrgeRTG/26lwjiuKAhsZxAk2lkPjLuZlNaG', 'joao')																									|
+                                    	UUID													PASSWORD ENCODE = senha123
+!J------------------------------------------------------------------------------------------------------------------------------J!
 
 #                  Application.java --> (Simula o arquivo import.sql na busca de livros no banco de dados)
 
