@@ -23,15 +23,15 @@ public class BookController implements Resource<Book> {
     private BookService service;
 
 /*  @Autowired
-	private IPageService<Book> bookPageService;
+	private IPageService<BookDTO> bookPageService;
  
 	@Override
-	public ResponseEntity<Page<Book>> findAll(Pageable pageable, String searchText) {
+	public ResponseEntity<Page<BookDTO>> findAll(Pageable pageable, String searchText) {
 		return ResponseEntity.ok(bookPageService.findAll(pageable, searchText));
 	}
 
 	@Override
-	public ResponseEntity<Page<Book>> findAll(int pageNumber, int pageSize, String sortBy, String sortDir) {
+	public ResponseEntity<Page<BookDTO>> findAll(int pageNumber, int pageSize, String sortBy, String sortDir) {
 		return ResponseEntity.ok(bookPageService.findAll(PageRequest.of(pageNumber, pageSize, sortDir.equalsIgnoreCase("asc") ? Sort.by(sortBy).ascending() : Sort.by(sortBy).descending())));
 	} */
 

@@ -1,6 +1,6 @@
 # GET
 
-	http://localhost:8080/user/authenticate
+	http://localhost:8080/rest/user/authenticate
 
 	Using generated security password: 27b35cb3-51e6-46e5-b74e-42faa8e458d7
 
@@ -28,19 +28,19 @@
 	}
 
 # GET
-	http://localhost:8080/books            --> Busca Paginada  http://localhost:8080/books?size=7&page=5
+	http://localhost:8080/rest/books            --> Busca Paginada  http://localhost:8080/rest/books?size=7&page=5
 
 # GET By ID
-	http://localhost:8080/books/1
+	http://localhost:8080/rest/books/1
 
 # POST
-	http://localhost:8080/books
+	http://localhost:8080/rest/books
 
 # PUT
-	http://localhost:8080/books
+	http://localhost:8080/rest/books
 
 # DELETE
-	http://localhost:8080/books/1
+	http://localhost:8080/rest/books/1
 
 # Requests
 
@@ -90,7 +90,7 @@
 	    "language": "English"
 	}
 
-# --------------------------------------import.sql------------------------------------
+# 														import.sql
 
 INSERT INTO tb_user(name, email, mobile, password) VALUES ('Maria', 'maria@gmail.com', '9787456540', (SELECT ENCODE(DIGEST('1234', 'sha512'), 'hex')))
 INSERT INTO tb_user(name, email, mobile, password) VALUES ('Joao', 'joao@gmail.com', '9787456541', (SELECT ENCODE(DIGEST('1235', 'sha512'), 'hex')))
@@ -104,7 +104,7 @@ INSERT INTO tb_user VALUES ('05efdfb1-e1b9-4f09-8abc-968905db6b11', '$2a$10$2Kef
                                     	UUID													PASSWORD ENCODE = senha123
 !J------------------------------------------------------------------------------------------------------------------------------J!
 
-#                  Application.java --> (Simula o arquivo import.sql na busca de livros no banco de dados)
+######            Application.java --> (Simula o arquivo import.sql na busca de livros no banco de dados)
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -230,7 +230,7 @@ public class UserService implements IServiceUser<User> {
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
 
-# Spring Security Config Method 2
+## Spring Security Config Method 2
 
 package com.library.naldo.config;
 
@@ -285,6 +285,31 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 		source.registerCorsConfiguration("/**", configuration);
 		return source;
 	}
+}
+
+!J------------------------------------------------------------------------------------------------------------------------------J!
+
+### Spring Security Config Method 3
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+@Configuration
+public class SpringSecurityConfig implements WebMvcConfigurer {
+
+    @Value("${cors.origins}")
+    private String corsOrigins;
+
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        String[] origins = corsOrigins.split(",");
+        registry.addMapping("/**")
+                .allowedMethods("*")
+                .allowedOrigins(origins)
+                .allowCredentials(true);
+    }
 }
 
 !J------------------------------------------------------------------------------------------------------------------------------J!

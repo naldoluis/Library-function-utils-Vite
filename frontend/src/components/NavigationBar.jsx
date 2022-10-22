@@ -51,11 +51,11 @@ const NavigationBar = () => {
 
   return (
     <Navbar bg="dark" variant="dark">
-      <Link to={/* auth.isLoggedIn ? "home" :  */""} className="navbar-brand">
+      <Link to={/* auth.isLoggedIn ? "home" : */ ""} className="navbar-brand">
         <img src={Book} width="25" height="25"/>{" "}
         Book Store
       </Link>
-      {/* auth.isLoggedIn ? userLinks :  */userLinks}
+      {/* auth.isLoggedIn ? userLinks : guestLinks */userLinks}
     </Navbar>
   )
 }
