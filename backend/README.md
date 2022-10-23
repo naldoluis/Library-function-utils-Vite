@@ -7,7 +7,7 @@
 # Local
 		cd C:\Library-Vite\frontend
 
-		yarn installe
+		yarn install
 		yarn audit fix
 		yarn upgrade
 		yarn dev
