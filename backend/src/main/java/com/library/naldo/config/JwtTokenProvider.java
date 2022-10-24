@@ -33,7 +33,6 @@ public class JwtTokenProvider implements Serializable {
 	public String createToken(String username, Role role) {
 		Claims claims = Jwts.claims().setSubject(username);
 		claims.put("auth", role);
-
 		Date now = new Date();
 		return Jwts.builder().setClaims(claims).setIssuedAt(now)
 				.setExpiration(new Date(now.getTime() + validityInMilliseconds))
