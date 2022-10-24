@@ -19,16 +19,16 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Column(nullable = false, length = 20)
+	@Column(nullable = false)
 	private String name;
 
-	@Column(nullable = false, unique = true, length = 25)
+	@Column(nullable = false)
 	private String email;
 
-	@Column(nullable = false, unique = true, length = 19)
+	@Column(nullable = false)
 	private String mobile;
 
-	@Column(nullable = false, length = 20)
+	@Column(nullable = false)
 	private String password;
 
 	@ManyToOne

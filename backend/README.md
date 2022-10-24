@@ -2,7 +2,16 @@
 
 	http://localhost:8080/rest/user/authenticate
 
-	Using generated security password: 27b35cb3-51e6-46e5-b74e-42faa8e458d7
+		{
+		"name": "test@admin.com",
+		"authorities": [
+			"ROLE_ADMIN",
+			"ROLE_USER"
+		],
+		"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0QGFkbWluLmNvbSIsImF1dGgiOnsibmFtZSI6IkFETUlOIn0sImlhdCI6MTY2NjYzNTk3MywiZXhwIjoxNjY2NjM2MTUzfQ.q6D8TSHmYeZ9O2iAkAquRt9431wq5MUaa5AtLRPqw51puUrGGqxzl6KSVpX_L3JPKCVSI3SrKvUO5aCgmcyy0Q"
+		}
+
+						Using generated security password: 27b35cb3-51e6-46e5-b74e-42faa8e458d7
 
 # Local
 		cd C:\Library-Vite\frontend
@@ -90,7 +99,21 @@
 	    "language": "English"
 	}
 
+!J------------------------------------------------------------------------------------------------------------------------------J!
+
 # 														import.sql
+
+INSERT INTO tb_user(name, email, mobile, password) VALUES ('Maria', 'maria@gmail.com', '9787456540', '1234')
+INSERT INTO tb_user(name, email, mobile, password) VALUES ('Joao', 'joao@gmail.com', '9787456541', '1235')
+INSERT INTO tb_user(name, email, mobile, password) VALUES ('Cida ❤', 'cida@gmail.com', '9787456542', '1236')
+INSERT INTO tb_user(name, email, mobile, password) VALUES ('Natalia', 'natalia@gmail.com', '9787456543', '1237')
+INSERT INTO tb_user(name, email, mobile, password) VALUES ('Talita', 'tata@gmail.com', '9787456544', '1238')
+
+INSERT INTO tb_role(name) VALUES ('ROLE_ADMIN')
+INSERT INTO tb_role(name) VALUES ('ROLE_USER')
+
+INSERT INTO tb_role VALUES (gen_random_uuid(), 'ROLE_ADMIN)
+INSERT INTO tb_role VALUES (gen_random_uuid(), 'ROLE_USER)
 
 INSERT INTO tb_user(name, email, mobile, password) VALUES ('Maria', 'maria@gmail.com', '9787456540', (SELECT ENCODE(DIGEST('1234', 'sha512'), 'hex')))
 INSERT INTO tb_user(name, email, mobile, password) VALUES ('Joao', 'joao@gmail.com', '9787456541', (SELECT ENCODE(DIGEST('1235', 'sha512'), 'hex')))
@@ -98,11 +121,9 @@ INSERT INTO tb_user(name, email, mobile, password) VALUES ('Cida', 'cida@gmail.c
 INSERT INTO tb_user(name, email, mobile, password) VALUES ('Natalia', 'natalia@gmail.com', '9787456543', (SELECT ENCODE(DIGEST('1237', 'sha512'), 'hex')))
 INSERT INTO tb_user(name, email, mobile, password) VALUES ('Talita', 'tata@gmail.com', '9787456544', (SELECT ENCODE(DIGEST('1238', 'sha512'), 'hex')))
 
-
 INSERT INTO tb_user VALUES ('f051a0ab-5d4e-41e4-967d-2827d948d57a', '$2a$10$2KeflGXrfayDYOZlNzSrgeRTG/26lwjiuKAhsZxAk2lkPjLuZlNaG', 'maria')
 INSERT INTO tb_user VALUES ('05efdfb1-e1b9-4f09-8abc-968905db6b11', '$2a$10$2KeflGXrfayDYOZlNzSrgeRTG/26lwjiuKAhsZxAk2lkPjLuZlNaG', 'joao')																									|
                                     	UUID													PASSWORD ENCODE = senha123
-
 !J------------------------------------------------------------------------------------------------------------------------------J!
 										https://www.uuidgenerator.net/
 # UUID 30/30
@@ -266,7 +287,7 @@ public class UserService implements IServiceUser<User> {
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
 
-# Spring Security Config Method 2
+# Spring Security Config Method 2 (v2.6.7)
 
 package com.library.naldo.config;
 

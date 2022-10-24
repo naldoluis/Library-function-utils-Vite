@@ -60,14 +60,3 @@ INSERT INTO tb_book(title, author, photo, isbn, price, language, genre) VALUES (
 INSERT INTO tb_book(title, author, photo, isbn, price, language, genre) VALUES ('Spring 58', 'Author 58', 'https://images.manning.com/720/960/resize/book/6/3e9d5ed-4155-466d-ab46-538bb355948d/gsmith2.png', 692939, 118.0, 'Portuguese', 'Science')
 INSERT INTO tb_book(title, author, photo, isbn, price, language, genre) VALUES ('Spring 59', 'Author 59', 'https://images.manning.com/720/960/resize/book/6/bb80688-f898-4df7-838a-253b1de123c4/Walls-SpringBoot-HI.png', 702939, 119.0, 'English', 'Technology')
 INSERT INTO tb_book(title, author, photo, isbn, price, language, genre) VALUES ('Spring 60', 'Author 60', 'https://covers.oreillystatic.com/images/9780596004651/lrg.jpg', 712931, 120.0, 'Russian', 'Technology')
-
-INSERT INTO tb_user(name, email, mobile, password) VALUES ('Maria', 'maria@gmail.com', '9787456540', '1234')
-INSERT INTO tb_user(name, email, mobile, password) VALUES ('Joao', 'joao@gmail.com', '9787456541', '1235')
-INSERT INTO tb_user(name, email, mobile, password) VALUES ('Cida ❤', 'cida@gmail.com', '9787456542', '1236')
-INSERT INTO tb_user(name, email, mobile, password) VALUES ('Natalia', 'natalia@gmail.com', '9787456543', '1237')
-INSERT INTO tb_user(name, email, mobile, password) VALUES ('Talita', 'tata@gmail.com', '9787456544', '1238')
-
-INSERT INTO tb_role(name) VALUES ('Naldojynx')
-INSERT INTO tb_role(name) VALUES ('Tata')
-INSERT INTO tb_role(name) VALUES ('Thaysa')
-INSERT INTO tb_role(name) VALUES ('Joao')
