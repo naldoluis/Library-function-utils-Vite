@@ -1,6 +1,5 @@
 # GET
-
-	http://localhost:8080/rest/user/authenticate
+	  http://localhost:8080/rest/user/authenticate
 
 		{
 		"name": "test@admin.com",
@@ -9,7 +8,10 @@
 			"ROLE_USER"
 		],
 		"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0QGFkbWluLmNvbSIsImF1dGgiOnsibmFtZSI6IkFETUlOIn0sImlhdCI6MTY2NjYzNTk3MywiZXhwIjoxNjY2NjM2MTUzfQ.q6D8TSHmYeZ9O2iAkAquRt9431wq5MUaa5AtLRPqw51puUrGGqxzl6KSVpX_L3JPKCVSI3SrKvUO5aCgmcyy0Q"
-		}
+		}																	|
+													Http Headers            |
+																			|	
+								Authorization           				  value:
 
 						Using generated security password: 27b35cb3-51e6-46e5-b74e-42faa8e458d7
 
@@ -117,9 +119,6 @@ INSERT INTO tb_role VALUES (gen_random_uuid(), 'ROLE_USER)
 
 INSERT INTO tb_user(name, email, mobile, password) VALUES ('Maria', 'maria@gmail.com', '9787456540', (SELECT ENCODE(DIGEST('1234', 'sha512'), 'hex')))
 INSERT INTO tb_user(name, email, mobile, password) VALUES ('Joao', 'joao@gmail.com', '9787456541', (SELECT ENCODE(DIGEST('1235', 'sha512'), 'hex')))
-INSERT INTO tb_user(name, email, mobile, password) VALUES ('Cida', 'cida@gmail.com', '9787456542', (SELECT ENCODE(DIGEST('1236', 'sha512'), 'hex')))
-INSERT INTO tb_user(name, email, mobile, password) VALUES ('Natalia', 'natalia@gmail.com', '9787456543', (SELECT ENCODE(DIGEST('1237', 'sha512'), 'hex')))
-INSERT INTO tb_user(name, email, mobile, password) VALUES ('Talita', 'tata@gmail.com', '9787456544', (SELECT ENCODE(DIGEST('1238', 'sha512'), 'hex')))
 
 INSERT INTO tb_user VALUES ('f051a0ab-5d4e-41e4-967d-2827d948d57a', '$2a$10$2KeflGXrfayDYOZlNzSrgeRTG/26lwjiuKAhsZxAk2lkPjLuZlNaG', 'maria')
 INSERT INTO tb_user VALUES ('05efdfb1-e1b9-4f09-8abc-968905db6b11', '$2a$10$2KeflGXrfayDYOZlNzSrgeRTG/26lwjiuKAhsZxAk2lkPjLuZlNaG', 'joao')																									|
@@ -481,3 +480,38 @@ public class BookController implements Resource<Book> {
 		return ResponseEntity.ok(new TreeSet<>(Arrays.asList("Technology", "Science", "History", "Fantasy", "Biography", "Horror", "Romance")));
 	}
 }
+
+!J------------------------------------------------------------------------------------------------------------------------------J!
+
+# NavigationBar
+
+import { useDispatch, useSelector } from 'react-redux'
+import { Navbar, Nav } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUserPlus, faSignInAlt, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
+import { logoutUser } from '../services/index'
+import Book from '../assets/Book_icon_1.png'
+import React, { Component } from 'react'
+
+class NavigationBar extends Component {
+  render() {
+    return(
+      <Navbar bg="dark" variant="dark">
+      <Link to={""} className="navbar-brand">
+        <img src={Book} width="25" height="25"/>{" "}
+      </Link>
+        <Nav className="mr-auto">
+          <Link to={"add"} className="nav-link">Add Book</Link>
+          <Link to={"list"} className="nav-link">Book List</Link>
+          <Link to={"users"} className="nav-link">User List</Link>
+        </Nav>
+        <Nav className="mr-right">
+          <Link to={"register"} className="nav-link"><FontAwesomeIcon icon={faUserPlus}/> Register</Link>
+          <Link to={"login"} className="nav-link" onClick={logoutUser}><FontAwesomeIcon icon={faSignInAlt}/> Login</Link>
+       </Nav>
+      </Navbar>
+    )
+  }
+}
+export default NavigationBar

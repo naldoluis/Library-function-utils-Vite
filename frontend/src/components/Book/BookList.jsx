@@ -156,7 +156,7 @@ class BookList extends Component {
           totalElements: data.totalElements,
           currentPage: data.number + 1
         })
-      })
+     })
   }
 
   render() {
