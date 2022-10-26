@@ -1,35 +1,42 @@
 package com.library.naldo.service;
 
+import java.util.Collection;
+import java.util.Optional;
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-import org.springframework.beans.factory.annotation.Autowired;
 import com.library.naldo.domain.Book;
-import com.library.naldo.dto.BookDTO;
 import com.library.naldo.repository.BookRepository;
-import com.library.naldo.service.impl.IServiceBook;
+import com.library.naldo.service.impl.IPageService;
+import com.library.naldo.service.impl.IService;
 
 @Service
-public class BookService implements IServiceBook<Book> {
+public class BookService implements IService<Book>, IPageService<Book> {
 
 	@Autowired
 	private BookRepository bookRepository;
 
-	@Transactional(readOnly = true)
-	public Page<BookDTO> findAll(Pageable pageable) {
-		Page<Book> result = bookRepository.findAll(pageable);
-		Page<BookDTO> page = result.map(b -> new BookDTO(b));
-		return page;
+	@Override
+	public Collection<Book> findAll() {
+		return (Collection<Book>) bookRepository.findAll();
 	}
 
-	@Transactional(readOnly = true)
-	public BookDTO findById(Long id) {
-		Book result = bookRepository.findById(id).get();
-		BookDTO dto = new BookDTO(result);
-		return dto;
+	@Override
+	public Page<Book> findAll(Pageable pageable, String searchText) {
+		return bookRepository.findAllBooks(pageable, searchText);
+	}
+
+	@Override
+	public Page<Book> findAll(Pageable pageable) {
+		return bookRepository.findAll(pageable);
+	}
+
+	@Override
+	public Optional<Book> findById(Long id) {
+		return bookRepository.findById(id);
 	}
 
 	@Override

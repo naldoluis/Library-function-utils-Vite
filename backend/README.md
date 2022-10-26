@@ -39,7 +39,9 @@
 	}
 
 # GET
-	http://localhost:8080/rest/books            --> Busca Paginada  http://localhost:8080/rest/books?size=7&page=5
+	http://localhost:8080/rest/books           --> Busca Paginada  http://localhost:8080/rest/books?pageNumber=1&pageSize=5&sortBy=price&sortDir=asc
+
+											   --> Busca Paginada in DTO http://localhost:8080/rest/books?size=7&page=5
 
 # GET By ID
 	http://localhost:8080/rest/books/1
@@ -111,8 +113,11 @@ INSERT INTO tb_user(name, email, mobile, password) VALUES ('Cida ❤', 'cida@gma
 INSERT INTO tb_user(name, email, mobile, password) VALUES ('Natalia', 'natalia@gmail.com', '9787456543', '1237')
 INSERT INTO tb_user(name, email, mobile, password) VALUES ('Talita', 'tata@gmail.com', '9787456544', '1238')
 
-INSERT INTO tb_role(name) VALUES ('ROLE_ADMIN')
-INSERT INTO tb_role(name) VALUES ('ROLE_USER')
+INSERT INTO tb_user(name, email, mobile, password) VALUES ('Maria', 'test@user.com', '9787456540', '$2a$10$2KeflGXrfayDYOZlNzSrgeRTG/26lwjiuKAhsZxAk2lkPjLuZlNaG')
+INSERT INTO tb_user(name, email, mobile, password) VALUES ('Joao', 'test@admin.com', '9787456541', '$2a$10$2KeflGXrfayDYOZlNzSrgeRTG/26lwjiuKAhsZxAk2lkPjLuZlNaG')
+
+INSERT INTO tb_role(name) VALUES ('admin')
+INSERT INTO tb_role(name) VALUES ('user')
 
 INSERT INTO tb_role VALUES (gen_random_uuid(), 'ROLE_ADMIN)
 INSERT INTO tb_role VALUES (gen_random_uuid(), 'ROLE_USER)
@@ -227,6 +232,60 @@ public class Application implements CommandLineRunner {
 				book.setGenre("Technology");
 				bookService.saveOrUpdate(book);
 			}}}}
+
+!J------------------------------------------------------------------------------------------------------------------------------J!
+
+# BookService with DTO
+
+import org.codehaus.jettison.json.JSONException;
+import org.codehaus.jettison.json.JSONObject;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.beans.factory.annotation.Autowired;
+import com.library.naldo.domain.Book;
+import com.library.naldo.dto.BookDTO;
+import com.library.naldo.repository.BookRepository;
+import com.library.naldo.service.impl.IServiceBook;
+
+@Service
+public class BookService implements IServiceBook<Book> {
+
+	@Autowired
+	private BookRepository bookRepository;
+
+	@Transactional(readOnly = true)
+	public Page<BookDTO> findAll(Pageable pageable) {
+		Page<Book> result = bookRepository.findAll(pageable);
+		Page<BookDTO> page = result.map(b -> new BookDTO(b));
+		return page;
+	}
+
+	@Transactional(readOnly = true)
+	public BookDTO findById(Long id) {
+		Book result = bookRepository.findById(id).get();
+		BookDTO dto = new BookDTO(result);
+		return dto;
+	}
+
+	@Override
+	public Book saveOrUpdate(Book book) {
+		return bookRepository.save(book);
+	}
+
+	@Override
+	public String deleteById(Long id) {
+		JSONObject jsonObject = new JSONObject();
+		try {
+			bookRepository.deleteById(id);
+			jsonObject.put("message", "Book deleted successfully");
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+		return jsonObject.toString();
+	}
+}
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
 
@@ -370,7 +429,7 @@ public class SpringSecurityConfig implements WebMvcConfigurer {
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
 
-# Book Controller Method 2
+# BookController with DTO
 
 package com.library.naldo.controller;
 
@@ -379,26 +438,15 @@ import java.util.Set;
 import java.util.TreeSet;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import com.library.naldo.domain.Book;
-import com.library.naldo.dto.BookDTO;
-import com.library.naldo.repository.BookRepository;
-import com.library.naldo.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
-import com.library.naldo.service.impl.IPageService;
-import com.library.naldo.service.impl.IService;
+import com.library.naldo.domain.Book;
+import com.library.naldo.dto.BookDTO;
+import com.library.naldo.service.BookService;
 
 @RestController
 @RequestMapping("/books")
@@ -407,21 +455,18 @@ public class BookController implements Resource<Book> {
     @Autowired
     private BookService service;
 
-    @Autowired
-    private BookRepository repository;
-
-	@Autowired
-	private IPageService<Book> bookPageService;
-
+/*  @Autowired
+	private IPageService<BookDTO> bookPageService;
+ 
 	@Override
-	public ResponseEntity<Page<Book>> findAll(Pageable pageable, String searchText) {
+	public ResponseEntity<Page<BookDTO>> findAll(Pageable pageable, String searchText) {
 		return ResponseEntity.ok(bookPageService.findAll(pageable, searchText));
 	}
 
 	@Override
-	public ResponseEntity<Page<Book>> findAll(int pageNumber, int pageSize, String sortBy, String sortDir) {
+	public ResponseEntity<Page<BookDTO>> findAll(int pageNumber, int pageSize, String sortBy, String sortDir) {
 		return ResponseEntity.ok(bookPageService.findAll(PageRequest.of(pageNumber, pageSize, sortDir.equalsIgnoreCase("asc") ? Sort.by(sortBy).ascending() : Sort.by(sortBy).descending())));
-	}
+	} */
 
     @GetMapping
     public Page<BookDTO> findAllBooks(Pageable pageable) {
@@ -433,41 +478,19 @@ public class BookController implements Resource<Book> {
         return service.findById(id);
     }
 
-    @DeleteMapping("{id}")
-	@ResponseStatus(code = HttpStatus.OK)
-	public void deleteBook(@PathVariable Long id) {
-		service.deleteById(id);
-	}
-
-    @PostMapping
-    @ResponseStatus(code = HttpStatus.CREATED)
-	public Book createBook(@RequestBody Book book) {
-		return repository.save(book);
-	}
-
-	@Override
-	public ResponseEntity<Book> findById(Long id) {
-		return new ResponseEntity<>(service.findById(id).get(), HttpStatus.OK);
-	}
-
 	@Override
 	public ResponseEntity<Book> save(Book book) {
-		return new ResponseEntity<>(service.saveOrUpdate(book), HttpStatus.CREATED);
+		return ResponseEntity.ok(service.saveOrUpdate(book));
 	}
 
 	@Override
 	public ResponseEntity<Book> update(Book book) {
-		return new ResponseEntity<>(service.saveOrUpdate(book), HttpStatus.OK);
+		return ResponseEntity.ok(service.saveOrUpdate(book));
 	}
 
 	@Override
 	public ResponseEntity<String> deleteById(Long id) {
-		return new ResponseEntity<>(service.deleteById(id), HttpStatus.OK);
-	}
-
-	@PutMapping
-	public ResponseEntity<Book> saveBook(@RequestBody Book book) {
-		return ResponseEntity.ok(repository.save(book));
+		return ResponseEntity.ok(service.deleteById(id));
 	}
 
 	@GetMapping("/languages")
@@ -515,3 +538,55 @@ class NavigationBar extends Component {
   }
 }
 export default NavigationBar
+
+!J------------------------------------------------------------------------------------------------------------------------------J!
+
+# App
+
+import { Container, Row, Col } from 'react-bootstrap'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import NavigationBar from './components/NavigationBar'
+import Welcome from './components/Welcome'
+import Book from './components/Book/Book'
+import BookList from './components/Book/BookList'
+import UserList from './components/User/UserList'
+import Register from './components/User/Register'
+import Login from './components/User/Login'
+import Footer from './components/Footer'
+import Home from './components/Home'
+import './App.css'
+
+const App = () => {
+  window.onbeforeunload = event => {
+    const e = event || window.event
+    e.preventDefault()
+    if (e) {
+      e.returnValue = ""
+    }
+    return ""
+  }
+
+  return (
+    <BrowserRouter>
+      <NavigationBar/>
+      <Container>
+        <Row>
+          <Col lg={12} className={"margin-top"}>
+            <Routes>
+              <Route path="/" exact component={Welcome}/>
+              <Route path="/home" exact component={Home}/>
+              <Route path="/add" exact component={Book}/>
+              <Route path="/edit/:id" exact component={Book}/>
+              <Route path="/list" exact component={BookList}/>
+              <Route path="/users" exact component={UserList}/>
+              <Route path="/register" exact component={Register}/>
+              <Route path="/login" exact component={Login}/>
+              <Route path="/logout" exact component={() => <Login message="User Logged Out Successfully."/>}/>
+            </Routes>
+          </Col>
+        </Row>
+      </Container>
+      <Footer/>
+    </BrowserRouter>
+  )}
+export default App

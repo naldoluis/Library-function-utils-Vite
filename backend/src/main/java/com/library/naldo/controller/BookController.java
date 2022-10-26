@@ -4,50 +4,47 @@ import java.util.Arrays;
 import java.util.Set;
 import java.util.TreeSet;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.library.naldo.domain.Book;
-import com.library.naldo.dto.BookDTO;
-import com.library.naldo.service.BookService;
+import com.library.naldo.service.impl.IPageService;
+import com.library.naldo.service.impl.IService;
 
 @RestController
 @RequestMapping("/books")
 public class BookController implements Resource<Book> {
 
-    @Autowired
-    private BookService service;
+	@Autowired
+	private IService<Book> service;
 
-/*  @Autowired
-	private IPageService<BookDTO> bookPageService;
- 
+	@Autowired
+	private IPageService<Book> bookPageService;
+
 	@Override
-	public ResponseEntity<Page<BookDTO>> findAll(Pageable pageable, String searchText) {
+	public ResponseEntity<Page<Book>> findAll(Pageable pageable, String searchText) {
 		return ResponseEntity.ok(bookPageService.findAll(pageable, searchText));
 	}
 
 	@Override
-	public ResponseEntity<Page<BookDTO>> findAll(int pageNumber, int pageSize, String sortBy, String sortDir) {
+	public ResponseEntity<Page<Book>> findAll(int pageNumber, int pageSize, String sortBy, String sortDir) {
 		return ResponseEntity.ok(bookPageService.findAll(PageRequest.of(pageNumber, pageSize, sortDir.equalsIgnoreCase("asc") ? Sort.by(sortBy).ascending() : Sort.by(sortBy).descending())));
-	} */
+	}
 
-    @GetMapping
-    public Page<BookDTO> findAllBooks(Pageable pageable) {
-        return service.findAll(pageable);
-    }
-
-    @GetMapping("/{id}")
-    public BookDTO findOne(@PathVariable Long id) {
-        return service.findById(id);
-    }
+	@Override
+	public ResponseEntity<Book> findById(Long id) {
+		return ResponseEntity.ok(service.findById(id).get());
+	}
 
 	@Override
 	public ResponseEntity<Book> save(Book book) {
-		return ResponseEntity.ok(service.saveOrUpdate(book));
+		return new ResponseEntity<>(service.saveOrUpdate(book), HttpStatus.CREATED);
 	}
 
 	@Override
