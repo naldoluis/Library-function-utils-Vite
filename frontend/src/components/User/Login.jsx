@@ -31,7 +31,7 @@ const Login = props => {
         setShow(true)
         resetLoginForm()
         setError("Invalid email and password")
-      })
+     })
   }
 
   const resetLoginForm = () => {
