@@ -14,7 +14,7 @@ export const saveBook = book => {
       })
       .catch(error => {
         dispatch(bookFailure(error))
-      })
+     })
   }}
 
 export const fetchBook = bookId => {
@@ -28,7 +28,7 @@ export const fetchBook = bookId => {
       })
       .catch(error => {
         dispatch(bookFailure(error))
-      })
+     })
   }}
 
 export const updateBook = book => {
@@ -42,7 +42,7 @@ export const updateBook = book => {
       })
       .catch(error => {
         dispatch(bookFailure(error))
-      })
+     })
   }}
 
 export const deleteBook = bookId => {
@@ -56,7 +56,7 @@ export const deleteBook = bookId => {
       })
       .catch(error => {
         dispatch(bookFailure(error))
-      })
+     })
   }}
 
 const bookSuccess = book => {

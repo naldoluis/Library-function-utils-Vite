@@ -2,7 +2,7 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { Card } from 'react-bootstrap'
 
-const Welcome = () => {
+export const Welcome = () => {
   const [quotes, setQuotes] = useState("")
 
   useEffect(() => {
@@ -20,7 +20,7 @@ const Welcome = () => {
         {quotes &&
           quotes.map((quote, id) => (
             <blockquote className="blockquote mb-0" key={id}>
-              <p>{quote.text}</p>
+                <p>{quote.text}</p>
               <footer className="blockquote-footer">{quote.author}</footer>
             </blockquote>
           ))}

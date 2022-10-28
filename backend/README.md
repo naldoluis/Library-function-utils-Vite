@@ -1,5 +1,5 @@
-# GET
-	  http://localhost:8080/rest/user/authenticate
+# POST
+	    ==>  	http://localhost:8080/rest/user/authenticate
 
 		{
 		"name": "test@admin.com",
@@ -13,7 +13,9 @@
 																			|
 								Authorization           				  value:
 
-						Using generated security password: 27b35cb3-51e6-46e5-b74e-42faa8e458d7
+>					     Using generated security password: 27b35cb3-51e6-46e5-b74e-42faa8e458d7
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 # Local
 		cd C:\Library-Vite\frontend
@@ -24,7 +26,8 @@
 		yarn dev
 
 # GitHub
-		git commit -m "funcoes e recursos para projetos futuro"
+
+		==>		git commit -m "funcoes e recursos para projetos futuro"
 
 # Requests
 
@@ -38,22 +41,28 @@
 		"password":"testadmin"
 	}
 
-# GET
-	http://localhost:8080/rest/books           --> Busca Paginada  http://localhost:8080/rest/books?pageNumber=1&pageSize=5&sortBy=price&sortDir=asc
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-											   --> Busca Paginada in DTO http://localhost:8080/rest/books?size=7&page=5
+# GET
+   http://localhost:8080/rest/books --> Busca Paginada  http://localhost:8080/rest/books?pageNumber=1&pageSize=5&sortBy=price&sortDir=asc
+
+									--> Busca Paginada in DTO http://localhost:8080/rest/books?size=7&page=5
+
+!J------------------------------------------------------------------------------------------------------------------------------J!
 
 # GET By ID
-	http://localhost:8080/rest/books/1
+		==> 	http://localhost:8080/rest/books/1
 
 # POST
-	http://localhost:8080/rest/books
+		==> 	http://localhost:8080/rest/books
 
 # PUT
-	http://localhost:8080/rest/books
+		==> 	http://localhost:8080/rest/books
 
 # DELETE
-	http://localhost:8080/rest/books/1
+		==> 	http://localhost:8080/rest/books/1
+
+!J------------------------------------------------------------------------------------------------------------------------------J!
 
 # Requests
 
@@ -103,9 +112,21 @@
 	    "language": "English"
 	}
 
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+											   !J ★ BACKEND ★ !J
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
 !J------------------------------------------------------------------------------------------------------------------------------J!
 
-# 													import.sql
+# requests.js
+
+export const BASE_URL = import.meta.env.VITE_BACKEND_URL
+
+>// --> Quando em produção, não é necessário o " ?? 'http://localhost:8080/rest' "
+
+!J------------------------------------------------------------------------------------------------------------------------------J!
+
+# 												  import.sql
 
 INSERT INTO tb_user(name, email, mobile, password) VALUES ('Maria', 'maria@gmail.com', '9787456540', '1234')
 INSERT INTO tb_user(name, email, mobile, password) VALUES ('Joao', 'joao@gmail.com', '9787456541', '1235')
@@ -129,41 +150,48 @@ INSERT INTO tb_user VALUES ('f051a0ab-5d4e-41e4-967d-2827d948d57a', '$2a$10$2Kef
 INSERT INTO tb_user VALUES ('05efdfb1-e1b9-4f09-8abc-968905db6b11', '$2a$10$2KeflGXrfayDYOZlNzSrgeRTG/26lwjiuKAhsZxAk2lkPjLuZlNaG', 'joao')																									|
                                     	UUID													PASSWORD ENCODE = senha123
 !J------------------------------------------------------------------------------------------------------------------------------J!
-										https://www.uuidgenerator.net/
+
+										 https://www.uuidgenerator.net/
 # UUID 30/30
 
-3c00a8ba-4e5a-491e-8248-07d6f15dff97									  c0f5385b-53af-4e41-be70-fdfe5d565b63
-3a557f92-714f-4bab-bb72-52dd134d8fbd									  f60b509c-c0ad-4ad6-ae8e-e53bb6641257
-2919470f-723d-44f3-b464-55cea717a0d4									  919fe1d5-1096-4bb4-8b28-66dfa7662cf2
-f384497f-9f52-4a74-aa9b-ec408a34c55c									  f2523aaa-c67d-4d24-9202-6f8299d82483
-e7acfb0a-301c-4a9b-9e38-55f2521c6d0e									  bb07835d-8511-43aa-8406-d0de8790fe9a
-718dc1f1-3820-4c0e-af2b-3184275af00b									  e64ba0d7-08af-403e-9c77-d451aa2439fa
-27a72453-f4e9-4730-a181-4045645fae0e									  a483a417-3bd0-440b-8b1f-ef6e72cf50e8
-72e920c1-81b2-4f58-a394-41ed73547b7c									  7f5e790b-9dd4-460f-8193-5b28871ed9a4
-cc3b55fd-8dc0-43ac-80b2-60f007fc3bcc									  b3b459be-d5f0-4ef8-b865-777fd8dff5f2
-82beedcf-31ff-4ea4-8dd8-fda806d841fe									  bf078f48-0d88-49d4-8ef6-a004432958f4
-f4cf4a4e-f8d4-42ab-82da-8fdd43e6c6e0									  a9042cce-e707-4a12-b2ef-3f0335b27d4f
-829decd3-0619-42cf-a025-b56631a7315d									  606ba0c7-81aa-4ffe-9560-ee6654c53a98
-c0130cfa-e655-470b-8f17-37fb17de5943									  7a494768-9201-491d-8a73-5591cccc9d31
-b2a298c0-b272-481b-accc-16b322cbe13c									  2cd754e2-419d-4518-b54e-b016160906b6
-7c6e251b-2033-4edc-b9c9-93d4a1f363af									  953be8ef-4b9a-40d1-8893-a202650f1da6
-1dcb5337-3ce4-4522-8a6b-0824e8ef610a									  27c1df25-3126-4014-87ef-7eb3cda18216
-fced1d3b-31b0-4629-ac11-5466d7018ba3									  6e7d7a6e-735a-4b16-a008-45821761af45
-6dd38b93-84a2-4375-ba13-b6c47845dffa									  65532a03-fe1d-4ab6-b615-0e43a63fea8e
-d90ed2ea-64b4-412a-a724-1b2503689a5a									  cb3294a9-1d68-4f40-bca0-a4f9a6f5a634
-8ba73169-6155-4ea2-95d4-93fa09582e69									  d1fd28ff-1a1b-4116-b1d9-df73a394cdcd
-2ccdb31f-c2d9-4b89-b250-e35958220878									  964e16a8-a9e2-403f-989f-9fc57cd94057
-fe758107-6d24-41eb-bfcf-77452fc04f40									  1b9c349e-d700-4cdc-a4fa-5757faf08457
-d3bed3ec-cb52-4cf3-b177-1709c7454913									  eaebd1c1-0cf0-4342-be3a-d57f0345f0cc	
-2d036269-ead3-4e2a-87bb-fd84684d6a3c									  f302da38-70b7-4c2d-8161-f3105fa6d8e6
-a50ada16-0e65-4992-8428-bd0a5232ab35									  adcaa3ec-c155-40d9-8b35-4b62b15e3b39
-a5a9bf34-3c57-43d9-a678-8f1287d3f85f									  525a3bc8-79ba-4998-ad4f-d2d07abd8a1a
-5ae72db7-8e0a-44e2-8c5f-168996752f2a									  2123491d-83f4-4b0c-94bd-527661f05ef6
-17fa055e-b284-4971-9716-8d76e6a5748b									  a6015850-7bfe-4cd3-a3e4-8c5d5a6666ea
-89c0013c-c7e1-4f5d-9e9d-c8e13e57546e									  0e7a8d96-5798-44c9-9301-2a7514766083
-8f91a7a1-a717-4d9a-b32e-81a2e5813ad9									  ebc82e44-c21a-4ada-8ea1-c0545deef6bb
+>  3c00a8ba-4e5a-491e-8248-07d6f15dff97									  c0f5385b-53af-4e41-be70-fdfe5d565b63
+>  3a557f92-714f-4bab-bb72-52dd134d8fbd									  f60b509c-c0ad-4ad6-ae8e-e53bb6641257
+>  2919470f-723d-44f3-b464-55cea717a0d4									  919fe1d5-1096-4bb4-8b28-66dfa7662cf2
+>  f384497f-9f52-4a74-aa9b-ec408a34c55c									  f2523aaa-c67d-4d24-9202-6f8299d82483
+>  e7acfb0a-301c-4a9b-9e38-55f2521c6d0e									  bb07835d-8511-43aa-8406-d0de8790fe9a
+>  718dc1f1-3820-4c0e-af2b-3184275af00b									  e64ba0d7-08af-403e-9c77-d451aa2439fa
+>  27a72453-f4e9-4730-a181-4045645fae0e									  a483a417-3bd0-440b-8b1f-ef6e72cf50e8
+>  72e920c1-81b2-4f58-a394-41ed73547b7c									  7f5e790b-9dd4-460f-8193-5b28871ed9a4
+>  cc3b55fd-8dc0-43ac-80b2-60f007fc3bcc									  b3b459be-d5f0-4ef8-b865-777fd8dff5f2
+>  82beedcf-31ff-4ea4-8dd8-fda806d841fe									  bf078f48-0d88-49d4-8ef6-a004432958f4
+>  f4cf4a4e-f8d4-42ab-82da-8fdd43e6c6e0									  a9042cce-e707-4a12-b2ef-3f0335b27d4f
+>  829decd3-0619-42cf-a025-b56631a7315d									  606ba0c7-81aa-4ffe-9560-ee6654c53a98
+>  c0130cfa-e655-470b-8f17-37fb17de5943									  7a494768-9201-491d-8a73-5591cccc9d31
+>  b2a298c0-b272-481b-accc-16b322cbe13c									  2cd754e2-419d-4518-b54e-b016160906b6
+>  7c6e251b-2033-4edc-b9c9-93d4a1f363af									  953be8ef-4b9a-40d1-8893-a202650f1da6
+>  1dcb5337-3ce4-4522-8a6b-0824e8ef610a									  27c1df25-3126-4014-87ef-7eb3cda18216
+>  fced1d3b-31b0-4629-ac11-5466d7018ba3									  6e7d7a6e-735a-4b16-a008-45821761af45
+>  6dd38b93-84a2-4375-ba13-b6c47845dffa									  65532a03-fe1d-4ab6-b615-0e43a63fea8e
+>  d90ed2ea-64b4-412a-a724-1b2503689a5a									  cb3294a9-1d68-4f40-bca0-a4f9a6f5a634
+>  8ba73169-6155-4ea2-95d4-93fa09582e69									  d1fd28ff-1a1b-4116-b1d9-df73a394cdcd
+>  2ccdb31f-c2d9-4b89-b250-e35958220878									  964e16a8-a9e2-403f-989f-9fc57cd94057
+>  fe758107-6d24-41eb-bfcf-77452fc04f40									  1b9c349e-d700-4cdc-a4fa-5757faf08457
+>  d3bed3ec-cb52-4cf3-b177-1709c7454913									  eaebd1c1-0cf0-4342-be3a-d57f0345f0cc	
+>  2d036269-ead3-4e2a-87bb-fd84684d6a3c									  f302da38-70b7-4c2d-8161-f3105fa6d8e6
+>  a50ada16-0e65-4992-8428-bd0a5232ab35									  adcaa3ec-c155-40d9-8b35-4b62b15e3b39
+>  a5a9bf34-3c57-43d9-a678-8f1287d3f85f									  525a3bc8-79ba-4998-ad4f-d2d07abd8a1a
+>  5ae72db7-8e0a-44e2-8c5f-168996752f2a									  2123491d-83f4-4b0c-94bd-527661f05ef6
+>  17fa055e-b284-4971-9716-8d76e6a5748b									  a6015850-7bfe-4cd3-a3e4-8c5d5a6666ea
+>  89c0013c-c7e1-4f5d-9e9d-c8e13e57546e									  0e7a8d96-5798-44c9-9301-2a7514766083
+>  8f91a7a1-a717-4d9a-b32e-81a2e5813ad9									  ebc82e44-c21a-4ada-8ea1-c0545deef6bb
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
+
+# Fonts index.css
+
+				 @import "https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css"
+				 @import "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+
 
 #           		 Application.java --> (Simula o arquivo import.sql na busca de livros no banco de dados)
 
@@ -289,6 +317,17 @@ public class BookService implements IServiceBook<Book> {
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
 
+# IServiceBook of DTO
+
+package com.library.naldo.service.impl;
+
+public interface IServiceBook<T> {
+	String deleteById(Long id);
+	T saveOrUpdate(T t);
+}
+
+!J------------------------------------------------------------------------------------------------------------------------------J!
+
 # UserDTO Method 2
 
 package com.library.naldo.service;
@@ -404,7 +443,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
 
-# Spring Security Config Method 3
+# Spring Security Config Method 3 (v2.6.7)
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
@@ -505,6 +544,10 @@ public class BookController implements Resource<Book> {
 }
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+											   !J ★ FRONTEND ★ !J
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 # NavigationBar
 

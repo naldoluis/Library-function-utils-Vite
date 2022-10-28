@@ -57,7 +57,7 @@ class BookList extends Component {
         console.log(error)
         localStorage.removeItem("jwtToken")
         this.props.history.push("/")
-      })
+     })
   }
 
   deleteBook = bookId => {

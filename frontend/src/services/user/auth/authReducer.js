@@ -1,9 +1,6 @@
 import { LOGIN_REQUEST, LOGOUT_REQUEST, SUCCESS, FAILURE } from './authTypes'
 
-const initialState = {
-  username: "",
-  isLoggedIn: ""
-}
+const initialState = { username: "", isLoggedIn: "" }
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {

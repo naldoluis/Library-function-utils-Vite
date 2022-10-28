@@ -1,9 +1,6 @@
 import * as BT from './bookTypes'
 
-const initialState = {
-  book: "",
-  error: ""
-}
+const initialState = { book: "", error: "" }
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {

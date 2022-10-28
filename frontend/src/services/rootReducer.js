@@ -1,7 +1,7 @@
 import { combineReducers } from '@reduxjs/toolkit'
-import userReducer from './user/userReducer'
 import bookReducer from './book/bookReducer'
+import userReducer from './user/userReducer'
 import authReducer from './user/auth/authReducer'
 
-const rootReducer = combineReducers({ user: userReducer, book: bookReducer, auth: authReducer })
+const rootReducer = combineReducers({ book: bookReducer, user: userReducer, auth: authReducer })
 export default rootReducer
