@@ -6,7 +6,7 @@ import { faList, faEdit, faTrash, faStepBackward, faFastBackward, faStepForward,
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import MyToast from '../MyToast'
-import { deleteBook } from '../../services/index'
+import { deleteBook } from '../../services'
 import { BASE_URL } from '../../utils/requests'
 import '../../assets/css/Style.css'
 

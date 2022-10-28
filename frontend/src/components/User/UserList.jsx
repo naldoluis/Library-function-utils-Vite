@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Card, Table, InputGroup, FormControl, Button, Alert } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUsers, faStepBackward, faFastBackward, faStepForward, faFastForward } from '@fortawesome/free-solid-svg-icons'
-import { fetchUsers } from '../../services/index'
+import { fetchUsers } from '../../services'
 import '../../assets/css/Style.css'
 
 class UserList extends Component {

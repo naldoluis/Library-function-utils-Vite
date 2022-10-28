@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { Row, Col, Card, Form, InputGroup, FormControl, Button } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhone, faEnvelope, faLock, faUndo, faUserPlus, faUser } from '@fortawesome/free-solid-svg-icons'
-import { registerUser } from '../../services/index'
+import { registerUser } from '../../services'
 import MyToast from '../MyToast'
 
 const Register = props => {

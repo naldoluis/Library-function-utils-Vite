@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Card, Form, Button, Col, InputGroup, Image } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSave, faPlusSquare, faUndo, faList, faEdit } from '@fortawesome/free-solid-svg-icons'
-import { saveBook, fetchBook, updateBook, fetchLanguages, fetchGenres } from '../../services/index'
+import { saveBook, fetchBook, updateBook, fetchLanguages, fetchGenres } from '../../services'
 import MyToast from '../MyToast'
 
 class Book extends Component {
