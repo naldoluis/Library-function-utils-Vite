@@ -126,7 +126,28 @@ export const BASE_URL = import.meta.env.VITE_BACKEND_URL
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
 
-# 												  import.sql
+# import.sql
+
+								  EXEMPLO DE COMO EDITAR NO BANCO DE DADOS (POSTGRES ★)
+
+    update tb_book set title = 'new name of title' where id = 20						X = número do id
+			|			 |				|					  |							Y = set o tipo de atributo a editar
+			|			 |				|					  |							J = nome da tabela
+			J			 Y				N					  X							N = nome do título a editar
+
+
+								  OPÇÕES DE ATRIBUTOS A EDITAR DO ARQUIVO BOOK.java			
+
+										private String title;       ==>	title
+										private String author;		==>	author
+										private String photo;       ==>	photo
+										private Long isbn;			==>	isbn
+										private Double price;		==>	price
+										private String language;	==> language
+										private String genre;		==>	genre
+
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+
 
 INSERT INTO tb_user(name, email, mobile, password) VALUES ('Maria', 'maria@gmail.com', '9787456540', '1234')
 INSERT INTO tb_user(name, email, mobile, password) VALUES ('Joao', 'joao@gmail.com', '9787456541', '1235')
