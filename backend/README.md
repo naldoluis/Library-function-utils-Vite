@@ -172,39 +172,39 @@ INSERT INTO tb_user VALUES ('05efdfb1-e1b9-4f09-8abc-968905db6b11', '$2a$10$2Kef
                                     	UUID													PASSWORD ENCODE = senha123
 !J------------------------------------------------------------------------------------------------------------------------------J!
 
-										 https://www.uuidgenerator.net/
+										      https://www.uuidgenerator.net/
 # UUID 30/30
 
->  3c00a8ba-4e5a-491e-8248-07d6f15dff97									  c0f5385b-53af-4e41-be70-fdfe5d565b63
->  3a557f92-714f-4bab-bb72-52dd134d8fbd									  f60b509c-c0ad-4ad6-ae8e-e53bb6641257
->  2919470f-723d-44f3-b464-55cea717a0d4									  919fe1d5-1096-4bb4-8b28-66dfa7662cf2
->  f384497f-9f52-4a74-aa9b-ec408a34c55c									  f2523aaa-c67d-4d24-9202-6f8299d82483
->  e7acfb0a-301c-4a9b-9e38-55f2521c6d0e									  bb07835d-8511-43aa-8406-d0de8790fe9a
->  718dc1f1-3820-4c0e-af2b-3184275af00b									  e64ba0d7-08af-403e-9c77-d451aa2439fa
->  27a72453-f4e9-4730-a181-4045645fae0e									  a483a417-3bd0-440b-8b1f-ef6e72cf50e8
->  72e920c1-81b2-4f58-a394-41ed73547b7c									  7f5e790b-9dd4-460f-8193-5b28871ed9a4
->  cc3b55fd-8dc0-43ac-80b2-60f007fc3bcc									  b3b459be-d5f0-4ef8-b865-777fd8dff5f2
->  82beedcf-31ff-4ea4-8dd8-fda806d841fe									  bf078f48-0d88-49d4-8ef6-a004432958f4
->  f4cf4a4e-f8d4-42ab-82da-8fdd43e6c6e0									  a9042cce-e707-4a12-b2ef-3f0335b27d4f
->  829decd3-0619-42cf-a025-b56631a7315d									  606ba0c7-81aa-4ffe-9560-ee6654c53a98
->  c0130cfa-e655-470b-8f17-37fb17de5943									  7a494768-9201-491d-8a73-5591cccc9d31
->  b2a298c0-b272-481b-accc-16b322cbe13c									  2cd754e2-419d-4518-b54e-b016160906b6
->  7c6e251b-2033-4edc-b9c9-93d4a1f363af									  953be8ef-4b9a-40d1-8893-a202650f1da6
->  1dcb5337-3ce4-4522-8a6b-0824e8ef610a									  27c1df25-3126-4014-87ef-7eb3cda18216
->  fced1d3b-31b0-4629-ac11-5466d7018ba3									  6e7d7a6e-735a-4b16-a008-45821761af45
->  6dd38b93-84a2-4375-ba13-b6c47845dffa									  65532a03-fe1d-4ab6-b615-0e43a63fea8e
->  d90ed2ea-64b4-412a-a724-1b2503689a5a									  cb3294a9-1d68-4f40-bca0-a4f9a6f5a634
->  8ba73169-6155-4ea2-95d4-93fa09582e69									  d1fd28ff-1a1b-4116-b1d9-df73a394cdcd
->  2ccdb31f-c2d9-4b89-b250-e35958220878									  964e16a8-a9e2-403f-989f-9fc57cd94057
->  fe758107-6d24-41eb-bfcf-77452fc04f40									  1b9c349e-d700-4cdc-a4fa-5757faf08457
->  d3bed3ec-cb52-4cf3-b177-1709c7454913									  eaebd1c1-0cf0-4342-be3a-d57f0345f0cc	
->  2d036269-ead3-4e2a-87bb-fd84684d6a3c									  f302da38-70b7-4c2d-8161-f3105fa6d8e6
->  a50ada16-0e65-4992-8428-bd0a5232ab35									  adcaa3ec-c155-40d9-8b35-4b62b15e3b39
->  a5a9bf34-3c57-43d9-a678-8f1287d3f85f									  525a3bc8-79ba-4998-ad4f-d2d07abd8a1a
->  5ae72db7-8e0a-44e2-8c5f-168996752f2a									  2123491d-83f4-4b0c-94bd-527661f05ef6
->  17fa055e-b284-4971-9716-8d76e6a5748b									  a6015850-7bfe-4cd3-a3e4-8c5d5a6666ea
->  89c0013c-c7e1-4f5d-9e9d-c8e13e57546e									  0e7a8d96-5798-44c9-9301-2a7514766083
->  8f91a7a1-a717-4d9a-b32e-81a2e5813ad9									  ebc82e44-c21a-4ada-8ea1-c0545deef6bb
+>  3c00a8ba-4e5a-491e-8248-07d6f15dff97									  			c0f5385b-53af-4e41-be70-fdfe5d565b63
+>  3a557f92-714f-4bab-bb72-52dd134d8fbd									  			f60b509c-c0ad-4ad6-ae8e-e53bb6641257
+>  2919470f-723d-44f3-b464-55cea717a0d4									  			919fe1d5-1096-4bb4-8b28-66dfa7662cf2
+>  f384497f-9f52-4a74-aa9b-ec408a34c55c									  			f2523aaa-c67d-4d24-9202-6f8299d82483
+>  e7acfb0a-301c-4a9b-9e38-55f2521c6d0e									  			bb07835d-8511-43aa-8406-d0de8790fe9a
+>  718dc1f1-3820-4c0e-af2b-3184275af00b									  			e64ba0d7-08af-403e-9c77-d451aa2439fa
+>  27a72453-f4e9-4730-a181-4045645fae0e									  			a483a417-3bd0-440b-8b1f-ef6e72cf50e8
+>  72e920c1-81b2-4f58-a394-41ed73547b7c									  			7f5e790b-9dd4-460f-8193-5b28871ed9a4
+>  cc3b55fd-8dc0-43ac-80b2-60f007fc3bcc									  			b3b459be-d5f0-4ef8-b865-777fd8dff5f2
+>  82beedcf-31ff-4ea4-8dd8-fda806d841fe									  			bf078f48-0d88-49d4-8ef6-a004432958f4
+>  f4cf4a4e-f8d4-42ab-82da-8fdd43e6c6e0									  			a9042cce-e707-4a12-b2ef-3f0335b27d4f
+>  829decd3-0619-42cf-a025-b56631a7315d									  			606ba0c7-81aa-4ffe-9560-ee6654c53a98
+>  c0130cfa-e655-470b-8f17-37fb17de5943									  			7a494768-9201-491d-8a73-5591cccc9d31
+>  b2a298c0-b272-481b-accc-16b322cbe13c									  			2cd754e2-419d-4518-b54e-b016160906b6
+>  7c6e251b-2033-4edc-b9c9-93d4a1f363af									  			953be8ef-4b9a-40d1-8893-a202650f1da6
+>  1dcb5337-3ce4-4522-8a6b-0824e8ef610a									  			27c1df25-3126-4014-87ef-7eb3cda18216
+>  fced1d3b-31b0-4629-ac11-5466d7018ba3									  			6e7d7a6e-735a-4b16-a008-45821761af45
+>  6dd38b93-84a2-4375-ba13-b6c47845dffa									  			65532a03-fe1d-4ab6-b615-0e43a63fea8e
+>  d90ed2ea-64b4-412a-a724-1b2503689a5a									  			cb3294a9-1d68-4f40-bca0-a4f9a6f5a634
+>  8ba73169-6155-4ea2-95d4-93fa09582e69									  			d1fd28ff-1a1b-4116-b1d9-df73a394cdcd
+>  2ccdb31f-c2d9-4b89-b250-e35958220878									  			964e16a8-a9e2-403f-989f-9fc57cd94057
+>  fe758107-6d24-41eb-bfcf-77452fc04f40									  			1b9c349e-d700-4cdc-a4fa-5757faf08457
+>  d3bed3ec-cb52-4cf3-b177-1709c7454913									  			eaebd1c1-0cf0-4342-be3a-d57f0345f0cc	
+>  2d036269-ead3-4e2a-87bb-fd84684d6a3c									  			f302da38-70b7-4c2d-8161-f3105fa6d8e6
+>  a50ada16-0e65-4992-8428-bd0a5232ab35									  			adcaa3ec-c155-40d9-8b35-4b62b15e3b39
+>  a5a9bf34-3c57-43d9-a678-8f1287d3f85f									  			525a3bc8-79ba-4998-ad4f-d2d07abd8a1a
+>  5ae72db7-8e0a-44e2-8c5f-168996752f2a									  			2123491d-83f4-4b0c-94bd-527661f05ef6
+>  17fa055e-b284-4971-9716-8d76e6a5748b									  			a6015850-7bfe-4cd3-a3e4-8c5d5a6666ea
+>  89c0013c-c7e1-4f5d-9e9d-c8e13e57546e									  			0e7a8d96-5798-44c9-9301-2a7514766083
+>  8f91a7a1-a717-4d9a-b32e-81a2e5813ad9									  			ebc82e44-c21a-4ada-8ea1-c0545deef6bb
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
 
@@ -403,6 +403,7 @@ public class UserService implements IServiceUser<User> {
 
 package com.library.naldo.config;
 
+import java.util.Arrays;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -414,7 +415,6 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import java.util.Arrays;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
@@ -601,3 +601,55 @@ class NavigationBar extends Component {
   }
 }
 export default NavigationBar
+
+!J------------------------------------------------------------------------------------------------------------------------------J!
+
+# App
+
+import { Container, Row, Col } from 'react-bootstrap'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import NavigationBar from './components/NavigationBar'
+import Welcome from './components/Welcome'
+import Book from './components/Book/Book'
+import BookList from './components/Book/BookList'
+import UserList from './components/User/UserList'
+import Register from './components/User/Register'
+import Login from './components/User/Login'
+import Footer from './components/Footer'
+import Home from './components/Home'
+import './App.css'
+
+const App = () => {
+  window.onbeforeunload = event => {
+    const e = event || window.event
+    e.preventDefault()
+    if (e) {
+      e.returnValue = ""
+    }
+    return ""
+  }
+
+  return (
+    <Router>
+     <NavigationBar/>
+      <Container>
+       <Row>
+        <Col lg={12} className={"margin-top"}>
+          <Routes>
+            <Route path="/" exact component={Welcome}/>
+            <Route path="/home" exact component={Home}/>
+            <Route path="/add" exact component={Book}/>
+            <Route path="/edit/:id" exact component={Book}/>
+            <Route path="/list" exact component={BookList}/>
+            <Route path="/users" exact component={UserList}/>
+            <Route path="/register" exact component={Register}/>
+            <Route path="/login" exact component={Login}/>
+            <Route path="/logout" exact component={() => <Login message="User Logged Out Successfully."/>}/>
+          </Routes>
+        </Col>
+       </Row>
+      </Container>
+    <Footer/>
+   </Router>
+  )}
+export default App
