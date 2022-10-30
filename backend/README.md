@@ -578,7 +578,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserPlus, faSignInAlt, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
 import { logoutUser } from '../services/index'
 import Book from '../assets/Book_icon_1.png'
-import React, { Component } from 'react'
+import { Component } from 'react'
 
 class NavigationBar extends Component {
   render() {

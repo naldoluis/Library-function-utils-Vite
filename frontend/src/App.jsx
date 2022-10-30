@@ -28,15 +28,15 @@ const App = () => {
         <Row>
           <Col lg={12} className={"margin-top"}>
             <Routes>
-              <Route path="/" exact element={<Welcome/>}/>
-              <Route path="/home" exact element={<Home/>}/>
-              <Route path="/add" exact element={<Book/>}/>
-              <Route path="/edit/:id" exact element={<Book/>}/>
-              <Route path="/list" exact element={<BookList/>}/>
-              <Route path="/user" exact element={<UserList/>}/>
-              <Route path="/register" exact element={<Register/>}/>
-              <Route path="/login" exact element={<Login/>}/>
-              <Route path="/logout" exact element={() => <Login message="User Logged Out Successfully."/>}/>
+              <Route path="/" element={<Welcome/>}/>
+              <Route path="/home" element={<Home/>}/>
+              <Route path="/add" element={<Book/>}/>
+              <Route path="/edit/:id" element={<Book/>}/>
+              <Route path="/list" element={<BookList/>}/>
+              <Route path="/user" element={<UserList/>}/>
+              <Route path="/register" element={<Register/>}/>
+              <Route path="/login" element={<Login/>}/>
+              <Route path="/logout" element={() => <Login message="User Logged Out Successfully."/>}/>
             </Routes>
           </Col>
         </Row>
