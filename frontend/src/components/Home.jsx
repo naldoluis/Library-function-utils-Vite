@@ -11,7 +11,7 @@ const Home = () => {
 
   return (
     <Alert style={{ background: "#343A40", color: "#ffffff80" }}>
-      Welcome {auth.username}
+      Welcome {auth/* .username */}
     </Alert>
   )
 }

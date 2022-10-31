@@ -46,7 +46,11 @@
 # GET
    http://localhost:8080/rest/books --> Busca Paginada  http://localhost:8080/rest/books?pageNumber=1&pageSize=5&sortBy=price&sortDir=asc
 
-									--> Busca Paginada in DTO http://localhost:8080/rest/books?size=7&page=5
+								    --> Busca Paginada in DTO http://localhost:8080/rest/books?size=7&page=5
+
+								    --> Search Filter http://localhost:8080/rest/books/search/English?page=0&size=5
+																								 |
+																							  Science
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
 
@@ -127,8 +131,7 @@ export const BASE_URL = import.meta.env.VITE_BACKEND_URL
 !J------------------------------------------------------------------------------------------------------------------------------J!
 
 # import.sql
-
-								  EXEMPLO DE COMO EDITAR NO BANCO DE DADOS (POSTGRES ★)
+								 EXEMPLO DE COMO EDITAR NO BANCO DE DADOS (POSTGRES ★)
 
     update tb_book set title = 'new name of title' where id = 20						X = número do id
 			|			 |				|					  |							Y = set o tipo de atributo a editar
@@ -136,7 +139,7 @@ export const BASE_URL = import.meta.env.VITE_BACKEND_URL
 			J			 Y				N					  X							N = nome do título a editar
 
 
-								  OPÇÕES DE ATRIBUTOS A EDITAR DO ARQUIVO BOOK.java			
+								   OPÇÕES DE ATRIBUTOS A EDITAR DO ARQUIVO BOOK.java			
 
 										private String title;       ==>	title
 										private String author;		==>	author

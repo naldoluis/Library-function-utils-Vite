@@ -29,7 +29,7 @@ const NavigationBar = () => {
       <Nav className="mr-auto">
         <Link to={"add"} className="nav-link">Add Book</Link>
         <Link to={"list"} className="nav-link">Book List</Link>
-        <Link to={"users"} className="nav-link">User List</Link>
+        <Link to={"user"} className="nav-link">User List</Link>
       </Nav>
       <Nav className="navbar-right">
         <Link to={"logout"} className="nav-link" onClick={logout}><FontAwesomeIcon icon={faSignOutAlt}/> Logout</Link>
@@ -39,7 +39,7 @@ const NavigationBar = () => {
 
   return (
     <Navbar bg="dark" variant="dark">
-      <Link to={/* auth.isLoggedIn ? "home" :  */""} className="navbar-brand">
+      <Link to={/* auth.isLoggedIn ? "home" :  */"home"} className="navbar-brand">
         <img src={Book} width="25" height="25"/>{" "}Book Store</Link>
       {/* auth.isLoggedIn ? userLinks : guestLinks */userLinks}
     </Navbar>
