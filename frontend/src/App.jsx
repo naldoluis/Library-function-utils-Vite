@@ -37,6 +37,7 @@ export default function App() {
               <Route path="/register" element={<Register/>}/>
               <Route path="/login" element={<Login/>}/>
               <Route path="/logout" element={() => <Login message="User Logged Out Successfully."/>}/>
+              <Route path="*" element={<h3>Page not found</h3>}/>
             </Routes>
           </Col>
         </Row>
