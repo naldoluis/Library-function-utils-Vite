@@ -28,7 +28,7 @@ export default function App() {
         <Row>
           <Col lg={12} className={"margin-top"}>
             <Routes>
-              <Route exact path="/" element={<Welcome/>}/>
+              <Route path="/" element={<Welcome/>}/>
               <Route path="/home" element={<Home/>}/>
               <Route path="/add" element={<Book/>}/>
               <Route path="/edit/:id" element={<Book/>}/>
