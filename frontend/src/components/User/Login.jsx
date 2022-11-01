@@ -56,7 +56,7 @@ const Login = props => {
             <FontAwesomeIcon icon={faSignInAlt}/> Login
           </Card.Header>
           <Card.Body>
-            <Form.Row>
+            {/* <Form.Row>
               <Form.Group as={Col}>
                 <InputGroup>
                   <InputGroup.Prepend>
@@ -76,8 +76,8 @@ const Login = props => {
                   />
                 </InputGroup>
               </Form.Group>
-            </Form.Row>
-            <Form.Row>
+            </Form.Row> */}
+            {/* <Form.Row>
               <Form.Group as={Col}>
                 <InputGroup>
                   <InputGroup.Prepend>
@@ -97,7 +97,7 @@ const Login = props => {
                   />
                 </InputGroup>
               </Form.Group>
-            </Form.Row>
+            </Form.Row> */}
           </Card.Body>
           <Card.Footer style={{ textAlign: "right" }}>
             <Button

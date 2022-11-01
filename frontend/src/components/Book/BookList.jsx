@@ -53,11 +53,11 @@ class BookList extends React.Component {
           currentPage: data.number + 1
         })
       })
-      .catch(error => {
+/*       .catch(error => {
         console.log(error)
         localStorage.removeItem("jwtToken")
-        this.props.history.push("/")
-     })
+        this.props.history.push("/") ----------------------------Error in push----------------------------
+     })*/
   }
 
   deleteBook = bookId => {
@@ -185,10 +185,10 @@ class BookList extends React.Component {
                   className={"info-border bg-dark text-white"}
                   onChange={this.searchChange}
                 />
-                <InputGroup.Append>
+                <div>  {/* <InputGroup.Append> Error in Tag -------------------------------Error------------------------------ */}
                   <Button
                     size="sm"
-                    variant="outline-info"
+                    variant="outline-success"
                     type="button"
                     onClick={this.searchData}
                   >
@@ -196,13 +196,13 @@ class BookList extends React.Component {
                   </Button>
                   <Button
                     size="sm"
-                    variant="outline-danger"
+                    variant="outline-warning"
                     type="button"
                     onClick={this.cancelSearch}
                   >
                     <FontAwesomeIcon icon={faTimes}/>
                   </Button>
-                </InputGroup.Append>
+                </div>  {/* </InputGroup.Append> ------------------------------------------------------------------------------ */}
               </InputGroup>
             </div>
           </Card.Header>
@@ -254,7 +254,7 @@ class BookList extends React.Component {
                           </Link>{" "}
                           <Button
                             size="sm"
-                            variant="outline-danger"
+                            variant="outline-warning"
                             onClick={() => this.deleteBook(book.id)}
                           >
                             <FontAwesomeIcon icon={faTrash}/>

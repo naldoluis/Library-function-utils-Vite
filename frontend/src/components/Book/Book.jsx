@@ -13,19 +13,19 @@ class Book extends React.Component {
     this.state = {
       genres: [],
       languages: [],
-      show: false
+      show: true
     }
   }
 
   initialState = { id: "", title: "", author: "", photo: "", isbn: "", price: "", language: "", genre: "" }
 
-  componentDidMount() {
+/*   componentDidMount() {
     const bookId = +this.props.match.params.id
     if (bookId) {
       this.findBookById(bookId)
     }
     this.findAllLanguages()
-  }
+  } */
 
   findAllLanguages = () => {
     this.props.fetchLanguages()
@@ -84,7 +84,7 @@ class Book extends React.Component {
   submitBook = event => {
     event.preventDefault()
 
-    this.props.saveBook(Book)
+    this.props.saveBook(book)
     setTimeout(() => {
       if (this.props.bookObject.book != null) {
         this.setState({ show: true, method: "post" })
@@ -99,7 +99,7 @@ class Book extends React.Component {
   updateBook = event => {
     event.preventDefault()
 
-    this.props.updateBook(Book)
+    this.props.updateBook(book)
     setTimeout(() => {
       if (this.props.bookObject.book != null) {
         this.setState({ show: true, method: "put" })
@@ -144,7 +144,7 @@ class Book extends React.Component {
             id="bookFormId"
           >
             <Card.Body>
-              <Form.Row>
+             {/*  <Form.Row>
                 <Form.Group as={Col} controlId="formGridTitle">
                   <Form.Label>Title</Form.Label>
                   <Form.Control
@@ -171,8 +171,8 @@ class Book extends React.Component {
                     placeholder="Enter Book Author"
                   />
                 </Form.Group>
-              </Form.Row>
-              <Form.Row>
+              </Form.Row> */}
+       {/*        <Form.Row>
                 <Form.Group as={Col} controlId="formGridphoto">
                   <Form.Label>Cover Photo URL</Form.Label>
                   <InputGroup>
@@ -206,8 +206,8 @@ class Book extends React.Component {
                     placeholder="Enter Book ISBN Number"
                   />
                 </Form.Group>
-              </Form.Row>
-              <Form.Row>
+              </Form.Row> */}
+             {/*  <Form.Row>
                 <Form.Group as={Col} controlId="formGridPrice">
                   <Form.Label>Price</Form.Label>
                   <Form.Control
@@ -257,7 +257,7 @@ class Book extends React.Component {
                     ))}
                   </Form.Control>
                 </Form.Group>
-              </Form.Row>
+              </Form.Row> */}
             </Card.Body>
             <Card.Footer style={{ textAlign: "right" }}>
               <Button size="sm" variant="success" type="submit">

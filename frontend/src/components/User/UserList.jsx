@@ -67,13 +67,13 @@ class UserList extends React.Component {
     const firstIndex = lastIndex - usersPerPage
 
     const userData = this.props.userData
-    const users = userData.users
+  /*   const users = userData.users
     const currentUsers = users && users.slice(firstIndex, lastIndex)
-    const totalPages = users && users.length / usersPerPage
+    const totalPages = users && users.length / usersPerPage */
 
     return (
       <div>
-        {userData.error ? (
+        {userData/* .error */ ? (
           <Alert variant="danger">{userData.error}</Alert>
         ) : (
           <Card className={"border border-dark bg-dark text-white"}>
@@ -92,7 +92,7 @@ class UserList extends React.Component {
                   </tr>
                 </thead>
                 <tbody>
-                  {users.length === 0 ? (
+           {/*        {users.length === 0 ? (
                     <tr align="center">
                       <td colSpan="6">No Users Available</td>
                     </tr>
@@ -108,11 +108,11 @@ class UserList extends React.Component {
                         <td>{user.balance}</td>
                       </tr>
                     ))
-                  )}
+                  )} */}
                 </tbody>
               </Table>
             </Card.Body>
-            {users.length > 0 ? (
+            {faUsers.length > 0 ? (/* users.length */
               <Card.Footer>
                 <div style={{ float: "left" }}>
                   Showing Page {currentPage} of {totalPages}

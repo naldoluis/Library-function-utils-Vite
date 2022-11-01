@@ -53,7 +53,7 @@ const Register = props => {
               <FontAwesomeIcon icon={faUserPlus}/> Register
             </Card.Header>
             <Card.Body>
-              <Form.Row>
+              {/* <Form.Row>
                 <Form.Group as={Col}>
                   <InputGroup>
                     <InputGroup.Prepend>
@@ -72,8 +72,8 @@ const Register = props => {
                     />
                   </InputGroup>
                 </Form.Group>
-              </Form.Row>
-              <Form.Row>
+              </Form.Row> */}
+            {/*   <Form.Row>
                 <Form.Group as={Col}>
                   <InputGroup>
                     <InputGroup.Prepend>
@@ -93,8 +93,8 @@ const Register = props => {
                     />
                   </InputGroup>
                 </Form.Group>
-              </Form.Row>
-              <Form.Row>
+              </Form.Row> */}
+             {/*  <Form.Row>
                 <Form.Group as={Col}>
                   <InputGroup>
                     <InputGroup.Prepend>
@@ -114,8 +114,8 @@ const Register = props => {
                     />
                   </InputGroup>
                 </Form.Group>
-              </Form.Row>
-              <Form.Row>
+              </Form.Row> */}
+             {/*  <Form.Row>
                 <Form.Group as={Col}>
                   <InputGroup>
                     <InputGroup.Prepend>
@@ -134,7 +134,7 @@ const Register = props => {
                     />
                   </InputGroup>
                 </Form.Group>
-              </Form.Row>
+              </Form.Row> */}
             </Card.Body>
             <Card.Footer style={{ textAlign: "right" }}>
               <Button
