@@ -1,4 +1,4 @@
-import { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import { Card, Table, Image, ButtonGroup, Button, InputGroup, FormControl } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -10,7 +10,7 @@ import { deleteBook } from '../../services'
 import { BASE_URL } from '../../utils/requests'
 import '../../assets/css/Style.css'
 
-class BookList extends Component {
+class BookList extends React.Component {
   constructor(props) {
     super(props)
     this.state = {

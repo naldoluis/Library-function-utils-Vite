@@ -1,4 +1,4 @@
-import { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import { Card, Table, InputGroup, FormControl, Button, Alert } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -6,7 +6,7 @@ import { faUsers, faStepBackward, faFastBackward, faStepForward, faFastForward }
 import { fetchUsers } from '../../services'
 import '../../assets/css/Style.css'
 
-class UserList extends Component {
+class UserList extends React.Component {
   constructor(props) {
     super(props)
     this.state = {

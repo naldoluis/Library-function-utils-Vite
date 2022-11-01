@@ -1,4 +1,4 @@
-import { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import { Card, Form, Button, Col, InputGroup, Image } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -6,7 +6,7 @@ import { faSave, faPlusSquare, faUndo, faList, faEdit } from '@fortawesome/free-
 import { saveBook, fetchBook, updateBook, fetchLanguages, fetchGenres } from '../../services'
 import MyToast from '../MyToast'
 
-class Book extends Component {
+class Book extends React.Component {
   constructor(props) {
     super(props)
     this.state = this.initialState
