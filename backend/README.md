@@ -117,7 +117,7 @@
 	}
 
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-											   !J ★ BACKEND ★ !J
+											      !J ★ BACKEND ★ !J
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
@@ -564,7 +564,7 @@ public class BookController implements Resource<Book> {
 !J------------------------------------------------------------------------------------------------------------------------------J!
 
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-											   !J ★ FRONTEND ★ !J
+											      !J ★ FRONTEND ★ !J
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 # Fonts index.css
@@ -604,3 +604,35 @@ class NavigationBar extends Component {
   }
 }
 export default NavigationBar
+
+!J------------------------------------------------------------------------------------------------------------------------------J!
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+											  	    !J ★ CONFIG ★ !J
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+# js.config.json
+
+{"compilerOptions": {
+"baseUrl": "./src",
+"target": "ESNext",
+"useDefineForClassFields": true,
+"lib": ["DOM","DOM.Iterable","ESNext"],
+"skipLibCheck": true,
+"allowSyntheticDefaultImports": true,
+"forceConsistentCasingInFileNames": true,
+"module": "ESNext",
+"moduleResolution": "Node",
+"resolveJsonModule": true,
+"isolatedModules": true,
+"noEmit": true,
+"jsx": "react-jsx"},"include": ["src"],"references": [{"path": "./jsconfig.node.json"}]}
+
+# jsconfig.node.json
+
+{"compilerOptions": {
+"composite": true,
+"module": "ESNext",
+"moduleResolution": "Node",
+"allowSyntheticDefaultImports": true
+},"include": ["vite.config.js"]}

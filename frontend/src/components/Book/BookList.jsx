@@ -188,7 +188,7 @@ class BookList extends React.Component {
                 <div>  {/* <InputGroup.Append> Error in Tag -------------------------------Error------------------------------ */}
                   <Button
                     size="sm"
-                    variant="outline-success"
+                    variant="outline-warning"
                     type="button"
                     onClick={this.searchData}
                   >
@@ -196,7 +196,7 @@ class BookList extends React.Component {
                   </Button>
                   <Button
                     size="sm"
-                    variant="outline-warning"
+                    variant="outline-danger"
                     type="button"
                     onClick={this.cancelSearch}
                   >
