@@ -128,15 +128,15 @@ export const BASE_URL = import.meta.env.VITE_BACKEND_URL
 
 >// --> Quando em produção, não é necessário o " ?? 'http://localhost:8080/rest' "
 
-!J------------------------------------------------------------------------------------------------------------------------------J!]
+!J------------------------------------------------------------------------------------------------------------------------------J
 
 # import.sql
 								            EXEMPLO DE COMO EDITAR NO BANCO DE DADOS (POSTGRES ★)
 
-        update tb_book set title = 'new name of title' where id = 20						X = número do id
-          |			 |				|					  |							                            Y = set o tipo de atributo a editar
-          |			 |				|					  |							                            J = nome da tabela
-          J			 Y				N					  X							                            N = nome do título a editar
+                    update tb_book set title = 'new name of title' where id = 20						  X = número do id
+                      			 |			 	   |               |					          |							  Y = set o tipo de atributo a editar
+                             |			 	   |			         |                    |					      J = nome da tabela
+                             J			     Y				       N                    X			          N = nome do título a editar
 
 
 								               OPÇÕES DE ATRIBUTOS A EDITAR DO ARQUIVO BOOK.java			
