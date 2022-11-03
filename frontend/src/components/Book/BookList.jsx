@@ -53,11 +53,11 @@ class BookList extends React.Component {
           currentPage: data.number + 1
         })
       })
-/*       .catch(error => {
+      .catch(error => {
         console.log(error)
         localStorage.removeItem("jwtToken")
-        this.props.history.push("/") ----------------------------Error in push----------------------------
-     })*/
+        this.props.history.push("/")
+     })
   }
 
   deleteBook = bookId => {

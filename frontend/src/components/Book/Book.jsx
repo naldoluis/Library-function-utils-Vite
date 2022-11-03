@@ -13,7 +13,7 @@ class Book extends React.Component {
     this.state = {
       genres: [],
       languages: [],
-      show: true
+      show: false
     }
   }
 
@@ -186,7 +186,7 @@ class Book extends React.Component {
                       className={"bg-dark text-white"}
                       placeholder="Enter Book Cover Photo URL"
                     />
-                    <div>{/* <InputGroup.Append> */}
+                    <div class="input-group mb-2">{/* <InputGroup.Append> */}
                       {this.state.photo !== "" && (
                         <Image src={this.state.photo} roundedRight width="40" height="38"/>
                       )}
