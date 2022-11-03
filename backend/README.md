@@ -635,4 +635,4 @@ export default NavigationBar
 "module": "ESNext",
 "moduleResolution": "Node",
 "allowSyntheticDefaultImports": true
-},"include": ["vite.config.js"]}
+},"include": ["vite.config.ts"]}
