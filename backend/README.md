@@ -611,7 +611,7 @@ export default NavigationBar
 											  	    !J ★ CONFIG ★ !J
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-# js.config.json
+# ts.config.json
 
 {"compilerOptions": {
 "baseUrl": "./src",
@@ -626,9 +626,9 @@ export default NavigationBar
 "resolveJsonModule": true,
 "isolatedModules": true,
 "noEmit": true,
-"jsx": "react-jsx"},"include": ["src"],"references": [{"path": "./jsconfig.node.json"}]}
+"jsx": "react-jsx"},"include": ["src"],"references": [{"path": "./tsconfig.node.json"}]}
 
-# jsconfig.node.json
+# tsconfig.node.json
 
 {"compilerOptions": {
 "composite": true,

@@ -144,7 +144,7 @@ class Book extends React.Component {
             id="bookFormId"
           >
             <Card.Body>
-             {/*  <Form.Row>
+            <div>{/* <Form.Row> */}
                 <Form.Group as={Col} controlId="formGridTitle">
                   <Form.Label>Title</Form.Label>
                   <Form.Control
@@ -171,8 +171,8 @@ class Book extends React.Component {
                     placeholder="Enter Book Author"
                   />
                 </Form.Group>
-              </Form.Row> */}
-       {/*        <Form.Row>
+                </div>{/* </Form.Row> */}
+                <div>{/* <Form.Row> */}
                 <Form.Group as={Col} controlId="formGridphoto">
                   <Form.Label>Cover Photo URL</Form.Label>
                   <InputGroup>
@@ -186,11 +186,11 @@ class Book extends React.Component {
                       className={"bg-dark text-white"}
                       placeholder="Enter Book Cover Photo URL"
                     />
-                    <InputGroup.Append>
+                    <div>{/* <InputGroup.Append> */}
                       {this.state.photo !== "" && (
                         <Image src={this.state.photo} roundedRight width="40" height="38"/>
                       )}
-                    </InputGroup.Append>
+                    </div>{/* </InputGroup.Append> */}
                   </InputGroup>
                 </Form.Group>
                 <Form.Group as={Col} controlId="formGridISBN">
@@ -206,8 +206,8 @@ class Book extends React.Component {
                     placeholder="Enter Book ISBN Number"
                   />
                 </Form.Group>
-              </Form.Row> */}
-             {/*  <Form.Row>
+                </div>{/* </Form.Row> */}
+                <div>{/* <Form.Row> */}
                 <Form.Group as={Col} controlId="formGridPrice">
                   <Form.Label>Price</Form.Label>
                   <Form.Control
@@ -257,7 +257,7 @@ class Book extends React.Component {
                     ))}
                   </Form.Control>
                 </Form.Group>
-              </Form.Row> */}
+                </div>{/* </Form.Row> */}
             </Card.Body>
             <Card.Footer style={{ textAlign: "right" }}>
               <Button size="sm" variant="success" type="submit">

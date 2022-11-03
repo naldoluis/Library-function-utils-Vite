@@ -53,14 +53,14 @@ const Register = props => {
               <FontAwesomeIcon icon={faUserPlus}/> Register
             </Card.Header>
             <Card.Body>
-              {/* <Form.Row>
+            <div>{/* <Form.Row> */}
                 <Form.Group as={Col}>
                   <InputGroup>
-                    <InputGroup.Prepend>
+                  <div>{/* <InputGroup.Prepend> */}
                       <InputGroup.Text>
                         <FontAwesomeIcon icon={faUser}/>
                       </InputGroup.Text>
-                    </InputGroup.Prepend>
+                      </div>{/* </InputGroup.Prepend> */}
                     <FormControl
                       autoComplete="off"
                       type="text"
@@ -72,15 +72,15 @@ const Register = props => {
                     />
                   </InputGroup>
                 </Form.Group>
-              </Form.Row> */}
-            {/*   <Form.Row>
+                </div>{/* </Form.Row> */}
+                <div>{/* <Form.Row> */}
                 <Form.Group as={Col}>
                   <InputGroup>
-                    <InputGroup.Prepend>
+                  <div>{/* <InputGroup.Prepend> */}
                       <InputGroup.Text>
                         <FontAwesomeIcon icon={faEnvelope}/>
                       </InputGroup.Text>
-                    </InputGroup.Prepend>
+                      </div>{/* </InputGroup.Prepend> */}
                     <FormControl
                       required
                       autoComplete="off"
@@ -93,7 +93,7 @@ const Register = props => {
                     />
                   </InputGroup>
                 </Form.Group>
-              </Form.Row> */}
+                </div>{/* </Form.Row> */}
              {/*  <Form.Row>
                 <Form.Group as={Col}>
                   <InputGroup>
