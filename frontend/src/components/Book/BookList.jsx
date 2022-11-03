@@ -52,12 +52,12 @@ class BookList extends React.Component {
           totalElements: data.totalElements,
           currentPage: data.number + 1
         })
-      })
+      })/* 
       .catch(error => {
         console.log(error)
         localStorage.removeItem("jwtToken")
         this.props.history.push("/")
-     })
+     }) */
   }
 
   deleteBook = bookId => {
@@ -185,7 +185,7 @@ class BookList extends React.Component {
                   className={"info-border bg-dark text-white"}
                   onChange={this.searchChange}
                 />
-                <div>  {/* <InputGroup.Append> Error in Tag -------------------------------Error------------------------------ */}
+                <div>{/* <InputGroup.Append> Error in Tag -------------------------------Error------------------------------ */}
                   <Button
                     size="sm"
                     variant="outline-warning"
@@ -202,7 +202,7 @@ class BookList extends React.Component {
                   >
                     <FontAwesomeIcon icon={faTimes}/>
                   </Button>
-                </div>  {/* </InputGroup.Append> ------------------------------------------------------------------------------ */}
+                </div>{/* </InputGroup.Append> ------------------------------------------------------------------------------ */}
               </InputGroup>
             </div>
           </Card.Header>

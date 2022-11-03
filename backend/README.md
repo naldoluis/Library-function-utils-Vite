@@ -1,123 +1,123 @@
 # POST
 	    ==>  	http://localhost:8080/rest/user/authenticate
 
-		{
-		"name": "test@admin.com",
-		"authorities": [
-			"ROLE_ADMIN",
-			"ROLE_USER"
-		],
-		"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0QGFkbWluLmNvbSIsImF1dGgiOnsibmFtZSI6IkFETUlOIn0sImlhdCI6MTY2NjYzNTk3MywiZXhwIjoxNjY2NjM2MTUzfQ.q6D8TSHmYeZ9O2iAkAquRt9431wq5MUaa5AtLRPqw51puUrGGqxzl6KSVpX_L3JPKCVSI3SrKvUO5aCgmcyy0Q"
-		}																	|
-													Http Headers            |
-																			|
-								Authorization           				  value:
+        {
+        "name": "test@admin.com",
+        "authorities": [
+          "ROLE_ADMIN",
+          "ROLE_USER"
+        ],
+        "token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0QGFkbWluLmNvbSIsImF1dGgiOnsibmFtZSI6IkFETUlOIn0sImlhdCI6MTY2NjYzNTk3MywiZXhwIjoxNjY2NjM2MTUzfQ.q6D8TSHmYeZ9O2iAkAquRt9431wq5MUaa5AtLRPqw51puUrGGqxzl6KSVpX_L3JPKCVSI3SrKvUO5aCgmcyy0Q"
+        }																	                            |
+													                   Http Headers             |
+																			                                |
+								           Authorization           				         value:
 
->					     Using generated security password: 27b35cb3-51e6-46e5-b74e-42faa8e458d7
+>					         Using generated security password: 27b35cb3-51e6-46e5-b74e-42faa8e458d7
 
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 # Local
-		cd C:\Library-Vite\frontend
+        cd C:\Library-Vite\frontend
 
-		yarn install
-		yarn audit fix
-		yarn upgrade
-		yarn dev
+        yarn install
+        yarn audit fix
+        yarn upgrade
+        yarn dev
 
 # GitHub
 
-		==>		git commit -m "funcoes e recursos para projetos futuro"
+		    ==>		git commit -m "funcoes e recursos para projetos futuro"
 
 # Requests
 
-	{
-		"email":"test@user.com",
-		"password":"testuser"
-	}
-	or
-	{
-		"email":"test@admin.com",
-		"password":"testadmin"
-	}
+        {
+          "email":"test@user.com",
+          "password":"testuser"
+        }
+        or
+        {
+          "email":"test@admin.com",
+          "password":"testadmin"
+        }
 
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 # GET
-   http://localhost:8080/rest/books --> Busca Paginada  http://localhost:8080/rest/books?pageNumber=1&pageSize=5&sortBy=price&sortDir=asc
+    http://localhost:8080/rest/books --> Busca Paginada  http://localhost:8080/rest/books?pageNumber=1&pageSize=5&sortBy=price&sortDir=asc
 
-								    --> Busca Paginada in DTO http://localhost:8080/rest/books?size=7&page=5
+                                     --> Busca Paginada in DTO http://localhost:8080/rest/books?size=7&page=5
 
-								    --> Search Filter http://localhost:8080/rest/books/search/English?page=0&size=5
-																								 |
-																							  Science
+                                     --> Search Filter http://localhost:8080/rest/books/search/English?page=0&size=5
+                                                                                                  |
+                                                                                               Science
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
 
 # GET By ID
-		==> 	http://localhost:8080/rest/books/1
+  		    ==> 	http://localhost:8080/rest/books/1
 
 # POST
-		==> 	http://localhost:8080/rest/books
+	        ==> 	http://localhost:8080/rest/books
 
 # PUT
-		==> 	http://localhost:8080/rest/books
+        	==> 	http://localhost:8080/rest/books
 
 # DELETE
-		==> 	http://localhost:8080/rest/books/1
+		      ==> 	http://localhost:8080/rest/books/1
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
 
 # Requests
 
-	{
-	    "title": "Spring in Action",
-	    "author": "Craig Walls",
-	    "photo": "https://images-na.ssl-images-amazon.com/images/I/51gHy16h5TL.jpg",
-	    "isbn": 935119797,
-	    "price": 630,
-		"genre": "Fantasy",
-	    "language": "English"
-	}
-	{
-	    "title": "Java Persistence with Hibernate",
-	    "author": "Christian Bauer and Gavin King",
-	    "photo": "https://images.manning.com/720/960/resize/book/d/2ea186d-c683-4d54-95f9-cca25b6fe49e/bauer2.png",
-	    "isbn": 951199193,
-	    "price": 771,
-		"genre": "Biography",
-	    "language": "English"
-	}
-	{
-	    "title": "Grails in Action",
-	    "author": "Glen Smith and Peter Ledbrook",
-	    "photo": "https://images.manning.com/720/960/resize/book/6/3e9d5ed-4155-466d-ab46-538bb355948d/gsmith2.png",
-	    "isbn": 167290963,
-	    "price": 907,
-		"genre": "Technology",
-	    "language": "English"
-	}
-	{
-	    "title": "Spring Boot in Action",
-	    "author": "Craig Walls",
-	    "photo": "https://images.manning.com/720/960/resize/book/6/bb80688-f898-4df7-838a-253b1de123c4/Walls-SpringBoot-HI.png",
-	    "isbn": 117292540,
-	    "price": 149,
-		"genre": "Science",
-	    "language": "English"
-	}
-	{
-	    "title": "Head First Java: A Brain-Friendly Guide",
-	    "author": "Kathy Sierra",
-	    "photo": "https://covers.oreillystatic.com/images/9780596004651/lrg.jpg",
-	    "isbn": 873666024,
-	    "price": 498,
-		"genre": "Romance",
-	    "language": "English"
-	}
+      {
+          "title": "Spring in Action",
+          "author": "Craig Walls",
+          "photo": "https://images-na.ssl-images-amazon.com/images/I/51gHy16h5TL.jpg",
+          "isbn": 935119797,
+          "price": 630,
+        "genre": "Fantasy",
+          "language": "English"
+      }
+      {
+          "title": "Java Persistence with Hibernate",
+          "author": "Christian Bauer and Gavin King",
+          "photo": "https://images.manning.com/720/960/resize/book/d/2ea186d-c683-4d54-95f9-cca25b6fe49e/bauer2.png",
+          "isbn": 951199193,
+          "price": 771,
+        "genre": "Biography",
+          "language": "English"
+      }
+      {
+          "title": "Grails in Action",
+          "author": "Glen Smith and Peter Ledbrook",
+          "photo": "https://images.manning.com/720/960/resize/book/6/3e9d5ed-4155-466d-ab46-538bb355948d/gsmith2.png",
+          "isbn": 167290963,
+          "price": 907,
+        "genre": "Technology",
+          "language": "English"
+      }
+      {
+          "title": "Spring Boot in Action",
+          "author": "Craig Walls",
+          "photo": "https://images.manning.com/720/960/resize/book/6/bb80688-f898-4df7-838a-253b1de123c4/Walls-SpringBoot-HI.png",
+          "isbn": 117292540,
+          "price": 149,
+        "genre": "Science",
+          "language": "English"
+      }
+      {
+          "title": "Head First Java: A Brain-Friendly Guide",
+          "author": "Kathy Sierra",
+          "photo": "https://covers.oreillystatic.com/images/9780596004651/lrg.jpg",
+          "isbn": 873666024,
+          "price": 498,
+        "genre": "Romance",
+          "language": "English"
+      }
 
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-											      !J ★ BACKEND ★ !J
+											                          !J ★ BACKEND ★ !J
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
@@ -131,26 +131,25 @@ export const BASE_URL = import.meta.env.VITE_BACKEND_URL
 !J------------------------------------------------------------------------------------------------------------------------------J!
 
 # import.sql
-								 EXEMPLO DE COMO EDITAR NO BANCO DE DADOS (POSTGRES ★)
+								             EXEMPLO DE COMO EDITAR NO BANCO DE DADOS (POSTGRES ★)
 
-    update tb_book set title = 'new name of title' where id = 20						X = número do id
-			|			 |				|					  |							Y = set o tipo de atributo a editar
-			|			 |				|					  |							J = nome da tabela
-			J			 Y				N					  X							N = nome do título a editar
+        update tb_book set title = 'new name of title' where id = 20						X = número do id
+          |			 |				|					  |							                            Y = set o tipo de atributo a editar
+          |			 |				|					  |							                            J = nome da tabela
+          J			 Y				N					  X							                            N = nome do título a editar
 
 
-								   OPÇÕES DE ATRIBUTOS A EDITAR DO ARQUIVO BOOK.java			
+								               OPÇÕES DE ATRIBUTOS A EDITAR DO ARQUIVO BOOK.java			
 
-										private String title;       ==>	title
-										private String author;		==>	author
-										private String photo;       ==>	photo
-										private Long isbn;			==>	isbn
-										private Double price;		==>	price
-										private String language;	==> language
-										private String genre;		==>	genre
+                                      private String title;       ==>	title
+                                      private String author;		==>	author
+                                      private String photo;       ==>	photo
+                                      private Long isbn;			==>	isbn
+                                      private Double price;		==>	price
+                                      private String language;	==> language
+                                      private String genre;		==>	genre
 
 <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
-
 
 INSERT INTO tb_user(name, email, mobile, password) VALUES ('Maria', 'maria@gmail.com', '9787456540', '1234')
 INSERT INTO tb_user(name, email, mobile, password) VALUES ('Joao', 'joao@gmail.com', '9787456541', '1235')
@@ -171,43 +170,43 @@ INSERT INTO tb_user(name, email, mobile, password) VALUES ('Maria', 'maria@gmail
 INSERT INTO tb_user(name, email, mobile, password) VALUES ('Joao', 'joao@gmail.com', '9787456541', (SELECT ENCODE(DIGEST('1235', 'sha512'), 'hex')))
 
 INSERT INTO tb_user VALUES ('f051a0ab-5d4e-41e4-967d-2827d948d57a', '$2a$10$2KeflGXrfayDYOZlNzSrgeRTG/26lwjiuKAhsZxAk2lkPjLuZlNaG', 'maria')
-INSERT INTO tb_user VALUES ('05efdfb1-e1b9-4f09-8abc-968905db6b11', '$2a$10$2KeflGXrfayDYOZlNzSrgeRTG/26lwjiuKAhsZxAk2lkPjLuZlNaG', 'joao')																									|
+INSERT INTO tb_user VALUES ('05efdfb1-e1b9-4f09-8abc-968905db6b11', '$2a$10$2KeflGXrfayDYOZlNzSrgeRTG/26lwjiuKAhsZxAk2lkPjLuZlNaG', 'joao')																									                       |
                                     	UUID													PASSWORD ENCODE = senha123
 !J------------------------------------------------------------------------------------------------------------------------------J!
 
-										      https://www.uuidgenerator.net/
+										                     https://www.uuidgenerator.net/
 # UUID 30/30
 
->  3c00a8ba-4e5a-491e-8248-07d6f15dff97									  			c0f5385b-53af-4e41-be70-fdfe5d565b63
->  3a557f92-714f-4bab-bb72-52dd134d8fbd									  			f60b509c-c0ad-4ad6-ae8e-e53bb6641257
->  2919470f-723d-44f3-b464-55cea717a0d4									  			919fe1d5-1096-4bb4-8b28-66dfa7662cf2
->  f384497f-9f52-4a74-aa9b-ec408a34c55c									  			f2523aaa-c67d-4d24-9202-6f8299d82483
->  e7acfb0a-301c-4a9b-9e38-55f2521c6d0e									  			bb07835d-8511-43aa-8406-d0de8790fe9a
->  718dc1f1-3820-4c0e-af2b-3184275af00b									  			e64ba0d7-08af-403e-9c77-d451aa2439fa
->  27a72453-f4e9-4730-a181-4045645fae0e									  			a483a417-3bd0-440b-8b1f-ef6e72cf50e8
->  72e920c1-81b2-4f58-a394-41ed73547b7c									  			7f5e790b-9dd4-460f-8193-5b28871ed9a4
->  cc3b55fd-8dc0-43ac-80b2-60f007fc3bcc									  			b3b459be-d5f0-4ef8-b865-777fd8dff5f2
->  82beedcf-31ff-4ea4-8dd8-fda806d841fe									  			bf078f48-0d88-49d4-8ef6-a004432958f4
->  f4cf4a4e-f8d4-42ab-82da-8fdd43e6c6e0									  			a9042cce-e707-4a12-b2ef-3f0335b27d4f
->  829decd3-0619-42cf-a025-b56631a7315d									  			606ba0c7-81aa-4ffe-9560-ee6654c53a98
->  c0130cfa-e655-470b-8f17-37fb17de5943									  			7a494768-9201-491d-8a73-5591cccc9d31
->  b2a298c0-b272-481b-accc-16b322cbe13c									  			2cd754e2-419d-4518-b54e-b016160906b6
->  7c6e251b-2033-4edc-b9c9-93d4a1f363af									  			953be8ef-4b9a-40d1-8893-a202650f1da6
->  1dcb5337-3ce4-4522-8a6b-0824e8ef610a									  			27c1df25-3126-4014-87ef-7eb3cda18216
->  fced1d3b-31b0-4629-ac11-5466d7018ba3									  			6e7d7a6e-735a-4b16-a008-45821761af45
->  6dd38b93-84a2-4375-ba13-b6c47845dffa									  			65532a03-fe1d-4ab6-b615-0e43a63fea8e
->  d90ed2ea-64b4-412a-a724-1b2503689a5a									  			cb3294a9-1d68-4f40-bca0-a4f9a6f5a634
->  8ba73169-6155-4ea2-95d4-93fa09582e69									  			d1fd28ff-1a1b-4116-b1d9-df73a394cdcd
->  2ccdb31f-c2d9-4b89-b250-e35958220878									  			964e16a8-a9e2-403f-989f-9fc57cd94057
->  fe758107-6d24-41eb-bfcf-77452fc04f40									  			1b9c349e-d700-4cdc-a4fa-5757faf08457
->  d3bed3ec-cb52-4cf3-b177-1709c7454913									  			eaebd1c1-0cf0-4342-be3a-d57f0345f0cc	
->  2d036269-ead3-4e2a-87bb-fd84684d6a3c									  			f302da38-70b7-4c2d-8161-f3105fa6d8e6
->  a50ada16-0e65-4992-8428-bd0a5232ab35									  			adcaa3ec-c155-40d9-8b35-4b62b15e3b39
->  a5a9bf34-3c57-43d9-a678-8f1287d3f85f									  			525a3bc8-79ba-4998-ad4f-d2d07abd8a1a
->  5ae72db7-8e0a-44e2-8c5f-168996752f2a									  			2123491d-83f4-4b0c-94bd-527661f05ef6
->  17fa055e-b284-4971-9716-8d76e6a5748b									  			a6015850-7bfe-4cd3-a3e4-8c5d5a6666ea
->  89c0013c-c7e1-4f5d-9e9d-c8e13e57546e									  			0e7a8d96-5798-44c9-9301-2a7514766083
->  8f91a7a1-a717-4d9a-b32e-81a2e5813ad9									  			ebc82e44-c21a-4ada-8ea1-c0545deef6bb
+>  3c00a8ba-4e5a-491e-8248-07d6f15dff97									  			        c0f5385b-53af-4e41-be70-fdfe5d565b63
+>  3a557f92-714f-4bab-bb72-52dd134d8fbd									  			        f60b509c-c0ad-4ad6-ae8e-e53bb6641257
+>  2919470f-723d-44f3-b464-55cea717a0d4									  			        919fe1d5-1096-4bb4-8b28-66dfa7662cf2
+>  f384497f-9f52-4a74-aa9b-ec408a34c55c									  			        f2523aaa-c67d-4d24-9202-6f8299d82483
+>  e7acfb0a-301c-4a9b-9e38-55f2521c6d0e									  			        bb07835d-8511-43aa-8406-d0de8790fe9a
+>  718dc1f1-3820-4c0e-af2b-3184275af00b									  			        e64ba0d7-08af-403e-9c77-d451aa2439fa
+>  27a72453-f4e9-4730-a181-4045645fae0e									  			        a483a417-3bd0-440b-8b1f-ef6e72cf50e8
+>  72e920c1-81b2-4f58-a394-41ed73547b7c									  			        7f5e790b-9dd4-460f-8193-5b28871ed9a4
+>  cc3b55fd-8dc0-43ac-80b2-60f007fc3bcc									  			        b3b459be-d5f0-4ef8-b865-777fd8dff5f2
+>  82beedcf-31ff-4ea4-8dd8-fda806d841fe									  			        bf078f48-0d88-49d4-8ef6-a004432958f4
+>  f4cf4a4e-f8d4-42ab-82da-8fdd43e6c6e0									  			        a9042cce-e707-4a12-b2ef-3f0335b27d4f
+>  829decd3-0619-42cf-a025-b56631a7315d									  			        606ba0c7-81aa-4ffe-9560-ee6654c53a98
+>  c0130cfa-e655-470b-8f17-37fb17de5943									  			        7a494768-9201-491d-8a73-5591cccc9d31
+>  b2a298c0-b272-481b-accc-16b322cbe13c									  			        2cd754e2-419d-4518-b54e-b016160906b6
+>  7c6e251b-2033-4edc-b9c9-93d4a1f363af									  			        953be8ef-4b9a-40d1-8893-a202650f1da6
+>  1dcb5337-3ce4-4522-8a6b-0824e8ef610a									  			        27c1df25-3126-4014-87ef-7eb3cda18216
+>  fced1d3b-31b0-4629-ac11-5466d7018ba3									  			        6e7d7a6e-735a-4b16-a008-45821761af45
+>  6dd38b93-84a2-4375-ba13-b6c47845dffa									  			        65532a03-fe1d-4ab6-b615-0e43a63fea8e
+>  d90ed2ea-64b4-412a-a724-1b2503689a5a									  			        cb3294a9-1d68-4f40-bca0-a4f9a6f5a634
+>  8ba73169-6155-4ea2-95d4-93fa09582e69									  			        d1fd28ff-1a1b-4116-b1d9-df73a394cdcd
+>  2ccdb31f-c2d9-4b89-b250-e35958220878									  			        964e16a8-a9e2-403f-989f-9fc57cd94057
+>  fe758107-6d24-41eb-bfcf-77452fc04f40									  			        1b9c349e-d700-4cdc-a4fa-5757faf08457
+>  d3bed3ec-cb52-4cf3-b177-1709c7454913									  			        eaebd1c1-0cf0-4342-be3a-d57f0345f0cc	
+>  2d036269-ead3-4e2a-87bb-fd84684d6a3c									  			        f302da38-70b7-4c2d-8161-f3105fa6d8e6
+>  a50ada16-0e65-4992-8428-bd0a5232ab35									  			        adcaa3ec-c155-40d9-8b35-4b62b15e3b39
+>  a5a9bf34-3c57-43d9-a678-8f1287d3f85f									  			        525a3bc8-79ba-4998-ad4f-d2d07abd8a1a
+>  5ae72db7-8e0a-44e2-8c5f-168996752f2a									  			        2123491d-83f4-4b0c-94bd-527661f05ef6
+>  17fa055e-b284-4971-9716-8d76e6a5748b									  			        a6015850-7bfe-4cd3-a3e4-8c5d5a6666ea
+>  89c0013c-c7e1-4f5d-9e9d-c8e13e57546e									  			        0e7a8d96-5798-44c9-9301-2a7514766083
+>  8f91a7a1-a717-4d9a-b32e-81a2e5813ad9									  			        ebc82e44-c21a-4ada-8ea1-c0545deef6bb
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
 
@@ -564,51 +563,671 @@ public class BookController implements Resource<Book> {
 !J------------------------------------------------------------------------------------------------------------------------------J!
 
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-											      !J ★ FRONTEND ★ !J
+											                          !J ★ FRONTEND ★ !J
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 # Fonts index.css
 
-				 @import "https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css"
-				 @import "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+                  @import "https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css"
+                  @import "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
 
 # NavigationBar
 
 import { useDispatch, useSelector } from 'react-redux'
 import { Navbar, Nav } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserPlus, faSignInAlt, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
-import { logoutUser } from '../services/index'
+import React from 'react'
+import { logoutUser } from '../services'
 import Book from '../assets/Book_icon_1.png'
-import { Component } from 'react'
 
-class NavigationBar extends Component {
+const NavigationBar = props => {
+  const auth = useSelector(state => state.auth)
+  const dispatch = useDispatch()
+
+  const logout = () => {
+    dispatch(logoutUser())
+  }
+
+  const guestLinks = (
+    <>
+      <div className="mr-auto"></div>
+      <Nav className="navbar-right">
+        <Link to={"register"} className="nav-link"><FontAwesomeIcon icon={faUserPlus}/> Register</Link>
+        <Link to={"login"} className="nav-link"><FontAwesomeIcon icon={faSignInAlt}/> Login</Link>
+      </Nav>
+    </>
+  )
+  
+  const userLinks = (
+    <>
+      <Nav className="mr-auto">
+        <Link to={"add"} className="nav-link">Add Book</Link>
+        <Link to={"list"} className="nav-link">Book List</Link>
+        <Link to={"user"} className="nav-link">User List</Link>
+      </Nav>
+      <Nav className="navbar-right">
+        <Link to={"logout"} className="nav-link" onClick={logout}><FontAwesomeIcon icon={faSignOutAlt}/> Logout</Link>
+      </Nav>
+    </>
+  )
+
+  return (
+    <Navbar bg="dark" variant="dark">
+       <Link to={props.auth.isLoggedIn ? "home" : ""} className="navbar-brand">
+      <Link to={auth.isLoggedIn ? "home" : ""} className="navbar-brand"></Link>
+        <img src={Book} width="25" height="25"/>{" "}Book Store</Link>
+        {props.auth.isLoggedIn ? userLinks : guestLinks}
+      {auth.isLoggedIn ? userLinks : guestLinks}
+    </Navbar>
+  )
+}
+
+const mapStateToProps = state => {
+  return {
+    auth: state.auth
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    logoutUser: () => dispatch(logoutUser())
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(NavigationBar)
+
+!J------------------------------------------------------------------------------------------------------------------------------J!
+
+# userList
+
+import React from 'react'
+import { connect } from 'react-redux'
+import { Card, Table, InputGroup, FormControl, Button, Alert } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUsers, faStepBackward, faFastBackward, faStepForward, faFastForward } from '@fortawesome/free-solid-svg-icons'
+import { fetchUsers } from '../../services'
+import '../../assets/css/Style.css'
+
+class UserList extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      users: [],
+      currentPage: 1,
+      usersPerPage: 5
+    }
+  }
+
+  componentDidMount() {
+    this.findAllRandomUsers()
+  }
+
+  findAllRandomUsers() {
+        fetch("https://randomapi.com/api/6de6abfedb24f889e0b5f675edc50deb?fmt=raw&sole")
+          .then(response => response.json()).then(data => {
+              this.setState({ users: data })
+       })
+    }
+
+  changePage = event => {
+    this.setState({
+      [event.target.name]: parseInt(event.target.value)
+    })
+  }
+
+  firstPage = () => {
+    if (this.state.currentPage > 1) {
+      this.setState({
+        currentPage: 1
+      })
+    }
+  }
+
+  prevPage = () => {
+    if (this.state.currentPage > 1) {
+      this.setState({
+        currentPage: this.state.currentPage - 1
+      })
+    }
+  }
+
+  lastPage = () => {
+    let usersLength = this.props.userData.users.length
+    if (
+      this.state.currentPage < Math.ceil(usersLength / this.state.usersPerPage)
+    ) {
+      this.setState({
+        currentPage: Math.ceil(usersLength / this.state.usersPerPage)
+      })
+    }
+  }
+
+  nextPage = () => {
+    if (this.state.currentPage < Math.ceil(this.props.userData.users.length / this.state.usersPerPage)) {
+      this.setState({
+        currentPage: this.state.currentPage + 1
+      })
+    }
+  }
+
   render() {
-    return(
-      <Navbar bg="dark" variant="dark">
-      <Link to={""} className="navbar-brand">
-        <img src={Book} width="25" height="25"/>{" "}
-      </Link>
-        <Nav className="mr-auto">
-          <Link to={"add"} className="nav-link">Add Book</Link>
-          <Link to={"list"} className="nav-link">Book List</Link>
-          <Link to={"users"} className="nav-link">User List</Link>
-        </Nav>
-        <Nav className="mr-right">
-          <Link to={"register"} className="nav-link"><FontAwesomeIcon icon={faUserPlus}/> Register</Link>
-          <Link to={"login"} className="nav-link" onClick={logoutUser}><FontAwesomeIcon icon={faSignInAlt}/> Login</Link>
-       </Nav>
-      </Navbar>
+    const { currentPage, usersPerPage } = this.state
+    const lastIndex = currentPage * usersPerPage
+    const firstIndex = lastIndex - usersPerPage
+
+    const userData = this.props.userData
+  /*   const users = userData.users
+    const currentUsers = users && users.slice(firstIndex, lastIndex)
+    const totalPages = users && users.length / usersPerPage */
+
+    return (
+      <div>
+        {userData/* .error */ ? (
+          <Alert variant="danger">{userData.error}</Alert>
+        ) : (
+          <Card className={"border border-dark bg-dark text-white"}>
+            <Card.Header>
+              <FontAwesomeIcon icon={faUsers}/> User List
+            </Card.Header>
+            <Card.Body>
+              <Table bordered hover striped variant="dark">
+                <thead>
+                  <tr>
+                    <td>Name</td>
+                    <td>Email</td>
+                    <td>Address</td>
+                    <td>Created</td>
+                    <td>Balance</td>
+                  </tr>
+                </thead>
+                <tbody>
+           {/*        {users.length === 0 ? (
+                    <tr align="center">
+                      <td colSpan="6">No Users Available</td>
+                    </tr>
+                  ) : (
+                    currentUsers.map((user, index) => (
+                      <tr key={index}>
+                        <td>
+                          {user.first} {user.last}
+                        </td>
+                        <td>{user.email}</td>
+                        <td>{user.address}</td>
+                        <td>{user.created}</td>
+                        <td>{user.balance}</td>
+                      </tr>
+                    ))
+                  )} */}
+                </tbody>
+              </Table>
+            </Card.Body>
+            {faUsers.length > 0 ? (/* users.length */
+              <Card.Footer>
+                <div style={{ float: "left" }}>
+                  Showing Page {currentPage} of {totalPages}
+                </div>
+                <div style={{ float: "right" }}>
+                  <InputGroup size="sm">
+                    <InputGroup.Prepend>
+                      <Button
+                        type="button"
+                        variant="outline-info"
+                        disabled={currentPage === 1 ? true : false}
+                        onClick={this.firstPage}
+                      >
+                        <FontAwesomeIcon icon={faFastBackward}/> First
+                      </Button>
+                      <Button
+                        type="button"
+                        variant="outline-info"
+                        disabled={currentPage === 1 ? true : false}
+                        onClick={this.prevPage}
+                      >
+                        <FontAwesomeIcon icon={faStepBackward}/> Prev
+                      </Button>
+                    </InputGroup.Prepend>
+                    <FormControl
+                      className={"page-num bg-dark"}
+                      name="currentPage"
+                      value={currentPage}
+                      onChange={this.changePage}
+                    />
+                    <InputGroup.Append>
+                      <Button
+                        type="button"
+                        variant="outline-info"
+                        disabled={currentPage === totalPages ? true : false}
+                        onClick={this.nextPage}
+                      >
+                        <FontAwesomeIcon icon={faStepForward}/> Next
+                      </Button>
+                      <Button
+                        type="button"
+                        variant="outline-info"
+                        disabled={currentPage === totalPages ? true : false}
+                        onClick={this.lastPage}
+                      >
+                        <FontAwesomeIcon icon={faFastForward}/> Last
+                      </Button>
+                    </InputGroup.Append>
+                  </InputGroup>
+                </div>
+              </Card.Footer>
+            ) : null}
+          </Card>
+        )}
+      </div>
     )
   }
 }
-export default NavigationBar
+
+const mapStateToProps = state => {
+  return {
+    userData: state.user
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchUsers: () => dispatch(fetchUsers())
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(UserList)
+
+!J------------------------------------------------------------------------------------------------------------------------------J!
+
+# userActions
+
+import axios from 'axios'
+import * as UT from './userTypes'
+import { BASE_URL } from '../../utils/requests'
+
+export const fetchUsers = () => {
+  return dispatch => {
+    dispatch(userRequest())
+    axios("https://randomapi.com/api/6de6abfedb24f889e0b5f675edc50deb?fmt=raw&sole")
+      .then(response => {
+        dispatch(userSuccess(response.data))
+      })
+      .catch(error => {
+        dispatch(userFailure(error.message))
+     })
+  }}
+
+  export const registerUser = userObject => {
+    return dispatch => {
+      dispatch(userRequest())
+      axios.post(`${BASE_URL}/user/register`, userObject)
+        .then(response => {
+          dispatch({
+            type: UT.USER_SAVED_SUCCESS,
+            payload: response.data.message
+          })
+        })
+        .catch(error => {
+          dispatch(userFailure(error.message))
+       })
+    }}
+
+!J------------------------------------------------------------------------------------------------------------------------------J!
+
+# Register
+
+import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { Row, Col, Card, Form, InputGroup, FormControl, Button } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPhone, faEnvelope, faLock, faUndo, faUserPlus, faUser } from '@fortawesome/free-solid-svg-icons'
+import { registerUser } from '../../services'
+import MyToast from '../MyToast'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+
+class Register extends Component {
+  constructor(props) {
+    super(props)
+    this.state = this.initialState
+    this.state.show = false
+    this.state.message = ""
+  }
+
+  initialState = {
+      name: "",
+      email: "",
+      password: "",
+      mobile: ""
+    }
+
+  userChange = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+  })
+
+  const dispatch = useDispatch()
+
+  const saveUser = () => {
+    dispatch(registerUser(user))
+      .then(response => {
+        setShow(true)
+        setMessage(response.message)
+        resetRegisterForm()
+        setTimeout(() => {
+          this.setState({ show: false })
+          props.history.push("/login")
+        }, 2000)
+      })
+      .catch(error => {
+        console.log(error)
+    })
+  }
+
+  registerUser = () => {
+    let userObject = {
+      name: this.state.name,
+      email: this.state.email,
+      password: this.state.password,
+      mobile: this.state.contact
+    }
+    this.props.registerUser(userObject)
+    this.resetRegisterForm()
+    setTimeout(() => {
+      if (this.props.user.message != null) {
+        this.setState({ show: true, message: this.props.user.message })
+
+  resetRegisterForm = () => {
+      this.setState(() => this.initialState)
+  }
+
+  render() {
+    const { name, email, password, contact } = this.state
+
+  return (
+    <div>
+      <div style={{ display: this.state.show ? "block" : "none" }}>
+      <MyToast
+            show={this.state.show}
+            message={this.state.message}
+            type={"success"}
+          />
+      </div>
+      <Row className="justify-content-md-center">
+        <Col xs={5}>
+          <Card className={"border border-dark bg-dark text-white"}>
+            <Card.Header>
+              <FontAwesomeIcon icon={faUserPlus}/> Register
+            </Card.Header>
+            <Card.Body>
+            <div>{/* <Form.Row> */}
+                <Form.Group as={Col}>
+                  <InputGroup>
+                  <div>{/* <InputGroup.Prepend> */}
+                      <InputGroup.Text>
+                        <FontAwesomeIcon icon={faUser}/>
+                      </InputGroup.Text>
+                      </div>{/* </InputGroup.Prepend> */}
+                    <FormControl
+                      autoComplete="off"
+                      type="text"
+                      name="name"
+                      value={name}
+                      onChange={this.userChange}
+                      className={"bg-dark text-white"}
+                      placeholder="Enter Name"
+                    />
+                  </InputGroup>
+                </Form.Group>
+                </div>{/* </Form.Row> */}
+                <div>{/* <Form.Row> */}
+                <Form.Group as={Col}>
+                  <InputGroup>
+                  <div>{/* <InputGroup.Prepend> */}
+                      <InputGroup.Text>
+                        <FontAwesomeIcon icon={faEnvelope}/>
+                      </InputGroup.Text>
+                      </div>{/* </InputGroup.Prepend> */}
+                    <FormControl
+                      required
+                      autoComplete="off"
+                      type="text"
+                      name="email"
+                      value={email}
+                      onChange={this.userChange}
+                      className={"bg-dark text-white"}
+                      placeholder="Enter Email Address"
+                    />
+                  </InputGroup>
+                </Form.Group>
+                </div>{/* </Form.Row> */}
+              <div>{/* <Form.Row> */}
+                <Form.Group as={Col}>
+                  <InputGroup>
+                  <div>{/* <InputGroup.Prepend> */}
+                      <InputGroup.Text>
+                        <FontAwesomeIcon icon={faLock}/>
+                      </InputGroup.Text>
+                      </div>{/* </InputGroup.Prepend> */}
+                    <FormControl
+                      required
+                      autoComplete="off"
+                      type="password"
+                      name="password"
+                      value={password}
+                      onChange={this.userChange}
+                      className={"bg-dark text-white"}
+                      placeholder="Enter Password"
+                    />
+                  </InputGroup>
+                </Form.Group>
+              </div>{/* </Form.Row> */}
+              <div>{/* <Form.Row> */}
+                <Form.Group as={Col}>
+                  <InputGroup>
+                  <div>{/* <InputGroup.Prepend> */}
+                      <InputGroup.Text>
+                        <FontAwesomeIcon icon={faPhone}/>
+                      </InputGroup.Text>
+                      </div>{/* </InputGroup.Prepend> */}
+                    <FormControl
+                      autoComplete="off"
+                      type="text"
+                      name="mobile"
+                      value={mobile}
+                      onChange={this.userChange}
+                      className={"bg-dark text-white"}
+                      placeholder="Enter Mobile Number"
+                    />
+                  </InputGroup>
+                </Form.Group>
+                </div>{/* </Form.Row> */}
+            </Card.Body>
+            <Card.Footer style={{ textAlign: "right" }}>
+              <Button
+                size="sm"
+                type="button"
+                variant="success"
+                onClick={this.registerUser}
+                  disabled={
+                    this.state.email.length === 0 ||
+                    this.state.password.length === 0
+                  }
+                >
+                <FontAwesomeIcon icon={faUserPlus}/> Register
+              </Button>{" "}
+              <Button
+                size="sm"
+                type="button"
+                variant="info"
+                onClick={this.resetRegisterForm}
+              >
+                <FontAwesomeIcon icon={faUndo}/> Reset
+              </Button>
+            </Card.Footer>
+          </Card>
+        </Col>
+      </Row>
+    </div>
+  )
+}
+
+const mapStateToProps = state => {
+  return {
+    user: state.user
+  }
+}
+const mapDispatchToProps = dispatch => {}
+export default connect(mapStateToProps, mapDispatchToProps)(Register)
+
+!J------------------------------------------------------------------------------------------------------------------------------J!
+
+# login
+
+import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { Row, Col, Card, Form, InputGroup, FormControl, Button, Alert } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSignInAlt, faEnvelope, faLock, faUndo } from '@fortawesome/free-solid-svg-icons'
+import { authenticateUser } from '../../services'
+import React, { Component } from 'react'
+import {connect} from 'react-redux'
+
+class Login extends Component {
+  constructor(props) {
+      super(props)
+      this.state = this.initialState
+  }
+
+  initialState = {email:'', password:'', error:''}
+
+  credentialChange = event => {
+    this.setState({
+        [event.target.name] : event.target.value
+    })
+}
+
+resetLoginForm = () => {
+  this.setState(() => this.initialState)
+}
+
+render() {
+  const {email, password, error} = this.state;
+
+  const validateUser = () => {
+    dispatch(authenticateUser(user.email, user.password))
+      .then(response => {
+        console.log(response.data)
+        return props.history.push("/home")
+      })
+      .catch(error => {
+        console.log(error.message)
+        setShow(true)
+        resetLoginForm()
+        setError("Invalid email and password")
+     })
+  }
+
+  const resetLoginForm = () => {
+    setUser(initialState)
+  }
+
+  return (
+    <Row className="justify-content-md-center">
+      <Col xs={5}>
+        {show && props.message && (
+          <Alert variant="success" onClose={() => setShow(false)} dismissible>
+            {props.message}
+          </Alert>
+        )}
+        {show && error && (
+          <Alert variant="danger" onClose={() => setShow(false)} dismissible>
+            {error}
+          </Alert>
+        )}
+        <Card className={"border border-dark bg-dark text-white"}>
+          <Card.Header>
+            <FontAwesomeIcon icon={faSignInAlt}/> Login
+          </Card.Header>
+          <Card.Body>
+          <div>{/* <Form.Row> */}
+              <Form.Group as={Col}>
+                <InputGroup>
+                <div>{/* <InputGroup.Prepend> */}
+                    <InputGroup.Text>
+                      <FontAwesomeIcon icon={faEnvelope}/>
+                    </InputGroup.Text>
+                    </div>{/* </InputGroup.Prepend> */}
+                  <FormControl
+                    required
+                    autoComplete="off"
+                    type="text"
+                    name="email"
+                    value={user.email}
+                    onChange={credentialChange}
+                    className={"bg-dark text-white"}
+                    placeholder="Enter Email Address"
+                  />
+                </InputGroup>
+              </Form.Group>
+              </div>{/* </Form.Row> */}
+              <div>{/* <Form.Row> */}
+              <Form.Group as={Col}>
+                <InputGroup>
+                <div>{/* <InputGroup.Prepend> */}
+                    <InputGroup.Text>
+                      <FontAwesomeIcon icon={faLock}/>
+                    </InputGroup.Text>
+                    </div>{/* </InputGroup.Prepend> */}
+                  <FormControl
+                    required
+                    autoComplete="off"
+                    type="password"
+                    name="password"
+                    value={user.password}
+                    onChange={credentialChange}
+                    className={"bg-dark text-white"}
+                    placeholder="Enter Password"
+                  />
+                </InputGroup>
+              </Form.Group>
+              </div>{/* </Form.Row> */}
+          </Card.Body>
+          <Card.Footer style={{ textAlign: "right" }}>
+            <Button
+              size="sm"
+              type="button"
+              variant="success"
+              onClick={validateUser}
+              disabled={user.email.length === 0 || user.password.length === 0}
+            >
+              <FontAwesomeIcon icon={faSignInAlt}/> Login
+            </Button>{" "}
+            <Button
+              size="sm"
+              type="button"
+              variant="info"
+              onClick={resetLoginForm}
+              disabled={user.email.length === 0 && user.password.length === 0}
+            >
+              <FontAwesomeIcon icon={faUndo}/> Reset
+            </Button>
+          </Card.Footer>
+        </Card>
+      </Col>
+    </Row>
+  )
+}
+const mapDispatchToProps = dispatch => {
+  return {
+      authenticateUser: (email, password) => dispatch(authenticateUser(email, password))
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Login)
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
 
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-											  	    !J ★ CONFIG ★ !J
+											  	                      !J ★ CONFIG ★ !J
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 # ts.config.json
