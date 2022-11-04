@@ -92,7 +92,7 @@ class UserList extends React.Component {
                   </tr>
                 </thead>
                 <tbody>
-           {/*        {users.length === 0 ? (
+                  {/* {users.length === 0 ? (
                     <tr align="center">
                       <td colSpan="6">No Users Available</td>
                     </tr>
@@ -119,7 +119,7 @@ class UserList extends React.Component {
                 </div>
                 <div style={{ float: "right" }}>
                   <InputGroup size="sm">
-                  <div>{/* <InputGroup.Prepend> */}
+                  <div>
                       <Button
                         type="button"
                         variant="outline-info"
@@ -136,14 +136,14 @@ class UserList extends React.Component {
                       >
                         <FontAwesomeIcon icon={faStepBackward}/> Prev
                       </Button>
-                      </div>{/* </InputGroup.Prepend> */}
+                  </div>
                     <FormControl
                       className={"page-num bg-dark"}
                       name="currentPage"
                       value={currentPage}
                       onChange={this.changePage}
                     />
-                    <div>{/* <InputGroup.Append> */}
+                    <div>
                       <Button
                         type="button"
                         variant="outline-info"
@@ -160,7 +160,7 @@ class UserList extends React.Component {
                       >
                         <FontAwesomeIcon icon={faFastForward}/> Last
                       </Button>
-                      </div>{/* </InputGroup.Append> */}
+                    </div>
                   </InputGroup>
                 </div>
               </Card.Footer>

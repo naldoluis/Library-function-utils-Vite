@@ -13,6 +13,8 @@
 .input-password,.input-email,.input-name,.input-phone {margin: 9px 9px;background: #e8f0fe}
 .lock,.envelope,.name,.phone {margin-top: 12px;width: 40px}
 
+.title-home {font-size: 13.7px;font-weight: 400;font-family: 'Segoe UI', sans-serif;padding-top: 5px}
+
 ::-webkit-scrollbar {width: 8px}
 ::-webkit-scrollbar-track {background: #606060}
 ::-webkit-scrollbar-thumb {background: #bebebe}
