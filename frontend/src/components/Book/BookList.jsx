@@ -182,7 +182,7 @@ class BookList extends React.Component {
                   placeholder="Search"
                   name="search"
                   value={search}
-                  className={"info-border bg-dark text-white"}
+                  className={"dark-border bg-dark text-white"}
                   onChange={this.searchChange}
                 />
                 <div>{/* <InputGroup.Append> Error in Tag -------------------------------Error------------------------------ */}
@@ -274,7 +274,7 @@ class BookList extends React.Component {
               </div>
               <div style={{ float: "right" }}>
                 <InputGroup size="sm">
-                  <InputGroup.Prepend>
+                  <div>{/* <InputGroup.Prepend> */}
                     <Button
                       type="button"
                       variant="outline-info"
@@ -291,14 +291,14 @@ class BookList extends React.Component {
                     >
                       <FontAwesomeIcon icon={faStepBackward}/> Prev
                     </Button>
-                  </InputGroup.Prepend>
+                    </div>{/* </InputGroup.Prepend> */}
                   <FormControl
                     className={"page-num bg-dark"}
                     name="currentPage"
                     value={currentPage}
                     onChange={this.changePage}
                   />
-                  <InputGroup.Append>
+                  <div>{/* <InputGroup.Append> */}
                     <Button
                       type="button"
                       variant="outline-info"
@@ -315,7 +315,7 @@ class BookList extends React.Component {
                     >
                       <FontAwesomeIcon icon={faFastForward}/> Last
                     </Button>
-                  </InputGroup.Append>
+                    </div>{/* </InputGroup.Append> */}
                 </InputGroup>
               </div>
             </Card.Footer>

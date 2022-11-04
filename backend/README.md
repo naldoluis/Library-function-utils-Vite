@@ -131,7 +131,7 @@ export const BASE_URL = import.meta.env.VITE_BACKEND_URL
 !J------------------------------------------------------------------------------------------------------------------------------J
 
 # import.sql
-								            EXEMPLO DE COMO EDITAR NO BANCO DE DADOS (POSTGRES ★)
+								             EXEMPLO DE COMO EDITAR NO BANCO DE DADOS (POSTGRES ★)
 
                     update tb_book set title = 'new name of title' where id = 20						  X = número do id
                       			 |			 	   |               |					          |							  Y = set o tipo de atributo a editar
@@ -139,7 +139,7 @@ export const BASE_URL = import.meta.env.VITE_BACKEND_URL
                              J			     Y				       N                    X			          N = nome do título a editar
 
 
-								               OPÇÕES DE ATRIBUTOS A EDITAR DO ARQUIVO BOOK.java			
+								                OPÇÕES DE ATRIBUTOS A EDITAR DO ARQUIVO BOOK.java			
 
                                       private String title;       ==>	title
                                       private String author;		  ==>	author
