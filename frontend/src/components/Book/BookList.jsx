@@ -17,7 +17,7 @@ class BookList extends React.Component {
       books: [],
       search: "",
       currentPage: 1,
-      booksPerPage: 5,
+      booksPerPage: 6,
       sortDir: "asc"
     }
   }
@@ -251,7 +251,7 @@ class BookList extends React.Component {
                       <td>{book.genre}</td>
                       <td>
                         <ButtonGroup>
-                          <Link to={"edit/" + book.id} className="btn btn-sm btn-outline-success">
+                          <Link to={"edit/" + book.id} className="btn btn-sm btn-outline-primary">
                             <FontAwesomeIcon icon={faEdit}/>
                           </Link>{" "}
                           <Button

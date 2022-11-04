@@ -3,17 +3,16 @@
 .arrow {width: 0;height: 0;margin-top: 5px;border-left: 5px solid transparent;border-right: 5px solid transparent;display: inline-block}
 .arrow-up {border-bottom: 10px solid white}
 .arrow-down {border-top: 10px solid white}
+.title-home {font-size: 13.7px;font-weight: 400;font-family: 'Segoe UI', sans-serif;padding-top: 5px}
 
 .find {background: #f5ba0c;color: #393939;margin-left: 3px}
-.clean-find {background: #c02f2f;color: white;margin-left: 3px}
+.clean-find {background: #c02f2f;color: white;margin-left: 4px}
 
 .first,.prev {margin: -3.5px 5px 0 0}
 .next,.last {margin: -3.5px 0 0 5px}
 
 .input-password,.input-email,.input-name,.input-phone {margin: 9px 9px;background: #e8f0fe}
 .lock,.envelope,.name,.phone {margin-top: 12px;width: 40px}
-
-.title-home {font-size: 13.7px;font-weight: 400;font-family: 'Segoe UI', sans-serif;padding-top: 5px}
 
 ::-webkit-scrollbar {width: 8px}
 ::-webkit-scrollbar-track {background: #606060}
