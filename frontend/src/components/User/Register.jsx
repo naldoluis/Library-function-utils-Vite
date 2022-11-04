@@ -53,34 +53,34 @@ const Register = props => {
               <FontAwesomeIcon icon={faUserPlus}/> Register
             </Card.Header>
             <Card.Body>
-            <div>{/* <Form.Row> */}
+            <div>
                 <Form.Group as={Col}>
                   <InputGroup>
-                  <div>{/* <InputGroup.Prepend> */}
-                      <InputGroup.Text>
+                  <div>
+                      <InputGroup.Text className="name">
                         <FontAwesomeIcon icon={faUser}/>
                       </InputGroup.Text>
-                      </div>{/* </InputGroup.Prepend> */}
+                  </div>
                     <FormControl
                       autoComplete="off"
                       type="text"
                       name="name"
                       value={user.name}
                       onChange={userChange}
-                      className={"bg-dark text-white"}
+                      className="input-name"
                       placeholder="Enter Name"
                     />
                   </InputGroup>
                 </Form.Group>
-                </div>{/* </Form.Row> */}
-                <div>{/* <Form.Row> */}
+                </div>
+                <div>
                 <Form.Group as={Col}>
                   <InputGroup>
-                  <div>{/* <InputGroup.Prepend> */}
-                      <InputGroup.Text>
+                  <div>
+                      <InputGroup.Text className="envelope">
                         <FontAwesomeIcon icon={faEnvelope}/>
                       </InputGroup.Text>
-                      </div>{/* </InputGroup.Prepend> */}
+                  </div>
                     <FormControl
                       required
                       autoComplete="off"
@@ -88,20 +88,20 @@ const Register = props => {
                       name="email"
                       value={user.email}
                       onChange={userChange}
-                      className={"bg-dark text-white"}
+                      className="input-email"
                       placeholder="Enter Email Address"
                     />
                   </InputGroup>
                 </Form.Group>
-                </div>{/* </Form.Row> */}
-              <div>{/* <Form.Row> */}
+                </div>
+              <div>
                 <Form.Group as={Col}>
                   <InputGroup>
-                  <div>{/* <InputGroup.Prepend> */}
-                      <InputGroup.Text>
+                  <div>
+                      <InputGroup.Text className="lock">
                         <FontAwesomeIcon icon={faLock}/>
                       </InputGroup.Text>
-                      </div>{/* </InputGroup.Prepend> */}
+                  </div>
                     <FormControl
                       required
                       autoComplete="off"
@@ -109,32 +109,32 @@ const Register = props => {
                       name="password"
                       value={user.password}
                       onChange={userChange}
-                      className={"bg-dark text-white"}
+                      className="input-password"
                       placeholder="Enter Password"
                     />
                   </InputGroup>
                 </Form.Group>
-              </div>{/* </Form.Row> */}
-              <div>{/* <Form.Row> */}
+              </div>
+              <div>
                 <Form.Group as={Col}>
                   <InputGroup>
-                  <div>{/* <InputGroup.Prepend> */}
-                      <InputGroup.Text>
+                  <div>
+                      <InputGroup.Text className="phone">
                         <FontAwesomeIcon icon={faPhone}/>
                       </InputGroup.Text>
-                      </div>{/* </InputGroup.Prepend> */}
+                  </div>
                     <FormControl
                       autoComplete="off"
                       type="text"
                       name="mobile"
                       value={user.mobile}
                       onChange={userChange}
-                      className={"bg-dark text-white"}
+                      className="input-phone"
                       placeholder="Enter Mobile Number"
                     />
                   </InputGroup>
                 </Form.Group>
-                </div>{/* </Form.Row> */}
+                </div>
             </Card.Body>
             <Card.Footer style={{ textAlign: "right" }}>
               <Button

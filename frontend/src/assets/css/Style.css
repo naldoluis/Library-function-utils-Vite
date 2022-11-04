@@ -5,15 +5,13 @@
 .arrow-down {border-top: 10px solid white}
 
 .find {background: #f5ba0c;color: #393939;margin-left: 3px}
-.clean-find {background: rgb(192, 47, 47);color: white;margin-left: 3px}
+.clean-find {background: #c02f2f;color: white;margin-left: 3px}
 
 .first,.prev {margin: -3.5px 5px 0 0}
 .next,.last {margin: -3.5px 0 0 5px}
 
-.input-email {margin: -3px 9px}
-.input-password {margin: 9px 9px}
-.lock {margin-top: 12px;width: 40px}
-.envelope {margin-top: 2px;width: 40px}
+.input-password,.input-email,.input-name,.input-phone {margin: 9px 9px;background: #e8f0fe}
+.lock,.envelope,.name,.phone {margin-top: 12px;width: 40px}
 
 ::-webkit-scrollbar {width: 8px}
 ::-webkit-scrollbar-track {background: #606060}
