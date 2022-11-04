@@ -3,8 +3,13 @@
 .arrow {width: 0;height: 0;margin-top: 5px;border-left: 5px solid transparent;border-right: 5px solid transparent;display: inline-block}
 .arrow-up {border-bottom: 10px solid white}
 .arrow-down {border-top: 10px solid white}
+
 .find {background: #f5ba0c;color: #393939;margin-left: 3px}
 .clean-find {background: rgb(192, 47, 47);color: white;margin-left: 3px}
+
+.first,.prev {margin: -3.5px 5px 0 0}
+.next,.last {margin: -3.5px 0 0 5px}
+
 ::-webkit-scrollbar {width: 8px}
 ::-webkit-scrollbar-track {background: #606060}
 ::-webkit-scrollbar-thumb {background: #bebebe}

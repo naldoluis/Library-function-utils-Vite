@@ -185,7 +185,7 @@ class BookList extends React.Component {
                   className={"border-light bg-dark text-white"}
                   onChange={this.searchChange}
                 />
-                <div>{/* <InputGroup.Append> Error in Tag -------------------------------Error------------------------------ */}
+                <div>
                   <Button
                     className="find"
                     size="sm"
@@ -204,7 +204,7 @@ class BookList extends React.Component {
                   >
                     <FontAwesomeIcon icon={faTimes}/>
                   </Button>
-                </div>{/* </InputGroup.Append> ------------------------------------------------------------------------------ */}
+                </div>
               </InputGroup>
             </div>
           </Card.Header>
@@ -276,8 +276,9 @@ class BookList extends React.Component {
               </div>
               <div style={{ float: "right" }}>
                 <InputGroup size="sm">
-                  <div>{/* <InputGroup.Prepend> */}
+                  <div>
                     <Button
+                      className="first"
                       type="button"
                       variant="outline-light"
                       disabled={currentPage === 1 ? true : false}
@@ -286,6 +287,7 @@ class BookList extends React.Component {
                       <FontAwesomeIcon icon={faFastBackward}/> First
                     </Button>
                     <Button
+                      className="prev"
                       type="button"
                       variant="outline-light"
                       disabled={currentPage === 1 ? true : false}
@@ -293,15 +295,16 @@ class BookList extends React.Component {
                     >
                       <FontAwesomeIcon icon={faStepBackward}/> Prev
                     </Button>
-                    </div>{/* </InputGroup.Prepend> */}
+                    </div>
                   <FormControl
                     className={"border-light text-white page-num bg-dark"}
                     name="currentPage"
                     value={currentPage}
                     onChange={this.changePage}
                   />
-                  <div>{/* <InputGroup.Append> */}
+                  <div>
                     <Button
+                      className="next"
                       type="button"
                       variant="outline-light"
                       disabled={currentPage === totalPages ? true : false}
@@ -310,6 +313,7 @@ class BookList extends React.Component {
                       <FontAwesomeIcon icon={faStepForward}/> Next
                     </Button>
                     <Button
+                      className="last"
                       type="button"
                       variant="outline-light"
                       disabled={currentPage === totalPages ? true : false}
@@ -317,7 +321,7 @@ class BookList extends React.Component {
                     >
                       <FontAwesomeIcon icon={faFastForward}/> Last
                     </Button>
-                    </div>{/* </InputGroup.Append> */}
+                    </div>
                 </InputGroup>
               </div>
             </Card.Footer>
