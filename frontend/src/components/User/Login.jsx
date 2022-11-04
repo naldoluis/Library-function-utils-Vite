@@ -56,14 +56,14 @@ const Login = props => {
             <FontAwesomeIcon icon={faSignInAlt}/> Login
           </Card.Header>
           <Card.Body>
-          <div>{/* <Form.Row> */}
+          <div>
               <Form.Group as={Col}>
                 <InputGroup>
-                <div>{/* <InputGroup.Prepend> */}
-                    <InputGroup.Text>
+                <div>
+                    <InputGroup.Text className="envelope">
                       <FontAwesomeIcon icon={faEnvelope}/>
                     </InputGroup.Text>
-                    </div>{/* </InputGroup.Prepend> */}
+                </div>
                   <FormControl
                     required
                     autoComplete="off"
@@ -71,20 +71,20 @@ const Login = props => {
                     name="email"
                     value={user.email}
                     onChange={credentialChange}
-                    className={"bg-dark text-white"}
+                    className="input-email"
                     placeholder="Enter Email Address"
                   />
                 </InputGroup>
               </Form.Group>
-              </div>{/* </Form.Row> */}
-              <div>{/* <Form.Row> */}
+              </div>
+              <div>
               <Form.Group as={Col}>
                 <InputGroup>
-                <div>{/* <InputGroup.Prepend> */}
-                    <InputGroup.Text>
+                <div>
+                    <InputGroup.Text className="lock">
                       <FontAwesomeIcon icon={faLock}/>
                     </InputGroup.Text>
-                    </div>{/* </InputGroup.Prepend> */}
+                </div>
                   <FormControl
                     required
                     autoComplete="off"
@@ -92,12 +92,12 @@ const Login = props => {
                     name="password"
                     value={user.password}
                     onChange={credentialChange}
-                    className={"bg-dark text-white"}
+                    className="input-password"
                     placeholder="Enter Password"
                   />
                 </InputGroup>
               </Form.Group>
-              </div>{/* </Form.Row> */}
+              </div>
           </Card.Body>
           <Card.Footer style={{ textAlign: "right" }}>
             <Button
