@@ -182,11 +182,12 @@ class BookList extends React.Component {
                   placeholder="Search"
                   name="search"
                   value={search}
-                  className={"dark-border bg-dark text-white"}
+                  className={"border-light bg-dark text-white"}
                   onChange={this.searchChange}
                 />
                 <div>{/* <InputGroup.Append> Error in Tag -------------------------------Error------------------------------ */}
                   <Button
+                    className="find"
                     size="sm"
                     variant="outline-warning"
                     type="button"
@@ -195,6 +196,7 @@ class BookList extends React.Component {
                     <FontAwesomeIcon icon={faSearch}/>
                   </Button>
                   <Button
+                    className="clean-find"
                     size="sm"
                     variant="outline-danger"
                     type="button"
@@ -249,12 +251,12 @@ class BookList extends React.Component {
                       <td>{book.genre}</td>
                       <td>
                         <ButtonGroup>
-                          <Link to={"edit/" + book.id} className="btn btn-sm btn-outline-info">
+                          <Link to={"edit/" + book.id} className="btn btn-sm btn-outline-success">
                             <FontAwesomeIcon icon={faEdit}/>
                           </Link>{" "}
                           <Button
                             size="sm"
-                            variant="outline-warning"
+                            variant="outline-info"
                             onClick={() => this.deleteBook(book.id)}
                           >
                             <FontAwesomeIcon icon={faTrash}/>
@@ -277,7 +279,7 @@ class BookList extends React.Component {
                   <div>{/* <InputGroup.Prepend> */}
                     <Button
                       type="button"
-                      variant="outline-info"
+                      variant="outline-light"
                       disabled={currentPage === 1 ? true : false}
                       onClick={this.firstPage}
                     >
@@ -285,7 +287,7 @@ class BookList extends React.Component {
                     </Button>
                     <Button
                       type="button"
-                      variant="outline-info"
+                      variant="outline-light"
                       disabled={currentPage === 1 ? true : false}
                       onClick={this.prevPage}
                     >
@@ -293,7 +295,7 @@ class BookList extends React.Component {
                     </Button>
                     </div>{/* </InputGroup.Prepend> */}
                   <FormControl
-                    className={"page-num bg-dark"}
+                    className={"border-light text-white page-num bg-dark"}
                     name="currentPage"
                     value={currentPage}
                     onChange={this.changePage}
@@ -301,7 +303,7 @@ class BookList extends React.Component {
                   <div>{/* <InputGroup.Append> */}
                     <Button
                       type="button"
-                      variant="outline-info"
+                      variant="outline-light"
                       disabled={currentPage === totalPages ? true : false}
                       onClick={this.nextPage}
                     >
@@ -309,7 +311,7 @@ class BookList extends React.Component {
                     </Button>
                     <Button
                       type="button"
-                      variant="outline-info"
+                      variant="outline-light"
                       disabled={currentPage === totalPages ? true : false}
                       onClick={this.lastPage}
                     >
