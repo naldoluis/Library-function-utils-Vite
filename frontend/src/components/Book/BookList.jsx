@@ -249,7 +249,7 @@ class BookList extends React.Component {
                       <td>{book.genre}</td>
                       <td>
                         <ButtonGroup>
-                          <Link to={"edit/" + book.id} className="btn btn-sm btn-outline-primary">
+                          <Link to={"edit/" + book.id} className="btn btn-sm btn-outline-info">
                             <FontAwesomeIcon icon={faEdit}/>
                           </Link>{" "}
                           <Button
