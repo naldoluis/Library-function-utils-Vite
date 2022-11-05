@@ -8,8 +8,8 @@
 .find {background: #f5ba0c;color: #393939;margin-left: 3px}
 .clean-find {background: #c02f2f;color: white;margin-left: 3.2px}
 
-.first,.prev {margin: -3.5px 5px 0 0}
-.next,.last {margin: -3.5px 0 0 5px}
+.first,.prev {margin: -.4px 5px 0 0}
+.next,.last {margin: -.4px 0 0 5px}
 
 .input-password,.input-email,.input-name,.input-phone {margin: 9px 9px;background: #e8f0fe}
 .lock,.envelope,.name,.phone {margin-top: 12px;width: 40px}

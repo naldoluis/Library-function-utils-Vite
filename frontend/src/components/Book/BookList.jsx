@@ -280,6 +280,7 @@ class BookList extends React.Component {
                     <Button
                       className="first"
                       type="button"
+                      size="sm"
                       variant="outline-light"
                       disabled={currentPage === 1 ? true : false}
                       onClick={this.firstPage}
@@ -289,6 +290,7 @@ class BookList extends React.Component {
                     <Button
                       className="prev"
                       type="button"
+                      size="sm"
                       variant="outline-light"
                       disabled={currentPage === 1 ? true : false}
                       onClick={this.prevPage}
@@ -297,6 +299,7 @@ class BookList extends React.Component {
                     </Button>
                     </div>
                   <FormControl
+                    size="sm"
                     className={"border-light text-white page-num bg-dark"}
                     name="currentPage"
                     value={currentPage}
@@ -306,6 +309,7 @@ class BookList extends React.Component {
                     <Button
                       className="next"
                       type="button"
+                      size="sm"
                       variant="outline-light"
                       disabled={currentPage === totalPages ? true : false}
                       onClick={this.nextPage}
@@ -315,6 +319,7 @@ class BookList extends React.Component {
                     <Button
                       className="last"
                       type="button"
+                      size="sm"
                       variant="outline-light"
                       disabled={currentPage === totalPages ? true : false}
                       onClick={this.lastPage}
