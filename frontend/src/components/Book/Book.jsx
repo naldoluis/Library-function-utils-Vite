@@ -97,7 +97,6 @@ class Book extends React.Component {
 
   updateBook = event => {
     event.preventDefault()
-
     this.props.updateBook(book)
     setTimeout(() => {
       if (this.props.bookObject.book != null) {
