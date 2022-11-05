@@ -83,7 +83,6 @@ class Book extends React.Component {
 
   submitBook = event => {
     event.preventDefault()
-
     this.props.saveBook(book)
     setTimeout(() => {
       if (this.props.bookObject.book != null) {
@@ -188,7 +187,7 @@ class Book extends React.Component {
                     />
                     <div>
                       {this.state.photo !== "" && (
-                        <Image src={this.state.photo} roundedRight width="40" height="38"/>
+                        <Image src={this.state.photo} roundedRight width="38" height="38"/>
                       )}
                     </div>
                   </InputGroup>
