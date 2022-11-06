@@ -142,7 +142,7 @@ class Book extends React.Component {
             id="bookFormId"
           >
             <Card.Body>
-            <div class="form-row">
+            <div className="form-row">
                 <Form.Group as={Col} controlId="formGridTitle">
                   <Form.Label>Title</Form.Label>
                   <Form.Control
@@ -170,7 +170,7 @@ class Book extends React.Component {
                   />
                 </Form.Group>
                 </div>
-                <div class="form-row">
+                <div className="form-row">
                 <Form.Group as={Col} controlId="formGridphoto">
                   <Form.Label>Cover Photo URL</Form.Label>
                   <InputGroup>
@@ -205,7 +205,7 @@ class Book extends React.Component {
                   />
                 </Form.Group>
                 </div>
-                <div class="form-row">
+                <div className="form-row">
                 <Form.Group as={Col} controlId="formGridPrice">
                   <Form.Label>Price</Form.Label>
                   <Form.Control
