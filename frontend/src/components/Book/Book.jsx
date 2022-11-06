@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { Card, Form, Button, Col, InputGroup, Image } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -18,14 +19,6 @@ class Book extends React.Component {
   }
 
   initialState = { id: "", title: "", author: "", photo: "https://images.manning.com/720/960/resize/book/d/2ea186d-c683-4d54-95f9-cca25b6fe49e/bauer2.png", isbn: "", price: "", language: "", genre: "" }
-
-  async componentDidMount() {
-    const bookId = +this.props.match.params.id
-    if (bookId) {
-      this.findBookById(bookId)
-    }
-    this.findAllLanguages()
-  }
 
   findAllLanguages = () => {
     this.props.fetchLanguages()
@@ -113,10 +106,6 @@ class Book extends React.Component {
     this.setState({
       [event.target.name]: event.target.value
     })
-  }
-
-  bookList = () => {
-    return this.props.history.push("/list")
   }
 
   render() {
@@ -265,14 +254,11 @@ class Book extends React.Component {
               <Button size="sm" variant="info" type="reset">
                 <FontAwesomeIcon icon={faUndo}/> Reset
               </Button>{" "}
-              <Button
-                size="sm"
-                variant="info"
-                type="button"
-                onClick={() => this.bookList()}
-              >
+              <Link
+                style={{ textDecoration: 'none' }}
+                type="button" className="link" to="/list">
                 <FontAwesomeIcon icon={faList}/> Book List
-              </Button>
+              </Link>
             </Card.Footer>
           </Form>
         </Card>
