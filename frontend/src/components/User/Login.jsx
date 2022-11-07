@@ -30,7 +30,7 @@ const Login = props => {
         console.log(error.message)
         setShow(true)
         resetLoginForm()
-        setError("Invalid email and password")
+        setError(" Email or password invalid")
      })
   }
 
