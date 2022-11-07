@@ -572,72 +572,288 @@ public class BookController implements Resource<Book> {
                   @import "https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css"
                   @import "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
 
-# NavigationBar
+# Book
 
-import { useDispatch, useSelector } from 'react-redux'
-import { Navbar, Nav } from 'react-bootstrap'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
+import { Card, Form, Button, Col, InputGroup, Image } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUserPlus, faSignInAlt, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
-import React from 'react'
-import { logoutUser } from '../services'
-import Book from '../assets/Book_icon_1.png'
+import { faSave, faPlusSquare, faUndo, faList, faEdit } from '@fortawesome/free-solid-svg-icons'
+import { saveBook, fetchBook, updateBook, fetchLanguages, fetchGenres } from '../../services'
+import MyToast from '../MyToast'
 
-const NavigationBar = props => {
-  const auth = useSelector(state => state.auth)
-  const dispatch = useDispatch()
-
-  const logout = () => {
-    dispatch(logoutUser())
+class Book extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = this.initialState
+    this.state = {
+      genres: [],
+      languages: [],
+      show: false
+    }
   }
 
-  const guestLinks = (
-    <>
-      <div className="mr-auto"></div>
-      <Nav className="navbar-right">
-        <Link to={"register"} className="nav-link"><FontAwesomeIcon icon={faUserPlus}/> Register</Link>
-        <Link to={"login"} className="nav-link"><FontAwesomeIcon icon={faSignInAlt}/> Login</Link>
-      </Nav>
-    </>
-  )
-  
-  const userLinks = (
-    <>
-      <Nav className="mr-auto">
-        <Link to={"add"} className="nav-link">Add Book</Link>
-        <Link to={"list"} className="nav-link">Book List</Link>
-        <Link to={"user"} className="nav-link">User List</Link>
-      </Nav>
-      <Nav className="navbar-right">
-        <Link to={"logout"} className="nav-link" onClick={logout}><FontAwesomeIcon icon={faSignOutAlt}/> Logout</Link>
-      </Nav>
-    </>
-  )
+  initialState = { id: "", title: "", author: "", photo: "https://images-na.ssl-images-amazon.com/images/I/51gHy16h5TL.jpg", isbn: "", price: "", language: "", genre: "" }
 
-  return (
-    <Navbar bg="dark" variant="dark">
-       <Link to={props.auth.isLoggedIn ? "home" : ""} className="navbar-brand">
-      <Link to={auth.isLoggedIn ? "home" : ""} className="navbar-brand"></Link>
-        <img src={Book} width="25" height="25"/>{" "}Book Store</Link>
-        {props.auth.isLoggedIn ? userLinks : guestLinks}
-      {auth.isLoggedIn ? userLinks : guestLinks}
-    </Navbar>
-  )
-}
+  findAllLanguages = () => {
+    this.props.fetchLanguages()
+    setTimeout(() => {
+      let bookLanguages = this.props.bookObject.languages
+      if (bookLanguages) {
+        this.setState({
+          languages: [{ value: "", display: "Select Language" }].concat(
+            bookLanguages.map(language => {
+              return { value: language, display: language }
+            }))
+        })
+        this.findAllGenres()
+      }
+    }, 100)
+  }
+
+  findAllGenres = () => {
+    this.props.fetchGenres()
+    setTimeout(() => {
+      let bookGenres = this.props.bookObject.genres
+      if (bookGenres) {
+        this.setState({
+          genres: [{ value: "", display: "Select Genre" }].concat(
+            bookGenres.map(genre => {
+              return { value: genre, display: genre }
+            }))
+        })
+      }
+    }, 100)
+  }
+
+  findBookById = bookId => {
+    this.props.fetchBook(bookId)
+    setTimeout(() => {
+      let book = this.props.bookObject.book
+      if (book != null) {
+        this.setState({
+          id: book.id,
+          title: book.title,
+          author: book.author,
+          photo: book.photo,
+          isbn: book.isbn,
+          price: book.price,
+          language: book.language,
+          genre: book.genre
+        })
+      }
+    }, 1000)
+  }
+
+  resetBook = () => {
+    this.setState(() => this.initialState)
+  }
+
+  submitBook = event => {
+    event.preventDefault()
+    this.props.saveBook()
+    setTimeout(() => {
+      if (this.props.bookObject.book != null) {
+        this.setState({ show: true, method: "post" })
+        setTimeout(() => this.setState({ show: false }), 3000)
+      } else {
+        this.setState({ show: false })
+      }
+    }, 2000)
+    this.setState(this.initialState)
+  }
+
+  updateBook = event => {
+    event.preventDefault()
+    this.props.updateBook()
+    setTimeout(() => {
+      if (this.props.bookObject.book != null) {
+        this.setState({ show: true, method: "put" })
+        setTimeout(() => this.setState({ show: false }), 3000)
+      } else {
+        this.setState({ show: false })
+      }
+    }, 2000)
+    this.setState(this.initialState)
+  }
+
+  bookChange = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+  }
+
+  render() {
+    const { title, author, photo, isbn, price, language, genre } = this.state
+
+    return (
+      <div>
+        <div style={{ display: this.state.show ? "block" : "none" }}>
+          <MyToast
+            show={this.state.show}
+            message={this.state.method === "put" ? "Book Updated Successfully." : "Book Saved Successfully."}
+            type={"success"}
+          />
+        </div>
+        <Card className={"border border-dark bg-dark text-white"}>
+          <Card.Header>
+            <FontAwesomeIcon icon={this.state.id ? faEdit : faPlusSquare}/>{" "}
+            {this.state.id ? "Update Book" : "Add New Book"}
+          </Card.Header>
+          <Form
+            onReset={this.resetBook}
+            onSubmit={this.state.id ? this.updateBook : this.submitBook}
+            id="bookFormId"
+          >
+            <Card.Body>
+            <div className="form-row">
+                <Form.Group as={Col} controlId="formGridTitle">
+                  <Form.Label>Title</Form.Label>
+                  <Form.Control
+                    required
+                    autoComplete="off"
+                    name="title"
+                    value={title}
+                    onChange={this.bookChange}
+                    className={"bg-dark text-white"}
+                    placeholder="Enter Book Title"
+                  />
+                </Form.Group>
+                <Form.Group as={Col} controlId="formGridAuthor">
+                  <Form.Label>Author</Form.Label>
+                  <Form.Control
+                    required
+                    autoComplete="off"
+                    name="author"
+                    value={author}
+                    onChange={this.bookChange}
+                    className={"bg-dark text-white"}
+                    placeholder="Enter Book Author"
+                  />
+                </Form.Group>
+                </div>
+                <div className="form-row">
+                <Form.Group as={Col} controlId="formGridphoto">
+                  <Form.Label>Cover Photo URL</Form.Label>
+                  <InputGroup>
+                    <Form.Control
+                      required
+                      autoComplete="off"
+                      name="photo"
+                      value={photo}
+                      onChange={this.bookChange}
+                      className={"bg-dark text-white"}
+                      placeholder="Enter Book Cover Photo URL"
+                    />
+                    <div>
+                      {this.state.photo !== "" && (
+                        <Image src={this.state.photo} roundedRight width="38" height="38"/>
+                      )}
+                    </div>
+                  </InputGroup>
+                </Form.Group>
+                <Form.Group as={Col} controlId="formGridISBN">
+                  <Form.Label>ISBN Number</Form.Label>
+                  <Form.Control
+                    required
+                    autoComplete="off"
+                    type="number"
+                    name="isbn"
+                    value={isbn}
+                    onChange={this.bookChange}
+                    className={"bg-dark text-white"}
+                    placeholder="Enter Book ISBN Number"
+                  />
+                </Form.Group>
+                </div>
+                <div className="form-row">
+                <Form.Group as={Col} controlId="formGridPrice">
+                  <Form.Label>Price</Form.Label>
+                  <Form.Control
+                    required
+                    autoComplete="off"
+                    type="number"
+                    name="price"
+                    value={price}
+                    onChange={this.bookChange}
+                    className={"bg-dark text-white"}
+                    placeholder="Enter Book Price"
+                  />
+                </Form.Group>
+                <Form.Group as={Col} controlId="formGridLanguage">
+                  <Form.Label>Language</Form.Label>
+                  <Form.Control
+                    required
+                    as="select"
+                    custom
+                    onChange={this.bookChange}
+                    name="language"
+                    value={language}
+                    className={"bg-dark text-white"}
+                  >
+                    {this.state.languages.map(language => (
+                      <option key={language.value} value={language.value}>
+                        {language.display}
+                      </option>
+                    ))}
+                  </Form.Control>
+                </Form.Group>
+                <Form.Group as={Col} controlId="formGridGenre">
+                  <Form.Label>Genre</Form.Label>
+                  <Form.Control
+                    required
+                    as="select"
+                    custom
+                    onChange={this.bookChange}
+                    name="genre"
+                    value={genre}
+                    className={"bg-dark text-white"}
+                  >
+                    {this.state.genres.map(genre => (
+                      <option key={genre.value} value={genre.value}>
+                        {genre.display}
+                      </option>
+                    ))}
+                  </Form.Control>
+                </Form.Group>
+                </div>
+            </Card.Body>
+            <Card.Footer style={{ textAlign: "right" }}>
+              <Button size="sm" variant="success" type="submit">
+                <FontAwesomeIcon icon={faSave}/>{" "}
+                {this.state.id ? "Update" : "Save"}
+              </Button>{" "}
+              <Button size="sm" variant="info" type="reset">
+                <FontAwesomeIcon icon={faUndo}/> Reset
+              </Button>{" "}
+              <Link
+                style={{ textDecoration: 'none' }}
+                type="button" className="link" to="/list">
+                <FontAwesomeIcon icon={faList}/> Book List
+              </Link>
+            </Card.Footer>
+          </Form>
+        </Card>
+      </div>
+    )}}
 
 const mapStateToProps = state => {
   return {
-    auth: state.auth
+    bookObject: state.book
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    logoutUser: () => dispatch(logoutUser())
+    saveBook: book => dispatch(saveBook(book)),
+    fetchBook: bookId => dispatch(fetchBook(bookId)),
+    updateBook: book => dispatch(updateBook(book)),
+    fetchLanguages: () => dispatch(fetchLanguages()),
+    fetchGenres: () => dispatch(fetchGenres())
   }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(NavigationBar)
+export default connect(mapStateToProps, mapDispatchToProps)(Book)
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
 
@@ -839,249 +1055,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(UserList)
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
 
-# userActions
-
-import axios from 'axios'
-import * as UT from './userTypes'
-import { BASE_URL } from '../../utils/requests'
-
-export const fetchUsers = () => {
-  return dispatch => {
-    dispatch(userRequest())
-    axios("https://randomapi.com/api/6de6abfedb24f889e0b5f675edc50deb?fmt=raw&sole")
-      .then(response => {
-        dispatch(userSuccess(response.data))
-      })
-      .catch(error => {
-        dispatch(userFailure(error.message))
-     })
-  }}
-
-  export const registerUser = userObject => {
-    return dispatch => {
-      dispatch(userRequest())
-      axios.post(`${BASE_URL}/user/register`, userObject)
-        .then(response => {
-          dispatch({
-            type: UT.USER_SAVED_SUCCESS,
-            payload: response.data.message
-          })
-        })
-        .catch(error => {
-          dispatch(userFailure(error.message))
-       })
-    }}
-
-!J------------------------------------------------------------------------------------------------------------------------------J!
-
-# Register
-
-import { useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { Row, Col, Card, Form, InputGroup, FormControl, Button } from 'react-bootstrap'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPhone, faEnvelope, faLock, faUndo, faUserPlus, faUser } from '@fortawesome/free-solid-svg-icons'
-import { registerUser } from '../../services'
-import MyToast from '../MyToast'
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-
-class Register extends Component {
-  constructor(props) {
-    super(props)
-    this.state = this.initialState
-    this.state.show = false
-    this.state.message = ""
-  }
-
-  initialState = {
-      name: "",
-      email: "",
-      password: "",
-      mobile: ""
-    }
-
-  userChange = event => {
-    this.setState({
-      [event.target.name]: event.target.value
-  })
-
-  const dispatch = useDispatch()
-
-  const saveUser = () => {
-    dispatch(registerUser(user))
-      .then(response => {
-        setShow(true)
-        setMessage(response.message)
-        resetRegisterForm()
-        setTimeout(() => {
-          this.setState({ show: false })
-          props.history.push("/login")
-        }, 2000)
-      })
-      .catch(error => {
-        console.log(error)
-    })
-  }
-
-  registerUser = () => {
-    let userObject = {
-      name: this.state.name,
-      email: this.state.email,
-      password: this.state.password,
-      mobile: this.state.contact
-    }
-    this.props.registerUser(userObject)
-    this.resetRegisterForm()
-    setTimeout(() => {
-      if (this.props.user.message != null) {
-        this.setState({ show: true, message: this.props.user.message })
-
-  resetRegisterForm = () => {
-      this.setState(() => this.initialState)
-  }
-
-  render() {
-    const { name, email, password, contact } = this.state
-
-  return (
-    <div>
-      <div style={{ display: this.state.show ? "block" : "none" }}>
-      <MyToast
-            show={this.state.show}
-            message={this.state.message}
-            type={"success"}
-          />
-      </div>
-      <Row className="justify-content-md-center">
-        <Col xs={5}>
-          <Card className={"border border-dark bg-dark text-white"}>
-            <Card.Header>
-              <FontAwesomeIcon icon={faUserPlus}/> Register
-            </Card.Header>
-            <Card.Body>
-            <div>{/* <Form.Row> */}
-                <Form.Group as={Col}>
-                  <InputGroup>
-                  <div>{/* <InputGroup.Prepend> */}
-                      <InputGroup.Text>
-                        <FontAwesomeIcon icon={faUser}/>
-                      </InputGroup.Text>
-                      </div>{/* </InputGroup.Prepend> */}
-                    <FormControl
-                      autoComplete="off"
-                      type="text"
-                      name="name"
-                      value={name}
-                      onChange={this.userChange}
-                      className={"bg-dark text-white"}
-                      placeholder="Enter Name"
-                    />
-                  </InputGroup>
-                </Form.Group>
-                </div>{/* </Form.Row> */}
-                <div>{/* <Form.Row> */}
-                <Form.Group as={Col}>
-                  <InputGroup>
-                  <div>{/* <InputGroup.Prepend> */}
-                      <InputGroup.Text>
-                        <FontAwesomeIcon icon={faEnvelope}/>
-                      </InputGroup.Text>
-                      </div>{/* </InputGroup.Prepend> */}
-                    <FormControl
-                      required
-                      autoComplete="off"
-                      type="text"
-                      name="email"
-                      value={email}
-                      onChange={this.userChange}
-                      className={"bg-dark text-white"}
-                      placeholder="Enter Email Address"
-                    />
-                  </InputGroup>
-                </Form.Group>
-                </div>{/* </Form.Row> */}
-              <div>{/* <Form.Row> */}
-                <Form.Group as={Col}>
-                  <InputGroup>
-                  <div>{/* <InputGroup.Prepend> */}
-                      <InputGroup.Text>
-                        <FontAwesomeIcon icon={faLock}/>
-                      </InputGroup.Text>
-                      </div>{/* </InputGroup.Prepend> */}
-                    <FormControl
-                      required
-                      autoComplete="off"
-                      type="password"
-                      name="password"
-                      value={password}
-                      onChange={this.userChange}
-                      className={"bg-dark text-white"}
-                      placeholder="Enter Password"
-                    />
-                  </InputGroup>
-                </Form.Group>
-              </div>{/* </Form.Row> */}
-              <div>{/* <Form.Row> */}
-                <Form.Group as={Col}>
-                  <InputGroup>
-                  <div>{/* <InputGroup.Prepend> */}
-                      <InputGroup.Text>
-                        <FontAwesomeIcon icon={faPhone}/>
-                      </InputGroup.Text>
-                      </div>{/* </InputGroup.Prepend> */}
-                    <FormControl
-                      autoComplete="off"
-                      type="text"
-                      name="mobile"
-                      value={mobile}
-                      onChange={this.userChange}
-                      className={"bg-dark text-white"}
-                      placeholder="Enter Mobile Number"
-                    />
-                  </InputGroup>
-                </Form.Group>
-                </div>{/* </Form.Row> */}
-            </Card.Body>
-            <Card.Footer style={{ textAlign: "right" }}>
-              <Button
-                size="sm"
-                type="button"
-                variant="success"
-                onClick={this.registerUser}
-                  disabled={
-                    this.state.email.length === 0 ||
-                    this.state.password.length === 0
-                  }
-                >
-                <FontAwesomeIcon icon={faUserPlus}/> Register
-              </Button>{" "}
-              <Button
-                size="sm"
-                type="button"
-                variant="info"
-                onClick={this.resetRegisterForm}
-              >
-                <FontAwesomeIcon icon={faUndo}/> Reset
-              </Button>
-            </Card.Footer>
-          </Card>
-        </Col>
-      </Row>
-    </div>
-  )
-}
-
-const mapStateToProps = state => {
-  return {
-    user: state.user
-  }
-}
-const mapDispatchToProps = dispatch => {}
-export default connect(mapStateToProps, mapDispatchToProps)(Register)
-
-!J------------------------------------------------------------------------------------------------------------------------------J!
-
 # login
 
 import { useState } from 'react'
@@ -1224,308 +1197,6 @@ const mapDispatchToProps = dispatch => {
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Login)
-
-!J------------------------------------------------------------------------------------------------------------------------------J!
-
-# book
-
-import React from 'react'
-import { connect } from 'react-redux'
-import { Card, Form, Button, Col, InputGroup, Image } from 'react-bootstrap'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSave, faPlusSquare, faUndo, faList, faEdit } from '@fortawesome/free-solid-svg-icons'
-import { saveBook, fetchBook, updateBook, fetchLanguages, fetchGenres } from '../../services'
-import MyToast from '../MyToast'
-
-class Book extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = this.initialState
-    this.state = {
-      genres: [],
-      languages: [],
-      show: false
-    }
-  }
-
-  initialState = { id: "", title: "", author: "", photo: "https://images.manning.com/720/960/resize/book/d/2ea186d-c683-4d54-95f9-cca25b6fe49e/bauer2.png", isbn: "", price: "", language: "", genre: "" }
-
-  async componentDidMount() {
-    const bookId = +this.props.match.params.id
-    if (bookId) {
-      this.findBookById(bookId)
-    }
-    this.findAllLanguages()
-  }
-
-  findAllLanguages = () => {
-    this.props.fetchLanguages()
-    setTimeout(() => {
-      let bookLanguages = this.props.bookObject.languages
-      if (bookLanguages) {
-        this.setState({
-          languages: [{ value: "", display: "Select Language" }].concat(
-            bookLanguages.map(language => {
-              return { value: language, display: language }
-            }))
-        })
-        this.findAllGenres()
-      }
-    }, 100)
-  }
-
-  findAllGenres = () => {
-    this.props.fetchGenres()
-    setTimeout(() => {
-      let bookGenres = this.props.bookObject.genres
-      if (bookGenres) {
-        this.setState({
-          genres: [{ value: "", display: "Select Genre" }].concat(
-            bookGenres.map(genre => {
-              return { value: genre, display: genre }
-            }))
-        })
-      }
-    }, 100)
-  }
-
-  findBookById = bookId => {
-    this.props.fetchBook(bookId)
-    setTimeout(() => {
-      let book = this.props.bookObject.book
-      if (book != null) {
-        this.setState({
-          id: book.id,
-          title: book.title,
-          author: book.author,
-          photo: book.photo,
-          isbn: book.isbn,
-          price: book.price,
-          language: book.language,
-          genre: book.genre
-        })
-      }
-    }, 1000)
-  }
-
-  resetBook = () => {
-    this.setState(() => this.initialState)
-  }
-
-  submitBook = event => {
-    event.preventDefault()
-    this.props.saveBook(book)
-    setTimeout(() => {
-      if (this.props.bookObject.book != null) {
-        this.setState({ show: true, method: "post" })
-        setTimeout(() => this.setState({ show: false }), 3000)
-      } else {
-        this.setState({ show: false })
-      }
-    }, 2000)
-    this.setState(this.initialState)
-  }
-
-  updateBook = event => {
-    event.preventDefault()
-    this.props.updateBook(book)
-    setTimeout(() => {
-      if (this.props.bookObject.book != null) {
-        this.setState({ show: true, method: "put" })
-        setTimeout(() => this.setState({ show: false }), 3000)
-      } else {
-        this.setState({ show: false })
-      }
-    }, 2000)
-    this.setState(this.initialState)
-  }
-
-  bookChange = event => {
-    this.setState({
-      [event.target.name]: event.target.value
-    })
-  }
-
-  bookList = () => {
-    return this.props.history.push("/list")
-  }
-
-  render() {
-    const { title, author, photo, isbn, price, language, genre } = this.state
-
-    return (
-      <div>
-        <div style={{ display: this.state.show ? "block" : "none" }}>
-          <MyToast
-            show={this.state.show}
-            message={this.state.method === "put" ? "Book Updated Successfully." : "Book Saved Successfully."}
-            type={"success"}
-          />
-        </div>
-        <Card className={"border border-dark bg-dark text-white"}>
-          <Card.Header>
-            <FontAwesomeIcon icon={this.state.id ? faEdit : faPlusSquare}/>{" "}
-            {this.state.id ? "Update Book" : "Add New Book"}
-          </Card.Header>
-          <Form
-            onReset={this.resetBook}
-            onSubmit={this.state.id ? this.updateBook : this.submitBook}
-            id="bookFormId"
-          >
-            <Card.Body>
-            <div className="form-row">
-                <Form.Group as={Col} controlId="formGridTitle">
-                  <Form.Label>Title</Form.Label>
-                  <Form.Control
-                    required
-                    autoComplete="off"
-                    type="test"
-                    name="title"
-                    value={title}
-                    onChange={this.bookChange}
-                    className={"bg-dark text-white"}
-                    placeholder="Enter Book Title"
-                  />
-                </Form.Group>
-                <Form.Group as={Col} controlId="formGridAuthor">
-                  <Form.Label>Author</Form.Label>
-                  <Form.Control
-                    required
-                    autoComplete="off"
-                    type="test"
-                    name="author"
-                    value={author}
-                    onChange={this.bookChange}
-                    className={"bg-dark text-white"}
-                    placeholder="Enter Book Author"
-                  />
-                </Form.Group>
-                </div>
-                <div className="form-row">
-                <Form.Group as={Col} controlId="formGridphoto">
-                  <Form.Label>Cover Photo URL</Form.Label>
-                  <InputGroup>
-                    <Form.Control
-                      required
-                      autoComplete="off"
-                      type="test"
-                      name="photo"
-                      value={photo}
-                      onChange={this.bookChange}
-                      className={"bg-dark text-white"}
-                      placeholder="Enter Book Cover Photo URL"
-                    />
-                    <div>
-                      {this.state.photo !== "" && (
-                        <Image src={this.state.photo} roundedRight width="38" height="38"/>
-                      )}
-                    </div>
-                  </InputGroup>
-                </Form.Group>
-                <Form.Group as={Col} controlId="formGridISBN">
-                  <Form.Label>ISBN Number</Form.Label>
-                  <Form.Control
-                    required
-                    autoComplete="off"
-                    type="test"
-                    name="isbn"
-                    value={isbn}
-                    onChange={this.bookChange}
-                    className={"bg-dark text-white"}
-                    placeholder="Enter Book ISBN Number"
-                  />
-                </Form.Group>
-                </div>
-                <div className="form-row">
-                <Form.Group as={Col} controlId="formGridPrice">
-                  <Form.Label>Price</Form.Label>
-                  <Form.Control
-                    required
-                    autoComplete="off"
-                    type="test"
-                    name="price"
-                    value={price}
-                    onChange={this.bookChange}
-                    className={"bg-dark text-white"}
-                    placeholder="Enter Book Price"
-                  />
-                </Form.Group>
-                <Form.Group as={Col} controlId="formGridLanguage">
-                  <Form.Label>Language</Form.Label>
-                  <Form.Control
-                    required
-                    as="select"
-                    custom
-                    onChange={this.bookChange}
-                    name="language"
-                    value={language}
-                    className={"bg-dark text-white"}
-                  >
-                    {this.state.languages.map(language => (
-                      <option key={language.value} value={language.value}>
-                        {language.display}
-                      </option>
-                    ))}
-                  </Form.Control>
-                </Form.Group>
-                <Form.Group as={Col} controlId="formGridGenre">
-                  <Form.Label>Genre</Form.Label>
-                  <Form.Control
-                    required
-                    as="select"
-                    custom
-                    onChange={this.bookChange}
-                    name="genre"
-                    value={genre}
-                    className={"bg-dark text-white"}
-                  >
-                    {this.state.genres.map(genre => (
-                      <option key={genre.value} value={genre.value}>
-                        {genre.display}
-                      </option>
-                    ))}
-                  </Form.Control>
-                </Form.Group>
-                </div>
-            </Card.Body>
-            <Card.Footer style={{ textAlign: "right" }}>
-              <Button size="sm" variant="success" type="submit">
-                <FontAwesomeIcon icon={faSave}/>{" "}
-                {this.state.id ? "Update" : "Save"}
-              </Button>{" "}
-              <Button size="sm" variant="info" type="reset">
-                <FontAwesomeIcon icon={faUndo}/> Reset
-              </Button>{" "}
-              <Button
-                size="sm"
-                variant="info"
-                type="button"
-                onClick={() => this.bookList()}
-              >
-                <FontAwesomeIcon icon={faList}/> Book List
-              </Button>
-            </Card.Footer>
-          </Form>
-        </Card>
-      </div>
-    )}}
-
-const mapStateToProps = state => {
-  return {
-    bookObject: state.book
-  }
-}
-
-const mapDispatchToProps = dispatch => {
-  return {
-    saveBook: book => dispatch(saveBook(book)),
-    fetchBook: bookId => dispatch(fetchBook(bookId)),
-    updateBook: book => dispatch(updateBook(book)),
-    fetchLanguages: () => dispatch(fetchLanguages()),
-    fetchGenres: () => dispatch(fetchGenres())
-  }
-}
-export default connect(mapStateToProps, mapDispatchToProps)(Book)
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
 

@@ -208,7 +208,7 @@ class Book extends React.Component {
                 <Form.Group as={Col} controlId="formGridLanguage">
                   <Form.Label>Language</Form.Label>
                   <Form.Control
-                    required
+                    /* required */
                     as="select"
                     custom
                     onChange={this.bookChange}
@@ -226,7 +226,7 @@ class Book extends React.Component {
                 <Form.Group as={Col} controlId="formGridGenre">
                   <Form.Label>Genre</Form.Label>
                   <Form.Control
-                    required
+                    /* required */
                     as="select"
                     custom
                     onChange={this.bookChange}

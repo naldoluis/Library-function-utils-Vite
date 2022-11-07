@@ -17,10 +17,10 @@ public class Book {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Column(nullable = false, length = 70)
+	@Column(nullable = false)
 	private String title;
 
-	@Column(nullable = false, length = 20)
+	@Column(nullable = false)
 	private String author;
 
 	@Column(nullable = false)
@@ -32,9 +32,9 @@ public class Book {
 	@Column(nullable = false)
 	private Double price;
 
-	@Column(nullable = false, length = 15)
+	@Column(nullable = false)
 	private String language;
 
-	@Column(nullable = false, length = 15)
+	@Column(nullable = false)
 	private String genre;
 }
