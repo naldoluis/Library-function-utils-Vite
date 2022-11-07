@@ -7,7 +7,7 @@ import { authenticateUser } from '../../services'
 
 const Login = props => {
   const [error, setError] = useState()
-  const [show, setShow] = useState(true)
+  const [show, setShow] = useState(false)
 
   const initialState = { email: "", password: "" }
 
@@ -42,12 +42,12 @@ const Login = props => {
     <Row className="justify-content-md-center">
       <Col xs={5}>
         {show && props.message && (
-          <Alert variant="success" onClose={() => setShow(false)} dismissible>
+          <Alert variant="success" onClose={() => setShow(true)} dismissible>
             {props.message}
           </Alert>
         )}
         {show && error && (
-          <Alert variant="danger" onClose={() => setShow(false)} dismissible>
+          <Alert variant="danger" onClose={() => setShow(true)} dismissible>
             {error}
           </Alert>
         )}

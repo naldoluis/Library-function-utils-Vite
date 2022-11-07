@@ -50,7 +50,7 @@ export const deleteBook = bookId => {
     dispatch({
       type: BT.DELETE_BOOK_REQUEST
     })
-    axios.delete(`${BASE_URL}/books` + bookId)
+    axios.delete(`${BASE_URL}/books/` + bookId)
       .then(response => {
         dispatch(bookSuccess(response.data))
       })

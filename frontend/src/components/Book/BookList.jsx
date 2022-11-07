@@ -52,12 +52,12 @@ class BookList extends React.Component {
           totalElements: data.totalElements,
           currentPage: data.number + 1
         })
-      })/* 
+      })
       .catch(error => {
         console.log(error)
         localStorage.removeItem("jwtToken")
         this.props.history.push("/")
-     }) */
+     })
   }
 
   deleteBook = bookId => {
@@ -65,12 +65,12 @@ class BookList extends React.Component {
     setTimeout(() => {
       if (this.props.bookObject != null) {
         this.setState({ show: true })
-        setTimeout(() => this.setState({ show: false }), 3000)
+        setTimeout(() => this.setState({ show: false }), 2300)
         this.findAllBooks(this.state.currentPage)
       } else {
         this.setState({ show: false })
       }
-    }, 1000)
+    }, 500)
   }
 
   changePage = event => {
