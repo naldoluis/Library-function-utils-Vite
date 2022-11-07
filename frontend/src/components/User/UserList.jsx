@@ -124,7 +124,7 @@ class UserList extends React.Component {
                         className="first"
                         type="button"
                         size="sm"
-                        variant="outline-light"
+                        variant="outline-warning"
                         disabled={currentPage === 1 ? true : false}
                         onClick={this.firstPage}
                       >
@@ -134,7 +134,7 @@ class UserList extends React.Component {
                         className="prev"
                         type="button"
                         size="sm"
-                        variant="outline-light"
+                        variant="outline-success"
                         disabled={currentPage === 1 ? true : false}
                         onClick={this.prevPage}
                       >
@@ -153,7 +153,7 @@ class UserList extends React.Component {
                         className="next"
                         type="button"
                         size="sm"
-                        variant="outline-light"
+                        variant="outline-success"
                         disabled={currentPage === totalPages ? true : false}
                         onClick={this.nextPage}
                       >
@@ -163,7 +163,7 @@ class UserList extends React.Component {
                         className="last"
                         type="button"
                         size="sm"
-                        variant="outline-light"
+                        variant="outline-warning"
                         disabled={currentPage === totalPages ? true : false}
                         onClick={this.lastPage}
                       >
