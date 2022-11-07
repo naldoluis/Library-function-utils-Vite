@@ -1,5 +1,4 @@
-.info-border {border: 1px solid #17a2b8}
-.page-num {width: 45px !important;border: 1px solid #17a2b8;color: #17a2b8;text-align: center;font-weight: bold}
+.page-num {width: 40px !important;text-align: center;font-weight: 600}
 .arrow {width: 0;height: 0;margin-top: 5px;border-left: 5px solid transparent;border-right: 5px solid transparent;display: inline-block}
 .arrow-up {border-bottom: 10px solid}
 .arrow-down {border-top: 10px solid}
@@ -17,8 +16,8 @@
 .input-password,.input-email,.input-name,.input-phone {margin: 9px 9px;background: #e8f0fe}
 .lock,.envelope,.name,.phone {margin-top: 12px;width: 40px}
 
-.link {background: #0ea5bc;border-radius: 3px;width: 90px;height: 31.3px;text-align: center;font-size: 13.9px;padding-top: 4.4px}
-.link:hover {background: #0d899c}
+.link {background: #b00fd0;border-radius: 3px;width: 90px;height: 31.3px;text-align: center;font-size: 13.9px;padding-top: 4.4px}
+.link:hover {background: #9f0ebc}
 
 ::-webkit-scrollbar {width: 8px}
 ::-webkit-scrollbar-track {background: #606060}
