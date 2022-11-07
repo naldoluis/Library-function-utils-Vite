@@ -102,7 +102,6 @@ const Login = props => {
           <Card.Footer style={{ textAlign: "right" }}>
             <Button
               size="sm"
-              type="button"
               variant="success"
               onClick={validateUser}
               disabled={user.email.length === 0 || user.password.length === 0}
@@ -111,7 +110,6 @@ const Login = props => {
             </Button>{" "}
             <Button
               size="sm"
-              type="button"
               variant="info"
               onClick={resetLoginForm}
               disabled={user.email.length === 0 && user.password.length === 0}

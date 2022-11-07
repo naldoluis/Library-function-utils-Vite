@@ -122,7 +122,6 @@ class UserList extends React.Component {
                   <div>
                       <Button
                         className="first"
-                        type="button"
                         size="sm"
                         variant="outline-warning"
                         disabled={currentPage === 1 ? true : false}
@@ -132,7 +131,6 @@ class UserList extends React.Component {
                       </Button>
                       <Button
                         className="prev"
-                        type="button"
                         size="sm"
                         variant="outline-success"
                         disabled={currentPage === 1 ? true : false}
@@ -151,7 +149,6 @@ class UserList extends React.Component {
                     <div>
                       <Button
                         className="next"
-                        type="button"
                         size="sm"
                         variant="outline-success"
                         disabled={currentPage === totalPages ? true : false}
@@ -161,7 +158,6 @@ class UserList extends React.Component {
                       </Button>
                       <Button
                         className="last"
-                        type="button"
                         size="sm"
                         variant="outline-warning"
                         disabled={currentPage === totalPages ? true : false}

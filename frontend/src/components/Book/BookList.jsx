@@ -190,7 +190,6 @@ class BookList extends React.Component {
                     className="find"
                     size="sm"
                     variant="outline-warning"
-                    type="button"
                     onClick={this.searchData}
                   >
                     <FontAwesomeIcon icon={faSearch}/>
@@ -199,7 +198,6 @@ class BookList extends React.Component {
                     className="clean-find"
                     size="sm"
                     variant="outline-danger"
-                    type="button"
                     onClick={this.cancelSearch}
                   >
                     <FontAwesomeIcon icon={faTimes}/>
@@ -250,18 +248,17 @@ class BookList extends React.Component {
                       <td>{book.language}</td>
                       <td>{book.genre}</td>
                       <td>
-                        <ButtonGroup>
-                          <Link to={"edit/" + book.id} className="btn btn-sm btn-outline-primary">
+                          <Link to={"edit/" + book.id} className="btn btn-sm btn-outline-info">
                             <FontAwesomeIcon icon={faEdit}/>
                           </Link>{" "}
                           <Button
+                            className="delete"
                             size="sm"
                             variant="outline-info"
                             onClick={() => this.deleteBook(book.id)}
                           >
                             <FontAwesomeIcon icon={faTrash}/>
                           </Button>
-                        </ButtonGroup>
                       </td>
                     </tr>
                   ))
@@ -279,9 +276,8 @@ class BookList extends React.Component {
                   <div>
                     <Button
                       className="first"
-                      type="button"
                       size="sm"
-                      variant="outline-light"
+                      variant="outline-warning"
                       disabled={currentPage === 1 ? true : false}
                       onClick={this.firstPage}
                     >
@@ -289,9 +285,8 @@ class BookList extends React.Component {
                     </Button>
                     <Button
                       className="prev"
-                      type="button"
                       size="sm"
-                      variant="outline-light"
+                      variant="outline-success"
                       disabled={currentPage === 1 ? true : false}
                       onClick={this.prevPage}
                     >
@@ -308,9 +303,8 @@ class BookList extends React.Component {
                   <div>
                     <Button
                       className="next"
-                      type="button"
                       size="sm"
-                      variant="outline-light"
+                      variant="outline-success"
                       disabled={currentPage === totalPages ? true : false}
                       onClick={this.nextPage}
                     >
@@ -318,9 +312,8 @@ class BookList extends React.Component {
                     </Button>
                     <Button
                       className="last"
-                      type="button"
                       size="sm"
-                      variant="outline-light"
+                      variant="outline-warning"
                       disabled={currentPage === totalPages ? true : false}
                       onClick={this.lastPage}
                     >

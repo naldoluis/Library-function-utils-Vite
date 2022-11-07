@@ -9,7 +9,7 @@
         ],
         "token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0QGFkbWluLmNvbSIsImF1dGgiOnsibmFtZSI6IkFETUlOIn0sImlhdCI6MTY2NjYzNTk3MywiZXhwIjoxNjY2NjM2MTUzfQ.q6D8TSHmYeZ9O2iAkAquRt9431wq5MUaa5AtLRPqw51puUrGGqxzl6KSVpX_L3JPKCVSI3SrKvUO5aCgmcyy0Q"
         }																	                            |
-													                   Http Headers             |
+													                    Http Headers            |
 																			                                |
 								           Authorization           ✔️			          value:
 
@@ -27,7 +27,7 @@
 
 # GitHub
 
-		    ==>	🐙	git commit -m "funcoes e recursos para projetos futuro"                     ⓕ https://facebook.com/naldo-luis-568
+		    ==>	🐙	git commit -m "funcoes e recursos para projetos futuro"                   ⓕ https://facebook.com/naldo-luis-568
 
 # Requests
 
