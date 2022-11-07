@@ -76,7 +76,7 @@ class Book extends React.Component {
 
   submitBook = event => {
     event.preventDefault()
-    this.props.saveBook(book)
+    this.props.saveBook()
     setTimeout(() => {
       if (this.props.bookObject.book != null) {
         this.setState({ show: true, method: "post" })
@@ -90,7 +90,7 @@ class Book extends React.Component {
 
   updateBook = event => {
     event.preventDefault()
-    this.props.updateBook(book)
+    this.props.updateBook()
     setTimeout(() => {
       if (this.props.bookObject.book != null) {
         this.setState({ show: true, method: "put" })
@@ -137,7 +137,6 @@ class Book extends React.Component {
                   <Form.Control
                     required
                     autoComplete="off"
-                    type="test"
                     name="title"
                     value={title}
                     onChange={this.bookChange}
@@ -150,7 +149,6 @@ class Book extends React.Component {
                   <Form.Control
                     required
                     autoComplete="off"
-                    type="test"
                     name="author"
                     value={author}
                     onChange={this.bookChange}
@@ -166,7 +164,6 @@ class Book extends React.Component {
                     <Form.Control
                       required
                       autoComplete="off"
-                      type="test"
                       name="photo"
                       value={photo}
                       onChange={this.bookChange}
@@ -185,7 +182,7 @@ class Book extends React.Component {
                   <Form.Control
                     required
                     autoComplete="off"
-                    type="test"
+                    type="number"
                     name="isbn"
                     value={isbn}
                     onChange={this.bookChange}
@@ -200,7 +197,7 @@ class Book extends React.Component {
                   <Form.Control
                     required
                     autoComplete="off"
-                    type="test"
+                    type="number"
                     name="price"
                     value={price}
                     onChange={this.bookChange}

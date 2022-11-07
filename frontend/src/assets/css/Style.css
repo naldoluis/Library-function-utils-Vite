@@ -16,7 +16,7 @@
 .input-password,.input-email,.input-name,.input-phone {margin: 9px 9px;background: #e8f0fe}
 .lock,.envelope,.name,.phone {margin-top: 12px;width: 40px}
 
-.link {background: #b00fd0;border-radius: 3px;width: 90px;height: 31.3px;text-align: center;font-size: 13.9px;padding-top: 4.4px}
+.link {background: #b00fd0;border-radius: 3px;width: 90px;height: 31.3px;text-align: center;font-size: 13.9px;padding-top: 4.5px}
 .link:hover {background: #9f0ebc}
 
 ::-webkit-scrollbar {width: 8px}
