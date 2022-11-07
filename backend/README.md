@@ -1,5 +1,5 @@
 # POST
-	    ==>  	http://localhost:8080/rest/user/authenticate
+	    ==>  ⚡	http://localhost:8080/rest/user/authenticate
 
         {
         "name": "test@admin.com",
@@ -11,7 +11,7 @@
         }																	                            |
 													                   Http Headers             |
 																			                                |
-								           Authorization           				          value:
+								           Authorization           ✔️			          value:
 
 >					         Using generated security password: 27b35cb3-51e6-46e5-b74e-42faa8e458d7
 
@@ -27,7 +27,7 @@
 
 # GitHub
 
-		    ==>		git commit -m "funcoes e recursos para projetos futuro"
+		    ==>	🐙	git commit -m "funcoes e recursos para projetos futuro"                     ⓕ https://facebook.com/naldo-luis-568
 
 # Requests
 
@@ -55,16 +55,16 @@
 !J------------------------------------------------------------------------------------------------------------------------------J!
 
 # GET By ID
-  		    ==> 	http://localhost:8080/rest/books/1
+  		    ==> ⚡	http://localhost:8080/rest/books/1
 
 # POST
-	        ==> 	http://localhost:8080/rest/books
+	        ==> ⚡	http://localhost:8080/rest/books
 
 # PUT
-        	==> 	http://localhost:8080/rest/books
+        	==> ⚡	http://localhost:8080/rest/books
 
 # DELETE
-		      ==> 	http://localhost:8080/rest/books/1
+		      ==> ⚡	http://localhost:8080/rest/books/1
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
 
@@ -117,7 +117,7 @@
       }
 
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-											                          !J ★ BACKEND ★ !J
+											                          !J ⭐ BACKEND ⭐ !J
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
@@ -564,7 +564,7 @@ public class BookController implements Resource<Book> {
 !J------------------------------------------------------------------------------------------------------------------------------J!
 
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-											                          !J ★ FRONTEND ★ !J
+											                          !J ⭐ FRONTEND ⭐ !J
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 # Fonts index.css
@@ -1530,7 +1530,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(Book)
 !J------------------------------------------------------------------------------------------------------------------------------J!
 
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-											  	                      !J ★ CONFIG ★ !J
+											  	                      !J ⭐ CONFIG ⭐ !J
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 # ts.config.json
@@ -1558,3 +1558,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(Book)
 "moduleResolution": "Node",
 "allowSyntheticDefaultImports": true
 },"include": ["vite.config.ts"]}
+
+# Simbols
+
+♫ ★ 👎︎ • ☢️ ⭐ ⚡ 🐙 🎈 ✔️ ⓕ ☂
