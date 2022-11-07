@@ -67,7 +67,6 @@ const Login = props => {
                   <FormControl
                     required
                     autoComplete="off"
-                    type="text"
                     name="email"
                     value={user.email}
                     onChange={credentialChange}

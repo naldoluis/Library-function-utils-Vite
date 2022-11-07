@@ -63,7 +63,6 @@ const Register = props => {
                   </div>
                     <FormControl
                       autoComplete="off"
-                      type="text"
                       name="name"
                       value={user.name}
                       onChange={userChange}
@@ -84,7 +83,6 @@ const Register = props => {
                     <FormControl
                       required
                       autoComplete="off"
-                      type="text"
                       name="email"
                       value={user.email}
                       onChange={userChange}
@@ -125,7 +123,7 @@ const Register = props => {
                   </div>
                     <FormControl
                       autoComplete="off"
-                      type="text"
+                      type="number"
                       name="mobile"
                       value={user.mobile}
                       onChange={userChange}
