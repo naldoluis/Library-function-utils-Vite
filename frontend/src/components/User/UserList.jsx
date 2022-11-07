@@ -73,7 +73,7 @@ class UserList extends React.Component {
 
     return (
       <div>
-        {userData/* .error */ ? (
+        {userData.error ? (
           <Alert variant="danger">{userData.error}</Alert>
         ) : (
           <Card className={"border border-dark bg-dark text-white"}>
@@ -121,16 +121,20 @@ class UserList extends React.Component {
                   <InputGroup size="sm">
                   <div>
                       <Button
+                        className="first"
                         type="button"
-                        variant="outline-info"
+                        size="sm"
+                        variant="outline-light"
                         disabled={currentPage === 1 ? true : false}
                         onClick={this.firstPage}
                       >
                         <FontAwesomeIcon icon={faFastBackward}/> First
                       </Button>
                       <Button
+                        className="prev"
                         type="button"
-                        variant="outline-info"
+                        size="sm"
+                        variant="outline-light"
                         disabled={currentPage === 1 ? true : false}
                         onClick={this.prevPage}
                       >
@@ -138,23 +142,28 @@ class UserList extends React.Component {
                       </Button>
                   </div>
                     <FormControl
-                      className={"page-num bg-dark"}
+                      size="sm"
+                      className={"border-light text-white page-num bg-dark"}
                       name="currentPage"
                       value={currentPage}
                       onChange={this.changePage}
                     />
                     <div>
                       <Button
+                        className="next"
                         type="button"
-                        variant="outline-info"
+                        size="sm"
+                        variant="outline-light"
                         disabled={currentPage === totalPages ? true : false}
                         onClick={this.nextPage}
                       >
                         <FontAwesomeIcon icon={faStepForward}/> Next
                       </Button>
                       <Button
+                        className="last"
                         type="button"
-                        variant="outline-info"
+                        size="sm"
+                        variant="outline-light"
                         disabled={currentPage === totalPages ? true : false}
                         onClick={this.lastPage}
                       >
