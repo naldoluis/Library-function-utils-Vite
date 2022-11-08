@@ -11,6 +11,8 @@
 .first,.prev {margin: -.4px 5px 0 0}
 .next,.last {margin: -.4px 0 0 5px}
 
+.lang {width: 20px}
+
 .arrow-up,.arrow-down,.link:hover,.link,.clean-find {color: #fff}
 
 .input-password,.input-email,.input-name,.input-phone {margin: 9px 9px;background: #e8f0fe}

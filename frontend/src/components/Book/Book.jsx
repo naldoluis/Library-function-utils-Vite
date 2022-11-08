@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSave, faPlusSquare, faUndo, faList, faEdit } from '@fortawesome/free-solid-svg-icons'
 import { saveBook, fetchBook, updateBook, fetchLanguages, fetchGenres } from '../../services'
 import MyToast from '../MyToast'
+import iconLang from '../../assets/language.png'
 
 class Book extends React.Component {
   constructor(props) {
@@ -133,7 +134,7 @@ class Book extends React.Component {
             <Card.Body>
             <div className="form-row">
                 <Form.Group as={Col} controlId="formGridTitle">
-                  <Form.Label>Title</Form.Label>
+                  <Form.Label>Title 📙</Form.Label>
                   <Form.Control
                     required
                     autoComplete="off"
@@ -145,21 +146,21 @@ class Book extends React.Component {
                   />
                 </Form.Group>
                 <Form.Group as={Col} controlId="formGridAuthor">
-                  <Form.Label>Author</Form.Label>
+                  <Form.Label>Author ✏️</Form.Label>
                   <Form.Control
                     required
                     autoComplete="off"
                     name="author"
                     value={author}
                     onChange={this.bookChange}
-                    className={"bg-dark text-white"}
+                    className={"bg-dark text-white mb-2"}
                     placeholder="Enter Book Author"
                   />
                 </Form.Group>
                 </div>
                 <div className="form-row">
                 <Form.Group as={Col} controlId="formGridphoto">
-                  <Form.Label>Cover Photo URL</Form.Label>
+                  <Form.Label>Cover Photo URL 📷</Form.Label>
                   <InputGroup>
                     <Form.Control
                       required
@@ -178,7 +179,7 @@ class Book extends React.Component {
                   </InputGroup>
                 </Form.Group>
                 <Form.Group as={Col} controlId="formGridISBN">
-                  <Form.Label>ISBN Number</Form.Label>
+                  <Form.Label>ISBN Number ☏</Form.Label>
                   <Form.Control
                     required
                     autoComplete="off"
@@ -186,14 +187,14 @@ class Book extends React.Component {
                     name="isbn"
                     value={isbn}
                     onChange={this.bookChange}
-                    className={"bg-dark text-white"}
+                    className={"bg-dark text-white mb-2"}
                     placeholder="Enter Book ISBN Number"
                   />
                 </Form.Group>
                 </div>
                 <div className="form-row">
                 <Form.Group as={Col} controlId="formGridPrice">
-                  <Form.Label>Price</Form.Label>
+                  <Form.Label>Price 💲</Form.Label>
                   <Form.Control
                     required
                     autoComplete="off"
@@ -206,7 +207,7 @@ class Book extends React.Component {
                   />
                 </Form.Group>
                 <Form.Group as={Col} controlId="formGridLanguage">
-                  <Form.Label>Language</Form.Label>
+                  <Form.Label>Language <img className="lang" src={iconLang}/></Form.Label>
                   <Form.Control
                     required
                     as="select"
@@ -224,7 +225,7 @@ class Book extends React.Component {
                   </Form.Control>
                 </Form.Group>
                 <Form.Group as={Col} controlId="formGridGenre">
-                  <Form.Label>Genre</Form.Label>
+                  <Form.Label>Genre 📚</Form.Label>
                   <Form.Control
                     required
                     as="select"
