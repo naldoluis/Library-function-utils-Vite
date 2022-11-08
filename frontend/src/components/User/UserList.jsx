@@ -76,7 +76,7 @@ class UserList extends React.Component {
         {userData.error ? (
           <Alert variant="danger">{userData.error}</Alert>
         ) : (
-          <Card className={"border border-dark bg-dark text-white"}>
+          <Card className="border border-dark bg-dark text-white">
             <Card.Header>
               <FontAwesomeIcon icon={faUsers}/> User List
             </Card.Header>
@@ -141,7 +141,7 @@ class UserList extends React.Component {
                   </div>
                     <FormControl
                       size="sm"
-                      className={"border-light text-white page-num bg-dark"}
+                      className="border-light text-white page-num bg-dark"
                       name="currentPage"
                       value={currentPage}
                       onChange={this.changePage}

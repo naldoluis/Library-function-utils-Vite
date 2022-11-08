@@ -167,11 +167,11 @@ class BookList extends React.Component {
         <div style={{ display: this.state.show ? "block" : "none" }}>
           <MyToast
             show={this.state.show}
-            message={"Book Deleted Successfully."}
-            type={"danger"}
+            message="Book Deleted Successfully."
+            type="danger"
           />
         </div>
-        <Card className={"border border-dark bg-dark text-white"}>
+        <Card className="border border-dark bg-dark text-white">
           <Card.Header>
             <div style={{ float: "left" }}>
               <FontAwesomeIcon icon={faList}/> Book List
@@ -182,7 +182,7 @@ class BookList extends React.Component {
                   placeholder="Search"
                   name="search"
                   value={search}
-                  className={"border-light bg-dark text-white"}
+                  className="border-light bg-dark text-white"
                   onChange={this.searchChange}
                 />
                 <div>
@@ -295,7 +295,7 @@ class BookList extends React.Component {
                     </div>
                   <FormControl
                     size="sm"
-                    className={"border-light text-white page-num bg-dark"}
+                    className="border-light text-white page-num bg-dark"
                     name="currentPage"
                     value={currentPage}
                     onChange={this.changePage}

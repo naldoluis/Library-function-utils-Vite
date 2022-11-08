@@ -44,11 +44,11 @@ const Register = props => {
   return (
     <div>
       <div style={{ display: show ? "block" : "none" }}>
-        <MyToast show={show} message={message} type={"success"}/>
+        <MyToast show={show} message={message} type="success"/>
       </div>
       <Row className="justify-content-md-center">
         <Col xs={5}>
-          <Card className={"border border-dark bg-dark text-white"}>
+          <Card className="border border-dark bg-dark text-white">
             <Card.Header>
               <FontAwesomeIcon icon={faUserPlus}/> Register
             </Card.Header>

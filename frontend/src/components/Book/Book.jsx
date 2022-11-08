@@ -118,8 +118,8 @@ class Book extends React.Component {
         <div style={{ display: this.state.show ? "block" : "none" }}>
           <MyToast
             show={this.state.show}
-            message={this.state.method === "put" ? "Book Updated Successfully." : "Book Saved Successfully."}
-            type={"success"}
+            message={this.state.method === "post" ? "Book Updated Successfully." : "Book Saved Successfully."}
+            type="success"
           />
         </div>
         <Card className={"border border-dark bg-dark text-white"}>
@@ -142,7 +142,7 @@ class Book extends React.Component {
                     name="title"
                     value={title}
                     onChange={this.bookChange}
-                    className={"bg-dark text-white"}
+                    className="bg-dark text-white"
                     placeholder="Enter Book Title"
                   />
                 </Form.Group>
@@ -154,7 +154,7 @@ class Book extends React.Component {
                     name="author"
                     value={author}
                     onChange={this.bookChange}
-                    className={"bg-dark text-white mb-2"}
+                    className="bg-dark text-white mb-2"
                     placeholder="Enter Book Author"
                   />
                 </Form.Group>
@@ -169,7 +169,7 @@ class Book extends React.Component {
                       name="photo"
                       value={photo}
                       onChange={this.bookChange}
-                      className={"bg-dark text-white"}
+                      className="bg-dark text-white"
                       placeholder="Enter Book Cover Photo URL"
                     />
                     <div>
@@ -188,7 +188,7 @@ class Book extends React.Component {
                     name="isbn"
                     value={isbn}
                     onChange={this.bookChange}
-                    className={"bg-dark text-white mb-2"}
+                    className="bg-dark text-white mb-2"
                     placeholder="Enter Book ISBN Number"
                   />
                 </Form.Group>
@@ -203,7 +203,7 @@ class Book extends React.Component {
                     name="price"
                     value={price}
                     onChange={this.bookChange}
-                    className={"bg-dark text-white"}
+                    className="bg-dark text-white"
                     placeholder="Enter Book Price"
                   />
                 </Form.Group>
@@ -216,7 +216,7 @@ class Book extends React.Component {
                     onChange={this.bookChange}
                     name="language"
                     value={language}
-                    className={"bg-dark text-white"}
+                    className="bg-dark text-white"
                   >
                     {this.state.languages.map(language => (
                       <option key={language.value} value={language.value}>
@@ -234,7 +234,7 @@ class Book extends React.Component {
                     onChange={this.bookChange}
                     name="genre"
                     value={genre}
-                    className={"bg-dark text-white"}
+                    className="bg-dark text-white"
                   >
                     {this.state.genres.map(genre => (
                       <option key={genre.value} value={genre.value}>
