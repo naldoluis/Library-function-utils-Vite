@@ -6,7 +6,7 @@
 
 .find {background: #f5d20c;color: #393939;margin-left: 3px}
 .clean-find {background: #c02f2f;margin-left: 3px}
-.delete {margin-left: .1px}
+.delete {margin-left: .5px}
 
 .first,.prev {margin: -.4px 5px 0 0}
 .next,.last {margin: -.4px 0 0 5px}
