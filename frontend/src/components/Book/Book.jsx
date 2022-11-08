@@ -135,7 +135,7 @@ class Book extends React.Component {
             <Card.Body>
             <div className="form-row">
                 <Form.Group as={Col} controlId="formGridTitle">
-                  <Form.Label>Title 📙</Form.Label>
+                  <Form.Label className="title-book">Title 📙</Form.Label>
                   <Form.Control
                     required
                     autoComplete="off"
@@ -147,7 +147,7 @@ class Book extends React.Component {
                   />
                 </Form.Group>
                 <Form.Group as={Col} controlId="formGridAuthor">
-                  <Form.Label>Author ✏️</Form.Label>
+                  <Form.Label className="author">Author ✏️</Form.Label>
                   <Form.Control
                     required
                     autoComplete="off"
@@ -195,7 +195,7 @@ class Book extends React.Component {
                 </div>
                 <div className="form-row">
                 <Form.Group as={Col} controlId="formGridPrice">
-                  <Form.Label>Price 💲</Form.Label>
+                  <Form.Label className="price">Price 💲</Form.Label>
                   <Form.Control
                     required
                     autoComplete="off"

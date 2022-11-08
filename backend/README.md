@@ -11,7 +11,7 @@
         }																	                            |
 													                    Http Headers            |
 																			                                |
-								           Authorization           ✔️			          value:
+								          🔑 Authorization          ✔️			       value: 🔒
 
 >					         Using generated security password: 27b35cb3-51e6-46e5-b74e-42faa8e458d7
 
@@ -50,7 +50,7 @@
 
                                      --> Search Filter http://localhost:8080/rest/books/search/English?page=0&size=5
                                                                                                   |
-                                                                                               Science
+                                                                                               Science ⚗️
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
 
@@ -126,12 +126,12 @@
 
 export const BASE_URL = import.meta.env.VITE_BACKEND_URL
 
->// --> Quando em produção, não é necessário o " ?? 'http://localhost:8080/rest' "
+>// 💡 --> Quando em produção, não é necessário o " ?? 'http://localhost:8080/rest' "
 
 !J------------------------------------------------------------------------------------------------------------------------------J
 
 # import.sql
-								             EXEMPLO DE COMO EDITAR NO BANCO DE DADOS (POSTGRES ★)
+								             EXEMPLO DE COMO EDITAR NO BANCO DE DADOS (POSTGRES 🛢)
 
                     update tb_book set title = 'new name of title' where id = 20						  X = número do id
                       			 |			 	   |               |					          |							  Y = set o tipo de atributo a editar
@@ -209,9 +209,9 @@ INSERT INTO tb_user VALUES ('05efdfb1-e1b9-4f09-8abc-968905db6b11', '$2a$10$2Kef
 >  89c0013c-c7e1-4f5d-9e9d-c8e13e57546e									  			              0e7a8d96-5798-44c9-9301-2a7514766083
   [8f91a7a1-a717-4d9a-b32e-81a2e5813ad9]									  			           [ebc82e44-c21a-4ada-8ea1-c0545deef6bb]
 
-!J------------------------------------------------------------------------------------------------------------------------------J!
+!J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
 
-#           		 Application.java --> (Simula o arquivo import.sql na busca de livros no banco de dados)
+#           		 Application.java --> (Simula o arquivo import.sql na busca de livros no banco de dados) 
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -279,7 +279,7 @@ public class Application implements CommandLineRunner {
 				bookService.saveOrUpdate(book);
 			}}}}
 
-!J------------------------------------------------------------------------------------------------------------------------------J!
+!J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
 
 # BookService with DTO
 
@@ -400,7 +400,7 @@ public class UserService implements IServiceUser<User> {
 	}
 }
 
-[!J------------------------------------------------------------------------------------------------------------------------------J!
+!J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
 
 # Spring Security Config Method 2 (v2.6.7)
 
@@ -561,10 +561,10 @@ public class BookController implements Resource<Book> {
 	}
 }
 
-!J------------------------------------------------------------------------------------------------------------------------------J!
+!J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
 
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-											                          !J ⭐ FRONTEND ⭐ !J
+											                           !J ⭐ FRONTEND ⭐ !J
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 # Fonts index.css
@@ -855,7 +855,7 @@ const mapDispatchToProps = dispatch => {
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Book)
 
-!J------------------------------------------------------------------------------------------------------------------------------J!
+!J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
 
 # userList
 
@@ -1053,7 +1053,7 @@ const mapDispatchToProps = dispatch => {
 }
 export default connect(mapStateToProps, mapDispatchToProps)(UserList)
 
-!J------------------------------------------------------------------------------------------------------------------------------J!
+!J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
 
 # login
 
@@ -1198,10 +1198,10 @@ const mapDispatchToProps = dispatch => {
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Login)
 
-!J------------------------------------------------------------------------------------------------------------------------------J!
+!J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
 
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-											  	                      !J ⭐ CONFIG ⭐ !J
+											  	                         !J ⚙️ CONFIG 🔧 !J
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 # ts.config.json
@@ -1236,4 +1236,4 @@ export default connect(mapStateToProps, mapDispatchToProps)(Login)
 
 📕 📗 📘 📙 🎼 🛍 🛢 🗑 🚧 ⚠️ ℹ️ 👍 👎 🛠 🛒 ☂️ ⏱ ⏲ ⚙️ ⚗️ 📽 📐 📏 📊 📧 📄 🔧 🎬 🎷 🔐 ✉️ 📩 📨 📋 📅 📦 📷 ≣
 
- ✔ ✖ ⧈ 💬 🗨 
+ ✔ ✖ ⧈ 💬 🗨
