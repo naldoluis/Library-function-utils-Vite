@@ -248,13 +248,13 @@ class BookList extends React.Component {
                       <td>{book.language}</td>
                       <td>{book.genre}</td>
                       <td align="center">
-                          <Link to={"/edit/" + book.id} className="btn btn-sm btn-outline-success">
+                          <Link to={"/edit/" + book.id} className="btn btn-sm btn-outline-secondary">
                             <FontAwesomeIcon icon={faEdit}/>
                           </Link>{" "}
                           <Button
                             className="delete"
                             size="sm"
-                            variant="outline-info"
+                            variant="outline-secondary"
                             onClick={() => this.deleteBook(book.id)}
                           >
                             <FontAwesomeIcon icon={faTrash}/>

@@ -122,7 +122,7 @@ class Book extends React.Component {
             type="success"
           />
         </div>
-        <Card className={"border border-dark bg-dark text-white"}>
+        <Card className="border border-dark bg-dark text-white">
           <Card.Header>
             <FontAwesomeIcon icon={this.state.id ? faEdit : faPlusSquare}/>{" "}
             {this.state.id ? "Update Book" : "Add New Book"}
