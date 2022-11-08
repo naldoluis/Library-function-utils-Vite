@@ -69,7 +69,7 @@
 !J------------------------------------------------------------------------------------------------------------------------------J!
 
 # Requests
-
+📕
       {
           "title": "Spring in Action",
           "author": "Craig Walls",
@@ -79,6 +79,7 @@
           "genre": "Fantasy",
           "language": "English"
       }
+📒
       {
           "title": "Java Persistence with Hibernate",
           "author": "Christian Bauer and Gavin King",
@@ -88,6 +89,7 @@
           "genre": "Biography",
           "language": "English"
       }
+📗
       {
           "title": "Grails in Action",
           "author": "Glen Smith and Peter Ledbrook",
@@ -97,6 +99,7 @@
           "genre": "Technology",
           "language": "English"
       }
+📙
       {
           "title": "Spring Boot in Action",
           "author": "Craig Walls",
@@ -106,6 +109,7 @@
           "genre": "Science",
           "language": "English"
       }
+📘
       {
           "title": "Head First Java: A Brain-Friendly Guide",
           "author": "Kathy Sierra",
@@ -138,7 +142,7 @@ export const BASE_URL = import.meta.env.VITE_BACKEND_URL
                              |			 	   |			         |                    |					      J = nome da tabela
                              J			     Y				       N                    X			          N = nome do título a editar
 
-
+                                                                                  💬
 								                OPÇÕES DE ATRIBUTOS A EDITAR DO ARQUIVO BOOK.java			
 
                                       private String title;       ==>	title
