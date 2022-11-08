@@ -7,6 +7,7 @@ import { faSave, faPlusSquare, faUndo, faList, faEdit } from '@fortawesome/free-
 import { saveBook, fetchBook, updateBook, fetchLanguages, fetchGenres } from '../../services'
 import MyToast from '../MyToast'
 import iconLang from '../../assets/language.png'
+import iconCam from '../../assets/camera.png'
 
 class Book extends React.Component {
   constructor(props) {
@@ -160,7 +161,7 @@ class Book extends React.Component {
                 </div>
                 <div className="form-row">
                 <Form.Group as={Col} controlId="formGridphoto">
-                  <Form.Label>Cover Photo URL 📷</Form.Label>
+                  <Form.Label>Cover Photo URL <img className="cam" src={iconCam}/></Form.Label>
                   <InputGroup>
                     <Form.Control
                       required
@@ -179,7 +180,7 @@ class Book extends React.Component {
                   </InputGroup>
                 </Form.Group>
                 <Form.Group as={Col} controlId="formGridISBN">
-                  <Form.Label>ISBN Number ☏</Form.Label>
+                  <Form.Label>ISBN Number ▥</Form.Label>
                   <Form.Control
                     required
                     autoComplete="off"
