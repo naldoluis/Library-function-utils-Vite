@@ -22,7 +22,7 @@ export const fetchBook = bookId => {
     dispatch({
       type: BT.FETCH_BOOK_REQUEST
     })
-    axios(`${BASE_URL}/books` + bookId)
+    axios(`${BASE_URL}/books/` + bookId)
       .then(response => {
         dispatch(bookSuccess(response.data))
       })

@@ -118,7 +118,7 @@ class Book extends React.Component {
         <div style={{ display: this.state.show ? "block" : "none" }}>
           <MyToast
             show={this.state.show}
-            message={this.state.method === "post" ? "Book Updated Successfully." : "Book Saved Successfully."}
+            message={this.state.method === "put" ? "Book Updated Successfully." : "Book Saved Successfully."}
             type="success"
           />
         </div>

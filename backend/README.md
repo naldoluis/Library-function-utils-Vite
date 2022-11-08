@@ -1239,3 +1239,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(Login)
 📕 📗 📘 📙 🎼 🛍 🛢 🗑 🚧 ⚠️ ℹ️ 👍 👎 🛠 🛒 ☂️ ⏱ ⏲ ⚙️ ⚗️ 📽 📐 📏 📊 📧 📄 🔧 🎬 🎷 🔐 ✉️ 📩 📨 📋 📅 📦 📷 ≣ 🗨
 
  ✔ ✖ ⧈ 💬
+
+
+                                                                                                               ⋈ vscode: 1.73.0
