@@ -20,7 +20,7 @@ class Book extends React.Component {
     }
   }
 
-  initialState = { id: "", title: "", author: "", photo: "https://images-na.ssl-images-amazon.com/images/I/51gHy16h5TL.jpg", isbn: "", price: "", language: "", genre: "" }
+  initialState = { id: "", title: "Java", author: "New Author", photo: "https://images-na.ssl-images-amazon.com/images/I/51gHy16h5TL.jpg", isbn: "25032019", price: "20.00", language: "", genre: "" }
 
   findAllLanguages = () => {
     this.props.fetchLanguages()
@@ -210,7 +210,7 @@ class Book extends React.Component {
                 <Form.Group as={Col} controlId="formGridLanguage">
                   <Form.Label>Language <img className="lang" src={iconLang}/></Form.Label>
                   <Form.Control
-                    required
+                    //required
                     as="select"
                     custom
                     onChange={this.bookChange}
@@ -228,7 +228,7 @@ class Book extends React.Component {
                 <Form.Group as={Col} controlId="formGridGenre">
                   <Form.Label>Genre 📚</Form.Label>
                   <Form.Control
-                    required
+                    //required
                     as="select"
                     custom
                     onChange={this.bookChange}

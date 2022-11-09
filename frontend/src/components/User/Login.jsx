@@ -42,12 +42,12 @@ const Login = props => {
     <Row className="justify-content-md-center">
       <Col xs={5}>
         {show && props.message && (
-          <Alert variant="success" onClose={() => setShow(true)} dismissible>
+          <Alert variant="success" onClose={() => setShow(false)} dismissible>
             {props.message}
           </Alert>
         )}
         {show && error && (
-          <Alert variant="danger" onClose={() => setShow(true)} dismissible>
+          <Alert variant="danger" onClose={() => setShow(false)} dismissible>
             {error}
           </Alert>
         )}

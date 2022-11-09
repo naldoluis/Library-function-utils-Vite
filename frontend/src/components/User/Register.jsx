@@ -29,7 +29,7 @@ const Register = props => {
         resetRegisterForm()
         setTimeout(() => {
           setShow(false)
-          props.history.push("/login")
+          //props.history.push("/login")
         }, 2000)
       })
       .catch(error => {
