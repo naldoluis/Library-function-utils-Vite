@@ -141,7 +141,7 @@ class BookList extends React.Component {
 
   searchData = currentPage => {
     currentPage -= 1
-    axios(`${BASE_URL}/books/search` +
+    axios(`${BASE_URL}/books/search/` +
           this.state.search +
           "?page=" +
           currentPage +
