@@ -126,7 +126,7 @@
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
-
+                                                                                                                          - ❐ ❌
 # requests.js
 
 export const BASE_URL = import.meta.env.VITE_BACKEND_URL
@@ -134,7 +134,7 @@ export const BASE_URL = import.meta.env.VITE_BACKEND_URL
 >// 💡 --> Quando em produção, não é necessário o " ?? 'http://localhost:8080/rest' "
 
 !J------------------------------------------------------------------------------------------------------------------------------J
-
+                                                                                                                          - ❐ ❌
 # import.sql
 								             EXEMPLO DE COMO EDITAR NO BANCO DE DADOS (POSTGRES 🛢)
 
@@ -215,7 +215,7 @@ INSERT INTO tb_user VALUES ('05efdfb1-e1b9-4f09-8abc-968905db6b11', '$2a$10$2Kef
   [8f91a7a1-a717-4d9a-b32e-81a2e5813ad9]									  			           [ebc82e44-c21a-4ada-8ea1-c0545deef6bb]
 
 !J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
-
+                                                                                                                          - ❐ ❌
 #           		 Application.java --> (Simula o arquivo import.sql na busca de livros no banco de dados) 
 
 import org.springframework.boot.CommandLineRunner;
@@ -285,7 +285,7 @@ public class Application implements CommandLineRunner {
 			}}}}
 
 !J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
-
+                                                                                                                          - ❐ ❌
 # BookService with DTO
 
 import org.codehaus.jettison.json.JSONException;
@@ -339,7 +339,7 @@ public class BookService implements IServiceBook<Book> {
 }
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
-
+                                                                                                                          - ❐ ❌
 # IServiceBook of DTO
 
 package com.library.naldo.service.impl;
@@ -350,7 +350,7 @@ public interface IServiceBook<T> {
 }
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
-
+                                                                                                                          - ❐ ❌
 # UserDTO Method 2
 
 package com.library.naldo.service;
@@ -406,7 +406,7 @@ public class UserService implements IServiceUser<User> {
 }
 
 !J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
-
+                                                                                                                          - ❐ ❌
 # Spring Security Config Method 2 (v2.6.7)
 
 package com.library.naldo.config;
@@ -465,7 +465,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 }
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
-
+                                                                                                                          - ❐ ❌
 # Spring Security Config Method 3 (v2.6.7)
 
 import org.springframework.beans.factory.annotation.Value;
@@ -490,7 +490,7 @@ public class SpringSecurityConfig implements WebMvcConfigurer {
 }
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
-
+                                                                                                                          - ❐ ❌
 # BookController with DTO
 
 package com.library.naldo.controller;
@@ -571,7 +571,7 @@ public class BookController implements Resource<Book> {
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 											                           !J ⭐ FRONTEND ⭐ !J
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-
+                                                                                                                          - ❐ ❌
 # Fonts index.css
 
                   @import "https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css"
@@ -861,7 +861,7 @@ const mapDispatchToProps = dispatch => {
 export default connect(mapStateToProps, mapDispatchToProps)(Book)
 
 !J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
-
+                                                                                                                          - ❐ ❌
 # userList
 
 import React from 'react'
@@ -1059,7 +1059,7 @@ const mapDispatchToProps = dispatch => {
 export default connect(mapStateToProps, mapDispatchToProps)(UserList)
 
 !J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
-
+                                                                                                                          - ❐ ❌
 # login
 
 import { useState } from 'react'
@@ -1208,7 +1208,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(Login)
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 											  	                         !J ⚙️ CONFIG 🔧 !J
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-
+                                                                                                                          - ❐ ❌
 # ts.config.json
 
 {"compilerOptions": {
