@@ -239,7 +239,7 @@ class BookList extends React.Component {
                   books.map(book => (
                     <tr key={book.id}>
                       <td>
-                        <Image src={book.photo} roundedCircle width="23" height="23"/>{" "}
+                        <Image src={book.photo} roundedCircle width="29" height="29"/>{" "}
                         {book.title}
                       </td>
                       <td align="center">{book.author}</td>
