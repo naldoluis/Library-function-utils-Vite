@@ -7,7 +7,6 @@ export const saveBook = book => {
     dispatch({
       type: BT.SAVE_BOOK_REQUEST
     })
-
     axios.post(`${BASE_URL}/books`, book)
       .then(response => {
         dispatch(bookSuccess(response.data))
