@@ -587,6 +587,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSave, faPlusSquare, faUndo, faList, faEdit } from '@fortawesome/free-solid-svg-icons'
 import { saveBook, fetchBook, updateBook, fetchLanguages, fetchGenres } from '../../services'
 import MyToast from '../MyToast'
+import iconLang from '../../assets/language.png'
+import iconCam from '../../assets/camera.png'
+import { BASE_URL } from '../../utils/requests'
 
 class Book extends React.Component {
   constructor(props) {
@@ -597,9 +600,20 @@ class Book extends React.Component {
       languages: [],
       show: false
     }
+    this.bookChange = this.bookChange.bind(this);
+    this.submitBook = this.submitBook.bind(this);
   }
 
-  initialState = { id: "", title: "", author: "", photo: "https://images-na.ssl-images-amazon.com/images/I/51gHy16h5TL.jpg", isbn: "", price: "", language: "", genre: "" }
+  initialState = { id: "", title: "Java", author: "New Author", photo: "https://images-na.ssl-images-amazon.com/images/I/51gHy16h5TL.jpg", isbn: "25032019", price: "20.00", language: "", genre: "" }
+
+
+/*   componentDidMount() {
+    const bookId = +this.props.match.params.id;
+    if(bookId) {
+        this.findBookById(bookId);
+    }
+    this.findAllLanguages();
+} */
 
   findAllLanguages = () => {
     this.props.fetchLanguages()
@@ -632,7 +646,28 @@ class Book extends React.Component {
     }, 100)
   }
 
-  findBookById = bookId => {
+  findBookById = (bookId) => {
+    fetch("http://localhost:8080/rest/books/" +bookId)
+    .then(response => response.json())
+    .then(book => {
+      if(book) {
+        this.setState({
+          id:book.id,
+          title:book.title,
+          author:book.author,
+          photo:book.photo,
+          isbn:book.isbn,
+          price:book.price,
+          language:book.language,
+          genre:book.genre
+        })
+      }
+    }).catch(error => {
+      console.error("Error - "+error)
+    })
+  }
+
+  /* findBookById = bookId => {
     this.props.fetchBook(bookId)
     setTimeout(() => {
       let book = this.props.bookObject.book
@@ -649,7 +684,7 @@ class Book extends React.Component {
         })
       }
     }, 1000)
-  }
+  } */
 
   resetBook = () => {
     this.setState(() => this.initialState)
@@ -657,29 +692,69 @@ class Book extends React.Component {
 
   submitBook = event => {
     event.preventDefault()
-    this.props.saveBook()
-    setTimeout(() => {
-      if (this.props.bookObject.book != null) {
-        this.setState({ show: true, method: "post" })
-        setTimeout(() => this.setState({ show: false }), 3000)
+
+    const book = {
+      title: this.state.title,
+      author: this.state.author,
+      photo: this.state.photo,
+      isbn: this.state.isbn,
+      price: this.state.price,
+      language: this.state.language,
+      genre: this.state.genre
+    }
+
+    const headers = new Headers()
+    headers.append('Content-Type', 'application/json')
+
+    fetch("http://localhost:8080/rest/books", {
+      method: 'POST',
+      body: JSON.stringify(book),
+      headers
+    })
+    .then(response => response.json())
+    .then(book => {
+      if(book) {
+        this.setState({"show": true, "method": "post"})
+        setTimeout(() => this.setState({"show": false}), 3000)
+
       } else {
-        this.setState({ show: false })
+        this.setState({"show": false})
       }
-    }, 2000)
+    })
     this.setState(this.initialState)
   }
 
   updateBook = event => {
     event.preventDefault()
-    this.props.updateBook()
-    setTimeout(() => {
-      if (this.props.bookObject.book != null) {
-        this.setState({ show: true, method: "put" })
-        setTimeout(() => this.setState({ show: false }), 3000)
+
+    const book = {
+      title: this.state.title,
+      author: this.state.author,
+      photo: this.state.photo,
+      isbn: this.state.isbn,
+      price: this.state.price,
+      language: this.state.language,
+      genre: this.state.genre
+    }
+
+    const headers = new Headers()
+    headers.append('Content-Type', 'application/json')
+
+    fetch("http://localhost:8080/rest/books", {
+      method: 'PUT',
+      body: JSON.stringify(book),
+      headers
+    })
+    .then(data => response.json())
+    .then(book => {
+      if(book) {
+        this.setState({"show": true, "method": "put"})
+        setTimeout(() => this.setState({"show": false}), 3000)
+        setTimeout(() => this.bookList(), 3000)
       } else {
-        this.setState({ show: false })
+        this.setState({"show": false})
       }
-    }, 2000)
+    })
     this.setState(this.initialState)
   }
 
@@ -698,10 +773,10 @@ class Book extends React.Component {
           <MyToast
             show={this.state.show}
             message={this.state.method === "put" ? "Book Updated Successfully." : "Book Saved Successfully."}
-            type={"success"}
+            type="success"
           />
         </div>
-        <Card className={"border border-dark bg-dark text-white"}>
+        <Card className="border border-dark bg-dark text-white">
           <Card.Header>
             <FontAwesomeIcon icon={this.state.id ? faEdit : faPlusSquare}/>{" "}
             {this.state.id ? "Update Book" : "Add New Book"}
@@ -714,33 +789,33 @@ class Book extends React.Component {
             <Card.Body>
             <div className="form-row">
                 <Form.Group as={Col} controlId="formGridTitle">
-                  <Form.Label>Title</Form.Label>
+                  <Form.Label className="title-book">Title 📙</Form.Label>
                   <Form.Control
                     required
                     autoComplete="off"
                     name="title"
                     value={title}
                     onChange={this.bookChange}
-                    className={"bg-dark text-white"}
+                    className="bg-dark text-white"
                     placeholder="Enter Book Title"
                   />
                 </Form.Group>
                 <Form.Group as={Col} controlId="formGridAuthor">
-                  <Form.Label>Author</Form.Label>
+                  <Form.Label className="author">Author ✏️</Form.Label>
                   <Form.Control
                     required
                     autoComplete="off"
                     name="author"
                     value={author}
                     onChange={this.bookChange}
-                    className={"bg-dark text-white"}
+                    className="bg-dark text-white mb-2"
                     placeholder="Enter Book Author"
                   />
                 </Form.Group>
                 </div>
                 <div className="form-row">
                 <Form.Group as={Col} controlId="formGridphoto">
-                  <Form.Label>Cover Photo URL</Form.Label>
+                  <Form.Label>Cover Photo URL <img className="cam" src={iconCam}/></Form.Label>
                   <InputGroup>
                     <Form.Control
                       required
@@ -748,7 +823,7 @@ class Book extends React.Component {
                       name="photo"
                       value={photo}
                       onChange={this.bookChange}
-                      className={"bg-dark text-white"}
+                      className="bg-dark text-white"
                       placeholder="Enter Book Cover Photo URL"
                     />
                     <div>
@@ -759,7 +834,7 @@ class Book extends React.Component {
                   </InputGroup>
                 </Form.Group>
                 <Form.Group as={Col} controlId="formGridISBN">
-                  <Form.Label>ISBN Number</Form.Label>
+                  <Form.Label>ISBN Number ▥</Form.Label>
                   <Form.Control
                     required
                     autoComplete="off"
@@ -767,14 +842,14 @@ class Book extends React.Component {
                     name="isbn"
                     value={isbn}
                     onChange={this.bookChange}
-                    className={"bg-dark text-white"}
+                    className="bg-dark text-white mb-2"
                     placeholder="Enter Book ISBN Number"
                   />
                 </Form.Group>
                 </div>
                 <div className="form-row">
                 <Form.Group as={Col} controlId="formGridPrice">
-                  <Form.Label>Price</Form.Label>
+                  <Form.Label className="price">Price 💲</Form.Label>
                   <Form.Control
                     required
                     autoComplete="off"
@@ -782,20 +857,20 @@ class Book extends React.Component {
                     name="price"
                     value={price}
                     onChange={this.bookChange}
-                    className={"bg-dark text-white"}
+                    className="bg-dark text-white"
                     placeholder="Enter Book Price"
                   />
                 </Form.Group>
                 <Form.Group as={Col} controlId="formGridLanguage">
-                  <Form.Label>Language</Form.Label>
+                  <Form.Label>Language <img className="lang" src={iconLang}/></Form.Label>
                   <Form.Control
-                    required
+                    //required
                     as="select"
                     custom
                     onChange={this.bookChange}
                     name="language"
                     value={language}
-                    className={"bg-dark text-white"}
+                    className="bg-dark text-white"
                   >
                     {this.state.languages.map(language => (
                       <option key={language.value} value={language.value}>
@@ -805,15 +880,15 @@ class Book extends React.Component {
                   </Form.Control>
                 </Form.Group>
                 <Form.Group as={Col} controlId="formGridGenre">
-                  <Form.Label>Genre</Form.Label>
+                  <Form.Label>Genre 📚</Form.Label>
                   <Form.Control
-                    required
+                    //required
                     as="select"
                     custom
                     onChange={this.bookChange}
                     name="genre"
                     value={genre}
-                    className={"bg-dark text-white"}
+                    className="bg-dark text-white"
                   >
                     {this.state.genres.map(genre => (
                       <option key={genre.value} value={genre.value}>
@@ -862,201 +937,205 @@ export default connect(mapStateToProps, mapDispatchToProps)(Book)
 
 !J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
                                                                                                                           - ❐ ❌
-# userList
+# BookActions
 
-import React from 'react'
-import { connect } from 'react-redux'
-import { Card, Table, InputGroup, FormControl, Button, Alert } from 'react-bootstrap'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUsers, faStepBackward, faFastBackward, faStepForward, faFastForward } from '@fortawesome/free-solid-svg-icons'
-import { fetchUsers } from '../../services'
-import '../../assets/css/Style.css'
+import axios from 'axios'
+import * as BT from './bookTypes'
+import { BASE_URL } from '../../utils/requests'
 
-class UserList extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      users: [],
-      currentPage: 1,
-      usersPerPage: 5
-    }
-  }
-
-  componentDidMount() {
-    this.findAllRandomUsers()
-  }
-
-  findAllRandomUsers() {
-        fetch("https://randomapi.com/api/6de6abfedb24f889e0b5f675edc50deb?fmt=raw&sole")
-          .then(response => response.json()).then(data => {
-              this.setState({ users: data })
-       })
-    }
-
-  changePage = event => {
-    this.setState({
-      [event.target.name]: parseInt(event.target.value)
+export const saveBook = book => {
+  return dispatch => {
+    dispatch({
+      type: BT.SAVE_BOOK_REQUEST
     })
-  }
 
-  firstPage = () => {
-    if (this.state.currentPage > 1) {
-      this.setState({
-        currentPage: 1
+    axios.post(`${BASE_URL}/books`, book)
+      .then(response => {
+        dispatch(bookSuccess(response.data))
       })
-    }
-  }
+      .catch(error => {
+        dispatch(bookFailure(error))
+     })
+  }}
 
-  prevPage = () => {
-    if (this.state.currentPage > 1) {
-      this.setState({
-        currentPage: this.state.currentPage - 1
+export const fetchBook = bookId => {
+  return dispatch => {
+    dispatch({
+      type: BT.FETCH_BOOK_REQUEST
+    })
+    axios(`${BASE_URL}/books/` + bookId)
+      .then(response => {
+        dispatch(bookSuccess(response.data))
       })
-    }
-  }
+      .catch(error => {
+        dispatch(bookFailure(error))
+     })
+  }}
 
-  lastPage = () => {
-    let usersLength = this.props.userData.users.length
-    if (
-      this.state.currentPage < Math.ceil(usersLength / this.state.usersPerPage)
-    ) {
-      this.setState({
-        currentPage: Math.ceil(usersLength / this.state.usersPerPage)
+export const updateBook = book => {
+  return dispatch => {
+    dispatch({
+      type: BT.UPDATE_BOOK_REQUEST
+    })
+    axios.put(`${BASE_URL}/books`, book)
+      .then(response => {
+        dispatch(bookSuccess(response.data))
       })
-    }
-  }
+      .catch(error => {
+        dispatch(bookFailure(error))
+     })
+  }}
 
-  nextPage = () => {
-    if (this.state.currentPage < Math.ceil(this.props.userData.users.length / this.state.usersPerPage)) {
-      this.setState({
-        currentPage: this.state.currentPage + 1
+export const deleteBook = bookId => {
+  return dispatch => {
+    dispatch({
+      type: BT.DELETE_BOOK_REQUEST
+    })
+    axios.delete(`${BASE_URL}/books/` + bookId)
+      .then(response => {
+        dispatch(bookSuccess(response.data))
       })
-    }
-  }
+      .catch(error => {
+        dispatch(bookFailure(error))
+     })
+  }}
 
-  render() {
-    const { currentPage, usersPerPage } = this.state
-    const lastIndex = currentPage * usersPerPage
-    const firstIndex = lastIndex - usersPerPage
-
-    const userData = this.props.userData
-  /*   const users = userData.users
-    const currentUsers = users && users.slice(firstIndex, lastIndex)
-    const totalPages = users && users.length / usersPerPage */
-
-    return (
-      <div>
-        {userData/* .error */ ? (
-          <Alert variant="danger">{userData.error}</Alert>
-        ) : (
-          <Card className={"border border-dark bg-dark text-white"}>
-            <Card.Header>
-              <FontAwesomeIcon icon={faUsers}/> User List
-            </Card.Header>
-            <Card.Body>
-              <Table bordered hover striped variant="dark">
-                <thead>
-                  <tr>
-                    <td>Name</td>
-                    <td>Email</td>
-                    <td>Address</td>
-                    <td>Created</td>
-                    <td>Balance</td>
-                  </tr>
-                </thead>
-                <tbody>
-           {/*        {users.length === 0 ? (
-                    <tr align="center">
-                      <td colSpan="6">No Users Available</td>
-                    </tr>
-                  ) : (
-                    currentUsers.map((user, index) => (
-                      <tr key={index}>
-                        <td>
-                          {user.first} {user.last}
-                        </td>
-                        <td>{user.email}</td>
-                        <td>{user.address}</td>
-                        <td>{user.created}</td>
-                        <td>{user.balance}</td>
-                      </tr>
-                    ))
-                  )} */}
-                </tbody>
-              </Table>
-            </Card.Body>
-            {faUsers.length > 0 ? (/* users.length */
-              <Card.Footer>
-                <div style={{ float: "left" }}>
-                  Showing Page {currentPage} of {totalPages}
-                </div>
-                <div style={{ float: "right" }}>
-                  <InputGroup size="sm">
-                    <InputGroup.Prepend>
-                      <Button
-                        type="button"
-                        variant="outline-info"
-                        disabled={currentPage === 1 ? true : false}
-                        onClick={this.firstPage}
-                      >
-                        <FontAwesomeIcon icon={faFastBackward}/> First
-                      </Button>
-                      <Button
-                        type="button"
-                        variant="outline-info"
-                        disabled={currentPage === 1 ? true : false}
-                        onClick={this.prevPage}
-                      >
-                        <FontAwesomeIcon icon={faStepBackward}/> Prev
-                      </Button>
-                    </InputGroup.Prepend>
-                    <FormControl
-                      className={"page-num bg-dark"}
-                      name="currentPage"
-                      value={currentPage}
-                      onChange={this.changePage}
-                    />
-                    <InputGroup.Append>
-                      <Button
-                        type="button"
-                        variant="outline-info"
-                        disabled={currentPage === totalPages ? true : false}
-                        onClick={this.nextPage}
-                      >
-                        <FontAwesomeIcon icon={faStepForward}/> Next
-                      </Button>
-                      <Button
-                        type="button"
-                        variant="outline-info"
-                        disabled={currentPage === totalPages ? true : false}
-                        onClick={this.lastPage}
-                      >
-                        <FontAwesomeIcon icon={faFastForward}/> Last
-                      </Button>
-                    </InputGroup.Append>
-                  </InputGroup>
-                </div>
-              </Card.Footer>
-            ) : null}
-          </Card>
-        )}
-      </div>
-    )
-  }
-}
-
-const mapStateToProps = state => {
+const bookSuccess = book => {
   return {
-    userData: state.user
+    type: BT.BOOK_SUCCESS,
+    payload: book
   }
 }
 
-const mapDispatchToProps = dispatch => {
+const bookFailure = error => {
   return {
-    fetchUsers: () => dispatch(fetchUsers())
+    type: BT.BOOK_FAILURE,
+    payload: error
   }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(UserList)
+
+findBookById = (bookId) => {
+  axios("http://localhost:8080/rest/books/" +bookId)
+  .then(response => {
+    if(response.data != null) {
+      this.setState({
+        id: response.data.id,
+        title: response.data.title,
+        author: response.data.author,
+        photo: response.data.photo,
+        isbn: response.data.isbn,
+        price: response.data.price,
+        language: response.data.language,
+        genre: response.data.genre
+      })
+    }
+  }).catch(error => {
+    console.error("Error - "+error)
+  })
+}
+
+findBookById = (bookId) => {
+  fetch("http://localhost:8080/rest/books/" +bookId)
+  .then(response => response.json())
+  .then(book => {
+    if(book) {
+      this.setState({
+        id:book.id,
+        title:book.title,
+        author:book.author,
+        photo:book.photo,
+        isbn:book.isbn,
+        price:book.price,
+        language:book.language,
+        genre:book.genre
+      })
+    }
+  }).catch(error => {
+    console.error("Error - "+error)
+  })
+}
+
+/* export const fetchLanguages = () => {
+  return dispatch => {
+    dispatch({
+      type: BT.FETCH_LANGUAGES_REQUEST
+    })
+    axios(`${BASE_URL}/books/language`)
+      .then(response => {
+        dispatch({
+          type: BT.LANGUAGES_SUCCESS,
+          payload: response.data
+        })
+      })
+      .catch(error => {
+        dispatch({
+          type: BT.LANGUAGES_FAILURE,
+          payload: error
+        })
+     })
+  }}
+
+export const fetchGenres = () => {
+  return dispatch => {
+    dispatch({
+      type: BT.FETCH_GENRES_REQUEST
+    })
+    axios(`${BASE_URL}/books/genre`)
+      .then(response => {
+        dispatch({
+          type: BT.GENRES_SUCCESS,
+          payload: response.data
+        })
+      })
+      .catch(error => {
+        dispatch({
+          type: BT.GENRES_FAILURE,
+          payload: error
+        })
+     })
+  }} */
+
+  export const fetchLanguages = () => {
+    return (dispatch) => {
+      dispatch({
+        type: BT.FETCH_LANGUAGES_REQUEST
+      })
+      fetch("http://localhost:8080/rest/books/languages")
+        .then((response) => {
+          dispatch({
+            type: BT.LANGUAGES_SUCCESS,
+            payload: response.data
+          })
+        })
+        .catch((error) => {
+          dispatch({
+            type: BT.LANGUAGES_FAILURE,
+            payload: error
+          })
+        })
+     }
+  }
+  
+  export const fetchGenres = () => {
+    return (dispatch) => {
+      dispatch({
+        type: BT.FETCH_GENRES_REQUEST
+      })
+      fetch("http://localhost:8080/rest/books/genres")
+        .then((response) => {
+          dispatch({
+            type: BT.GENRES_SUCCESS,
+            payload: response.data
+          })
+        })
+        .catch((error) => {
+          dispatch({
+            type: BT.GENRES_FAILURE,
+            payload: error
+          })
+        })
+     }
+  }
 
 !J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
                                                                                                                           - ❐ ❌

@@ -82,7 +82,7 @@ class Book extends React.Component {
     setTimeout(() => {
       if (this.props.bookObject.book != null) {
         this.setState({ show: true, method: "post" })
-        setTimeout(() => this.setState({ show: false }), 3000)
+        setTimeout(() => this.setState({ show: false }), 2300)
       } else {
         this.setState({ show: false })
       }
@@ -96,7 +96,7 @@ class Book extends React.Component {
     setTimeout(() => {
       if (this.props.bookObject.book != null) {
         this.setState({ show: true, method: "put" })
-        setTimeout(() => this.setState({ show: false }), 3000)
+        setTimeout(() => this.setState({ show: false }), 2300)
       } else {
         this.setState({ show: false })
       }
