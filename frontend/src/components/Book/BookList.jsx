@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Card, Table, Image, ButtonGroup, Button, InputGroup, FormControl } from 'react-bootstrap'
+import { Card, Table, Image, Button, InputGroup, FormControl } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faList, faEdit, faTrash, faStepBackward, faFastBackward, faStepForward, faFastForward, faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { Link } from 'react-router-dom'
@@ -244,7 +244,7 @@ class BookList extends React.Component {
                       </td>
                       <td align="center">{book.author}</td>
                       <td align="center">{book.isbn}</td>
-                      <td align="center">{book.price}</td>
+                      <td align="center">{book.price.toFixed(2)}</td>
                       <td align="center">{book.language}</td>
                       <td align="center">{book.genre}</td>
                       <td align="center">

@@ -20,7 +20,7 @@ class Book extends React.Component {
     }
   }
 
-  initialState = { id: "", title: "Java", author: "New Author", photo: "https://images-na.ssl-images-amazon.com/images/I/51gHy16h5TL.jpg", isbn: "25032019", price: "20.00", language: "English", genre: "Science" }
+  initialState = { id: "", title: "Java", author: "New Author", photo: "https://images-na.ssl-images-amazon.com/images/I/51gHy16h5TL.jpg", isbn: "125032019", price: "20.00", language: "English", genre: "Technology" }
 
   findBookById = bookId => {
     this.props.fetchBook(bookId)
@@ -125,7 +125,7 @@ class Book extends React.Component {
           >
             <Card.Body>
             <div className="form-row">
-                <Form.Group as={Col} controlId="formGridTitle">
+                <Form.Group as={Col}>
                   <Form.Label className="title-book">Title 📙</Form.Label>
                   <Form.Control
                     required
@@ -137,7 +137,7 @@ class Book extends React.Component {
                     placeholder="Enter Book Title"
                   />
                 </Form.Group>
-                <Form.Group as={Col} controlId="formGridAuthor">
+                <Form.Group as={Col}>
                   <Form.Label className="author">Author ✏️</Form.Label>
                   <Form.Control
                     required
@@ -151,7 +151,7 @@ class Book extends React.Component {
                 </Form.Group>
                 </div>
                 <div className="form-row">
-                <Form.Group as={Col} controlId="formGridphoto">
+                <Form.Group as={Col}>
                   <Form.Label>Cover Photo URL <img className="cam" src={iconCam}/></Form.Label>
                   <InputGroup>
                     <Form.Control
@@ -165,12 +165,12 @@ class Book extends React.Component {
                     />
                     <div>
                       {this.state.photo !== "" && (
-                        <Image src={this.state.photo} roundedRight width="38" height="38"/>
+                        <Image src={this.state.photo} width="38" height="38"/>
                       )}
                     </div>
                   </InputGroup>
                 </Form.Group>
-                <Form.Group as={Col} controlId="formGridISBN">
+                <Form.Group as={Col}>
                   <Form.Label>ISBN Number ▥</Form.Label>
                   <Form.Control
                     required
@@ -198,15 +198,14 @@ class Book extends React.Component {
                     placeholder="Enter Book Price"
                   />
                 </Form.Group>
-                <Form.Group as={Col} controlId="formGridLanguage">
+                <Form.Group as={Col}>
                   <Form.Label>Language <img className="lang" src={iconLang}/></Form.Label>
                   <Form.Control
                     required
                     as="select"
-                    custom
                     onChange={this.bookChange}
                     name="language"
-                    value={language}
+                    //value={language}
                     className="bg-dark text-white"
                   >
                     <option>English</option>
@@ -219,15 +218,14 @@ class Book extends React.Component {
                     <option>Chinese</option>
                   </Form.Control>
                 </Form.Group>
-                <Form.Group as={Col} controlId="formGridGenre">
+                <Form.Group as={Col}>
                   <Form.Label>Genre 📚</Form.Label>
                   <Form.Control
                     required
                     as="select"
-                    custom
                     onChange={this.bookChange}
                     name="genre"
-                    value={genre}
+                    //value={genre}
                     className="bg-dark text-white"
                   >
                     <option>Technology</option>

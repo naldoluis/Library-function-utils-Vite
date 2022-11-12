@@ -35,7 +35,7 @@ public class Application implements CommandLineRunner {
 			User user1 = new User();
 			user1.setEmail("test@user.com");
 			user1.setName("Test User");
-			user1.setMobile("9787456545");
+			user1.setMobile("2503201920");
 			user1.setRole(roleService.findByName(ConstantUtils.USER.toString()));
 			user1.setPassword(new BCryptPasswordEncoder().encode("testuser"));
 			userService.saveOrUpdate(user1);
@@ -43,7 +43,7 @@ public class Application implements CommandLineRunner {
 			User user2 = new User();
 			user2.setEmail("test@admin.com");
 			user2.setName("Test Admin");
-			user2.setMobile("9787456545");
+			user2.setMobile("2503201920");
 			user2.setRole(roleService.findByName(ConstantUtils.ADMIN.toString()));
 			user2.setPassword(new BCryptPasswordEncoder().encode("testadmin"));
 			userService.saveOrUpdate(user2);

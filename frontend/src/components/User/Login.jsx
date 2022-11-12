@@ -28,7 +28,7 @@ const Login = props => {
       })
       .catch(error => {
         console.log(error.message)
-        setShow(true)
+        setShow(false)
         resetLoginForm()
         setError(" • Email or password invalid 👎")
      })
@@ -42,12 +42,12 @@ const Login = props => {
     <Row className="justify-content-md-center">
       <Col xs={5}>
         {show && props.message && (
-          <Alert variant="success" onClose={() => setShow(false)} dismissible>
+          <Alert variant="success" onClose={() => setShow(true)} dismissible>
             {props.message}
           </Alert>
         )}
         {show && error && (
-          <Alert variant="danger" onClose={() => setShow(false)} dismissible>
+          <Alert variant="danger" onClose={() => setShow(true)} dismissible>
             {error}
           </Alert>
         )}
