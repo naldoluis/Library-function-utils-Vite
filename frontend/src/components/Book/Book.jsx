@@ -14,8 +14,8 @@ class Book extends React.Component {
     super(props)
     this.state = this.initialState
     this.state = {
-      genres: [],
-      languages: [],
+      genre: [],
+      language: [],
       show: false
     }
   }
@@ -210,7 +210,7 @@ class Book extends React.Component {
                 <Form.Group as={Col} controlId="formGridLanguage">
                   <Form.Label>Language <img className="lang" src={iconLang}/></Form.Label>
                   <Form.Control
-                    //required
+                    required
                     as="select"
                     custom
                     onChange={this.bookChange}
@@ -218,17 +218,25 @@ class Book extends React.Component {
                     value={language}
                     className="bg-dark text-white"
                   >
-                    {this.state.languages.map(language => (
+                    <option>English</option>
+                    <option>Portuguese</option>
+                    <option>French</option>
+                    <option>Russian</option>
+                    <option>Hindi</option>
+                    <option>Arabic</option>
+                    <option>Spanish</option>
+                    <option>Chinese</option>
+                    {/* {this.state.languages.map(language => (
                       <option key={language.value} value={language.value}>
                         {language.display}
                       </option>
-                    ))}
+                    ))} */}
                   </Form.Control>
                 </Form.Group>
                 <Form.Group as={Col} controlId="formGridGenre">
                   <Form.Label>Genre 📚</Form.Label>
                   <Form.Control
-                    //required
+                    required
                     as="select"
                     custom
                     onChange={this.bookChange}
@@ -236,11 +244,18 @@ class Book extends React.Component {
                     value={genre}
                     className="bg-dark text-white"
                   >
-                    {this.state.genres.map(genre => (
+                    <option>Technology</option>
+                    <option>Science</option>
+                    <option>History</option>
+                    <option>Fantasy</option>
+                    <option>Biography</option>
+                    <option>Horror</option>
+                    <option>Romance</option>
+                    {/* {this.state.genres.map(genre => (
                       <option key={genre.value} value={genre.value}>
                         {genre.display}
                       </option>
-                    ))}
+                    ))} */}
                   </Form.Control>
                 </Form.Group>
                 </div>
