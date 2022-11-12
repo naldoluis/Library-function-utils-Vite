@@ -14,8 +14,8 @@ class Book extends React.Component {
     super(props)
     this.state = this.initialState
     this.state = {
-      genre: [],
-      language: [],
+      genres: [],
+      languages: [],
       show: false
     }
   }
@@ -33,7 +33,7 @@ class Book extends React.Component {
               return { value: language, display: language }
             }))
         })
-        this.findAllGenres()
+        this.findAllLanguage()
       }
     }, 100)
   }
@@ -49,6 +49,7 @@ class Book extends React.Component {
               return { value: genre, display: genre }
             }))
         })
+        this.findAllGenre()
       }
     }, 100)
   }
