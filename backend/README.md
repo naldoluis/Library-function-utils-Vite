@@ -577,7 +577,7 @@ public class BookController implements Resource<Book> {
                   @import "https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css"
                   @import "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
 
-# Book (languages and genres) => delete structure api(Optional)
+# Book (languages and genres) => delete structure at api(Optional)
 
 import React from 'react'
 import { Link } from 'react-router-dom'
