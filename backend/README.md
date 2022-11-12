@@ -589,7 +589,6 @@ import { saveBook, fetchBook, updateBook, fetchLanguages, fetchGenres } from '..
 import MyToast from '../MyToast'
 import iconLang from '../../assets/language.png'
 import iconCam from '../../assets/camera.png'
-import { BASE_URL } from '../../utils/requests'
 
 class Book extends React.Component {
   constructor(props) {
@@ -600,19 +599,18 @@ class Book extends React.Component {
       languages: [],
       show: false
     }
-    this.bookChange = this.bookChange.bind(this);
-    this.submitBook = this.submitBook.bind(this);
+    this.bookChange = this.bookChange.bind(this)
+    this.submitBook = this.submitBook.bind(this)
   }
 
   initialState = { id: "", title: "Java", author: "New Author", photo: "https://images-na.ssl-images-amazon.com/images/I/51gHy16h5TL.jpg", isbn: "25032019", price: "20.00", language: "", genre: "" }
 
-
 /*   componentDidMount() {
-    const bookId = +this.props.match.params.id;
+    const bookId = +this.props.match.params.id
     if(bookId) {
-        this.findBookById(bookId);
+        this.findBookById(bookId)
     }
-    this.findAllLanguages();
+    this.findAllLanguages()
 } */
 
   findAllLanguages = () => {
@@ -626,7 +624,7 @@ class Book extends React.Component {
               return { value: language, display: language }
             }))
         })
-        this.findAllGenres()
+        this.findAllLanguages()
       }
     }, 100)
   }
@@ -642,6 +640,7 @@ class Book extends React.Component {
               return { value: genre, display: genre }
             }))
         })
+        this.findAllGenres()
       }
     }, 100)
   }
@@ -666,25 +665,6 @@ class Book extends React.Component {
       console.error("Error - "+error)
     })
   }
-
-  /* findBookById = bookId => {
-    this.props.fetchBook(bookId)
-    setTimeout(() => {
-      let book = this.props.bookObject.book
-      if (book != null) {
-        this.setState({
-          id: book.id,
-          title: book.title,
-          author: book.author,
-          photo: book.photo,
-          isbn: book.isbn,
-          price: book.price,
-          language: book.language,
-          genre: book.genre
-        })
-      }
-    }, 1000)
-  } */
 
   resetBook = () => {
     this.setState(() => this.initialState)
@@ -745,7 +725,7 @@ class Book extends React.Component {
       body: JSON.stringify(book),
       headers
     })
-    .then(data => response.json())
+    .then(response => response.json())
     .then(book => {
       if(book) {
         this.setState({"show": true, "method": "put"})
@@ -1055,52 +1035,12 @@ findBookById = (bookId) => {
   })
 }
 
-/* export const fetchLanguages = () => {
-  return dispatch => {
-    dispatch({
-      type: BT.FETCH_LANGUAGES_REQUEST
-    })
-    axios(`${BASE_URL}/books/language`)
-      .then(response => {
-        dispatch({
-          type: BT.LANGUAGES_SUCCESS,
-          payload: response.data
-        })
-      })
-      .catch(error => {
-        dispatch({
-          type: BT.LANGUAGES_FAILURE,
-          payload: error
-        })
-     })
-  }}
-
-export const fetchGenres = () => {
-  return dispatch => {
-    dispatch({
-      type: BT.FETCH_GENRES_REQUEST
-    })
-    axios(`${BASE_URL}/books/genre`)
-      .then(response => {
-        dispatch({
-          type: BT.GENRES_SUCCESS,
-          payload: response.data
-        })
-      })
-      .catch(error => {
-        dispatch({
-          type: BT.GENRES_FAILURE,
-          payload: error
-        })
-     })
-  }} */
-
   export const fetchLanguages = () => {
     return (dispatch) => {
       dispatch({
         type: BT.FETCH_LANGUAGES_REQUEST
       })
-      fetch("http://localhost:8080/rest/books/languages")
+      fetch("http://localhost:8080/rest/books/language")
         .then((response) => {
           dispatch({
             type: BT.LANGUAGES_SUCCESS,
@@ -1121,7 +1061,7 @@ export const fetchGenres = () => {
       dispatch({
         type: BT.FETCH_GENRES_REQUEST
       })
-      fetch("http://localhost:8080/rest/books/genres")
+      fetch("http://localhost:8080/rest/books/genre")
         .then((response) => {
           dispatch({
             type: BT.GENRES_SUCCESS,
