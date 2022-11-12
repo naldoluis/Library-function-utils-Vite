@@ -4,10 +4,6 @@
 .arrow-down {border-top: 10px solid}
 .title-home {font-size: 13.7px;font-weight: 400;font-family: 'Segoe UI', sans-serif;padding-top: 5px}
 
-.find {background: #f5d20c;color: #393939}
-.clean-find {background: #c02f2f}
-.delete,.clean-find,.find {margin-left: 3.5px}
-
 .first,.prev {margin: -.4px 5px 0 0}
 .next,.last {margin: -.4px 0 0 5px}
 

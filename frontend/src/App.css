@@ -1,2 +1,6 @@
+@import "https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css";
 .margin-top {margin-top : 20px}
-.not-found {color: aliceblue}
+.not-found,.clean-find {color: aliceblue}
+.find {background: #f5d20c;color: #393939}
+.clean-find {background: #c02f2f}
+.delete,.clean-find,.find {margin-left: 3.5px}
