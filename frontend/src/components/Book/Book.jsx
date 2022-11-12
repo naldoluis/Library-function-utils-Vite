@@ -14,45 +14,13 @@ class Book extends React.Component {
     super(props)
     this.state = this.initialState
     this.state = {
-      genres: [],
-      languages: [],
+      genre: [],
+      language: [],
       show: false
     }
   }
 
-  initialState = { id: "", title: "Java", author: "New Author", photo: "https://images-na.ssl-images-amazon.com/images/I/51gHy16h5TL.jpg", isbn: "25032019", price: "20.00", language: "", genre: "" }
-
-  findAllLanguages = () => {
-    this.props.fetchLanguages()
-    setTimeout(() => {
-      let bookLanguages = this.props.bookObject.languages
-      if (bookLanguages) {
-        this.setState({
-          languages: [{ value: "", display: "Select Language" }].concat(
-            bookLanguages.map(language => {
-              return { value: language, display: language }
-            }))
-        })
-        this.findAllLanguage()
-      }
-    }, 100)
-  }
-
-  findAllGenres = () => {
-    this.props.fetchGenres()
-    setTimeout(() => {
-      let bookGenres = this.props.bookObject.genres
-      if (bookGenres) {
-        this.setState({
-          genres: [{ value: "", display: "Select Genre" }].concat(
-            bookGenres.map(genre => {
-              return { value: genre, display: genre }
-            }))
-        })
-        this.findAllGenre()
-      }
-    }, 100)
-  }
+  initialState = { id: "", title: "Java", author: "New Author", photo: "https://images-na.ssl-images-amazon.com/images/I/51gHy16h5TL.jpg", isbn: "25032019", price: "20.00", language: "English", genre: "Science" }
 
   findBookById = bookId => {
     this.props.fetchBook(bookId)
@@ -79,7 +47,18 @@ class Book extends React.Component {
 
   submitBook = event => {
     event.preventDefault()
-    this.props.saveBook()
+
+    const book = {
+      title: this.state.title,
+      author: this.state.author,
+      photo: this.state.photo,
+      isbn: this.state.isbn,
+      price: this.state.price,
+      language: this.state.language,
+      genre: this.state.genre
+    }
+
+    this.props.saveBook(book)
     setTimeout(() => {
       if (this.props.bookObject.book != null) {
         this.setState({ show: true, method: "post" })
@@ -93,7 +72,18 @@ class Book extends React.Component {
 
   updateBook = event => {
     event.preventDefault()
-    this.props.updateBook()
+
+    const book = {
+      title: this.state.title,
+      author: this.state.author,
+      photo: this.state.photo,
+      isbn: this.state.isbn,
+      price: this.state.price,
+      language: this.state.language,
+      genre: this.state.genre
+    }
+
+    this.props.updateBook(book)
     setTimeout(() => {
       if (this.props.bookObject.book != null) {
         this.setState({ show: true, method: "put" })
@@ -227,11 +217,6 @@ class Book extends React.Component {
                     <option>Arabic</option>
                     <option>Spanish</option>
                     <option>Chinese</option>
-                    {/* {this.state.languages.map(language => (
-                      <option key={language.value} value={language.value}>
-                        {language.display}
-                      </option>
-                    ))} */}
                   </Form.Control>
                 </Form.Group>
                 <Form.Group as={Col} controlId="formGridGenre">
@@ -252,11 +237,6 @@ class Book extends React.Component {
                     <option>Biography</option>
                     <option>Horror</option>
                     <option>Romance</option>
-                    {/* {this.state.genres.map(genre => (
-                      <option key={genre.value} value={genre.value}>
-                        {genre.display}
-                      </option>
-                    ))} */}
                   </Form.Control>
                 </Form.Group>
                 </div>

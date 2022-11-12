@@ -577,7 +577,7 @@ public class BookController implements Resource<Book> {
                   @import "https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css"
                   @import "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
 
-# Book
+# Book (languages and genres) => delete structure api(Optional)
 
 import React from 'react'
 import { Link } from 'react-router-dom'
@@ -595,75 +595,63 @@ class Book extends React.Component {
     super(props)
     this.state = this.initialState
     this.state = {
-      genres: [],
-      languages: [],
+      genre: [],
+      language: [],
       show: false
     }
-    this.bookChange = this.bookChange.bind(this)
-    this.submitBook = this.submitBook.bind(this)
   }
 
-  initialState = { id: "", title: "Java", author: "New Author", photo: "https://images-na.ssl-images-amazon.com/images/I/51gHy16h5TL.jpg", isbn: "25032019", price: "20.00", language: "", genre: "" }
+  initialState = { id: "", title: "Java", author: "New Author", photo: "https://images-na.ssl-images-amazon.com/images/I/51gHy16h5TL.jpg", isbn: "25032019", price: "20.00", language: "English", genre: "Science" }
 
-/*   componentDidMount() {
-    const bookId = +this.props.match.params.id
-    if(bookId) {
-        this.findBookById(bookId)
-    }
-    this.findAllLanguages()
-} */
-
-  findAllLanguages = () => {
+/*   findAllLanguages = () => {
     this.props.fetchLanguages()
     setTimeout(() => {
-      let bookLanguages = this.props.bookObject.languages
+      let bookLanguages = this.props.bookObject.language
       if (bookLanguages) {
         this.setState({
-          languages: [{ value: "", display: "Select Language" }].concat(
+          language: [{ value: "", display: "Select Language" }].concat(
             bookLanguages.map(language => {
               return { value: language, display: language }
             }))
         })
-        this.findAllLanguages()
+        this.findAllLanguage()
       }
     }, 100)
-  }
+  } */
 
-  findAllGenres = () => {
+/*   findAllGenres = () => {
     this.props.fetchGenres()
     setTimeout(() => {
-      let bookGenres = this.props.bookObject.genres
+      let bookGenres = this.props.bookObject.genre
       if (bookGenres) {
         this.setState({
-          genres: [{ value: "", display: "Select Genre" }].concat(
+          genre: [{ value: "", display: "Select Genre" }].concat(
             bookGenres.map(genre => {
               return { value: genre, display: genre }
             }))
         })
-        this.findAllGenres()
+        this.findAllGenre()
       }
     }, 100)
-  }
+  } */
 
-  findBookById = (bookId) => {
-    fetch("http://localhost:8080/rest/books/" +bookId)
-    .then(response => response.json())
-    .then(book => {
-      if(book) {
+  findBookById = bookId => {
+    this.props.fetchBook(bookId)
+    setTimeout(() => {
+      let book = this.props.bookObject.book
+      if (book != null) {
         this.setState({
-          id:book.id,
-          title:book.title,
-          author:book.author,
-          photo:book.photo,
-          isbn:book.isbn,
-          price:book.price,
-          language:book.language,
-          genre:book.genre
+          id: book.id,
+          title: book.title,
+          author: book.author,
+          photo: book.photo,
+          isbn: book.isbn,
+          price: book.price,
+          language: book.language,
+          genre: book.genre
         })
       }
-    }).catch(error => {
-      console.error("Error - "+error)
-    })
+    }, 1000)
   }
 
   resetBook = () => {
@@ -683,24 +671,15 @@ class Book extends React.Component {
       genre: this.state.genre
     }
 
-    const headers = new Headers()
-    headers.append('Content-Type', 'application/json')
-
-    fetch("http://localhost:8080/rest/books", {
-      method: 'POST',
-      body: JSON.stringify(book),
-      headers
-    })
-    .then(response => response.json())
-    .then(book => {
-      if(book) {
-        this.setState({"show": true, "method": "post"})
-        setTimeout(() => this.setState({"show": false}), 3000)
-
+    this.props.saveBook(book)
+    setTimeout(() => {
+      if (this.props.bookObject.book != null) {
+        this.setState({ show: true, method: "post" })
+        setTimeout(() => this.setState({ show: false }), 2300)
       } else {
-        this.setState({"show": false})
+        this.setState({ show: false })
       }
-    })
+    }, 2000)
     this.setState(this.initialState)
   }
 
@@ -717,24 +696,15 @@ class Book extends React.Component {
       genre: this.state.genre
     }
 
-    const headers = new Headers()
-    headers.append('Content-Type', 'application/json')
-
-    fetch("http://localhost:8080/rest/books", {
-      method: 'PUT',
-      body: JSON.stringify(book),
-      headers
-    })
-    .then(response => response.json())
-    .then(book => {
-      if(book) {
-        this.setState({"show": true, "method": "put"})
-        setTimeout(() => this.setState({"show": false}), 3000)
-        setTimeout(() => this.bookList(), 3000)
+    this.props.updateBook(book)
+    setTimeout(() => {
+      if (this.props.bookObject.book != null) {
+        this.setState({ show: true, method: "put" })
+        setTimeout(() => this.setState({ show: false }), 2300)
       } else {
-        this.setState({"show": false})
+        this.setState({ show: false })
       }
-    })
+    }, 2000)
     this.setState(this.initialState)
   }
 
@@ -844,7 +814,7 @@ class Book extends React.Component {
                 <Form.Group as={Col} controlId="formGridLanguage">
                   <Form.Label>Language <img className="lang" src={iconLang}/></Form.Label>
                   <Form.Control
-                    //required
+                    required
                     as="select"
                     custom
                     onChange={this.bookChange}
@@ -852,17 +822,25 @@ class Book extends React.Component {
                     value={language}
                     className="bg-dark text-white"
                   >
-                    {this.state.languages.map(language => (
+                    <option>English</option>
+                    <option>Portuguese</option>
+                    <option>French</option>
+                    <option>Russian</option>
+                    <option>Hindi</option>
+                    <option>Arabic</option>
+                    <option>Spanish</option>
+                    <option>Chinese</option>
+                    {/* {this.state.languages.map(language => (
                       <option key={language.value} value={language.value}>
                         {language.display}
                       </option>
-                    ))}
+                    ))} */}
                   </Form.Control>
                 </Form.Group>
                 <Form.Group as={Col} controlId="formGridGenre">
                   <Form.Label>Genre 📚</Form.Label>
                   <Form.Control
-                    //required
+                    required
                     as="select"
                     custom
                     onChange={this.bookChange}
@@ -870,11 +848,18 @@ class Book extends React.Component {
                     value={genre}
                     className="bg-dark text-white"
                   >
-                    {this.state.genres.map(genre => (
+                    <option>Technology</option>
+                    <option>Science</option>
+                    <option>History</option>
+                    <option>Fantasy</option>
+                    <option>Biography</option>
+                    <option>Horror</option>
+                    <option>Romance</option>
+                    {/* {this.state.genres.map(genre => (
                       <option key={genre.value} value={genre.value}>
                         {genre.display}
                       </option>
-                    ))}
+                    ))} */}
                   </Form.Control>
                 </Form.Group>
                 </div>
@@ -917,7 +902,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(Book)
 
 !J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
                                                                                                                           - ❐ ❌
-# BookActions
+# BookActions using fetch
 
 import axios from 'axios'
 import * as BT from './bookTypes'
@@ -1076,151 +1061,6 @@ findBookById = (bookId) => {
         })
      }
   }
-
-!J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
-                                                                                                                          - ❐ ❌
-# login
-
-import { useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { Row, Col, Card, Form, InputGroup, FormControl, Button, Alert } from 'react-bootstrap'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSignInAlt, faEnvelope, faLock, faUndo } from '@fortawesome/free-solid-svg-icons'
-import { authenticateUser } from '../../services'
-import React, { Component } from 'react'
-import {connect} from 'react-redux'
-
-class Login extends Component {
-  constructor(props) {
-      super(props)
-      this.state = this.initialState
-  }
-
-  initialState = {email:'', password:'', error:''}
-
-  credentialChange = event => {
-    this.setState({
-        [event.target.name] : event.target.value
-    })
-}
-
-resetLoginForm = () => {
-  this.setState(() => this.initialState)
-}
-
-render() {
-  const {email, password, error} = this.state;
-
-  const validateUser = () => {
-    dispatch(authenticateUser(user.email, user.password))
-      .then(response => {
-        console.log(response.data)
-        return props.history.push("/home")
-      })
-      .catch(error => {
-        console.log(error.message)
-        setShow(true)
-        resetLoginForm()
-        setError("Invalid email and password")
-     })
-  }
-
-  const resetLoginForm = () => {
-    setUser(initialState)
-  }
-
-  return (
-    <Row className="justify-content-md-center">
-      <Col xs={5}>
-        {show && props.message && (
-          <Alert variant="success" onClose={() => setShow(false)} dismissible>
-            {props.message}
-          </Alert>
-        )}
-        {show && error && (
-          <Alert variant="danger" onClose={() => setShow(false)} dismissible>
-            {error}
-          </Alert>
-        )}
-        <Card className={"border border-dark bg-dark text-white"}>
-          <Card.Header>
-            <FontAwesomeIcon icon={faSignInAlt}/> Login
-          </Card.Header>
-          <Card.Body>
-          <div>{/* <Form.Row> */}
-              <Form.Group as={Col}>
-                <InputGroup>
-                <div>{/* <InputGroup.Prepend> */}
-                    <InputGroup.Text>
-                      <FontAwesomeIcon icon={faEnvelope}/>
-                    </InputGroup.Text>
-                    </div>{/* </InputGroup.Prepend> */}
-                  <FormControl
-                    required
-                    autoComplete="off"
-                    type="text"
-                    name="email"
-                    value={user.email}
-                    onChange={credentialChange}
-                    className={"bg-dark text-white"}
-                    placeholder="Enter Email Address"
-                  />
-                </InputGroup>
-              </Form.Group>
-              </div>{/* </Form.Row> */}
-              <div>{/* <Form.Row> */}
-              <Form.Group as={Col}>
-                <InputGroup>
-                <div>{/* <InputGroup.Prepend> */}
-                    <InputGroup.Text>
-                      <FontAwesomeIcon icon={faLock}/>
-                    </InputGroup.Text>
-                    </div>{/* </InputGroup.Prepend> */}
-                  <FormControl
-                    required
-                    autoComplete="off"
-                    type="password"
-                    name="password"
-                    value={user.password}
-                    onChange={credentialChange}
-                    className={"bg-dark text-white"}
-                    placeholder="Enter Password"
-                  />
-                </InputGroup>
-              </Form.Group>
-              </div>{/* </Form.Row> */}
-          </Card.Body>
-          <Card.Footer style={{ textAlign: "right" }}>
-            <Button
-              size="sm"
-              type="button"
-              variant="success"
-              onClick={validateUser}
-              disabled={user.email.length === 0 || user.password.length === 0}
-            >
-              <FontAwesomeIcon icon={faSignInAlt}/> Login
-            </Button>{" "}
-            <Button
-              size="sm"
-              type="button"
-              variant="info"
-              onClick={resetLoginForm}
-              disabled={user.email.length === 0 && user.password.length === 0}
-            >
-              <FontAwesomeIcon icon={faUndo}/> Reset
-            </Button>
-          </Card.Footer>
-        </Card>
-      </Col>
-    </Row>
-  )
-}
-const mapDispatchToProps = dispatch => {
-  return {
-      authenticateUser: (email, password) => dispatch(authenticateUser(email, password))
-  }
-}
-export default connect(mapStateToProps, mapDispatchToProps)(Login)
 
 !J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
 
