@@ -215,12 +215,7 @@ class BookList extends React.Component {
                   <th>ISBN Number</th>
                   <th onClick={this.sortData}>
                     Price{" "}
-                    <div
-                      className={
-                        this.state.sortDir === "asc"
-                          ? "arrow arrow-up"
-                          : "arrow arrow-down"
-                      }
+                    <div className={this.state.sortDir === "asc" ? "arrow arrow-up" : "arrow arrow-down"}
                     >
                       {" "}
                     </div>

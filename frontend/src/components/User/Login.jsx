@@ -24,7 +24,7 @@ const Login = props => {
     dispatch(authenticateUser(user.email, user.password))
       .then(response => {
         console.log(response.data)
-        return props.history.push("/home")
+        //return props.history.push("/home")
       })
       .catch(error => {
         console.log(error.message)
