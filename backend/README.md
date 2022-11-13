@@ -603,6 +603,8 @@ class Book extends React.Component {
       language: [],
       show: false
     }
+    this.bookChange = this.bookChange.bind(this)
+    this.savebook = this.savebook.bind(this)
   }
 
   initialState = { id: "", title: "Java", author: "New Author", photo: "https://images-na.ssl-images-amazon.com/images/I/51gHy16h5TL.jpg", isbn: "25032019", price: "20.00", language: "English", genre: "Science" }

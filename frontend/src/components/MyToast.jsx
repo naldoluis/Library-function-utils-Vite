@@ -13,10 +13,7 @@ const MyToast = props => {
         }`}
         show={props.show}
       >
-        <Toast.Header
-          className={`text-white ${
-            props.type === "success" ? "bg-success" : "bg-danger"
-          }`}
+        <Toast.Header className={`text-white ${props.type === "success" ? "bg-success" : "bg-danger"}`}
           closeButton={false}
         >
           <strong className="mr-auto">Success</strong>
