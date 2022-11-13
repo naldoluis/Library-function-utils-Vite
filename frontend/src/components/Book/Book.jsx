@@ -45,7 +45,7 @@ class Book extends React.Component {
     this.setState(() => this.initialState)
   }
 
-  submitBook = event => {
+  saveBook = event => {
     event.preventDefault()
 
     const book = {
@@ -120,13 +120,13 @@ class Book extends React.Component {
           </Card.Header>
           <Form
             onReset={this.resetBook}
-            onSubmit={this.state.id ? this.updateBook : this.submitBook}
+            onSubmit={this.state.id ? this.updateBook : this.saveBook}
             id="bookFormId"
           >
             <Card.Body>
             <div className="form-row">
                 <Form.Group as={Col}>
-                  <Form.Label className="title-book">Title 📙</Form.Label>
+                  <Form.Label>Title 📙</Form.Label>
                   <Form.Control
                     required
                     autoComplete="off"
@@ -138,7 +138,7 @@ class Book extends React.Component {
                   />
                 </Form.Group>
                 <Form.Group as={Col}>
-                  <Form.Label className="author">Author ✏️</Form.Label>
+                  <Form.Label>Author ✏️</Form.Label>
                   <Form.Control
                     required
                     autoComplete="off"
@@ -205,7 +205,6 @@ class Book extends React.Component {
                     as="select"
                     onChange={this.bookChange}
                     name="language"
-                    //value={language}
                     className="bg-dark text-white"
                   >
                     <option>English</option>
@@ -225,7 +224,6 @@ class Book extends React.Component {
                     as="select"
                     onChange={this.bookChange}
                     name="genre"
-                    //value={genre}
                     className="bg-dark text-white"
                   >
                     <option>Technology</option>

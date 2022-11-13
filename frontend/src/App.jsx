@@ -1,4 +1,4 @@
-import { Container, Row, Col } from 'react-bootstrap'
+import { Container, Col } from 'react-bootstrap'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import NavigationBar from './components/NavigationBar'
 import Welcome from './components/Welcome'
@@ -24,8 +24,8 @@ export default function App() {
   return (
     <BrowserRouter>
       <NavigationBar/>
-      <Container>
-        <Row>
+       <Container>
+        <div className="form-row">
           <Col lg={12} className={"margin-top"}>
             <Routes>
               <Route path="/" element={<Welcome/>}/>
@@ -40,8 +40,8 @@ export default function App() {
               <Route path="*" element={<h3 className='not-found'>Page not found</h3>}/>
             </Routes>
           </Col>
-        </Row>
-      </Container>
+        </div>
+       </Container>
       <Footer/>
     </BrowserRouter>
   )}

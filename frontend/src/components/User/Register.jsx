@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { Row, Col, Card, Form, InputGroup, FormControl, Button } from 'react-bootstrap'
+import { Col, Card, Form, InputGroup, FormControl, Button } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhone, faEnvelope, faLock, faUndo, faUserPlus, faUser } from '@fortawesome/free-solid-svg-icons'
 import { registerUser } from '../../services'
@@ -46,7 +46,7 @@ const Register = props => {
       <div style={{ display: show ? "block" : "none" }}>
         <MyToast show={show} message={message} type="success"/>
       </div>
-      <Row className="justify-content-md-center">
+      <div className="justify-content-md-center form-row">
         <Col xs={5}>
           <Card className="border border-dark bg-dark text-white">
             <Card.Header>
@@ -153,7 +153,7 @@ const Register = props => {
             </Card.Footer>
           </Card>
         </Col>
-      </Row>
+      </div>
     </div>
   )
 }

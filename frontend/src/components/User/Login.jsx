@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { Row, Col, Card, Form, InputGroup, FormControl, Button, Alert } from 'react-bootstrap'
+import { Col, Card, Form, InputGroup, FormControl, Button, Alert } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSignInAlt, faEnvelope, faLock, faUndo } from '@fortawesome/free-solid-svg-icons'
 import { authenticateUser } from '../../services'
@@ -39,7 +39,7 @@ const Login = props => {
   }
 
   return (
-    <Row className="justify-content-md-center">
+    <div className="justify-content-md-center form-row">
       <Col xs={5}>
         {show && props.message && (
           <Alert variant="success" onClose={() => setShow(true)} dismissible>
@@ -118,7 +118,7 @@ const Login = props => {
           </Card.Footer>
         </Card>
       </Col>
-    </Row>
+    </div>
   )
 }
 export default Login

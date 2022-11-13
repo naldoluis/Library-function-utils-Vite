@@ -12,15 +12,12 @@
 
 .arrow-up,.arrow-down,.link:hover,.link {color: #fff}
 
-.author,.title-book,.price,.link {font-size: 14px}
-
 .input-password,.input-email,.input-name,.input-phone {margin: 9px 9px;background: #e8f0fe}
 .lock,.envelope,.name,.phone {margin-top: 12px;width: 40px}
 
-.link {background: #b00fd0;border-radius: 3px;width: 90px;height: 31.3px;text-align: center;padding-top: 4.5px}
+.link {background: #b00fd0;border-radius: 3px;width: 90px;height: 31.3px;text-align: center;padding-top: 4.5px;font-size: 14px}
 .link:hover {background: #9f0ebc}
 
-::-webkit-scrollbar {width: 8px}
+::-webkit-scrollbar {width: 6px}
 ::-webkit-scrollbar-track {background: #606060}
 ::-webkit-scrollbar-thumb {background: #bebebe}
-::-webkit-scrollbar-thumb:hover {background: #bebebe}
