@@ -209,7 +209,7 @@ class BookList extends React.Component {
           <Card.Body>
             <Table bordered hover striped variant="dark">
               <thead>
-                <tr>
+                <tr className="table-title">
                   <th>Title</th>
                   <th>Author</th>
                   <th>ISBN Number</th>
@@ -237,11 +237,11 @@ class BookList extends React.Component {
                         <Image src={book.photo} roundedCircle width="29" height="29"/>{" "}
                         {book.title}
                       </td>
-                      <td align="center">{book.author}</td>
-                      <td align="center">{book.isbn}</td>
-                      <td align="center">{book.price.toFixed(2)}</td>
-                      <td align="center">{book.language}</td>
-                      <td align="center">{book.genre}</td>
+                      <td className="table-content">{book.author}</td>
+                      <td className="table-content">{book.isbn}</td>
+                      <td className="table-content">{book.price.toFixed(2)}</td>
+                      <td className="table-content">{book.language}</td>
+                      <td className="table-content">{book.genre}</td>
                       <td align="center">
                           <Link to={"/edit/" + book.id} className="btn btn-sm edit">
                             <FontAwesomeIcon icon={faEdit}/>
