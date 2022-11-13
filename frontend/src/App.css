@@ -1,6 +1,12 @@
 @import "https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css";
 .margin-top {margin-top : 20px}
-.not-found,.clean-find {color: aliceblue}
+.not-found,.clean-find,.edit,.edit:hover,.delete {color: aliceblue}
+
 .find {background: #f5d20c;color: #393939}
 .clean-find {background: #c02f2f}
+
+.edit {background: #72952d;border: #72952d}
+.edit:hover {background: #2ea546}
+
 .delete,.clean-find,.find {margin-left: 3.5px}
+.delete {background: #560df5;border: #850df5}

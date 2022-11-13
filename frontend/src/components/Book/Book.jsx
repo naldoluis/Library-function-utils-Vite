@@ -14,13 +14,45 @@ class Book extends React.Component {
     super(props)
     this.state = this.initialState
     this.state = {
-      genre: [],
-      language: [],
+      genres: [],
+      languages: [],
       show: false
     }
   }
 
   initialState = { id: "", title: "Java", author: "New Author", photo: "https://images-na.ssl-images-amazon.com/images/I/51gHy16h5TL.jpg", isbn: "125032019", price: "20.00", language: "English", genre: "Technology" }
+
+  findAllLanguages = () => {
+    this.props.fetchLanguages()
+    setTimeout(() => {
+      let bookLanguages = this.props.bookObject.languages
+      if (bookLanguages) {
+        this.setState({
+          language: [{ value: "", display: "Select Language" }].concat(
+            bookLanguages.map(language => {
+              return { value: language, display: language }
+            }))
+        })
+        this.findAllLanguages()
+      }
+    }, 100)
+  }
+
+  findAllGenres = () => {
+    this.props.fetchGenres()
+    setTimeout(() => {
+      let bookGenres = this.props.bookObject.genres
+      if (bookGenres) {
+        this.setState({
+          genre: [{ value: "", display: "Select Genre" }].concat(
+            bookGenres.map(genre => {
+              return { value: genre, display: genre }
+            }))
+        })
+        this.findAllGenres()
+      }
+    }, 100)
+  }
 
   findBookById = bookId => {
     this.props.fetchBook(bookId)
@@ -45,7 +77,7 @@ class Book extends React.Component {
     this.setState(() => this.initialState)
   }
 
-  saveBook = event => {
+  submitBook = event => {
     event.preventDefault()
 
     const book = {
@@ -120,7 +152,7 @@ class Book extends React.Component {
           </Card.Header>
           <Form
             onReset={this.resetBook}
-            onSubmit={this.state.id ? this.updateBook : this.saveBook}
+            onSubmit={this.state.id ? this.updateBook : this.submitBook}
             id="bookFormId"
           >
             <Card.Body>
@@ -215,6 +247,11 @@ class Book extends React.Component {
                     <option>Arabic</option>
                     <option>Spanish</option>
                     <option>Chinese</option>
+                    {/* {this.state.languages.map(language => (
+                      <option key={language.value} value={language.value}>
+                        {language.display}
+                      </option>
+                    ))} */}
                   </Form.Control>
                 </Form.Group>
                 <Form.Group as={Col}>
@@ -233,6 +270,11 @@ class Book extends React.Component {
                     <option>Biography</option>
                     <option>Horror</option>
                     <option>Romance</option>
+                    {/* {this.state.genres.map(genre => (
+                      <option key={genre.value} value={genre.value}>
+                        {genre.display}
+                      </option>
+                    ))} */}
                   </Form.Control>
                 </Form.Group>
                 </div>
