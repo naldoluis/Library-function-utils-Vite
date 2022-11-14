@@ -6,7 +6,6 @@ export const authenticateUser = (email, password) => async dispatch => {
   dispatch(loginRequest())
   try {
     const response = await axios.post(`${BASE_URL}/user/authenticate`, { email, password })
-
     localStorage.setItem("jwtToken", response.data.token)
     dispatch(success({ username: response.data.name, isLoggedIn: true }))
     return Promise.resolve(response.data)

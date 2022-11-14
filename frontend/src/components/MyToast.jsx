@@ -7,10 +7,7 @@ const MyToast = props => {
     <div style={props.show ? toastCss : null}>
       <Toast
         className={`border text-white ${
-          props.type === "success"
-            ? "border-success bg-success"
-            : "border-danger bg-danger"
-        }`}
+          props.type === "success" ? "border-success bg-success" : "border-danger bg-danger"}`}
         show={props.show}
       >
         <Toast.Header className={`text-white ${props.type === "success" ? "bg-success" : "bg-danger"}`}

@@ -77,7 +77,7 @@ export const fetchLanguages = () => {
     dispatch({
       type: BT.FETCH_LANGUAGES_REQUEST
     })
-    axios(`${BASE_URL}/books/language`)
+    axios(`${BASE_URL}/books/languages`)
       .then(response => {
         dispatch({
           type: BT.LANGUAGES_SUCCESS,
@@ -97,7 +97,7 @@ export const fetchGenres = () => {
     dispatch({
       type: BT.FETCH_GENRES_REQUEST
     })
-    axios(`${BASE_URL}/books/genre`)
+    axios(`${BASE_URL}/books/genres`)
       .then(response => {
         dispatch({
           type: BT.GENRES_SUCCESS,

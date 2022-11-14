@@ -14,8 +14,8 @@ class Book extends React.Component {
     super(props)
     this.state = this.initialState
     this.state = {
-      genres: [],
-      languages: [],
+      genre: [],
+      language: [],
       show: false
     }
   }
@@ -102,10 +102,11 @@ class Book extends React.Component {
     this.setState(this.initialState)
   }
 
-  updateBook = event => {
+  updateBookk = event => {
     event.preventDefault()
 
     const book = {
+      id: this.state.id,
       title: this.state.title,
       author: this.state.author,
       photo: this.state.photo,
@@ -152,7 +153,7 @@ class Book extends React.Component {
           </Card.Header>
           <Form
             onReset={this.resetBook}
-            onSubmit={this.state.id ? this.updateBook : this.submitBook}
+            onSubmit={this.state.id ? this.updateBookk : this.submitBook}
             id="bookFormId"
           >
             <Card.Body>
