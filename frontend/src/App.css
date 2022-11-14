@@ -5,8 +5,8 @@
 .find {background: #f5d20c;color: #393939}
 .clean-find {background: #c02f2f}
 
-.edit {background: #72952d;border: #72952d;width: 27.4px}
-.edit:hover {background: #2ea546}
+.edit {background: #72952d;border: #72952d;width: 27.58px}
+.edit:hover {background: #2fb049}
 
 .delete,.clean-find,.find {margin-left: 3.5px}
 .delete {background: #560df5;border: #560df5}

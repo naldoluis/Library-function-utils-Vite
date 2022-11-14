@@ -233,15 +233,15 @@ class BookList extends React.Component {
                 ) : (
                   books.map(book => (
                     <tr key={book.id}>
-                      <td>
-                        <Image src={book.photo} roundedCircle width="29" height="29"/>{" "}
+                      <td className="table-content">
+                        <Image src={book.photo} roundedCircle width="29" height="29"/>{" • "}
                         {book.title}
                       </td>
-                      <td className="table-content">{book.author}</td>
-                      <td className="table-content">{book.isbn}</td>
-                      <td className="table-content">{book.price.toFixed(2)}</td>
-                      <td className="table-content">{book.language}</td>
-                      <td className="table-content">{book.genre}</td>
+                      <td className="table-content" align="center">{book.author}</td>
+                      <td className="table-content" align="center">{book.isbn}</td>
+                      <td className="table-content" align="center">{book.price.toFixed(2)}</td>
+                      <td className="table-content" align="center">{book.language}</td>
+                      <td className="table-content" align="center">{book.genre}</td>
                       <td align="center">
                           <Link to={"/edit/" + book.id} className="btn btn-sm edit">
                             <FontAwesomeIcon icon={faEdit}/>

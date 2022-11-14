@@ -1,4 +1,4 @@
-.page-num {width: 40px !important;text-align: center;font-weight: 600}
+.page-num {width: 40px !important;text-align: center}
 .arrow {width: 0;height: 0;margin-top: 5px;border-left: 5px solid transparent;border-right: 5px solid transparent;display: inline-block}
 .arrow-up {border-bottom: 10px solid}
 .arrow-down {border-top: 10px solid}
@@ -18,8 +18,8 @@
 .link {background: #b00fd0;border-radius: 3px;width: 90px;height: 31.3px;text-align: center;padding-top: 4.5px;font-size: 14px}
 .link:hover {background: #9f0ebc}
 
-.table-title {font-size: 14.8px;color: #d8db15;text-align: center}
-.table-content {font-size: 14px;font-weight: 500}
+.table-title {font-size: 14.4px;color: #d8db15;text-align: center}
+.table-content {font-size: 14px;font-weight: 400}
 
 ::-webkit-scrollbar {width: 6px}
 ::-webkit-scrollbar-track {background: #606060}
