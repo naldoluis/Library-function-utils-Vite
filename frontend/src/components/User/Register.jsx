@@ -6,7 +6,7 @@ import { faPhone, faEnvelope, faLock, faUndo, faUserPlus, faUser } from '@fortaw
 import { registerUser } from '../../services'
 import MyToast from '../MyToast'
 
-const Register = props => {
+export default function Register(props) {
   const [show, setShow] = useState(false)
   const [message, setMessage] = useState("")
 
@@ -157,4 +157,3 @@ const Register = props => {
     </div>
   )
 }
-export default Register

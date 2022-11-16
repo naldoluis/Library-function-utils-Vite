@@ -6,7 +6,7 @@ import { faUserPlus, faSignInAlt, faSignOutAlt } from '@fortawesome/free-solid-s
 import { logoutUser } from '../services'
 import Book from '../assets/Book_icon_1.png'
 
-const NavigationBar = () => {
+export default function NavigationBar() {
   const auth = useSelector(state => state.auth)
   const dispatch = useDispatch()
 
@@ -30,6 +30,7 @@ const NavigationBar = () => {
         <Link to={"add"} className="nav-link">Add Book</Link>
         <Link to={"list"} className="nav-link">Book List</Link>
         <Link to={"user"} className="nav-link">User List</Link>
+        <Link to={"store"} className="nav-link">Store</Link>
       </Nav>
       <Nav className="navbar-right">
         <Link to={"logout"} className="nav-link" onClick={logout}><FontAwesomeIcon icon={faSignOutAlt}/> Logout</Link>
@@ -45,4 +46,3 @@ const NavigationBar = () => {
     </Navbar>
   )
 }
-export default NavigationBar

@@ -11,7 +11,7 @@
         }																	                            |
 													                    Http Headers            |
 																			                                |
-								          🔑 Authorization          ✔️			       value: 🔒
+								          🔑 Authorization        ✔️			        value: 🔒
 
 >					         Using generated security password: 27b35cb3-51e6-46e5-b74e-42faa8e458d7
 

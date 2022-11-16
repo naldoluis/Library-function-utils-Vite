@@ -2,7 +2,7 @@ import * as UT from './userTypes'
 
 const initialState = { users: [], error: "" }
 
-const reducer = (state = initialState, action) => {
+export default function reducer(state = initialState, action) {
   switch (action.type) {
     case UT.USER_REQUEST:
       return {
@@ -27,4 +27,3 @@ const reducer = (state = initialState, action) => {
       return state
   }
 }
-export default reducer

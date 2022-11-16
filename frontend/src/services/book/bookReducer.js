@@ -2,7 +2,7 @@ import * as BT from './bookTypes'
 
 const initialState = { book: "", error: "" }
 
-const reducer = (state = initialState, action) => {
+export default function reducer(state = initialState, action) {
   switch (action.type) {
     case BT.SAVE_BOOK_REQUEST:
     case BT.FETCH_BOOK_REQUEST:
@@ -47,4 +47,3 @@ const reducer = (state = initialState, action) => {
       return state
   }
 }
-export default reducer

@@ -2,7 +2,7 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { Card } from 'react-bootstrap'
 
-export const Welcome = () => {
+export default function Welcome() {
   const [quotes, setQuotes] = useState("")
 
   useEffect(() => {
@@ -28,4 +28,3 @@ export const Welcome = () => {
     </Card>
   )
 }
-export default Welcome

@@ -6,6 +6,7 @@ import Book from './components/Book/Book'
 import BookList from './components/Book/BookList'
 import UserList from './components/User/UserList'
 import Register from './components/User/Register'
+import Store from './components/Store/Store'
 import Login from './components/User/Login'
 import Footer from './components/Footer'
 import Home from './components/Home'
@@ -34,6 +35,7 @@ export default function App() {
               <Route path="/edit/:id" element={<Book/>}/>
               <Route path="/list" element={<BookList/>}/>
               <Route path="/user" element={<UserList/>}/>
+              <Route path="/store" element={<Store/>}/>
               <Route path="/register" element={<Register/>}/>
               <Route path="/login" element={<Login/>}/>
               <Route path="/logout" element={() => {<Login message="User Logged Out Successfully."/>}}/>

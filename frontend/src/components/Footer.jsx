@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Navbar, Container, Col } from 'react-bootstrap'
 
-const Footer = () => {
+export default function Footer() {
   const [fullYear, setFullYear] = useState()
 
   useEffect(() => {
@@ -19,4 +19,3 @@ const Footer = () => {
       </Container>
     </Navbar>
   )}
-  export default Footer

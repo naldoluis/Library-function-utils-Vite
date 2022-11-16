@@ -1,6 +1,6 @@
 import { Toast } from 'react-bootstrap'
 
-const MyToast = props => {
+export default function MyToast(props) {
   const toastCss = {position: "fixed",top: "10px",right: "10px",zIndex: "1",boxShadow: "0 4px 8px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .2)"}
 
   return (
@@ -20,4 +20,3 @@ const MyToast = props => {
     </div>
   )
 }
-export default MyToast
