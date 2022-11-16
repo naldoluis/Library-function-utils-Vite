@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import { Col, Card, Form, InputGroup, FormControl, Button } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhone, faEnvelope, faLock, faUndo, faUserPlus, faUser } from '@fortawesome/free-solid-svg-icons'
@@ -9,6 +10,7 @@ import MyToast from '../MyToast'
 export default function Register(props) {
   const [show, setShow] = useState(false)
   const [message, setMessage] = useState("")
+  const navigate = useNavigate()
 
   const initialState = { name: "", email: "", password: "", mobile: "" }
 
@@ -29,7 +31,7 @@ export default function Register(props) {
         resetRegisterForm()
         setTimeout(() => {
           setShow(false)
-          //props.history.push("/login")
+          navigate("/login")
         }, 2000)
       })
       .catch(error => {

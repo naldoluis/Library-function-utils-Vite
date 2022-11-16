@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import { Col, Card, Form, InputGroup, FormControl, Button, Alert } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSignInAlt, faEnvelope, faLock, faUndo } from '@fortawesome/free-solid-svg-icons'
@@ -8,6 +9,7 @@ import { authenticateUser } from '../../services'
 export default function Login(props) {
   const [error, setError] = useState()
   const [show, setShow] = useState(true)
+  const navigate = useNavigate()
 
   const initialState = { email: "", password: "" }
 
@@ -24,7 +26,7 @@ export default function Login(props) {
     dispatch(authenticateUser(user.email, user.password))
       .then(response => {
         console.log(response.data)
-        //return props.history.push("/home")
+        navigate("/home")
       })
       .catch(error => {
         console.log(error.message)
