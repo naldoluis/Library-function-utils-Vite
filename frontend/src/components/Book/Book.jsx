@@ -102,7 +102,7 @@ class Book extends React.Component {
     this.setState(this.initialState)
   }
 
-  updateBookk = event => {
+  updateBook = event => {
     event.preventDefault()
 
     const book = {
@@ -153,7 +153,7 @@ class Book extends React.Component {
           </Card.Header>
           <Form
             onReset={this.resetBook}
-            onSubmit={this.state.id ? this.updateBookk : this.submitBook}
+            onSubmit={this.state.id ? this.updateBook : this.submitBook}
             id="bookFormId"
           >
             <Card.Body>
