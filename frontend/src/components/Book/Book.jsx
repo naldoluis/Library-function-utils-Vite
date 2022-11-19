@@ -116,9 +116,9 @@ class Book extends React.Component {
       genre: this.state.genre
     }
 
-    this.props.updateBook(book)
+    this.props.updateBook(book.id)
     setTimeout(() => {
-      if (this.props.bookObject.book != null) {
+      if (this.props.bookObject.book.id != null) {
         this.setState({ show: true, method: "put" })
         setTimeout(() => this.setState({ show: false }), 2300)
       } else {
