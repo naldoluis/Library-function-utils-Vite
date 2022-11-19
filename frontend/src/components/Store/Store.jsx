@@ -107,8 +107,8 @@ class Store extends React.Component {
             <div className="col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3 mb-4">
               <img className="card-photo" src='https://images-na.ssl-images-amazon.com/images/I/417zLTa1uqL._SX397_BO1,204,203,200_.jpg'/>
               <div className="card-title">
-                <h6>John Carnell</h6>
-                <div className="card-desc">{author}</div>
+                <h6>Spring Microservices</h6>
+                <div className="card-desc">John Carnell</div>
                   <h1></h1>
                  <h6>{isbn}</h6>
                 <div className="card-desc">{price}</div>
