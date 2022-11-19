@@ -171,7 +171,7 @@ class BookList extends React.Component {
             type="danger"
           />
         </div>
-        <Card className="border border-dark bg-dark text-white">
+        <Card className="border-dark bg-dark text-white">
           <Card.Header>
             <div style={{ float: "left" }}>
               <FontAwesomeIcon icon={faList}/> Book List
@@ -209,20 +209,20 @@ class BookList extends React.Component {
           <Card.Body>
             <Table bordered hover striped variant="dark">
               <thead>
-                <tr className="table-title">
-                  <th>Title</th>
-                  <th>Author</th>
-                  <th>ISBN Number</th>
-                  <th onClick={this.sortData}>
+                <tr className="table-title border-secondary">
+                  <th className="border-secondary">Title</th>
+                  <th className="border-secondary">Author</th>
+                  <th className="border-secondary">ISBN Number</th>
+                  <th className="border-secondary" onClick={this.sortData}>
                     Price{" "}
                     <div className={this.state.sortDir === "asc" ? "arrow arrow-up" : "arrow arrow-down"}
                     >
                       {" "}
                     </div>
                   </th>
-                  <th>Language</th>
-                  <th>Genre</th>
-                  <th>Actions</th>
+                  <th className="border-secondary">Language</th>
+                  <th className="border-secondary">Genre</th>
+                  <th className="border-secondary">Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -233,16 +233,16 @@ class BookList extends React.Component {
                 ) : (
                   books.map(book => (
                     <tr key={book.id}>
-                      <td className="table-content">
+                      <td className="table-content border-secondary">
                         <Image src={book.photo} roundedCircle width="29" height="29"/>{" • "}
                         {book.title}
                       </td>
-                      <td className="table-content" align="center">{book.author}</td>
-                      <td className="table-content" align="center">{book.isbn}</td>
-                      <td className="table-content" align="center">{book.price.toFixed(2)}</td>
-                      <td className="table-content" align="center">{book.language}</td>
-                      <td className="table-content" align="center">{book.genre}</td>
-                      <td align="center">
+                      <td className="table-content border-secondary" align="center">{book.author}</td>
+                      <td className="table-content border-secondary" align="center">{book.isbn}</td>
+                      <td className="table-content border-secondary" align="center">{book.price.toFixed(2)}</td>
+                      <td className="table-content border-secondary" align="center">{book.language}</td>
+                      <td className="table-content border-secondary" align="center">{book.genre}</td>
+                      <td className="border-secondary" align="center">
                           <Link to={"/edit/" + book.id} className="btn btn-sm edit">
                             <FontAwesomeIcon icon={faEdit}/>
                           </Link>{" "}
@@ -270,7 +270,7 @@ class BookList extends React.Component {
                 <InputGroup size="sm">
                   <div>
                     <Button
-                      className="first"
+                      className="first bg-warning text-dark"
                       size="sm"
                       variant="outline-warning"
                       disabled={currentPage === 1 ? true : false}
@@ -279,7 +279,7 @@ class BookList extends React.Component {
                       <FontAwesomeIcon icon={faFastBackward}/> First
                     </Button>
                     <Button
-                      className="prev"
+                      className="prev bg-success text-light"
                       size="sm"
                       variant="outline-success"
                       disabled={currentPage === 1 ? true : false}
@@ -290,14 +290,14 @@ class BookList extends React.Component {
                     </div>
                   <FormControl
                     size="sm"
-                    className="border-light text-white page-num bg-dark"
+                    className="border-secondary text-white page-num bg-dark"
                     name="currentPage"
                     value={currentPage}
                     onChange={this.changePage}
                   />
                   <div>
                     <Button
-                      className="next"
+                      className="next bg-success text-light"
                       size="sm"
                       variant="outline-success"
                       disabled={currentPage === totalPages ? true : false}
@@ -306,7 +306,7 @@ class BookList extends React.Component {
                       <FontAwesomeIcon icon={faStepForward}/> Next
                     </Button>
                     <Button
-                      className="last"
+                      className="last bg-warning text-dark"
                       size="sm"
                       variant="outline-warning"
                       disabled={currentPage === totalPages ? true : false}

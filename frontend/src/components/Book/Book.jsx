@@ -116,9 +116,9 @@ class Book extends React.Component {
       genre: this.state.genre
     }
 
-    this.props.updateBook(book.id)
+    this.props.updateBook(book)
     setTimeout(() => {
-      if (this.props.bookObject.book.id != null) {
+      if (this.props.bookObject.book != null) {
         this.setState({ show: true, method: "put" })
         setTimeout(() => this.setState({ show: false }), 2300)
       } else {
@@ -146,7 +146,7 @@ class Book extends React.Component {
             type="success"
           />
         </div>
-        <Card className="border border-dark bg-dark text-white">
+        <Card className="border-secondary bg-dark text-white">
           <Card.Header>
             <FontAwesomeIcon icon={this.state.id ? faEdit : faPlusSquare}/>{" "}
             {this.state.id ? "Update Book" : "Add New Book"}
@@ -178,7 +178,7 @@ class Book extends React.Component {
                     name="author"
                     value={author}
                     onChange={this.bookChange}
-                    className="bg-dark text-white mb-2"
+                    className="bg-dark text-white mb-3"
                     placeholder="Enter Book Author"
                   />
                 </Form.Group>
@@ -212,7 +212,7 @@ class Book extends React.Component {
                     name="isbn"
                     value={isbn}
                     onChange={this.bookChange}
-                    className="bg-dark text-white mb-2"
+                    className="bg-dark text-white mb-3"
                     placeholder="Enter Book ISBN Number"
                   />
                 </Form.Group>

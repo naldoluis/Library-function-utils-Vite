@@ -28,7 +28,7 @@ class Store extends React.Component {
     const { title, author, photo, isbn, price } = this.state
 
     return (
-      <Card className="border border-dark bg-dark">
+      <Card className="border-dark bg-dark">
         <Card.Header>
           <h5 className="text-light">Edition Limited</h5>
           <div className="row">

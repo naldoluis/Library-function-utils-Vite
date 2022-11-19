@@ -76,7 +76,7 @@ class UserList extends React.Component {
         {userData.error ? (
           <Alert variant="danger">{userData.error}</Alert>
         ) : (
-          <Card className="border border-dark bg-dark text-white">
+          <Card className="border-dark bg-dark text-white">
             <Card.Header>
               <FontAwesomeIcon icon={faUsers}/> User List
             </Card.Header>
@@ -84,11 +84,11 @@ class UserList extends React.Component {
               <Table bordered hover striped variant="dark">
                 <thead>
                   <tr>
-                    <td>Name</td>
-                    <td>Email</td>
-                    <td>Address</td>
-                    <td>Created</td>
-                    <td>Balance</td>
+                    <td className="border-secondary">Name</td>
+                    <td className="border-secondary">Email</td>
+                    <td className="border-secondary">Address</td>
+                    <td className="border-secondary">Created</td>
+                    <td className="border-secondary">Balance</td>
                   </tr>
                 </thead>
                 <tbody>
@@ -99,13 +99,13 @@ class UserList extends React.Component {
                   ) : (
                     currentUsers.map((user, index) => (
                       <tr key={index}>
-                        <td>
+                        <td className="table-content border-secondary">
                           {user.first} {user.last}
                         </td>
-                        <td>{user.email}</td>
-                        <td>{user.address}</td>
-                        <td>{user.created}</td>
-                        <td>{user.balance}</td>
+                        <td className="table-content border-secondary">{user.email}</td>
+                        <td className="table-content border-secondary">{user.address}</td>
+                        <td className="table-content border-secondary">{user.created}</td>
+                        <td className="table-content border-secondary">{user.balance}</td>
                       </tr>
                     ))
                   )}
@@ -121,7 +121,7 @@ class UserList extends React.Component {
                   <InputGroup size="sm">
                   <div>
                       <Button
-                        className="first"
+                        className="first bg-warning text-dark"
                         size="sm"
                         variant="outline-warning"
                         disabled={currentPage === 1 ? true : false}
@@ -130,7 +130,7 @@ class UserList extends React.Component {
                         <FontAwesomeIcon icon={faFastBackward}/> First
                       </Button>
                       <Button
-                        className="prev"
+                        className="prev bg-success text-light"
                         size="sm"
                         variant="outline-success"
                         disabled={currentPage === 1 ? true : false}
@@ -141,14 +141,14 @@ class UserList extends React.Component {
                   </div>
                     <FormControl
                       size="sm"
-                      className="border-light text-white page-num bg-dark"
+                      className="border-secondary text-white page-num bg-dark"
                       name="currentPage"
                       value={currentPage}
                       onChange={this.changePage}
                     />
                     <div>
                       <Button
-                        className="next"
+                        className="next bg-success text-light"
                         size="sm"
                         variant="outline-success"
                         disabled={currentPage === totalPages ? true : false}
@@ -157,7 +157,7 @@ class UserList extends React.Component {
                         <FontAwesomeIcon icon={faStepForward}/> Next
                       </Button>
                       <Button
-                        className="last"
+                        className="last bg-warning text-dark"
                         size="sm"
                         variant="outline-warning"
                         disabled={currentPage === totalPages ? true : false}
