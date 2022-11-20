@@ -120,6 +120,122 @@
           "genre": "Romance",
           "language": "English"
       }
+📔
+      {
+          "title": "Cloud Native",
+          "author": "Cornelia Davis",
+          "photo": "https://m.media-amazon.com/images/I/71bUthRlRhL.jpg",
+          "isbn": 873666024,
+          "price": 875,
+          "genre": "Technology",
+          "language": "English"
+      }
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\💬\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+📕
+      {
+          "title": "Microservices",
+          "author": "Chris Richardson",
+          "photo": "https://m.media-amazon.com/images/I/71eY7tYDS4L.jpg",
+          "isbn": 873666024,
+          "price": 668,
+          "genre": "Technology",
+          "language": "English"
+      }
+📒
+      {
+          "title": "Microservices",
+          "author": "Morgan Bruce",
+          "photo": "https://images.manning.com/book/8/809fab1-8912-4fb7-b39e-f49844525807/Bruce-Microservices-HI.png",
+          "isbn": 873666024,
+          "price": 748,
+          "genre": "Technology",
+          "language": "English"
+      }
+📗
+      {
+          "title": "Microservices in.Net",
+          "author": "Christian Horsdal",
+          "photo": "https://images.manning.com/book/e/65fff7e-bc06-44d4-b4bd-9dd311a8d135/Horsdal-Microservices-2ed-HI.png",
+          "isbn": 873666024,
+          "price": 753,
+          "genre": "Technology",
+          "language": "English"
+      }
+📙
+      {
+          "title": "Bootstrapping Microservices",
+          "author": "Ashley Davis",
+          "photo": "https://images.manning.com/book/8/b060324-0567-4c7b-b918-de2cf83d52ff/Davis-BM-HI.png",
+          "isbn": 873666024,
+          "price": 235,
+          "genre": "Technology",
+          "language": "English"
+      }
+📘
+      {
+          "title": "Unity in Action",
+          "author": "Joseph Hocking",
+          "photo": "https://images.thuvienpdf.com/RdadOzRvJb.webp",
+          "isbn": 873666024,
+          "price": 645,
+          "genre": "Technology",
+          "language": "English"
+      }
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\💬\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+📕
+      {
+          "title": "Enterprise OSGI",
+          "author": "Holly Cummins",
+          "photo": "https://images.manning.com/264/352/resize/book/7/00b638e-84a6-44b2-b051-6f15469be9ab/cummins.png",
+          "isbn": 873666024,
+          "price": 643,
+          "genre": "Technology",
+          "language": "English"
+      }
+📒
+      {
+          "title": "AspectJ in Action",
+          "author": "Ramnivas Laddad",
+          "photo": "https://images.manning.com/264/352/resize/book/f/f1d0a0c-4575-4a6a-a282-afa7a5105429/laddad2.png",
+          "isbn": 873666024,
+          "price": 469,
+          "genre": "Technology",
+          "language": "English"
+      }
+📗
+      {
+          "title": "HTTP/2",
+          "author": "Barry Pollard",
+          "photo": "https://images.manning.com/book/b/2327043-8f05-4151-8320-dcc0294714c6/Pollard-HTTP-HI.png",
+          "isbn": 873666024,
+          "price": 775,
+          "genre": "Technology",
+          "language": "English"
+      }
+📙
+      {
+          "title": "AWS Lambda",
+          "author": "Danilo Poccia",
+          "photo": "https://images.manning.com/264/352/resize/book/0/f99ea3b-916a-4f20-a66d-d086ee0b27f2/Poccia-AWSL-HI.png",
+          "isbn": 873666024,
+          "price": 235,
+          "genre": "Technology",
+          "language": "English"
+      }
+📘
+      {
+          "title": "Google Cloud",
+          "author": "JJ Geewax",
+          "photo": "https://m.media-amazon.com/images/I/61J6t27YllL.jpg",
+          "isbn": 873666024,
+          "price": 575,
+          "genre": "Technology",
+          "language": "English"
+      }
 
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 											                          !J ⭐ BACKEND ⭐ !J

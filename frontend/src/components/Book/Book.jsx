@@ -20,7 +20,7 @@ class Book extends React.Component {
     }
   }
 
-  initialState = { id: "", title: "Java", author: "New Author", photo: "https://images-na.ssl-images-amazon.com/images/I/51gHy16h5TL.jpg", isbn: "125032019", price: "20.00", language: "English", genre: "Technology" }
+  initialState = { id: "", title: "Java", author: "New Author", photo: "https://images.thuvienpdf.com/RdadOzRvJb.webp", isbn: "125032019", price: "20.00", language: "English", genre: "Technology" }
 
   findAllLanguages = () => {
     this.props.fetchLanguages()
