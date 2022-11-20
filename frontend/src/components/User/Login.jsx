@@ -53,7 +53,7 @@ export default function Login(props) {
             {error}
           </Alert>
         )}
-        <Card className="border border-dark bg-dark text-white">
+        <Card className="border-dark bg-dark text-white">
           <Card.Header>
             <FontAwesomeIcon icon={faSignInAlt}/> Login
           </Card.Header>

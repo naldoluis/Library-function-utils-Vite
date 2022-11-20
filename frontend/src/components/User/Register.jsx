@@ -50,7 +50,7 @@ export default function Register(props) {
       </div>
       <div className="justify-content-md-center form-row">
         <Col xs={5}>
-          <Card className="border border-dark bg-dark text-white">
+          <Card className="border-dark bg-dark text-white">
             <Card.Header>
               <FontAwesomeIcon icon={faUserPlus}/> Register
             </Card.Header>
