@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Card, Table, Image, Button, InputGroup, FormControl } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faList, faEdit, faTrash, faStepBackward, faFastBackward, faStepForward, faFastForward, faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faList, faEdit, faTrash, faStepBackward, faFastBackward, faStepForward, faFastForward, faSearch, faTimes } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import MyToast from '../MyToast'
@@ -270,9 +270,9 @@ class BookList extends React.Component {
                 <InputGroup size="sm">
                   <div>
                     <Button
-                      className="first bg-warning text-dark"
+                      className="first bg-info text-light"
                       size="sm"
-                      variant="outline-warning"
+                      variant="outline-info"
                       disabled={currentPage === 1 ? true : false}
                       onClick={this.firstPage}
                     >
@@ -297,18 +297,18 @@ class BookList extends React.Component {
                   />
                   <div>
                     <Button
-                      className="next bg-success text-light"
+                      className="next bg-warning text-dark"
                       size="sm"
-                      variant="outline-success"
+                      variant="outline-warning"
                       disabled={currentPage === totalPages ? true : false}
                       onClick={this.nextPage}
                     >
                       <FontAwesomeIcon icon={faStepForward}/> Next
                     </Button>
                     <Button
-                      className="last bg-warning text-dark"
+                      className="last bg-danger text-light"
                       size="sm"
-                      variant="outline-warning"
+                      variant="outline-danger"
                       disabled={currentPage === totalPages ? true : false}
                       onClick={this.lastPage}
                     >

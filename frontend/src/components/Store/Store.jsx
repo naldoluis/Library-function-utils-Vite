@@ -1,6 +1,8 @@
 import React from 'react'
 import { Card } from 'react-bootstrap'
 import '../../components/Store/test.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faList } from '@fortawesome/free-solid-svg-icons'
 
 class Store extends React.Component {
   constructor(props) {
@@ -30,7 +32,9 @@ class Store extends React.Component {
     return (
       <Card className="border-dark bg-dark">
         <Card.Header>
-          <h5 className="text-light">Edition Limited</h5>
+         <b className="tag text-light">
+           <FontAwesomeIcon icon={faList}/> Edition Limited
+          </b>
           <div className="row">
             <div className="col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3">
               <img className="card-photo" src={photo}/>
