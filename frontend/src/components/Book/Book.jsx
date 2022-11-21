@@ -288,8 +288,7 @@ class Book extends React.Component {
               <Button size="sm" variant="info" type="reset">
                 <FontAwesomeIcon icon={faUndo}/> Reset
               </Button>{" "}
-              <Link
-                style={{ textDecoration: 'none' }}
+              <Link style={{ textDecoration: 'none' }}
                 type="button" className="link" to="/list">
                 <FontAwesomeIcon icon={faList}/> Book List
               </Link>
