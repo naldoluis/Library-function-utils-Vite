@@ -2,7 +2,7 @@ import React from 'react'
 import { Card } from 'react-bootstrap'
 import '../../components/Store/test.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faList } from '@fortawesome/free-solid-svg-icons'
+import { faBook } from '@fortawesome/free-solid-svg-icons'
 
 class Store extends React.Component {
   constructor(props) {
@@ -33,7 +33,7 @@ class Store extends React.Component {
       <Card className="border-dark bg-dark">
         <Card.Header>
          <b className="tag text-light">
-           <FontAwesomeIcon icon={faList}/> Edition Limited
+           <FontAwesomeIcon icon={faBook}/> Edition Limited
           </b>
           <div className="row">
             <div className="col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3">
