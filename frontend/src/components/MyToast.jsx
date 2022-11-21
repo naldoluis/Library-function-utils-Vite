@@ -6,7 +6,7 @@ export default function MyToast(props) {
   return (
     <div style={props.show ? toastCss : null}>
       <Toast
-        className={`border text-white ${
+        className={`text-white ${
           props.type === "success" ? "border-success bg-success" : "border-danger bg-danger"}`}
         show={props.show}
       >

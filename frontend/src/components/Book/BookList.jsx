@@ -182,7 +182,7 @@ class BookList extends React.Component {
                   placeholder="Search"
                   name="search"
                   value={search}
-                  className="border-light bg-dark text-white"
+                  className="border-secondary bg-dark text-white"
                   onChange={this.searchChange}
                 />
                 <div>

@@ -1,6 +1,6 @@
-.purchase-button {align-items: center;height: 27px;width: 119px;color: #000;background: #ffc400;font-weight: 600;border-radius: .5rem}
-.purchase-button:hover {color: #fff;background: #2f9d10}
+.purchase-button {height: 27px;width: 109px;color: #333;background: #a7be10;font-weight: 500;border-radius: .5rem}
+.purchase-button:hover {background: #abd727}
 
-.card-photo {width: 100px;margin: 35px}
+.card-photo {width: 85px;margin: 45px}
 .card-title {color: #fff;text-align: center;margin: -20px 69px 0 0}
 .card-desc,.purchase-button {font-size: 12px}

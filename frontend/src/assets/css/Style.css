@@ -18,10 +18,8 @@
 .link {background: #b00fd0;border-radius: 3px;width: 90px;height: 31.3px;text-align: center;padding-top: 4.5px;font-size: 14px}
 .link:hover {background: #9f0ebc}
 
-.table-title {font-size: 14.4px;color: #bebcbc;text-align: center}
-.table-content {font-size: 14px;font-weight: 400}
-
-.tag {font-weight: 400}
+.table-title {font-size: 14.8px;color: #bebcbc;text-align: center}
+.table-content {font-size: 14.4px}
 
 ::-webkit-scrollbar {width: 6px}
 ::-webkit-scrollbar-track {background: #606060}

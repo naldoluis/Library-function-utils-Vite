@@ -20,7 +20,7 @@ class Book extends React.Component {
     }
   }
 
-  initialState = { id: "", title: "Java", author: "New Author", photo: "https://images.thuvienpdf.com/RdadOzRvJb.webp", isbn: "125032019", price: "20.00", language: "English", genre: "Technology" }
+  initialState = { id: "", title: "Java Spring Boot", author: "New Author", photo: "https://images.thuvienpdf.com/RdadOzRvJb.webp", isbn: "125032019", price: "20.00", language: "English", genre: "Technology" }
 
   findAllLanguages = () => {
     this.props.fetchLanguages()
@@ -166,7 +166,7 @@ class Book extends React.Component {
                     name="title"
                     value={title}
                     onChange={this.bookChange}
-                    className="bg-dark text-white"
+                    className="bg-dark border-secondary text-white"
                     placeholder="Enter Book Title"
                   />
                 </Form.Group>
@@ -178,7 +178,7 @@ class Book extends React.Component {
                     name="author"
                     value={author}
                     onChange={this.bookChange}
-                    className="bg-dark text-white mb-3"
+                    className="bg-dark border-secondary text-white mb-3"
                     placeholder="Enter Book Author"
                   />
                 </Form.Group>
@@ -193,7 +193,7 @@ class Book extends React.Component {
                       name="photo"
                       value={photo}
                       onChange={this.bookChange}
-                      className="bg-dark text-white"
+                      className="bg-dark border-secondary text-white"
                       placeholder="Enter Book Cover Photo URL"
                     />
                     <div>
@@ -212,7 +212,7 @@ class Book extends React.Component {
                     name="isbn"
                     value={isbn}
                     onChange={this.bookChange}
-                    className="bg-dark text-white mb-3"
+                    className="bg-dark border-secondary text-white mb-3"
                     placeholder="Enter Book ISBN Number"
                   />
                 </Form.Group>
@@ -227,7 +227,7 @@ class Book extends React.Component {
                     name="price"
                     value={price}
                     onChange={this.bookChange}
-                    className="bg-dark text-white"
+                    className="bg-dark border-secondary text-white"
                     placeholder="Enter Book Price"
                   />
                 </Form.Group>
@@ -238,7 +238,7 @@ class Book extends React.Component {
                     as="select"
                     onChange={this.bookChange}
                     name="language"
-                    className="bg-dark text-white"
+                    className="bg-dark border-secondary text-white"
                   >
                     <option>English</option>
                     <option>Portuguese</option>
@@ -262,7 +262,7 @@ class Book extends React.Component {
                     as="select"
                     onChange={this.bookChange}
                     name="genre"
-                    className="bg-dark text-white"
+                    className="bg-dark border-secondary text-white"
                   >
                     <option>Technology</option>
                     <option>Science</option>

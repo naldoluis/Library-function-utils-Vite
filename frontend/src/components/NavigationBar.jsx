@@ -41,7 +41,9 @@ export default function NavigationBar() {
   return (
     <Navbar bg="dark" variant="dark">
       <Link to={auth.isLoggedIn ? "home" : ""} className="navbar-brand">
-        <img src={Book} width="25" height="25"/>{" "}Book Store</Link>
+        <img src={Book} width="25" height="25"/>
+        <b style={{ fontSize: "19px", fontWeight: "500" }}> Book Store</b>
+      </Link>
       {auth.isLoggedIn ? userLinks : guestLinks}
     </Navbar>
   )
