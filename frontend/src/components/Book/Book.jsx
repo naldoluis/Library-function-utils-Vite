@@ -14,6 +14,7 @@ class Book extends React.Component {
     super(props)
     this.state = this.initialState
     this.state = {
+      id: [],
       genre: [],
       language: [],
       show: false

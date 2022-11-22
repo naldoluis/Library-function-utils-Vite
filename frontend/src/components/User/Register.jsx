@@ -5,7 +5,7 @@ import { Col, Card, Form, InputGroup, FormControl, Button } from 'react-bootstra
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhone, faEnvelope, faLock, faUndo, faUserPlus, faUser } from '@fortawesome/free-solid-svg-icons'
 import { registerUser } from '../../services'
-import MyToast from '../MyToast'
+import MyToastInfo from '../MyToastInfo'
 
 export default function Register(props) {
   const [show, setShow] = useState(false)
@@ -32,7 +32,7 @@ export default function Register(props) {
         setTimeout(() => {
           setShow(false)
           navigate("/login")
-        }, 2000)
+        }, 2700)
       })
       .catch(error => {
         console.log(error)
@@ -46,7 +46,7 @@ export default function Register(props) {
   return (
     <div>
       <div style={{ display: show ? "block" : "none" }}>
-        <MyToast show={show} message={message} type="success"/>
+        <MyToastInfo show={show} message={message} type="warning"/>
       </div>
       <div className="justify-content-md-center form-row">
         <Col xs={5}>
