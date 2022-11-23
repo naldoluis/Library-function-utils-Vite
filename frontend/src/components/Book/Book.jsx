@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { Card, Form, Button, Col, InputGroup, Image } from 'react-bootstrap'
+import { Button, Card, Col, Form, Image, InputGroup } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSave, faPlusSquare, faUndo, faList, faEdit } from '@fortawesome/free-solid-svg-icons'
-import { saveBook, fetchBook, updateBook, fetchLanguages, fetchGenres } from '../../services'
+import { faEdit, faList, faPlusSquare, faSave, faUndo } from '@fortawesome/free-solid-svg-icons'
+import { fetchBook, fetchGenres, fetchLanguages, saveBook, updateBook } from '../../services'
 import MyToast from '../MyToast'
-import iconLang from '../../assets/language.png'
 import iconCam from '../../assets/camera.png'
+import iconLang from '../../assets/language.png'
 
 class Book extends React.Component {
   constructor(props) {

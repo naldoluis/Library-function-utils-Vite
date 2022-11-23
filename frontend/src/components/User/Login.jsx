@@ -1,14 +1,14 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { Col, Card, Form, InputGroup, FormControl, Button, Alert } from 'react-bootstrap'
+import { Alert, Button, Card, Col, Form, FormControl, InputGroup } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSignInAlt, faEnvelope, faLock, faUndo } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope, faLock, faSignInAlt, faUndo } from '@fortawesome/free-solid-svg-icons'
 import { authenticateUser } from '../../services'
 
 export default function Login(props) {
   const [error, setError] = useState()
-  const [show, setShow] = useState(true)
+  const [show, setShow] = useState(false)
   const navigate = useNavigate()
 
   const initialState = { email: "", password: "" }
@@ -44,12 +44,12 @@ export default function Login(props) {
     <div className="justify-content-md-center form-row">
       <Col xs={5}>
         {show && props.message && (
-          <Alert variant="success" onClose={() => setShow(false)} dismissible>
+          <Alert variant="success" onClose={() => setShow(true)} dismissible>
             {props.message}
           </Alert>
         )}
         {show && error && (
-          <Alert variant="danger" onClose={() => setShow(false)} dismissible>
+          <Alert variant="danger" onClose={() => setShow(true)} dismissible>
             {error}
           </Alert>
         )}

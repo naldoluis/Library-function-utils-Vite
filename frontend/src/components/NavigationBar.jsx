@@ -1,17 +1,27 @@
+import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Navbar, Nav } from 'react-bootstrap'
+import { Nav, Navbar } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUserPlus, faSignInAlt, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
+import { faSignInAlt, faSignOutAlt, faUserPlus } from '@fortawesome/free-solid-svg-icons'
 import { logoutUser } from '../services'
 import Book from '../assets/Book_icon_1.png'
+import MyToastTimer from './MyToastTimer'
 
 export default function NavigationBar() {
   const auth = useSelector(state => state.auth)
   const dispatch = useDispatch()
+  const [show, setShow] = useState(false)
 
   const logout = () => {
     dispatch(logoutUser())
+  }
+
+  const clock = () => {
+    setShow(true)
+    setTimeout(() => {
+      setShow(false)
+    }, 3000)
   }
 
   const guestLinks = (
@@ -23,7 +33,7 @@ export default function NavigationBar() {
       </Nav>
     </>
   )
-  
+
   const userLinks = (
     <>
       <Nav className="mr-auto">
@@ -32,19 +42,25 @@ export default function NavigationBar() {
         <Link to={"user"} className="nav-link">User List</Link>
         <Link to={"store"} className="nav-link">Store</Link>
       </Nav>
-      <Nav className="navbar-right">
+      <Nav>
         <Link to={"logout"} className="nav-link" onClick={logout}><FontAwesomeIcon icon={faSignOutAlt}/> Logout</Link>
       </Nav>
     </>
   )
 
   return (
+    <>
+      <div style={{ display: show ? "block" : "none" }}>
+        <MyToastTimer show={show} message="Permanency 20 minuts." type="info"/>
+      </div>
     <Navbar bg="dark" variant="dark">
       <Link to={auth.isLoggedIn ? "home" : ""} className="navbar-brand">
         <img src={Book} width="25" height="25"/>
         <b style={{ fontSize: "19px", fontWeight: "500" }}> Book Store</b>
       </Link>
       {auth.isLoggedIn ? userLinks : guestLinks}
+        <b style={{ cursor: "pointer" }} onClick={() => clock()}>⏱</b>
     </Navbar>
+   </>
   )
 }

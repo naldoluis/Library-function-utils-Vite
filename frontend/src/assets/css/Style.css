@@ -1,4 +1,4 @@
-.page-num {width: 40px !important;text-align: center}
+.page-num {width: 40px !important}
 .arrow {width: 0;height: 0;margin-top: 5px;border-left: 5px solid transparent;border-right: 5px solid transparent;display: inline-block}
 .arrow-up {border-bottom: 10px solid}
 .arrow-down {border-top: 10px solid}
@@ -10,16 +10,25 @@
 .lang {width: 20px}
 .cam {width: 16px;margin-top: -5px}
 
-.arrow-up,.arrow-down,.link:hover,.link {color: #fff}
+.arrow-up,.arrow-down,.link:hover,.link,.card-title {color: #fff}
+
+.card-title,.link,.table-title,.page-num {text-align: center}
 
 .input-password,.input-email,.input-name,.input-phone {margin: 9px 9px;background: #e8f0fe}
 .lock,.envelope,.name,.phone {margin-top: 12px;width: 40px}
 
-.link {background: #b00fd0;border-radius: 3px;width: 90px;height: 31.3px;text-align: center;padding-top: 4.5px;font-size: 14px}
+.link {background: #b00fd0;border-radius: 3px;width: 90px;height: 31.3px;padding-top: 4.5px;font-size: 14px}
 .link:hover {background: #9f0ebc}
 
-.table-title {font-size: 14.8px;color: #bebcbc;text-align: center}
-.table-content {font-size: 14.4px}
+.table-title {font-size: 14.8px;color: #bebcbc}
+.table-content {font-size: 13.7px}
+
+.purchase-button {height: 25px;width: 100px;color: #333;background: #bbbe10;font-weight: 500;border-radius: .5rem}
+.purchase-button:hover {background: #abd727}
+
+.card-photo {width: 83px;margin: 45px}
+.card-title {margin: -33px 60px 0 0}
+.card-desc,.purchase-button {font-size: 12px;margin-top: -7px}
 
 ::-webkit-scrollbar {width: 6px}
 ::-webkit-scrollbar-track {background: #606060}

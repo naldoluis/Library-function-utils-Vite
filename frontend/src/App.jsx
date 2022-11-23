@@ -1,15 +1,15 @@
-import { Container, Col } from 'react-bootstrap'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import NavigationBar from './components/NavigationBar'
-import Welcome from './components/Welcome'
+import { Col, Container } from 'react-bootstrap'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Book from './components/Book/Book'
 import BookList from './components/Book/BookList'
-import UserList from './components/User/UserList'
-import Register from './components/User/Register'
-import Store from './components/Store/Store'
-import Login from './components/User/Login'
 import Footer from './components/Footer'
 import Home from './components/Home'
+import Login from './components/User/Login'
+import NavigationBar from './components/NavigationBar'
+import Register from './components/User/Register'
+import Store from './components/Store/Store'
+import UserList from './components/User/UserList'
+import Welcome from './components/Welcome'
 import './App.css'
 
 export default function App() {
@@ -34,11 +34,11 @@ export default function App() {
               <Route path="/add" element={<Book/>}/>
               <Route path="/edit/:id" element={<Book/>}/>
               <Route path="/list" element={<BookList/>}/>
-              <Route path="/user" element={<UserList/>}/>
-              <Route path="/store" element={<Store/>}/>
               <Route path="/register" element={<Register/>}/>
+              <Route path="/store" element={<Store/>}/>
+              <Route path="/user" element={<UserList/>}/>
               <Route path="/login" element={<Login/>}/>
-              <Route path="/logout" element={() => {<Login message="User Logged Out Successfully."/>}}/>
+              <Route path="/logout" element={() => <Login message="User Logged Out Successfully."/>}/>
               <Route path="*" element={<h3 className='not-found'>Page not found</h3>}/>
             </Routes>
           </Col>

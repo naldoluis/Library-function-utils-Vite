@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react'
-import { Navbar, Container, Col } from 'react-bootstrap'
+import { useEffect, useState } from 'react'
+import { Col, Container, Navbar } from 'react-bootstrap'
 
 export default function Footer() {
   const [fullYear, setFullYear] = useState()

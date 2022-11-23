@@ -1,6 +1,6 @@
 import axios from 'axios'
-import { useEffect, useState } from 'react'
 import { Card } from 'react-bootstrap'
+import { useEffect, useState } from 'react'
 
 export default function Welcome() {
   const [quotes, setQuotes] = useState("")

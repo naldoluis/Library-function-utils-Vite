@@ -1,8 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Card, Table, InputGroup, FormControl, Button, Alert } from 'react-bootstrap'
+import { Alert, Button, Card, FormControl, InputGroup, Table } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUsers, faStepBackward, faFastBackward, faStepForward, faFastForward } from '@fortawesome/free-solid-svg-icons'
+import { faFastBackward, faFastForward, faStepBackward, faStepForward, faUsers } from '@fortawesome/free-solid-svg-icons'
 import { fetchUsers } from '../../services'
 import '../../assets/css/Style.css'
 

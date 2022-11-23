@@ -1,5 +1,5 @@
-import * as AT from './authTypes'
 import axios from 'axios'
+import * as AT from './authTypes'
 import { BASE_URL } from '../../../utils/requests'
 
 export const authenticateUser = (email, password) => async dispatch => {

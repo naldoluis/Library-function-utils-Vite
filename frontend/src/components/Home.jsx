@@ -1,5 +1,5 @@
-import { useSelector } from 'react-redux'
 import { Alert } from 'react-bootstrap'
+import { useSelector } from 'react-redux'
 import authToken from '../utils/authToken'
 
 export default function Home() {

@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { Col, Card, Form, InputGroup, FormControl, Button } from 'react-bootstrap'
+import { Button, Col, Card, Form, FormControl, InputGroup } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPhone, faEnvelope, faLock, faUndo, faUserPlus, faUser } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope, faLock, faPhone, faUserPlus, faUndo, faUser } from '@fortawesome/free-solid-svg-icons'
 import { registerUser } from '../../services'
 import MyToastUser from '../MyToastUser'
 
@@ -46,7 +46,7 @@ export default function Register(props) {
   return (
     <div>
       <div style={{ display: show ? "block" : "none" }}>
-        <MyToastUser show={show} message={message} type="warning"/>
+        <MyToastUser show={show} message="User Saved Successfully." type="warning"/>
       </div>
       <div className="justify-content-md-center form-row">
         <Col xs={5}>

@@ -16,7 +16,7 @@ export default function MyToastUser(props) {
           closeButton={false}
         >
           <strong>
-            <FontAwesomeIcon icon={faUsers}/> User Registred 🚧
+            <FontAwesomeIcon icon={faUsers}/> Registed 🚧
           </strong>
         </Toast.Header>
         <Toast.Body>{props.message}</Toast.Body>

@@ -1,13 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Card, Table, Image, Button, InputGroup, FormControl } from 'react-bootstrap'
+import { Button, Card, FormControl, Image, InputGroup, Table } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faList, faEdit, faTrash, faStepBackward, faFastBackward, faStepForward, faFastForward, faSearch, faTimes } from '@fortawesome/free-solid-svg-icons'
+import { faEdit, faFastBackward, faFastForward, faList, faStepBackward, faStepForward, faSearch, faTimes, faTrash } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import MyToast from '../MyToast'
-import { deleteBook } from '../../services'
 import { BASE_URL } from '../../utils/requests'
+import { deleteBook } from '../../services'
 import '../../assets/css/Style.css'
 
 class BookList extends React.Component {
@@ -263,7 +263,7 @@ class BookList extends React.Component {
           </Card.Body>
           {books.length > 0 ? (
             <Card.Footer>
-              <div style={{ float: "left" }}>
+              <div style={{ float: "left", fontSize: "15px" }}>
                 Showing Page {currentPage} of {totalPages}
               </div>
               <div style={{ float: "right" }}>
