@@ -51,7 +51,7 @@ export default function NavigationBar() {
   return (
     <>
       <div style={{ display: show ? "block" : "none" }}>
-        <MyToastTimer show={show} message="Permanency 20 minuts." type="info"/>
+        <MyToastTimer show={show} message="Permanence 20 minuts." type="info"/>
       </div>
     <Navbar bg="dark" variant="dark">
       <Link to={auth.isLoggedIn ? "home" : ""} className="navbar-brand">
