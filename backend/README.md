@@ -708,7 +708,7 @@ export default function MyToast(props) {
 
   return (
     <>
-   <div style={props.show ? toastCss : null}>
+     <div style={props.show ? toastCss : null}>
       <Toast
         className={`text-dark ${
           props.type === "warning" ? "border-warning bg-warning" : "border-danger bg-danger"}`}
@@ -717,7 +717,7 @@ export default function MyToast(props) {
         <Toast.Header className={`text-dark ${props.type === "warning" ? "bg-warning" : "bg-danger"}`}
           closeButton={false}
         >
-          <strong className="mr-auto">
+          <strong>
             <FontAwesomeIcon icon={faUsers}/> User Registred 🚧
           </strong>
          </Toast.Header>
@@ -735,7 +735,7 @@ export default function MyToast(props) {
         <Toast.Header className={`text-white ${props.type === "success" ? "bg-success" : "bg-danger"}`}
           closeButton={false}
         >
-          <strong className="mr-auto">Success</strong>
+          <strong>Success</strong>
         </Toast.Header>
         <Toast.Body>{props.message}</Toast.Body>
        </Toast>

@@ -13,7 +13,7 @@ export default function MyToast(props) {
         <Toast.Header className={`text-white ${props.type === "success" ? "bg-success" : "bg-danger"}`}
           closeButton={false}
         >
-          <strong className="mr-auto">Success</strong>
+          <strong>Success</strong>
         </Toast.Header>
         <Toast.Body>{props.message}</Toast.Body>
       </Toast>

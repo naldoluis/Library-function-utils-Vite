@@ -9,13 +9,13 @@ export default function MyToastInfo(props) {
     <div style={props.show ? toastCss : null}>
       <Toast
         className={`text-dark ${
-          props.type === "warning" ? "border-warning bg-warning" : "border-danger bg-danger"}`}
+          props.type === "warning" ? "border-warning bg-warning" : "border-info bg-info"}`}
         show={props.show}
       >
-        <Toast.Header className={`text-dark ${props.type === "warning" ? "bg-warning" : "bg-danger"}`}
+        <Toast.Header className={`text-dark ${props.type === "warning" ? "bg-warning" : "bg-info"}`}
           closeButton={false}
         >
-          <strong className="mr-auto">
+          <strong>
             <FontAwesomeIcon icon={faUsers}/> User Registred 🚧
           </strong>
         </Toast.Header>
