@@ -32,7 +32,7 @@ export default function Register(props) {
         setTimeout(() => {
           setShow(false)
           navigate("/login")
-        }, 2700)
+        }, 2800)
       })
       .catch(error => {
         console.log(error)
