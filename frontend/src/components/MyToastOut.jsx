@@ -13,7 +13,7 @@ export default function MyToastOut(props) {
           closeButton={false}
         >
           <strong>
-            <FontAwesomeIcon icon={faUser}/> - User Disconect
+            <FontAwesomeIcon icon={faUser}/> - User Disconnected
           </strong>
         </Toast.Header>
         <Toast.Body>{props.message}</Toast.Body>
