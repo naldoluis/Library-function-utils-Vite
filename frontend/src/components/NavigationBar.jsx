@@ -7,25 +7,34 @@ import { faSignInAlt, faSignOutAlt, faUserPlus } from '@fortawesome/free-solid-s
 import { logoutUser } from '../services'
 import Book from '../assets/Book_icon_1.png'
 import MyToastTimer from './MyToastTimer'
+import MyToastOut from './MyToastOut'
 
 export default function NavigationBar() {
   const auth = useSelector(state => state.auth)
   const dispatch = useDispatch()
   const [show, setShow] = useState(false)
+  const [exit, setExit] = useState(false)
 
   const logout = () => {
     dispatch(logoutUser())
+    setExit(true)
+    setTimeout(() => {
+      setExit(false)
+    }, 2200)
   }
 
   const clock = () => {
     setShow(true)
     setTimeout(() => {
       setShow(false)
-    }, 3000)
+    }, 2300)
   }
 
   const guestLinks = (
     <>
+      <div style={{ display: exit ? "block" : "none" }}>
+        <MyToastOut message="User Logged Out Successfully."/>
+      </div>
       <div className="mr-auto"></div>
       <Nav className="navbar-right">
         <Link to={"register"} className="nav-link"><FontAwesomeIcon icon={faUserPlus}/> Register</Link>
@@ -51,7 +60,7 @@ export default function NavigationBar() {
   return (
     <>
       <div style={{ display: show ? "block" : "none" }}>
-        <MyToastTimer show={show} message="Permanence 20 minuts." type="info"/>
+        <MyToastTimer message="Permanence 20 minuts."/>
       </div>
     <Navbar bg="dark" variant="dark">
       <Link to={auth.isLoggedIn ? "home" : ""} className="navbar-brand">
@@ -59,7 +68,7 @@ export default function NavigationBar() {
         <b style={{ fontSize: "19px", fontWeight: "500" }}> Book Store</b>
       </Link>
       {auth.isLoggedIn ? userLinks : guestLinks}
-        <b style={{ cursor: "pointer" }} onClick={() => clock()}>⏱</b>
+        <b className="clock" onClick={clock}>⏱</b>
     </Navbar>
    </>
   )

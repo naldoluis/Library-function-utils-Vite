@@ -10,7 +10,7 @@
 .lang {width: 20px}
 .cam {width: 16px;margin-top: -5px}
 
-.arrow-up,.arrow-down,.link:hover,.link,.card-title {color: #fff}
+.arrow-up,.arrow-down,.link:hover,.link,.card-title,.clock:hover {color: #fff}
 
 .card-title,.link,.table-title,.page-num {text-align: center}
 
@@ -26,9 +26,12 @@
 .purchase-button {height: 25px;width: 100px;color: #333;background: #bbbe10;font-weight: 500;border-radius: .5rem}
 .purchase-button:hover {background: #abd727}
 
-.card-photo {width: 83px;margin: 45px}
+.card-photo {width: 83px;margin: 54px}
 .card-title {margin: -33px 60px 0 0}
 .card-desc,.purchase-button {font-size: 12px;margin-top: -7px}
+
+.clock {transform: scale(.9);transition: all ease .2s;cursor: pointer}
+.clock:hover {transform: scale(1);filter: drop-shadow(0 0 .05em)}
 
 ::-webkit-scrollbar {width: 6px}
 ::-webkit-scrollbar-track {background: #606060}

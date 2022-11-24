@@ -166,7 +166,6 @@ class BookList extends React.Component {
       <div>
         <div style={{ display: this.state.show ? "block" : "none" }}>
           <MyToast
-            show={this.state.show}
             message="Book Deleted Successfully."
             type="danger"
           />

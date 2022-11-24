@@ -46,7 +46,7 @@ export default function Register(props) {
   return (
     <div>
       <div style={{ display: show ? "block" : "none" }}>
-        <MyToastUser show={show} message="User Saved Successfully." type="warning"/>
+        <MyToastUser message="User Saved Successfully."/>
       </div>
       <div className="justify-content-md-center form-row">
         <Col xs={5}>

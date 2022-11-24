@@ -1,19 +1,19 @@
 import { Toast } from 'react-bootstrap'
-import { faClock } from '@fortawesome/free-solid-svg-icons'
+import { faUser } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-export default function MyToastTimer(props) {
+export default function MyToastOut(props) {
   const toastCss = {position: "fixed",top: "10px",right: "10px",zIndex: "1",boxShadow: "0 4px 8px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .2)"}
 
   return (
     <div style={toastCss}>
-      <Toast style={{ color: "#fff", background: "#17a2b8" }}
+      <Toast style={{ color: "#fff", background: "#7548d6" }}
       >
-        <Toast.Header style={{ color: "#fff", background: "#17a2b8" }}
+        <Toast.Header style={{ color: "#fff", background: "#7548d6" }}
           closeButton={false}
         >
           <strong>
-            <FontAwesomeIcon icon={faClock}/> - Login Time Limit
+            <FontAwesomeIcon icon={faUser}/> - User Disconect
           </strong>
         </Toast.Header>
         <Toast.Body>{props.message}</Toast.Body>

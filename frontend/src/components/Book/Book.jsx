@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { Button, Card, Col, Form, Image, InputGroup } from 'react-bootstrap'
+import { Button, Card, Col, Form, InputGroup } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEdit, faList, faPlusSquare, faSave, faUndo } from '@fortawesome/free-solid-svg-icons'
 import { fetchBook, fetchGenres, fetchLanguages, saveBook, updateBook } from '../../services'
@@ -142,8 +142,7 @@ class Book extends React.Component {
       <div>
         <div style={{ display: this.state.show ? "block" : "none" }}>
           <MyToast
-            show={this.state.show}
-            message={this.state.method === "put" ? "Book Updated Successfully." : "Book Saved Successfully."}
+            message={this.state.id.method === "put" ? "Book Updated Successfully." : "Book Saved Successfully."}
             type="success"
           />
         </div>
@@ -199,7 +198,7 @@ class Book extends React.Component {
                     />
                     <div>
                       {this.state.photo !== "" && (
-                        <Image src={this.state.photo} width="38" height="38"/>
+                        <img src={this.state.photo} width="38" height="38"/>
                       )}
                     </div>
                   </InputGroup>

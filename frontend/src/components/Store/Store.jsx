@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card } from 'react-bootstrap'
+import { Button, Card } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBook } from '@fortawesome/free-solid-svg-icons'
 import '../../assets/css/Style.css'
@@ -30,12 +30,11 @@ class Store extends React.Component {
     const { title, author, photo, isbn, price } = this.state
 
     return (
-      <Card style={{ background: "#393939", width: "1200px", marginLeft: "-30px" }} className="border-dark">
+      <Card style={{ background: "#393939", width: "1200px", marginLeft: "-35px" }} className="border-dark">
         <Card.Header>
          <b style={{ color: "#fff", fontWeight: "400" }}>
            <FontAwesomeIcon icon={faBook}/> Edition Limited</b>
-           <Card.Body style={{ overflowY: "scroll", height: "580px" }}>
-            <div className="row">
+           <Card.Body className="row" style={{ overflowY: "scroll", height: "485px" }}>
 
               <div className="col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3">
                 <img className="card-photo" src={photo}/>
@@ -181,12 +180,32 @@ class Store extends React.Component {
                 </div>
               </div>
 
-           </div>
           </Card.Body>
+          <Card.Footer style={{ textAlign: "right" }}>
+            <Button
+              size="sm"
+              variant="info"
+            >
+            </Button>{" "}
+            <Button
+              size="sm"
+              variant="success"
+            >
+            </Button>{" "}
+            <Button
+              size="sm"
+              variant="warning"
+            >
+            </Button>{" "}
+            <Button
+              size="sm"
+              variant="danger"
+            >
+            </Button>
+          </Card.Footer>
         </Card.Header>
       </Card>
     )
   }
 }
 export default Store
-//                                        🛠          TEST          🔧
