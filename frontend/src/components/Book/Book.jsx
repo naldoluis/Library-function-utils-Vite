@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { Button, Card, Col, Form, InputGroup } from 'react-bootstrap'
+import { Button, Card, Col, Form } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEdit, faList, faPlusSquare, faSave, faUndo } from '@fortawesome/free-solid-svg-icons'
 import { fetchBook, fetchGenres, fetchLanguages, saveBook, updateBook } from '../../services'
@@ -186,7 +186,7 @@ class Book extends React.Component {
                 <div className="form-row">
                 <Form.Group as={Col}>
                   <Form.Label>Cover Photo URL <img className="cam" src={iconCam}/></Form.Label>
-                  <InputGroup>
+                  <div className="input-group">
                     <Form.Control
                       required
                       autoComplete="off"
@@ -201,7 +201,7 @@ class Book extends React.Component {
                         <img src={this.state.photo} width="38" height="38"/>
                       )}
                     </div>
-                  </InputGroup>
+                  </div>
                 </Form.Group>
                 <Form.Group as={Col}>
                   <Form.Label>ISBN Number ▥</Form.Label>
