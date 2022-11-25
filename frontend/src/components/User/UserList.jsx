@@ -142,7 +142,6 @@ class UserList extends React.Component {
                     <FormControl
                       size="sm"
                       className="border-secondary text-white page-num bg-dark"
-                      name="currentPage"
                       value={currentPage}
                       onChange={this.changePage}
                     />

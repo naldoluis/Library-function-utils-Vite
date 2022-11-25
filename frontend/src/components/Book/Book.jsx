@@ -162,8 +162,6 @@ class Book extends React.Component {
                   <Form.Label>Title 📙</Form.Label>
                   <Form.Control
                     required
-                    autoComplete="off"
-                    name="title"
                     value={title}
                     onChange={this.bookChange}
                     className="bg-dark border-secondary text-white"
@@ -174,8 +172,6 @@ class Book extends React.Component {
                   <Form.Label>Author ✏️</Form.Label>
                   <Form.Control
                     required
-                    autoComplete="off"
-                    name="author"
                     value={author}
                     onChange={this.bookChange}
                     className="bg-dark border-secondary text-white mb-3"
@@ -189,8 +185,6 @@ class Book extends React.Component {
                   <div className="input-group">
                     <Form.Control
                       required
-                      autoComplete="off"
-                      name="photo"
                       value={photo}
                       onChange={this.bookChange}
                       className="bg-dark border-secondary text-white"
@@ -207,9 +201,7 @@ class Book extends React.Component {
                   <Form.Label>ISBN Number ▥</Form.Label>
                   <Form.Control
                     required
-                    autoComplete="off"
                     type="number"
-                    name="isbn"
                     value={isbn}
                     onChange={this.bookChange}
                     className="bg-dark border-secondary text-white mb-3"
@@ -222,9 +214,7 @@ class Book extends React.Component {
                   <Form.Label className="price">Price 💲</Form.Label>
                   <Form.Control
                     required
-                    autoComplete="off"
                     type="number"
-                    name="price"
                     value={price}
                     onChange={this.bookChange}
                     className="bg-dark border-secondary text-white"
@@ -237,7 +227,6 @@ class Book extends React.Component {
                     required
                     as="select"
                     onChange={this.bookChange}
-                    name="language"
                     className="bg-dark border-secondary text-white"
                   >
                     <option>English</option>
@@ -256,7 +245,6 @@ class Book extends React.Component {
                     required
                     as="select"
                     onChange={this.bookChange}
-                    name="genre"
                     className="bg-dark border-secondary text-white"
                   >
                     <option>Technology</option>

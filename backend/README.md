@@ -278,6 +278,9 @@ INSERT INTO tb_user(name, email, mobile, password) VALUES ('Cida ❤', 'cida@gma
 INSERT INTO tb_user(name, email, mobile, password) VALUES ('Natalia', 'natalia@gmail.com', '9787456543', '1237')
 INSERT INTO tb_user(name, email, mobile, password) VALUES ('Talita', 'tata@gmail.com', '9787456544', '1238')
 
+INSERT INTO tb_user(name, email, mobile, password) VALUES ('Test User', 'test@user.com', '25032019200', 'testuser')
+INSERT INTO tb_user(name, email, mobile, password) VALUES ('Test Admin', 'test@admin.com', '25032019200', 'testadmin')
+
 INSERT INTO tb_user(name, email, mobile, password) VALUES ('Maria', 'test@user.com', '9787456540', '$2a$10$2KeflGXrfayDYOZlNzSrgeRTG/26lwjiuKAhsZxAk2lkPjLuZlNaG')
 INSERT INTO tb_user(name, email, mobile, password) VALUES ('Joao', 'test@admin.com', '9787456541', '$2a$10$2KeflGXrfayDYOZlNzSrgeRTG/26lwjiuKAhsZxAk2lkPjLuZlNaG')
 
@@ -399,6 +402,22 @@ public class Application implements CommandLineRunner {
 				book.setGenre("Technology");
 				bookService.saveOrUpdate(book);
 			}}}}
+
+!J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
+                                                                                                                          - ❐ ❌
+# Application.java method 2
+
+package com.library.naldo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class Application {
+	public static void main(String[] args) {
+		SpringApplication.run(Application.class, args);
+	}
+}
 
 !J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
                                                                                                                           - ❐ ❌
@@ -697,52 +716,324 @@ public class BookController implements Resource<Book> {
 
                   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
 
-# MyToast
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+                                                                                                                          - ❐ ❌
+# book method 1 (error) --> UpdateBook
 
-import { Toast } from 'react-bootstrap'
-import { faUsers } from '@fortawesome/free-solid-svg-icons'
+import React from 'react'
+import { Link, useParams } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { Button, Card, Col, Form } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEdit, faList, faPlusSquare, faSave, faUndo } from '@fortawesome/free-solid-svg-icons'
+import { fetchBook, fetchGenres, fetchLanguages, saveBook, updateBook } from '../../services'
+import MyToast from '../MyToast'
+import iconCam from '../../assets/camera.png'
+import iconLang from '../../assets/language.png'
 
-export default function MyToast(props) {
-  const toastCss = {position: "fixed",top: "10px",right: "10px",zIndex: "1",boxShadow: "0 4px 8px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .2)"}
+class Book extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = this.initialState
+    this.state = {
+      id: [],
+      genre: [],
+      language: [],
+      show: false
+    }
+    this.bookChange = this.bookChange.bind(this)
+    this.submitBook = this.submitBook.bind(this)
+  }
 
-  return (
-    <>
-     <div style={props.show ? toastCss : null}>
-      <Toast
-        className={`text-dark ${
-          props.type === "warning" ? "border-warning bg-warning" : "border-danger bg-danger"}`}
-        show={props.show}
-      >
-        <Toast.Header className={`text-dark ${props.type === "warning" ? "bg-warning" : "bg-danger"}`}
-          closeButton={false}
-        >
-          <strong>
-            <FontAwesomeIcon icon={faUsers}/> User Registred 🚧
-          </strong>
-         </Toast.Header>
-        <Toast.Body>{props.message}</Toast.Body>
-       </Toast>
+  initialState = { id: "", title: "Java Spring Boot", author: "New Author", photo: "https://images.thuvienpdf.com/RdadOzRvJb.webp", isbn: "125032019", price: "20.00", language: "English", genre: "Technology" }
+
+  componentDidMount() {
+  const bookId = useParams()
+  if(bookId) {
+    this.findBookBybookId(id)
+  }
+
+  findAllLanguages = () => {
+    this.props.fetchLanguages()
+    setTimeout(() => {
+      let bookLanguages = this.props.bookObject.languages
+      if (bookLanguages) {
+        this.setState({
+          language: [{ value: "", display: "Select Language" }].concat(
+            bookLanguages.map(language => {
+              return { value: language, display: language }
+            }))
+        })
+        this.findAllLanguages()
+      }
+    }, 100)
+  }
+
+  findAllGenres = () => {
+    this.props.fetchGenres()
+    setTimeout(() => {
+      let bookGenres = this.props.bookObject.genres
+      if (bookGenres) {
+        this.setState({
+          genre: [{ value: "", display: "Select Genre" }].concat(
+            bookGenres.map(genre => {
+              return { value: genre, display: genre }
+            }))
+        })
+        this.findAllGenres()
+      }
+    }, 100)
+  }
+
+  findBookById = bookId => {
+    this.props.fetchBook(bookId)
+    setTimeout(() => {
+      let book = this.props.bookObject.book
+      if (book != null) {
+        this.setState({
+          id: book.id,
+          title: book.title,
+          author: book.author,
+          photo: book.photo,
+          isbn: book.isbn,
+          price: book.price,
+          language: book.language,
+          genre: book.genre
+        })
+      }
+    }, 1000)
+  }
+
+  resetBook = () => {
+    this.setState(() => this.initialState)
+  }
+
+  submitBook = event => {
+    event.preventDefault()
+
+    const book = {
+      title: this.state.title,
+      author: this.state.author,
+      photo: this.state.photo,
+      isbn: this.state.isbn,
+      price: this.state.price,
+      language: this.state.language,
+      genre: this.state.genre
+    }
+
+    this.props.saveBook(book)
+    setTimeout(() => {
+      if (this.props.bookObject.book != null) {
+        this.setState({ show: true, method: "post" })
+        setTimeout(() => this.setState({ show: false }), 2300)
+      } else {
+        this.setState({ show: false })
+      }
+    }, 2000)
+    this.setState(this.initialState)
+  }
+
+  updateBook = event => {
+    event.preventDefault()
+
+    const book = {
+      id: this.state.id,
+      title: this.state.title,
+      author: this.state.author,
+      photo: this.state.photo,
+      isbn: this.state.isbn,
+      price: this.state.price,
+      language: this.state.language,
+      genre: this.state.genre
+    }
+
+    this.props.updateBook(book)
+    setTimeout(() => {
+      if (this.props.bookObject.book != null) {
+        this.setState({ show: true, method: "put" })
+        setTimeout(() => this.setState({ show: false }), 2300)
+      } else {
+        this.setState({ show: false })
+      }
+    }, 2000)
+    this.setState(this.initialState)
+  }
+
+  bookChange = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+  }
+
+  render() {
+    const { id, title, author, photo, isbn, price, language, genre } = this.state
+
+    return (
+      <div>
+        <div style={{ display: this.state.show ? "block" : "none" }}>
+          <MyToast
+            message={this.state.id.method === "put" ? "Book Updated Successfully." : "Book Saved Successfully."}
+            type="success"
+          />
+        </div>
+        <Card className="border-secondary bg-dark text-white">
+          <Card.Header>
+            <FontAwesomeIcon icon={this.state.id ? faEdit : faPlusSquare}/>{" "}
+            {this.state.id ? "Update Book" : "Add New Book"}
+          </Card.Header>
+          <Form
+            onReset={this.resetBook}
+            onSubmit={this.state.id ? this.updateBook : this.submitBook}
+            id="bookFormId"
+          >
+            <Card.Body>
+            <div className="form-row">
+                <Form.Group as={Col}>
+                  <Form.Label>Title 📙</Form.Label>
+                  <Form.Control
+                    required
+                    autoComplete="off"
+                    name="title"
+                    value={title}
+                    onChange={this.bookChange}
+                    className="bg-dark border-secondary text-white"
+                    placeholder="Enter Book Title"
+                  />
+                </Form.Group>
+                <Form.Group as={Col}>
+                  <Form.Label>Author ✏️</Form.Label>
+                  <Form.Control
+                    required
+                    autoComplete="off"
+                    name="author"
+                    value={author}
+                    onChange={this.bookChange}
+                    className="bg-dark border-secondary text-white mb-3"
+                    placeholder="Enter Book Author"
+                  />
+                </Form.Group>
+                </div>
+                <div className="form-row">
+                <Form.Group as={Col}>
+                  <Form.Label>Cover Photo URL <img className="cam" src={iconCam}/></Form.Label>
+                  <div className="input-group">
+                    <Form.Control
+                      required
+                      autoComplete="off"
+                      name="photo"
+                      value={photo}
+                      onChange={this.bookChange}
+                      className="bg-dark border-secondary text-white"
+                      placeholder="Enter Book Cover Photo URL"
+                    />
+                    <div>
+                      {this.state.photo !== "" && (
+                        <img src={this.state.photo} width="38" height="38"/>
+                      )}
+                    </div>
+                  </div>
+                </Form.Group>
+                <Form.Group as={Col}>
+                  <Form.Label>ISBN Number ▥</Form.Label>
+                  <Form.Control
+                    required
+                    autoComplete="off"
+                    type="number"
+                    name="isbn"
+                    value={isbn}
+                    onChange={this.bookChange}
+                    className="bg-dark border-secondary text-white mb-3"
+                    placeholder="Enter Book ISBN Number"
+                  />
+                </Form.Group>
+                </div>
+                <div className="form-row">
+                <Form.Group as={Col} controlId="formGridPrice">
+                  <Form.Label className="price">Price 💲</Form.Label>
+                  <Form.Control
+                    required
+                    autoComplete="off"
+                    type="number"
+                    name="price"
+                    value={price}
+                    onChange={this.bookChange}
+                    className="bg-dark border-secondary text-white"
+                    placeholder="Enter Book Price"
+                  />
+                </Form.Group>
+                <Form.Group as={Col}>
+                  <Form.Label>Language <img className="lang" src={iconLang}/></Form.Label>
+                  <Form.Control
+                    required
+                    as="select"
+                    onChange={this.bookChange}
+                    name="language"
+                    className="bg-dark border-secondary text-white"
+                  >
+                    <option>English</option>
+                    <option>Portuguese</option>
+                    <option>French</option>
+                    <option>Russian</option>
+                    <option>Hindi</option>
+                    <option>Arabic</option>
+                    <option>Spanish</option>
+                    <option>Chinese</option>
+                  </Form.Control>
+                </Form.Group>
+                <Form.Group as={Col}>
+                  <Form.Label>Genre 📚</Form.Label>
+                  <Form.Control
+                    required
+                    as="select"
+                    onChange={this.bookChange}
+                    name="genre"
+                    className="bg-dark border-secondary text-white"
+                  >
+                    <option>Technology</option>
+                    <option>Science</option>
+                    <option>History</option>
+                    <option>Fantasy</option>
+                    <option>Biography</option>
+                    <option>Horror</option>
+                    <option>Romance</option>
+                  </Form.Control>
+                </Form.Group>
+                </div>
+            </Card.Body>
+            <Card.Footer style={{ textAlign: "right" }}>
+              <Button size="sm" variant="success" type="submit">
+                <FontAwesomeIcon icon={faSave}/>{" "}
+                {this.state.id ? "Update" : "Save"}
+              </Button>{" "}
+              <Button size="sm" variant="info" type="reset">
+                <FontAwesomeIcon icon={faUndo}/> Reset
+              </Button>{" "}
+              <Link style={{ textDecoration: 'none' }}
+                type="button" className="link" to="/list">
+                <FontAwesomeIcon icon={faList}/> Book List
+              </Link>
+            </Card.Footer>
+          </Form>
+        </Card>
       </div>
+    )}}
 
-
-    <div style={props.show ? toastCss : null}>
-      <Toast
-        className={`text-white ${
-          props.type === "success" ? "border-success bg-success" : "border-danger bg-danger"}`}
-        show={props.show}
-      >
-        <Toast.Header className={`text-white ${props.type === "success" ? "bg-success" : "bg-danger"}`}
-          closeButton={false}
-        >
-          <strong>Success</strong>
-        </Toast.Header>
-        <Toast.Body>{props.message}</Toast.Body>
-       </Toast>
-      </div>
-    </>
-  )
+const mapStateToProps = state => {
+  return {
+    bookObject: state.book
+  }
 }
+
+const mapDispatchToProps = dispatch => {
+  return {
+    saveBook: book => dispatch(saveBook(book)),
+    fetchBook: bookId => dispatch(fetchBook(bookId)),
+    updateBook: book => dispatch(updateBook(book)),
+    fetchLanguages: () => dispatch(fetchLanguages()),
+    fetchGenres: () => dispatch(fetchGenres())
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Book)
 
 !J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
                                                                                                                           - ❐ ❌
@@ -908,7 +1199,7 @@ findBookById = (bookId) => {
 
 !J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
                                                                                                                           - ❐ ❌
-# book
+# book method 2
 
 import React from 'react'
 import { Link } from 'react-router-dom'
