@@ -248,11 +248,6 @@ class Book extends React.Component {
                     <option>Arabic</option>
                     <option>Spanish</option>
                     <option>Chinese</option>
-                    {/* {this.state.languages.map(language => (
-                      <option key={language.value} value={language.value}>
-                        {language.display}
-                      </option>
-                    ))} */}
                   </Form.Control>
                 </Form.Group>
                 <Form.Group as={Col}>
@@ -271,11 +266,6 @@ class Book extends React.Component {
                     <option>Biography</option>
                     <option>Horror</option>
                     <option>Romance</option>
-                    {/* {this.state.genres.map(genre => (
-                      <option key={genre.value} value={genre.value}>
-                        {genre.display}
-                      </option>
-                    ))} */}
                   </Form.Control>
                 </Form.Group>
                 </div>
