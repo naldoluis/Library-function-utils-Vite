@@ -30,7 +30,7 @@ class Store extends React.Component {
     const { title, author, photo, isbn, price } = this.state
 
     return (
-      <Card style={{ background: "#393939", width: "1200px", marginLeft: "-35px" }} className="border-dark">
+      <Card style={{ background: "#393939", width: "1200px", marginLeft: "-35px", border: ".5px solid #373737" }}>
         <Card.Header>
          <b style={{ color: "#fff", fontWeight: "400" }}>
            <FontAwesomeIcon icon={faBook}/> Edition Limited</b>

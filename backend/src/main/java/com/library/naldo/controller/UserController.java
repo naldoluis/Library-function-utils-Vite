@@ -50,7 +50,7 @@ public class UserController {
 			user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
 			user.setRole(roleRepository.findByName(ConstantUtils.USER.toString()));
 			User savedUser = userRepository.saveAndFlush(user);
-			jsonObject.put("message", savedUser.getName() + " saved succesfully");
+			jsonObject.put("message", savedUser.getName() + " saved successfully");
 			return new ResponseEntity<>(jsonObject.toString(), HttpStatus.OK);
 		} catch (JSONException e) {
 			try {
