@@ -15,5 +15,4 @@ export default function Home() {
       <p className='title-home'>Good friends, good books, nutrition, and a sleepy conscience: this is the ideal life.</p>
       <p className='title-home'>-- Mark Twain</p>
     </Alert>
-  )
-}
+  )}

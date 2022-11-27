@@ -172,9 +172,7 @@ class UserList extends React.Component {
           </Card>
         )}
       </div>
-    )
-  }
-}
+    )}}
 
 const mapStateToProps = state => {
   return {

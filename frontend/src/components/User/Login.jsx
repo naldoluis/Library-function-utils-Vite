@@ -121,5 +121,4 @@ export default function Login(props) {
         </Card>
       </Col>
     </div>
-  )
-}
+  )}

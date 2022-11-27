@@ -157,5 +157,4 @@ export default function Register(props) {
         </Col>
       </div>
     </div>
-  )
-}
+  )}

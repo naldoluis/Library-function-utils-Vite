@@ -165,10 +165,7 @@ class BookList extends React.Component {
     return (
       <div>
         <div style={{ display: this.state.show ? "block" : "none" }}>
-          <MyToast
-            message="Book Deleted Successfully."
-            type="danger"
-          />
+          <MyToast message="Book Deleted Successfully." type="danger"/>
         </div>
         <Card className="border-dark bg-dark text-white">
           <Card.Header>
@@ -319,9 +316,7 @@ class BookList extends React.Component {
           ) : null}
         </Card>
       </div>
-    )
-  }
-}
+    )}}
 
 const mapStateToProps = state => {
   return {

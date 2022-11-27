@@ -39,7 +39,7 @@ class Book extends React.Component {
           language: [{ value: "", display: "Select Language" }].concat(
             bookLanguages.map(language => {
               return { value: language, display: language }
-            }))
+           }))
         })
         this.findAllLanguages()
       }
@@ -55,7 +55,7 @@ class Book extends React.Component {
           genre: [{ value: "", display: "Select Genre" }].concat(
             bookGenres.map(genre => {
               return { value: genre, display: genre }
-            }))
+           }))
         })
         this.findAllGenres()
       }
@@ -143,7 +143,7 @@ class Book extends React.Component {
   }
 
   render() {
-    const { id, title, author, photo, isbn, price, language, genre } = this.state
+    const { title, author, photo, isbn, price, language, genre } = this.state
 
     return (
       <div>

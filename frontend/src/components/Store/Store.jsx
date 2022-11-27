@@ -24,7 +24,7 @@ class Store extends React.Component {
           isbn: book.isbn,
           price: book.price
         })
-      }}
+     }}
 
   render() {
     const { title, author, photo, isbn, price } = this.state
