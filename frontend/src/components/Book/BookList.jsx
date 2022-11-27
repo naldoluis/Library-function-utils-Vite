@@ -107,6 +107,16 @@ class BookList extends React.Component {
     }
   }
 
+  nextPage = () => {
+    if (this.state.currentPage < Math.ceil(this.state.totalElements / this.state.booksPerPage)) {
+      if (this.state.search) {
+        this.searchData(this.state.currentPage + 1)
+      } else {
+        this.findAllBooks(this.state.currentPage + 1)
+      }
+    }
+  }
+
   lastPage = () => {
     let condition = Math.ceil(this.state.totalElements / this.state.booksPerPage)
     if (this.state.currentPage < condition) {
@@ -114,16 +124,6 @@ class BookList extends React.Component {
         this.searchData(condition)
       } else {
         this.findAllBooks(condition)
-      }
-    }
-  }
-
-  nextPage = () => {
-    if (this.state.currentPage < Math.ceil(this.state.totalElements / this.state.booksPerPage)) {
-      if (this.state.search) {
-        this.searchData(this.state.currentPage + 1)
-      } else {
-        this.findAllBooks(this.state.currentPage + 1)
       }
     }
   }

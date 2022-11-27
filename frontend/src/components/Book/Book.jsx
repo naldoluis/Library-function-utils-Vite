@@ -23,6 +23,13 @@ class Book extends React.Component {
 
   initialState = { id: "", title: "Java Spring Boot", author: "New Author", photo: "https://images.thuvienpdf.com/RdadOzRvJb.webp", isbn: "125032019", price: "20.00", language: "English", genre: "Technology" }
 
+  componentDidMount() {
+   const bookId = this.props.id
+   if(bookId) {
+    this.findBookById(bookId)
+  }
+}
+
   findAllLanguages = () => {
     this.props.fetchLanguages()
     setTimeout(() => {
@@ -136,7 +143,7 @@ class Book extends React.Component {
   }
 
   render() {
-    const { title, author, photo, isbn, price, language, genre } = this.state
+    const { id, title, author, photo, isbn, price, language, genre } = this.state
 
     return (
       <div>

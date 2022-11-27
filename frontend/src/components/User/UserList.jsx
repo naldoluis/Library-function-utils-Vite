@@ -42,6 +42,14 @@ class UserList extends React.Component {
     }
   }
 
+  nextPage = () => {
+    if (this.state.currentPage < Math.ceil(this.props.userData.users.length / this.state.usersPerPage)) {
+      this.setState({
+        currentPage: this.state.currentPage + 1
+      })
+    }
+  }
+
   lastPage = () => {
     let usersLength = this.props.userData.users.length
     if (
@@ -49,14 +57,6 @@ class UserList extends React.Component {
     ) {
       this.setState({
         currentPage: Math.ceil(usersLength / this.state.usersPerPage)
-      })
-    }
-  }
-
-  nextPage = () => {
-    if (this.state.currentPage < Math.ceil(this.props.userData.users.length / this.state.usersPerPage)) {
-      this.setState({
-        currentPage: this.state.currentPage + 1
       })
     }
   }
