@@ -52,9 +52,7 @@ class UserList extends React.Component {
 
   lastPage = () => {
     let usersLength = this.props.userData.users.length
-    if (
-      this.state.currentPage < Math.ceil(usersLength / this.state.usersPerPage)
-    ) {
+    if (this.state.currentPage < Math.ceil(usersLength / this.state.usersPerPage)) {
       this.setState({
         currentPage: Math.ceil(usersLength / this.state.usersPerPage)
       })

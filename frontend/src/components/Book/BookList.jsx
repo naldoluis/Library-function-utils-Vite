@@ -141,13 +141,7 @@ class BookList extends React.Component {
 
   searchData = currentPage => {
     currentPage -= 1
-    axios(`${BASE_URL}/books/search/` +
-          this.state.search +
-          "?page=" +
-          currentPage +
-          "&size=" +
-          this.state.booksPerPage
-      )
+    axios(`${BASE_URL}/books/search/` + this.state.search + "?page=" + currentPage + "&size=" + this.state.booksPerPage)
       .then(response => response.data)
       .then(data => {
         this.setState({
@@ -239,7 +233,7 @@ class BookList extends React.Component {
                       <td className="table-content border-secondary" align="center">{book.language}</td>
                       <td className="table-content border-secondary" align="center">{book.genre}</td>
                       <td className="border-secondary" align="center">
-                          <Link to={"/edit/" + book.id} className="btn btn-sm edit">
+                          <Link to={`/edit/${book.id}`} className="btn btn-sm edit">
                             <FontAwesomeIcon icon={faEdit}/>
                           </Link>{" "}
                           <Button
