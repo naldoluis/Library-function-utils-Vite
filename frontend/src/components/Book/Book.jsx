@@ -23,12 +23,12 @@ class Book extends React.Component {
 
   initialState = { id: "", title: "Java Spring Boot", author: "New Author", photo: "https://images.thuvienpdf.com/RdadOzRvJb.webp", isbn: "125032019", price: "20.00", language: "English", genre: "Technology" }
 
-  componentDidMount() {
+/* componentDidMount() {
    const bookId = this.props.id
    if(bookId) {
     this.findBookById(bookId)
   }
-}
+}*/
 
   findAllLanguages = () => {
     this.props.fetchLanguages()
@@ -149,7 +149,7 @@ class Book extends React.Component {
       <div>
         <div style={{ display: this.state.show ? "block" : "none" }}>
           <MyToast
-            message={this.state.id.method === "put" ? "Book Updated Successfully." : "Book Saved Successfully."}
+            message={this.state.method === "put" ? "Book Updated Successfully." : "Book Saved Successfully."}
             type="success"
           />
         </div>
@@ -244,6 +244,11 @@ class Book extends React.Component {
                     <option>Arabic</option>
                     <option>Spanish</option>
                     <option>Chinese</option>
+                    {/* {this.state.language.map(language => (
+                      <option key={language.value} value={language.value}>
+                        {language.display}
+                      </option>
+                      ))} */}
                   </Form.Control>
                 </Form.Group>
                 <Form.Group as={Col}>
@@ -261,6 +266,11 @@ class Book extends React.Component {
                     <option>Biography</option>
                     <option>Horror</option>
                     <option>Romance</option>
+                    {/* {this.state.genre.map(genre => (
+                      <option key={genre.value} value={genre.value}>
+                        {genre.display}
+                      </option>
+                      ))} */}
                   </Form.Control>
                 </Form.Group>
                 </div>

@@ -753,6 +753,13 @@ class Book extends React.Component {
     this.findBookBybookId(id)
   }
 
+  /*   componentDidMount() {
+   const bookId = this.props.id
+   if(bookId) {
+    this.findBookById(bookId)
+  }
+} */
+
   findAllLanguages = () => {
     this.props.fetchLanguages()
     setTimeout(() => {
@@ -1204,31 +1211,29 @@ findBookById = (bookId) => {
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { Card, Form, Button, Col, InputGroup, Image } from 'react-bootstrap'
+import { Button, Card, Col, Form } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSave, faPlusSquare, faUndo, faList, faEdit } from '@fortawesome/free-solid-svg-icons'
-import { saveBook, findBookId, updateBook, findAllLanguages, findAllGenres } from '../../services'
+import { faEdit, faList, faPlusSquare, faSave, faUndo } from '@fortawesome/free-solid-svg-icons'
+import { fetchBook, fetchGenres, fetchLanguages, saveBook, updateBook } from '../../services'
 import MyToast from '../MyToast'
-import iconLang from '../../assets/language.png'
 import iconCam from '../../assets/camera.png'
-import axios from 'axios'
+import iconLang from '../../assets/language.png'
 
 class Book extends React.Component {
   constructor(props) {
     super(props)
     this.state = this.initialState
     this.state = {
-      genres: [],
-      languages: [],
+      id: [],
+      genre: [],
+      language: [],
       show: false
     }
-    this.bookChange = this.bookChange.bind(this)
-    this.submitBook = this.submitBook.bind(this)
   }
 
-  initialState = { id: "", title: "Java", author: "New Author", photo: "https://images-na.ssl-images-amazon.com/images/I/51gHy16h5TL.jpg", isbn: "125032019", price: "20.00", language: "English", genre: "Technology" }
+  initialState = { id: "", title: "Java Spring Boot", author: "New Author", photo: "https://images.thuvienpdf.com/RdadOzRvJb.webp", isbn: "125032019", price: "20.00", language: "English", genre: "Technology" }
 
-/* componentDidMount() {
+/*  componentDidMount() {
   const bookId = +this.props.match.params.id
   if(bookId) {
     this.findBookById(bookId)
@@ -1237,21 +1242,12 @@ class Book extends React.Component {
   this.findAllGenres()
 } */
 
-  findAllLanguages = () => {
-    this.props.fetchLanguages()
-    setTimeout(() => {
-      let bookLanguages = this.props.bookObject.languages
-      if (bookLanguages) {
-        this.setState({
-          language: [{ value: "", display: "Select Language" }].concat(
-            bookLanguages.map(language => {
-              return { value: language, display: language }
-            }))
-        })
-        this.findAllLanguages()
-      }
-    }, 100)
+/*   componentDidMount() {
+   const bookId = this.props.id
+   if(bookId) {
+    this.findBookById(bookId)
   }
+}*/
 
 /*   findAllLanguages = () => {
     axios("http://localhost:8080/rest/books/languages")
@@ -1266,6 +1262,22 @@ class Book extends React.Component {
     })
   } */
 
+  findAllLanguages = () => {
+    this.props.fetchLanguages()
+    setTimeout(() => {
+      let bookLanguages = this.props.bookObject.languages
+      if (bookLanguages) {
+        this.setState({
+          language: [{ value: "", display: "Select Language" }].concat(
+            bookLanguages.map(language => {
+              return { value: language, display: language }
+           }))
+        })
+        this.findAllLanguages()
+      }
+    }, 100)
+  }
+
   findAllGenres = () => {
     this.props.fetchGenres()
     setTimeout(() => {
@@ -1275,25 +1287,12 @@ class Book extends React.Component {
           genre: [{ value: "", display: "Select Genre" }].concat(
             bookGenres.map(genre => {
               return { value: genre, display: genre }
-            }))
+           }))
         })
         this.findAllGenres()
       }
     }, 100)
   }
-
-/*   findAllGenres = () => {
-    axios("http://localhost:8080/rest/books/genres")
-    .then(response => response.data)
-    .then(data => {
-        this.setState({
-          genres: [{ value: "", display: "Select Genres" }].concat(
-            data.map(genre => {
-              return { value: genre, display: genre }
-            }))
-        })
-    })
-  } */
 
   findBookById = bookId => {
     this.props.fetchBook(bookId)
@@ -1331,7 +1330,7 @@ class Book extends React.Component {
       genre: this.state.genre
     }
 
-    this.props.submitBook(book)
+    this.props.saveBook(book)
     setTimeout(() => {
       if (this.props.bookObject.book != null) {
         this.setState({ show: true, method: "post" })
@@ -1347,6 +1346,7 @@ class Book extends React.Component {
     event.preventDefault()
 
     const book = {
+      id: this.state.id,
       title: this.state.title,
       author: this.state.author,
       photo: this.state.photo,
@@ -1381,19 +1381,18 @@ class Book extends React.Component {
       <div>
         <div style={{ display: this.state.show ? "block" : "none" }}>
           <MyToast
-            show={this.state.show}
             message={this.state.method === "put" ? "Book Updated Successfully." : "Book Saved Successfully."}
             type="success"
           />
         </div>
-        <Card className="border border-dark bg-dark text-white">
+        <Card className="border-secondary bg-dark text-white">
           <Card.Header>
             <FontAwesomeIcon icon={this.state.id ? faEdit : faPlusSquare}/>{" "}
             {this.state.id ? "Update Book" : "Add New Book"}
           </Card.Header>
           <Form
             onReset={this.resetBook}
-            onSubmit={this.state.id ? this.updateBook : this.saveBook}
+            onSubmit={this.state.id ? this.updateBook : this.submitBook}
             id="bookFormId"
           >
             <Card.Body>
@@ -1402,11 +1401,9 @@ class Book extends React.Component {
                   <Form.Label>Title 📙</Form.Label>
                   <Form.Control
                     required
-                    autoComplete="off"
-                    name="title"
                     value={title}
                     onChange={this.bookChange}
-                    className="bg-dark text-white"
+                    className="bg-dark border-secondary text-white"
                     placeholder="Enter Book Title"
                   />
                 </Form.Group>
@@ -1414,11 +1411,9 @@ class Book extends React.Component {
                   <Form.Label>Author ✏️</Form.Label>
                   <Form.Control
                     required
-                    autoComplete="off"
-                    name="author"
                     value={author}
                     onChange={this.bookChange}
-                    className="bg-dark text-white mb-2"
+                    className="bg-dark border-secondary text-white mb-3"
                     placeholder="Enter Book Author"
                   />
                 </Form.Group>
@@ -1426,33 +1421,29 @@ class Book extends React.Component {
                 <div className="form-row">
                 <Form.Group as={Col}>
                   <Form.Label>Cover Photo URL <img className="cam" src={iconCam}/></Form.Label>
-                  <InputGroup>
+                  <div className="input-group">
                     <Form.Control
                       required
-                      autoComplete="off"
-                      name="photo"
                       value={photo}
                       onChange={this.bookChange}
-                      className="bg-dark text-white"
+                      className="bg-dark border-secondary text-white"
                       placeholder="Enter Book Cover Photo URL"
                     />
                     <div>
                       {this.state.photo !== "" && (
-                        <Image src={this.state.photo} width="38" height="38"/>
+                        <img src={this.state.photo} width="38" height="38"/>
                       )}
                     </div>
-                  </InputGroup>
+                  </div>
                 </Form.Group>
                 <Form.Group as={Col}>
                   <Form.Label>ISBN Number ▥</Form.Label>
                   <Form.Control
                     required
-                    autoComplete="off"
                     type="number"
-                    name="isbn"
                     value={isbn}
                     onChange={this.bookChange}
-                    className="bg-dark text-white mb-2"
+                    className="bg-dark border-secondary text-white mb-3"
                     placeholder="Enter Book ISBN Number"
                   />
                 </Form.Group>
@@ -1462,12 +1453,10 @@ class Book extends React.Component {
                   <Form.Label className="price">Price 💲</Form.Label>
                   <Form.Control
                     required
-                    autoComplete="off"
                     type="number"
-                    name="price"
                     value={price}
                     onChange={this.bookChange}
-                    className="bg-dark text-white"
+                    className="bg-dark border-secondary text-white"
                     placeholder="Enter Book Price"
                   />
                 </Form.Group>
@@ -1477,8 +1466,7 @@ class Book extends React.Component {
                     required
                     as="select"
                     onChange={this.bookChange}
-                    name="language"
-                    className="bg-dark text-white"
+                    className="bg-dark border-secondary text-white"
                   >
                     {/* <option>English</option>
                     <option>Portuguese</option>
@@ -1488,11 +1476,11 @@ class Book extends React.Component {
                     <option>Arabic</option>
                     <option>Spanish</option>
                     <option>Chinese</option> */}
-                    {this.state.languages.map(language => (
+                    {this.state.language.map(language => (
                       <option key={language.value} value={language.value}>
                         {language.display}
                       </option>
-                    ))}
+                      ))}
                   </Form.Control>
                 </Form.Group>
                 <Form.Group as={Col}>
@@ -1501,21 +1489,20 @@ class Book extends React.Component {
                     required
                     as="select"
                     onChange={this.bookChange}
-                    name="genre"
-                    className="bg-dark text-white"
+                    className="bg-dark border-secondary text-white"
                   >
-                    {/* <option>Technology</option>
+                    {/* {<option>Technology</option>
                     <option>Science</option>
                     <option>History</option>
                     <option>Fantasy</option>
                     <option>Biography</option>
                     <option>Horror</option>
-                    <option>Romance</option> */}
-                    {this.state.genres.map(genre => (
+                    <option>Romance</option>} */}
+                    {this.state.genre.map(genre => (
                       <option key={genre.value} value={genre.value}>
                         {genre.display}
                       </option>
-                    ))}
+                      ))}
                   </Form.Control>
                 </Form.Group>
                 </div>
@@ -1528,8 +1515,7 @@ class Book extends React.Component {
               <Button size="sm" variant="info" type="reset">
                 <FontAwesomeIcon icon={faUndo}/> Reset
               </Button>{" "}
-              <Link
-                style={{ textDecoration: 'none' }}
+              <Link style={{ textDecoration: 'none' }}
                 type="button" className="link" to="/list">
                 <FontAwesomeIcon icon={faList}/> Book List
               </Link>
@@ -1548,10 +1534,10 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     saveBook: book => dispatch(saveBook(book)),
-    findBookId: bookId => dispatch(findBookId(bookId)),
+    fetchBook: bookId => dispatch(fetchBook(bookId)),
     updateBook: book => dispatch(updateBook(book)),
-    findAllLanguages: () => dispatch(findAllLanguages()),
-    findAllGenres: () => dispatch(findAllGenres())
+    fetchLanguages: () => dispatch(fetchLanguages()),
+    fetchGenres: () => dispatch(fetchGenres())
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Book)
