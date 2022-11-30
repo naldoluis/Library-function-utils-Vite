@@ -205,7 +205,5 @@ class Store extends React.Component {
           </Card.Footer>
         </Card.Header>
       </Card>
-    )
-  }
-}
+    )}}
 export default Store

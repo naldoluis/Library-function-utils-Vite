@@ -10,3 +10,5 @@
 
 .delete,.clean-find,.find {margin-left: 3.5px}
 .delete {background: #560df5;border: #560df5}
+
+.toast {position: fixed;top: 10px;right: 10px;z-index: 1;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .2)}
