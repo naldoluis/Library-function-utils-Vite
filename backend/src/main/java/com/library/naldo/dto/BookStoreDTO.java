@@ -16,9 +16,9 @@ public class BookStoreDTO {
     public BookStoreDTO(BookStore bookStore) {
         id = bookStore.getId();
         title = bookStore.getTitle();
-        title = bookStore.getAuthor();
-        title = bookStore.getPhoto();
-        title = bookStore.getLanguage();
-        title = bookStore.getGenre();
+        author = bookStore.getAuthor();
+        photo = bookStore.getPhoto();
+        language = bookStore.getLanguage();
+        genre = bookStore.getGenre();
     }
 }
