@@ -24,7 +24,7 @@ public class BookStoreController {
         return service.findAll(pageable);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("{id}")
     public BookStoreDTO findById(@PathVariable Long id) {
         return service.findById(id);
     }
