@@ -1,4 +1,5 @@
 @import "https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css";
+@import "https://fonts.googleapis.com/css?family=Roboto|Varela+Round";
 .margin-top {margin-top : 20px}
 .not-found,.clean-find,.edit,.edit:hover,.delete {color: aliceblue}
 
