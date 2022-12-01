@@ -1,11 +1,11 @@
-.page-num {width: 40px !important}
+.page-num {width: 50px !important;height: 29px !important}
 .arrow {width: 0;height: 0;margin-top: 5px;border-left: 5px solid transparent;border-right: 5px solid transparent;display: inline-block}
 .arrow-up {border-bottom: 10px solid}
 .arrow-down {border-top: 10px solid}
 .title-home {font-size: 13.5px;font-weight: 400;font-family: 'Segoe UI', sans-serif;padding-top: 5px}
 
-.first,.prev {margin: -.4px 4px 0 0;font-family: 'Varela Round'}
-.next,.last {margin: -.4px 0 0 4px;font-family: 'Varela Round'}
+.first,.prev {margin: -.4px 4px 0 0;font-family: 'Varela Round';height: 29px}
+.next,.last {margin: -.4px 0 0 4px;font-family: 'Varela Round';height: 29px}
 
 .lang {width: 20px}
 .cam {width: 16px;margin-top: -5px}
