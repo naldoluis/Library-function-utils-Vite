@@ -19,16 +19,19 @@ class Book extends React.Component {
       language: [],
       show: false
     }
+    this.bookChange = this.bookChange.bind(this)
+    this.updateBook = this.updateBook.bind(this)
+    this.submitBook = this.submitBook.bind(this)
   }
 
   initialState = { id: "", title: "Java Spring Boot", author: "New Author", photo: "https://images.thuvienpdf.com/RdadOzRvJb.webp", isbn: "125032019", price: "20.00", language: "English", genre: "Technology" }
 
-/* componentDidMount() {
-   const bookId = this.props.id
-   if(bookId) {
-    this.findBookById(bookId)
-  }
-}*/
+  componentDidMount() {
+    const bookId = +this.props.id
+    if(bookId) {
+     this.findBookById(bookId)
+   }
+ }
 
   findAllLanguages = () => {
     this.props.fetchLanguages()
@@ -107,7 +110,6 @@ class Book extends React.Component {
         this.setState({ show: false })
       }
     }, 2000)
-    this.setState(this.initialState)
   }
 
   updateBook = event => {
@@ -133,7 +135,6 @@ class Book extends React.Component {
         this.setState({ show: false })
       }
     }, 2000)
-    this.setState(this.initialState)
   }
 
   bookChange = event => {
@@ -149,7 +150,7 @@ class Book extends React.Component {
       <div>
         <div style={{ display: this.state.show ? "block" : "none" }}>
           <MyToast
-            message={this.state.method === "put" ? "Book Updated Successfully." : "Book Saved Successfully."}
+            message={this.state.id.method === "put" ? "Book Updated Successfully." : "Book Saved Successfully."}
             type="success"
           />
         </div>

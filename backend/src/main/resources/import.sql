@@ -1257,3 +1257,6 @@ INSERT INTO tb_book(title, author, photo, isbn, price, language, genre) VALUES (
 INSERT INTO tb_book(title, author, photo, isbn, price, language, genre) VALUES ('HTTP/2', 'Barry Pollard', 'https://images.manning.com/book/b/2327043-8f05-4151-8320-dcc0294714c6/Pollard-HTTP-HI.png', 616588239, 109.0, 'French', 'Technology')
 INSERT INTO tb_book(title, author, photo, isbn, price, language, genre) VALUES ('AWS Lambda', 'Danilo Poccia', 'https://images.manning.com/264/352/resize/book/0/f99ea3b-916a-4f20-a66d-d086ee0b27f2/Poccia-AWSL-HI.png', 612934509, 110.0, 'Portuguese', 'Science')
 INSERT INTO tb_book(title, author, photo, isbn, price, language, genre) VALUES ('Google Cloud', 'JJ Geewax', 'https://m.media-amazon.com/images/I/61J6t27YllL.jpg', 621261339, 111.0, 'English', 'Technology')
+
+INSERT INTO tb_store(title, author, photo, language, genre) VALUES ('Google Cloud', 'JJ Geewax', 'https://m.media-amazon.com/images/I/61J6t27YllL.jpg', 'English', 'Technology')
+INSERT INTO tb_store(title, author, photo, language, genre) VALUES ('Google Cloud', 'JJ Geewax', 'https://m.media-amazon.com/images/I/61J6t27YllL.jpg', 'English', 'Technology')

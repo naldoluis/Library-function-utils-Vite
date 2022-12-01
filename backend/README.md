@@ -763,6 +763,14 @@ class Book extends React.Component {
   }
 } */
 
+/*   componentDidMount() {
+    let id = this.props.id
+    this.setState({ id })
+    if(id) {
+      this.findBookById(id)
+    }
+  } */
+
   findAllLanguages = () => {
     this.props.fetchLanguages()
     setTimeout(() => {
@@ -1586,4 +1594,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(Book)
 📕 📗 📘 📙 🎼 🛍 🛢 🗑 🚧 ⚠️ ℹ️ 👍 👎 🛠 🛒 ☂️ ⏱ ⏲ ⚙️ ⚗️ 📽 📐 📏 📊 📧 📄 🔧 🎬 🎷 🔐 ✉️ 📩 📨 📋 📅 📦 📷 ≣ 🗨
 
  ✔ ✖ ⧈ 💬
+
+
                                                                                                                ⋈ vscode: 1.73.0
