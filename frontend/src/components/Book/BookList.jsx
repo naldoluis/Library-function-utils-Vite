@@ -37,7 +37,7 @@ class BookList extends React.Component {
 
   findAllBooks(currentPage) {
     currentPage -= 1
-    axios(`${BASE_URL}/books?pageNumber=` + currentPage + "&pageSize=" +this.state.booksPerPage + "&sortBy=price&sortDir=" + this.state.sortDir)
+    axios(`${BASE_URL}/books?pageNumber=` + currentPage + "&pageSize=" + this.state.booksPerPage + "&sortBy=price&sortDir=" + this.state.sortDir)
       .then(response => response.data)
       .then(data => {
         this.setState({
