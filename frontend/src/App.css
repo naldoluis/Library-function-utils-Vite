@@ -6,10 +6,12 @@
 .find {background: #f5d20c;color: #393939}
 .clean-find {background: #c02f2f}
 
-.edit {background: #1b8dac;border: #1b8dac;width: 27.58px}
-.edit:hover {background: #0ba8d3}
+.edit {background: #0a8873;border: #1b8dac;width: 29.58px}
+.edit:hover {background: #0d9c84}
 
-.delete,.clean-find,.find {margin-left: 3.5px}
-.delete {background: #560df5;border: #560df5}
+.delete,.clean-find,.find {margin-left: 4.5px}
+.delete {background: #0a6d88;border: #560df5}
 
 .toast {position: fixed;top: 10px;right: 10px;z-index: 1;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .2)}
+
+.card-store {background: #393939;width: 1200px;margin-left: -35px;border: 2px solid #525252;border-radius: 10px}

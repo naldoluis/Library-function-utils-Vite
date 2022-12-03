@@ -218,7 +218,7 @@ class BookList extends React.Component {
                   books.map(book => (
                     <tr key={book.id}>
                       <td className="table-content border-secondary">
-                        <Image src={book.photo} roundedCircle width="30" height="30"/>{" - "}
+                        <Image src={book.photo} roundedCircle width="30" height="30"/>{" } - "}
                         {book.title}
                       </td>
                       <td className="table-content border-secondary" align="center">{book.author}</td>
@@ -233,7 +233,7 @@ class BookList extends React.Component {
                           <Button
                             className="delete"
                             size="sm"
-                            variant="outline-primary"
+                            variant="outline-info"
                             onClick={() => this.deleteBook(book.id)}
                           >
                             <FontAwesomeIcon icon={faTrash}/>

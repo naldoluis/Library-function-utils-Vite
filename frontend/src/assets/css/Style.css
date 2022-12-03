@@ -28,7 +28,7 @@
 
 .card-photo {width: 83px;margin: 54px}
 .card-title {margin: -42px 63px 0 0}
-.card-desc {font-size: 12px;margin: -5px 0 0 63px}
+.card-desc {font-size: 12px;margin: -5px 0 0 66px}
 
 .clock {transform: scale(.9);transition: all ease .2s;cursor: pointer}
 .clock:hover {transform: scale(1);filter: drop-shadow(0 0 .05em)}

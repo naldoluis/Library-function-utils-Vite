@@ -12,8 +12,18 @@ class Store extends React.Component {
     this.state = {
       books: [],
       currentPage: 1,
-      booksPerPage: 5
+      booksPerPage: 12,
+      sortDir: "asc"
     }
+  }
+
+  sortData = () => {
+    setTimeout(() => {
+      this.state.sortDir === "asc"
+        ? this.setState({ sortDir: "desc" })
+        : this.setState({ sortDir: "asc" })
+      this.findAllBooks(this.state.currentPage)
+    }, 500)
   }
 
   componentDidMount() {
@@ -22,7 +32,7 @@ class Store extends React.Component {
 
   findAllBooksStore(currentPage) {
     currentPage -= 1
-    axios(`${BASE_URL}/store?pageNumber=` + currentPage + "&pageSize=" + this.state.booksPerPage)
+    axios(`${BASE_URL}/store?pageNumber=` + currentPage + "&pageSize=" + this.state.booksPerPage + "&sortBy=price&sortDir=" + this.state.sortDir)
       .then(response => response.data)
       .then(data => {
         this.setState({
@@ -94,10 +104,10 @@ class Store extends React.Component {
   }
 
   render() {
-    const { books } = this.state
+    const { books, currentPage, totalPages } = this.state
 
     return (
-      <Card style={{ background: "#393939", width: "1200px", marginLeft: "-35px", border: ".5px solid #373737" }}>
+      <Card className="card-store">
         <Card.Header>
           <b style={{ color: "#fff", fontWeight: "400" }}>
             <FontAwesomeIcon icon={faBook} /> Edition Limited</b>
@@ -119,7 +129,10 @@ class Store extends React.Component {
             )}
           </Card.Body>
           {books.length > 0 ? (
-            <Card.Footer style={{ textAlign: "right" }}>
+            <Card.Footer style={{ textAlign: "right", color: "#fff", border: ".5px solid #444", background: "#333", borderRadius: "10px" }}>
+              <div style={{ float: "left", fontSize: "15px" }}>
+                Showing Page {currentPage} of {totalPages}
+              </div>
               <Button
                 size="sm"
                 variant="info"
