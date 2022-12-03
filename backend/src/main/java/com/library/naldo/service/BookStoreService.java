@@ -4,10 +4,10 @@ import com.library.naldo.dto.BookStoreDTO;
 import com.library.naldo.domain.BookStore;
 import com.library.naldo.repository.BookStoreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.stereotype.Service;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class BookStoreService {

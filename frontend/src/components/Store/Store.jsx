@@ -1,6 +1,5 @@
 import React from 'react'
 import axios from 'axios'
-import { connect } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBook } from '@fortawesome/free-solid-svg-icons'
 import { Button, Card } from 'react-bootstrap'
@@ -23,7 +22,7 @@ class Store extends React.Component {
 
   findAllBooksStore(currentPage) {
     currentPage -= 1
-    axios(`${BASE_URL}/store?pageNumber=` + currentPage + "&pageSize=" + this.state.booksPerPage + "&sortBy=price&sortDir=" + this.state.sortDir)
+    axios(`${BASE_URL}/store?pageNumber=` + currentPage + "&pageSize=" + this.state.booksPerPage)
       .then(response => response.data)
       .then(data => {
         this.setState({
@@ -36,7 +35,6 @@ class Store extends React.Component {
       .catch(error => {
         console.log(error)
         localStorage.removeItem("jwtToken")
-        this.props.history.push("/")
      })
   }
 
@@ -45,7 +43,7 @@ class Store extends React.Component {
     if (this.state.search) {
       this.searchData(targetPage)
     } else {
-      this.findAllBooksStore(targetPage)
+      this.findAllBooks(targetPage)
     }
     this.setState({
       [event.target.name]: targetPage
@@ -98,64 +96,57 @@ class Store extends React.Component {
   render() {
     const { books } = this.state
 
-  return (
+    return (
       <Card style={{ background: "#393939", width: "1200px", marginLeft: "-35px", border: ".5px solid #373737" }}>
         <Card.Header>
           <b style={{ color: "#fff", fontWeight: "400" }}>
-            <FontAwesomeIcon icon={faBook}/> Edition Limited</b>
-         <Card.Body className="row" style={{ overflowY: "scroll", height: "485px" }}>
-          {books.length === 0 ? (
-            <div>
-              <b  style={{ color: "#fff", fontWeight: "400" }} colSpan="7">No Books Available.</b>
-            </div>
-          ) : (
-           books.map(book => (
-            <div className="col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3 mb-0" key={book.id}>
-
-             <img className="card-photo" src={book.photo}/>
-                <h6 className="card-title">{book.title}</h6>
-                  <div className="card-desc">{book.genre}</div>
-                       <button className="purchase-button">Buy</button>
-                  </div>
-               ))
-             )}
-
+            <FontAwesomeIcon icon={faBook} /> Edition Limited</b>
+          <Card.Body className="row" style={{ overflowY: "scroll", height: "485px" }}>
+            {books.length === 0 ? (
+              <div>
+                <span style={{ color: "#fff", fontWeight: "400" }}>No Books Available.</span>
+              </div>
+            ) : (
+              books.map(book => (
+                <div className="col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3 mb-0"
+                 key={book.id}>
+                  <img className="card-photo" src={book.photo}/>
+                    <h6 className="card-title">{book.title}</h6>
+                   <div className="card-desc">{book.genre}</div>
+                  <button className="purchase-button">Buy</button>
+                </div>
+              ))
+            )}
           </Card.Body>
           {books.length > 0 ? (
             <Card.Footer style={{ textAlign: "right" }}>
-            <Button
-              size="sm"
-              variant="info"
-              onClick={this.firstPage}
-            >
-            </Button>{" "}
-            <Button
-              size="sm"
-              variant="success"
-              onClick={this.prevPage}
-            >
-            </Button>{" "}
-            <Button
-              size="sm"
-              variant="warning"
-              onClick={this.nextPage}
-            >
-            </Button>{" "}
-            <Button
-              size="sm"
-              variant="danger"
-              onClick={this.lastPage}
-            >
-            </Button>
-          </Card.Footer>
+              <Button
+                size="sm"
+                variant="info"
+                onClick={this.firstPage}
+              >
+              </Button>{" "}
+              <Button
+                size="sm"
+                variant="success"
+                onClick={this.prevPage}
+              >
+              </Button>{" "}
+              <Button
+                size="sm"
+                variant="warning"
+                onClick={this.nextPage}
+              >
+              </Button>{" "}
+              <Button
+                size="sm"
+                variant="danger"
+                onClick={this.lastPage}
+              >
+              </Button>
+            </Card.Footer>
           ) : null}
-         </Card.Header>
-       </Card>
+        </Card.Header>
+      </Card>
     )}}
-
-const mapStateToProps = state => {
-  return {
-    bookObject: state.book
-  }
-}
-export default connect(mapStateToProps)(Store)
+export default Store
