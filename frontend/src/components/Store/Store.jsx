@@ -110,7 +110,8 @@ class Store extends React.Component {
       <Card className="card-store">
         <Card.Header>
           <b style={{ color: "#fff", fontWeight: "400" }}>
-            <FontAwesomeIcon icon={faBook} /> Edition Limited</b>
+            <FontAwesomeIcon icon={faBook}/> Edition Limited
+          </b>
           <Card.Body className="row" style={{ overflowY: "scroll", height: "485px" }}>
             {books.length === 0 ? (
               <div>
@@ -118,7 +119,7 @@ class Store extends React.Component {
               </div>
             ) : (
               books.map(book => (
-                <div className="col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3 mb-0"
+                <div className="col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3 mb-4"
                  key={book.id}>
                   <img className="card-photo" src={book.photo}/>
                     <h6 className="card-title">{book.title}</h6>
