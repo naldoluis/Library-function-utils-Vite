@@ -120,7 +120,7 @@ class Store extends React.Component {
             )}
           </Card.Body>
           {books.length > 0 ? (
-            <Card.Footer style={{ textAlign: "right", color: "#fff", border: ".5px solid #444", background: "#333", borderRadius: "10px" }}>
+            <Card.Footer style={{ textAlign: "right", color: "#fff" }}>
               <div style={{ float: "left", fontSize: "15px" }}>
                 Showing Page {currentPage} of {totalPages}
               </div>

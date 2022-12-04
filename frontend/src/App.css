@@ -15,4 +15,4 @@
 
 .toast {position: fixed;top: 10px;right: 10px;z-index: 1;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .2)}
 
-.card-store {background: #393939;width: 1160px;margin-left: -5px;border: .5px solid #525252;border-radius: 10px}
+.card-store {background: #383940;width: 1160px;margin-left: -5px}
