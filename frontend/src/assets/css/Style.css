@@ -33,6 +33,6 @@
 .clock {transform: scale(.9);transition: all ease .2s;cursor: pointer}
 .clock:hover {transform: scale(1);filter: drop-shadow(0 0 .05em)}
 
-::-webkit-scrollbar {width: 5px}
+::-webkit-scrollbar {width: 4.3px}
 ::-webkit-scrollbar-track {background: #606060}
 ::-webkit-scrollbar-thumb {background: #bebebe}

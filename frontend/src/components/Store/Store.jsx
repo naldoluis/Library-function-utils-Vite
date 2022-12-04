@@ -12,18 +12,8 @@ class Store extends React.Component {
     this.state = {
       books: [],
       currentPage: 1,
-      booksPerPage: 12,
-      sortDir: "asc"
+      booksPerPage: 6
     }
-  }
-
-  sortData = () => {
-    setTimeout(() => {
-      this.state.sortDir === "asc"
-        ? this.setState({ sortDir: "desc" })
-        : this.setState({ sortDir: "asc" })
-      this.findAllBooks(this.state.currentPage)
-    }, 500)
   }
 
   componentDidMount() {
@@ -32,7 +22,7 @@ class Store extends React.Component {
 
   findAllBooksStore(currentPage) {
     currentPage -= 1
-    axios(`${BASE_URL}/store?pageNumber=` + currentPage + "&pageSize=" + this.state.booksPerPage + "&sortBy=price&sortDir=" + this.state.sortDir)
+    axios(`${BASE_URL}/store?pageNumber=` + currentPage + "&pageSize=" + this.state.booksPerPage)
       .then(response => response.data)
       .then(data => {
         this.setState({
