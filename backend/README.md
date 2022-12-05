@@ -1217,7 +1217,312 @@ findBookById = (bookId) => {
 
 !J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
                                                                                                                           - ❐ ❌
-# book method 2
+# book method 2 (not save)
+
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { Button, Card, Col, Form } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEdit, faList, faPlusSquare, faSave, faUndo } from '@fortawesome/free-solid-svg-icons'
+import { fetchBook, fetchGenres, fetchLanguages, saveBook, updateBook } from '../../services'
+import MyToast from '../MyToast'
+import iconCam from '../../assets/camera.png'
+import iconLang from '../../assets/language.png'
+
+class Book extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = this.initialState
+    this.state = {/* 
+      id: [], */
+      genres: [],
+      languages: [],
+      show: false
+    }
+  }
+
+  initialState = { id: "", title: "", author: "", photo: "", isbn: "", price: "", language: "", genre: "" }//https://images.thuvienpdf.com/RdadOzRvJb.webp
+
+  componentDidMount() {
+    const bookId = +this.props.id
+    if(bookId) {
+     this.findBookById(bookId)
+   }
+    this.findAllLanguages()
+    this.findAllGenres()
+ }
+
+  findAllLanguages = () => {
+    this.props.fetchLanguages()
+    setTimeout(() => {
+      let bookLanguages = this.props.bookObject.languages
+      if (bookLanguages) {
+        this.setState({
+          languages: [{ value: "", display: "Select Language" }].concat(
+            bookLanguages.map(language => {
+              return { value: language, display: language }
+           }))
+        })
+        this.findAllGenres()
+      }
+    }, 100)
+  }
+
+  findAllGenres = () => {
+    this.props.fetchGenres()
+    setTimeout(() => {
+      let bookGenres = this.props.bookObject.genres
+      if (bookGenres) {
+        this.setState({
+          genres: [{ value: "", display: "Select Genre" }].concat(
+            bookGenres.map(genre => {
+              return { value: genre, display: genre }
+           }))
+        })
+        this.findAllLanguages()
+      }
+    }, 100)
+  }
+
+  findBookById = bookId => {
+    this.props.fetchBook(bookId)
+    setTimeout(() => {
+      let book = this.props.bookObject.book
+      if (book != null) {
+        this.setState({
+          id: book.id,
+          title: book.title,
+          author: book.author,
+          photo: book.photo,
+          isbn: book.isbn,
+          price: book.price,
+          language: book.languages,
+          genre: book.genres
+        })
+      }
+    }, 1000)
+  }
+
+  resetBook = () => {
+    this.setState(() => this.initialState)
+  }
+
+  submitBook = event => {
+    event.preventDefault()
+
+    const bookSave = {
+      title: this.state.title,
+      author: this.state.author,
+      photo: this.state.photo,
+      isbn: this.state.isbn,
+      price: this.state.price,
+      language: this.state.languages,
+      genre: this.state.genres
+    }
+
+    this.props.saveBook(bookSave)
+    setTimeout(() => {
+      if (this.props.bookObject.book != null) {
+        this.setState({ show: true, method: "post" })
+        setTimeout(() => this.setState({ show: false }), 2300)
+      } else {
+        this.setState({ show: false })
+      }
+    }, 2000)
+    this.setState(this.initialState)
+  }
+
+  updateBook = event => {
+    event.preventDefault()
+
+    const bookUpdate = {
+      id: this.state.id,
+      title: this.state.title,
+      author: this.state.author,
+      photo: this.state.photo,
+      isbn: this.state.isbn,
+      price: this.state.price,
+      language: this.state.languages,
+      genre: this.state.genres
+    }
+
+    this.props.updateBook(bookUpdate)
+    setTimeout(() => {
+      if (this.props.bookObject.book != null) {
+        this.setState({ show: true, method: "put" })
+        setTimeout(() => this.setState({ show: false }), 2300)
+      } else {
+        this.setState({ show: false })
+      }
+    }, 2000)
+    this.setState(this.initialState)
+  }
+
+  bookChange = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+  }
+
+  render() {
+    const { title, author, photo, isbn, price, language, genre } = this.state
+
+    return (
+      <div>
+        <div style={{ display: this.state.show ? "block" : "none" }}>
+          <MyToast
+            message={this.state.method === "put" ? "Book Updated Successfully." : "Book Saved Successfully."}//message={this.state.id.method === "put" ? "Book Updated Successfully." : "Book Saved Successfully."}
+            type="success"
+          />
+        </div>
+        <Card className="border-secondary bg-dark text-white">
+          <Card.Header>
+            <FontAwesomeIcon icon={this.state.id ? faEdit : faPlusSquare}/>{" "}
+            {this.state.id ? "Update Book" : "Add New Book"}
+          </Card.Header>
+          <Form
+            onReset={this.resetBook}
+            onSubmit={this.state.id ? this.updateBook : this.submitBook}
+            id="bookFormId"
+          >
+            <Card.Body>
+            <div className="form-row">
+                <Form.Group as={Col}>
+                  <Form.Label>Title 📙</Form.Label>
+                  <Form.Control
+                    required
+                    value={title}
+                    onChange={this.bookChange}
+                    className="bg-dark border-secondary text-white"
+                    placeholder="Enter Book Title"
+                  />
+                </Form.Group>
+                <Form.Group as={Col}>
+                  <Form.Label>Author ✏️</Form.Label>
+                  <Form.Control
+                    required
+                    value={author}
+                    onChange={this.bookChange}
+                    className="bg-dark border-secondary text-white mb-3"
+                    placeholder="Enter Book Author"
+                  />
+                </Form.Group>
+                </div>
+                <div className="form-row">
+                <Form.Group as={Col}>
+                  <Form.Label>Cover Photo URL <img className="cam" src={iconCam}/></Form.Label>
+                  <div className="input-group">
+                    <Form.Control
+                      required
+                      value={photo}
+                      onChange={this.bookChange}
+                      className="bg-dark border-secondary text-white"
+                      placeholder="Enter Book Cover Photo URL"
+                    />
+                    <div>
+                      {this.state.photo !== "" && (
+                        <img src={this.state.photo} width="38" height="38"/>
+                      )}
+                    </div>
+                  </div>
+                </Form.Group>
+                <Form.Group as={Col}>
+                  <Form.Label>ISBN Number ▥</Form.Label>
+                  <Form.Control
+                    required
+                    type="number"
+                    value={isbn}
+                    onChange={this.bookChange}
+                    className="bg-dark border-secondary text-white mb-3"
+                    placeholder="Enter Book ISBN Number"
+                  />
+                </Form.Group>
+                </div>
+                <div className="form-row">
+                <Form.Group as={Col} controlId="formGridPrice">
+                  <Form.Label className="price">Price 💲</Form.Label>
+                  <Form.Control
+                    required
+                    type="number"
+                    value={price}
+                    onChange={this.bookChange}
+                    className="bg-dark border-secondary text-white"
+                    placeholder="Enter Book Price"
+                  />
+                </Form.Group>
+                <Form.Group as={Col}>
+                  <Form.Label>Language <img className="lang" src={iconLang}/></Form.Label>
+                  <Form.Control
+                    required
+                    as="select"
+                    value={language}
+                    onChange={this.bookChange}
+                    className="bg-dark border-secondary text-white"
+                  >
+                    {this.state.languages.map(language => (
+                      <option key={language.value} value={language.value}>
+                        {language.display}
+                      </option>
+                    ))}
+                  </Form.Control>
+                </Form.Group>
+                <Form.Group as={Col}>
+                  <Form.Label>Genre 📚</Form.Label>
+                  <Form.Control
+                    required
+                    as="select"
+                    value={genre}
+                    onChange={this.bookChange}
+                    className="bg-dark border-secondary text-white"
+                  >
+                    {this.state.genres.map(genre => (
+                      <option key={genre.value} value={genre.value}>
+                        {genre.display}
+                      </option>
+                    ))}
+                  </Form.Control>
+                </Form.Group>
+                </div>
+            </Card.Body>
+            <Card.Footer style={{ textAlign: "right" }}>
+              <Button size="sm" variant="success" type="submit">
+                <FontAwesomeIcon icon={faSave}/>{" "}
+                {this.state.id ? "Update" : "Save"}
+              </Button>{" "}
+              <Button size="sm" variant="info" type="reset">
+                <FontAwesomeIcon icon={faUndo}/> Reset
+              </Button>{" "}
+              <Link style={{ textDecoration: 'none' }}
+                type="button" className="link" to="/list">
+                <FontAwesomeIcon icon={faList}/> Book List
+              </Link>
+            </Card.Footer>
+          </Form>
+        </Card>
+      </div>
+    )}}
+
+const mapStateToProps = state => {
+  return {
+    bookObject: state.book
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    saveBook: book => dispatch(saveBook(book)),
+    fetchBook: bookId => dispatch(fetchBook(bookId)),
+    updateBook: book => dispatch(updateBook(book)),
+    fetchLanguages: () => dispatch(fetchLanguages()),
+    fetchGenres: () => dispatch(fetchGenres())
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Book)
+
+!J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
+                                                                                                                          - ❐ ❌
+# book method 3 (save)
 
 import React from 'react'
 import { Link } from 'react-router-dom'
@@ -1240,38 +1545,19 @@ class Book extends React.Component {
       language: [],
       show: false
     }
+    this.bookChange = this.bookChange.bind(this)
+    this.updateBook = this.updateBook.bind(this)
+    this.submitBook = this.submitBook.bind(this)
   }
 
   initialState = { id: "", title: "Java Spring Boot", author: "New Author", photo: "https://images.thuvienpdf.com/RdadOzRvJb.webp", isbn: "125032019", price: "20.00", language: "English", genre: "Technology" }
 
-/*  componentDidMount() {
-  const bookId = +this.props.match.params.id
-  if(bookId) {
-    this.findBookById(bookId)
-  }
-  this.findAllLanguages()
-  this.findAllGenres()
-} */
-
-/*   componentDidMount() {
-   const bookId = this.props.id
-   if(bookId) {
-    this.findBookById(bookId)
-  }
-}*/
-
-/*   findAllLanguages = () => {
-    axios("http://localhost:8080/rest/books/languages")
-    .then(response => response.data)
-    .then(data => {
-        this.setState({
-          languages: [{ value: "", display: "Select Language" }].concat(
-            data.map(language => {
-              return { value: language, display: language }
-            }))
-        })
-    })
-  } */
+  componentDidMount() {
+    const bookId = +this.props.id
+    if(bookId) {
+     this.findBookById(bookId)
+   }
+ }
 
   findAllLanguages = () => {
     this.props.fetchLanguages()
@@ -1331,7 +1617,7 @@ class Book extends React.Component {
   submitBook = event => {
     event.preventDefault()
 
-    const book = {
+    const bookSave = {
       title: this.state.title,
       author: this.state.author,
       photo: this.state.photo,
@@ -1341,7 +1627,7 @@ class Book extends React.Component {
       genre: this.state.genre
     }
 
-    this.props.saveBook(book)
+    this.props.saveBook(bookSave)
     setTimeout(() => {
       if (this.props.bookObject.book != null) {
         this.setState({ show: true, method: "post" })
@@ -1356,7 +1642,7 @@ class Book extends React.Component {
   updateBook = event => {
     event.preventDefault()
 
-    const book = {
+    const bookUpdate = {
       id: this.state.id,
       title: this.state.title,
       author: this.state.author,
@@ -1367,7 +1653,7 @@ class Book extends React.Component {
       genre: this.state.genre
     }
 
-    this.props.updateBook(book)
+    this.props.updateBook(bookUpdate)
     setTimeout(() => {
       if (this.props.bookObject.book != null) {
         this.setState({ show: true, method: "put" })
@@ -1392,7 +1678,7 @@ class Book extends React.Component {
       <div>
         <div style={{ display: this.state.show ? "block" : "none" }}>
           <MyToast
-            message={this.state.method === "put" ? "Book Updated Successfully." : "Book Saved Successfully."}
+            message={this.state.id.method === "put" ? "Book Updated Successfully." : "Book Saved Successfully."}
             type="success"
           />
         </div>
@@ -1479,19 +1765,19 @@ class Book extends React.Component {
                     onChange={this.bookChange}
                     className="bg-dark border-secondary text-white"
                   >
-                    {/* <option>English</option>
+                    <option>English</option>
                     <option>Portuguese</option>
                     <option>French</option>
                     <option>Russian</option>
                     <option>Hindi</option>
                     <option>Arabic</option>
                     <option>Spanish</option>
-                    <option>Chinese</option> */}
-                    {this.state.language.map(language => (
+                    <option>Chinese</option>
+                     {/* {this.state.language.map(language => (
                       <option key={language.value} value={language.value}>
                         {language.display}
                       </option>
-                      ))}
+                      ))} */}
                   </Form.Control>
                 </Form.Group>
                 <Form.Group as={Col}>
@@ -1502,18 +1788,18 @@ class Book extends React.Component {
                     onChange={this.bookChange}
                     className="bg-dark border-secondary text-white"
                   >
-                    {/* {<option>Technology</option>
+                    <option>Technology</option>
                     <option>Science</option>
                     <option>History</option>
                     <option>Fantasy</option>
                     <option>Biography</option>
                     <option>Horror</option>
-                    <option>Romance</option>} */}
-                    {this.state.genre.map(genre => (
+                    <option>Romance</option>
+                    {/* {this.state.genre.map(genre => (
                       <option key={genre.value} value={genre.value}>
                         {genre.display}
                       </option>
-                      ))}
+                      ))} */}
                   </Form.Control>
                 </Form.Group>
                 </div>
@@ -1555,203 +1841,42 @@ export default connect(mapStateToProps, mapDispatchToProps)(Book)
 
 !J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
                                                                                                                           - ❐ ❌
-# store.jsx
+# book (edit) with fetch
 
-import React from 'react'
-import { Button, Card } from 'react-bootstrap'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBook } from '@fortawesome/free-solid-svg-icons'
-import '../../assets/css/Style.css'
+  updateBook = event => {
+    event.preventDefault()
 
-class Store extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = this.initialState
+    const book = {
+      id: this.state.id,
+      title: this.state.title,
+      author: this.state.author,
+      photo: this.state.photo,
+      isbn: this.state.isbn,
+      price: this.state.price,
+      language: this.state.language,
+      genre: this.state.genre
+    }
+
+    const headers = new Headers()
+    headers.append('Content-Type', 'application/json')
+
+    fetch("http://localhost:8080/rest/books", {
+      method: "PUT",
+      body: JSON.stringify(book),
+      headers
+    })
+    .then(response => response.json())
+    .then(response => {
+      if (response.data != null) {
+        this.setState({ show: true, method: "put" })
+        setTimeout(() => this.setState({ show: false }), 2300)
+        setTimeout(() => this.bookList(), 2300)
+      } else {
+        this.setState({ show: false })
+      }
+    })
+    this.setState(this.initialState)
   }
-
-  initialState = { id: "", title: "Spring in Actions", author: "Craig Walls", photo: "https://images-na.ssl-images-amazon.com/images/I/51gHy16h5TL.jpg", isbn: "89127398679", price: "99.00" }
-
-  render() {
-    const { title, author, photo, isbn, price } = this.state
-
-    return (
-      <Card style={{ background: "#393939", width: "1200px", marginLeft: "-35px", border: ".5px solid #373737" }}>
-        <Card.Header>
-         <b style={{ color: "#fff", fontWeight: "400" }}>
-           <FontAwesomeIcon icon={faBook}/> Edition Limited</b>
-           <Card.Body className="row" style={{ overflowY: "scroll", height: "485px" }}>
-
-              <div className="col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3">
-                <img className="card-photo" src={photo}/>
-                <div className="card-title">
-                  <h6 style={{ fontSize: "15px" }}>{title}</h6>
-                  <div className="card-desc">{author}</div>
-                    <h1></h1>
-                  <h6>{isbn}</h6>
-                  <div className="card-desc">{price}</div>
-                  <button className="purchase-button">Buy</button>
-                </div>
-              </div>
-
-              <div className="col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3 mb-0">
-                <img className="card-photo" src='https://images.manning.com/720/960/resize/book/d/2ea186d-c683-4d54-95f9-cca25b6fe49e/bauer2.png'/>
-                <div className="card-title">
-                  <h6 style={{ fontSize: "15px" }}>Java Persistence</h6>
-                  <div className="card-desc">Christian Bauer</div>
-                    <h1></h1>
-                  <h6>{isbn}</h6>
-                  <div className="card-desc">{price}</div>
-                  <button className="purchase-button">Buy</button>
-                </div>
-              </div>
-
-              <div className="col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3 mb-0">
-                <img className="card-photo" src='https://images.manning.com/720/960/resize/book/6/3e9d5ed-4155-466d-ab46-538bb355948d/gsmith2.png'/>
-                <div className="card-title">
-                  <h6 style={{ fontSize: "15px" }}>Grails in Action</h6>
-                  <div className="card-desc">Glen Smith</div>
-                    <h1></h1>
-                  <h6>{isbn}</h6>
-                  <div className="card-desc">{price}</div>
-                  <button className="purchase-button">Buy</button>
-                </div>
-              </div>
-
-              <div className="col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3 mb-0">
-                <img className="card-photo" src='https://images.manning.com/720/960/resize/book/6/bb80688-f898-4df7-838a-253b1de123c4/Walls-SpringBoot-HI.png'/>
-                <div className="card-title">
-                  <h6 style={{ fontSize: "15px" }}>Spring Boot in Actions</h6>
-                  <div className="card-desc">Craig Walls</div>
-                    <h1></h1>
-                  <h6>{isbn}</h6>
-                  <div className="card-desc">{price}</div>
-                  <button className="purchase-button">Buy</button>
-                </div>
-              </div>
-
-              <div className="col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3 mb-0">
-                <img className="card-photo" src='https://m.media-amazon.com/images/I/71eY7tYDS4L.jpg'/>
-                <div className="card-title">
-                  <h6 style={{ fontSize: "15px" }}>Microservices Patterns</h6>
-                  <div className="card-desc">Chris Richardson</div>
-                    <h1></h1>
-                  <h6>{isbn}</h6>
-                  <div className="card-desc">{price}</div>
-                  <button className="purchase-button">Buy</button>
-                </div>
-              </div>
-
-              <div className="col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3 mb-0">
-                <img className="card-photo" src='https://images.manning.com/book/8/809fab1-8912-4fb7-b39e-f49844525807/Bruce-Microservices-HI.png'/>
-                <div className="card-title">
-                  <h6 style={{ fontSize: "15px" }}>Java Persistence</h6>
-                  <div className="card-desc">Christian Bauer</div>
-                    <h1></h1>
-                  <h6>{isbn}</h6>
-                  <div className="card-desc">{price}</div>
-                  <button className="purchase-button">Buy</button>
-                </div>
-              </div>
-
-              <div className="col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3 mb-0">
-                <img className="card-photo" src='https://images-na.ssl-images-amazon.com/images/I/417zLTa1uqL._SX397_BO1,204,203,200_.jpg'/>
-                <div className="card-title">
-                  <h6 style={{ fontSize: "15px" }}>Spring Microservices</h6>
-                  <div className="card-desc">John Carnell</div>
-                    <h1></h1>
-                  <h6>{isbn}</h6>
-                  <div className="card-desc">{price}</div>
-                  <button className="purchase-button">Buy</button>
-                </div>
-              </div>
-
-              <div className="col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3 mb-0">
-                <img className="card-photo" src='https://images.manning.com/book/e/65fff7e-bc06-44d4-b4bd-9dd311a8d135/Horsdal-Microservices-2ed-HI.png'/>
-                <div className="card-title">
-                  <h6 style={{ fontSize: "15px" }}>Microservices in.Net</h6>
-                  <div className="card-desc">Christian Horsdal</div>
-                    <h1></h1>
-                  <h6>{isbn}</h6>
-                  <div className="card-desc">{price}</div>
-                  <button className="purchase-button">Buy</button>
-                </div>
-              </div>
-
-              <div className="col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3 mb-0">
-                <img className="card-photo" src='https://images.manning.com/book/8/b060324-0567-4c7b-b918-de2cf83d52ff/Davis-BM-HI.png'/>
-                <div className="card-title">
-                  <h6 style={{ fontSize: "15px" }}>Bootstrapping</h6>
-                  <div className="card-desc">Ashley Davis</div>
-                    <h1></h1>
-                  <h6>{isbn}</h6>
-                  <div className="card-desc">{price}</div>
-                  <button className="purchase-button">Buy</button>
-                </div>
-              </div>
-
-              <div className="col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3 mb-0">
-                <img className="card-photo" src='https://images.thuvienpdf.com/RdadOzRvJb.webp'/>
-                <div className="card-title">
-                  <h6 style={{ fontSize: "15px" }}>Unity in Action</h6>
-                  <div className="card-desc">Joseph Hocking</div>
-                    <h1></h1>
-                  <h6>{isbn}</h6>
-                  <div className="card-desc">{price}</div>
-                  <button className="purchase-button">Buy</button>
-                </div>
-              </div>
-
-              <div className="col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3 mb-0">
-              <img className="card-photo" src='https://m.media-amazon.com/images/I/71bUthRlRhL.jpg'/>
-                <div className="card-title">
-                  <h6 style={{ fontSize: "15px" }}>Cloud Native</h6>
-                  <div className="card-desc">Cornelia Davis</div>
-                    <h1></h1>
-                  <h6>{isbn}</h6>
-                  <div className="card-desc">{price}</div>
-                  <button className="purchase-button">Buy</button>
-                </div>
-              </div>
-
-              <div className="col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3 mb-0">
-                <img className="card-photo" src='https://images.manning.com/264/352/resize/book/7/00b638e-84a6-44b2-b051-6f15469be9ab/cummins.png'/>
-                <div className="card-title">
-                  <h6 style={{ fontSize: "15px" }}>Enterprise OSGI</h6>
-                  <div className="card-desc">Holly Cummins</div>
-                    <h1></h1>
-                  <h6>{isbn}</h6>
-                  <div className="card-desc">{price}</div>
-                  <button className="purchase-button">Buy</button>
-                </div>
-              </div>
-
-          </Card.Body>
-          <Card.Footer style={{ textAlign: "right" }}>
-            <Button
-              size="sm"
-              variant="info"
-            >
-            </Button>{" "}
-            <Button
-              size="sm"
-              variant="success"
-            >
-            </Button>{" "}
-            <Button
-              size="sm"
-              variant="warning"
-            >
-            </Button>{" "}
-            <Button
-              size="sm"
-              variant="danger"
-            >
-            </Button>
-          </Card.Footer>
-        </Card.Header>
-      </Card>
-    )}}
-export default Store
 
 !J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
 

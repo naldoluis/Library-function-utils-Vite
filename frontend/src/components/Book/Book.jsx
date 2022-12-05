@@ -91,7 +91,7 @@ class Book extends React.Component {
   submitBook = event => {
     event.preventDefault()
 
-    const book = {
+    const bookSave = {
       title: this.state.title,
       author: this.state.author,
       photo: this.state.photo,
@@ -101,7 +101,7 @@ class Book extends React.Component {
       genre: this.state.genre
     }
 
-    this.props.saveBook(book)
+    this.props.saveBook(bookSave)
     setTimeout(() => {
       if (this.props.bookObject.book != null) {
         this.setState({ show: true, method: "post" })
@@ -110,12 +110,13 @@ class Book extends React.Component {
         this.setState({ show: false })
       }
     }, 2000)
+    this.setState(this.initialState)
   }
 
   updateBook = event => {
     event.preventDefault()
 
-    const book = {
+    const bookUpdate = {
       id: this.state.id,
       title: this.state.title,
       author: this.state.author,
@@ -126,7 +127,7 @@ class Book extends React.Component {
       genre: this.state.genre
     }
 
-    this.props.updateBook(book)
+    this.props.updateBook(bookUpdate)
     setTimeout(() => {
       if (this.props.bookObject.book != null) {
         this.setState({ show: true, method: "put" })
@@ -135,6 +136,7 @@ class Book extends React.Component {
         this.setState({ show: false })
       }
     }, 2000)
+    this.setState(this.initialState)
   }
 
   bookChange = event => {
@@ -245,11 +247,6 @@ class Book extends React.Component {
                     <option>Arabic</option>
                     <option>Spanish</option>
                     <option>Chinese</option>
-                    {/* {this.state.language.map(language => (
-                      <option key={language.value} value={language.value}>
-                        {language.display}
-                      </option>
-                      ))} */}
                   </Form.Control>
                 </Form.Group>
                 <Form.Group as={Col}>
@@ -267,11 +264,6 @@ class Book extends React.Component {
                     <option>Biography</option>
                     <option>Horror</option>
                     <option>Romance</option>
-                    {/* {this.state.genre.map(genre => (
-                      <option key={genre.value} value={genre.value}>
-                        {genre.display}
-                      </option>
-                      ))} */}
                   </Form.Control>
                 </Form.Group>
                 </div>
