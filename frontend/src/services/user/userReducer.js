@@ -15,7 +15,7 @@ export default function reducer(state = initialState, action) {
       }
     case UT.USER_SAVED_SUCCESS:
       return {
-        message: action.payload,
+        users: action.payload,
         error: ""
       }
     case UT.USER_FAILURE:

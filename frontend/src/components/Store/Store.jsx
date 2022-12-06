@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBook } from '@fortawesome/free-solid-svg-icons'
+import { faBookQuran, faMoneyBill1 } from '@fortawesome/free-solid-svg-icons'
 import { Button, Card } from 'react-bootstrap'
 import { BASE_URL } from '../../utils/requests'
 import '../../assets/css/Style.css'
@@ -12,7 +12,7 @@ class Store extends React.Component {
     this.state = {
       books: [],
       currentPage: 1,
-      booksPerPage: 6
+      booksPerPage: 12
     }
   }
 
@@ -100,7 +100,7 @@ class Store extends React.Component {
       <Card className="card-store">
         <Card.Header>
           <b style={{ color: "#fff", fontWeight: "400" }}>
-            <FontAwesomeIcon icon={faBook}/> Edition Limited
+            <FontAwesomeIcon icon={faBookQuran}/> Edition Limited
           </b>
           <Card.Body className="row" style={{ overflowY: "scroll", height: "485px" }}>
             {books.length === 0 ? (
@@ -114,7 +114,7 @@ class Store extends React.Component {
                   <img className="card-photo" src={book.photo}/>
                     <h6 className="card-title">{book.title}</h6>
                    <div className="card-desc">{book.genre}</div>
-                  <button className="purchase-button">Buy</button>
+                  <button className="purchase-button"><FontAwesomeIcon icon={faMoneyBill1}/> Buy</button>
                 </div>
               ))
             )}

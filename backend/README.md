@@ -1234,23 +1234,22 @@ class Book extends React.Component {
   constructor(props) {
     super(props)
     this.state = this.initialState
-    this.state = {/* 
-      id: [], */
+    this.state = {
+      id: [],
       genres: [],
       languages: [],
       show: false
     }
   }
 
-  initialState = { id: "", title: "", author: "", photo: "", isbn: "", price: "", language: "", genre: "" }//https://images.thuvienpdf.com/RdadOzRvJb.webp
+  initialState = { id: "", title: "", author: "", photo: "", isbn: "", price: "", language: "", genre: "" }
 
   componentDidMount() {
-    const bookId = +this.props.id
+    const bookId = this.props.id
     if(bookId) {
      this.findBookById(bookId)
    }
     this.findAllLanguages()
-    this.findAllGenres()
  }
 
   findAllLanguages = () => {
@@ -1280,7 +1279,6 @@ class Book extends React.Component {
               return { value: genre, display: genre }
            }))
         })
-        this.findAllLanguages()
       }
     }, 100)
   }
@@ -1311,7 +1309,7 @@ class Book extends React.Component {
   submitBook = event => {
     event.preventDefault()
 
-    const bookSave = {
+    const bookSaved = {
       title: this.state.title,
       author: this.state.author,
       photo: this.state.photo,
@@ -1321,7 +1319,7 @@ class Book extends React.Component {
       genre: this.state.genres
     }
 
-    this.props.saveBook(bookSave)
+    this.props.saveBook(bookSaved)
     setTimeout(() => {
       if (this.props.bookObject.book != null) {
         this.setState({ show: true, method: "post" })
@@ -1333,10 +1331,10 @@ class Book extends React.Component {
     this.setState(this.initialState)
   }
 
-  updateBook = event => {
+  updatedBook = event => {
     event.preventDefault()
 
-    const bookUpdate = {
+    const bookUpdated = {
       id: this.state.id,
       title: this.state.title,
       author: this.state.author,
@@ -1347,7 +1345,7 @@ class Book extends React.Component {
       genre: this.state.genres
     }
 
-    this.props.updateBook(bookUpdate)
+    this.props.updateBook(bookUpdated)
     setTimeout(() => {
       if (this.props.bookObject.book != null) {
         this.setState({ show: true, method: "put" })
@@ -1372,7 +1370,7 @@ class Book extends React.Component {
       <div>
         <div style={{ display: this.state.show ? "block" : "none" }}>
           <MyToast
-            message={this.state.method === "put" ? "Book Updated Successfully." : "Book Saved Successfully."}//message={this.state.id.method === "put" ? "Book Updated Successfully." : "Book Saved Successfully."}
+            message={this.state.method === "put" ? "Book Updated Successfully." : "Book Saved Successfully."}
             type="success"
           />
         </div>
@@ -1383,7 +1381,7 @@ class Book extends React.Component {
           </Card.Header>
           <Form
             onReset={this.resetBook}
-            onSubmit={this.state.id ? this.updateBook : this.submitBook}
+            onSubmit={this.state.id ? this.updatedBook : this.submitBook}
             id="bookFormId"
           >
             <Card.Body>
@@ -1391,7 +1389,9 @@ class Book extends React.Component {
                 <Form.Group as={Col}>
                   <Form.Label>Title 📙</Form.Label>
                   <Form.Control
+                    autoComplete="off"
                     required
+                    name="title"
                     value={title}
                     onChange={this.bookChange}
                     className="bg-dark border-secondary text-white"
@@ -1401,7 +1401,9 @@ class Book extends React.Component {
                 <Form.Group as={Col}>
                   <Form.Label>Author ✏️</Form.Label>
                   <Form.Control
+                    autoComplete="off"
                     required
+                    name="author"
                     value={author}
                     onChange={this.bookChange}
                     className="bg-dark border-secondary text-white mb-3"
@@ -1414,8 +1416,10 @@ class Book extends React.Component {
                   <Form.Label>Cover Photo URL <img className="cam" src={iconCam}/></Form.Label>
                   <div className="input-group">
                     <Form.Control
+                      autoComplete="off"
                       required
                       value={photo}
+                      name="photo"
                       onChange={this.bookChange}
                       className="bg-dark border-secondary text-white"
                       placeholder="Enter Book Cover Photo URL"
@@ -1430,8 +1434,10 @@ class Book extends React.Component {
                 <Form.Group as={Col}>
                   <Form.Label>ISBN Number ▥</Form.Label>
                   <Form.Control
+                    autoComplete="off"
                     required
                     type="number"
+                    name="isbn"
                     value={isbn}
                     onChange={this.bookChange}
                     className="bg-dark border-secondary text-white mb-3"
@@ -1443,8 +1449,10 @@ class Book extends React.Component {
                 <Form.Group as={Col} controlId="formGridPrice">
                   <Form.Label className="price">Price 💲</Form.Label>
                   <Form.Control
+                    autoComplete="off"
                     required
                     type="number"
+                    name="price"
                     value={price}
                     onChange={this.bookChange}
                     className="bg-dark border-secondary text-white"
@@ -1456,6 +1464,8 @@ class Book extends React.Component {
                   <Form.Control
                     required
                     as="select"
+                    custom="true"
+                    name="language"
                     value={language}
                     onChange={this.bookChange}
                     className="bg-dark border-secondary text-white"
@@ -1472,6 +1482,8 @@ class Book extends React.Component {
                   <Form.Control
                     required
                     as="select"
+                    custom="true"
+                    name="genre"
                     value={genre}
                     onChange={this.bookChange}
                     className="bg-dark border-secondary text-white"

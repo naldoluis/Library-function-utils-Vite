@@ -1,6 +1,6 @@
 import * as BT from './bookTypes'
 
-const initialState = { book: "", error: "" }
+const initialState = { book: [], languages: [], genres: [], error: "" }
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
@@ -20,7 +20,7 @@ export default function reducer(state = initialState, action) {
       }
     case BT.BOOK_FAILURE:
       return {
-        book: "",
+        book: [],
         error: action.payload
       }
     case BT.LANGUAGES_SUCCESS:
@@ -30,7 +30,7 @@ export default function reducer(state = initialState, action) {
       }
     case BT.LANGUAGES_FAILURE:
       return {
-        languages: "",
+        languages: [],
         error: action.payload
       }
     case BT.GENRES_SUCCESS:
@@ -40,7 +40,7 @@ export default function reducer(state = initialState, action) {
       }
     case BT.GENRES_FAILURE:
       return {
-        genres: "",
+        genres: [],
         error: action.payload
       }
     default:

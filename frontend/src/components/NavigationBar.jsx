@@ -20,7 +20,7 @@ export default function NavigationBar() {
     setExit(true)
     setTimeout(() => {
       setExit(false)
-    }, 2200)
+    }, 2300)
   }
 
   const clock = () => {
