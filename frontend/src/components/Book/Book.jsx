@@ -197,8 +197,8 @@ class Book extends React.Component {
                     <Form.Control
                       autoComplete="off"
                       required
-                      value={photo}
                       name="photo"
+                      value={photo}
                       onChange={this.bookChange}
                       className="bg-dark border-secondary text-white"
                       placeholder="Enter Book Cover Photo URL"

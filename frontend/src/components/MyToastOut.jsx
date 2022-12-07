@@ -6,9 +6,9 @@ export default function MyToastOut(props) {
 
   return (
     <div style={props.toast}>
-      <Toast style={{ color: "#fff", background: "#7548d6" }}
+      <Toast style={{ color: "#fff", background: "#e95313" }}
       >
-        <Toast.Header style={{ color: "#fff", background: "#7548d6" }}
+        <Toast.Header style={{ color: "#fff", background: "#e95313" }}
           closeButton={false}
         >
           <strong>

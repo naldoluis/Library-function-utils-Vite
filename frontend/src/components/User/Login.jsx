@@ -32,7 +32,7 @@ export default function Login(props) {
         console.log(error.message)
         setShow(true)
         resetLoginForm()
-        setError(" • Email or password invalid 👎")
+        setError(" • Email or password invalid !")
      })
   }
 
@@ -49,7 +49,7 @@ export default function Login(props) {
           </Alert>
         )}
         {show && error && (
-          <Alert variant="danger" onClose={() => setShow(true)} dismissible>
+          <Alert variant="secondary" onClose={() => setShow(true)} dismissible>
             {error}
           </Alert>
         )}

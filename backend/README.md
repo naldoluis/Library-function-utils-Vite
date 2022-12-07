@@ -278,14 +278,19 @@ INSERT INTO tb_user(name, email, mobile, password) VALUES ('Cida ❤', 'cida@gma
 INSERT INTO tb_user(name, email, mobile, password) VALUES ('Natalia', 'natalia@gmail.com', '9787456543', '1237')
 INSERT INTO tb_user(name, email, mobile, password) VALUES ('Talita', 'tata@gmail.com', '9787456544', '1238')
 
-INSERT INTO tb_user(name, email, mobile, password) VALUES ('Test User', 'test@user.com', '25032019200', 'testuser')
-INSERT INTO tb_user(name, email, mobile, password) VALUES ('Test Admin', 'test@admin.com', '25032019200', 'testadmin')
-
 INSERT INTO tb_user(name, email, mobile, password) VALUES ('Maria', 'test@user.com', '9787456540', '$2a$10$2KeflGXrfayDYOZlNzSrgeRTG/26lwjiuKAhsZxAk2lkPjLuZlNaG')
 INSERT INTO tb_user(name, email, mobile, password) VALUES ('Joao', 'test@admin.com', '9787456541', '$2a$10$2KeflGXrfayDYOZlNzSrgeRTG/26lwjiuKAhsZxAk2lkPjLuZlNaG')
 
-INSERT INTO tb_role(name) VALUES ('admin')
-INSERT INTO tb_role(name) VALUES ('user')
+---------------------------------------------------------------------------------------------------------------------------------
+                                    [✔️] import.sql + [Application.java method 2]
+
+INSERT INTO tb_user(name, email, mobile, password) VALUES ('Test Admin', 'test@admin.com', '25032019200', 'testadmin')
+INSERT INTO tb_user(name, email, mobile, password) VALUES ('Test User', 'test@user.com', '25032019200', 'testuser')
+
+INSERT INTO tb_role(name) VALUES ('ADMIN')
+INSERT INTO tb_role(name) VALUES ('USER')
+
+---------------------------------------------------------------------------------------------------------------------------------
 
 INSERT INTO tb_role VALUES (gen_random_uuid(), 'ROLE_ADMIN)
 INSERT INTO tb_role VALUES (gen_random_uuid(), 'ROLE_USER)
