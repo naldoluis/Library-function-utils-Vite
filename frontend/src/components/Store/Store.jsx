@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBookQuran, faMoneyBill1 } from '@fortawesome/free-solid-svg-icons'
-import { Button, Card } from 'react-bootstrap'
+import { Button, Card, Table } from 'react-bootstrap'
 import { BASE_URL } from '../../utils/requests'
 import '../../assets/css/Style.css'
 
@@ -22,7 +22,7 @@ class Store extends React.Component {
 
   findAllBooksStore(currentPage) {
     currentPage -= 1
-    axios(`${BASE_URL}/store?pageNumber=` + currentPage + "&pageSize=" + this.state.booksPerPage)
+    axios(`${BASE_URL}/store?page=` + currentPage + "&size=" + this.state.booksPerPage)
       .then(response => response.data)
       .then(data => {
         this.setState({
@@ -104,9 +104,13 @@ class Store extends React.Component {
           </b>
           <Card.Body className="row" style={{ overflowY: "scroll", height: "485px" }}>
             {books.length === 0 ? (
-              <div>
-                <span style={{ color: "#fff", fontWeight: "400" }}>No Books Available.</span>
-              </div>
+            <Table bordered hover striped variant="dark">
+              <tbody>
+                <tr align="center">
+                  <td>No Books Available.</td>
+                </tr>
+              </tbody>
+            </Table>
             ) : (
               books.map(book => (
                 <div className="col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3 mb-4"
