@@ -43,11 +43,6 @@ export default function Login(props) {
   return (
     <div className="justify-content-md-center form-row">
       <Col xs={5}>
-        {show && props.message && (
-          <Alert variant="success" onClose={() => setShow(true)} dismissible>
-            {props.message}
-          </Alert>
-        )}
         {show && error && (
           <Alert variant="secondary" onClose={() => setShow(true)} dismissible>
             {error}

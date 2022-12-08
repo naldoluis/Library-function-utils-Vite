@@ -30,8 +30,11 @@
 .card-title {margin: -45px 62px 0 0;font-size: 13px}
 .card-desc {font-size: 12px;margin: -7px 0 0 64px}
 
-.clock {transform: scale(.9);transition: all ease .2s;cursor: pointer}
-.clock:hover {transform: scale(1);filter: drop-shadow(0 0 .05em)}
+.clock {transform: scale(.92);transition: all ease .2s;cursor: pointer}
+.clock:hover,.speedometer:hover {transform: scale(1);filter: drop-shadow(0 0 .05em)}
+
+.speedometer {transform: scale(.97);transition: all ease .2s;cursor: pointer}
+.speedometer:hover {color: #abd727}
 
 ::-webkit-scrollbar {width: 5px}
 ::-webkit-scrollbar-track {background: #606060}

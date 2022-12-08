@@ -14,7 +14,6 @@ class Book extends React.Component {
     super(props)
     this.state = this.initialState
     this.state = {
-      id: [],
       genres: [],
       languages: [],
       show: false
@@ -114,7 +113,7 @@ class Book extends React.Component {
     event.preventDefault()
 
     const bookUpdated = {
-      id: this.state.id,
+      id: data.id,
       title: this.state.title,
       author: this.state.author,
       photo: this.state.photo,
@@ -171,7 +170,7 @@ class Book extends React.Component {
                     autoComplete="off"
                     required
                     name="title"
-                    value={title}
+                    value={title ||''}
                     onChange={this.bookChange}
                     className="bg-dark border-secondary text-white"
                     placeholder="Enter Book Title"
@@ -183,7 +182,7 @@ class Book extends React.Component {
                     autoComplete="off"
                     required
                     name="author"
-                    value={author}
+                    value={author ||''}
                     onChange={this.bookChange}
                     className="bg-dark border-secondary text-white mb-3"
                     placeholder="Enter Book Author"
@@ -198,7 +197,7 @@ class Book extends React.Component {
                       autoComplete="off"
                       required
                       name="photo"
-                      value={photo}
+                      value={photo ||''}
                       onChange={this.bookChange}
                       className="bg-dark border-secondary text-white"
                       placeholder="Enter Book Cover Photo URL"
@@ -217,7 +216,7 @@ class Book extends React.Component {
                     required
                     type="number"
                     name="isbn"
-                    value={isbn}
+                    value={isbn ||''}
                     onChange={this.bookChange}
                     className="bg-dark border-secondary text-white mb-3"
                     placeholder="Enter Book ISBN Number"
@@ -232,7 +231,7 @@ class Book extends React.Component {
                     required
                     type="number"
                     name="price"
-                    value={price}
+                    value={price ||''}
                     onChange={this.bookChange}
                     className="bg-dark border-secondary text-white"
                     placeholder="Enter Book Price"

@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBookQuran, faMoneyBill1 } from '@fortawesome/free-solid-svg-icons'
+import { faBookQuran, faMoneyBills } from '@fortawesome/free-solid-svg-icons'
 import { Button, Card, Table } from 'react-bootstrap'
 import { BASE_URL } from '../../utils/requests'
 import '../../assets/css/Style.css'
@@ -118,7 +118,7 @@ class Store extends React.Component {
                   <img className="card-photo" src={book.photo}/>
                     <h6 className="card-title">{book.title}</h6>
                    <div className="card-desc">{book.genre}</div>
-                  <button className="purchase-button"><FontAwesomeIcon icon={faMoneyBill1}/> Buy</button>
+                  <button className="purchase-button"><FontAwesomeIcon icon={faMoneyBills}/> Buy</button>
                 </div>
               ))
             )}
