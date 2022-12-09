@@ -12,6 +12,9 @@
 .prev-fast {transform: rotate(180deg);width: 29px;margin-right: 15px}
 .next-fast {width: 29px;margin-left: 15px}
 
+.next-page,.prev-page,.prev-fast,.next-fast {transition: all ease .2s}
+.next-page:hover,.prev-page:hover,.prev-fast:hover,.next-fast:hover {filter: drop-shadow(0 0 .055em)}
+
 .lang {width: 20px}
 .cam {width: 16px;margin-top: -5px}
 
@@ -33,9 +36,9 @@
 .purchase-button {font-size: 12px;margin: 7px 0 0 50px;height: 25px;width: 90px;color: #333;background: #bbbe10;font-weight: 500;border-radius: .3rem}
 .purchase-button:hover {background: #abd727}
 
-.card-photo {width: 77px;margin: 54px;border-radius: 3%}
-.card-title {margin: -45px 62px 0 0;font-size: 13px}
-.card-desc {font-size: 12px;margin: -7px 0 0 64px}
+.card-photo {width: 77px;margin: 44px 0 0 56.5px;border-radius: 3%}
+.card-title {margin: 7px 62px 0 0;font-size: 13px}
+.card-desc {font-size: 12px;margin: -9px 0 0 65px}
 
 .clock {transform: scale(.92);transition: all ease .2s}
 .clock:hover,.speedometer:hover {transform: scale(1);filter: drop-shadow(0 0 .05em)}

@@ -157,7 +157,7 @@ class BookList extends React.Component {
         <div style={{ display: this.state.show ? "block" : "none" }}>
           <MyToast message="Book Deleted Successfully." type="danger"/>
         </div>
-        <Card className="border-dark bg-dark text-white">
+        <Card className="border-secondary bg-dark text-white">
           <Card.Header>
             <div style={{ float: "left" }}>
               <FontAwesomeIcon icon={faList}/> Book List

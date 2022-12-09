@@ -12,7 +12,7 @@ class Store extends React.Component {
     this.state = {
       books: [],
       currentPage: 1,
-      booksPerPage: 12
+      booksPerPage: 8
     }
   }
 
