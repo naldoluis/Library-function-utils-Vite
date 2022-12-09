@@ -112,7 +112,7 @@ class Book extends React.Component {
   updatedBook = event => {
     event.preventDefault()
 
-    const bookUpdated = {
+    const bookEdit = {
       id: data.id,
       title: this.state.title,
       author: this.state.author,
@@ -123,7 +123,7 @@ class Book extends React.Component {
       genre: this.state.genres
     }
 
-    this.props.updateBook(bookUpdated)
+    this.props.updateBook(bookEdit)
     setTimeout(() => {
       if (this.props.bookObject.book != null) {
         this.setState({ show: true, method: "put" })
