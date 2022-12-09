@@ -2,13 +2,15 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Button, Card, FormControl, Image, InputGroup, Table } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEdit, faFastBackward, faFastForward, faList, faStepBackward, faStepForward, faSearch, faTimes, faTrash } from '@fortawesome/free-solid-svg-icons'
+import { faEdit, faList, faSearch, faTimes, faTrash } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import MyToast from '../MyToast'
 import { BASE_URL } from '../../utils/requests'
 import { deleteBook } from '../../services'
 import '../../assets/css/Style.css'
+import iconNext1 from '../../assets/next1.png'
+import iconNext2 from '../../assets/next2.png'
 
 class BookList extends React.Component {
   constructor(props) {
@@ -253,50 +255,33 @@ class BookList extends React.Component {
               <div style={{ float: "right" }}>
                 <InputGroup size="sm">
                   <div>
-                    <Button
-                      className="first bg-info text-light"
-                      size="sm"
-                      variant="outline-info"
-                      disabled={currentPage === 1 ? true : false}
+                    <b
                       onClick={this.firstPage}
                     >
-                      <FontAwesomeIcon icon={faFastBackward}/> First
-                    </Button>
-                    <Button
-                      className="prev bg-success text-light"
-                      size="sm"
-                      variant="outline-success"
-                      disabled={currentPage === 1 ? true : false}
+                      <img className="prev-fast" src={iconNext2}/>
+                    </b>
+                    <b
                       onClick={this.prevPage}
                     >
-                      <FontAwesomeIcon icon={faStepBackward}/> Prev
-                    </Button>
+                      <img className="prev-page" src={iconNext1}/>
+                    </b>
                     </div>
                   <FormControl
-                    size="sm"
-                    className="border-secondary text-white page-num bg-dark"
+                    className="border-dark text-white page-num bg-dark"
                     value={currentPage}
                     onChange={this.changePage}
                   />
                   <div>
-                    <Button
-                      className="next bg-warning text-dark"
-                      size="sm"
-                      variant="outline-warning"
-                      disabled={currentPage === totalPages ? true : false}
+                    <b
                       onClick={this.nextPage}
                     >
-                      <FontAwesomeIcon icon={faStepForward}/> Next
-                    </Button>
-                    <Button
-                      className="last bg-danger text-light"
-                      size="sm"
-                      variant="outline-danger"
-                      disabled={currentPage === totalPages ? true : false}
+                      <img className="next-page" src={iconNext1}/>
+                    </b>
+                    <b
                       onClick={this.lastPage}
                     >
-                      <FontAwesomeIcon icon={faFastForward}/> Last
-                    </Button>
+                      <img className="next-fast" src={iconNext2}/>
+                    </b>
                     </div>
                 </InputGroup>
               </div>

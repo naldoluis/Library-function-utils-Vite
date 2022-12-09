@@ -7,8 +7,15 @@
 .first,.prev {margin: -.4px 4px 0 0;font-family: 'Varela Round';height: 29px}
 .next,.last {margin: -.4px 0 0 4px;font-family: 'Varela Round';height: 29px}
 
+.next-page {width: 21px;margin-left: 20px}
+.prev-page {width: 21px;margin-right: 20px;transform: rotate(180deg)}
+.prev-fast {transform: rotate(180deg);width: 32px;margin-right: 15px}
+.next-fast {width: 32px;margin-left: 15px}
+
 .lang {width: 20px}
 .cam {width: 16px;margin-top: -5px}
+
+.next-page,.prev-page,.prev-fast,.next-fast,.speedometer,.clock {cursor: pointer}
 
 .arrow-up,.arrow-down,.link:hover,.link,.card-title,.clock:hover,.card-desc {color: #fff}
 
@@ -30,10 +37,10 @@
 .card-title {margin: -45px 62px 0 0;font-size: 13px}
 .card-desc {font-size: 12px;margin: -7px 0 0 64px}
 
-.clock {transform: scale(.92);transition: all ease .2s;cursor: pointer}
+.clock {transform: scale(.92);transition: all ease .2s}
 .clock:hover,.speedometer:hover {transform: scale(1);filter: drop-shadow(0 0 .05em)}
 
-.speedometer {transform: scale(.97);transition: all ease .2s;cursor: pointer}
+.speedometer {transform: scale(.97);transition: all ease .2s}
 .speedometer:hover {color: #abd727}
 
 ::-webkit-scrollbar {width: 5px}

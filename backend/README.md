@@ -1207,6 +1207,375 @@ export default connect(mapStateToProps, mapDispatchToProps)(Book)
 
 !J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
                                                                                                                           - ❐ ❌
+# book 2
+
+import React from 'react'
+import { connect } from 'react-redux'
+import { Button, Card, FormControl, Image, InputGroup, Table } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEdit, faFastBackward, faFastForward, faList, faStepBackward, faStepForward, faSearch, faTimes, faTrash } from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom'
+import axios from 'axios'
+import MyToast from '../MyToast'
+import { BASE_URL } from '../../utils/requests'
+import { deleteBook } from '../../services'
+import '../../assets/css/Style.css'
+
+class BookList extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      books: [],
+      search: "",
+      currentPage: 1,
+      booksPerPage: 6,
+      sortDir: "asc"
+    }
+  }
+
+  sortData = () => {
+    setTimeout(() => {
+      this.state.sortDir === "asc"
+        ? this.setState({ sortDir: "desc" })
+        : this.setState({ sortDir: "asc" })
+      this.findAllBooks(this.state.currentPage)
+    }, 500)
+  }
+
+  componentDidMount() {
+    this.findAllBooks(this.state.currentPage)
+  }
+
+  findAllBooks(currentPage) {
+    currentPage -= 1
+    axios(`${BASE_URL}/books?pageNumber=` + currentPage + "&pageSize=" + this.state.booksPerPage + "&sortBy=price&sortDir=" + this.state.sortDir)
+      .then(response => response.data)
+      .then(data => {
+        this.setState({
+          books: data.content,
+          totalPages: data.totalPages,
+          totalElements: data.totalElements,
+          currentPage: data.number + 1
+        })
+      })
+      .catch(error => {
+        console.log(error)
+        localStorage.removeItem("jwtToken")
+        this.props.history.push("/")
+     })
+  }
+
+  deleteBook = bookId => {
+    this.props.deleteBook(bookId)
+    setTimeout(() => {
+      if (this.props.bookObject != null) {
+        this.setState({ show: true })
+        setTimeout(() => this.setState({ show: false }), 2300)
+        this.findAllBooks(this.state.currentPage)
+      } else {
+        this.setState({ show: false })
+      }
+    }, 500)
+  }
+
+  changePage = event => {
+    let targetPage = parseInt(event.target.value)
+    if (this.state.search) {
+      this.searchData(targetPage)
+    } else {
+      this.findAllBooks(targetPage)
+    }
+    this.setState({
+      [event.target.name]: targetPage
+    })
+  }
+
+  firstPage = () => {
+    let firstPage = 1
+    if (this.state.currentPage > firstPage) {
+      if (this.state.search) {
+        this.searchData(firstPage)
+      } else {
+        this.findAllBooks(firstPage)
+      }
+    }
+  }
+
+  prevPage = () => {
+    let prevPage = 1
+    if (this.state.currentPage > prevPage) {
+      if (this.state.search) {
+        this.searchData(this.state.currentPage - prevPage)
+      } else {
+        this.findAllBooks(this.state.currentPage - prevPage)
+      }
+    }
+  }
+
+  nextPage = () => {
+    if (this.state.currentPage < Math.ceil(this.state.totalElements / this.state.booksPerPage)) {
+      if (this.state.search) {
+        this.searchData(this.state.currentPage + 1)
+      } else {
+        this.findAllBooks(this.state.currentPage + 1)
+      }
+    }
+  }
+
+  lastPage = () => {
+    let condition = Math.ceil(this.state.totalElements / this.state.booksPerPage)
+    if (this.state.currentPage < condition) {
+      if (this.state.search) {
+        this.searchData(condition)
+      } else {
+        this.findAllBooks(condition)
+      }
+    }
+  }
+
+  searchChange = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+  }
+
+  cancelSearch = () => {
+    this.setState({ search: "" })
+    this.findAllBooks(this.state.currentPage)
+  }
+
+  searchData = currentPage => {
+    currentPage -= 1
+    axios(`${BASE_URL}/books/search/` + this.state.search + "?page=" + currentPage + "&size=" + this.state.booksPerPage)
+      .then(response => response.data)
+      .then(data => {
+        this.setState({
+          books: data.content,
+          totalPages: data.totalPages,
+          totalElements: data.totalElements,
+          currentPage: data.number + 1
+        })
+     })
+  }
+
+  render() {
+    const { books, currentPage, totalPages, search } = this.state
+
+    return (
+      <div>
+        <div style={{ display: this.state.show ? "block" : "none" }}>
+          <MyToast message="Book Deleted Successfully." type="danger"/>
+        </div>
+        <Card className="border-dark bg-dark text-white">
+          <Card.Header>
+            <div style={{ float: "left" }}>
+              <FontAwesomeIcon icon={faList}/> Book List
+            </div>
+            <div style={{ float: "right" }}>
+              <InputGroup size="sm">
+                <FormControl
+                  placeholder="Search"
+                  name="search"
+                  value={search}
+                  className="border-secondary bg-dark text-white"
+                  onChange={this.searchChange}
+                />
+                <div>
+                  <Button
+                    className="find"
+                    size="sm"
+                    variant="outline-warning"
+                    onClick={this.searchData}
+                  >
+                    <FontAwesomeIcon icon={faSearch}/>
+                  </Button>
+                  <Button
+                    className="clean-find"
+                    size="sm"
+                    variant="outline-danger"
+                    onClick={this.cancelSearch}
+                  >
+                    <FontAwesomeIcon icon={faTimes}/>
+                  </Button>
+                </div>
+              </InputGroup>
+            </div>
+          </Card.Header>
+          <Card.Body>
+            <Table bordered hover striped variant="dark">
+              <thead>
+                <tr className="table-title">
+                  <th className="border-secondary">Title</th>
+                  <th className="border-secondary">Author</th>
+                  <th className="border-secondary">ISBN Number</th>
+                  <th className="border-secondary" onClick={this.sortData}>
+                    Price{" "}
+                    <div className={this.state.sortDir === "asc" ? "arrow arrow-up" : "arrow arrow-down"}
+                    >
+                      {" "}
+                    </div>
+                  </th>
+                  <th className="border-secondary">Language</th>
+                  <th className="border-secondary">Genre</th>
+                  <th className="border-secondary">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                {books.length === 0 ? (
+                  <tr align="center">
+                    <td colSpan="7">No Books Available.</td>
+                  </tr>
+                ) : (
+                  books.map(book => (
+                    <tr key={book.id}>
+                      <td className="table-content border-secondary">
+                        <Image src={book.photo} roundedCircle width="32" height="32"/>{" - "}
+                        {book.title}
+                      </td>
+                      <td className="table-content border-secondary" align="center">{book.author}</td>
+                      <td className="table-content border-secondary" align="center">{book.isbn}</td>
+                      <td className="table-content border-secondary" align="center">💲{book.price.toFixed(2)}</td>
+                      <td className="table-content border-secondary" align="center">{book.language}</td>
+                      <td className="table-content border-secondary" align="center">{book.genre}</td>
+                      <td className="border-secondary" align="center">
+                          <Link to={"/edit/" + book.id} className="btn btn-sm edit">
+                            <FontAwesomeIcon icon={faEdit}/>
+                          </Link>{" "}
+                          <Button
+                            className="delete"
+                            size="sm"
+                            variant="outline-info"
+                            onClick={() => this.deleteBook(book.id)}
+                          >
+                            <FontAwesomeIcon icon={faTrash}/>
+                          </Button>
+                      </td>
+                    </tr>
+                  ))
+                )}
+              </tbody>
+            </Table>
+          </Card.Body>
+          {books.length > 0 ? (
+            <Card.Footer>
+              <div style={{ float: "left", fontSize: "15px" }}>
+                Showing Page {currentPage} of {totalPages}
+              </div>
+              <div style={{ float: "right" }}>
+                <InputGroup size="sm">
+                  <div>
+                    <Button
+                      className="first bg-info text-light"
+                      size="sm"
+                      variant="outline-info"
+                      disabled={currentPage === 1 ? true : false}
+                      onClick={this.firstPage}
+                    >
+                      <FontAwesomeIcon icon={faFastBackward}/> First
+                    </Button>
+                    <Button
+                      className="prev bg-success text-light"
+                      size="sm"
+                      variant="outline-success"
+                      disabled={currentPage === 1 ? true : false}
+                      onClick={this.prevPage}
+                    >
+                      <FontAwesomeIcon icon={faStepBackward}/> Prev
+                    </Button>
+                    </div>
+                  <FormControl
+                    size="sm"
+                    className="border-secondary text-white page-num bg-dark"
+                    value={currentPage}
+                    onChange={this.changePage}
+                  />
+                  <div>
+                    <Button
+                      className="next bg-warning text-dark"
+                      size="sm"
+                      variant="outline-warning"
+                      disabled={currentPage === totalPages ? true : false}
+                      onClick={this.nextPage}
+                    >
+                      <FontAwesomeIcon icon={faStepForward}/> Next
+                    </Button>
+                    <Button
+                      className="last bg-danger text-light"
+                      size="sm"
+                      variant="outline-danger"
+                      disabled={currentPage === totalPages ? true : false}
+                      onClick={this.lastPage}
+                    >
+                      <FontAwesomeIcon icon={faFastForward}/> Last
+                    </Button>
+                    </div>
+                </InputGroup>
+              </div>
+            </Card.Footer>
+          ) : null}
+        </Card>
+      </div>
+    )}}
+
+const mapStateToProps = state => {
+  return {
+    bookObject: state.book
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    deleteBook: bookId => dispatch(deleteBook(bookId))
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(BookList)
+  
+# CSS
+
+.page-num {width: 50px !important;height: 28px !important}
+.arrow {width: 0;height: 0;margin-top: 5px;border-left: 5px solid transparent;border-right: 5px solid transparent;display: inline-block}
+.arrow-up {border-bottom: 10px solid}
+.arrow-down {border-top: 10px solid}
+.title-home {font-size: 13.5px;font-weight: 400;font-family: 'Segoe UI', sans-serif;padding-top: 5px}
+
+.first,.prev {margin: -.4px 4px 0 0;font-family: 'Varela Round';height: 29px}
+.next,.last {margin: -.4px 0 0 4px;font-family: 'Varela Round';height: 29px}
+
+.lang {width: 20px}
+.cam {width: 16px;margin-top: -5px}
+
+.arrow-up,.arrow-down,.link:hover,.link,.card-title,.clock:hover,.card-desc {color: #fff}
+
+.card-title,.link,.table-title,.page-num {text-align: center}
+
+.input-password,.input-email,.input-name,.input-phone {margin: 9px 9px;background: #e8f0fe}
+.lock,.envelope,.name,.phone {margin-top: 12px;width: 40px}
+
+.link {background: #b00fd0;border-radius: 3px;width: 90px;height: 31.3px;padding-top: 4.5px;font-size: 14px}
+.link:hover {background: #9f0ebc}
+
+.table-title {font-size: 14.1px;color: #bebcbc;font-family: 'Varela Round'}
+.table-content {font-size: 13.7px}
+
+.purchase-button {font-size: 12px;margin: 7px 0 0 50px;height: 25px;width: 90px;color: #333;background: #bbbe10;font-weight: 500;border-radius: .3rem}
+.purchase-button:hover {background: #abd727}
+
+.card-photo {width: 77px;margin: 54px;border-radius: 3%}
+.card-title {margin: -45px 62px 0 0;font-size: 13px}
+.card-desc {font-size: 12px;margin: -7px 0 0 64px}
+
+.clock {transform: scale(.92);transition: all ease .2s;cursor: pointer}
+.clock:hover,.speedometer:hover {transform: scale(1);filter: drop-shadow(0 0 .05em)}
+
+.speedometer {transform: scale(.97);transition: all ease .2s;cursor: pointer}
+.speedometer:hover {color: #abd727}
+
+::-webkit-scrollbar {width: 5px}
+::-webkit-scrollbar-track {background: #606060}
+::-webkit-scrollbar-thumb {background: #bebebe}
+
+!J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
+                                                                                                                          - ❐ ❌
 # Login
 
   return (
