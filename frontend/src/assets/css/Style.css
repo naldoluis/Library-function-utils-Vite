@@ -7,10 +7,10 @@
 .first,.prev {margin: -.4px 4px 0 0;font-family: 'Varela Round';height: 29px}
 .next,.last {margin: -.4px 0 0 4px;font-family: 'Varela Round';height: 29px}
 
-.next-page {width: 21px;margin-left: 20px}
-.prev-page {width: 21px;margin-right: 20px;transform: rotate(180deg)}
-.prev-fast {transform: rotate(180deg);width: 32px;margin-right: 15px}
-.next-fast {width: 32px;margin-left: 15px}
+.next-page {width: 19px;margin-left: 20px}
+.prev-page {width: 19px;margin-right: 20px;transform: rotate(180deg)}
+.prev-fast {transform: rotate(180deg);width: 29px;margin-right: 15px}
+.next-fast {width: 29px;margin-left: 15px}
 
 .lang {width: 20px}
 .cam {width: 16px;margin-top: -5px}
