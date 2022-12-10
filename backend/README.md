@@ -1636,6 +1636,17 @@ export default connect(mapStateToProps, mapDispatchToProps)(BookList)
 
 # App.jsx
 
+window.onbeforeunload = event => {
+    const e = event || window.event
+    e.preventDefault()
+    if (e) {
+      e.returnValue = ""
+    }
+    return ""
+  }
+
+------------------------------------
+
 window.onbeforeunload = function() {
   return ""
 }

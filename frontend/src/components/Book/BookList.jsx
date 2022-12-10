@@ -52,7 +52,6 @@ class BookList extends React.Component {
       .catch(error => {
         console.log(error)
         localStorage.removeItem("jwtToken")
-        this.props.history.push("/")
      })
   }
 
