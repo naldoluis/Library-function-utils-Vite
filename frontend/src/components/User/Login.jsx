@@ -44,7 +44,7 @@ export default function Login(props) {
     <div className="justify-content-md-center form-row">
       <Col xs={5}>
         {show && error && (
-          <Alert variant="secondary" onClose={() => setShow(true)} dismissible>
+          <Alert variant="secondary" onClose={() => setShow(false)} dismissible>
             {error}
           </Alert>
         )}
