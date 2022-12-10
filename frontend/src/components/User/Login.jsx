@@ -32,7 +32,7 @@ export default function Login(props) {
         console.log(error.message)
         setShow(true)
         resetLoginForm()
-        setError(" • Email or password invalid !")
+        setError(" ⛔️ • Email or password invalid !")
      })
   }
 

@@ -2,7 +2,7 @@
 @import "https://fonts.googleapis.com/css?family=Roboto|Varela+Round";
 
 .margin-top {margin-top : 22px}
-.not-found,.clean-find,.edit,.edit:hover,.delete {color: aliceblue}
+.not-found,.clean-find,.edit:hover {color: aliceblue}
 
 .find {background: #f5d20c;color: hwb(0 22% 78%)}
 .clean-find {background: hsl(0, 61%, 47%)}
