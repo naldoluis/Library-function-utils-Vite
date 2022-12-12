@@ -12,7 +12,7 @@ export const saveBook = book => dispatch => {
     })
     .catch(error => {
       dispatch(bookFailure(error))
-    })
+   })
 }
 
 export const fetchBook = bookId => dispatch => {
@@ -25,7 +25,7 @@ export const fetchBook = bookId => dispatch => {
     })
     .catch(error => {
       dispatch(bookFailure(error))
-    })
+   })
 }
 
 export const updateBook = book => dispatch => {
@@ -38,7 +38,7 @@ export const updateBook = book => dispatch => {
     })
     .catch(error => {
       dispatch(bookFailure(error))
-    })
+   })
 }
 
 export const deleteBook = bookId => dispatch => {
@@ -51,7 +51,7 @@ export const deleteBook = bookId => dispatch => {
     })
     .catch(error => {
       dispatch(bookFailure(error))
-    })
+   })
 }
 
 const bookSuccess = book => ({
@@ -80,7 +80,7 @@ export const fetchLanguages = () => dispatch => {
         type: BT.LANGUAGES_FAILURE,
         payload: error
       })
-    })
+   })
 }
 
 export const fetchGenres = () => dispatch => {
@@ -99,5 +99,5 @@ export const fetchGenres = () => dispatch => {
         type: BT.GENRES_FAILURE,
         payload: error
       })
-    })
+   })
 }

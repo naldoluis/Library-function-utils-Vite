@@ -8,10 +8,10 @@
 .clean-find {background: hsl(0, 61%, 47%)}
 
 .edit {background: #598c0e;border: #598c0e;width: 28.2px;color: lightgreen}
-.edit:hover {background: #66a30c}
+.edit:hover {background: hwb(84 5% 36%)}
 
 .delete,.clean-find,.find {margin-left: 4.5px}
-.delete {background: #0a6d88;border: #0a6d88;color: hsl(187, 100%, 60%)}
+.delete {background: hsl(193, 86%, 29%);border: #0a6d88;color: hsl(187, 100%, 60%)}
 
-.toast {position: fixed;top: 10px;right: 10px;z-index: 1;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .2)}
+.toast {position: fixed;top: 10px;right: 10px;z-index: 1;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2)}
 .card-store {background: #383940;width: 1160px;margin-left: -5px}

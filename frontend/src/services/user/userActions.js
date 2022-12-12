@@ -10,7 +10,7 @@ export const fetchUsers = () => dispatch => {
     })
     .catch(error => {
       dispatch(userFailure(error.message))
-    })
+   })
 }
 
 export const registerUser = userObject => async dispatch => {
