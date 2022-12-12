@@ -270,33 +270,31 @@ export const BASE_URL = import.meta.env.VITE_BACKEND_URL
                                       private String language;	  ==> language
                                       private String genre;		    ==>	genre
 
-<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><!><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 
-INSERT INTO tb_user(name, email, mobile, password) VALUES ('Maria', 'maria@gmail.com', '9787456540', '1234')
-INSERT INTO tb_user(name, email, mobile, password) VALUES ('Joao', 'joao@gmail.com', '9787456541', '1235')
-INSERT INTO tb_user(name, email, mobile, password) VALUES ('Cida ❤', 'cida@gmail.com', '9787456542', '1236')
-INSERT INTO tb_user(name, email, mobile, password) VALUES ('Natalia', 'natalia@gmail.com', '9787456543', '1237')
-INSERT INTO tb_user(name, email, mobile, password) VALUES ('Talita', 'tata@gmail.com', '9787456544', '1238')
+System.out.println(new BCryptPasswordEncoder().encode("????"));
+                                                          \
+>                                                           gera uma senha encode que você pode acompanhar pelo console
 
-INSERT INTO tb_user(name, email, mobile, password) VALUES ('Maria', 'test@user.com', '9787456540', '$2a$10$2KeflGXrfayDYOZlNzSrgeRTG/26lwjiuKAhsZxAk2lkPjLuZlNaG')
-INSERT INTO tb_user(name, email, mobile, password) VALUES ('Joao', 'test@admin.com', '9787456541', '$2a$10$2KeflGXrfayDYOZlNzSrgeRTG/26lwjiuKAhsZxAk2lkPjLuZlNaG')
-
----------------------------------------------------------------------------------------------------------------------------------
                                     [✔️] import.sql + [Application.java method 2]
 
-INSERT INTO tb_user(name, email, mobile, password) VALUES ('Test Admin', 'test@admin.com', '25032019200', 'testadmin')
-INSERT INTO tb_user(name, email, mobile, password) VALUES ('Test User', 'test@user.com', '25032019200', 'testuser')
+INSERT INTO tb_user(name, email, mobile, password) VALUES ('Test Admin', 'test@admin.com', '25032019200', '$2a$10$VLc6qbT.0npkJQBarvY7LOgTFou0U2KhCXRRYeQnkCmvfLz7ro7gK')
+
+INSERT INTO tb_user(name, email, mobile, password) VALUES ('Test User', 'test@user.com', '25032019200', '$2a$10$Yz5kYsZMwuy/2WeuZidE0.hdqftuPa.4wE09b1zjLU.fej8RiQ9Da')
 
 INSERT INTO tb_role(name) VALUES ('ADMIN')
 INSERT INTO tb_role(name) VALUES ('USER')
+_____________________________________________________________,
+INSERT INTO tb_role VALUES (gen_random_uuid(), 'ROLE_ADMIN)  |
+INSERT INTO tb_role VALUES (gen_random_uuid(), 'ROLE_USER)   |
+¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨`
+[\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\]
 
----------------------------------------------------------------------------------------------------------------------------------
-
-INSERT INTO tb_role VALUES (gen_random_uuid(), 'ROLE_ADMIN)
-INSERT INTO tb_role VALUES (gen_random_uuid(), 'ROLE_USER)
-
-INSERT INTO tb_user(name, email, mobile, password) VALUES ('Maria', 'maria@gmail.com', '9787456540', (SELECT ENCODE(DIGEST('1234', 'sha512'), 'hex')))
-INSERT INTO tb_user(name, email, mobile, password) VALUES ('Joao', 'joao@gmail.com', '9787456541', (SELECT ENCODE(DIGEST('1235', 'sha512'), 'hex')))
+INSERT INTO tb_user(name, email, mobile, password) VALUES ('Maria', 'maria@gmail.com', '9787456540', '123')
+INSERT INTO tb_user(name, email, mobile, password) VALUES ('Joao', 'joao@gmail.com', '9787456541', '123')
+INSERT INTO tb_user(name, email, mobile, password) VALUES ('Cida ❤', 'cida@gmail.com', '9787456542', '123')
+INSERT INTO tb_user(name, email, mobile, password) VALUES ('Natalia', 'natalia@gmail.com', '9787456543', '123')
+INSERT INTO tb_user(name, email, mobile, password) VALUES ('Talita', 'tata@gmail.com', '9787456544', '123')
 
 INSERT INTO tb_user VALUES ('f051a0ab-5d4e-41e4-967d-2827d948d57a', '$2a$10$2KeflGXrfayDYOZlNzSrgeRTG/26lwjiuKAhsZxAk2lkPjLuZlNaG', 'maria')
 INSERT INTO tb_user VALUES ('05efdfb1-e1b9-4f09-8abc-968905db6b11', '$2a$10$2KeflGXrfayDYOZlNzSrgeRTG/26lwjiuKAhsZxAk2lkPjLuZlNaG', 'joao')																 🔑									                 🔓  |
@@ -1204,331 +1202,6 @@ const mapDispatchToProps = dispatch => {
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Book)
-
-!J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
-                                                                                                                          - ❐ ❌
-# book 2
-
-import React from 'react'
-import { connect } from 'react-redux'
-import { Button, Card, FormControl, Image, InputGroup, Table } from 'react-bootstrap'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEdit, faFastBackward, faFastForward, faList, faStepBackward, faStepForward, faSearch, faTimes, faTrash } from '@fortawesome/free-solid-svg-icons'
-import { Link } from 'react-router-dom'
-import axios from 'axios'
-import MyToast from '../MyToast'
-import { BASE_URL } from '../../utils/requests'
-import { deleteBook } from '../../services'
-import '../../assets/css/Style.css'
-
-class BookList extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      books: [],
-      search: "",
-      currentPage: 1,
-      booksPerPage: 6,
-      sortDir: "asc"
-    }
-  }
-
-  sortData = () => {
-    setTimeout(() => {
-      this.state.sortDir === "asc"
-        ? this.setState({ sortDir: "desc" })
-        : this.setState({ sortDir: "asc" })
-      this.findAllBooks(this.state.currentPage)
-    }, 500)
-  }
-
-  componentDidMount() {
-    this.findAllBooks(this.state.currentPage)
-  }
-
-  findAllBooks(currentPage) {
-    currentPage -= 1
-    axios(`${BASE_URL}/books?pageNumber=` + currentPage + "&pageSize=" + this.state.booksPerPage + "&sortBy=price&sortDir=" + this.state.sortDir)
-      .then(response => response.data)
-      .then(data => {
-        this.setState({
-          books: data.content,
-          totalPages: data.totalPages,
-          totalElements: data.totalElements,
-          currentPage: data.number + 1
-        })
-      })
-      .catch(error => {
-        console.log(error)
-        localStorage.removeItem("jwtToken")
-        this.props.history.push("/")
-     })
-  }
-
-  deleteBook = bookId => {
-    this.props.deleteBook(bookId)
-    setTimeout(() => {
-      if (this.props.bookObject != null) {
-        this.setState({ show: true })
-        setTimeout(() => this.setState({ show: false }), 2300)
-        this.findAllBooks(this.state.currentPage)
-      } else {
-        this.setState({ show: false })
-      }
-    }, 500)
-  }
-
-  changePage = event => {
-    let targetPage = parseInt(event.target.value)
-    if (this.state.search) {
-      this.searchData(targetPage)
-    } else {
-      this.findAllBooks(targetPage)
-    }
-    this.setState({
-      [event.target.name]: targetPage
-    })
-  }
-
-  firstPage = () => {
-    let firstPage = 1
-    if (this.state.currentPage > firstPage) {
-      if (this.state.search) {
-        this.searchData(firstPage)
-      } else {
-        this.findAllBooks(firstPage)
-      }
-    }
-  }
-
-  prevPage = () => {
-    let prevPage = 1
-    if (this.state.currentPage > prevPage) {
-      if (this.state.search) {
-        this.searchData(this.state.currentPage - prevPage)
-      } else {
-        this.findAllBooks(this.state.currentPage - prevPage)
-      }
-    }
-  }
-
-  nextPage = () => {
-    if (this.state.currentPage < Math.ceil(this.state.totalElements / this.state.booksPerPage)) {
-      if (this.state.search) {
-        this.searchData(this.state.currentPage + 1)
-      } else {
-        this.findAllBooks(this.state.currentPage + 1)
-      }
-    }
-  }
-
-  lastPage = () => {
-    let condition = Math.ceil(this.state.totalElements / this.state.booksPerPage)
-    if (this.state.currentPage < condition) {
-      if (this.state.search) {
-        this.searchData(condition)
-      } else {
-        this.findAllBooks(condition)
-      }
-    }
-  }
-
-  searchChange = event => {
-    this.setState({
-      [event.target.name]: event.target.value
-    })
-  }
-
-  cancelSearch = () => {
-    this.setState({ search: "" })
-    this.findAllBooks(this.state.currentPage)
-  }
-
-  searchData = currentPage => {
-    currentPage -= 1
-    axios(`${BASE_URL}/books/search/` + this.state.search + "?page=" + currentPage + "&size=" + this.state.booksPerPage)
-      .then(response => response.data)
-      .then(data => {
-        this.setState({
-          books: data.content,
-          totalPages: data.totalPages,
-          totalElements: data.totalElements,
-          currentPage: data.number + 1
-        })
-     })
-  }
-
-  render() {
-    const { books, currentPage, totalPages, search } = this.state
-
-    return (
-      <div>
-        <div style={{ display: this.state.show ? "block" : "none" }}>
-          <MyToast message="Book Deleted Successfully." type="danger"/>
-        </div>
-        <Card className="border-dark bg-dark text-white">
-          <Card.Header>
-            <div style={{ float: "left" }}>
-              <FontAwesomeIcon icon={faList}/> Book List
-            </div>
-            <div style={{ float: "right" }}>
-              <InputGroup size="sm">
-                <FormControl
-                  placeholder="Search"
-                  name="search"
-                  value={search}
-                  className="border-secondary bg-dark text-white"
-                  onChange={this.searchChange}
-                />
-                <div>
-                  <Button
-                    className="find"
-                    size="sm"
-                    variant="outline-warning"
-                    onClick={this.searchData}
-                  >
-                    <FontAwesomeIcon icon={faSearch}/>
-                  </Button>
-                  <Button
-                    className="clean-find"
-                    size="sm"
-                    variant="outline-danger"
-                    onClick={this.cancelSearch}
-                  >
-                    <FontAwesomeIcon icon={faTimes}/>
-                  </Button>
-                </div>
-              </InputGroup>
-            </div>
-          </Card.Header>
-          <Card.Body>
-            <Table bordered hover striped variant="dark">
-              <thead>
-                <tr className="table-title">
-                  <th className="border-secondary">Title</th>
-                  <th className="border-secondary">Author</th>
-                  <th className="border-secondary">ISBN Number</th>
-                  <th className="border-secondary" onClick={this.sortData}>
-                    Price{" "}
-                    <div className={this.state.sortDir === "asc" ? "arrow arrow-up" : "arrow arrow-down"}
-                    >
-                      {" "}
-                    </div>
-                  </th>
-                  <th className="border-secondary">Language</th>
-                  <th className="border-secondary">Genre</th>
-                  <th className="border-secondary">Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                {books.length === 0 ? (
-                  <tr align="center">
-                    <td colSpan="7">No Books Available.</td>
-                  </tr>
-                ) : (
-                  books.map(book => (
-                    <tr key={book.id}>
-                      <td className="table-content border-secondary">
-                        <Image src={book.photo} roundedCircle width="32" height="32"/>{" - "}
-                        {book.title}
-                      </td>
-                      <td className="table-content border-secondary" align="center">{book.author}</td>
-                      <td className="table-content border-secondary" align="center">{book.isbn}</td>
-                      <td className="table-content border-secondary" align="center">💲{book.price.toFixed(2)}</td>
-                      <td className="table-content border-secondary" align="center">{book.language}</td>
-                      <td className="table-content border-secondary" align="center">{book.genre}</td>
-                      <td className="border-secondary" align="center">
-                          <Link to={"/edit/" + book.id} className="btn btn-sm edit">
-                            <FontAwesomeIcon icon={faEdit}/>
-                          </Link>{" "}
-                          <Button
-                            className="delete"
-                            size="sm"
-                            variant="outline-info"
-                            onClick={() => this.deleteBook(book.id)}
-                          >
-                            <FontAwesomeIcon icon={faTrash}/>
-                          </Button>
-                      </td>
-                    </tr>
-                  ))
-                )}
-              </tbody>
-            </Table>
-          </Card.Body>
-          {books.length > 0 ? (
-            <Card.Footer>
-              <div style={{ float: "left", fontSize: "15px" }}>
-                Showing Page {currentPage} of {totalPages}
-              </div>
-              <div style={{ float: "right" }}>
-                <InputGroup size="sm">
-                  <div>
-                    <Button
-                      className="first bg-info text-light"
-                      size="sm"
-                      variant="outline-info"
-                      disabled={currentPage === 1 ? true : false}
-                      onClick={this.firstPage}
-                    >
-                      <FontAwesomeIcon icon={faFastBackward}/> First
-                    </Button>
-                    <Button
-                      className="prev bg-success text-light"
-                      size="sm"
-                      variant="outline-success"
-                      disabled={currentPage === 1 ? true : false}
-                      onClick={this.prevPage}
-                    >
-                      <FontAwesomeIcon icon={faStepBackward}/> Prev
-                    </Button>
-                    </div>
-                  <FormControl
-                    size="sm"
-                    className="border-secondary text-white page-num bg-dark"
-                    value={currentPage}
-                    onChange={this.changePage}
-                  />
-                  <div>
-                    <Button
-                      className="next bg-warning text-dark"
-                      size="sm"
-                      variant="outline-warning"
-                      disabled={currentPage === totalPages ? true : false}
-                      onClick={this.nextPage}
-                    >
-                      <FontAwesomeIcon icon={faStepForward}/> Next
-                    </Button>
-                    <Button
-                      className="last bg-danger text-light"
-                      size="sm"
-                      variant="outline-danger"
-                      disabled={currentPage === totalPages ? true : false}
-                      onClick={this.lastPage}
-                    >
-                      <FontAwesomeIcon icon={faFastForward}/> Last
-                    </Button>
-                    </div>
-                </InputGroup>
-              </div>
-            </Card.Footer>
-          ) : null}
-        </Card>
-      </div>
-    )}}
-
-const mapStateToProps = state => {
-  return {
-    bookObject: state.book
-  }
-}
-
-const mapDispatchToProps = dispatch => {
-  return {
-    deleteBook: bookId => dispatch(deleteBook(bookId))
-  }
-}
-export default connect(mapStateToProps, mapDispatchToProps)(BookList)
   
 # CSS
 
@@ -1587,13 +1260,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(BookList)
           </Alert>
         )}
 
-        {show && error && (
-          <Alert variant="secondary" onClose={() => setShow(true)} dismissible>
-            {error}
-          </Alert>
-        )}
-
-!J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
+!J------------------------------------------------------------------------------------------------------------------------------J!
                                                                                                                           - ❐ ❌
 # book (edit) with fetch
 
@@ -1632,7 +1299,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(BookList)
     this.setState(this.initialState)
   }
 
-!J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
+!J------------------------------------------------------------------------------------------------------------------------------J!
 
 # App.jsx
 
@@ -1645,17 +1312,17 @@ window.onbeforeunload = event => {
     return ""
   }
 
-------------------------------------
+!J------------------------------------------------------------------------------------------------------------------------------J!
 
-window.onbeforeunload = function() {
-  return ""
-}
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.0.0)
 
-!J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
-
-\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-											  	                         !J 🔧 UPDATE 🔧 !J
-\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+>										  	                                 * [UPDATE] *
                                                                                                                           - ❐ ❌
 # SpringSecurityConfig (FilterChain)
 
