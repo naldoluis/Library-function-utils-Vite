@@ -284,10 +284,10 @@ INSERT INTO tb_user(name, email, mobile, password) VALUES ('Test User', 'test@us
 
 INSERT INTO tb_role(name) VALUES ('ADMIN')
 INSERT INTO tb_role(name) VALUES ('USER')
-_____________________________________________________________,
-INSERT INTO tb_role VALUES (gen_random_uuid(), 'ROLE_ADMIN)  |
-INSERT INTO tb_role VALUES (gen_random_uuid(), 'ROLE_USER)   |
-¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨`
+_________________________________________________________,
+INSERT INTO tb_role VALUES (gen_random_uuid(), 'ADMIN')  |
+INSERT INTO tb_role VALUES (gen_random_uuid(), 'USER')   |
+¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨`
 [\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\]
 
 INSERT INTO tb_user(name, email, mobile, password) VALUES ('Maria', 'maria@gmail.com', '9787456540', '123')
