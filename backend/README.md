@@ -278,9 +278,9 @@ System.out.println(new BCryptPasswordEncoder().encode("????"));
 
                                     [✔️] import.sql + [Application.java method 2]
 
-INSERT INTO tb_user(name, email, mobile, password) VALUES ('Test Admin', 'test@admin.com', '25032019200', '$2a$10$VLc6qbT.0npkJQBarvY7LOgTFou0U2KhCXRRYeQnkCmvfLz7ro7gK')
+INSERT INTO tb_user(name, email, mobile, password, role_id) VALUES ('Test Admin', 'test@admin.com', '25032019200', '$2a$10$VLc6qbT.0npkJQBarvY7LOgTFou0U2KhCXRRYeQnkCmvfLz7ro7gK', 2)
 
-INSERT INTO tb_user(name, email, mobile, password) VALUES ('Test User', 'test@user.com', '25032019200', '$2a$10$Yz5kYsZMwuy/2WeuZidE0.hdqftuPa.4wE09b1zjLU.fej8RiQ9Da')
+INSERT INTO tb_user(name, email, mobile, password, role_id) VALUES ('Test User', 'test@user.com', '25032019200', '$2a$10$Yz5kYsZMwuy/2WeuZidE0.hdqftuPa.4wE09b1zjLU.fej8RiQ9Da', 1)
 
 INSERT INTO tb_role(name) VALUES ('ADMIN')
 INSERT INTO tb_role(name) VALUES ('USER')
