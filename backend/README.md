@@ -424,6 +424,64 @@ public class Application {
 
 !J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
                                                                                                                           - ❐ ❌
+# Role (domain)
+
+package com.library.naldo.domain;
+
+import java.util.Set;
+import javax.persistence.CascadeType;
+import javax.persistence.FetchType;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import org.springframework.security.core.GrantedAuthority;
+import com.library.naldo.utils.ConstantUtils;
+
+@Entity
+@Table(name = "tb_role")
+public class Role implements GrantedAuthority{
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+
+	@Enumerated(EnumType.STRING)
+	private ConstantUtils constantUtils;
+
+	@OneToMany(targetEntity = User.class, mappedBy = "role", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	private Set<User> users;
+
+	public Role() {}
+
+	public Long getId() {
+        return id;
+    }
+
+    public void setRoleId(Long id) {
+        this.id = id;
+    }
+
+    public ConstantUtils getConstantUtils() {
+        return constantUtils;
+    }
+
+    public void setRoleName(ConstantUtils constantUtils) {
+        this.constantUtils = constantUtils;
+    }
+
+	@Override
+	public String getAuthority() {
+        return this.constantUtils.toString();
+	}
+}
+
+!J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
+                                                                                                                          - ❐ ❌
 # BookService with DTO
 
 import org.codehaus.jettison.json.JSONException;
@@ -725,101 +783,6 @@ public class BookController implements Resource<Book> {
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                                                                                                                           - ❐ ❌
 # bookActions using fetch
-
-import axios from 'axios'
-import * as BT from './bookTypes'
-import { BASE_URL } from '../../utils/requests'
-
-export const saveBook = book => {
-  return dispatch => {
-    dispatch({
-      type: BT.SAVE_BOOK_REQUEST
-    })
-
-    axios.post(`${BASE_URL}/books`, book)
-      .then(response => {
-        dispatch(bookSuccess(response.data))
-      })
-      .catch(error => {
-        dispatch(bookFailure(error))
-     })
-  }}
-
-export const fetchBook = bookId => {
-  return dispatch => {
-    dispatch({
-      type: BT.FETCH_BOOK_REQUEST
-    })
-    axios(`${BASE_URL}/books/` + bookId)
-      .then(response => {
-        dispatch(bookSuccess(response.data))
-      })
-      .catch(error => {
-        dispatch(bookFailure(error))
-     })
-  }}
-
-export const updateBook = book => {
-  return dispatch => {
-    dispatch({
-      type: BT.UPDATE_BOOK_REQUEST
-    })
-    axios.put(`${BASE_URL}/books`, book)
-      .then(response => {
-        dispatch(bookSuccess(response.data))
-      })
-      .catch(error => {
-        dispatch(bookFailure(error))
-     })
-  }}
-
-export const deleteBook = bookId => {
-  return dispatch => {
-    dispatch({
-      type: BT.DELETE_BOOK_REQUEST
-    })
-    axios.delete(`${BASE_URL}/books/` + bookId)
-      .then(response => {
-        dispatch(bookSuccess(response.data))
-      })
-      .catch(error => {
-        dispatch(bookFailure(error))
-     })
-  }}
-
-const bookSuccess = book => {
-  return {
-    type: BT.BOOK_SUCCESS,
-    payload: book
-  }
-}
-
-const bookFailure = error => {
-  return {
-    type: BT.BOOK_FAILURE,
-    payload: error
-  }
-}
-
-findBookById = (bookId) => {
-  axios("http://localhost:8080/rest/books/" +bookId)
-  .then(response => {
-    if(response.data != null) {
-      this.setState({
-        id: response.data.id,
-        title: response.data.title,
-        author: response.data.author,
-        photo: response.data.photo,
-        isbn: response.data.isbn,
-        price: response.data.price,
-        language: response.data.language,
-        genre: response.data.genre
-      })
-    }
-  }).catch(error => {
-    console.error("Error - "+error)
-  })
-}
 
 findBookById = (bookId) => {
   fetch("http://localhost:8080/rest/books/" +bookId)
@@ -1323,7 +1286,7 @@ window.onbeforeunload = event => {
  :: Spring Boot ::                (v3.0.0)
 
 >										  	                                 * [UPDATE] *
-                                                                                                                          - ❐ ❌
+
 # SpringSecurityConfig (FilterChain)
 
 package com.library.naldo.config;
