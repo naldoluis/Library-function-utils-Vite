@@ -338,6 +338,27 @@ export default function Book(props) {
   const book = useSelector(state => state.book)
   const dispatch = useDispatch()
 
+  const saveBook = () => {
+    dispatch(saveBook(book))
+  }
+
+  const fetchBook = () => {
+    dispatch(fetchBook(bookId))
+  }
+
+  const updateBook = () => {
+    dispatch(updateBook(book))
+  }
+
+/*   const fetchLanguages = () => {
+    dispatch(fetchLanguages())
+  }
+
+  const fetchLanguages = () => {
+    dispatch(fetchGenres())
+  }
+ */
+
 /*   useEffect(() => {
     if (bookId) {
       const findBookById(bookId)
@@ -347,27 +368,27 @@ export default function Book(props) {
   }, [] */
 
   const findAllLanguages = () => {
-    this.props.fetchLanguages()
+    books.fetchLanguages()
     setTimeout(() => {
-      let bookLanguages = this.props.bookObject.languages
+      let bookLanguages = books.languages
       if (bookLanguages) {
-        this.setState({
+        setBooks({
           languages: [{ value: "", display: "Select Language" }].concat(
             bookLanguages.map(language => {
               return { value: language, display: language }
            }))
         })
-        this.findAllGenres()
+        findAllGenres()
       }
     }, 100)
   }
 
   const findAllGenres = () => {
-    this.props.fetchGenres()
+    books.fetchGenres()
     setTimeout(() => {
-      let bookGenres = this.props.bookObject.genres
+      let bookGenres = books.genres
       if (bookGenres) {
-        this.setState({
+        setBooks({
           genres: [{ value: "", display: "Select Genre" }].concat(
             bookGenres.map(genre => {
               return { value: genre, display: genre }
@@ -378,7 +399,7 @@ export default function Book(props) {
   }
 
   const findBookById = bookId => {
-    this.props.fetchBook(bookId)
+    books.fetchBook(bookId)
     setTimeout(() => {
       let book = this.props.bookObject.book
       if (book != null) {
@@ -439,13 +460,13 @@ export default function Book(props) {
       genre: books.genres
     }
 
-    this.props.updateBook(bookEdit)
+    books.updateBook(bookEdit)
     setTimeout(() => {
-      if (this.props.bookObject.book != null) {
-        this.setState({ show: true, method: "put" })
-        setTimeout(() => this.setState({ show: false }), 2300)
+      if (books != null) {
+        setBooks({ show: true, method: "put" })
+        setTimeout(() => setBooks({ show: false }), 2300)
       } else {
-        this.setState({ show: false })
+        setBooks({ show: false })
       }
     }, 2000)
     setBooks(initialState)
