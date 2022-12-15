@@ -1,5 +1,6 @@
 import { Col, Container } from 'react-bootstrap'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Bonus from './components/Bonus/Bonus'
 import Book from './components/Book/Book'
 import BookList from './components/Book/BookList'
 import Footer from './components/Footer'
@@ -28,6 +29,7 @@ export default function App() {
               <Route path="/list" element={<BookList/>}/>
               <Route path="/register" element={<Register/>}/>
               <Route path="/store" element={<Store/>}/>
+              <Route path="/bonus" element={<Bonus/>}/>
               <Route path="/user" element={<UserList/>}/>
               <Route path="/login" element={<Login/>}/>
               <Route path="/logout" element={<Login/>}/>

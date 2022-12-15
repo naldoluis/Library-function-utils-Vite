@@ -1,0 +1,33 @@
+import { Card } from 'react-bootstrap'
+
+export default function Bonus () {
+
+  VanillaTilt.init(document.querySelectorAll('.card'), {
+    max: 29,
+    speed: 1000,
+    glare: false,
+    "max-glare": 1
+})
+
+    return (
+      <>
+        <Card className="card-store" style={{ border: "2px solid #eee", borderRadius: "20px" }}>
+         <Card.Header>
+          <Card.Body className="row" style={{ height: "385px" }}>
+
+           <div>
+             <h4 style={{ fontFamily: "Varela Round", fontWeight: "bold", color: "#fff" }}>PROMOTIONAL CARD</h4>
+           </div>
+              <img src='https://images.manning.com/360/480/resize/book/9/fd98cd2-f249-4675-989a-96736b84fef1/Bejeck-Kafka-HI.png' style={{ width: "250px", height: "344px", marginLeft: "500px", borderRadius: "7px" }}/>
+      
+           </Card.Body>
+
+            <Card.Footer style={{ textAlign: "right", color: "#fff" }}>
+             <div>
+               <h6 style={{ fontFamily: "Varela Round", color: "#fff" }}>Serial Number: 0989-0798-7498-798-697-80.01</h6>
+             </div>
+           </Card.Footer>
+         </Card.Header>
+        </Card>
+      </>
+    )}
