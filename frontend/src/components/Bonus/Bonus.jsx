@@ -21,7 +21,7 @@ export default function Bonus () {
                 <div style={{ fontFamily: "sans-serif", color: "#fff", fontSize: "12.7px" }}>
 
                   <h4 className='text-warning' style={{ margin: "26px" }}>20% DISCOUNT</h4>
-                    <h6>Description : Kafka Stream in Action</h6>
+                    <h6>Description : Kafka Streams in Action</h6>
                       <br></br>
                     <h6>William P. Bejeck Jr.</h6>
                     <img src='https://www.danyprint.com.br/wp-content/uploads/2020/08/codigo-de-barras.png' style={{ width: "90px", height: "34px" }}/>
