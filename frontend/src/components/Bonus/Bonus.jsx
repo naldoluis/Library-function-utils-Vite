@@ -24,10 +24,10 @@ export default function Bonus () {
                     <h6>Description : Kafka Stream in Action</h6>
                       <br></br>
                     <h6>William P. Bejeck Jr.</h6>
+                    <img src='https://www.danyprint.com.br/wp-content/uploads/2020/08/codigo-de-barras.png' style={{ width: "90px", height: "34px" }}/>
                   </div>
                  </div>
                 </div>
-
               <img src='https://images.manning.com/360/480/resize/book/9/fd98cd2-f249-4675-989a-96736b84fef1/Bejeck-Kafka-HI.png' style={{ width: "200px", height: "224px", marginLeft: "70px", borderRadius: "7px" }}/>
             </Card.Body>
 
