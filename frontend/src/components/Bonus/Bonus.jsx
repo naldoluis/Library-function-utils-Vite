@@ -7,20 +7,29 @@ export default function Bonus () {
     speed: 1000,
     glare: false,
     "max-glare": 1
-})
+ })
 
     return (
       <>
         <Card className="card-store" style={{ border: "2px solid #eee", borderRadius: "10px", width: "800px", margin: "auto" }}>
          <Card.Header>
           <Card.Body className="row" style={{ height: "205px" }}>
-
            <div>
              <h5 style={{ fontFamily: "Varela Round", fontWeight: "bold", color: "#fff" }}>PROMOTIONAL CARD</h5>
-           </div>
-              <img src='https://images.manning.com/360/480/resize/book/9/fd98cd2-f249-4675-989a-96736b84fef1/Bejeck-Kafka-HI.png' style={{ width: "200px", height: "224px", marginLeft: "270px", borderRadius: "7px" }}/>
-      
-           </Card.Body>
+
+               <div style={{ border: ".1px solid #787878", height: "205px", width: "420px", background: "#383940", borderRadius: "5px", textAlign: "center" }}>
+                <div style={{ fontFamily: "sans-serif", color: "#fff", fontSize: "12.7px" }}>
+
+                  <h4 className='text-warning' style={{ padding: "6px" }}>20% DISCOUNT</h4>
+                    <h3>Description : Kafka Stream in Action</h3>
+                      <br></br>
+                    <h5>William P. Bejeck Jr.</h5>
+                  </div>
+                 </div>
+                </div>
+
+              <img src='https://images.manning.com/360/480/resize/book/9/fd98cd2-f249-4675-989a-96736b84fef1/Bejeck-Kafka-HI.png' style={{ width: "200px", height: "224px", marginLeft: "70px", borderRadius: "7px" }}/>
+            </Card.Body>
 
             <Card.Footer style={{ textAlign: "right", color: "#fff" }}>
              <div>
