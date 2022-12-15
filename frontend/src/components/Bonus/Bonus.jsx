@@ -11,19 +11,19 @@ export default function Bonus () {
 
     return (
       <>
-        <Card className="card-store" style={{ border: "2px solid #eee", borderRadius: "10px", width: "800px", margin: "auto" }}>
+        <Card className="card-store" style={{ border: "2px solid #eee", borderRadius: "9px", width: "800px", margin: "auto" }}>
          <Card.Header>
           <Card.Body className="row" style={{ height: "205px" }}>
            <div>
              <h5 style={{ fontFamily: "Varela Round", fontWeight: "bold", color: "#fff" }}>PROMOTIONAL CARD</h5>
 
-               <div style={{ border: ".1px solid #787878", height: "205px", width: "420px", background: "#383940", borderRadius: "5px", textAlign: "center" }}>
+               <div style={{ border: ".1px solid #5e5e5e", height: "205px", width: "420px", background: "#383940", borderRadius: "5px", textAlign: "center" }}>
                 <div style={{ fontFamily: "sans-serif", color: "#fff", fontSize: "12.7px" }}>
 
-                  <h4 className='text-warning' style={{ padding: "6px" }}>20% DISCOUNT</h4>
-                    <h3>Description : Kafka Stream in Action</h3>
+                  <h4 className='text-warning' style={{ margin: "26px" }}>20% DISCOUNT</h4>
+                    <h6>Description : Kafka Stream in Action</h6>
                       <br></br>
-                    <h5>William P. Bejeck Jr.</h5>
+                    <h6>William P. Bejeck Jr.</h6>
                   </div>
                  </div>
                 </div>
