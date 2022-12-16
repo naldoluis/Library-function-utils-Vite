@@ -315,7 +315,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(Book) */
 
 //                                             useDispatch and useSelector
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { Button, Card, Col, Form } from 'react-bootstrap'
@@ -326,11 +326,9 @@ import MyToast from '../MyToast'
 import iconCam from '../../assets/camera.png'
 import iconLang from '../../assets/language.png'
 
-export default function Book(props) {
-  
+export default function Book() {
+
   const [books, setBooks] = useState([])
-  const [genres, setGenres] = useState([])
-  const [languages, setLanguages] = useState([])
   const [show, setShow] = useState(false)
 
   const initialState = { id: "", title: "", author: "", photo: "", isbn: "", price: "", language: "", genre: "" }
@@ -338,9 +336,9 @@ export default function Book(props) {
   const book = useSelector(state => state.book)
   const dispatch = useDispatch()
 
-  const saveBook = () => {
+/*   const saveBook = () => {
     dispatch(saveBook(book))
-  }
+  } */
 
   const fetchBook = () => {
     dispatch(fetchBook(bookId))
@@ -350,27 +348,18 @@ export default function Book(props) {
     dispatch(updateBook(book))
   }
 
-/*   const fetchLanguages = () => {
+  const fetchLanguages = () => {
     dispatch(fetchLanguages())
   }
 
-  const fetchLanguages = () => {
+  const fetchGenres = () => {
     dispatch(fetchGenres())
   }
- */
-
-/*   useEffect(() => {
-    if (bookId) {
-      const findBookById(bookId)
-      })
-    }
-    const findAllLanguages()
-  }, [] */
 
   const findAllLanguages = () => {
     books.fetchLanguages()
     setTimeout(() => {
-      let bookLanguages = books.languages
+      let bookLanguages = this.props.bookObject.languages
       if (bookLanguages) {
         setBooks({
           languages: [{ value: "", display: "Select Language" }].concat(
@@ -386,7 +375,7 @@ export default function Book(props) {
   const findAllGenres = () => {
     books.fetchGenres()
     setTimeout(() => {
-      let bookGenres = books.genres
+      let bookGenres = this.props.bookObject.genres
       if (bookGenres) {
         setBooks({
           genres: [{ value: "", display: "Select Genre" }].concat(
@@ -403,7 +392,7 @@ export default function Book(props) {
     setTimeout(() => {
       let book = this.props.bookObject.book
       if (book != null) {
-        this.setState({
+        setBooks({
           id: book.id,
           title: book.title,
           author: book.author,
@@ -437,10 +426,10 @@ export default function Book(props) {
     saveBook(bookSaved)
     setTimeout(() => {
       if (books != null) {
-        setBooks({ show: true, method: "post" })
+        setShow({ show: true, method: "post" })
         setTimeout(() => setBooks({ show: false }), 2300)
       } else {
-        setBooks({ show: false })
+        setShow({ show: false })
       }
     }, 2000)
     setBooks(initialState)
@@ -463,10 +452,10 @@ export default function Book(props) {
     books.updateBook(bookEdit)
     setTimeout(() => {
       if (books != null) {
-        setBooks({ show: true, method: "put" })
+        setShow({ show: true, method: "put" })
         setTimeout(() => setBooks({ show: false }), 2300)
       } else {
-        setBooks({ show: false })
+        setShow({ show: false })
       }
     }, 2000)
     setBooks(initialState)
