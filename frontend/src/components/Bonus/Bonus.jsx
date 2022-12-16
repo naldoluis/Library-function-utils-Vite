@@ -11,7 +11,7 @@ export default function Bonus () {
 
     return (
       <>
-        <Card style={{ border: "5px solid #c2c2c2", borderRadius: "7px", width: "800px", margin: "auto", background: "#383940" }}>
+        <Card style={{ border: "5px solid #c2c2c2", borderRadius: "9px", width: "800px", margin: "auto", background: "#383940" }}>
          <Card.Header>
           <Card.Body className="row" style={{ height: "205px" }}>
            <div>

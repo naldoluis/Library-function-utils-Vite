@@ -53,10 +53,6 @@ var VanillaTilt = function () {
       return setting === "" || setting === true || setting === 1
     }
 
-    /**
-     * Method returns element what will be listen mouse events
-     * @return {Node}
-     */
     getElementListener() {
       if (this.fullPageListening) {
         return window.document
@@ -76,10 +72,6 @@ var VanillaTilt = function () {
       return this.element
     }
 
-    /**
-     * Method set listen methods for this.elementListener
-     * @return {Node}
-     */
     addEventListeners() {
       this.onMouseEnterBind = this.onMouseEnter.bind(this)
       this.onMouseMoveBind = this.onMouseMove.bind(this)
@@ -351,7 +343,7 @@ var VanillaTilt = function () {
     updateClientSize() {
       this.clientWidth = window.innerWidth
         || document.documentElement.clientWidth
-        || document.body.clientWidth;
+        || document.body.clientWidth
   
       this.clientHeight = window.innerHeight
         || document.documentElement.clientHeight
@@ -428,7 +420,7 @@ var VanillaTilt = function () {
       let newSettings = {}
       for (var property in defaultSettings) {
         if (property in settings) {
-          newSettings[property] = settings[property];
+          newSettings[property] = settings[property]
         } else if (this.element.hasAttribute("data-tilt-" + property)) {
           let attribute = this.element.getAttribute("data-tilt-" + property)
           try {
