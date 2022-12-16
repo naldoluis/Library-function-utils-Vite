@@ -1,4 +1,4 @@
-var VanillaTilt = (function () {
+var VanillaTilt = function () {
 
   class VanillaTilt {
     constructor(element, settings = {}) {
@@ -100,9 +100,6 @@ var VanillaTilt = (function () {
       }
     }
 
-    /**
-     * Method remove event listeners from current this.elementListener
-     */
     removeEventListeners() {
       this.elementListener.removeEventListener("mouseenter", this.onMouseEnterBind)
       this.elementListener.removeEventListener("mouseleave", this.onMouseLeaveBind)
@@ -170,7 +167,7 @@ var VanillaTilt = (function () {
 
       this.event = {
         clientX: posX + this.left,
-        clientY: posY + this.top,
+        clientY: posY + this.top
       }
       this.updateCall = requestAnimationFrame(this.updateBind)
     }
@@ -258,8 +255,8 @@ var VanillaTilt = (function () {
       x = Math.min(Math.max(x, 0), 1)
       y = Math.min(Math.max(y, 0), 1)
 
-      let tiltX = (this.reverse * (this.settings.max - x * this.settings.max * 2)).toFixed(2);
-      let tiltY = (this.reverse * (y * this.settings.max * 2 - this.settings.max)).toFixed(2);
+      let tiltX = (this.reverse * (this.settings.max - x * this.settings.max * 2)).toFixed(2)
+      let tiltY = (this.reverse * (y * this.settings.max * 2 - this.settings.max)).toFixed(2)
       let angle = Math.atan2(this.event.clientX - (this.left + this.width / 2), -(this.event.clientY - (this.top + this.height / 2))) * (180 / Math.PI)
 
       return {
@@ -288,7 +285,7 @@ var VanillaTilt = (function () {
         "scale3d(" + this.settings.scale + ", " + this.settings.scale + ", " + this.settings.scale + ")"
 
       if (this.glare) {
-        this.glareElement.style.transform = `rotate(${values.angle}deg) translate(-50%, -50%)`;
+        this.glareElement.style.transform = `rotate(${values.angle}deg) translate(-50%, -50%)`
         this.glareElement.style.opacity = `${values.percentageY * this.settings["max-glare"] / 100}`
       }
       this.element.dispatchEvent(new CustomEvent("tiltChange", {
@@ -297,10 +294,6 @@ var VanillaTilt = (function () {
       this.updateCall = null
     }
 
-    /**
-     * Appends the glare element (if glarePrerender equals false)
-     * and sets the default style
-     */
     prepareGlare() {
       if (!this.glarePrerender) {
 
@@ -339,7 +332,7 @@ var VanillaTilt = (function () {
         "background-image": `linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%)`,
         "transform": "rotate(180deg) translate(-50%, -50%)",
         "transform-origin": "0% 0%",
-        "opacity": "0",
+        "opacity": "0"
       })
       this.updateGlareSize()
     }
@@ -477,4 +470,4 @@ var VanillaTilt = (function () {
 
     VanillaTilt.init(document.querySelectorAll("[data-tilt]"))
   }
-  return VanillaTilt}())
+  return VanillaTilt}()
