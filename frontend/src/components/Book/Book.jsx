@@ -337,7 +337,7 @@ export default function Book() {
   const dispatch = useDispatch()
 
   const findAllLanguages = () => {
-    dispatch(fetchLanguages())
+    dispatch(findAllLanguages())
     setTimeout(() => {
       let bookLanguages = this.props.bookObject.languages
       if (bookLanguages) {
@@ -368,7 +368,7 @@ export default function Book() {
   }
 
   const findBookById = bookId => {
-    dispatch(fetchBook(bookId))
+    dispatch(findBookById(bookId))
     setTimeout(() => {
       let book = this.props.bookObject.book
       if (book != null) {
@@ -402,6 +402,7 @@ export default function Book() {
       language: books.languages,
       genre: books.genres
     }
+
     dispatch(saveBook(bookSaved))
     setTimeout(() => {
       if (books != null) {
@@ -414,7 +415,7 @@ export default function Book() {
     setBooks(initialState)
   }
 
-  const updatedBook = event => {
+  const updateBook = event => {
     event.preventDefault()
 
     const bookEdit = {
@@ -427,7 +428,8 @@ export default function Book() {
       language: books.languages,
       genre: books.genres
     }
-    dispatch(saveBook(bookEdit))
+
+    dispatch(updateBook(bookEdit))
     setTimeout(() => {
       if (books != null) {
         setShow({ show: true, method: "put" })
@@ -458,7 +460,7 @@ export default function Book() {
             {books.id ? "Update Book" : "Add New Book"}
           </Card.Header>
           <Form
-            onSubmit={books.id ? updatedBook : submitBook}
+            onSubmit={books.id ? updateBook : submitBook}
             id="bookFormId"
           >
             <Card.Body>
