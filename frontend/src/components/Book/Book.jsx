@@ -336,28 +336,8 @@ export default function Book() {
   const book = useSelector(state => state.book)
   const dispatch = useDispatch()
 
-/*   const saveBook = () => {
-    dispatch(saveBook(book))
-  } */
-
-  const fetchBook = () => {
-    dispatch(fetchBook(bookId))
-  }
-
-  const updateBook = () => {
-    dispatch(updateBook(book))
-  }
-
-  const fetchLanguages = () => {
-    dispatch(fetchLanguages())
-  }
-
-  const fetchGenres = () => {
-    dispatch(fetchGenres())
-  }
-
   const findAllLanguages = () => {
-    books.fetchLanguages()
+    dispatch(fetchLanguages())
     setTimeout(() => {
       let bookLanguages = this.props.bookObject.languages
       if (bookLanguages) {
@@ -373,7 +353,7 @@ export default function Book() {
   }
 
   const findAllGenres = () => {
-    books.fetchGenres()
+    dispatch(fetchGenres())
     setTimeout(() => {
       let bookGenres = this.props.bookObject.genres
       if (bookGenres) {
@@ -388,7 +368,7 @@ export default function Book() {
   }
 
   const findBookById = bookId => {
-    books.fetchBook(bookId)
+    dispatch(fetchBook(bookId))
     setTimeout(() => {
       let book = this.props.bookObject.book
       if (book != null) {
@@ -422,8 +402,7 @@ export default function Book() {
       language: books.languages,
       genre: books.genres
     }
-
-    saveBook(bookSaved)
+    dispatch(saveBook(bookSaved))
     setTimeout(() => {
       if (books != null) {
         setShow({ show: true, method: "post" })
@@ -448,8 +427,7 @@ export default function Book() {
       language: books.languages,
       genre: books.genres
     }
-
-    books.updateBook(bookEdit)
+    dispatch(saveBook(bookEdit))
     setTimeout(() => {
       if (books != null) {
         setShow({ show: true, method: "put" })
