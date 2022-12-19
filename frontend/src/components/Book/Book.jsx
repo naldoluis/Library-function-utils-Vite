@@ -415,7 +415,7 @@ export default function Book() {
     setBooks(initialState)
   }
 
-  const updateBook = event => {
+  const updatedBook = event => {
     event.preventDefault()
 
     const bookEdit = {
@@ -460,7 +460,7 @@ export default function Book() {
             {books.id ? "Update Book" : "Add New Book"}
           </Card.Header>
           <Form
-            onSubmit={books.id ? updateBook : submitBook}
+            onSubmit={books.id ? updatedBook : submitBook}
             id="bookFormId"
           >
             <Card.Body>
@@ -549,7 +549,7 @@ export default function Book() {
                     onChange={bookChange}
                     className="bg-dark border-secondary text-white"
                   >
-                    {/* {books.languages.map(language => (
+                    {/* {book.languages.map(language => (
                       <option key={language.value} value={language.value}>
                         {language.display}
                       </option>
@@ -567,7 +567,7 @@ export default function Book() {
                     onChange={bookChange}
                     className="bg-dark border-secondary text-white"
                   >
-                    {/* {books.genres.map(genre => (
+                    {/* {book.genres.map(genre => (
                       <option key={genre.value} value={genre.value}>
                         {genre.display}
                       </option>
