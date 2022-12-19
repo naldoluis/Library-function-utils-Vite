@@ -1,13 +1,16 @@
+import { useEffect } from 'react'
 import { Card } from 'react-bootstrap'
 
 export default function Bonus () {
 
-  VanillaTilt.init(document.querySelectorAll('.card'), {
-    max: 29,
-    speed: 1000,
-    glare: false,
-    "max-glare": 1
- })
+  useEffect(() => {
+    VanillaTilt.init(document.querySelectorAll('.card'), {
+      max: 29,
+      speed: 1000,
+      glare: false,
+      "max-glare": 1
+    })
+  })
 
     return (
       <>
