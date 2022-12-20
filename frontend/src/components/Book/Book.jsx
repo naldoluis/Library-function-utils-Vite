@@ -471,7 +471,7 @@ export default function Book() {
                     autoComplete="off"
                     required
                     name="title"
-                    maxLength={35}
+                    maxLength={25}
                     value={books.title ||''}
                     onChange={bookChange}
                     className="bg-dark border-secondary text-white"
@@ -484,7 +484,7 @@ export default function Book() {
                     autoComplete="off"
                     required
                     name="author"
-                    maxLength={35}
+                    maxLength={25}
                     value={books.author ||''}
                     onChange={bookChange}
                     className="bg-dark border-secondary text-white mb-3"
