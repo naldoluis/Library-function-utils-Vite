@@ -471,6 +471,7 @@ export default function Book() {
                     autoComplete="off"
                     required
                     name="title"
+                    maxLength={35}
                     value={books.title ||''}
                     onChange={bookChange}
                     className="bg-dark border-secondary text-white"
@@ -483,6 +484,7 @@ export default function Book() {
                     autoComplete="off"
                     required
                     name="author"
+                    maxLength={35}
                     value={books.author ||''}
                     onChange={bookChange}
                     className="bg-dark border-secondary text-white mb-3"
@@ -515,7 +517,7 @@ export default function Book() {
                   <Form.Control
                     autoComplete="off"
                     required
-                    type="number"
+                    maxLength={9}
                     name="isbn"
                     value={books.isbn ||''}
                     onChange={bookChange}
@@ -530,8 +532,8 @@ export default function Book() {
                   <Form.Control
                     autoComplete="off"
                     required
-                    type="number"
                     name="price"
+                    maxLength={6}
                     value={books.price ||''}
                     onChange={bookChange}
                     className="bg-dark border-secondary text-white"
