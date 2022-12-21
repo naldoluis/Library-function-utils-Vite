@@ -74,6 +74,7 @@ export default function Login() {
                     required
                     autoComplete="off"
                     name="email"
+                    maxLength={34}
                     value={user.email}
                     onChange={credentialChange}
                     className="input-email"
@@ -93,6 +94,7 @@ export default function Login() {
                     autoComplete="off"
                     type={values.showPassword ? "text" : "password"}
                     name="password"
+                    maxLength={16}
                     value={user.password}
                     onChange={credentialChange}
                     className="input-password"

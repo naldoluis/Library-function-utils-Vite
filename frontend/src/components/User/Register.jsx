@@ -95,6 +95,7 @@ export default function Register(props) {
                       required
                       autoComplete="off"
                       name="email"
+                      maxLength={34}
                       value={user.email}
                       onChange={userChange}
                       className="input-email"
@@ -149,7 +150,7 @@ export default function Register(props) {
                     />
                   </InputGroup>
                </Form.Group>
-            </Card.Body>
+             </Card.Body>
             <Card.Footer style={{ textAlign: "right" }}>
               <Button
                 size="sm"
