@@ -171,6 +171,8 @@ class Book extends React.Component {
                     autoComplete="off"
                     required
                     name="title"
+                    pattern="[A-Za-záàâãäéèêëíïîóôõöúùûüýÿšćçñÁÀÂÃÄÉÈÊËÍÏÎÓÔÕÖÚÙÛÜÝŸŠĆÇÑ'/. ]{1,25}"
+                    maxLength={25}
                     value={title ||''}
                     onChange={bookChange}
                     className="bg-dark border-secondary text-white"
@@ -183,6 +185,8 @@ class Book extends React.Component {
                     autoComplete="off"
                     required
                     name="author"
+                    pattern="[A-Za-záàâãäéèêëíïîóôõöúùûüýÿšćçñÁÀÂÃÄÉÈÊËÍÏÎÓÔÕÖÚÙÛÜÝŸŠĆÇÑ'. ]{2,25}"
+                    maxLength={25}
                     value={author ||''}
                     onChange={bookChange}
                     className="bg-dark border-secondary text-white mb-3"
@@ -215,8 +219,9 @@ class Book extends React.Component {
                   <Form.Control
                     autoComplete="off"
                     required
-                    type="number"
                     name="isbn"
+                    pattern="[0-9]{9}"
+                    maxLength={9}
                     value={isbn ||''}
                     onChange={bookChange}
                     className="bg-dark border-secondary text-white mb-3"
@@ -230,8 +235,9 @@ class Book extends React.Component {
                   <Form.Control
                     autoComplete="off"
                     required
-                    type="number"
                     name="price"
+                    pattern="[0-9]{2,3}.[0-9]{2}"
+                    maxLength={6}
                     value={price ||''}
                     onChange={bookChange}
                     className="bg-dark border-secondary text-white"
