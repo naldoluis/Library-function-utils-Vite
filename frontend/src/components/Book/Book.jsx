@@ -517,12 +517,13 @@ export default function Book() {
                   <Form.Control
                     autoComplete="off"
                     required
+                    pattern="[0-9]{9}"
                     maxLength={9}
                     name="isbn"
                     value={books.isbn ||''}
                     onChange={bookChange}
                     className="bg-dark border-secondary text-white mb-3"
-                    placeholder="Enter Book ISBN Number"
+                    placeholder="Enter Book ISBN Number [123456789]"
                   />
                 </Form.Group>
                 </div>
@@ -533,11 +534,12 @@ export default function Book() {
                     autoComplete="off"
                     required
                     name="price"
+                    pattern="[0-9]{3}.[0-9]{2}"
                     maxLength={6}
                     value={books.price ||''}
                     onChange={bookChange}
                     className="bg-dark border-secondary text-white"
-                    placeholder="Enter Book Price"
+                    placeholder="Enter Book Price Ex: 123.45"
                   />
                 </Form.Group>
                 <Form.Group as={Col}>

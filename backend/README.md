@@ -1292,8 +1292,8 @@ window.onbeforeunload = function(){alert('???')}
 
 <Button onclick="myFunction">Show Password</Button>
 
-pattern="[0-9]+([,\.][0-9]+)?"
-pattern="\d{4,4}
+pattern="[A-Za-z]{3}-[0-9]{4}"
+pattern="\d{4}
 step="0.010"
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
