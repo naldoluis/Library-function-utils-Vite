@@ -55,7 +55,7 @@ export default function Register(props) {
               <FontAwesomeIcon icon={faUserPlus}/> Register
             </Card.Header>
             <Card.Body>
-            <div>
+            <Form>
                 <Form.Group as={Col}>
                   <InputGroup>
                   <div>
@@ -73,7 +73,6 @@ export default function Register(props) {
                     />
                   </InputGroup>
                 </Form.Group>
-                </div>
                 <div>
                 <Form.Group as={Col}>
                   <InputGroup>
@@ -94,7 +93,6 @@ export default function Register(props) {
                   </InputGroup>
                 </Form.Group>
                 </div>
-              <div>
                 <Form.Group as={Col}>
                   <InputGroup>
                   <div>
@@ -114,7 +112,7 @@ export default function Register(props) {
                     />
                   </InputGroup>
                 </Form.Group>
-              </div>
+              </Form>
               <div>
                 <Form.Group as={Col}>
                   <InputGroup>

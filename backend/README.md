@@ -1263,22 +1263,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(Book)
   }
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
-
-# App.jsx
-
-window.onbeforeunload = event => {
-    const e = event || window.event
-    e.preventDefault()
-    if (e) {
-      e.returnValue = ""
-    }
-    return ""
-  }
-
-window.onbeforeunload = function(){alert('???')}
-
-!J------------------------------------------------------------------------------------------------------------------------------J!
-
+                                                                                                                          - ❐ ❌
 # input
 
   const myFunction = () => {

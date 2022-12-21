@@ -53,7 +53,7 @@ export default function Login(props) {
             <FontAwesomeIcon icon={faSignInAlt}/> Login
           </Card.Header>
           <Card.Body>
-          <div>
+          <Form>
               <Form.Group as={Col}>
                 <InputGroup>
                 <div>
@@ -72,8 +72,6 @@ export default function Login(props) {
                   />
                 </InputGroup>
               </Form.Group>
-              </div>
-              <div>
               <Form.Group as={Col}>
                 <InputGroup>
                 <div>
@@ -93,7 +91,7 @@ export default function Login(props) {
                   />
                 </InputGroup>
               </Form.Group>
-              </div>
+            </Form>
           </Card.Body>
           <Card.Footer style={{ textAlign: "right" }}>
             <Button
