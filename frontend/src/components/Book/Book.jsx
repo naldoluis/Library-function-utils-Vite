@@ -536,7 +536,7 @@ export default function Book() {
                     autoComplete="off"
                     required
                     name="price"
-                    pattern="[0-9]{3}.[0-9]{2}"
+                    pattern="[0-9]{2,3}.[0-9]{2}"
                     maxLength={6}
                     value={books.price ||''}
                     onChange={bookChange}
