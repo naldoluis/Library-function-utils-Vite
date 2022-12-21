@@ -30,10 +30,6 @@ export default function Register(props) {
     setValues({ ...values, showPassword: !values.showPassword })
   }
 
-  const handleMouseDownPassword = event => {
-    event.preventDefault()
-  }
-
   const dispatch = useDispatch()
 
   const saveUser = () => {
@@ -127,7 +123,6 @@ export default function Register(props) {
                     />
                     <b style={{ margin: "15px -19.5px 0 auto" }}
                       onClick={handleClickShowPassword}
-                      onMouseDown={handleMouseDownPassword}
                    >
                      {values.showPassword ? <FontAwesomeIcon icon={faEye}/> : <FontAwesomeIcon icon={faEyeLowVision}/>}
                    </b>

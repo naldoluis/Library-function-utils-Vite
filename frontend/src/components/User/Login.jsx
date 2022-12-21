@@ -24,10 +24,6 @@ export default function Login() {
     setValues({ ...values, showPassword: !values.showPassword })
   }
 
-  const handleMouseDownPassword = event => {
-    event.preventDefault()
-  }
-
   const credentialChange = event => {
     const { name, value } = event.target
     setUser({ ...user, [name]: value })
@@ -68,7 +64,7 @@ export default function Login() {
           <Card.Body>
           <Form>
               <Form.Group as={Col}>
-                <InputGroup>
+               <InputGroup>
                 <div>
                    <InputGroup.Text className="envelope">
                      <FontAwesomeIcon icon={faEnvelope}/>
@@ -86,7 +82,7 @@ export default function Login() {
                 </InputGroup>
               </Form.Group>
               <Form.Group as={Col}>
-                <InputGroup>
+               <InputGroup>
                 <div>
                    <InputGroup.Text className="lock">
                      <FontAwesomeIcon icon={faLock}/>
@@ -105,7 +101,6 @@ export default function Login() {
                   />
                   <b style={{ margin: "15px -19.5px 0 auto" }}
                     onClick={handleClickShowPassword}
-                    onMouseDown={handleMouseDownPassword}
                   >
                     {values.showPassword ? <FontAwesomeIcon icon={faEye}/> : <FontAwesomeIcon icon={faEyeLowVision}/>}
                   </b>
