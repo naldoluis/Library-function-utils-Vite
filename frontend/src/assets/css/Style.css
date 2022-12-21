@@ -24,7 +24,7 @@
 
 .card-title,.link,.table-title,.page-num {text-align: center}
 
-.input-password,.input-email,.input-name,.input-phone {margin: 9px 9px;background: #e8f0fe}
+.input-password,.input-email,.input-name,.input-phone {margin: 9px 9px}
 .lock,.envelope,.name,.phone {margin-top: 12px;width: 40px}
 
 .link {background: #b00fd0;border-radius: 3px;width: 90px;height: 31.3px;padding-top: 4.5px;font-size: 14px}

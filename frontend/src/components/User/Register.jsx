@@ -77,9 +77,8 @@ export default function Register(props) {
                      </InputGroup.Text>
                   </div>
                     <FormControl
-                      required
                       autoComplete="off"
-                      pattern="[A-Za-za-() ]{2,25}"
+                      pattern="[A-Za-za ]{2,25}"
                       maxLength={25}
                       name="name"
                       value={user.name}
@@ -89,7 +88,6 @@ export default function Register(props) {
                     />
                   </InputGroup>
                 </Form.Group>
-                <div>
                 <Form.Group as={Col}>
                   <InputGroup>
                   <div>
@@ -108,7 +106,6 @@ export default function Register(props) {
                     />
                   </InputGroup>
                 </Form.Group>
-                </div>
                 <Form.Group as={Col}>
                   <InputGroup>
                   <div>
@@ -128,7 +125,7 @@ export default function Register(props) {
                       style={{ borderStartEndRadius: ".22rem", borderEndEndRadius: ".22rem" }}
                       placeholder="Enter Password"
                     />
-                    <b style={{ margin: "15px -18px 0 auto" }}
+                    <b style={{ margin: "15px -19.5px 0 auto" }}
                       onClick={handleClickShowPassword}
                       onMouseDown={handleMouseDownPassword}
                    >
@@ -137,7 +134,6 @@ export default function Register(props) {
                   </InputGroup>
                 </Form.Group>
               </Form>
-              <div>
                 <Form.Group as={Col}>
                   <InputGroup>
                   <div>
@@ -146,7 +142,6 @@ export default function Register(props) {
                      </InputGroup.Text>
                   </div>
                     <FormControl
-                      required
                       autoComplete="off"
                       name="mobile"
                       type="tel"
@@ -158,8 +153,7 @@ export default function Register(props) {
                       placeholder="Mobile Number (xx) 91234-5678"
                     />
                   </InputGroup>
-                </Form.Group>
-                </div>
+               </Form.Group>
             </Card.Body>
             <Card.Footer style={{ textAlign: "right" }}>
               <Button

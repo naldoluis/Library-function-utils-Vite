@@ -103,7 +103,7 @@ export default function Login() {
                     style={{ borderStartEndRadius: ".22rem", borderEndEndRadius: ".22rem" }}
                     placeholder="Enter Password"
                   />
-                  <b style={{ margin: "15px -18px 0 auto" }}
+                  <b style={{ margin: "15px -19.5px 0 auto" }}
                     onClick={handleClickShowPassword}
                     onMouseDown={handleMouseDownPassword}
                   >
