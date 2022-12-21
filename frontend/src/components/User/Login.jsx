@@ -3,10 +3,10 @@ import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { Alert, Button, Card, Col, Form, FormControl, InputGroup } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope, faLock, faSignInAlt, faUndo } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope, faEye, faEyeLowVision, faLock, faSignInAlt, faUndo } from '@fortawesome/free-solid-svg-icons'
 import { authenticateUser } from '../../services'
 
-export default function Login(props) {
+export default function Login() {
   const [error, setError] = useState()
   const [show, setShow] = useState(false)
   const navigate = useNavigate()
@@ -14,6 +14,19 @@ export default function Login(props) {
   const initialState = { email: "", password: "" }
 
   const [user, setUser] = useState(initialState)
+
+  const [values, setValues] = useState({
+    password: "",
+    showPassword: false
+  })
+
+  const handleClickShowPassword = () => {
+    setValues({ ...values, showPassword: !values.showPassword })
+  }
+
+  const handleMouseDownPassword = event => {
+    event.preventDefault()
+  }
 
   const credentialChange = event => {
     const { name, value } = event.target
@@ -57,9 +70,9 @@ export default function Login(props) {
               <Form.Group as={Col}>
                 <InputGroup>
                 <div>
-                    <InputGroup.Text className="envelope">
-                      <FontAwesomeIcon icon={faEnvelope}/>
-                    </InputGroup.Text>
+                   <InputGroup.Text className="envelope">
+                     <FontAwesomeIcon icon={faEnvelope}/>
+                   </InputGroup.Text>
                 </div>
                   <FormControl
                     required
@@ -75,20 +88,27 @@ export default function Login(props) {
               <Form.Group as={Col}>
                 <InputGroup>
                 <div>
-                    <InputGroup.Text className="lock">
-                      <FontAwesomeIcon icon={faLock}/>
-                    </InputGroup.Text>
+                   <InputGroup.Text className="lock">
+                     <FontAwesomeIcon icon={faLock}/>
+                   </InputGroup.Text>
                 </div>
                   <FormControl
                     required
                     autoComplete="off"
-                    type="password"
+                    type={values.showPassword ? "text" : "password"}
                     name="password"
                     value={user.password}
                     onChange={credentialChange}
                     className="input-password"
+                    style={{ borderStartEndRadius: ".22rem", borderEndEndRadius: ".22rem" }}
                     placeholder="Enter Password"
                   />
+                  <b style={{ margin: "15px -18px 0 auto" }}
+                    onClick={handleClickShowPassword}
+                    onMouseDown={handleMouseDownPassword}
+                  >
+                    {values.showPassword ? <FontAwesomeIcon icon={faEye}/> : <FontAwesomeIcon icon={faEyeLowVision}/>}
+                  </b>
                 </InputGroup>
               </Form.Group>
             </Form>

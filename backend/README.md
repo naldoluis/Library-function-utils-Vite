@@ -1264,20 +1264,16 @@ export default connect(mapStateToProps, mapDispatchToProps)(Book)
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
                                                                                                                           - ❐ ❌
-# input
+# app
 
-  const myFunction = () => {
-  var x = document.getElementById("myInput")
-  if (x.type === "password") {
-    x.type = "text"
-  } else {
-    x.type = "password"
+  window.onbeforeunload = event => {
+    const e = event || window.event
+    e.preventDefault()
+    if (e) {
+      e.returnValue = ""
+    }
+    return ""
   }
-}
-
-<Button onclick="myFunction">Show Password</Button>
-
-/\b[A-Za-zÀ-ú][A-Za-zÀ-ú]+,?\s[A-Za-zÀ-ú][A-Za-zÀ-ú]{2,19}\b/gi
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
 

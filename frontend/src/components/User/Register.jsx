@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { Button, Col, Card, Form, FormControl, InputGroup } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope, faLock, faPhone, faUserPlus, faUndo, faUser } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope, faEye, faEyeLowVision, faLock, faPhone, faUserPlus, faUndo, faUser } from '@fortawesome/free-solid-svg-icons'
 import { registerUser } from '../../services'
 import MyToastUser from '../MyToastUser'
 
@@ -19,6 +19,19 @@ export default function Register(props) {
   const userChange = event => {
     const { name, value } = event.target
     setUser({ ...user, [name]: value })
+  }
+
+  const [values, setValues] = useState({
+    password: "",
+    showPassword: false
+  })
+
+  const handleClickShowPassword = () => {
+    setValues({ ...values, showPassword: !values.showPassword })
+  }
+
+  const handleMouseDownPassword = event => {
+    event.preventDefault()
   }
 
   const dispatch = useDispatch()
@@ -59,12 +72,15 @@ export default function Register(props) {
                 <Form.Group as={Col}>
                   <InputGroup>
                   <div>
-                      <InputGroup.Text className="name">
-                        <FontAwesomeIcon icon={faUser}/>
-                      </InputGroup.Text>
+                     <InputGroup.Text className="name">
+                       <FontAwesomeIcon icon={faUser}/>
+                     </InputGroup.Text>
                   </div>
                     <FormControl
+                      required
                       autoComplete="off"
+                      pattern="[A-Za-za-() ]{2,25}"
+                      maxLength={25}
                       name="name"
                       value={user.name}
                       onChange={userChange}
@@ -77,9 +93,9 @@ export default function Register(props) {
                 <Form.Group as={Col}>
                   <InputGroup>
                   <div>
-                      <InputGroup.Text className="envelope">
-                        <FontAwesomeIcon icon={faEnvelope}/>
-                      </InputGroup.Text>
+                     <InputGroup.Text className="envelope">
+                       <FontAwesomeIcon icon={faEnvelope}/>
+                     </InputGroup.Text>
                   </div>
                     <FormControl
                       required
@@ -96,20 +112,28 @@ export default function Register(props) {
                 <Form.Group as={Col}>
                   <InputGroup>
                   <div>
-                      <InputGroup.Text className="lock">
-                        <FontAwesomeIcon icon={faLock}/>
-                      </InputGroup.Text>
+                     <InputGroup.Text className="lock">
+                       <FontAwesomeIcon icon={faLock}/>
+                     </InputGroup.Text>
                   </div>
                     <FormControl
                       required
                       autoComplete="off"
-                      type="password"
+                      type={values.showPassword ? "text" : "password"}
                       name="password"
+                      maxLength={16}
                       value={user.password}
                       onChange={userChange}
                       className="input-password"
+                      style={{ borderStartEndRadius: ".22rem", borderEndEndRadius: ".22rem" }}
                       placeholder="Enter Password"
                     />
+                    <b style={{ margin: "15px -18px 0 auto" }}
+                      onClick={handleClickShowPassword}
+                      onMouseDown={handleMouseDownPassword}
+                   >
+                     {values.showPassword ? <FontAwesomeIcon icon={faEye}/> : <FontAwesomeIcon icon={faEyeLowVision}/>}
+                   </b>
                   </InputGroup>
                 </Form.Group>
               </Form>
@@ -117,18 +141,21 @@ export default function Register(props) {
                 <Form.Group as={Col}>
                   <InputGroup>
                   <div>
-                      <InputGroup.Text className="phone">
-                        <FontAwesomeIcon icon={faPhone}/>
-                      </InputGroup.Text>
+                     <InputGroup.Text className="phone">
+                       <FontAwesomeIcon icon={faPhone}/>
+                     </InputGroup.Text>
                   </div>
                     <FormControl
+                      required
                       autoComplete="off"
-                      type="number"
                       name="mobile"
+                      type="tel"
+                      pattern="[0-9]{2}-[0-9]{5}-[0-9]{4}"
+                      maxLength={11}
                       value={user.mobile}
                       onChange={userChange}
                       className="input-phone"
-                      placeholder="Enter Mobile Number"
+                      placeholder="Mobile Number (xx) 91234-5678"
                     />
                   </InputGroup>
                 </Form.Group>
