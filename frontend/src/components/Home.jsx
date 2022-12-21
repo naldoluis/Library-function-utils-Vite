@@ -22,10 +22,10 @@ export default function Home(props) {
     </Alert>
 
 {/* //--------------------------------------------------------------------------> */}
-    <button variant="primary" onClick={() => setModalShow(true)}>Open</button>
+    <button style={{ borderRadius: "5px", fontFamily: "sans-serif", border: "3px solid #6b5795", background: "#343A40", color: "#fff" }} onClick={() => setModalShow(true)}>Open</button>
      <ModalCustom
         show={modalShow}
         onHide={() => setModalShow(false)}/>
       {/* //--------------------------------------------------------------------------> */}
   </>
-  )}
+)}
