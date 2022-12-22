@@ -7,8 +7,8 @@ import { fetchUsers } from '../../services'
 import '../../assets/css/Style.css'
 
 class UserList extends React.Component {
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
     this.state = {
       users: [],
       currentPage: 1,

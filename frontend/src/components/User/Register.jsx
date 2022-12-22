@@ -7,7 +7,7 @@ import { faEnvelope, faEye, faEyeLowVision, faLock, faPhone, faUserPlus, faUndo,
 import { registerUser } from '../../services'
 import MyToastUser from '../MyToastUser'
 
-export default function Register(props) {
+export default function Register() {
   const [show, setShow] = useState(false)
   const [message, setMessage] = useState("")
   const navigate = useNavigate()

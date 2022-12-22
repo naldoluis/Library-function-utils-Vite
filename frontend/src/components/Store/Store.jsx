@@ -129,7 +129,7 @@ class Store extends React.Component {
                    </button>
                   <ModalCustom
                     show={modalShow}
-                    onClick={() => this.setModalShow(false)}/>
+                    onHide={() => this.setModalShow(false)}/>
                  </div>
                ))
             )}
