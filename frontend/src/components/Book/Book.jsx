@@ -548,7 +548,7 @@ export default function Book() {
                     className="bg-dark border-secondary text-white"
                     placeholder="Enter Book Price Ex: 123.45"
                   />
-                </Form.Group>
+                 </Form.Group>
                 <Form.Group as={Col}>
                   <Form.Label>Language <img className="lang" src={iconLang}/></Form.Label>
                   <Form.Control
@@ -566,7 +566,7 @@ export default function Book() {
                       </option>
                     ))} */}
                   </Form.Control>
-                </Form.Group>
+                 </Form.Group>
                 <Form.Group as={Col}>
                   <Form.Label>Genre 📚</Form.Label>
                   <Form.Control

@@ -170,7 +170,6 @@ class BookList extends React.Component {
                   className="border-secondary bg-dark text-white"
                   onChange={this.searchChange}
                 />
-                <div>
                   <Button
                     className="find"
                     size="sm"
@@ -187,7 +186,6 @@ class BookList extends React.Component {
                   >
                     <FontAwesomeIcon icon={faTimes}/>
                   </Button>
-                </div>
               </InputGroup>
             </div>
           </Card.Header>
@@ -253,35 +251,23 @@ class BookList extends React.Component {
               </div>
               <div style={{ float: "right" }}>
                 <InputGroup size="sm">
-                  <div>
-                    <b
-                      onClick={this.firstPage}
-                    >
+                    <b onClick={this.firstPage}>
                       <img className="prev-fast" src={iconNext2}/>
                     </b>
-                    <b
-                      onClick={this.prevPage}
-                    >
+                    <b onClick={this.prevPage}>
                       <img className="prev-page" src={iconNext1}/>
                     </b>
-                    </div>
                   <FormControl
                     className="border-dark text-white page-num bg-dark"
                     value={currentPage}
                     onChange={this.changePage}
                   />
-                  <div>
-                    <b
-                      onClick={this.nextPage}
-                    >
+                    <b onClick={this.nextPage}>
                       <img className="next-page" src={iconNext1}/>
                     </b>
-                    <b
-                      onClick={this.lastPage}
-                    >
+                    <b onClick={this.lastPage}>
                       <img className="next-fast" src={iconNext2}/>
                     </b>
-                    </div>
                 </InputGroup>
               </div>
             </Card.Footer>

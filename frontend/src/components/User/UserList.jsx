@@ -117,7 +117,6 @@ class UserList extends React.Component {
                 </div>
                 <div style={{ float: "right" }}>
                   <InputGroup size="sm">
-                  <div>
                       <Button
                         className="first bg-warning text-dark"
                         size="sm"
@@ -136,14 +135,12 @@ class UserList extends React.Component {
                       >
                         <FontAwesomeIcon icon={faStepBackward}/> Prev
                       </Button>
-                  </div>
                     <FormControl
                       size="sm"
                       className="border-secondary text-white page-num bg-dark"
                       value={currentPage}
                       onChange={this.changePage}
                     />
-                    <div>
                       <Button
                         className="next bg-success text-light"
                         size="sm"
@@ -162,7 +159,6 @@ class UserList extends React.Component {
                       >
                         <FontAwesomeIcon icon={faFastForward}/> Last
                       </Button>
-                    </div>
                   </InputGroup>
                 </div>
               </Card.Footer>

@@ -65,11 +65,9 @@ export default function Login() {
           <Form>
               <Form.Group as={Col}>
                <InputGroup>
-                <div>
                    <InputGroup.Text className="envelope">
                      <FontAwesomeIcon icon={faEnvelope}/>
                    </InputGroup.Text>
-                </div>
                   <FormControl
                     required
                     autoComplete="off"
@@ -84,11 +82,9 @@ export default function Login() {
               </Form.Group>
               <Form.Group as={Col}>
                <InputGroup>
-                <div>
                    <InputGroup.Text className="lock">
                      <FontAwesomeIcon icon={faLock}/>
                    </InputGroup.Text>
-                </div>
                   <FormControl
                     required
                     autoComplete="off"

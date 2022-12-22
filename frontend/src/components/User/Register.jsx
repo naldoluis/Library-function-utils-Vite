@@ -67,11 +67,9 @@ export default function Register() {
             <Form>
                 <Form.Group as={Col}>
                   <InputGroup>
-                  <div>
                      <InputGroup.Text className="name">
                        <FontAwesomeIcon icon={faUser}/>
                      </InputGroup.Text>
-                  </div>
                     <FormControl
                       autoComplete="off"
                       pattern="[A-Za-za ]{2,25}"
@@ -86,11 +84,9 @@ export default function Register() {
                 </Form.Group>
                 <Form.Group as={Col}>
                   <InputGroup>
-                  <div>
                      <InputGroup.Text className="envelope">
                        <FontAwesomeIcon icon={faEnvelope}/>
                      </InputGroup.Text>
-                  </div>
                     <FormControl
                       required
                       autoComplete="off"
@@ -105,11 +101,9 @@ export default function Register() {
                 </Form.Group>
                 <Form.Group as={Col}>
                   <InputGroup>
-                  <div>
                      <InputGroup.Text className="lock">
                        <FontAwesomeIcon icon={faLock}/>
                      </InputGroup.Text>
-                  </div>
                     <FormControl
                       required
                       autoComplete="off"
@@ -132,11 +126,9 @@ export default function Register() {
               </Form>
                 <Form.Group as={Col}>
                   <InputGroup>
-                  <div>
                      <InputGroup.Text className="phone">
                        <FontAwesomeIcon icon={faPhone}/>
                      </InputGroup.Text>
-                  </div>
                     <FormControl
                       autoComplete="off"
                       name="mobile"

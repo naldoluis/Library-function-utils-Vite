@@ -119,7 +119,7 @@ class Store extends React.Component {
             </Table>
             ) : (
               books.map(book => (
-                <div className="col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3 mb-4"
+               <div className="col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3 mb-4"
                  key={book.id}>
                   <img className="card-photo" src={book.photo}/>
                     <h6 className="card-title">{book.title}</h6>
@@ -130,7 +130,7 @@ class Store extends React.Component {
                   <ModalCustom
                     show={modalShow}
                     onHide={() => this.setModalShow(false)}/>
-                 </div>
+                </div>
                ))
             )}
           </Card.Body>

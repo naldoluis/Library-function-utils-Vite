@@ -12,9 +12,7 @@ export default function Footer() {
     <Navbar fixed="bottom" bg="dark" variant="dark">
       <Container>
         <Col lg={12} className="text-center text-muted">
-          <div>
             {fullYear} - {fullYear + 3}, All Left Reserved by Naldo Luis ☢️
-          </div>
         </Col>
       </Container>
     </Navbar>
