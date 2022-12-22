@@ -6,15 +6,14 @@ export default function ModalCustom(props) {
     <Modal
       {...props}
       size="lg"
-      aria-labelledby="contained-modal-title-vcenter"
       centered
     >
-      <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
+      <Modal.Header style={{ background: "#3c3c3c", color: "#fff" }}>
+        <Modal.Title>
           Modal heading
         </Modal.Title>
       </Modal.Header>
-      <Modal.Body>
+      <Modal.Body style={{ background: "#3c3c3c", color: "#fff" }}>
         <h4>Centered Modal</h4>
         <p>
           Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
@@ -22,8 +21,9 @@ export default function ModalCustom(props) {
           consectetur ac, vestibulum at eros.
         </p>
       </Modal.Body>
-      <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
+      <Modal.Footer style={{ background: "#3c3c3c", color: "#fff" }}>
+        <Button variant="success" onClick={props.onHide}>Purchase</Button>
+        <Button variant="warning" onClick={props.onHide}>Close</Button>
       </Modal.Footer>
     </Modal>
   )}

@@ -5,7 +5,7 @@ import authToken from '../utils/authToken'
 import { useState } from 'react' //---->
 import ModalCustom from './ModalCustom'//---->
 
-export default function Home(props) {
+export default function Home() {
   if (localStorage.jwtToken) {
     authToken(localStorage.jwtToken)
   }

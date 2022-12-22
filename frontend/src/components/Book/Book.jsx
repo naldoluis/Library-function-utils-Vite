@@ -225,7 +225,7 @@ class Book extends React.Component {
                     value={isbn ||''}
                     onChange={bookChange}
                     className="bg-dark border-secondary text-white mb-3"
-                    placeholder="Enter Book ISBN Number"
+                    placeholder="Enter Book ISBN Number [123456789]"
                   />
                 </Form.Group>
                 </div>
@@ -241,7 +241,7 @@ class Book extends React.Component {
                     value={price ||''}
                     onChange={bookChange}
                     className="bg-dark border-secondary text-white"
-                    placeholder="Enter Book Price"
+                    placeholder="Enter Book Price Ex: 123.45"
                   />
                 </Form.Group>
                 <Form.Group as={Col}>
@@ -280,7 +280,7 @@ class Book extends React.Component {
                     ))}
                   </Form.Control>
                 </Form.Group>
-                </div>
+              </div>
             </Card.Body>
             <Card.Footer style={{ textAlign: "right" }}>
               <Button size="sm" variant="success" type="submit">
@@ -586,7 +586,7 @@ export default function Book() {
                     ))} */}
                   </Form.Control>
                 </Form.Group>
-                </div>
+              </div>
             </Card.Body>
             <Card.Footer style={{ textAlign: "right" }}>
               <Button size="sm" variant="success" type="submit">
