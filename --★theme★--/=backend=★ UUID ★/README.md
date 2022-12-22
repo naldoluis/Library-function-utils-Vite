@@ -1263,10 +1263,10 @@ export default connect(mapStateToProps, mapDispatchToProps)(Book)
   }
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
+                                                                                                                          - ❐ ❌
+# app
 
-# App.jsx
-
-window.onbeforeunload = event => {
+  window.onbeforeunload = event => {
     const e = event || window.event
     e.preventDefault()
     if (e) {
