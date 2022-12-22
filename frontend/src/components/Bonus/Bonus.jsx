@@ -21,9 +21,8 @@ export default function Bonus () {
              <h5 style={{ fontFamily: "Varela Round", fontWeight: "bold", color: "#fff" }}>⭐ ⭐PROMOTIONAL CARD⭐ ⭐</h5>
                <div style={{ border: ".1px solid #5e5e5e", height: "200px", width: "420px", background: "#383940", borderRadius: "5px", textAlign: "center" }}>
                 <div style={{ fontFamily: "sans-serif", color: "#fff", fontSize: "12.7px" }}>
-                  <h4 style={{ margin: "22px", color: "#f5d20c" }}>20% DISCOUNT</h4>
-                   <h6>Description : Google Cloud</h6>
-                    <br></br>
+                  <h4 style={{ margin: "25px", color: "#f5d20c" }}>20% DISCOUNT</h4>
+                    <h6>Description : Google Cloud</h6>
                       <h6>JJ Geewax</h6>
                     <img src='https://www.danyprint.com.br/wp-content/uploads/2020/08/codigo-de-barras.png' style={{ width: "108px", height: "34px" }}/>
                    </div>
