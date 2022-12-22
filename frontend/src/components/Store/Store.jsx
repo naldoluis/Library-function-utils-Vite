@@ -172,7 +172,6 @@ import { BASE_URL } from '../../utils/requests'
 import '../../assets/css/Style.css'
 
 export default function Store() {
-
   const [books, setBooks] = useState([])
   const [currentPage, setCurrentPage] = useState(1)
   const [booksPerPage, setBooksPerPage] = useState(8)

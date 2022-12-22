@@ -333,7 +333,6 @@ import iconCam from '../../assets/camera.png'
 import iconLang from '../../assets/language.png'
 
 export default function Book() {
-
   const [books, setBooks] = useState([])
   const [show, setShow] = useState(false)
 

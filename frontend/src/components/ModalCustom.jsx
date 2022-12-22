@@ -2,12 +2,10 @@ import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 
 export default function ModalCustom(props) {
+
   return (
-    <Modal
-      {...props}
-      size="lg"
-      centered
-    >
+    <Modal {...props} size="lg" centered
+     >
       <Modal.Header style={{ background: "#3c3c3c", color: "#fff" }}>
         <Modal.Title>
           Modal heading
