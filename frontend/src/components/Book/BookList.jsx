@@ -13,8 +13,8 @@ import iconNext1 from '../../assets/next1.png'
 import iconNext2 from '../../assets/next2.png'
 
 class BookList extends React.Component {
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
     this.state = {
       books: [],
       search: "",

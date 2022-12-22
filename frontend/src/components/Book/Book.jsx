@@ -11,8 +11,8 @@ import iconCam from '../../assets/camera.png'
 import iconLang from '../../assets/language.png'
 
 class Book extends React.Component {
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
     this.state = this.initialState
     this.state = {
       genres: [],

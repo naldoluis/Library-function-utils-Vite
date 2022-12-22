@@ -1225,6 +1225,42 @@ export default connect(mapStateToProps, mapDispatchToProps)(Book)
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
                                                                                                                           - ❐ ❌
+# Home
+
+import { Alert } from 'react-bootstrap'
+import { useSelector } from 'react-redux'
+import authToken from '../utils/authToken'
+
+import { useState } from 'react' //---->
+import ModalCustom from './ModalCustom'//---->
+
+export default function Home() {
+  if (localStorage.jwtToken) {
+    authToken(localStorage.jwtToken)
+  }
+
+  const auth = useSelector(state => state.auth)
+  const [modalShow, setModalShow] = useState(false) //---->
+
+  return (
+    <>
+    <Alert style={{ background: "#343A40", color: "#fff", fontSize: "30px", fontWeight: "bold", fontFamily: "sans-serif" }}>
+      Welcome to Book Shop <b style={{ color: "#f5d20c", fontSize: "24px", fontWeight: "600" }}>{auth.username}</b>
+      <p className='title-home'>Good friends, good books, nutrition, and a sleepy conscience: this is the ideal life.</p>
+      <p className='title-home'>-- Mark Twain</p>
+    </Alert>
+
+{/* //--------------------------------------------------------------------------> */}
+    <button style={{ borderRadius: "5px", fontFamily: "sans-serif", border: "3px solid #6b5795", background: "#343A40", color: "#fff" }} onClick={() => setModalShow(true)}>Open</button>
+     <ModalCustom
+        show={modalShow}
+        onHide={() => setModalShow(false)}/>
+      {/* //--------------------------------------------------------------------------> */}
+  </>
+)}
+
+!J------------------------------------------------------------------------------------------------------------------------------J!
+                                                                                                                          - ❐ ❌
 # book (edit) with fetch
 
   updateBook = event => {
@@ -1264,7 +1300,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(Book)
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
                                                                                                                           - ❐ ❌
-# app
+# App
 
   window.onbeforeunload = event => {
     const e = event || window.event
