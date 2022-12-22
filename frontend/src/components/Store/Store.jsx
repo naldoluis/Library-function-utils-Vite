@@ -3,6 +3,7 @@ import axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBookQuran, faMoneyBills } from '@fortawesome/free-solid-svg-icons'
 import { Button, Card, Table } from 'react-bootstrap'
+import Spinner from 'react-bootstrap/Spinner'
 import { BASE_URL } from '../../utils/requests'
 import ModalCustom from '../ModalCustom'
 import '../../assets/css/Style.css'
@@ -113,7 +114,9 @@ class Store extends React.Component {
             <Table bordered hover striped variant="dark">
               <tbody>
                 <tr align="center">
-                  <td>No Books Available.</td>
+                  <td>
+                    <Spinner style={{ margin: "200px" }} animation="border"></Spinner>
+                  </td>
                 </tr>
               </tbody>
             </Table>
