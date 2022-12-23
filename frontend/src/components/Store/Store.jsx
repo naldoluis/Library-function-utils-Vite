@@ -106,16 +106,16 @@ class Store extends React.Component {
     return (
       <Card className="card-store">
         <Card.Header>
-          <b style={{ color: "#fff", fontWeight: "400" }}>
+          <b style={{ color: "#fff", fontWeight: 400 }}>
             <FontAwesomeIcon icon={faBookQuran}/> Edition Limited
           </b>
-          <Card.Body className="row" style={{ overflowY: "scroll", height: "485px" }}>
+          <Card.Body className="row" style={{ overflowY: "scroll", height: 485 }}>
             {books.length === 0 ? (
               <Table bordered hover striped variant="dark">
                 <tbody>
                   <tr align="center">
                     <td>
-                      <Spinner style={{ margin: "200px" }} animation="border"></Spinner>
+                      <Spinner style={{ margin: 200 }} animation="border"></Spinner>
                     </td>
                   </tr>
                 </tbody>
@@ -139,7 +139,7 @@ class Store extends React.Component {
           </Card.Body>
           {books.length > 0 ? (
             <Card.Footer style={{ textAlign: "right", color: "#fff" }}>
-              <div style={{ float: "left", fontSize: "15px" }}>
+              <div style={{ float: "left", fontSize: 15 }}>
                 Showing Page {currentPage} of {totalPages}
               </div>
               <Button

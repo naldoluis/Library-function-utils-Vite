@@ -16,7 +16,7 @@ export default function Welcome() {
   return (
     <Card bg="dark" text="light">
       <Card.Header>Quotes</Card.Header>
-      <Card.Body style={{ overflowY: "scroll", height: "570px" }}>
+      <Card.Body style={{ overflowY: "scroll", height: 570 }}>
         {quotes &&
           quotes.map((quote, id) => (
             <blockquote className="blockquote mb-0" key={id}>
