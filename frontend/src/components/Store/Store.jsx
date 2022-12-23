@@ -111,25 +111,25 @@ class Store extends React.Component {
           </b>
           <Card.Body className="row" style={{ overflowY: "scroll", height: "485px" }}>
             {books.length === 0 ? (
-            <Table bordered hover striped variant="dark">
-              <tbody>
-                <tr align="center">
-                  <td>
-                    <Spinner style={{ margin: "200px" }} animation="border"></Spinner>
-                  </td>
-                </tr>
-              </tbody>
-            </Table>
+              <Table bordered hover striped variant="dark">
+                <tbody>
+                  <tr align="center">
+                    <td>
+                      <Spinner style={{ margin: "200px" }} animation="border"></Spinner>
+                    </td>
+                  </tr>
+                </tbody>
+              </Table>
             ) : (
               books.map(book => (
-               <div className="col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3 mb-4"
-                 key={book.id}>
+                <div className="col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3 mb-4"
+                  key={book.id}>
                   <img className="card-photo" src={book.photo}/>
-                    <h6 className="card-title">{book.title}</h6>
-                   <div className="card-desc">{book.genre}</div>
-                   <button className="purchase-button"
-                      onClick={() => this.setModalShow(true)}><FontAwesomeIcon icon={faMoneyBills}/> Buy
-                   </button>
+                  <h6 className="card-title">{book.title}</h6>
+                  <div className="card-desc">{book.genre}</div>
+                  <button className="purchase-button"
+                    onClick={() => this.setModalShow(true)}><FontAwesomeIcon icon={faMoneyBills}/> Buy
+                  </button>
                   <ModalCustom
                     show={modalShow}
                     onHide={() => this.setModalShow(false)}/>

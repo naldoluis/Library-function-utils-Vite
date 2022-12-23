@@ -9,7 +9,7 @@ export default function Footer() {
   }, [fullYear])
 
   return (
-    <Navbar fixed="bottom" bg="dark" variant="dark">
+    <Navbar fixed="bottom" bg="dark">
       <Container>
         <Col lg={12} className="text-center text-muted">
             {fullYear} - {fullYear + 3}, All Left Reserved by Naldo Luis ☢️
