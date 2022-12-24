@@ -246,7 +246,7 @@ class BookList extends React.Component {
           </Card.Body>
           {books.length > 0 ? (
             <Card.Footer>
-              <div style={{ float: "left", fontSize: "15px" }}>
+              <div style={{ float: "left", fontSize: 15 }}>
                 Showing Page {currentPage} of {totalPages}
               </div>
               <div style={{ float: "right" }}>

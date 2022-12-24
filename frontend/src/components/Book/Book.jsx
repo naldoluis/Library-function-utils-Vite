@@ -321,8 +321,8 @@ export default connect(mapStateToProps, mapDispatchToProps)(Book) */
 
 //                                             useDispatch and useSelector
 
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { Link, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { Button, Card, Col, Form } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -332,19 +332,30 @@ import MyToast from '../MyToast'
 import iconCam from '../../assets/camera.png'
 import iconLang from '../../assets/language.png'
 
-export default function Book() {
+export default function Book(props) {
   const [books, setBooks] = useState([])
+  const [languages, setLanguages] = useState([])
+  const [genres, setGenres] = useState([])
   const [show, setShow] = useState(false)
 
   const initialState = { id: "", title: "", author: "", photo: "", isbn: "", price: "", language: "", genre: "" }
+
+  const { bookId } = useParams()
+  
+  useEffect(() => {
+    if(bookId) {
+     findBookById(bookId)
+   }
+    //findAllLanguages()
+}, [])
 
   const book = useSelector(state => state.book)
   const dispatch = useDispatch()
 
   const findAllLanguages = () => {
-    dispatch(findAllLanguages())
+    dispatch(fetchLanguages())
     setTimeout(() => {
-      let bookLanguages = this.props.bookObject.languages
+      let bookLanguages = props.bookObject.languages
       if (bookLanguages) {
         setBooks({
           languages: [{ value: "", display: "Select Language" }].concat(
@@ -360,7 +371,7 @@ export default function Book() {
   const findAllGenres = () => {
     dispatch(fetchGenres())
     setTimeout(() => {
-      let bookGenres = this.props.bookObject.genres
+      let bookGenres = props.bookObject.genres
       if (bookGenres) {
         setBooks({
           genres: [{ value: "", display: "Select Genre" }].concat(
@@ -373,9 +384,9 @@ export default function Book() {
   }
 
   const findBookById = bookId => {
-    dispatch(findBookById(bookId))
+    dispatch(fetchBook(bookId))
     setTimeout(() => {
-      let book = this.props.bookObject.book
+      let book = props.bookObject.book
       if (book != null) {
         setBooks({
           id: book.id,
@@ -399,13 +410,13 @@ export default function Book() {
     event.preventDefault()
 
     const bookSaved = {
-      title: books.title,
-      author: books.author,
-      photo: books.photo,
-      isbn: books.isbn,
-      price: books.price,
-      language: books.languages,
-      genre: books.genres
+      title: book.title,
+      author: book.author,
+      photo: book.photo,
+      isbn: book.isbn,
+      price: book.price,
+      language: book.languages,
+      genre: book.genres
     }
 
     dispatch(saveBook(bookSaved))
@@ -424,14 +435,14 @@ export default function Book() {
     event.preventDefault()
 
     const bookEdit = {
-      id: books.id,
-      title: books.title,
-      author: books.author,
-      photo: books.photo,
-      isbn: books.isbn,
-      price: books.price,
-      language: books.languages,
-      genre: books.genres
+      id: book.id,
+      title: book.title,
+      author: book.author,
+      photo: book.photo,
+      isbn: book.isbn,
+      price: book.price,
+      language: book.languages,
+      genre: book.genres
     }
 
     dispatch(updateBook(bookEdit))
@@ -590,7 +601,7 @@ export default function Book() {
             <Card.Footer style={{ textAlign: "right" }}>
               <Button size="sm" variant="success" type="submit">
                  <FontAwesomeIcon icon={faSave}/>{" "}
-                {books.id ? "Update" : "Save"}
+                {bookId ? "Update" : "Save"}
               </Button>{" "}
               <Button
                 size="sm"
