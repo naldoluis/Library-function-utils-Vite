@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
 import { Card } from 'react-bootstrap'
-import Seal from '../../assets/seal.png'
 
 export default function Bonus() {
 
@@ -15,7 +14,7 @@ export default function Bonus() {
 
   return (
     <>
-      <Card style={{ border: "2.6px solid #6b5795", borderRadius: 9, width: 800, margin: "auto", background: "#183940" }}>
+      <Card style={{ border: "4px solid #6b5795", borderRadius: 20, width: 800, margin: "auto", background: "#183940" }}>
         <Card.Header>
           <Card.Body className="row" style={{ height: 205 }}>
             <div>
@@ -34,7 +33,7 @@ export default function Bonus() {
           <Card.Footer style={{ textAlign: "right", color: "#fff" }}>
             <h6 style={{ fontFamily: "Varela Round", fontSize: 12.4, paddingTop: 40 }}>
               Serial Number: 0989-0798-7498-798-697-80.01
-              <img src={Seal} style={{ width: 34, height: 30, marginRight: -35, paddingLeft: 10 }}/>
+              <img src='https://www.helpconsult.com.br/wp-content/uploads/2019/04/selo_siteNOVO.png' style={{ width: 48, height: 40, marginRight: -35, paddingLeft: 10 }}/>
             </h6>
           </Card.Footer>
         </Card.Header>
