@@ -334,8 +334,8 @@ import iconLang from '../../assets/language.png'
 
 export default function Book(props) {
   const [books, setBooks] = useState([])
-  const [languages, setLanguages] = useState([])
-  const [genres, setGenres] = useState([])
+//  const [languages, setLanguages] = useState([])
+//  const [genres, setGenres] = useState([])
   const [show, setShow] = useState(false)
 
   const initialState = { id: "", title: "", author: "", photo: "", isbn: "", price: "", language: "", genre: "" }
@@ -346,7 +346,7 @@ export default function Book(props) {
     if(bookId) {
      findBookById(bookId)
    }
-    //findAllLanguages()
+    findAllLanguages()
 }, [])
 
   const book = useSelector(state => state.book)
@@ -355,7 +355,7 @@ export default function Book(props) {
   const findAllLanguages = () => {
     dispatch(fetchLanguages())
     setTimeout(() => {
-      let bookLanguages = props.bookObject.languages
+      let bookLanguages = books.languages
       if (bookLanguages) {
         setBooks({
           languages: [{ value: "", display: "Select Language" }].concat(
@@ -371,7 +371,7 @@ export default function Book(props) {
   const findAllGenres = () => {
     dispatch(fetchGenres())
     setTimeout(() => {
-      let bookGenres = props.bookObject.genres
+      let bookGenres = books.genres
       if (bookGenres) {
         setBooks({
           genres: [{ value: "", display: "Select Genre" }].concat(
@@ -389,14 +389,14 @@ export default function Book(props) {
       let book = props.bookObject.book
       if (book != null) {
         setBooks({
-          id: book.id,
-          title: book.title,
-          author: book.author,
-          photo: book.photo,
-          isbn: book.isbn,
-          price: book.price,
-          language: book.languages,
-          genre: book.genres
+          id: books.id,
+          title: books.title,
+          author: books.author,
+          photo: books.photo,
+          isbn: books.isbn,
+          price: books.price,
+          language: books.languages,
+          genre: books.genres
         })
       }
     }, 1000)
@@ -410,13 +410,13 @@ export default function Book(props) {
     event.preventDefault()
 
     const bookSaved = {
-      title: book.title,
-      author: book.author,
-      photo: book.photo,
-      isbn: book.isbn,
-      price: book.price,
-      language: book.languages,
-      genre: book.genres
+      title: books.title,
+      author: books.author,
+      photo: books.photo,
+      isbn: books.isbn,
+      price: books.price,
+      language: books.languages,
+      genre: books.genres
     }
 
     dispatch(saveBook(bookSaved))
@@ -435,14 +435,14 @@ export default function Book(props) {
     event.preventDefault()
 
     const bookEdit = {
-      id: book.id,
-      title: book.title,
-      author: book.author,
-      photo: book.photo,
-      isbn: book.isbn,
-      price: book.price,
-      language: book.languages,
-      genre: book.genres
+      id: books.id,
+      title: books.title,
+      author: books.author,
+      photo: books.photo,
+      isbn: books.isbn,
+      price: books.price,
+      language: books.languages,
+      genre: books.genres
     }
 
     dispatch(updateBook(bookEdit))
@@ -601,7 +601,7 @@ export default function Book(props) {
             <Card.Footer style={{ textAlign: "right" }}>
               <Button size="sm" variant="success" type="submit">
                  <FontAwesomeIcon icon={faSave}/>{" "}
-                {bookId ? "Update" : "Save"}
+                {book.id ? "Update" : "Save"}
               </Button>{" "}
               <Button
                 size="sm"
