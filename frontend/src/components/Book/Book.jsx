@@ -334,8 +334,8 @@ import iconLang from '../../assets/language.png'
 
 export default function Book(props) {
   const [books, setBooks] = useState([])
-//  const [languages, setLanguages] = useState([])
-//  const [genres, setGenres] = useState([])
+//  const [language, setLanguage] = useState([])
+//  const [genre, setGenre] = useState([])
   const [show, setShow] = useState(false)
 
   const initialState = { id: "", title: "", author: "", photo: "", isbn: "", price: "", language: "", genre: "" }
@@ -343,11 +343,11 @@ export default function Book(props) {
   const { bookId } = useParams()
   
   useEffect(() => {
-    if(bookId) {
+    if(bookId === "") {
      findBookById(bookId)
    }
     findAllLanguages()
-}, [])
+  }, [bookId])
 
   const book = useSelector(state => state.book)
   const dispatch = useDispatch()
@@ -358,7 +358,7 @@ export default function Book(props) {
       let bookLanguages = books.languages
       if (bookLanguages) {
         setBooks({
-          languages: [{ value: "", display: "Select Language" }].concat(
+          language: [{ value: "", display: "Select Language" }].concat(
             bookLanguages.map(language => {
               return { value: language, display: language }
            }))
@@ -374,7 +374,7 @@ export default function Book(props) {
       let bookGenres = books.genres
       if (bookGenres) {
         setBooks({
-          genres: [{ value: "", display: "Select Genre" }].concat(
+          genre: [{ value: "", display: "Select Genre" }].concat(
             bookGenres.map(genre => {
               return { value: genre, display: genre }
            }))
@@ -415,8 +415,8 @@ export default function Book(props) {
       photo: books.photo,
       isbn: books.isbn,
       price: books.price,
-      language: books.languages,
-      genre: books.genres
+      language: books.language,
+      genre: books.genre
     }
 
     dispatch(saveBook(bookSaved))
@@ -441,8 +441,8 @@ export default function Book(props) {
       photo: books.photo,
       isbn: books.isbn,
       price: books.price,
-      language: books.languages,
-      genre: books.genres
+      language: books.language,
+      genre: books.genre
     }
 
     dispatch(updateBook(bookEdit))
@@ -563,7 +563,7 @@ export default function Book(props) {
                 <Form.Group as={Col}>
                   <Form.Label>Language <img className="lang" src={iconLang}/></Form.Label>
                   <Form.Control
-                    //required
+                    required
                     as="select"
                     custom="true"
                     name="language"
@@ -571,7 +571,15 @@ export default function Book(props) {
                     onChange={bookChange}
                     className="bg-dark border-secondary text-white"
                   >
-                    {/* {book.languages.map(language => (
+                    <option>English</option>
+                    <option>Portuguese</option>
+                    <option>French</option>
+                    <option>Russian</option>
+                    <option>Hindi</option>
+                    <option>Arabic</option>
+                    <option>Spanish</option>
+                    <option>Chinese</option>
+                    {/* {books.language.map(language => (
                       <option key={language.value} value={language.value}>
                         {language.display}
                       </option>
@@ -581,7 +589,7 @@ export default function Book(props) {
                 <Form.Group as={Col}>
                   <Form.Label>Genre 📚</Form.Label>
                   <Form.Control
-                    //required
+                    required
                     as="select"
                     custom="true"
                     name="genre"
@@ -589,7 +597,14 @@ export default function Book(props) {
                     onChange={bookChange}
                     className="bg-dark border-secondary text-white"
                   >
-                    {/* {book.genres.map(genre => (
+                    <option>Technology</option>
+                    <option>Science</option>
+                    <option>History</option>
+                    <option>Fantasy</option>
+                    <option>Biography</option>
+                    <option>Horror</option>
+                    <option>Romance</option>
+                    {/* {books.genre.map(genre => (
                       <option key={genre.value} value={genre.value}>
                         {genre.display}
                       </option>

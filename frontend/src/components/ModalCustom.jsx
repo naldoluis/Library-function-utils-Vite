@@ -1,4 +1,6 @@
 import Button from 'react-bootstrap/Button'
+import { faWindowRestore } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Modal from 'react-bootstrap/Modal'
 
 export default function ModalCustom(props) {
@@ -7,7 +9,7 @@ export default function ModalCustom(props) {
     <Modal {...props} size="lg" centered
      >
       <Modal.Header style={{ background: "#3c3c3c", color: "#fff" }}>
-        <Modal.Title> Modal heading</Modal.Title>
+        <Modal.Title><FontAwesomeIcon icon={faWindowRestore}/> Modal heading</Modal.Title>
       </Modal.Header>
       <Modal.Body style={{ background: "#3c3c3c", color: "#fff" }}>
         <h4 align="center">Centered Modal</h4>
