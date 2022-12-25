@@ -66,7 +66,7 @@ class UserList extends React.Component {
 
     const userData = this.props.userData
     const users = userData.users
-    const currentUsers = users && users.slice(firstIndex, lastIndex)
+    const currentUsers = Array.isArray(users) ? users.slice(firstIndex, lastIndex) : []
     const totalPages = users && users.length / usersPerPage
 
     return (
