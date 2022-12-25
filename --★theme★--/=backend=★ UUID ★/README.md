@@ -1390,7 +1390,7 @@ class Book extends React.Component {
                     autoComplete="off"
                     required
                     name="title"
-                    pattern="[A-Za-záàâãäéèêëíïîóôõöúùûüýÿšćçñÁÀÂÃÄÉÈÊËÍÏÎÓÔÕÖÚÙÛÜÝŸŠĆÇÑ'/. ]{1,25}"
+                    pattern="[A-Za-záàâãäéèêëíïîóôõöúùûüýÿřšşćçñžÁÀÂÃÄÉÈÊËÍÏÎÓÔÕÖÚÙÛÜÝŸŘŠŞĆÇÑŽ'/. ]{1,25}"
                     maxLength={25}
                     value={title ||''}
                     onChange={bookChange}
@@ -1404,7 +1404,7 @@ class Book extends React.Component {
                     autoComplete="off"
                     required
                     name="author"
-                    pattern="[A-Za-záàâãäéèêëíïîóôõöúùûüýÿšćçñÁÀÂÃÄÉÈÊËÍÏÎÓÔÕÖÚÙÛÜÝŸŠĆÇÑ'. ]{2,25}"
+                    pattern="[A-Za-záàâãäéèêëíïîóôõöúùûüýÿřšşćçñžÁÀÂÃÄÉÈÊËÍÏÎÓÔÕÖÚÙÛÜÝŸŘŠŞĆÇÑŽ'. ]{2,25}"
                     maxLength={25}
                     value={author ||''}
                     onChange={bookChange}

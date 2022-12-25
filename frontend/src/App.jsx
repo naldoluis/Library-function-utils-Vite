@@ -4,6 +4,7 @@ import Bonus from './components/Bonus/Bonus'
 import Book from './components/Book/Book'
 import BookList from './components/Book/BookList'
 import Footer from './components/Footer'
+import Help from './components/Help'
 import Home from './components/Home'
 import Login from './components/User/Login'
 import NavigationBar from './components/NavigationBar'
@@ -23,6 +24,7 @@ export default function App() {
           <Col lg={12} className="margin-top">
             <Routes>
               <Route path="/" element={<Welcome/>}/>
+              <Route path="/help" element={<Help/>}/>
               <Route path="/home" element={<Home/>}/>
               <Route path="/add" element={<Book/>}/>
               <Route path="/edit/:id" element={<Book/>}/>
