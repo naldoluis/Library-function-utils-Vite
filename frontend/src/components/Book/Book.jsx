@@ -70,8 +70,8 @@ export default function Book(props) {
           photo: books.photo,
           isbn: books.isbn,
           price: books.price,
-          language: books.languages,
-          genre: books.genres
+          language: books.language,
+          genre: books.genre
         })
       }
     }, 1000)

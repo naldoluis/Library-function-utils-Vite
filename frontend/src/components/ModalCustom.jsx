@@ -25,7 +25,7 @@ export default function ModalCustom(props) {
         <img src='https://www.thomasvitale.com/content/images/2020/09/cloud-native-spring-boot-kubernetes-meap.jpg'
          style={{ width: 400, height: 227, marginLeft: 150, borderRadius: 4 }}/>
       </Modal.Body>
-      <Modal.Footer style={{ background: "#3c3c3c", color: "#fff" }}>
+      <Modal.Footer style={{ background: "#3c3c3c" }}>
         <Button variant="success" onClick={props.onHide}>Purchase</Button>
         <Button variant="warning" onClick={props.onHide}>Close</Button>
       </Modal.Footer>

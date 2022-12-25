@@ -4,10 +4,10 @@ import { Nav, Navbar } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSignInAlt, faSignOutAlt, faUserPlus } from '@fortawesome/free-solid-svg-icons'
-import Book from '../assets/BookIcon.png'
 import { logoutUser } from '../services'
 import MyToastTimer from './MyToastTimer'
 import MyToastOut from './MyToastOut'
+import Book from '../assets/BookIcon.png'
 
 export default function NavigationBar() {
   const auth = useSelector(state => state.auth)
