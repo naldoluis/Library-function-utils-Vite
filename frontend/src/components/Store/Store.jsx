@@ -5,7 +5,6 @@ import { faBookQuran, faMoneyBills } from '@fortawesome/free-solid-svg-icons'
 import { Button, Card, Table } from 'react-bootstrap'
 import Spinner from 'react-bootstrap/Spinner'
 import { BASE_URL } from '../../utils/requests'
-import ModalCustom from '../ModalCustom'
 import '../../assets/css/Style.css'
 
 class Store extends React.Component {
@@ -127,12 +126,9 @@ class Store extends React.Component {
                   <img className="card-photo" src={book.photo}/>
                   <h6 className="card-title">{book.title}</h6>
                   <div className="card-desc">{book.genre}</div>
-                  <button className="purchase-button"
-                    onClick={() => this.setModalShow(true)}><FontAwesomeIcon icon={faMoneyBills}/> Buy
+                  <button className="purchase-button">
+                    <FontAwesomeIcon icon={faMoneyBills}/> Buy
                   </button>
-                  <ModalCustom
-                    show={modalShow}
-                    onHide={() => this.setModalShow(false)}/>
                 </div>
                ))
             )}

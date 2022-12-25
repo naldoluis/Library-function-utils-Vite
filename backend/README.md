@@ -1216,6 +1216,328 @@ export default connect(mapStateToProps, mapDispatchToProps)(Book)
 
 !J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
                                                                                                                           - ❐ ❌
+# book method 2
+
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { Button, Card, Col, Form } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEdit, faList, faPlusSquare, faSave, faUndo } from '@fortawesome/free-solid-svg-icons'
+import { fetchBook, fetchGenres, fetchLanguages, saveBook, updateBook } from '../../services'
+import MyToast from '../MyToast'
+import iconCam from '../../assets/camera.png'
+import iconLang from '../../assets/language.png'
+
+class Book extends React.Component {
+  constructor() {
+    super()
+    this.state = this.initialState
+    this.state = {
+      genres: [],
+      languages: [],
+      show: false
+    }
+  }
+
+  initialState = { id: "", title: "", author: "", photo: "", isbn: "", price: "", language: "", genre: "" }
+
+  componentDidMount() {
+    const bookId = this.props.id
+    if(bookId) {
+     this.findBookById(bookId)
+   }
+    this.findAllLanguages()
+ }
+
+  findAllLanguages = () => {
+    this.props.fetchLanguages()
+    setTimeout(() => {
+      let bookLanguages = this.props.bookObject.languages
+      if (bookLanguages) {
+        this.setState({
+          languages: [{ value: "", display: "Select Language" }].concat(
+            bookLanguages.map(language => {
+              return { value: language, display: language }
+           }))
+        })
+        this.findAllGenres()
+      }
+    }, 100)
+  }
+
+  findAllGenres = () => {
+    this.props.fetchGenres()
+    setTimeout(() => {
+      let bookGenres = this.props.bookObject.genres
+      if (bookGenres) {
+        this.setState({
+          genres: [{ value: "", display: "Select Genre" }].concat(
+            bookGenres.map(genre => {
+              return { value: genre, display: genre }
+           }))
+        })
+      }
+    }, 100)
+  }
+
+  findBookById = bookId => {
+    this.props.fetchBook(bookId)
+    setTimeout(() => {
+      let book = this.props.bookObject.book
+      if (book != null) {
+        this.setState({
+          id: book.id,
+          title: book.title,
+          author: book.author,
+          photo: book.photo,
+          isbn: book.isbn,
+          price: book.price,
+          language: book.languages,
+          genre: book.genres
+        })
+      }
+    }, 1000)
+  }
+
+  resetBook = () => {
+    this.setState(() => this.initialState)
+  }
+
+  submitBook = event => {
+    event.preventDefault()
+
+    const bookSaved = {
+      title: this.state.title,
+      author: this.state.author,
+      photo: this.state.photo,
+      isbn: this.state.isbn,
+      price: this.state.price,
+      language: this.state.languages,
+      genre: this.state.genres
+    }
+
+    this.props.saveBook(bookSaved)
+    setTimeout(() => {
+      if (this.props.bookObject.book != null) {
+        this.setState({ show: true, method: "post" })
+        setTimeout(() => this.setState({ show: false }), 2300)
+      } else {
+        this.setState({ show: false })
+      }
+    }, 2000)
+    this.setState(this.initialState)
+  }
+
+  updatedBook = event => {
+    event.preventDefault()
+
+    const bookEdit = {
+      id: this.state.id,
+      title: this.state.title,
+      author: this.state.author,
+      photo: this.state.photo,
+      isbn: this.state.isbn,
+      price: this.state.price,
+      language: this.state.languages,
+      genre: this.state.genres
+    }
+
+    this.props.updateBook(bookEdit)
+    setTimeout(() => {
+      if (this.props.bookObject.book != null) {
+        this.setState({ show: true, method: "put" })
+        setTimeout(() => this.setState({ show: false }), 2300)
+      } else {
+        this.setState({ show: false })
+      }
+    }, 2000)
+    this.setState(this.initialState)
+  }
+
+  bookChange = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+  }
+
+  render() {
+    const { title, author, photo, isbn, price, language, genre } = this.state
+
+    return (
+      <div>
+        <div style={{ display: this.state.show ? "block" : "none" }}>
+          <MyToast
+            message={this.state.method === "put" ? "Book Updated Successfully." : "Book Saved Successfully."}
+            type="success"
+          />
+        </div>
+        <Card className="border-secondary bg-dark text-white">
+          <Card.Header>
+            <FontAwesomeIcon icon={this.state.id ? faEdit : faPlusSquare}/>{" "}
+            {this.state.id ? "Update Book" : "Add New Book"}
+          </Card.Header>
+          <Form
+            onReset={this.resetBook}
+            onSubmit={this.state.id ? this.updatedBook : this.submitBook}
+            id="bookFormId"
+          >
+            <Card.Body>
+            <div className="form-row">
+                <Form.Group as={Col}>
+                  <Form.Label>Title 📙</Form.Label>
+                  <Form.Control
+                    autoComplete="off"
+                    required
+                    name="title"
+                    pattern="[A-Za-záàâãäéèêëíïîóôõöúùûüýÿšćçñÁÀÂÃÄÉÈÊËÍÏÎÓÔÕÖÚÙÛÜÝŸŠĆÇÑ'/. ]{1,25}"
+                    maxLength={25}
+                    value={title ||''}
+                    onChange={bookChange}
+                    className="bg-dark border-secondary text-white"
+                    placeholder="Enter Book Title"
+                  />
+                </Form.Group>
+                <Form.Group as={Col}>
+                  <Form.Label>Author ✏️</Form.Label>
+                  <Form.Control
+                    autoComplete="off"
+                    required
+                    name="author"
+                    pattern="[A-Za-záàâãäéèêëíïîóôõöúùûüýÿšćçñÁÀÂÃÄÉÈÊËÍÏÎÓÔÕÖÚÙÛÜÝŸŠĆÇÑ'. ]{2,25}"
+                    maxLength={25}
+                    value={author ||''}
+                    onChange={bookChange}
+                    className="bg-dark border-secondary text-white mb-3"
+                    placeholder="Enter Book Author"
+                  />
+                </Form.Group>
+                </div>
+                <div className="form-row">
+                <Form.Group as={Col}>
+                  <Form.Label>Cover Photo URL <img className="cam" src={iconCam}/></Form.Label>
+                  <div className="input-group">
+                    <Form.Control
+                      autoComplete="off"
+                      required
+                      name="photo"
+                      value={photo ||''}
+                      onChange={bookChange}
+                      className="bg-dark border-secondary text-white"
+                      placeholder="Enter Book Cover Photo URL"
+                    />
+                    <div>
+                      {this.state.photo !== "" && (
+                        <img src={this.state.photo} width="38" height="38"/>
+                      )}
+                    </div>
+                  </div>
+                </Form.Group>
+                <Form.Group as={Col}>
+                  <Form.Label>ISBN Number ▥</Form.Label>
+                  <Form.Control
+                    autoComplete="off"
+                    required
+                    name="isbn"
+                    pattern="[0-9]{9}"
+                    maxLength={9}
+                    value={isbn ||''}
+                    onChange={bookChange}
+                    className="bg-dark border-secondary text-white mb-3"
+                    placeholder="Enter Book ISBN Number [123456789]"
+                  />
+                </Form.Group>
+                </div>
+                <div className="form-row">
+                <Form.Group as={Col} controlId="formGridPrice">
+                  <Form.Label className="price">Price 💲</Form.Label>
+                  <Form.Control
+                    autoComplete="off"
+                    required
+                    name="price"
+                    pattern="[0-9]{2,3}.[0-9]{2}"
+                    maxLength={6}
+                    value={price ||''}
+                    onChange={bookChange}
+                    className="bg-dark border-secondary text-white"
+                    placeholder="Enter Book Price Ex: 123.45"
+                  />
+                </Form.Group>
+                <Form.Group as={Col}>
+                  <Form.Label>Language <img className="lang" src={iconLang}/></Form.Label>
+                  <Form.Control
+                    required
+                    as="select"
+                    custom="true"
+                    name="language"
+                    value={language}
+                    onChange={bookChange}
+                    className="bg-dark border-secondary text-white"
+                  >
+                    {this.state.languages.map(language => (
+                      <option key={language.value} value={language.value}>
+                        {language.display}
+                      </option>
+                    ))}
+                  </Form.Control>
+                </Form.Group>
+                <Form.Group as={Col}>
+                  <Form.Label>Genre 📚</Form.Label>
+                  <Form.Control
+                    required
+                    as="select"
+                    custom="true"
+                    name="genre"
+                    value={genre}
+                    onChange={bookChange}
+                    className="bg-dark border-secondary text-white"
+                  >
+                    {this.state.genres.map(genre => (
+                      <option key={genre.value} value={genre.value}>
+                        {genre.display}
+                      </option>
+                    ))}
+                  </Form.Control>
+                </Form.Group>
+              </div>
+            </Card.Body>
+            <Card.Footer style={{ textAlign: "right" }}>
+              <Button size="sm" variant="success" type="submit">
+                <FontAwesomeIcon icon={faSave}/>{" "}
+                {this.state.id ? "Update" : "Save"}
+              </Button>{" "}
+              <Button size="sm" variant="info" type="reset">
+                <FontAwesomeIcon icon={faUndo}/> Reset
+              </Button>{" "}
+              <Link style={{ textDecoration: 'none' }}
+                type="button" className="link" to="/list">
+                <FontAwesomeIcon icon={faList}/> Book List
+              </Link>
+            </Card.Footer>
+          </Form>
+        </Card>
+      </div>
+    )}}
+
+const mapStateToProps = state => {
+  return {
+    bookObject: state.book
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    saveBook: book => dispatch(saveBook(book)),
+    fetchBook: bookId => dispatch(fetchBook(bookId)),
+    updateBook: book => dispatch(updateBook(book)),
+    fetchLanguages: () => dispatch(fetchLanguages()),
+    fetchGenres: () => dispatch(fetchGenres())
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Book)
+
+!J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
+                                                                                                                          - ❐ ❌
 # Login
 
   return (
@@ -1263,43 +1585,8 @@ export default function Home() {
   </>
 )}
 
-!J------------------------------------------------------------------------------------------------------------------------------J!
-                                                                                                                          - ❐ ❌
-# book (edit) with fetch
-
-  updateBook = event => {
-    event.preventDefault()
-
-    const book = {
-      id: this.state.id,
-      title: this.state.title,
-      author: this.state.author,
-      photo: this.state.photo,
-      isbn: this.state.isbn,
-      price: this.state.price,
-      language: this.state.language,
-      genre: this.state.genre
-    }
-
-    const headers = new Headers()
-    headers.append('Content-Type', 'application/json')
-
-    fetch("http://localhost:8080/rest/books", {
-      method: "PUT",
-      body: JSON.stringify(book),
-      headers
-    })
-    .then(response => response.json())
-    .then(response => {
-      if (response.data != null) {
-        this.setState({ show: true, method: "put" })
-        setTimeout(() => this.setState({ show: false }), 2300)
-        setTimeout(() => this.bookList(), 2300)
-      } else {
-        this.setState({ show: false })
-      }
-    })
-    this.setState(this.initialState)
+  setModalShow = visible => {
+    this.setState({ modalShow: visible })
   }
 
 !J------------------------------------------------------------------------------------------------------------------------------J!

@@ -1,8 +1,10 @@
 import { Alert, Button } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
+import { useState } from 'react'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import Popover from 'react-bootstrap/Popover'
 import authToken from '../utils/authToken'
+import ModalCustom from './ModalCustom'
 
 export default function Home() {
   if (localStorage.jwtToken) {
@@ -10,6 +12,7 @@ export default function Home() {
   }
 
   const auth = useSelector(state => state.auth)
+  const [modalShow, setModalShow] = useState(false)
 
   const popover = (
     <Popover>
@@ -34,6 +37,12 @@ export default function Home() {
       <p className="title-home">Good friends, good books, nutrition, and a sleepy conscience: this is the ideal life.</p>
       <p className="title-home">-- Mark Twain</p>
     </Alert>
-   <Popovers/>
-  </>
+   <Popovers/>{" "}
+    <Button variant="primary"
+      onClick={() => setModalShow(true)}>Open Modal
+    </Button>
+     <ModalCustom
+       show={modalShow}
+       onHide={() => setModalShow(false)}/>
+   </>
  )}
