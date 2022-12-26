@@ -16,7 +16,7 @@ export default function Home() {
 
   const popover = (
     <Popover>
-      <Popover.Header as="h3">💬 Popover Top</Popover.Header>
+      <Popover.Header as="h3">💬 Popover right</Popover.Header>
       <Popover.Body>
         And here's some <strong>amazing</strong> content. It's very engaging.
         right?
@@ -25,7 +25,7 @@ export default function Home() {
   )
 
   const Popovers = () => (
-    <OverlayTrigger trigger="click" placement="top" overlay={popover}>
+    <OverlayTrigger trigger="click" placement="right" overlay={popover}>
       <Button variant="info">Click me to see</Button>
     </OverlayTrigger>
   )
@@ -41,6 +41,8 @@ export default function Home() {
     <Button variant="primary"
       onClick={() => setModalShow(true)}>Open Modal
     </Button>
-     <ModalCustom show={modalShow} onHide={() => setModalShow(false)}/>
+     <ModalCustom
+       show={modalShow}
+       onHide={() => setModalShow(false)}/>
    </>
  )}
