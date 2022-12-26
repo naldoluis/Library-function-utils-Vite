@@ -15,7 +15,7 @@ export default function Help() {
 
   return (
     <Card bg="dark" text="light">
-      <Card.Header>Comments</Card.Header>
+      <Card.Header>🗨 Comments</Card.Header>
       <Card.Body style={{ overflowY: "scroll", height: 570 }}>
         {comments &&
           comments.map((comments, id) => (

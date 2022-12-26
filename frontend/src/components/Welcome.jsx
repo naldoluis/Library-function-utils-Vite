@@ -15,7 +15,7 @@ export default function Welcome() {
 
   return (
     <Card bg="dark" text="light">
-      <Card.Header>Quotes</Card.Header>
+      <Card.Header>📄 Quotes</Card.Header>
       <Card.Body style={{ overflowY: "scroll", height: 570 }}>
         {quotes &&
           quotes.map((quote, id) => (
