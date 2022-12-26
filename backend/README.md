@@ -1693,6 +1693,9 @@ public class SpringSecurityConfig {
 },"include": ["vite.config.ts"]}
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
+# icons
+
+>                                                https://fontawesome.com/search
 
 # Symbols
 

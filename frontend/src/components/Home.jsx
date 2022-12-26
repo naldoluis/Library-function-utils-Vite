@@ -16,7 +16,7 @@ export default function Home() {
 
   const popover = (
     <Popover>
-      <Popover.Header as="h3">Popover right</Popover.Header>
+      <Popover.Header as="h3">💬 Popover right</Popover.Header>
       <Popover.Body>
         And here's some <strong>amazing</strong> content. It's very engaging.
         right?
