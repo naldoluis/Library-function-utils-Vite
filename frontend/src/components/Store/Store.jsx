@@ -108,7 +108,7 @@ class Store extends React.Component {
           <b style={{ color: "#fff", fontWeight: 400 }}>
             <FontAwesomeIcon icon={faBookQuran}/> Edition Limited
           </b>
-          <Card.Body className="row" style={{ overflowY: "scroll", height: 485 }}>
+          <Card.Body className="row" style={{ overflowY: "scroll", height: 480 }}>
             {books.length === 0 ? (
               <Table bordered hover striped variant="dark">
                 <tbody>
