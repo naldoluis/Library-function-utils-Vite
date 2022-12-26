@@ -3,25 +3,25 @@ import { Card } from 'react-bootstrap'
 import { useEffect, useState } from 'react'
 
 export default function Help() {
-  const [quotes, setQuotes] = useState("")
+  const [comments, setComments] = useState("")
 
   useEffect(() => {
-    if (quotes === "") {
-      axios("https://type.fit/api/quotes").then(response => {
-        setQuotes(response.data)
+    if (comments === "") {
+      axios("https://jsonplaceholder.typicode.com/posts/1/comments").then(response => {
+        setComments(response.data)
       })
     }
-  }, [quotes])
+  }, [comments])
 
   return (
     <Card bg="dark" text="light">
-      <Card.Header>Quotes</Card.Header>
+      <Card.Header>Comments</Card.Header>
       <Card.Body style={{ overflowY: "scroll", height: 570 }}>
-        {quotes &&
-          quotes.map((quote, id) => (
+        {comments &&
+          comments.map((comments, id) => (
             <blockquote className="blockquote mb-0" key={id}>
-                <p>{quote.text}</p>
-              <footer className="blockquote-footer">{quote.author}</footer>
+                <p>{comments.name}</p>
+              <footer className="blockquote-footer">{comments.email}</footer>
             </blockquote>
           ))}
       </Card.Body>
