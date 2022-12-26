@@ -26,7 +26,7 @@ export default function Home() {
 
   const Popovers = () => (
     <OverlayTrigger trigger="click" placement="right" overlay={popover}>
-      <Button variant="info">Click me to see</Button>
+      <Button size="sm" variant="info">Click me to see</Button>
     </OverlayTrigger>
   )
 
@@ -38,7 +38,7 @@ export default function Home() {
       <p className="title-home">-- Mark Twain</p>
     </Alert>
    <Popovers/>{" "}
-    <Button variant="primary"
+    <Button size="sm" variant="primary"
       onClick={() => setModalShow(true)}>Open Modal
     </Button>
      <ModalCustom

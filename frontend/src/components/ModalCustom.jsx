@@ -24,8 +24,8 @@ export default function ModalCustom(props) {
          style={{ width: 400, height: 227, marginLeft: 150, borderRadius: 4 }}/>
       </Modal.Body>
       <Modal.Footer style={{ background: "#3c3c3c" }}>
-        <Button variant="success" onClick={props.onHide}>Purchase</Button>
-        <Button variant="warning" onClick={props.onHide}>Close</Button>
+        <Button size="sm" variant="success" onClick={props.onHide}>Purchase</Button>
+        <Button size="sm" variant="warning" onClick={props.onHide}>Close</Button>
       </Modal.Footer>
     </Modal>
   )}
