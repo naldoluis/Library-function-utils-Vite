@@ -1555,7 +1555,17 @@ export default connect(mapStateToProps, mapDispatchToProps)(Book)
 
 # form
 
-pattern="[A-Z0-9._%-]+@[A-Z0-9.-]+.[A-Z]{3,3}"
+Data:
+<input type="date" required="required" maxlength="10" name="date" pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$" min="2012-01-01" max="2014-02-18"/>
+
+Telefone:
+<input type="tel" required="required" maxlength="15" name="phone" pattern="[0-9]{2}-[0-9]{4,6}-[0-9]{3,4}$"/>
+
+Hora:
+<input type="time" required="required" maxlength="8" name="hour" pattern="[0-9]{2}:[0-9]{2} [0-9]{2}$"/>
+
+E-mail:
+<input type="email" required="required" class="input-text" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
                                                                                                                           - ❐ ❌
@@ -1703,11 +1713,11 @@ public class SpringSecurityConfig {
 
 # Symbols
 
-♫ ★ 👎︎ • ☢️ ⭐ ⚡ 🐙 🎈 ✔️ ⓕ ☂ ✎ ✄ ✉ ☎ ☏ ❌ ⋈ ⌚ ❐ 📞 ✂️ 📎 ✏️ 🔒 🔑 💡 📜 ☎️ 📝 🔓 🔎 💾 🔆 💻 📚 📒 📖 📔 
+♫ ★ 👎︎ • ☢️ ⭐ ⧈ 🐙 🎈 ✔️ ⓕ ☂ ✎ ✄ ✉ ☎ ☏ ❌ ⋈ ⌚ ❐ 📞 ✂️ 📎 ✏️ 🔒 🔑 💡 📜 ☎️ 📝 🔓 🔎 💾 🔆 💻 📚 📒 📖 📔 
 
 📕 📗 📘 📙 🎼 🛍 🛢 🗑 🚧 ⚠️ ℹ️ 👍 👎 🛠 🛒 ☂️ ⏱ ⏲ ⚙️ ⚗️ 📽 📐 📏 📊 📧 📄 🔧 🎬 🎷 🔐 ✉️ 📩 📨 📋 📅 📦 📷 ≣ 🗨
 
- ✔ ✖ ⧈ 💬 🧭 ⛔️ ✅
+💭 🗯 ⚡ 🌪 🌈 🕡 ✔ ✖  💬 🧭 ⛔️ ✅ 🗺 🗝 ❏ ➪ 🛎 🎟 ⛈ 👁 ➤ ➙ 📓 ⮜⮜ ➤➤
 
         <a href="https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi" className="speedometer" style={{ margin: "6px" }}>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#e8e8e8">
