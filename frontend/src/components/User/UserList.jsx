@@ -74,7 +74,7 @@ class UserList extends React.Component {
         {userData.error ? (
           <Alert variant="danger">{userData.error}</Alert>
         ) : (
-          <Card className="border-dark bg-dark text-white">
+          <Card className="border-secondary bg-dark text-white">
             <Card.Header>
               <FontAwesomeIcon icon={faUsers}/> User List
             </Card.Header>
