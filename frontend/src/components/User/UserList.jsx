@@ -112,53 +112,20 @@ class UserList extends React.Component {
             </Card.Body>
             {users.length > 0 ? (
               <Card.Footer>
-                <div style={{ float: "left" }}>
+                <div style={{ float: "left", fontSize: 15 }}>
                   Showing Page {currentPage} of {totalPages}
                 </div>
                 <div style={{ float: "right" }}>
                   <InputGroup size="sm">
-                      <Button
-                        className="first bg-warning text-dark"
-                        size="sm"
-                        variant="outline-warning"
-                        disabled={currentPage === 1 ? true : false}
-                        onClick={this.firstPage}
-                      >
-                        <FontAwesomeIcon icon={faFastBackward}/> First
-                      </Button>
-                      <Button
-                        className="prev bg-success text-light"
-                        size="sm"
-                        variant="outline-success"
-                        disabled={currentPage === 1 ? true : false}
-                        onClick={this.prevPage}
-                      >
-                        <FontAwesomeIcon icon={faStepBackward}/> Prev
-                      </Button>
-                    <FormControl
-                      size="sm"
-                      className="border-secondary text-white page-num bg-dark"
-                      value={currentPage}
-                      onChange={this.changePage}
+                     <b className="prev-fast" onClick={this.firstPage}>➤➤</b>
+                     <b className="prev-page" onClick={this.prevPage}>➤</b>
+                   <FormControl
+                     className="border-secondary text-white page-num bg-dark"
+                     value={currentPage}
+                     onChange={this.changePage}
                     />
-                      <Button
-                        className="next bg-success text-light"
-                        size="sm"
-                        variant="outline-success"
-                        disabled={currentPage === totalPages ? true : false}
-                        onClick={this.nextPage}
-                      >
-                        <FontAwesomeIcon icon={faStepForward}/> Next
-                      </Button>
-                      <Button
-                        className="last bg-warning text-dark"
-                        size="sm"
-                        variant="outline-warning"
-                        disabled={currentPage === totalPages ? true : false}
-                        onClick={this.lastPage}
-                      >
-                        <FontAwesomeIcon icon={faFastForward}/> Last
-                      </Button>
+                     <b className="next-page" onClick={this.nextPage}>➤</b>
+                     <b className="next-fast" onClick={this.lastPage}>➤➤</b>
                   </InputGroup>
                 </div>
               </Card.Footer>

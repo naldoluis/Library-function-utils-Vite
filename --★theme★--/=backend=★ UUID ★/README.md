@@ -1623,7 +1623,247 @@ export default function Home() {
   }
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
+                                                                                                                          - ❐ ❌
+# UserList
 
+import React from 'react'
+import { connect } from 'react-redux'
+import { Alert, Button, Card, FormControl, InputGroup, Table } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFastBackward, faFastForward, faStepBackward, faStepForward, faUsers } from '@fortawesome/free-solid-svg-icons'
+import { fetchUsers } from '../../services'
+import '../../assets/css/Style.css'
+
+class UserList extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      users: [],
+      currentPage: 1,
+      usersPerPage: 5
+    }
+  }
+
+  componentDidMount() {
+    this.props.fetchUsers()
+  }
+
+  changePage = event => {
+    this.setState({
+      [event.target.name]: parseInt(event.target.value)
+    })
+  }
+
+  firstPage = () => {
+    if (this.state.currentPage > 1) {
+      this.setState({
+        currentPage: 1
+      })
+    }
+  }
+
+  prevPage = () => {
+    if (this.state.currentPage > 1) {
+      this.setState({
+        currentPage: this.state.currentPage - 1
+      })
+    }
+  }
+
+  nextPage = () => {
+    if (this.state.currentPage < Math.ceil(this.props.userData.users.length / this.state.usersPerPage)) {
+      this.setState({
+        currentPage: this.state.currentPage + 1
+      })
+    }
+  }
+
+  lastPage = () => {
+    let usersLength = this.props.userData.users.length
+    if (this.state.currentPage < Math.ceil(usersLength / this.state.usersPerPage)) {
+      this.setState({
+        currentPage: Math.ceil(usersLength / this.state.usersPerPage)
+      })
+    }
+  }
+
+  render() {
+    const { currentPage, usersPerPage } = this.state
+    const lastIndex = currentPage * usersPerPage
+    const firstIndex = lastIndex - usersPerPage
+
+    const userData = this.props.userData
+    const users = userData.users
+    const currentUsers = Array.isArray(users) ? users.slice(firstIndex, lastIndex) : []
+    const totalPages = users && users.length / usersPerPage
+
+    return (
+      <div>
+        {userData.error ? (
+          <Alert variant="danger">{userData.error}</Alert>
+        ) : (
+          <Card className="border-dark bg-dark text-white">
+            <Card.Header>
+              <FontAwesomeIcon icon={faUsers}/> User List
+            </Card.Header>
+            <Card.Body>
+              <Table bordered hover striped variant="dark">
+                <thead>
+                  <tr>
+                    <td className="border-secondary">Name</td>
+                    <td className="border-secondary">Email</td>
+                    <td className="border-secondary">Address</td>
+                    <td className="border-secondary">Created</td>
+                    <td className="border-secondary">Balance</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  {users.length === 0 ? (
+                    <tr align="center">
+                      <td colSpan="6">No Users Available</td>
+                    </tr>
+                  ) : (
+                    currentUsers.map((user, index) => (
+                      <tr key={index}>
+                        <td className="table-content border-secondary">
+                          {user.first} {user.last}
+                        </td>
+                        <td className="table-content border-secondary">{user.email}</td>
+                        <td className="table-content border-secondary">{user.address}</td>
+                        <td className="table-content border-secondary">{user.created}</td>
+                        <td className="table-content border-secondary">{user.balance}</td>
+                      </tr>
+                    ))
+                  )}
+                </tbody>
+              </Table>
+            </Card.Body>
+            {users.length > 0 ? (
+              <Card.Footer>
+                <div style={{ float: "left" }}>
+                  Showing Page {currentPage} of {totalPages}
+                </div>
+                <div style={{ float: "right" }}>
+                  <InputGroup size="sm">
+                      <Button
+                        className="first bg-warning text-dark"
+                        size="sm"
+                        variant="outline-warning"
+                        disabled={currentPage === 1 ? true : false}
+                        onClick={this.firstPage}
+                      >
+                        <FontAwesomeIcon icon={faFastBackward}/> First
+                      </Button>
+                      <Button
+                        className="prev bg-success text-light"
+                        size="sm"
+                        variant="outline-success"
+                        disabled={currentPage === 1 ? true : false}
+                        onClick={this.prevPage}
+                      >
+                        <FontAwesomeIcon icon={faStepBackward}/> Prev
+                      </Button>
+                    <FormControl
+                      size="sm"
+                      className="border-secondary text-white page-num bg-dark"
+                      value={currentPage}
+                      onChange={this.changePage}
+                    />
+                      <Button
+                        className="next bg-success text-light"
+                        size="sm"
+                        variant="outline-success"
+                        disabled={currentPage === totalPages ? true : false}
+                        onClick={this.nextPage}
+                      >
+                        <FontAwesomeIcon icon={faStepForward}/> Next
+                      </Button>
+                      <Button
+                        className="last bg-warning text-dark"
+                        size="sm"
+                        variant="outline-warning"
+                        disabled={currentPage === totalPages ? true : false}
+                        onClick={this.lastPage}
+                      >
+                        <FontAwesomeIcon icon={faFastForward}/> Last
+                      </Button>
+                  </InputGroup>
+                </div>
+              </Card.Footer>
+            ) : null}
+          </Card>
+        )}
+      </div>
+    )}}
+
+const mapStateToProps = state => {
+  return {
+    userData: state.user
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchUsers: () => dispatch(fetchUsers())
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(UserList)
+
+# Css
+
+.page-num {width: 50px !important;height: 28px !important}
+.arrow {width: 0;height: 0;margin-top: 5px;border-left: 5px solid transparent;border-right: 5px solid transparent;display: inline-block}
+.arrow-up {border-bottom: 10px solid}
+.arrow-down {border-top: 10px solid}
+.title-home {font-size: 13.5px;font-weight: 400;font-family: 'Segoe UI', sans-serif;padding-top: 5px}
+
+.first,.prev {margin: -.4px 4px 0 0;font-family: 'Varela Round';height: 29px}
+.next,.last {margin: -.4px 0 0 4px;font-family: 'Varela Round';height: 29px}
+
+.next-page {margin-left: 20px;color:#ffb742}
+.prev-page {margin-right: 20px;transform: rotate(180deg);color:#70ff8e}
+.prev-fast {transform: rotate(180deg);margin-right: 20px;color:#8aecff}
+.next-fast {margin-left: 20px;color:#ff5842}
+
+.next-page,.prev-page,.prev-fast,.next-fast {transition: all ease .17s;font-size: 23px;margin-top: -2.7px}
+.next-page:hover,.prev-page:hover,.prev-fast:hover,.next-fast:hover {filter: drop-shadow(0 0 .085em)}
+
+.lang {width: 20px}
+.cam {width: 16px;margin-top: -5px}
+
+.next-page,.prev-page,.prev-fast,.next-fast,.speedometer,.clock {cursor: pointer}
+
+.arrow-up,.arrow-down,.link:hover,.link,.card-title,.clock:hover,.card-desc {color: #fff}
+
+.card-title,.link,.table-title,.page-num {text-align: center}
+
+.input-password,.input-email,.input-name,.input-phone {margin: 9px 9px}
+.lock,.envelope,.name,.phone {margin-top: 12px;width: 40px}
+
+.link {background: #b00fd0;border-radius: 3px;width: 90px;height: 31.3px;padding-top: 4.5px;font-size: 14px}
+.link:hover {background: #9f0ebc}
+
+.table-title {font-size: 14.1px;color: #bebcbc;font-family: 'Varela Round'}
+.table-content {font-size: 13.7px}
+
+.purchase-button {font-size: 12px;margin: 7px 0 0 50px;height: 25px;width: 90px;color: #333;background: #bbbe10;font-weight: 500;border-radius: .3rem}
+.purchase-button:hover {background: #abd727}
+
+.card-photo {width: 77px;margin: 44px 0 0 56.5px;border-radius: 3%}
+.card-title {margin: 7px 62px 0 0;font-size: 13px}
+.card-desc {font-size: 12px;margin: -9px 0 0 65px}
+
+.clock {transform: scale(.92);transition: all ease .2s}
+.clock:hover,.speedometer:hover {transform: scale(1);filter: drop-shadow(0 0 .05em)}
+
+.speedometer {transform: scale(.97);transition: all ease .2s}
+.speedometer:hover {color: #abd727}
+
+::-webkit-scrollbar {width: 5px}
+::-webkit-scrollbar-track {background: #606060}
+::-webkit-scrollbar-thumb {background: #bebebe}
+
+!J------------------------------------------------------------------------------------------------------------------------------J!
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
 ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \

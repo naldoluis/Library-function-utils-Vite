@@ -252,7 +252,7 @@ class BookList extends React.Component {
                     <b className="prev-fast" onClick={this.firstPage}>➤➤</b>
                     <b className="prev-page" onClick={this.prevPage}>➤</b>
                   <FormControl
-                    className="border-dark text-white page-num bg-dark"
+                    className="border-secondary text-white page-num bg-dark"
                     value={currentPage}
                     onChange={this.changePage}
                    />

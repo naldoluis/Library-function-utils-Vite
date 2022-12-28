@@ -4,15 +4,12 @@
 .arrow-down {border-top: 10px solid}
 .title-home {font-size: 13.5px;font-weight: 400;font-family: 'Segoe UI', sans-serif;padding-top: 5px}
 
-.first,.prev {margin: -.4px 4px 0 0;font-family: 'Varela Round';height: 29px}
-.next,.last {margin: -.4px 0 0 4px;font-family: 'Varela Round';height: 29px}
-
 .next-page {margin-left: 20px;color:#ffb742}
 .prev-page {margin-right: 20px;transform: rotate(180deg);color:#70ff8e}
-.prev-fast {transform: rotate(180deg);margin-right: 20px;color:#8aecff}
+.prev-fast {margin-right: 20px;transform: rotate(180deg);color:#8aecff}
 .next-fast {margin-left: 20px;color:#ff5842}
 
-.next-page,.prev-page,.prev-fast,.next-fast {transition: all ease .17s;font-size: 23px;margin-top: -2.7px}
+.next-page,.prev-page,.prev-fast,.next-fast {transition: all ease .17s;font-size: 20px;margin-top: -2px}
 .next-page:hover,.prev-page:hover,.prev-fast:hover,.next-fast:hover {filter: drop-shadow(0 0 .085em)}
 
 .lang {width: 20px}
