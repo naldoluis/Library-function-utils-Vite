@@ -12,8 +12,8 @@
 .prev-fast {transform: rotate(180deg);margin-right: 20px;color:#0d2d98}
 .next-fast {margin-left: 20px;color:#be1e10}
 
-.next-page,.prev-page,.prev-fast,.next-fast {transition: all ease .2s;font-size: 23px;margin-top: -2.4px}
-.next-page:hover,.prev-page:hover,.prev-fast:hover,.next-fast:hover {filter: drop-shadow(0 0 .075em)}
+.next-page,.prev-page,.prev-fast,.next-fast {transition: all ease .17s;font-size: 23px;margin-top: -2.7px}
+.next-page:hover,.prev-page:hover,.prev-fast:hover,.next-fast:hover {filter: drop-shadow(0 0 .085em)}
 
 .lang {width: 20px}
 .cam {width: 16px;margin-top: -5px}
