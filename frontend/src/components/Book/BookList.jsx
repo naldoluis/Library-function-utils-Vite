@@ -8,8 +8,6 @@ import { Link } from 'react-router-dom'
 import { BASE_URL } from '../../utils/requests'
 import { deleteBook } from '../../services'
 import MyToast from '../MyToast'
-import iconNext1 from '../../assets/next1.png'
-import iconNext2 from '../../assets/next2.png'
 import '../../assets/css/Style.css'
 
 class BookList extends React.Component {
@@ -251,23 +249,15 @@ class BookList extends React.Component {
               </div>
               <div style={{ float: "right" }}>
                 <InputGroup size="sm">
-                    <b onClick={this.firstPage}>
-                      <img className="prev-fast" src={iconNext2}/>
-                    </b>
-                    <b onClick={this.prevPage}>
-                      <img className="prev-page" src={iconNext1}/>
-                    </b>
+                    <b className="prev-fast" onClick={this.firstPage}>➤➤</b>
+                    <b className="prev-page" onClick={this.prevPage}>➤</b>
                   <FormControl
                     className="border-dark text-white page-num bg-dark"
                     value={currentPage}
                     onChange={this.changePage}
-                  />
-                    <b onClick={this.nextPage}>
-                      <img className="next-page" src={iconNext1}/>
-                    </b>
-                    <b onClick={this.lastPage}>
-                      <img className="next-fast" src={iconNext2}/>
-                    </b>
+                   />
+                    <b className="next-page" onClick={this.nextPage}>➤</b>
+                    <b className="next-fast" onClick={this.lastPage}>➤➤</b>
                 </InputGroup>
               </div>
             </Card.Footer>
