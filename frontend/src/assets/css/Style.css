@@ -7,10 +7,10 @@
 .first,.prev {margin: -.4px 4px 0 0;font-family: 'Varela Round';height: 29px}
 .next,.last {margin: -.4px 0 0 4px;font-family: 'Varela Round';height: 29px}
 
-.next-page {margin-left: 20px;color:#be5810}
-.prev-page {margin-right: 20px;transform: rotate(180deg);color:#0d981e}
-.prev-fast {transform: rotate(180deg);margin-right: 20px;color:#0d2d98}
-.next-fast {margin-left: 20px;color:#be1e10}
+.next-page {margin-left: 20px;color:#ffb742}
+.prev-page {margin-right: 20px;transform: rotate(180deg);color:#70ff8e}
+.prev-fast {transform: rotate(180deg);margin-right: 20px;color:#8aecff}
+.next-fast {margin-left: 20px;color:#ff5842}
 
 .next-page,.prev-page,.prev-fast,.next-fast {transition: all ease .17s;font-size: 23px;margin-top: -2.7px}
 .next-page:hover,.prev-page:hover,.prev-fast:hover,.next-fast:hover {filter: drop-shadow(0 0 .085em)}
