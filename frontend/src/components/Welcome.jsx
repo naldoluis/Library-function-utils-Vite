@@ -2,15 +2,13 @@ import { Card } from 'react-bootstrap'
 import { useEffect, useState } from 'react'
 
 export default function Welcome() {
-  const [quotes, setQuotes] = useState("")
+  const [quotes, setQuotes] = useState()
 
   useEffect(() => {
-    if (quotes === "") {
       fetch("https://type.fit/api/quotes")
        .then(response => response.json())
        .then(json => setQuotes(json))
-    }
-  }, [quotes])
+  }, [])
 
   return (
     <Card bg="dark" text="light">
