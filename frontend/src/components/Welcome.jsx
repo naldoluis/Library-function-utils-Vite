@@ -8,7 +8,7 @@ export default function Welcome() {
     if (quotes === "") {
       fetch("https://type.fit/api/quotes")
        .then(response => response.json())
-       .then((json) => setQuotes(json))
+       .then(json => setQuotes(json))
     }
   }, [quotes])
 

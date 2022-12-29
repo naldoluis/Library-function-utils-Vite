@@ -8,7 +8,7 @@ export default function Help() {
     if (comments === "") {
       fetch("https://jsonplaceholder.typicode.com/posts/1/comments")
         .then(response => response.json())
-        .then((json) => setComments(json))
+        .then(json => setComments(json))
     }
   }, [comments])
 
