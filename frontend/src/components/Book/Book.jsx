@@ -9,7 +9,9 @@ import MyToast from '../MyToast'
 import iconCam from '../../assets/camera.png'
 import iconLang from '../../assets/language.png'
 
-export default function Book(props) {
+export default function Book() {
+  const book = useSelector(state => state.book)
+  const dispatch = useDispatch()
   const [books, setBooks] = useState([])
   const [show, setShow] = useState(false)
 
@@ -23,9 +25,6 @@ export default function Book(props) {
    }
     findAllLanguages()
   }, [])
-
-  const book = useSelector(state => state.book)
-  const dispatch = useDispatch()
 
   const findAllLanguages = () => {
     dispatch(fetchLanguages())

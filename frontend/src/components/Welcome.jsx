@@ -5,7 +5,7 @@ export default function Welcome() {
   const [quotes, setQuotes] = useState()
 
   useEffect(() => {
-      fetch("https://type.fit/api/quotes")
+    fetch("https://type.fit/api/quotes")
        .then(response => response.json())
        .then(json => setQuotes(json))
   }, [])
