@@ -1,4 +1,3 @@
-import axios from 'axios'
 import { Card } from 'react-bootstrap'
 import { useEffect, useState } from 'react'
 
@@ -7,9 +6,9 @@ export default function Welcome() {
 
   useEffect(() => {
     if (quotes === "") {
-      axios("https://type.fit/api/quotes").then(response => {
-        setQuotes(response.data)
-      })
+      fetch("https://type.fit/api/quotes")
+       .then(response => response.json())
+       .then((json) => setQuotes(json))
     }
   }, [quotes])
 

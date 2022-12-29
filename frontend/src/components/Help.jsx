@@ -1,4 +1,3 @@
-import axios from 'axios'
 import { Card } from 'react-bootstrap'
 import { useEffect, useState } from 'react'
 
@@ -7,9 +6,9 @@ export default function Help() {
 
   useEffect(() => {
     if (comments === "") {
-      axios("https://jsonplaceholder.typicode.com/posts/1/comments").then(response => {
-        setComments(response.data)
-      })
+      fetch("https://jsonplaceholder.typicode.com/posts/1/comments")
+        .then(response => response.json())
+        .then((json) => setComments(json))
     }
   }, [comments])
 
