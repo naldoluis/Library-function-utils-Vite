@@ -9,7 +9,6 @@ import MyToastUser from '../MyToastUser'
 
 export default function Register() {
   const [show, setShow] = useState(false)
-  const [message, setMessage] = useState("")
   const navigate = useNavigate()
 
   const initialState = { name: "", email: "", password: "", mobile: "" }
@@ -36,7 +35,6 @@ export default function Register() {
     dispatch(registerUser(user))
       .then(response => {
         setShow(true)
-        setMessage(response.message)
         resetRegisterForm()
         setTimeout(() => {
           setShow(false)
