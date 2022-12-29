@@ -63,14 +63,14 @@ export default function Book() {
       let book = props.bookObject.book
       if (book != null) {
         setBooks({
-          id: books.id,
-          title: books.title,
-          author: books.author,
-          photo: books.photo,
-          isbn: books.isbn,
-          price: books.price,
-          language: books.language,
-          genre: books.genre
+          id: e.target.elements.id.value,
+          title: e.target.elements.title.value,
+          author: e.target.elements.author.value,
+          photo: e.target.elements.photo.value,
+          isbn: e.target.elements.isbn.value,
+          price: e.target.elements.price.value,
+          language: e.target.elements.language.value,
+          genre: e.target.elements.genre.value,
         })
       }
     }, 1000)
@@ -80,17 +80,17 @@ export default function Book() {
     setBooks(initialState)
   }
 
-  const submitBook = e => {
+  const onSubmit = e => {
     e.preventDefault()
 
     const bookSaved = {
-      title: books.title,
-      author: books.author,
-      photo: books.photo,
-      isbn: books.isbn,
-      price: books.price,
-      language: books.language,
-      genre: books.genre
+      title: e.target.elements.title.value,
+      author: e.target.elements.author.value,
+      photo: e.target.elements.photo.value,
+      isbn: e.target.elements.isbn.value,
+      price: e.target.elements.price.value,
+      language: e.target.elements.language.value,
+      genre: e.target.elements.genre.value
     }
 
     dispatch(saveBook(bookSaved))
@@ -109,14 +109,14 @@ export default function Book() {
     e.preventDefault()
 
     const bookEdit = {
-      id: books.id,
-      title: books.title,
-      author: books.author,
-      photo: books.photo,
-      isbn: books.isbn,
-      price: books.price,
-      language: books.language,
-      genre: books.genre
+      id: e.target.elements.id.value,
+      title: e.target.elements.title.value,
+      author: e.target.elements.author.value,
+      photo: e.target.elements.photo.value,
+      isbn: e.target.elements.isbn.value,
+      price: e.target.elements.price.value,
+      language: e.target.elements.language.value,
+      genre: e.target.elements.genre.value
     }
 
     dispatch(updateBook(bookEdit))
@@ -150,7 +150,7 @@ export default function Book() {
             {books.id ? "Update Book" : "Add New Book"}
           </Card.Header>
           <Form
-            onSubmit={books.id ? updatedBook : submitBook}
+            onSubmit={books.id ? updatedBook : onSubmit}
             id="bookFormId"
           >
             <Card.Body>
