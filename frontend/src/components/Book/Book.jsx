@@ -81,8 +81,8 @@ export default function Book(props) {
     setBooks(initialState)
   }
 
-  const submitBook = event => {
-    event.preventDefault()
+  const submitBook = e => {
+    e.preventDefault()
 
     const bookSaved = {
       title: books.title,
@@ -106,8 +106,8 @@ export default function Book(props) {
     setBooks(initialState)
   }
 
-  const updatedBook = event => {
-    event.preventDefault()
+  const updatedBook = e => {
+    e.preventDefault()
 
     const bookEdit = {
       id: books.id,
@@ -132,8 +132,8 @@ export default function Book(props) {
     setBooks(initialState)
   }
 
-  const bookChange = event => {
-    const { name, value } = event.target
+  const bookChange = e => {
+    const { name, value } = e.target
     setBooks({ ...books, [name]: value })
   }
 

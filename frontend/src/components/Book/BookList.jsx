@@ -121,9 +121,9 @@ class BookList extends React.Component {
     }
   }
 
-  searchChange = event => {
+  searchChange = e => {
     this.setState({
-      [event.target.name]: event.target.value
+      [e.target.name]: e.target.value
     })
   }
 

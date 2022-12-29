@@ -20,9 +20,9 @@ class UserList extends React.Component {
     this.props.fetchUsers()
   }
 
-  changePage = event => {
+  changePage = e => {
     this.setState({
-      [event.target.name]: parseInt(event.target.value)
+      [e.target.name]: parseInt(e.target.value)
     })
   }
 

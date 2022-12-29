@@ -1605,9 +1605,20 @@ export default function Home() {
   </>
 )}
 
+    this.state = {
+      books: [],
+      currentPage: 1,
+      booksPerPage: 8,
+      modalShow: false
+    }
+  }
+
   setModalShow = visible => {
     this.setState({ modalShow: visible })
   }
+
+  render() {
+    const { books, currentPage, modalShow, totalPages } = this.state
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
                                                                                                                           - ❐ ❌

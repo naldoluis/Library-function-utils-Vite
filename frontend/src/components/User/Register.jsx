@@ -15,8 +15,8 @@ export default function Register() {
 
   const [user, setUser] = useState(initialState)
 
-  const userChange = event => {
-    const { name, value } = event.target
+  const userChange = e => {
+    const { name, value } = e.target
     setUser({ ...user, [name]: value })
   }
 

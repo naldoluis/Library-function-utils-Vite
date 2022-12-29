@@ -24,8 +24,8 @@ export default function Login() {
     setValues({ ...values, showPassword: !values.showPassword })
   }
 
-  const credentialChange = event => {
-    const { name, value } = event.target
+  const credentialChange = e => {
+    const { name, value } = e.target
     setUser({ ...user, [name]: value })
   }
 

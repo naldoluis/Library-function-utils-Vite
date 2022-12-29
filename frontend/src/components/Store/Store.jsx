@@ -13,17 +13,12 @@ class Store extends React.Component {
     this.state = {
       books: [],
       currentPage: 1,
-      booksPerPage: 8,
-      modalShow: false
+      booksPerPage: 8
     }
   }
 
   componentDidMount() {
     this.findAllBooksStore(this.state.currentPage)
-  }
-
-  setModalShow = visible => {
-    this.setState({ modalShow: visible })
   }
 
   findAllBooksStore(currentPage) {
@@ -44,15 +39,15 @@ class Store extends React.Component {
      })
   }
 
-  changePage = event => {
-    let targetPage = parseInt(event.target.value)
+  changePage = e => {
+    let targetPage = parseInt(e.target.value)
     if (this.state.search) {
       this.searchData(targetPage)
     } else {
       this.findAllBooks(targetPage)
     }
     this.setState({
-      [event.target.name]: targetPage
+      [e.target.name]: targetPage
     })
   }
 
@@ -100,7 +95,7 @@ class Store extends React.Component {
   }
 
   render() {
-    const { books, currentPage, modalShow, totalPages } = this.state
+    const { books, currentPage, totalPages } = this.state
 
     return (
       <Card className="card-store">
