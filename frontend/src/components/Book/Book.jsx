@@ -242,7 +242,7 @@ export default function Book(props) {
                     as="select"
                     custom="true"
                     name="language"
-                    value={books.language}
+                    value={books.languages}
                     onChange={bookChange}
                     className="bg-dark border-secondary text-white"
                   >
@@ -268,7 +268,7 @@ export default function Book(props) {
                     as="select"
                     custom="true"
                     name="genre"
-                    value={books.genre}
+                    value={books.genres}
                     onChange={bookChange}
                     className="bg-dark border-secondary text-white"
                   >
@@ -298,7 +298,7 @@ export default function Book(props) {
                 variant="info"
                 onClick={resetBook}
                 type="reset"
-              >
+               >
                 <FontAwesomeIcon icon={faUndo}/> Reset
               </Button>{" "}
               <Link style={{ textDecoration: 'none' }}
