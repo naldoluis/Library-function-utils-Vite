@@ -19,6 +19,6 @@
 /* ============================================ MODAL VANILLA of STORE ==================================================
                                  Enable = class with name(.modal & .modal-content)                                        */
 
-.modall {display: flex;background: hwb(0 0% 100% / .4);align-items: center;justify-content: center;transform: scale(1.1);visibility: hidden;transition: transform .20s ease-in-out}
-.modall-content {font-size: 7px;background: #36373e;padding: 20px;width: 550px;height: 250px;border-radius: .5rem}
+.modall {display: flex;background: hwb(0 0% 100% / .4);align-items: center;justify-content: center;transform: scale(1.14);visibility: hidden;transition: transform .15s ease-in-out}
+.modall-content {background: #36373e;padding: 20px;width: 550px;height: 250px;border-radius: .5rem}
 .modal-show {visibility: visible;transform: scale(1)}
