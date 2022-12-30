@@ -97,6 +97,16 @@ class Store extends React.Component {
   render() {
     const { books, currentPage, totalPages } = this.state
 
+  const showModalVanilla = () => {
+    var element = document.getElementById("modalb")
+    element.classList.add("show-modalb")
+  }
+
+  const closeModalVanilla = () => {
+    var element = document.getElementById("modalb")
+    element.classList.remove("show-modalb")
+  }
+
     return (
       <Card className="card-store">
         <Card.Header>
@@ -121,12 +131,23 @@ class Store extends React.Component {
                   <img className="card-photo" src={book.photo}/>
                   <h6 className="card-title">{book.title}</h6>
                   <div className="card-desc">{book.genre}</div>
-                  <button className="purchase-button">
+                  <button onClick={() => showModalVanilla()} className="purchase-button">
                     <FontAwesomeIcon icon={faMoneyBills}/> Buy
                   </button>
                 </div>
                ))
             )}
+            <div className="modalb" id="modalb">
+              <div className="modalb-content border-secondary">
+                <h4 align="center">Centered Modal</h4>
+                  <h6>
+                    Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+                    dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
+                    consectetur ac, vestibulum at eros.
+                  </h6>
+                <Button size="sm" variant="success" onClick={() => closeModalVanilla()}>OK</Button>
+              </div>
+            </div>
           </Card.Body>
           {books.length > 0 ? (
             <Card.Footer style={{ textAlign: "right", color: "#fff" }}>
@@ -163,3 +184,14 @@ class Store extends React.Component {
       </Card>
     )}}
 export default Store
+
+
+
+
+
+
+
+
+
+
+

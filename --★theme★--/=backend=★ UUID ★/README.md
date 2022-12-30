@@ -1369,7 +1369,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(UserList)
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.0.0)
 
->										  	                              * [UPDATE] *
+>										  	                            * [UPDATE] *
 
 # SpringSecurityConfig (FilterChain)
 

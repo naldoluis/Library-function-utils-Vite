@@ -15,3 +15,11 @@
 
 .toast {position: fixed;top: 10px;right: 10px;z-index: 1;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2)}
 .card-store {background: #383940;width: 1160px;margin-left: -5px;border-radius: 20px}
+
+
+
+/*    ====================================================== MODAL ================================================================    */
+
+.modalb {color: aliceblue;padding: 0;display: flex;align-items: center;justify-content: center;transform: scale(1.1);visibility: hidden;opacity: 0;transition: visibility .15s ease-in-out, transform .20s ease-in-out, opacity .1s ease-in-out}
+.modalb-content {font-size: 7px;background: #36373e;padding: 48px 14px;width: 550px;height: 250px;border-radius: .5rem}
+.show-modalb {opacity: 1;visibility: visible;transform: scale(1)}
