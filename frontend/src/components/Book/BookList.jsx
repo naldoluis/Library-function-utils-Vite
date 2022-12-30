@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom'
 import { BASE_URL } from '../../utils/requests'
 import { deleteBook } from '../../services'
 import MyToast from '../MyToast'
-import '../../assets/css/Style.css'
 
 class BookList extends React.Component {
   constructor() {
