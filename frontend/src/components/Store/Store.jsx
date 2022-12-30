@@ -5,7 +5,6 @@ import { faBookQuran, faMoneyBills } from '@fortawesome/free-solid-svg-icons'
 import { Button, Card, Table } from 'react-bootstrap'
 import Spinner from 'react-bootstrap/Spinner'
 import { BASE_URL } from '../../utils/requests'
-import '../../assets/css/Style.css'
 
 class Store extends React.Component {
   constructor() {
@@ -94,18 +93,18 @@ class Store extends React.Component {
     }
   }
 
+  openModalVanilla = () => {
+    var div = document.getElementById("id")
+    div.classList.add("modal-show")
+  }
+
+  closeModalVanilla = () => {
+    var div = document.getElementById("id")
+    div.classList.remove("modal-show")
+  }
+
   render() {
     const { books, currentPage, totalPages } = this.state
-
-  const showModalVanilla = () => {
-    var element = document.getElementById("modalb")
-    element.classList.add("show-modalb")
-  }
-
-  const closeModalVanilla = () => {
-    var element = document.getElementById("modalb")
-    element.classList.remove("show-modalb")
-  }
 
     return (
       <Card className="card-store">
@@ -131,21 +130,21 @@ class Store extends React.Component {
                   <img className="card-photo" src={book.photo}/>
                   <h6 className="card-title">{book.title}</h6>
                   <div className="card-desc">{book.genre}</div>
-                  <button onClick={() => showModalVanilla()} className="purchase-button">
+                  <button className="purchase-button" onClick={() => this.openModalVanilla()}>
                     <FontAwesomeIcon icon={faMoneyBills}/> Buy
                   </button>
                 </div>
                ))
             )}
-            <div className="modalb" id="modalb">
-              <div className="modalb-content border-secondary">
+            <div className="modal" id="id">
+              <div className="modal-content border-secondary">
                 <h4 align="center">Centered Modal</h4>
-                  <h6>
+                  <h6 style={{ margin: 18 }}>
                     Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
                     dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
                     consectetur ac, vestibulum at eros.
                   </h6>
-                <Button size="sm" variant="success" onClick={() => closeModalVanilla()}>OK</Button>
+                <Button style={{ width: 60, margin: "45px 0 0 230px" }} size="sm" variant="info" onClick={() => this.closeModalVanilla()}>OK</Button>
               </div>
             </div>
           </Card.Body>
@@ -184,14 +183,3 @@ class Store extends React.Component {
       </Card>
     )}}
 export default Store
-
-
-
-
-
-
-
-
-
-
-
