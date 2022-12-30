@@ -138,13 +138,13 @@ class Store extends React.Component {
             )}
             <div className="modal" id="id">
               <div className="modal-content border-secondary">
-                <h4 align="center">Centered Modal</h4>
-                  <h6 style={{ margin: 18 }}>
+                <h4 align="center">❐ Centered Modal</h4>
+                  <h6 style={{ margin: 20 }}>
                     Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
                     dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
                     consectetur ac, vestibulum at eros.
                   </h6>
-                <Button style={{ width: 60, margin: "45px 0 0 230px" }} size="sm" variant="info" onClick={() => this.closeModalVanilla()}>OK</Button>
+                <Button style={{ width: 60, margin: "45px 0 0 230px" }} size="sm" variant="warning" onClick={() => this.closeModalVanilla()}>OK</Button>
               </div>
             </div>
           </Card.Body>
