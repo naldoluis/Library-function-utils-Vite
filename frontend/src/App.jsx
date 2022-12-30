@@ -10,6 +10,7 @@ import Login from './components/User/Login'
 import NavigationBar from './components/NavigationBar'
 import Register from './components/User/Register'
 import Store from './components/Store/Store'
+import Slide from './components/Slide/Slide'
 import UserList from './components/User/UserList'
 import Welcome from './components/Welcome'
 import './App.css'
@@ -31,6 +32,7 @@ export default function App() {
               <Route path="/list" element={<BookList/>}/>
               <Route path="/register" element={<Register/>}/>
               <Route path="/store" element={<Store/>}/>
+              <Route path="/slide" element={<Slide/>}/>
               <Route path="/bonus" element={<Bonus/>}/>
               <Route path="/user" element={<UserList/>}/>
               <Route path="/login" element={<Login/>}/>

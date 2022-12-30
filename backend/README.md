@@ -773,7 +773,6 @@ public class BookController implements Resource<Book> {
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                                                                                                                           - ❐ ❌
 # Fonts index.css
-
                    @import "https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css";
                    @import "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
                    @import "https://fonts.googleapis.com/css?family=Roboto|Varela+Round";
@@ -787,6 +786,10 @@ public class BookController implements Resource<Book> {
 # html
 
 <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/b/ba/Book_icon_1.png"/>
+
+# Bootstrap
+
+https://react-bootstrap.github.io/components/pagination/
 
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                                                                                                                           - ❐ ❌

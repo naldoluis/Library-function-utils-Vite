@@ -2,8 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBookQuran, faMoneyBills } from '@fortawesome/free-solid-svg-icons'
-import { Button, Card, Table } from 'react-bootstrap'
-import Spinner from 'react-bootstrap/Spinner'
+import { Button, Card, Spinner, Table } from 'react-bootstrap'
 import { BASE_URL } from '../../utils/requests'
 
 class Store extends React.Component {

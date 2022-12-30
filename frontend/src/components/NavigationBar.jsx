@@ -49,6 +49,7 @@ export default function NavigationBar() {
         <Link to={"list"} className="nav-link">Book List</Link>
         <Link to={"user"} className="nav-link">User List</Link>
         <Link to={"store"} className="nav-link">Store</Link>
+        <Link to={"slide"} className="nav-link">News</Link>
         <Link to={"bonus"} className="nav-link">Bonus</Link>
         <Link to={"help"} className="nav-link">【?】</Link>
          <a href="https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi" className="speedometer" style={{ margin: 6.5 }}>
