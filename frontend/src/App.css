@@ -17,8 +17,8 @@
 .card-store {background: #383940;width: 1160px;margin-left: -5px;border-radius: 20px}
 
 /* ============================================ MODAL VANILLA of STORE ==================================================
-                                 Enable = class with name(.modal & .modal-content)                                        */
+                                          Enable = class with name(.modal)                                                */
 
 .modall {display: flex;background: hwb(0 0% 100% / .4);align-items: center;justify-content: center;transform: scale(1.14);visibility: hidden;transition: transform .15s ease-in-out}
-.modall-content {background: #36373e;padding: 20px;width: 550px;height: 250px;border-radius: .5rem}
+.content-modal {border: .1px solid #695c4a;background: #36373e;padding: 20px;width: 550px;height: 250px;border-radius: .5rem}
 .modal-show {visibility: visible;transform: scale(1)}

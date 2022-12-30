@@ -137,7 +137,7 @@ class Store extends React.Component {
                ))
             )}
             <div className="modal" id="id">
-              <div className="modal-content border-secondary">
+              <div className="content-modal">
                 <h4 align="center">❐ Centered Modal</h4>
                   <h6 style={{ margin: 20 }}>
                     Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
