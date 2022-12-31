@@ -786,10 +786,11 @@ public class BookController implements Resource<Book> {
 # html
 
 <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/b/ba/Book_icon_1.png"/>
+<link rel="icon" href="https://www.pngkey.com/png/full/110-1108637_free-png-stack-of-beautiful-books-png-images.png"/>
 
 # Bootstrap
 
-https://react-bootstrap.github.io/components/pagination/
+                       https://react-bootstrap.github.io/components/pagination/
 
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                                                                                                                           - ❐ ❌
