@@ -448,7 +448,7 @@ var VanillaTilt = function () {
         return
       }
 
-      elements.forEach((element) => {
+      elements.forEach(element => {
         if (!("vanillaTilt" in element)) {
           element.vanillaTilt = new VanillaTilt(element, settings)
         }
