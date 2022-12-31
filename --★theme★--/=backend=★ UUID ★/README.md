@@ -1450,6 +1450,81 @@ public class SpringSecurityConfig {
 },"include": ["vite.config.ts"]}
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
+
+[React_Carousel]
+
+>Nome	                       Valor	                Propriedade utilizada para
+as	                           –	              Definir um elemento para esse componente. Esse elemento pode ser personalizado
+activeIndex	                   –	              Controlar o slide carregado inicialmente na estrutura.
+defaultActiveIndex	           0	              Definir o índice ativo no carrossel.
+controls	                    true	            Exibir os botões de próximo ou anterior na estrutura.
+fade	                        false	            Exibir uma animação entre os slides quando estiverem em movimento.
+indicatorLabels	               []	              Indicar uma matriz de rótulos para os indicadores do carrossel.
+indicators	                  true	            Exibir um conjunto de indicadores que facilitam a navegação no carrossel.
+interval	                    5000	            Definir qual o tempo de atraso entre o ciclo automático de um item.
+keyboard	                    true	            Verificar se o carrossel reagirá a eventos de teclado da pessoa usuária ou não.
+nextIcon	          <span aria-hidden=”true”
+                    className=”carousel-control- Substituir o ícone padrão da seta que representa o item seguinte da estrutura.
+                    next-icon”/>
+nextLabel	                 ‘Próximo’	          Exibir o elemento seguinte do carrossel. Esse rótulo é exibido somente nos leitores de tela.
+onSelect	                     –	              Disparar uma função quando o item ativo do carrossel é alterado.
+onSlid                         –	              Disparar uma função quando o slide do carrossel é finalizado.
+onSlide	                       –	              Disparar uma função quando o slide do carrossel é iniciado.
+pause	                      ‘hover’	            Parar o carrossel com base em eventos do mouse, teclado, etc.
+prevIcon	          <span aria-hidden=”true”
+                    className=”carousel-control- Substituir o ícone padrão da seta que representa o item anterior da estrutura.
+                    prev-icon”/>
+prevLabel	                 ‘Anterior’	          Exibir o elemento anterior do carrossel. Esse rótulo é exibido somente nos leitores de tela.
+slide	                        true	            Possibilitar a animação entre as imagens do carrossel.
+touch	                        true	            Determinar se o carrossel poderá ter eventos de deslize para esquerda
+                                                e direita em dispositivos sensíveis ao toque na tela, como tablets.
+variant	                    ‘escuro’	          Determinar qual será a cor dos controles, indicadores e legendas.
+wrap	                        true	            Verificar se o carrossel precisará ter uma pausa brusca ou se será contínuo.
+bsPrefix	                 ‘carousel’	          Trabalhar com os estilos do CSS utilizando o Bootstrap, dando alto suporte de customização.
+
+Além das propriedades gerais existentes no React carousel, também existem as propriedades de item e as de legenda:
+
+[Propriedades_de_Item]:
+
+>Nome	                       Valor	                Propriedade utilizada para
+as	                           –	              Definir um elemento para este componente. Esse elemento pode ser personalizado.
+interval	                    true	            Definir qual o tempo de atraso entre o ciclo automático de um item.
+bsPrefix	                 ‘carousel’	          Trabalhar com os estilos do CSS utilizando o Bootstrap, dando alto suporte de customização.
+
+[Propriedades_de_legenda]:
+
+>Nome	                       Valor	                Propriedade utilizada para
+as	                           –	              Definir um elemento para este componente. Esse elemento pode ser personalizado.
+bsPrefix	                 ‘carousel’	          Trabalhar com os estilos do CSS utilizando o Bootstrap, dando alto suporte de customização.
+
+[Tabela_dos_métodos_do_React_carousel]:
+
+>Nome                    	   Valor                  Método responsável por
+showArrows              	    true          	  Exibir as setas “Anterior” e “Próximo”.
+showStatus              	    true	            Exibir o índice atual do carrossel.
+showIndicators          	    true	            Exibir pequenos pontos ou quadrados para movimentar o carrossel.
+showThumbs	                  true          	  Exibir as miniaturas de fotos no carrossel.
+thumbWidth          	     indefinido	          Definir qual será a largura que as fotos em formato miniatura terão no carrossel.
+infiniteLoop	                false	            Adicionar um loop infinito no carrossel, ou seja,
+                                                ele não parará a execução, independente do evento realizado.
+selectedItem	                 –	              Definir qual será o item selecionado, inicialmente.
+axis	                    horizontal	          Converter a orientação horizontal ou vertical do carrossel.
+onChange	                     –	              Executar alguma função no carrossel quando as posições do carrossel forem atualizadas.
+onClickItem 	                 –	              Executar alguma função no carrossel quando um item for clicado.
+onClickThumb 	                 –	              Executar alguma função no carrossel quando uma miniatura for clicada.
+stopOnHover 	                true	            Parar a reprodução de fotos do carrossel quando o mouse estiver em cima dele.
+interval 	                    3000             	Definir o intervalo de tempo na reprodução automática.
+transitionTime 	               350	            Definir qual será o tempo do intervalo de transição das fotos em milissegundos.
+swipeable 	                  true	            Permitir que a pessoa usuária faça movimentos de deslizar a tela no carrossel.
+dynamicHeight	                false	            Gerenciar a altura que o carrossel terá, caso seja preciso.
+centerMode 	                  false	            Permitir a visualização centralizada com slides anteriores e seguintes.
+labels 	                    opcional	          Permitir a especificação de rótulos adicionados aos controles do carrossel.
+onSwipeStart 	                 –	              Executar alguma função no carrossel quando um gesto de passar o dedo é inicializado.
+onSwipeEnd	                   –	              Executar alguma função no carrossel quando um gesto de passar o dedo é concluído.
+onSwipeMove	                   –	              Executar alguma função no carrossel quando um gesto de passar o dedo é concluído.
+
+!J------------------------------------------------------------------------------------------------------------------------------J!
+
 # icons
 
 >                                                https://fontawesome.com/search
