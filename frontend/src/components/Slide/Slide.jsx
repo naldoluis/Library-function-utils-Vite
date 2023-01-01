@@ -2,7 +2,7 @@ import { Carousel } from 'react-bootstrap'
 
 export default function Slide() {
   return (
-      <Carousel style={{ fontSize: 17 }} prevLabel="⮜ Previus" nextLabel=" Next ➤" indicators={false}>
+      <Carousel style={{ fontSize: 17 }} prevLabel="⮜ Previus" nextLabel="Next ➤" indicators={false}>
         <Carousel.Item className="slide">
         <h5 style={{ textAlign: "center" }}>News Page 1</h5>
           <img
