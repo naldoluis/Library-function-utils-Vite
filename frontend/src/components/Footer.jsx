@@ -5,7 +5,7 @@ export default function Footer() {
   const [fullYear, setFullYear] = useState()
 
   useEffect(() => {
-    setFullYear(new Date().getFullYear() - 3)
+    setFullYear(new Date().getFullYear() - 4)
   }, [fullYear])
 
   return (
