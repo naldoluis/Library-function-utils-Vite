@@ -10,15 +10,16 @@ import iconCam from '../../assets/camera.png'
 import iconLang from '../../assets/language.png'
 
 export default function Book() {
-  const book = useSelector(state => state.book)
-  const dispatch = useDispatch()
-  const [books, setBooks] = useState([])
-  const [show, setShow] = useState(false)
 
   const initialState = { id: "", title: "", author: "", photo: "", isbn: "", price: "", language: "", genre: "" }
 
+  const book = useSelector(state => state.book)
+  const dispatch = useDispatch()
+  const [books, setBooks] = useState(initialState)
+  const [show, setShow] = useState(false)
+
   const { bookId } = useParams()
-  
+
   useEffect(() => {
     if(bookId) {
      findBookById(bookId)
@@ -29,7 +30,7 @@ export default function Book() {
   const findAllLanguages = () => {
     dispatch(fetchLanguages())
     setTimeout(() => {
-      let bookLanguages = books.languages
+      let bookLanguages = books.language
       if (bookLanguages) {
         setBooks({
           language: [{ value: "", display: "Select Language" }].concat(
@@ -45,7 +46,7 @@ export default function Book() {
   const findAllGenres = () => {
     dispatch(fetchGenres())
     setTimeout(() => {
-      let bookGenres = books.genres
+      let bookGenres = books.genre
       if (bookGenres) {
         setBooks({
           genre: [{ value: "", display: "Select Genre" }].concat(
@@ -135,6 +136,11 @@ export default function Book() {
     const { name, value } = e.target
     setBooks({ ...books, [name]: value })
   }
+
+/*   const bookChange = e => {
+    const { name, value } = e.target
+    setBooks({ ...books, fields: {...books.fields, [name]: {stringValue: value }}})
+  } */
 
     return (
       <div>
@@ -241,7 +247,7 @@ export default function Book() {
                     as="select"
                     custom="true"
                     name="language"
-                    value={books.languages}
+                    value={books.language}
                     onChange={bookChange}
                     className="bg-dark border-secondary text-white"
                   >
@@ -267,7 +273,7 @@ export default function Book() {
                     as="select"
                     custom="true"
                     name="genre"
-                    value={books.genres}
+                    value={books.genre}
                     onChange={bookChange}
                     className="bg-dark border-secondary text-white"
                   >

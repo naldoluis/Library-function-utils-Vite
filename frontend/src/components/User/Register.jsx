@@ -8,11 +8,11 @@ import { registerUser } from '../../services'
 import MyToastUser from '../MyToastUser'
 
 export default function Register() {
-  const [show, setShow] = useState(false)
-  const navigate = useNavigate()
 
   const initialState = { name: "", email: "", password: "", mobile: "" }
 
+  const [show, setShow] = useState(false)
+  const navigate = useNavigate()
   const [user, setUser] = useState(initialState)
 
   const userChange = e => {

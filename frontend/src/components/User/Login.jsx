@@ -7,12 +7,12 @@ import { faEnvelope, faEye, faEyeLowVision, faLock, faSignInAlt, faUndo } from '
 import { authenticateUser } from '../../services'
 
 export default function Login() {
-  const [error, setError] = useState()
-  const [show, setShow] = useState(false)
-  const navigate = useNavigate()
 
   const initialState = { email: "", password: "" }
 
+  const [error, setError] = useState()
+  const [show, setShow] = useState(false)
+  const navigate = useNavigate()
   const [user, setUser] = useState(initialState)
 
   const [values, setValues] = useState({

@@ -7,7 +7,7 @@ export default function Slide() {
         <h5 style={{ textAlign: "center" }}>News Page 1</h5>
           <img
             style={{ width: 700, height: 400, margin: "20px 0 0 200px", borderRadius: 5 }}
-            src="https://miro.medium.com/max/1200/1*KzTdEF4HH8syparjt3vVwg.png"
+            src="https://miro.medium.com/max/1200/1*WB8h3NUdG7qgSKJ74W9qyw.png"
           />
         </Carousel.Item>
         <Carousel.Item className="slide">
@@ -21,7 +21,7 @@ export default function Slide() {
         <h5 style={{ textAlign: "center" }}>News Page 3</h5>
           <img
             style={{ width: 700, height: 400, margin: "20px 0 0 200px", borderRadius: 5 }}
-            src="https://miro.medium.com/max/1200/1*WB8h3NUdG7qgSKJ74W9qyw.png"
+            src="https://miro.medium.com/max/1200/1*KzTdEF4HH8syparjt3vVwg.png"
           />
         </Carousel.Item>
       </Carousel>
