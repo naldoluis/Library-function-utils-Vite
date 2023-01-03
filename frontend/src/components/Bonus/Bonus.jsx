@@ -1,5 +1,5 @@
-import { useEffect } from 'react'
 import { Card } from 'react-bootstrap'
+import { useEffect } from 'react'
 
 export default function Bonus() {
 

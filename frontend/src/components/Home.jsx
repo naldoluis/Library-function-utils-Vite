@@ -1,8 +1,6 @@
-import { Alert, Button } from 'react-bootstrap'
+import { Alert, Button, OverlayTrigger, Popover } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
 import { useState } from 'react'
-import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
-import Popover from 'react-bootstrap/Popover'
 import authToken from '../utils/authToken'
 import ModalCustom from './ModalCustom'
 
