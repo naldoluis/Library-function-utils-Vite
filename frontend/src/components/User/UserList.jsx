@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Alert, Button, Card, FormControl, InputGroup, Table } from 'react-bootstrap'
+import { Alert, Card, FormControl, InputGroup, Table } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUsers } from '@fortawesome/free-solid-svg-icons'
 import { fetchUsers } from '../../services'

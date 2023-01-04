@@ -13,10 +13,10 @@ export default function Book() {
 
   const initialState = { id: "", title: "", author: "", photo: "", isbn: "", price: "", language: "", genre: "" }
 
-  const book = useSelector(state => state.book)
-  const dispatch = useDispatch()
   const [books, setBooks] = useState(initialState)
   const [show, setShow] = useState(false)
+  const book = useSelector(state => state.book)
+  const dispatch = useDispatch()
 
   const { bookId } = useParams()
 
@@ -71,7 +71,7 @@ export default function Book() {
           isbn: e.target.elements.isbn.value,
           price: e.target.elements.price.value,
           language: e.target.elements.language.value,
-          genre: e.target.elements.genre.value,
+          genre: e.target.elements.genre.value
         })
       }
     }, 1000)
@@ -137,11 +137,6 @@ export default function Book() {
     setBooks({ ...books, [name]: value })
   }
 
-/*   const bookChange = e => {
-    const { name, value } = e.target
-    setBooks({ ...books, fields: {...books.fields, [name]: {stringValue: value }}})
-  } */
-
     return (
       <div>
         <div style={{ display: show ? "block" : "none" }}>
@@ -153,14 +148,12 @@ export default function Book() {
         <Card className="border-secondary bg-dark text-white">
           <Card.Header>
             <FontAwesomeIcon icon={books.id ? faEdit : faPlusSquare}/>{" "}
-            {books.id ? "Update Book" : "Add New Book"}
+             {books.id ? "Update Book" : "Add New Book"}
           </Card.Header>
-          <Form
-            onSubmit={books.id ? updatedBook : onSubmit}
-            id="bookFormId"
-          >
+          <Form onSubmit={books.id ? updatedBook : onSubmit}
+           >
             <Card.Body>
-            <div className="form-row">
+              <div className="form-row">
                 <Form.Group as={Col}>
                   <Form.Label>Title 📙</Form.Label>
                   <Form.Control

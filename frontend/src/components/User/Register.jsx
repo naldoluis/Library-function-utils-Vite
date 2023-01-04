@@ -12,8 +12,8 @@ export default function Register() {
   const initialState = { name: "", email: "", password: "", mobile: "" }
 
   const [show, setShow] = useState(false)
-  const navigate = useNavigate()
   const [user, setUser] = useState(initialState)
+  const navigate = useNavigate()
 
   const userChange = e => {
     const { name, value } = e.target

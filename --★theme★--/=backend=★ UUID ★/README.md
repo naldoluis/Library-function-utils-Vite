@@ -1114,6 +1114,11 @@ const mapDispatchToProps = dispatch => {
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Book)
 
+/*   const bookChange = e => {
+    const { name, value } = e.target
+    setBooks({ ...books, fields: {...books.fields, [name]: {stringValue: value }}})
+  } */
+
 !J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
                                                                                                                           - ❐ ❌
 # Login

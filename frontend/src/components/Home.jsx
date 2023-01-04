@@ -9,8 +9,8 @@ export default function Home() {
     authToken(localStorage.jwtToken)
   }
 
-  const auth = useSelector(state => state.auth)
   const [modalShow, setModalShow] = useState(false)
+  const auth = useSelector(state => state.auth)
 
   const popover = (
     <Popover style={{ margin: 0 }}>

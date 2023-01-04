@@ -9,10 +9,10 @@ import MyToastTimer from './MyToastTimer'
 import MyToastOut from './MyToastOut'
 
 export default function NavigationBar() {
-  const auth = useSelector(state => state.auth)
-  const dispatch = useDispatch()
   const [show, setShow] = useState(false)
   const [exit, setExit] = useState(false)
+  const auth = useSelector(state => state.auth)
+  const dispatch = useDispatch()
 
   const logout = () => {
     dispatch(logoutUser())
