@@ -30,7 +30,7 @@ export default function Book() {
   const findAllLanguages = () => {
     dispatch(fetchLanguages())
     setTimeout(() => {
-      let bookLanguages = books.language
+      let bookLanguages = book.language
       if (bookLanguages) {
         setBooks({
           language: [{ value: "", display: "Select Language" }].concat(
@@ -46,7 +46,7 @@ export default function Book() {
   const findAllGenres = () => {
     dispatch(fetchGenres())
     setTimeout(() => {
-      let bookGenres = books.genre
+      let bookGenres = book.genre
       if (bookGenres) {
         setBooks({
           genre: [{ value: "", display: "Select Genre" }].concat(

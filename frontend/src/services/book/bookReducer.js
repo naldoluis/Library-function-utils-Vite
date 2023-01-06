@@ -1,6 +1,6 @@
 import * as BT from './bookTypes'
 
-const initialState = { book: [], languages: [], genres: [], error: "" }
+const initialState = { book: [], genres: [], languages: [], error: "" }
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
