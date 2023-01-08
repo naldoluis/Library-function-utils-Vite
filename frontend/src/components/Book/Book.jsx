@@ -18,22 +18,22 @@ export default function Book() {
   const book = useSelector(state => state.book)
   const dispatch = useDispatch()
 
-  const { bookId } = useParams()
+  const { id } = useParams()
 
   useEffect(() => {
-    if(bookId) {
-     findBookById(bookId)
+    if(id) {
+     findBookById(id)
    }
     findAllLanguages()
-  }, [])
+  }, [id])
 
   const findAllLanguages = () => {
     dispatch(fetchLanguages())
     setTimeout(() => {
-      let bookLanguages = book.language
+      let bookLanguages = book.languages
       if (bookLanguages) {
         setBooks({
-          language: [{ value: "", display: "Select Language" }].concat(
+          languages: [{ value: "", display: "Select Language" }].concat(
             bookLanguages.map(language => {
               return { value: language, display: language }
            }))
@@ -46,10 +46,10 @@ export default function Book() {
   const findAllGenres = () => {
     dispatch(fetchGenres())
     setTimeout(() => {
-      let bookGenres = book.genre
+      let bookGenres = book.genres
       if (bookGenres) {
         setBooks({
-          genre: [{ value: "", display: "Select Genre" }].concat(
+          genres: [{ value: "", display: "Select Genre" }].concat(
             bookGenres.map(genre => {
               return { value: genre, display: genre }
            }))
@@ -61,17 +61,17 @@ export default function Book() {
   const findBookById = bookId => {
     dispatch(fetchBook(bookId))
     setTimeout(() => {
-      let book = props.bookObject.book
+      let book = books.id
       if (book != null) {
         setBooks({
-          id: e.target.elements.id.value,
-          title: e.target.elements.title.value,
-          author: e.target.elements.author.value,
-          photo: e.target.elements.photo.value,
-          isbn: e.target.elements.isbn.value,
-          price: e.target.elements.price.value,
-          language: e.target.elements.language.value,
-          genre: e.target.elements.genre.value
+          id: book.id,
+          title: book.title,
+          author: book.author,
+          photo: book.photo,
+          isbn: book.isbn,
+          price: book.price,
+          language: book.language,
+          genre: book.genre
         })
       }
     }, 1000)
@@ -289,7 +289,7 @@ export default function Book() {
             <Card.Footer style={{ textAlign: "right" }}>
               <Button size="sm" variant="success" type="submit">
                  <FontAwesomeIcon icon={faSave}/>{" "}
-                {book.id ? "Update" : "Save"}
+                {books.id ? "Update" : "Save"}
               </Button>{" "}
               <Button
                 size="sm"
