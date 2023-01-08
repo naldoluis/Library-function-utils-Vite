@@ -152,27 +152,19 @@ class Store extends React.Component {
               <div style={{ float: "left", fontSize: 15 }}>
                 Showing Page {currentPage} of {totalPages}
               </div>
-              <Button
-                size="sm"
-                variant="info"
+              <Button size="sm" variant="info"
                 onClick={this.firstPage}
               >
               </Button>{" "}
-              <Button
-                size="sm"
-                variant="success"
+              <Button size="sm" variant="success"
                 onClick={this.prevPage}
               >
               </Button>{" "}
-              <Button
-                size="sm"
-                variant="warning"
+              <Button size="sm" variant="warning"
                 onClick={this.nextPage}
               >
               </Button>{" "}
-              <Button
-                size="sm"
-                variant="danger"
+              <Button size="sm" variant="danger"
                 onClick={this.lastPage}
               >
               </Button>

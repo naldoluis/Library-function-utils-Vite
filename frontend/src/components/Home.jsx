@@ -30,7 +30,7 @@ export default function Home() {
 
   return (
   <>
-    <Alert style={{ background: "#343A40", color: "#fff", fontSize: 30, fontWeight: "bold", fontFamily: "sans-serif" }}>
+    <Alert style={{ background: "#343A40", color: "#fff", fontSize: 30, fontWeight: "bold", fontFamily: "sans-serif", border: ".5px solid #222" }}>
       Welcome to Book Shop <b style={{ color: "#f5d20c", fontSize: 24, fontWeight: 600 }}>{auth.username}</b>
       <p className="title-home">Good friends, good books, nutrition, and a sleepy conscience: this is the ideal life.</p>
       <p className="title-home">-- Mark Twain</p>
