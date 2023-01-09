@@ -19,14 +19,14 @@ export default function NavigationBar() {
     setExit(true)
     setTimeout(() => {
       setExit(false)
-    }, 2300)
+    }, 2200)
   }
 
   const clock = () => {
     setShow(true)
     setTimeout(() => {
       setShow(false)
-    }, 2300)
+    }, 2200)
   }
 
   const guestLinks = (

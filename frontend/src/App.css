@@ -16,7 +16,7 @@
 .toast {position: fixed;top: 10px;right: 10px;z-index: 1;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2)}
 .card-store {background: #383940;width: 1160px;margin-left: -5px;border-radius: 20px}
 
-.slide {transition: transform .37s ease-in-out}
+.slide {transition: transform .45s ease-in-out}
 
 /* ============================================ MODAL VANILLA of STORE ==================================================
                                           Enable = class with name(.modal)                                                */

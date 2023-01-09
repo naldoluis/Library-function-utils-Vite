@@ -1114,10 +1114,20 @@ const mapDispatchToProps = dispatch => {
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Book)
 
-/*   const bookChange = e => {
+!J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
+                                                                                                                          - ❐ ❌
+const bookChange = e => {
     const { name, value } = e.target
     setBooks({ ...books, fields: {...books.fields, [name]: {stringValue: value }}})
-  } */
+  }
+
+import { useParams } from 'react-router-dom'
+import Book from './Book'
+
+export default function BookParams() {
+  const params = useParams()
+  return <Book bookId={`${params.bookId}`}/>
+}
 
 !J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
                                                                                                                           - ❐ ❌

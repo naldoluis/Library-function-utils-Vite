@@ -61,8 +61,8 @@ export default function Book() {
   const findBookById = bookId => {
     dispatch(fetchBook(bookId))
     setTimeout(() => {
-      let book = books.id
-      if (book != null) {
+      let books = book.id
+      if (books != null) {
         setBooks({
           id: book.id,
           title: book.title,
@@ -74,7 +74,7 @@ export default function Book() {
           genre: book.genre
         })
       }
-    }, 1000)
+    }, 500)
   }
 
   const resetBook = () => {
@@ -102,7 +102,7 @@ export default function Book() {
       } else {
         setShow({ show: false })
       }
-    }, 2000)
+    }, 500)
     setBooks(initialState)
   }
 
@@ -110,14 +110,14 @@ export default function Book() {
     e.preventDefault()
 
     const bookEdit = {
-      id: e.target.elements.id.value,
-      title: e.target.elements.title.value,
-      author: e.target.elements.author.value,
-      photo: e.target.elements.photo.value,
-      isbn: e.target.elements.isbn.value,
-      price: e.target.elements.price.value,
-      language: e.target.elements.language.value,
-      genre: e.target.elements.genre.value
+      id: e.target.elements.id,
+      title: e.target.elements.title,
+      author: e.target.elements.author,
+      photo: e.target.elements.photo,
+      isbn: e.target.elements.isbn,
+      price: e.target.elements.price,
+      language: e.target.elements.language,
+      genre: e.target.elements.genre
     }
 
     dispatch(updateBook(bookEdit))
@@ -128,7 +128,7 @@ export default function Book() {
       } else {
         setShow({ show: false })
       }
-    }, 2000)
+    }, 500)
     setBooks(initialState)
   }
 
@@ -147,10 +147,10 @@ export default function Book() {
         </div>
         <Card className="border-secondary bg-dark text-white">
           <Card.Header>
-            <FontAwesomeIcon icon={books.id ? faEdit : faPlusSquare}/>{" "}
-             {books.id ? "Update Book" : "Add New Book"}
+            <FontAwesomeIcon icon={id ? faEdit : faPlusSquare}/>{" "}
+             {id ? "Update Book" : "Add New Book"}
           </Card.Header>
-          <Form onSubmit={books.id ? updatedBook : onSubmit}
+          <Form onSubmit={id ? updatedBook : onSubmit}
            >
             <Card.Body>
               <div className="form-row">
@@ -289,18 +289,18 @@ export default function Book() {
             <Card.Footer style={{ textAlign: "right" }}>
               <Button size="sm" variant="success" type="submit">
                  <FontAwesomeIcon icon={faSave}/>{" "}
-                {books.id ? "Update" : "Save"}
+                {id ? "Update" : "Save"}
               </Button>{" "}
               <Button
                 size="sm"
+                type="reset"
                 variant="info"
                 onClick={resetBook}
-                type="reset"
                >
                 <FontAwesomeIcon icon={faUndo}/> Reset
               </Button>{" "}
               <Link style={{ textDecoration: 'none' }}
-                type="button" className="link" to="/list">
+                to="/list" type="button" className="link">
                  <FontAwesomeIcon icon={faList}/> Book List
               </Link>
             </Card.Footer>
@@ -308,3 +308,12 @@ export default function Book() {
         </Card>
       </div>
     )}
+
+/* ========================================================⛔️=====================================================================
+
+    react_devtools_backend.js:4012 A non-serializable value was detected in an action, in the path: `payload`. Value: TypeError: Converting circular structure to JSON
+    --> starting at object with constructor 'HTMLInputElement'
+    |     property '__reactFiber$q3olpzdemvh' -> object with constructor 'FiberNode'
+    --- property 'stateNode' closes the circle
+
+   ============================================================================================================================== */
