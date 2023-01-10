@@ -64,14 +64,14 @@ export default function Book() {
       let books = book.id
       if (books != null) {
         setBooks({
-          id: book.id,
-          title: book.title,
-          author: book.author,
-          photo: book.photo,
-          isbn: book.isbn,
-          price: book.price,
-          language: book.language,
-          genre: book.genre
+          id: books.id,
+          title: books.title,
+          author: books.author,
+          photo: books.photo,
+          isbn: books.isbn,
+          price: books.price,
+          language: books.language,
+          genre: books.genre
         })
       }
     }, 500)
@@ -80,7 +80,7 @@ export default function Book() {
   const resetBook = () => {
     setBooks(initialState)
   }
-
+  
   const onSubmit = e => {
     e.preventDefault()
 
@@ -111,13 +111,13 @@ export default function Book() {
 
     const bookEdit = {
       id: e.target.elements.id,
-      title: e.target.elements.title,
-      author: e.target.elements.author,
-      photo: e.target.elements.photo,
-      isbn: e.target.elements.isbn,
-      price: e.target.elements.price,
-      language: e.target.elements.language,
-      genre: e.target.elements.genre
+      title: e.target.elements.title.value,
+      author: e.target.elements.author.value,
+      photo: e.target.elements.photo.value,
+      isbn: e.target.elements.isbn.value,
+      price: e.target.elements.price.value,
+      language: e.target.elements.language.value,
+      genre: e.target.elements.genre.value
     }
 
     dispatch(updateBook(bookEdit))
@@ -308,12 +308,3 @@ export default function Book() {
         </Card>
       </div>
     )}
-
-/* ========================================================⛔️=====================================================================
-
-    react_devtools_backend.js:4012 A non-serializable value was detected in an action, in the path: `payload`. Value: TypeError: Converting circular structure to JSON
-    --> starting at object with constructor 'HTMLInputElement'
-    |     property '__reactFiber$q3olpzdemvh' -> object with constructor 'FiberNode'
-    --- property 'stateNode' closes the circle
-
-   ============================================================================================================================== */
