@@ -129,6 +129,9 @@ class Store extends React.Component {
                   <img className="card-photo" src={book.photo}/>
                   <h6 className="card-title">{book.title}</h6>
                   <div className="card-desc">{book.genre}</div>
+                  {/* <button className="purchase-button" onClick={() => this.openModalVanilla()}>
+                    <FontAwesomeIcon icon={faMoneyBills}/> Buy
+                  </button> */}
                   <button className="purchase-button" onClick={() => this.openModalVanilla()}>
                     <FontAwesomeIcon icon={faMoneyBills}/> Buy
                   </button>
@@ -146,6 +149,33 @@ class Store extends React.Component {
                 <Button style={{ width: 60, margin: "45px 0 0 230px" }} size="sm" variant="warning" onClick={() => this.closeModalVanilla()}>OK</Button>
               </div>
             </div>
+
+                                                        {/* MODAL 2 */}
+
+          <div className="modalContainer">
+            <div className="modalRight">
+              <p className="closeBtn">
+                ❌
+              </p>
+              <div className="modal-content-store">
+              <h4>❐ Centered Modal</h4>
+                <p>
+                  Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+                  dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
+                  consectetur ac, vestibulum at eros.
+                </p>
+              </div>
+              <div className="btnContainer">
+                <button style={{ background: "#1b7b3e" }}>
+                  <span>Purchase</span>
+                </button>
+                <button style={{ background: "#c3cc15" }}>
+                  <span>Cancel</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
           </Card.Body>
           {books.length > 0 ? (
             <Card.Footer style={{ textAlign: "right", color: "#fff" }}>

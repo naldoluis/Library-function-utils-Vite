@@ -62,7 +62,7 @@ class BookList extends React.Component {
       } else {
         this.setState({ show: false })
       }
-    }, 500)
+    }, 150)
   }
 
   changePage = event => {

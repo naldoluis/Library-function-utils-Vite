@@ -209,8 +209,8 @@ export default function Book() {
                     autoComplete="off"
                     required
                     pattern="[0-9]{9}"
-                    maxLength={9}
                     name="isbn"
+                    maxLength={9}
                     value={books.isbn ||''}
                     onChange={bookChange}
                     className="bg-dark border-secondary text-white mb-3"

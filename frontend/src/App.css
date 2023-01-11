@@ -2,7 +2,7 @@
 @import "https://fonts.googleapis.com/css?family=Roboto|Varela+Round";
 
 .margin-top {margin-top : 22px}
-.not-found,.clean-find,.edit:hover,.slide {color: aliceblue}
+.not-found,.clean-find,.edit:hover,.slide,.modal-content-store {color: aliceblue}
 
 .find {background: #f5d20c;color: hwb(0 22% 78%)}
 .clean-find {background: hsl(0, 61%, 47%)}
@@ -24,3 +24,12 @@
 .modall {display: flex;background: hwb(0 0% 100% / .4);align-items: center;justify-content: center;transform: scale(1.14);visibility: hidden;transition: transform .15s ease-in-out}
 .content-modal {border: .1px solid #695c4a;background: #36373e;padding: 20px;width: 550px;height: 250px;border-radius: .5rem}
 .modal-show {visibility: visible;transform: scale(1)}
+
+/* ================================================ MODAL 2 of STORE ===================================================== */
+
+.closeBtn {position: fixed;top: 8px;right: 8px}
+.btnContainer {display: flex;padding: 1rem 1rem}
+.btnContainer button {width: 100%;margin: .5rem;padding: 7px;border: 1px solid #bfb4c5}
+.modalContainer {visibility: hidden;border: 1px solid #bfb4c5;max-width: 600px;width: 100%;position: fixed;top: 43%;left: 50%;transform: translate(-50%, -50%);display: flex;background: #343a40;box-shadow: 0 0 18px 0 hwb(0 0% 100% / .75);border-radius: 8px}
+.modal-content-store {display: flex;flex-direction: column;justify-content: center;text-align: center;margin-top: 3rem;padding: 1rem 2rem}
+.modalRight {width: 100%}
