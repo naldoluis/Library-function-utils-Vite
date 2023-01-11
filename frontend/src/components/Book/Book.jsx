@@ -13,7 +13,7 @@ export default function Book() {
 
   const initialState = { id: "", title: "", author: "", photo: "", isbn: "", price: "", language: "", genre: "" }
 
-  const [books, setBooks] = useState(initialState)
+  const [books, setBooks] = useState([])
   const [show, setShow] = useState(false)
   const book = useSelector(state => state.book)
   const dispatch = useDispatch()
@@ -25,7 +25,7 @@ export default function Book() {
      findBookById(id)
    }
     findAllLanguages()
-  }, [id])
+  }, [])
 
   const findAllLanguages = () => {
     dispatch(fetchLanguages())
