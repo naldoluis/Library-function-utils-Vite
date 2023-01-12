@@ -2,7 +2,7 @@ import axios from 'axios'
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBookQuran, faMoneyBills } from '@fortawesome/free-solid-svg-icons'
-import { Button, Card, Spinner, Table } from 'react-bootstrap'
+import { Button, Card, Col, Form, Spinner, Table } from 'react-bootstrap'
 import { BASE_URL } from '../../utils/requests'
 
 class Store extends React.Component {
@@ -152,11 +152,8 @@ class Store extends React.Component {
 
                                                         {/* MODAL 2 */}
 
-          <div className="modalContainer">
-            <div className="modalRight">
-              <p className="closeBtn">
-                ❌
-              </p>
+          <div className="modalContainer border-secondary">
+            <p className="closeBtn">❌</p>
               <div className="modal-content-store">
               <h4>❐ Centered Modal</h4>
                 <p>
@@ -164,18 +161,64 @@ class Store extends React.Component {
                   dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
                   consectetur ac, vestibulum at eros.
                 </p>
+              <div className="form-row">
+                <Form.Group as={Col}>
+                  <Form.Label>Title 📙</Form.Label>
+                  <Form.Control
+                    autoComplete="off"
+                    required
+                    name="title"
+                    pattern="[A-Za-záàâãäéèêëíïîóôõöúùûüýÿřšşćçñžÁÀÂÃÄÉÈÊËÍÏÎÓÔÕÖÚÙÛÜÝŸŘŠŞĆÇÑŽ'/. ]{1,25}"
+                    maxLength={25}
+                    className="bg-dark border-secondary text-white"
+                    placeholder="Enter Book Title"
+                  />
+                </Form.Group>
+                <Form.Group as={Col}>
+                  <Form.Label>Author ✏️</Form.Label>
+                  <Form.Control
+                    autoComplete="off"
+                    required
+                    name="author"
+                    pattern="[A-Za-záàâãäéèêëíïîóôõöúùûüýÿřšşćçñžÁÀÂÃÄÉÈÊËÍÏÎÓÔÕÖÚÙÛÜÝŸŘŠŞĆÇÑŽ'. ]{2,25}"
+                    maxLength={25}
+                    className="bg-dark border-secondary text-white mb-3"
+                    placeholder="Enter Book Author"
+                  />
+                </Form.Group>
+                </div>
+                <div className="form-row">
+                <Form.Group as={Col}>
+                  <Form.Label>ISBN Number ▥</Form.Label>
+                  <Form.Control
+                    autoComplete="off"
+                    required
+                    name="isbn"
+                    pattern="[0-9]{9}"
+                    maxLength={9}
+                    className="bg-dark border-secondary text-white mb-3"
+                    placeholder="Enter Book ISBN Number [123456789]"
+                  />
+                </Form.Group>
+                <Form.Group as={Col}>
+                  <Form.Label>Price 💲</Form.Label>
+                  <Form.Control
+                    autoComplete="off"
+                    required
+                    name="price"
+                    pattern="[0-9]{2,3}.[0-9]{2}"
+                    maxLength={6}
+                    className="bg-dark border-secondary text-white"
+                    placeholder="Enter Book Price Ex: 123.45"
+                  />
+                </Form.Group>
+               </div>
               </div>
               <div className="btnContainer">
-                <button style={{ background: "#1b7b3e" }}>
-                  <span>Purchase</span>
-                </button>
-                <button style={{ background: "#c3cc15" }}>
-                  <span>Cancel</span>
-                </button>
+                <button style={{ background: "#1b7b3e", width: 200, borderRadius: 5 }}>Purchase</button>
+                <button style={{ background: "#c3c600", width: 200, borderRadius: 5 }}>Cancel</button>
               </div>
             </div>
-          </div>
-
           </Card.Body>
           {books.length > 0 ? (
             <Card.Footer style={{ textAlign: "right", color: "#fff" }}>
