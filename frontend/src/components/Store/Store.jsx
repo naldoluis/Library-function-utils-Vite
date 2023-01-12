@@ -129,9 +129,6 @@ class Store extends React.Component {
                   <img className="card-photo" src={book.photo}/>
                   <h6 className="card-title">{book.title}</h6>
                   <div className="card-desc">{book.genre}</div>
-                  {/* <button className="purchase-button" onClick={() => this.openModalVanilla()}>
-                    <FontAwesomeIcon icon={faMoneyBills}/> Buy
-                  </button> */}
                   <button className="purchase-button" onClick={() => this.openModalVanilla()}>
                     <FontAwesomeIcon icon={faMoneyBills}/> Buy
                   </button>
