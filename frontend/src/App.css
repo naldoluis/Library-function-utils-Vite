@@ -2,7 +2,7 @@
 @import "https://fonts.googleapis.com/css?family=Roboto|Varela+Round";
 
 .margin-top {margin-top : 22px}
-.not-found,.clean-find,.edit:hover,.slide,.modal-content-store {color: aliceblue}
+.not-found,.clean-find,.edit:hover,.slide {color: aliceblue}
 
 .find {background: #f5d20c;color: hwb(0 22% 78%)}
 .clean-find {background: hsl(0, 61%, 47%)}
@@ -26,10 +26,10 @@
 .modal-show {visibility: visible;transform: scale(1)}
 
 /* ================================================ MODAL 2 of STORE ====================================================
-                                Enable = remove of .modalContainer {visibility: hidden;}                                  */
+                                Enable = remove of .modal-container {visibility: hidden;}                                  */
 
-.closeBtn {position: fixed;top: 8px;right: 8px}
-.btnContainer {display: flex;padding: .8rem 6rem}
-.btnContainer button {margin: auto;padding: 5px}
-.modalContainer {visibility: hidden;border: 2px solid #bfb4c5;width: 700px;position: absolute;top: 46%;left: 50%;transform: translate(-50%, -50%);background: #343a40;box-shadow: 0 0 10px 0 #dcdcdcbf;border-radius: 8px}
+.close-btn {position: fixed;top: 8px;right: 8px;cursor: pointer}
+.btn-container {display: flex;padding: .8rem 6rem}
+.btn-container button {margin: auto;padding: 5px}
+.modal-container {visibility: hidden;border: 2px solid #bfb4c5;width: 700px;position: absolute;top: 46%;left: 50%;transform: translate(-50%, -50%);background: #343a40;box-shadow: 0 0 10px 0 #dcdcdcbf;border-radius: 8px}
 .modal-content-store {text-align: center;margin-top: 1rem;padding: 1rem 1rem}

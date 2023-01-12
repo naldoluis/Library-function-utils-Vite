@@ -146,13 +146,10 @@ class Store extends React.Component {
                 <Button style={{ width: 60, margin: "45px 0 0 230px" }} size="sm" variant="warning" onClick={() => this.closeModalVanilla()}>OK</Button>
               </div>
             </div>
-
-                                                        {/* MODAL 2 */}
-
-          <div className="modalContainer border-secondary">
-            <p className="closeBtn">❌</p>
+            <div className="modal-container border-secondary">
+             <p className="close-btn">❌</p>
               <div className="modal-content-store">
-              <h4>❐ Centered Modal</h4>
+               <h4>❐ Centered Modal</h4>
                 <p>
                   Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
                   dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
@@ -211,9 +208,9 @@ class Store extends React.Component {
                 </Form.Group>
                </div>
               </div>
-              <div className="btnContainer">
-                <button style={{ background: "#1b7b3e", width: 200, borderRadius: 5 }}>Purchase</button>
-                <button style={{ background: "#c3c600", width: 200, borderRadius: 5 }}>Cancel</button>
+              <div className="btn-container">
+                <button style={{ background: "#1b7b3e", width: 200, borderRadius: 6 }}>Purchase</button>
+                <button style={{ background: "#c3c600", width: 200, borderRadius: 6 }}>Cancel</button>
               </div>
             </div>
           </Card.Body>

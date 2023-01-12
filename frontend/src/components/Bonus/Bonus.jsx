@@ -28,7 +28,7 @@ export default function Bonus() {
                 </div>
               </div>
             </div>
-           <img src='https://m.media-amazon.com/images/I/61J6t27YllL.jpg' style={{ width: 200, height: 227, marginLeft: 70, borderRadius: 2 }}/>
+           <img src='https://m.media-amazon.com/images/I/61J6t27YllL.jpg' style={{ width: 200, height: 227, marginLeft: 70, borderRadius: 5 }}/>
           </Card.Body>
           <Card.Footer style={{ textAlign: "right", color: "#fff" }}>
             <h6 style={{ fontFamily: "Varela Round", fontSize: 12.4, paddingTop: 40 }}>
