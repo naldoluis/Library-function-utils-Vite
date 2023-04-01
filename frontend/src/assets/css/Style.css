@@ -1,0 +1,49 @@
+.page-num {width: 50px !important;height: 28px !important}
+.arrow {width: 0;height: 0;margin-top: 5px;border-left: 5px solid transparent;border-right: 5px solid transparent;display: inline-block}
+.arrow-up {border-bottom: 10px solid}
+.arrow-down {border-top: 10px solid}
+.title-home {font-size: 13.5px;font-weight: 400;font-family: 'Segoe UI', sans-serif;padding-top: 5px}
+
+.next-page {margin-left: 20px;color:#ffb742}
+.prev-page {margin-right: 20px;transform: rotate(180deg);color:#70ff8e}
+.prev-fast {margin-right: 20px;transform: rotate(180deg);color:#8aecff}
+.next-fast {margin-left: 20px;color:#ff5842}
+
+.next-page,.prev-page,.prev-fast,.next-fast {transition: all ease .17s;font-size: 20px;margin-top: -2px}
+.next-page:hover,.prev-page:hover,.prev-fast:hover,.next-fast:hover {filter: drop-shadow(0 0 .085em)}
+
+.lang {width: 20px}
+.cam {width: 16px;margin-top: -5px}
+
+.next-page,.prev-page,.prev-fast,.next-fast,.speedometer,.clock {cursor: pointer}
+
+.arrow-up,.arrow-down,.link:hover,.link,.clock:hover,.globe:hover {color: #fff}
+
+.link,.table-title,.page-num {text-align: center}
+
+.input-password,.input-email,.input-name,.input-phone {margin: 9px 9px}
+.lock,.envelope,.name,.phone {margin-top: 12px;width: 40px}
+.key {margin-top: 39px;width: 40px;height: 32px}
+
+.link {background: #b00fd0;border-radius: 3px;width: 90px;height: 31.3px;padding-top: 4.5px;font-size: 14px}
+.link:hover {background: #9f0ebc}
+
+.table-title {font-size: 14.1px;color: #bebcbc;font-family: 'Varela Round'}
+.table-content {font-size: 13.7px}
+
+.purchase-button {font-size: 12px;margin: 3px 0 0 50px;height: 25px;width: 90px;background: #bbbe10;font-weight: 500;border-radius: .3rem}
+.purchase-button:hover {background: #abd727}
+
+.card-photo {width: 77px;margin: 2px 0 0 56.5px;border-radius: 3%}
+
+.clock {transform: scale(.92);transition: all ease .2s}
+.clock:hover,.speedometer:hover {transform: scale(1);filter: drop-shadow(0 0 .05em)}
+
+.globe:hover {transition: all ease .36s;filter: drop-shadow(0 0 .05em);z-index: 2}
+
+.speedometer {transform: scale(.97);transition: all ease .2s}
+.speedometer:hover {color: #abd727}
+
+::-webkit-scrollbar {width: 5px}
+::-webkit-scrollbar-track {background: #606060}
+::-webkit-scrollbar-thumb {background: #bebebe}
