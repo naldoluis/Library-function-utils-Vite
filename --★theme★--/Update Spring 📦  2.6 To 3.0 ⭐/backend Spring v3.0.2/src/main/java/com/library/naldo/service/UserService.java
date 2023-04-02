@@ -41,6 +41,6 @@ public class UserService implements IService<User> {
 	}
 
 	public List<User> saveAll(List<User> user) {
-		return userRepository.saveAll(user);
+		return null;
 	}
 }
