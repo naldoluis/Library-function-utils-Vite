@@ -92,7 +92,7 @@ public class UserController {
 			user.setRole(roleRepository.findByName(ConstantUtils.USER.toString()));
 			User savedUser = userRepository.saveAndFlush(user);
 			jsonObject.put("message", savedUser.getName() + " saved successfully");
-			return new ResponseEntity<>(jsonObject.toString(), HttpStatus.OK);
+			return ResponseEntity.ok(jsonObject.toString());
 		} catch (JSONException e) {
 			try {
 				jsonObject.put("exception", e.getMessage());

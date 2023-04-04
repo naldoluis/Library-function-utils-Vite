@@ -27,8 +27,8 @@ public interface Resource<T> {
 	@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
 	ResponseEntity<T> save(@RequestBody T t);
 
-	@PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-	ResponseEntity<T> update(@RequestBody T t);
+	@PutMapping("{id}")
+	ResponseEntity<T> update(@PathVariable Long id, @RequestBody T t);
 
 	@PatchMapping("{id}")
 	ResponseEntity<T> patch(@PathVariable Long id, @RequestBody Map<Object, Object> fields);

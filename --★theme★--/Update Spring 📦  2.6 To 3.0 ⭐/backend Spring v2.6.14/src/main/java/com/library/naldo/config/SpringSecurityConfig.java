@@ -26,12 +26,10 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 	}
 
 	@Bean
-	@Override
 	public AuthenticationManager authenticationManager() throws Exception {
 		return super.authenticationManager();
 	}
 
-	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.cors();
 		http.csrf().disable().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)

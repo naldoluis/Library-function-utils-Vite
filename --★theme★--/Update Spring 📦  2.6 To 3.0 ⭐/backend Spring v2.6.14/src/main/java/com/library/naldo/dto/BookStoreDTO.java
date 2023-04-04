@@ -1,7 +1,7 @@
 package com.library.naldo.dto;
 
-import com.library.naldo.domain.BookStore;
 import lombok.Data;
+import com.library.naldo.domain.BookStore;
 
 @Data
 public class BookStoreDTO {

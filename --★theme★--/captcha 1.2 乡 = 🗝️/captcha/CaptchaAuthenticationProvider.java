@@ -17,13 +17,11 @@ import nl.captcha.Captcha;
 public class CaptchaAuthenticationProvider extends DaoAuthenticationProvider {
 
 	@Autowired
-	@Override
 	public void setUserDetailsService(UserDetailsService userDetailsService) {
 		super.setUserDetailsService(userDetailsService);
 		super.setPasswordEncoder(passwordEncoder());
 	}
 
-	@Override
 	protected void additionalAuthenticationChecks(UserDetails userDetails,
 			UsernamePasswordAuthenticationToken authentication) throws AuthenticationException {
 		super.additionalAuthenticationChecks(userDetails, authentication);

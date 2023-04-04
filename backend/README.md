@@ -1362,6 +1362,29 @@ app.use(cors({
     credentials: true
 }))
 
+Access-Control-Allow-Origin : http://localhost:5173/
+Access-Control-Allow-Credentials : true
+Access-Control-Allow-Methods : GET, POST, OPTIONS, PATCH, DELETE, PUT, HEAD
+Access-Control-Allow-Headers : Origin, Content-Type, Accept
+
+const cors = require('cors');
+app.use(cors({
+    origin: '*',
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'HEAD', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Origin', 'X-Requested-With', 'Accept', 'x-client-key', 'x-client-token', 'x-client-secret', 'Authorization'],
+    credentials: true
+}))
+
+preview: {
+    host: 'localhost',
+    port: 5173,
+    strictPort: true,
+    headers: {
+       'Access-Control-Allow-Origin': 'http://localhost:5173/',
+       'Access-Control-Allow-Headers': 'http://localhost:5173/'
+   }
+}
+
 !J------------------------------------------------------------------------------------------------------------------------------J!
 
 [React_Carousel]:

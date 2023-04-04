@@ -9,7 +9,6 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 
 public class CounterApplicationListener implements ApplicationListener<AbstractAuthenticationFailureEvent> {
 
-	@Override
 	public void onApplicationEvent(AbstractAuthenticationFailureEvent failureEvent) {
 		AtomicInteger counter = (AtomicInteger) getSession().getAttribute("counter");
 		counter.incrementAndGet();

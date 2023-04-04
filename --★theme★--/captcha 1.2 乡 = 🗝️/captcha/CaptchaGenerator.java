@@ -25,7 +25,6 @@ public class CaptchaGenerator implements InitializingBean {
 				.addNoise(noiseProducer).build();
 	}
 
-	@Override
 	public void afterPropertiesSet() throws Exception {
 		if (this.backgroundProducer == null) {
 			this.backgroundProducer = new TransparentBackgroundProducer();

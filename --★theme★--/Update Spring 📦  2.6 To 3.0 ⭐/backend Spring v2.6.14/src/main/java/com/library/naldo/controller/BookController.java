@@ -48,7 +48,11 @@ public class BookController implements Resource<Book> {
 		return ResponseEntity.ok(service.saveOrUpdate(book));
 	}
 
-	public ResponseEntity<Book> update(Book book) {
+	public ResponseEntity<Book> update(Long id, Book book) {
+		Optional<Book> bookUpdate = service.findById(id);
+		if(bookUpdate.isEmpty())
+			return ResponseEntity.notFound().build();
+		book.setId(id);
 		return ResponseEntity.ok(service.saveOrUpdate(book));
 	}
 

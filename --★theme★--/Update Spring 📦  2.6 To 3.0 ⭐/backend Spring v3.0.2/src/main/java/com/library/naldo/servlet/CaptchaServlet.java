@@ -21,7 +21,6 @@ public class CaptchaServlet extends HttpServlet {
 
 	public static final String FILE_TYPE = "jpeg";
 
-	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setHeader("Cache-Control", "no-cache");
 		response.setDateHeader("Expires", 0);
@@ -47,7 +46,6 @@ public class CaptchaServlet extends HttpServlet {
 		outputStream.close();
 	}
 
-	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doPost(request, response);
 	}

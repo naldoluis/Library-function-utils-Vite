@@ -18,7 +18,7 @@ import com.library.naldo.domain.Role;
 
 @Component
 public class JwtTokenProvider implements Serializable {
-	public static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 	@Value("${jwt.secret-key}")
 	private String secretKey;
@@ -28,7 +28,7 @@ public class JwtTokenProvider implements Serializable {
 		secretKey = Base64.getEncoder().encodeToString(secretKey.getBytes());
 	}
 
-	private long validityInMilliseconds = 1200000;
+	private Integer validityInMilliseconds = 1200000;
 
 	public String createToken(String username, Role role) {
 		Claims claims = Jwts.claims().setSubject(username);

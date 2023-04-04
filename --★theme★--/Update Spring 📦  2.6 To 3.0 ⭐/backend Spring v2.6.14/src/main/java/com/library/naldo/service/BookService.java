@@ -19,32 +19,26 @@ public class BookService implements IService<Book>, IPageService<Book> {
 	@Autowired
 	private BookRepository bookRepository;
 
-	@Override
 	public Collection<Book> findAll() {
 		return (Collection<Book>) bookRepository.findAll();
 	}
 
-	@Override
 	public Page<Book> findAll(Pageable pageable, String searchText) {
 		return bookRepository.findAllBooks(pageable, searchText);
 	}
 
-	@Override
 	public Page<Book> findAll(Pageable pageable) {
 		return bookRepository.findAll(pageable);
 	}
 
-	@Override
 	public Optional<Book> findById(Long id) {
 		return bookRepository.findById(id);
 	}
 
-	@Override
 	public Book saveOrUpdate(Book book) {
 		return bookRepository.save(book);
 	}
 
-	@Override
 	public String deleteById(Long id) {
 		JSONObject jsonObject = new JSONObject();
 		try {

@@ -19,7 +19,7 @@ public class Book {
 	private String title;
 	private String author;
 	private String photo;
-	private Long isbn;
+	private Integer isbn;
 	private Double price;
 	private String language;
 	private String genre;
