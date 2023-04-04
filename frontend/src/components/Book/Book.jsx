@@ -116,7 +116,7 @@ export default function Book() {
     dispatch(saveBook(bookSaved))
     setTimeout(() => {
       if(bookObject != null) {
-        setShow({ show: true, method: "post" })
+        setShow({ show: true, method: "POST" })
         setTimeout(() => setShow({ show: false }), 2000)
       } else {
         setShow({ show: false })
@@ -127,22 +127,11 @@ export default function Book() {
   const updatedBook = e => {
     e.preventDefault()
 
-    const bookEdit = {
-      id: e.target.id,
-      title: e.target.title.value,
-      author: e.target.author.value,
-      photo: e.target.photo.value,
-      isbn: e.target.isbn.value,
-      price: e.target.price.value,
-      language: e.target.language.value,
-      genre: e.target.genre.value
-    }
-
-    dispatch(updateBook(bookEdit))
+    dispatch(updateBook(bookId))
     setTimeout(() => {
       if(bookObject != null) {
-        setShow({ show: true, method: "put" })
-        setTimeout(() => setShow({ show: false }), 2300)
+        setShow({ show: true, method: "PUT" })
+        setTimeout(() => setShow({ show: false }), 2000)
       } else {
         setShow({ show: false })
       }
@@ -158,7 +147,7 @@ export default function Book() {
       <div>
         <div style={{ display: show ? "block" : "none" }}>
           <MyToast
-            message={show.method === "put" ? "Book Updated Successfully." : "Book Saved Successfully."}
+            message={show.method === "PUT" ? "Book Updated Successfully." : "Book Saved Successfully."}
             type="success"
           />
         </div>
