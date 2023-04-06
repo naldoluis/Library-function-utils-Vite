@@ -19,7 +19,7 @@
         }																	                            |
 													                    Http Headers            |
 																			                                |
-								          🔑 Authorization        ✔️			        value: 🔒
+								          🔑 Authorization        ✔️			        token: 🔒
 
 >					         Using generated security password: 27b35cb3-51e6-46e5-b74e-42faa8e458d7
 
@@ -974,36 +974,109 @@ export default connect(mapStateToProps, mapDispatchToProps)(Book)
 
 !J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
                                                                                                                           - ❐ ❌
-const bookChange = e => {
-    const { name, value } = e.target
-    setBooks({ ...books, fields: {...books.fields, [name]: {stringValue: value }}})
-  }
+# Book
+                                                      METHOD: 'PUT'
 
-import { useParams } from 'react-router-dom'
-import Book from './Book'
+    const updatedBook = e => {
+      e.preventDefault()
+  
+      const book = {
+        id: books.id,
+        title: books.title,
+        author: books.author,
+        photo: books.photo,
+        isbn: books.isbn,
+        price: books.price,
+        language: books.language,
+        genre: books.genre
+      }
+  
+      const headers = new Headers()
+      headers.append('Content-Type', 'application/json')
+  
+      fetch("http://localhost:8080/rest/books/" + bookId, {
+        method: 'PUT',
+        body: JSON.stringify(book),
+        headers
+      })
+      .then(response => response.json())
+      .then (book => {
+        if(book) {
+          setShow({ show: true, method: "PUT" })
+          setTimeout(() => setShow({ show: false }), 2000)
+          //setTimeout(() => setBooks(), 2000)
+        } else {
+          setShow({ show: false })
+        }
+      })
+      //setBooks(initialState)
+    }
 
-export default function BookParams() {
-  const params = useParams()
-  return <Book bookId={`${params.bookId}`}/>
-}
+!J------------------------------------------------------------------------------------------------------------------------------J!
+                                                      METHOD: 'GET'
 
-findAllBooks(currentPage) {
-    currentPage -= 1
-    axios(`${BASE_URL}/books?pageNumber=` + currentPage + "&pageSize=" + this.state.booksPerPage + "&sortBy=price&sortDir=" + this.state.sortDir)
+    const findBookById = bookId => {
+    fetch("http://localhost:8080/rest/books/" + bookId)
+      .then(response => response.json())
+      .then(book => {
+        if(book != null) {
+        setBooks({
+          id: book.id,
+          title: book.title,
+          author: book.author,
+          photo: book.photo,
+          isbn: book.isbn,
+          price: book.price,
+          language: book.language,
+          genre: book.genre
+        })
+      }
+     }).catch(error => {
+      console.error("Error - " + error)
+     })
+   }
+
+!J------------------------------------------------------------------------------------------------------------------------------J!
+                                                      METHOD: 'GET'
+
+   const findBookById = bookId => {
+    axios("http://localhost:8080/rest/books/" + bookId)
       .then(response => response.data)
       .then(data => {
-        this.setState({
-          books: data.content,
-          totalPages: data.totalPages,
-          totalElements: data.totalElements,
-          currentPage: data.number + 1
+        setBooks({
+          id: data.id,
+          title: data.title,
+          author: data.author,
+          photo: data.photo,
+          isbn: data.isbn,
+          price: data.price,
+          language: data.language,
+          genre: data.genre
         })
-      })
-      .catch(error => {
-        console.log(error)
-        localStorage.removeItem("jwtToken")
      })
-  }
+   }
+
+!J------------------------------------------------------------------------------------------------------------------------------J!
+
+METHOD: 'GET'
+
+   findAllBooks(currentPage) {
+      currentPage -= 1
+      axios(`${BASE_URL}/books?pageNumber=` + currentPage + "&pageSize=" + this.state.booksPerPage + "&sortBy=price&sortDir=" + this.state.sortDir)
+        .then(response => response.data)
+        .then(data => {
+          this.setState({
+            books: data.content,
+            totalPages: data.totalPages,
+            totalElements: data.totalElements,
+            currentPage: data.number + 1
+          })
+        })
+        .catch(error => {
+          console.log(error)
+          localStorage.removeItem("jwtToken")
+      })
+    }
 
 !J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
                                                                                                                           - ❐ ❌

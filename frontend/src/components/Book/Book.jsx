@@ -7,7 +7,6 @@ import { faEdit, faList, faPlusSquare, faSave, faUndo } from '@fortawesome/free-
 import { fetchBook, fetchGenres, fetchLanguages, patchBook, saveBook, updateBook } from '../../services'
 import { MyToast } from '../MyToast'
 import { i18n } from '../../assets/translate/i18n'
-import axios from 'axios'
 import iconCam from '../../assets/icons/camera.png'
 import iconLang from '../../assets/icons/language.png'
 
@@ -61,40 +60,23 @@ export default function Book() {
   }
 
   const findBookById = bookId => {
-    axios("http://localhost:8080/rest/books/" + bookId)
-      .then(response => response.data)
-      .then(data => {
-        setBooks({
-          id: data.id,
-          title: data.title,
-          author: data.author,
-          photo: data.photo,
-          isbn: data.isbn,
-          price: data.price,
-          language: data.language,
-          genre: data.genre
-        })
-     })
-   }
-
-  /* const findBookById = bookId => {
     dispatch(fetchBook(bookId))
     setTimeout(() => {
-      let books = bookObject.book
-      if(books != null) {
+      let book = bookObject.book
+      if(book) {
         setBooks({
-          id: books.id,
-          title: books.title,
-          author: books.author,
-          photo: books.photo,
-          isbn: books.isbn,
-          price: books.price,
-          language: books.language,
-          genre: books.genre
+          id: book.id,
+          title: book.title,
+          author: book.author,
+          photo: book.photo,
+          isbn: book.isbn,
+          price: book.price,
+          language: book.language,
+          genre: book.genre
         })
       }
-    }, 500)
-  } */
+    }, 100)
+  }
 
   const resetBook = () => {
     setBooks(initialState)
@@ -115,28 +97,60 @@ export default function Book() {
 
     dispatch(saveBook(bookSaved))
     setTimeout(() => {
-      if(bookObject != null) {
+      let book = bookObject.book
+      if(book) {
         setShow({ show: true, method: "POST" })
         setTimeout(() => setShow({ show: false }), 2000)
       } else {
         setShow({ show: false })
       }
-    }, 500)
+    }, 200)
   }
 
   const updatedBook = e => {
     e.preventDefault()
 
-    dispatch(updateBook(bookId))
+    const book = {
+      id: e.target.id.value,
+      title: e.target.title.value,
+      author: e.target.author.value,
+      photo: e.target.photo.value,
+      isbn: e.target.isbn.value,
+      price: e.target.price.value,
+      language: e.target.language.value,
+      genre: e.target.genre.value
+    }
+
+    const headers = new Headers()
+    headers.append('Content-Type', 'application/json')
+
+    fetch("http://localhost:8080/rest/books/" + bookId, {
+      method: 'PUT',
+      body: JSON.stringify(book),
+      headers
+    })
+      .then(response => response.data)
+      .then(book => {
+        if(book) {
+          setShow({ show: true, method: "PUT" })
+          setTimeout(() => setShow({ show: false }), 2000)
+        } else {
+          setShow({ show: false })
+        }
+     })
+  }
+
+    /* dispatch(updateBook(bookEdit))
     setTimeout(() => {
-      if(bookObject != null) {
+      let book = bookObject.book
+      if(book) {
         setShow({ show: true, method: "PUT" })
         setTimeout(() => setShow({ show: false }), 2000)
       } else {
         setShow({ show: false })
       }
-    }, 500)
-  }
+    }, 200)
+  } */
 
   const bookChange = e => {
     const { name, value } = e.target
