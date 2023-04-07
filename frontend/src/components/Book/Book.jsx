@@ -31,10 +31,10 @@ export default function Book() {
   const findAllLanguages = () => {
     dispatch(fetchLanguages())
     setTimeout(() => {
-      let bookLanguages = bookObject.languages
+      let bookLanguages = bookObject.book
       if(bookLanguages) {
         setBooks({
-          languages: [{ value: "", display: "Select Language" }].concat(
+          books: [{ value: "", display: "Select Language" }].concat(
             bookLanguages.map(language => {
               return { value: language, display: language }
            }))
@@ -47,10 +47,10 @@ export default function Book() {
   const findAllGenres = () => {
     dispatch(fetchGenres())
     setTimeout(() => {
-      let bookGenres = bookObject.genres
+      let bookGenres = bookObject.book
       if(bookGenres) {
         setBooks({
-          genres: [{ value: "", display: "Select Genre" }].concat(
+          books: [{ value: "", display: "Select Genre" }].concat(
             bookGenres.map(genre => {
               return { value: genre, display: genre }
            }))
@@ -99,7 +99,7 @@ export default function Book() {
     setTimeout(() => {
       let book = bookObject.book
       if(book) {
-        setShow({ show: true, method: "POST" })
+        setBooks({ show: true, method: "POST" })
         setTimeout(() => setShow({ show: false }), 2000)
       } else {
         setShow({ show: false })
@@ -132,7 +132,7 @@ export default function Book() {
       .then(response => response.data)
       .then(book => {
         if(book) {
-          setShow({ show: true, method: "PUT" })
+          setBooks({ show: true, method: "PUT" })
           setTimeout(() => setShow({ show: false }), 2000)
         } else {
           setShow({ show: false })

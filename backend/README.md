@@ -607,7 +607,7 @@ public class SpringSecurityConfig {
 	@Bean
 	CorsConfigurationSource corsConfigurationSource() {
 		CorsConfiguration configuration = new CorsConfiguration().applyPermitDefaultValues();
-		configuration.setAllowedMethods(Arrays.asList("POST", "GET", "PUT", "DELETE", "OPTIONS"));
+		configuration.setAllowedMethods(Arrays.asList("POST", "GET", "PUT", "PATCH", "DELETE", "OPTIONS"));
 		final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
 		source.registerCorsConfiguration("/**", configuration);
 		return source;
@@ -660,10 +660,11 @@ import { connect } from 'react-redux'
 import { Button, Card, Col, Form } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEdit, faList, faPlusSquare, faSave, faUndo } from '@fortawesome/free-solid-svg-icons'
-import { fetchBook, fetchGenres, fetchLanguages, saveBook, updateBook } from '../../services'
-import MyToast from '../MyToast'
-import iconCam from '../../assets/camera.png'
-import iconLang from '../../assets/language.png'
+import { fetchBook, fetchGenres, fetchLanguages, patchBook, saveBook, updateBook } from '../../services'
+import { MyToast } from '../MyToast'
+import { i18n } from '../../assets/translate/i18n'
+import iconCam from '../../assets/icons/camera.png'
+import iconLang from '../../assets/icons/language.png'
 
 class Book extends React.Component {
   constructor() {
@@ -721,7 +722,7 @@ class Book extends React.Component {
     this.props.fetchBook(bookId)
     setTimeout(() => {
       let book = this.props.bookObject.book
-      if (book != null) {
+      if(book) {
         this.setState({
           id: book.id,
           title: book.title,
@@ -733,15 +734,15 @@ class Book extends React.Component {
           genre: book.genres
         })
       }
-    }, 1000)
+    }, 100)
   }
 
   resetBook = () => {
     this.setState(() => this.initialState)
   }
 
-  submitBook = event => {
-    event.preventDefault()
+  submitBook = e => {
+    e.preventDefault()
 
     const bookSaved = {
       title: this.state.title,
@@ -755,18 +756,18 @@ class Book extends React.Component {
 
     this.props.saveBook(bookSaved)
     setTimeout(() => {
-      if (this.props.bookObject.book != null) {
-        this.setState({ show: true, method: "post" })
+      if(this.props.bookObject.book) {
+        this.setState({ show: true, method: "POST" })
         setTimeout(() => this.setState({ show: false }), 2300)
       } else {
         this.setState({ show: false })
       }
-    }, 2000)
+    }, 100)
     this.setState(this.initialState)
   }
 
-  updatedBook = event => {
-    event.preventDefault()
+  updatedBook = e => {
+    e.preventDefault()
 
     const bookEdit = {
       id: this.state.id,
@@ -781,19 +782,19 @@ class Book extends React.Component {
 
     this.props.updateBook(bookEdit)
     setTimeout(() => {
-      if (this.props.bookObject.book != null) {
-        this.setState({ show: true, method: "put" })
+      if(this.props.bookObject.book) {
+        this.setState({ show: true, method: "PUT" })
         setTimeout(() => this.setState({ show: false }), 2300)
       } else {
         this.setState({ show: false })
       }
-    }, 2000)
+    }, 100)
     this.setState(this.initialState)
   }
 
-  bookChange = event => {
+  bookChange = e => {
     this.setState({
-      [event.target.name]: event.target.value
+      [e.target.name]: e.target.value
     })
   }
 
@@ -804,7 +805,7 @@ class Book extends React.Component {
       <div>
         <div style={{ display: this.state.show ? "block" : "none" }}>
           <MyToast
-            message={this.state.method === "put" ? "Book Updated Successfully." : "Book Saved Successfully."}
+            message={this.state.method === "PUT" ? "Book Updated Successfully." : "Book Saved Successfully."}
             type="success"
           />
         </div>
@@ -821,7 +822,7 @@ class Book extends React.Component {
             <Card.Body>
             <div className="form-row">
                 <Form.Group as={Col}>
-                  <Form.Label>Title 📙</Form.Label>
+                 <Form.Label>{i18n.t('tableBook.title')} 📙</Form.Label>
                   <Form.Control
                     autoComplete="off"
                     required
@@ -829,13 +830,13 @@ class Book extends React.Component {
                     pattern="[A-Za-záàâãäéèêëíïîóôõöúùûüýÿřšşćçñžÁÀÂÃÄÉÈÊËÍÏÎÓÔÕÖÚÙÛÜÝŸŘŠŞĆÇÑŽ'/. ]{1,25}"
                     maxLength={25}
                     value={title ||''}
-                    onChange={bookChange}
+                    onChange={this.bookChange}
                     className="bg-dark border-secondary text-white"
-                    placeholder="Enter Book Title"
+                    placeholder={i18n.t('input.book')}
                   />
                 </Form.Group>
                 <Form.Group as={Col}>
-                  <Form.Label>Author ✏️</Form.Label>
+                 <Form.Label>{i18n.t('tableBook.author')} ✏️</Form.Label>
                   <Form.Control
                     autoComplete="off"
                     required
@@ -843,24 +844,24 @@ class Book extends React.Component {
                     pattern="[A-Za-záàâãäéèêëíïîóôõöúùûüýÿřšşćçñžÁÀÂÃÄÉÈÊËÍÏÎÓÔÕÖÚÙÛÜÝŸŘŠŞĆÇÑŽ'. ]{2,25}"
                     maxLength={25}
                     value={author ||''}
-                    onChange={bookChange}
+                    onChange={this.bookChange}
                     className="bg-dark border-secondary text-white mb-3"
-                    placeholder="Enter Book Author"
+                    placeholder={i18n.t('input.author')}
                   />
                 </Form.Group>
                 </div>
                 <div className="form-row">
                 <Form.Group as={Col}>
-                  <Form.Label>Cover Photo URL <img className="cam" src={iconCam}/></Form.Label>
+                 <Form.Label>{i18n.t('tableBook.photoUrl')} <img className="cam" src={iconCam}/></Form.Label>
                   <div className="input-group">
                     <Form.Control
                       autoComplete="off"
                       required
                       name="photo"
                       value={photo ||''}
-                      onChange={bookChange}
+                      onChange={this.bookChange}
                       className="bg-dark border-secondary text-white"
-                      placeholder="Enter Book Cover Photo URL"
+                      placeholder={i18n.t('input.photoUrl')}
                     />
                     <div>
                       {this.state.photo !== "" && (
@@ -870,7 +871,7 @@ class Book extends React.Component {
                   </div>
                 </Form.Group>
                 <Form.Group as={Col}>
-                  <Form.Label>ISBN Number ▥</Form.Label>
+                 <Form.Label>{i18n.t('tableBook.isbn')} ▥</Form.Label>
                   <Form.Control
                     autoComplete="off"
                     required
@@ -878,15 +879,15 @@ class Book extends React.Component {
                     pattern="[0-9]{9}"
                     maxLength={9}
                     value={isbn ||''}
-                    onChange={bookChange}
+                    onChange={this.bookChange}
                     className="bg-dark border-secondary text-white mb-3"
-                    placeholder="Enter Book ISBN Number [123456789]"
+                    placeholder={i18n.t('input.isbn')}
                   />
                 </Form.Group>
                 </div>
                 <div className="form-row">
                 <Form.Group as={Col} controlId="formGridPrice">
-                  <Form.Label className="price">Price 💲</Form.Label>
+                 <Form.Label className="price">{i18n.t('tableBook.price')} 💲</Form.Label>
                   <Form.Control
                     autoComplete="off"
                     required
@@ -894,20 +895,20 @@ class Book extends React.Component {
                     pattern="[0-9]{2,3}.[0-9]{2}"
                     maxLength={6}
                     value={price ||''}
-                    onChange={bookChange}
+                    onChange={this.bookChange}
                     className="bg-dark border-secondary text-white"
-                    placeholder="Enter Book Price Ex: 123.45"
+                    placeholder={i18n.t('input.price')}
                   />
                 </Form.Group>
                 <Form.Group as={Col}>
-                  <Form.Label>Language <img className="lang" src={iconLang}/></Form.Label>
+                 <Form.Label>{i18n.t('tableBook.language')} <img className="lang" src={iconLang}/></Form.Label>
                   <Form.Control
                     required
                     as="select"
                     custom="true"
                     name="language"
-                    value={language}
-                    onChange={bookChange}
+                    value={language ||''}
+                    onChange={this.bookChange}
                     className="bg-dark border-secondary text-white"
                   >
                     {this.state.languages.map(language => (
@@ -918,14 +919,14 @@ class Book extends React.Component {
                   </Form.Control>
                 </Form.Group>
                 <Form.Group as={Col}>
-                  <Form.Label>Genre 📚</Form.Label>
+                 <Form.Label>{i18n.t('tableBook.genre')} 📚</Form.Label>
                   <Form.Control
                     required
                     as="select"
                     custom="true"
                     name="genre"
-                    value={genre}
-                    onChange={bookChange}
+                    value={genre ||''}
+                    onChange={this.bookChange}
                     className="bg-dark border-secondary text-white"
                   >
                     {this.state.genres.map(genre => (
@@ -943,11 +944,11 @@ class Book extends React.Component {
                 {this.state.id ? "Update" : "Save"}
               </Button>{" "}
               <Button size="sm" variant="info" type="reset">
-                <FontAwesomeIcon icon={faUndo}/> Reset
+                <FontAwesomeIcon icon={faUndo}/> {i18n.t('buttons.reset')}
               </Button>{" "}
               <Link style={{ textDecoration: 'none' }}
                 type="button" className="link" to="/list">
-                <FontAwesomeIcon icon={faList}/> Book List
+                <FontAwesomeIcon icon={faList}/> {i18n.t('buttons.bookList')}
               </Link>
             </Card.Footer>
           </Form>
@@ -965,7 +966,8 @@ const mapDispatchToProps = dispatch => {
   return {
     saveBook: book => dispatch(saveBook(book)),
     fetchBook: bookId => dispatch(fetchBook(bookId)),
-    updateBook: book => dispatch(updateBook(book)),
+    updateBook: bookId => dispatch(updateBook(bookId)),
+    patchBook: bookId => dispatch(patchBook(bookId)),
     fetchLanguages: () => dispatch(fetchLanguages()),
     fetchGenres: () => dispatch(fetchGenres())
   }
@@ -1019,7 +1021,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(Book)
     fetch("http://localhost:8080/rest/books/" + bookId)
       .then(response => response.json())
       .then(book => {
-        if(book != null) {
+        if(book) {
         setBooks({
           id: book.id,
           title: book.title,

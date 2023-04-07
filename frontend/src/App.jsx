@@ -13,6 +13,7 @@ import Register from './components/User/Register'
 import News from './components/News/News'
 import Store from './components/Store/Store'
 import UserList from './components/User/UserList'
+import VideoList from './components/Video/VideoList'
 import Welcome from './components/Welcome'
 import './App.css'
 
@@ -36,6 +37,7 @@ export default function App() {
               <Route path="/news" element={<News/>}/>
               <Route path="/bonus" element={<Bonus/>}/>
               <Route path="/user" element={<UserList/>}/>
+              <Route path="/video" element={<VideoList/>}/>
               <Route path="/login" element={<Login/>}/>
               <Route path="/logout" element={<Login/>}/>
               <Route path="*" element={<h5 style={{ color: "#f0f8ff" }}>{i18n.t('page.notFound')}</h5>}/>

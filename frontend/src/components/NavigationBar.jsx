@@ -51,6 +51,7 @@ export default function NavigationBar() {
         <Link to={"user"} className="nav-link">{i18n.t('navigate.userList')}</Link>
         <Link to={"store"} className="nav-link">{i18n.t('navigate.store')}</Link>
         <Link to={"news"} className="nav-link">{i18n.t('navigate.news')}</Link>
+        <Link to={"video"} className="nav-link">{i18n.t('navigate.video')}</Link>
         <Link to={"bonus"} className="nav-link">{i18n.t('navigate.bonus')}</Link>
         <Link to={"help"} className="nav-link">【?】</Link>
          <a href="https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi" className="speedometer" style={{ margin: 6.5 }}>

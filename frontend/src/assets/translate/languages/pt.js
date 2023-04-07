@@ -88,6 +88,7 @@ const messages = {
                 userList: 'Lista de Usuário',
                 store: 'Loja',
                 news: 'Notícias',
+                video: 'Vídeo',
                 bonus: 'Bônus'
             },
             footer: {
