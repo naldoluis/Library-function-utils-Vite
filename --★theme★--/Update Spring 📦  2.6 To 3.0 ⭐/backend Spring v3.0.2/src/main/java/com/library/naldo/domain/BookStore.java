@@ -21,4 +21,5 @@ public class BookStore {
 	private String photo;
 	private String language;
 	private String genre;
+	private String video;
 }

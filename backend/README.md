@@ -992,26 +992,29 @@ export default connect(mapStateToProps, mapDispatchToProps)(Book)
         language: books.language,
         genre: books.genre
       }
-  
+
       const headers = new Headers()
       headers.append('Content-Type', 'application/json')
-  
+
       fetch("http://localhost:8080/rest/books/" + bookId, {
         method: 'PUT',
+        mode: 'cors',
+        cache: 'default',
+        /* cache: 'no-cache', */
         body: JSON.stringify(book),
         headers
       })
-      .then(response => response.json())
-      .then (book => {
-        if(book) {
-          setShow({ show: true, method: "PUT" })
-          setTimeout(() => setShow({ show: false }), 2000)
-          //setTimeout(() => setBooks(), 2000)
-        } else {
-          setShow({ show: false })
-        }
+        .then(response => response.data)
+        .then(book => {
+          if(book) {
+            setBooks({ show: true, method: "PUT" })
+            setTimeout(() => setShow({ show: false }), 2000)
+            setTimeout(() => setBooks(), 2000)
+          } else {
+            setShow({ show: false })
+          }
       })
-      //setBooks(initialState)
+      setBooks(initialState)
     }
 
 !J------------------------------------------------------------------------------------------------------------------------------J!

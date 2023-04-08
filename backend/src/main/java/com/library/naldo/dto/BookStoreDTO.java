@@ -12,6 +12,7 @@ public class BookStoreDTO {
 	private String photo;
 	private String language;
 	private String genre;
+	private String video;
 
     public BookStoreDTO(BookStore bookStore) {
         id = bookStore.getId();
@@ -20,5 +21,6 @@ public class BookStoreDTO {
         photo = bookStore.getPhoto();
         language = bookStore.getLanguage();
         genre = bookStore.getGenre();
+        video = bookStore.getVideo();
     }
 }

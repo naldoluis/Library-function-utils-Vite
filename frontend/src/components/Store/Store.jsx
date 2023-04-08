@@ -35,18 +35,6 @@ class Store extends React.Component {
      })
   }
 
-  changePage = e => {
-    let targetPage = parseInt(e.target.value)
-    if (this.state.search) {
-      this.searchData(targetPage)
-    } else {
-      this.findAllBooks(targetPage)
-    }
-    this.setState({
-      [e.target.name]: targetPage
-    })
-  }
-
   firstPage = () => {
     let firstPage = 1
     if (this.state.currentPage > firstPage) {
@@ -133,7 +121,7 @@ class Store extends React.Component {
                 <div className="col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3 mb-4 text-white"
                   key={book.id}>
                   <img className="card-photo" src={book.photo}/>
-                  <p style={{ margin: "6px 62px 0 0", fontSize: 15, textAlign: "center", fontWeight: "600" }}>{book.title}</p>
+                  <p style={{ margin: "6px 62px 0 0", fontSize: 15, textAlign: "center", fontWeight: 600 }}>{book.title}</p>
                   <p style={{ margin: "1px 59px 0 0", fontSize: 12.5, textAlign: "center" }}>{book.genre}</p>
                   <p style={{ margin: "1px 59px 0 0", fontSize: 12.5, textAlign: "center" }}>{book.language}</p>
                   {/* <button className="purchase-button" onClick={() => this.openModalVanilla()}>
