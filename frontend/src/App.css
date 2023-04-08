@@ -14,7 +14,9 @@
 .delete {background: hsl(193, 86%, 29%);border: #0a6d88;color: hsl(187, 100%, 60%)}
 
 .toast {position: fixed;top: 10px;right: 10px;z-index: 1;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2)}
+
 .card-store {background: #383940;width: 1160px;margin-left: -5px;border-radius: 20px}
+.card-video {background: #383940;width: 1260px;margin-left: -62px;border-radius: 20px}
 
 .slide {transition: transform .45s ease-in-out}
 
