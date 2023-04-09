@@ -22,4 +22,5 @@ public class BookStore {
 	private String language;
 	private String genre;
 	private String video;
+	private String poster;
 }
