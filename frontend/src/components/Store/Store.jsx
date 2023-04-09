@@ -118,7 +118,7 @@ class Store extends React.Component {
               </Table>
             ) : (
               books.map(book => (
-                <div className="col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3 mb-4 text-white"
+                <div className="col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3 text-white"
                   key={book.id}>
                   <img className="card-photo" src={book.photo}/>
                   <p style={{ margin: "6px 62px 0 0", fontSize: 15, textAlign: "center", fontWeight: 600 }}>{book.title}</p>
