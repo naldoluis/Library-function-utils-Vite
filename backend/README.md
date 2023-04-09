@@ -1539,6 +1539,27 @@ onSwipeMove	                   –	              Executar alguma função no car
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
 
+# Cors
+
+      <httpProtocol>
+        <customHeaders>
+          <add name="Access-Control-Allow-Origin" value="*"/>
+          <add name="Access-Control-Allow-Headers" value="Content-Type"/>
+          <add name="Access-Control-Allow-Methods" value="GET, POST, PUT, PATCH, DELETE, OPTIONS"/>
+        </customHeaders>
+      </httpProtocol>
+
+# Chrome
+
+      --disable-web-security --user-data-dir="C:\Users\Naldo.Luis.167\AppData\Local\Google\Chrome\User Data"
+                                                             \
+                                                             🔎 YOU USER
+      --enable-usermedia-screen-capturing
+      --allow-http-screen-capture
+      --start-fullscreen
+      --kiosk
+      --disable-infobars
+
 # icons
 
 >                                                https://fontawesome.com/search
