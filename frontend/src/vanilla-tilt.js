@@ -204,7 +204,7 @@ var VanillaTilt = function () {
     resetGlare() {
       if (this.glare) {
         this.glareElement.style.transform = "rotate(180deg) translate(-50%, -50%)"
-        this.glareElement.style.opacity = "0"
+        this.glareElement.style.opacity = 0
       }
     }
 
@@ -308,8 +308,8 @@ var VanillaTilt = function () {
 
       Object.assign(this.glareElementWrapper.style, {
         "position": "absolute",
-        "top": "0",
-        "left": "0",
+        "top": 0,
+        "left": 0,
         "width": "100%",
         "height": "100%",
         "overflow": "hidden",
@@ -323,8 +323,8 @@ var VanillaTilt = function () {
         "pointer-events": "none",
         "background-image": `linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%)`,
         "transform": "rotate(180deg) translate(-50%, -50%)",
-        "transform-origin": "0% 0%",
-        "opacity": "0"
+        "transform-origin": 0,
+        "opacity": 0
       })
       this.updateGlareSize()
     }

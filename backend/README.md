@@ -1429,7 +1429,11 @@ export default connect(mapStateToProps, mapDispatchToProps)(UserList)
 "allowSyntheticDefaultImports": true
 },"include": ["vite.config.ts"]}
 
+!J------------------------------------------------------------------------------------------------------------------------------J!
+
 # server.js
+
+              📦 npm i cors
 
 import cors from 'cors'
 
@@ -1445,13 +1449,17 @@ Access-Control-Allow-Credentials : true
 Access-Control-Allow-Methods : GET, POST, OPTIONS, PATCH, DELETE, PUT, HEAD
 Access-Control-Allow-Headers : Origin, Content-Type, Accept
 
-const cors = require('cors');
+[OR]
+
+const cors = require('cors')
 app.use(cors({
     origin: '*',
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'HEAD', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Origin', 'X-Requested-With', 'Accept', 'x-client-key', 'x-client-token', 'x-client-secret', 'Authorization'],
     credentials: true
 }))
+
+!J------------------------------------------------------------------------------------------------------------------------------J!
 
 preview: {
     host: 'localhost',
