@@ -140,8 +140,7 @@ export default function Book() {
 
     /* dispatch(updateBook(bookEdit))
     setTimeout(() => {
-      let book = bookObject.book
-      if(book) {
+      if(bookObject.book) {
         setShow({ show: true, method: "PUT" })
         setTimeout(() => setShow({ show: false }), 2000)
       } else {

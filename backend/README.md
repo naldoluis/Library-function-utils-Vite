@@ -1105,6 +1105,27 @@ export default connect(mapStateToProps, mapDispatchToProps)(Book)
      })
   }
 
+!J------------------------------------------------------------------------------------------------------------------------------J!
+                                                      METHOD: 'PUT'
+    const headers = new Headers()
+    headers.append("Content-Type", "application/json")
+
+    axios.put("http://localhost:8080/rest/books/" + bookId, {
+      method: 'PUT',
+      mode: 'cors',
+      body: JSON.stringify(bookEdit),
+      headers
+    })
+    setTimeout(() => {
+      if(bookObject.book) {
+        setShow({ show: true, method: "PUT" })
+        setTimeout(() => setShow({ show: false }), 2000)
+      } else {
+        setShow({ show: false })
+      }
+    }, 200)
+  }
+
 !J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
                                                                                                                           - ❐ ❌
 # Login
