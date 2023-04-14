@@ -1062,8 +1062,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(Book)
    }
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
-
-METHOD: 'GET'
+                                                      METHOD: 'GET'
 
    findAllBooks(currentPage) {
       currentPage -= 1
@@ -1082,6 +1081,29 @@ METHOD: 'GET'
           localStorage.removeItem("jwtToken")
       })
     }
+
+!J------------------------------------------------------------------------------------------------------------------------------J!
+                                                      METHOD: 'PUT'
+    
+    const headers = new Headers()
+    headers.append('Content-Type', 'application/json')
+
+    fetch("http://localhost:8080/rest/books/" + bookId, {
+      method: 'PUT',
+      body: JSON.stringify(bookEdit),
+      //body: JSON.parse(bookEdit),
+      headers
+    })
+      .then(response => response.data)
+      .then(book => {
+        if(book) {
+          setShow({ show: true, method: "PUT" })
+          setTimeout(() => setShow({ show: false }), 2000)
+        } else {
+          setShow({ show: false })
+        }
+     })
+  }
 
 !J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
                                                                                                                           - ❐ ❌

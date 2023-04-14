@@ -97,9 +97,8 @@ export default function Book() {
 
     dispatch(saveBook(bookSaved))
     setTimeout(() => {
-      let book = bookObject.book
-      if(book) {
-        setBooks({ show: true, method: "POST" })
+      if(bookObject.book) {
+        setShow({ show: true, method: "POST" })
         setTimeout(() => setShow({ show: false }), 2000)
       } else {
         setShow({ show: false })
@@ -110,7 +109,7 @@ export default function Book() {
   const updatedBook = e => {
     e.preventDefault()
 
-    const book = {
+    const bookEdit = {
       id: e.target.id.value,
       title: e.target.title.value,
       author: e.target.author.value,
@@ -122,22 +121,21 @@ export default function Book() {
     }
 
     const headers = new Headers()
-    headers.append('Content-Type', 'application/json')
+    headers.append("Content-Type", "application/json")
 
     fetch("http://localhost:8080/rest/books/" + bookId, {
       method: 'PUT',
-      body: JSON.stringify(book),
+      body: JSON.stringify(bookEdit),
       headers
     })
-      .then(response => response.data)
-      .then(book => {
-        if(book) {
-          setBooks({ show: true, method: "PUT" })
+      .then(response => response.json())
+      .then(data => console.log(data))
+        if(bookObject.book) {
+          setShow({ show: true, method: "PUT" })
           setTimeout(() => setShow({ show: false }), 2000)
         } else {
           setShow({ show: false })
-        }
-     })
+      }
   }
 
     /* dispatch(updateBook(bookEdit))
