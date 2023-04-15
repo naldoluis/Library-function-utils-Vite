@@ -30,7 +30,6 @@ export default function Book() {
 
   const findAllLanguages = () => {
     dispatch(fetchLanguages())
-    setTimeout(() => {
       let bookLanguages = bookObject.book
       if(bookLanguages) {
         setBooks({
@@ -39,14 +38,12 @@ export default function Book() {
               return { value: language, display: language }
            }))
         })
-        findAllGenres()
-      }
-    }, 100)
+       findAllGenres()
+     }
   }
 
   const findAllGenres = () => {
     dispatch(fetchGenres())
-    setTimeout(() => {
       let bookGenres = bookObject.book
       if(bookGenres) {
         setBooks({
@@ -55,13 +52,11 @@ export default function Book() {
               return { value: genre, display: genre }
            }))
         })
-      }
-    }, 100)
+     }
   }
 
   const findBookById = bookId => {
     dispatch(fetchBook(bookId))
-    setTimeout(() => {
       let book = bookObject.book
       if(book) {
         setBooks({
@@ -74,8 +69,7 @@ export default function Book() {
           language: book.language,
           genre: book.genre
         })
-      }
-    }, 100)
+     }
   }
 
   const resetBook = () => {
@@ -96,14 +90,12 @@ export default function Book() {
     }
 
     dispatch(saveBook(bookSaved))
-    setTimeout(() => {
       if(bookObject.book) {
         setShow({ show: true, method: "POST" })
         setTimeout(() => setShow({ show: false }), 2000)
       } else {
         setShow({ show: false })
       }
-    }, 150)
   }
 
   const updatedBook = e => {
@@ -131,14 +123,12 @@ export default function Book() {
       .then(response => response.json())
       .then(json => console.log(json))
       .catch(error => console.log('Authorization failed: ' + error.message))
-    setTimeout(() => {
       if(bookObject.book) {
         setShow({ show: true, method: "PUT" })
         setTimeout(() => setShow({ show: false }), 2000)
       } else {
         setShow({ show: false })
       }
-    }, 150)
   }
 
     /* dispatch(updateBook(bookEdit))
