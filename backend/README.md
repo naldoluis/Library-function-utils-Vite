@@ -1108,6 +1108,19 @@ export default connect(mapStateToProps, mapDispatchToProps)(Book)
 !J------------------------------------------------------------------------------------------------------------------------------J!
                                                       METHOD: 'PUT'
 
+ /*
+    const init = {
+        headers: {
+          "Content-Type": "application/json;charset=UTF-8",
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "HEAD, POST, OPTIONS, PUT, PATCH",
+          "Access-Control-Max-Age": "1000",
+          "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Requested-With",
+          Vary: "Origin"
+        }
+      }
+ */
+
  /* 
     const headers = new Headers()
 
