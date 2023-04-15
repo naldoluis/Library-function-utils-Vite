@@ -21,7 +21,7 @@
 .slide {transition: transform .45s ease-in-out}
 
 /* ============================================ MODAL VANILLA of STORE ❐ ================================================
-                          Enable = class with name(.modal) & uncomment line 142 in Store.jsx                              */
+                          Enable = class with name(.modal) & uncomment line 127 in Store.jsx                              */
 
 .modall {display: flex;background: hwb(0 0 100% / .4);align-items: center;justify-content: center;transform: scale(1.14);visibility: hidden;transition: transform .15s ease-in-out}
 .content-modal {border: .1px solid #695c4a;background: #36373e;padding: 20px;width: 550px;height: 250px;border-radius: .5rem}
