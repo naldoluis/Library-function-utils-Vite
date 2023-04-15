@@ -132,14 +132,12 @@ export default function Book() {
   }
 
     /* dispatch(updateBook(bookEdit))
-    setTimeout(() => {
       if(bookObject.book) {
         setShow({ show: true, method: "PUT" })
         setTimeout(() => setShow({ show: false }), 2000)
       } else {
         setShow({ show: false })
       }
-    }, 150)
   } */
 
   const bookChange = e => {
