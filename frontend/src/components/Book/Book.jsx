@@ -129,7 +129,8 @@ export default function Book() {
       headers
     })
       .then(response => response.json())
-      .then(data => console.log(data))
+      .then(json => console.log(json))
+      .catch(error => console.log('Authorization failed: ' + error.message))
     setTimeout(() => {
       if(bookObject.book) {
         setShow({ show: true, method: "PUT" })

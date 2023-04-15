@@ -1107,15 +1107,36 @@ export default connect(mapStateToProps, mapDispatchToProps)(Book)
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
                                                       METHOD: 'PUT'
+
+ /* 
+    const headers = new Headers()
+
+    headers.append('Content-Type', 'application/json')
+    headers.append('Accept', 'application/json')
+  
+    headers.append('Access-Control-Allow-Origin', 'http://localhost:5173/')
+    headers.append('Access-Control-Allow-Methods', 'PUT')
+    headers.append('Access-Control-Allow-Credentials', 'true')
+
+    headers.append('GET', 'POST', 'OPTIONS', "PUT", "PATCH")
+ */
+
     const headers = new Headers()
     headers.append("Content-Type", "application/json")
 
     axios.put("http://localhost:8080/rest/books/" + bookId, {
       method: 'PUT',
       mode: 'cors',
+      credentials: 'include',
       body: JSON.stringify(bookEdit),
-      //headers: {'Access-Control-Allow-Origin': '*'},
       headers
+
+   /* headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+     } */
+
     })
     setTimeout(() => {
       if(bookObject.book) {
