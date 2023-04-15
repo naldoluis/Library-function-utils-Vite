@@ -1201,6 +1201,67 @@ export default connect(mapStateToProps, mapDispatchToProps)(Book)
       }
   }
 
+!J------------------------------------------------------------------------------------------------------------------------------J!
+
+    const response = await fetch(url, {
+       method: 'GET',
+       headers: {
+         Authorization: 'Bearer ' + accessToken
+       }
+     })
+     const string = await response.text()
+     const json = string === "" ? {} : JSON.parse(string)
+      return json
+
+!J------------------------------------------------------------------------------------------------------------------------------J!
+
+      return fetch(url, {
+        mode: "no-cors"
+    })
+    .then(res => {
+        return res.text()
+    })
+    .then(data => {
+        console.log(data)
+        return new Promise((resolve, reject) => {
+            resolve(data ? JSON.parse(data) : {})
+        })
+    })
+
+to
+
+      return fetch(url, {
+        mode: "cors"
+    })
+    .then(res => {
+        return res.text()
+    })
+    .then(data => {
+        console.log(data)
+        return new Promise((resolve, reject) => {
+            resolve(data ? JSON.parse(data) : {})
+        })
+    })
+
+!J------------------------------------------------------------------------------------------------------------------------------J!
+
+        fetch(url, {
+        method: 'POST',
+        body: JSON.stringify(requestPayload),           
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+            Authorization: 'Bearer ' + token
+        }
+    })
+      //.then(response => response.json())
+        .then(json => {
+            console.log("response :- ", json)
+            getCheckedInTrailersList()
+        }).catch(error => {
+            console.log("Api call error ", error.message)
+            alert(error.message)
+    })
+
 !J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
                                                                                                                           - ❐ ❌
 # Login
