@@ -1084,7 +1084,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(Book)
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
                                                       METHOD: 'PUT'
-    
+
     const headers = new Headers()
     headers.append('Content-Type', 'application/json')
 
@@ -1159,6 +1159,46 @@ export default connect(mapStateToProps, mapDispatchToProps)(Book)
         setShow({ show: false })
       }
     }, 200)
+  }
+
+!J------------------------------------------------------------------------------------------------------------------------------J!
+                                                      METHOD: 'PUT'
+  const updatedBook = e => {
+    e.preventDefault()
+
+    const bookEdit = {
+      id: e.target.id.value,
+      title: e.target.title.value,
+      author: e.target.author.value,
+      photo: e.target.photo.value,
+      isbn: e.target.isbn.value,
+      price: e.target.price.value,
+      language: e.target.language.value,
+      genre: e.target.genre.value
+    }
+
+    const headers = new Headers()
+    headers.append("Content-Type", "application/json")
+
+    fetch("http://localhost:8080/rest/books/" + bookId, {
+      method: 'PUT',
+      body: JSON.stringify(bookEdit),
+      headers
+    })
+      .then(response => {
+        if (response.status === 200) {
+          return response.json()
+        } else {
+          return Promise.reject(response)
+        }
+      })
+    .catch(error => console.log('Authorization failed: ' + error.message))
+      if(bookObject.book) {
+        setShow({ show: true, method: "PUT" })
+        setTimeout(() => setShow({ show: false }), 2000)
+      } else {
+        setShow({ show: false })
+      }
   }
 
 !J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
