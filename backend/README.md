@@ -1114,6 +1114,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(Book)
       method: 'PUT',
       mode: 'cors',
       body: JSON.stringify(bookEdit),
+      //headers: {'Access-Control-Allow-Origin': '*'},
       headers
     })
     setTimeout(() => {

@@ -103,7 +103,7 @@ export default function Book() {
       } else {
         setShow({ show: false })
       }
-    }, 200)
+    }, 150)
   }
 
   const updatedBook = e => {
@@ -130,12 +130,14 @@ export default function Book() {
     })
       .then(response => response.json())
       .then(data => console.log(data))
-        if(bookObject.book) {
-          setShow({ show: true, method: "PUT" })
-          setTimeout(() => setShow({ show: false }), 2000)
-        } else {
-          setShow({ show: false })
+    setTimeout(() => {
+      if(bookObject.book) {
+        setShow({ show: true, method: "PUT" })
+        setTimeout(() => setShow({ show: false }), 2000)
+      } else {
+        setShow({ show: false })
       }
+    }, 150)
   }
 
     /* dispatch(updateBook(bookEdit))
@@ -146,7 +148,7 @@ export default function Book() {
       } else {
         setShow({ show: false })
       }
-    }, 200)
+    }, 150)
   } */
 
   const bookChange = e => {

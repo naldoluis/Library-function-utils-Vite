@@ -52,7 +52,7 @@ class BookList extends React.Component {
   deleteBook = bookId => {
     this.props.deleteBook(bookId)
     setTimeout(() => {
-      if (this.props.bookObject != null) {
+      if (this.props.bookObject) {
         this.setState({ show: true })
         setTimeout(() => this.setState({ show: false }), 2300)
         this.findAllBooks(this.state.currentPage)
