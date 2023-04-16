@@ -9,7 +9,7 @@ export const fetchUsers = () => dispatch => {
       dispatch(userSuccess(response.data))
     })
     .catch(error => {
-      dispatch(userFailure(error.message))
+      dispatch(userFailure('Not Found Users: ' + error.message))
    })
 }
 

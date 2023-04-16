@@ -62,15 +62,15 @@ class BookList extends React.Component {
     }, 150)
   }
 
-  changePage = event => {
-    let targetPage = parseInt(event.target.value)
+  changePage = e => {
+    let targetPage = parseInt(e.target.value)
     if (this.state.search) {
       this.searchData(targetPage)
     } else {
       this.findAllBooks(targetPage)
     }
     this.setState({
-      [event.target.name]: targetPage
+      [e.target.name]: targetPage
     })
   }
 
