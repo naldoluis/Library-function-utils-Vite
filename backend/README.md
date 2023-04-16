@@ -1109,6 +1109,17 @@ export default connect(mapStateToProps, mapDispatchToProps)(Book)
                                                       METHOD: 'PUT'
 
  /*
+    const requestOptions = {
+      'Content-Type: 'application/json',
+       method: 'PUT',
+       redirect: 'follow',
+       mode: 'cors',
+       credentials: 'default',
+       body: JSON.stringify(bookEdit)
+     }
+ */
+
+ /*
     const init = {
         headers: {
           "Content-Type": "application/json;charset=UTF-8",

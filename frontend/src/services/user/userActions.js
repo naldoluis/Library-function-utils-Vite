@@ -4,7 +4,7 @@ import { BASE_URL } from '../../utils/requests'
 
 export const fetchUsers = () => dispatch => {
   dispatch(userRequest())
-  axios("https://randomapi.co/api/6de6abfedb24f889e0b5f675edc50deb?fmt=raw&sole")
+  axios("https://randomapi.com/api/6de6abfedb24f889e0b5f675edc50deb?fmt=raw&sole")
     .then(response => {
       dispatch(userSuccess(response.data))
     })
