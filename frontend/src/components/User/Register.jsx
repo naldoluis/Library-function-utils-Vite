@@ -42,10 +42,8 @@ export default function Register() {
           setShow(false)
           navigate("/login")
         }, 2800)
-      })
-      .catch(error => {
-        console.log(error)
      })
+     .catch(error => console.log('Register failed: ' + error.message))
   }
 
   function resetRegisterForm() {

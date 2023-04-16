@@ -131,15 +131,6 @@ export default function Book() {
       }
   }
 
-    /* dispatch(updateBook(bookEdit))
-      if(bookObject.book) {
-        setShow({ show: true, method: "PUT" })
-        setTimeout(() => setShow({ show: false }), 2000)
-      } else {
-        setShow({ show: false })
-      }
-  } */
-
   const bookChange = e => {
     const { name, value } = e.target
     setBooks({ ...books, [name]: value })

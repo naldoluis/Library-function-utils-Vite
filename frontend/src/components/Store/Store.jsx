@@ -33,6 +33,7 @@ class Store extends React.Component {
           currentPage: data.number + 1
         })
      })
+     .catch(error => console.log('Not Found Books: ' + error.message))
   }
 
   firstPage = () => {

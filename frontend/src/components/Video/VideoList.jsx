@@ -29,6 +29,7 @@ class VideoList extends React.Component {
           currentPage: data.number + 1
         })
      })
+     .catch(error => console.log('Not Found Videos: ' + error.message))
   }
 
   firstPage = () => {
