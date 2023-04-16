@@ -9,6 +9,7 @@ export default function Help() {
     fetch("https://jsonplaceholder.typicode.com/posts/1/comments")
       .then(response => response.json())
       .then(json => setComments(json))
+      .catch(error => console.log('Not Found Comments: ' + error.message))
   })
 
   return (

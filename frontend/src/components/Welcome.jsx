@@ -9,6 +9,7 @@ export default function Welcome() {
     fetch("https://type.fit/api/quotes")
       .then(response => response.json())
       .then(json => setQuotes(json))
+      .catch(error => console.log('Not Found quotes: ' + error.message))
   }, [])
 
   return (
