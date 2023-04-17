@@ -28,17 +28,19 @@ class UserList extends React.Component {
   }
 
   firstPage = () => {
-    if (this.state.currentPage > 1) {
+    let firstPage = 1
+    if (this.state.currentPage > firstPage) {
       this.setState({
-        currentPage: 1
+        currentPage: firstPage
       })
     }
   }
 
   prevPage = () => {
-    if (this.state.currentPage > 1) {
+    let prevPage = 1
+    if (this.state.currentPage > prevPage) {
       this.setState({
-        currentPage: this.state.currentPage - 1
+        currentPage: this.state.currentPage - prevPage
       })
     }
   }

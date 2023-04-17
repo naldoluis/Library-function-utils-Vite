@@ -39,43 +39,27 @@ class Store extends React.Component {
   firstPage = () => {
     let firstPage = 1
     if (this.state.currentPage > firstPage) {
-      if (this.state.search) {
-        this.searchData(firstPage)
-      } else {
         this.findAllBooksStore(firstPage)
-      }
     }
   }
 
   prevPage = () => {
     let prevPage = 1
     if (this.state.currentPage > prevPage) {
-      if (this.state.search) {
-        this.searchData(this.state.currentPage - prevPage)
-      } else {
         this.findAllBooksStore(this.state.currentPage - prevPage)
-      }
     }
   }
 
   nextPage = () => {
     if (this.state.currentPage < Math.ceil(this.state.totalElements / this.state.booksPerPage)) {
-      if (this.state.search) {
-        this.searchData(this.state.currentPage + 1)
-      } else {
         this.findAllBooksStore(this.state.currentPage + 1)
-      }
     }
   }
 
   lastPage = () => {
     let condition = Math.ceil(this.state.totalElements / this.state.booksPerPage)
     if (this.state.currentPage < condition) {
-      if (this.state.search) {
-        this.searchData(condition)
-      } else {
         this.findAllBooksStore(condition)
-      }
     }
   }
 

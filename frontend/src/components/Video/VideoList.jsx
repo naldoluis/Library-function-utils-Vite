@@ -2,6 +2,7 @@ import axios from 'axios'
 import React from 'react'
 import { Button, Card, Spinner, Table } from 'react-bootstrap'
 import { i18n } from '../../assets/translate/i18n'
+import { BASE_URL } from '../../utils/requests'
 
 class VideoList extends React.Component {
   constructor() {
@@ -19,7 +20,7 @@ class VideoList extends React.Component {
 
   findAllVideos(currentPage) {
     currentPage -= 1
-    axios("http://localhost:8080/rest/store?page=" + currentPage + "&size=" + this.state.videoPerPage)
+    axios(`${BASE_URL}/store?page=` + currentPage + "&size=" + this.state.videoPerPage)
       .then(response => response.data)
       .then(data => {
         this.setState({
@@ -35,43 +36,27 @@ class VideoList extends React.Component {
   firstPage = () => {
     let firstPage = 1
     if (this.state.currentPage > firstPage) {
-      if (this.state.search) {
-        this.searchData(firstPage)
-      } else {
         this.findAllVideos(firstPage)
-      }
     }
   }
 
   prevPage = () => {
     let prevPage = 1
     if (this.state.currentPage > prevPage) {
-      if (this.state.search) {
-        this.searchData(this.state.currentPage - prevPage)
-      } else {
         this.findAllVideos(this.state.currentPage - prevPage)
-      }
     }
   }
 
   nextPage = () => {
     if (this.state.currentPage < Math.ceil(this.state.totalElements / this.state.videoPerPage)) {
-      if (this.state.search) {
-        this.searchData(this.state.currentPage + 1)
-      } else {
         this.findAllVideos(this.state.currentPage + 1)
-      }
     }
   }
 
   lastPage = () => {
     let condition = Math.ceil(this.state.totalElements / this.state.videoPerPage)
     if (this.state.currentPage < condition) {
-      if (this.state.search) {
-        this.searchData(condition)
-      } else {
         this.findAllVideos(condition)
-      }
     }
   }
 
