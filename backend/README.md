@@ -4,7 +4,7 @@
                                         *  Node v18.14.1                   *
                                         *  apache-maven 3.9.0              *
                                         *  git version 2.39.2.windows.1    *
-                                        * ================================ *
+                                        * ================================ *                      package size: 7,92 MB
 
 # POST
 	    ==>  ⚡	http://localhost:8080/rest/user/authenticate                                                              - ❐ ❌
