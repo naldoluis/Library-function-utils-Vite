@@ -63,6 +63,7 @@ class UserList extends React.Component {
   }
 
   render() {
+
     const { currentPage, usersPerPage } = this.state
     const lastIndex = currentPage * usersPerPage
     const firstIndex = lastIndex - usersPerPage

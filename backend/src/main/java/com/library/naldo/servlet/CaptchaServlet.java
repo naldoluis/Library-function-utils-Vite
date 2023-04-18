@@ -10,14 +10,12 @@ import java.util.Random;
 import javax.imageio.ImageIO;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 @WebServlet("/captcha-servlet")
-public class CaptchaServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+public class CaptchaServlet {
 
 	public static final String FILE_TYPE = "jpeg";
 

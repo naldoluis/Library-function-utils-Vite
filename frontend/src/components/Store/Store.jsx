@@ -136,7 +136,7 @@ class Store extends React.Component {
                       name="title"
                       pattern="[A-Za-záàâãäéèêëíïîóôõöúùûüýÿřšşćçñžÁÀÂÃÄÉÈÊËÍÏÎÓÔÕÖÚÙÛÜÝŸŘŠŞĆÇÑŽ'/. ]{1,25}"
                       maxLength={25}
-                      className="bg-dark border-secondary text-white"
+                      className="bg-white border-secondary text-dark"
                       placeholder={i18n.t('input.book')}
                     />
                   </Form.Group>
@@ -148,7 +148,7 @@ class Store extends React.Component {
                       name="author"
                       pattern="[A-Za-záàâãäéèêëíïîóôõöúùûüýÿřšşćçñžÁÀÂÃÄÉÈÊËÍÏÎÓÔÕÖÚÙÛÜÝŸŘŠŞĆÇÑŽ'. ]{2,25}"
                       maxLength={25}
-                      className="bg-dark border-secondary text-white mb-3"
+                      className="bg-white border-secondary text-dark mb-3"
                       placeholder={i18n.t('input.author')}
                     />
                   </Form.Group>
@@ -162,7 +162,7 @@ class Store extends React.Component {
                       name="isbn"
                       pattern="[0-9]{9}"
                       maxLength={9}
-                      className="bg-dark border-secondary text-white mb-3"
+                      className="bg-white border-secondary text-dark mb-3"
                       placeholder={i18n.t('input.isbn')}
                     />
                   </Form.Group>
@@ -174,14 +174,14 @@ class Store extends React.Component {
                       name="price"
                       pattern="[0-9]{2,3}.[0-9]{2}"
                       maxLength={6}
-                      className="bg-dark border-secondary text-white"
+                      className="bg-white border-secondary text-dark"
                       placeholder={i18n.t('input.price')}
                     />
                   </Form.Group>
                 </div>
                 <div className="btn-container">
-                  <button onClick={() => this.closeModal()} style={{ background: "#1b7b3e", width: 200, borderRadius: 6 }}>{i18n.t('buttons.buy')}</button>
-                  <button onClick={() => this.closeModal()} style={{ background: "#c3c600", width: 200, borderRadius: 6 }}>{i18n.t('buttons.cancel')}</button>
+                  <button onClick={() => this.closeModal()} style={{ background: "#c3c600", width: 200, fontWeight: 500, borderRadius: 6 }}>{i18n.t('buttons.buy')}</button>
+                  <button onClick={() => this.closeModal()} style={{ background: "#c23f17", color: "#fff", fontWeight: 500, width: 200, borderRadius: 6 }}>{i18n.t('buttons.cancel')}</button>
                 </div>
               </div>
              </div>}

@@ -1,6 +1,5 @@
 package com.library.naldo.config;
 
-import java.io.Serializable;
 import java.security.Key;
 import java.util.Base64;
 import java.util.Date;
@@ -20,8 +19,7 @@ import io.jsonwebtoken.security.Keys;
 import com.library.naldo.domain.Role;
 
 @Component
-public class JwtTokenProvider implements Serializable {
-	private static final long serialVersionUID = 1L;
+public class JwtTokenProvider {
 
 	@Value("${jwt.secret-key}")
 	private String secretKey;

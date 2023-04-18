@@ -11,7 +11,7 @@ export default function Captcha() {
 
   const characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
 
-  function generateString(length) {
+  const generateString = length => {
     let result = ''
     const charactersLength = characters.length
     for (let i = 0; i < length; i++) {
@@ -36,7 +36,7 @@ export default function Captcha() {
     inputData.disabled = true
     element.disabled = true
 
-    var myFunctions = function() {
+    var myFunctions = () => {
       if (captcha == validate.codename) {
         element.style.background = "green"
         element.innerHTML = "Captcha Verified"
@@ -49,15 +49,15 @@ export default function Captcha() {
         element.innerHTML = "Incorrect Captcha"
         element.disabled = true
 
-        var myFunction = function() {
+        var captchaVerify = () => {
           element.style.background = "#007bff"
           element.style.cursor = "pointer"
           element.innerHTML = "Verify Captcha"
           element.disabled = false
           inputData.disabled = false
-          inputData.value = ''
+          inputData.value = ""
         }
-        setTimeout(myFunction, 800)
+        setTimeout(captchaVerify, 800)
       }
     }
     setTimeout(myFunctions, 800)
