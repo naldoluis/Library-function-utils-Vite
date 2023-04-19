@@ -61,6 +61,7 @@ export default function NavigationBar() {
            </svg>
          </a>
         <div className="globe"><FlagLang/></div>
+        <Link to={"clima"} className="nav-link" style={{ margin: "-1.7px 0 0 -12px" }}>🌡</Link>
        </Nav>
       <Nav>
         <Link to={"logout"} className="nav-link" onClick={logout}><FontAwesomeIcon icon={faSignOutAlt}/> {i18n.t('access.logout')}</Link>

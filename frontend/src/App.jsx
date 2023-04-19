@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Book from './components/Book/Book'
 import BookList from './components/Book/BookList'
 import Bonus from './components/Bonus/Bonus'
+import Clima from './components/Clima/Clima'
 import Footer from './components/Footer'
 import Help from './components/Help'
 import Home from './components/Home'
@@ -32,6 +33,7 @@ export default function App() {
               <Route path="/add" element={<Book/>}/>
               <Route path="/edit/:bookId" element={<Book/>}/>
               <Route path="/list" element={<BookList/>}/>
+              <Route path="/clima" element={<Clima/>}/>
               <Route path="/register" element={<Register/>}/>
               <Route path="/store" element={<Store/>}/>
               <Route path="/news" element={<News/>}/>
