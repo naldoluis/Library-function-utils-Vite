@@ -16,7 +16,7 @@ export default function ModalCustom(props) {
           dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
           consectetur ac, vestibulum at eros.
         </p>
-          <input maxLength={25} placeholder={i18n.t('input.modal')}/>
+          <input maxLength={24} placeholder={i18n.t('input.modal')}/>
         <img src='https://www.thomasvitale.com/content/images/2020/09/cloud-native-spring-boot-kubernetes-meap.jpg'
          style={{ width: 400, height: 210, marginLeft: 150, borderRadius: 4 }}/>
       </Modal.Body>

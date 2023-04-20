@@ -13,6 +13,24 @@ export default function Bonus() {
     })
   })
 
+  function generate_string(size, charset) {
+
+    var serial = ""
+
+    for (var i = 0; i < size; i++)
+      serial += charset.charAt(Math.floor(Math.random() * charset.length))
+    return serial
+  }
+
+  function generate_serial() {
+    return 'vt '
+      + generate_string(6, "0123456789") + '-'
+      + generate_string(4, "0123456789") + '-'
+      + generate_string(3, "0123456789") + '-'
+      + generate_string(2, "0123456789") + '.'
+      + generate_string(2, "0123456789")
+  }
+
   return (
     <>
       <Card style={{ border: "4px solid #6b5795", borderRadius: 20, width: 800, margin: "auto", background: "#183940" }}>
@@ -32,10 +50,10 @@ export default function Bonus() {
            <img src='https://m.media-amazon.com/images/I/61J6t27YllL.jpg' style={{ width: 200, height: 227, marginLeft: 70, borderRadius: 5 }}/>
           </Card.Body>
           <Card.Footer style={{ textAlign: "right", color: "#fff" }}>
-            <h6 style={{ fontFamily: "Varela Round", fontSize: 12.4, paddingTop: 40 }}>
-              Serial Number: 0989-0798-7498-798-697-80.01
-              <img src='https://www.helpconsult.com.br/wp-content/uploads/2019/04/selo_siteNOVO.png' style={{ width: 48, height: 40, marginRight: -35, paddingLeft: 10 }}/>
-            </h6>
+            <div style={{ fontFamily: "sans-serif", fontSize: 19, paddingTop: 40 }}>
+              {generate_serial()}
+              <img src='https://www.helpconsult.com.br/wp-content/uploads/2019/04/selo_siteNOVO.png' style={{ width: 48, height: 40, marginRight: -24, paddingLeft: 10 }}/>
+            </div>
           </Card.Footer>
         </Card.Header>
       </Card>
