@@ -37,8 +37,11 @@
 
 /* ================================================ CAPTCHA VANILLA 🔑 ================================================== */
 
-.city {font-size: 32px}
-.date {font-size: 16px}
-.containex-temp {display: flex;justify-content: center;background: #b2b2b233;box-shadow: 5px 6px #00000099;cursor: pointer;font-size: 100px;font-weight: 900;text-shadow: 3px 6px #00000033;border: .1px solid #d2d2d2;border-radius: 14px}
-.weather {font-size: 32px}
-.low-high {font-size: 22px}
+.city {font-size: 32px;text-align: center}
+.date {font-size: 16px;text-align: center}
+
+.weather {font-size: 32px;text-align: center}
+.low-high {font-size: 22px;text-align: center}
+
+.container-img {display: flex;width: auto;height: 120px}
+.container-weather {display: flex;justify-content: center}
