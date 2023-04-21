@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { Alert, Button, Card, Col, Form, FormControl, InputGroup } from 'react-bootstrap'
@@ -49,41 +49,6 @@ export default function Login() {
   const resetLoginForm = () => {
     setUser(initialState)
   }
-
-  useEffect(() => {
-    let captchaText = document.querySelector('#captcha')
-    var ctx = captchaText.getContext("2d")
-    ctx.font = "30px Roboto"
-    ctx.fillStyle = "#08e5ff"
-
-    let userText = document.querySelector('#textBox')
-
-    let alphaNums = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q',
-    'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
-    'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4',
-    '5', '6', '7', '8', '9']
-
-    let emptyArray = []
-
-    for (let i = 1; i <= 7; i++) {
-        emptyArray.push(alphaNums[Math.floor(Math.random() * alphaNums.length)])
-  }
-
-    var c = emptyArray.join('')
-    ctx.fillText(emptyArray.join(''),captchaText.width/4, captchaText.height/2)
-
-    userText.addEventListener('keyup', e => {
-        if (e.keyCode === 13) {
-          if (userText.value === c) {
-            output.classList.add("correctCaptcha")
-            output.innerHTML = "successfully! ✔️"
-          } else {
-            output.classList.add("incorrectCaptcha")
-            output.innerHTML = "captcha invalid! ⛔️"
-          }
-        }
-     })
-  }, [])
 
   return (
     <div className="justify-content-md-center form-row">
@@ -138,27 +103,6 @@ export default function Login() {
                     {values.showPassword ? <FontAwesomeIcon icon={faEye}/> : <FontAwesomeIcon icon={faEyeLowVision}/>}
                   </b>
                 </InputGroup>
-               <h6 style={{ margin: "17px 0 0 172px" }}>Captcha 🗝</h6>
-                <InputGroup.Text className="key">
-                 <FontAwesomeIcon icon={faKey}/>
-                  <div className="center">
-                    <div id="captchaBackground">
-                      <canvas id="captcha"></canvas>
-                      <FormControl maxLength={7} placeholder={i18n.t('input.captcha')} required id="textBox"/>
-                    </div>
-                  </div>
-                </InputGroup.Text>
-                {/* <Form.Group>
-                   <InputGroup.Text className="key">
-                     <FontAwesomeIcon icon={faKey}/>
-                   </InputGroup.Text>
-								  <div className="col-md-6">
-									  <img src="http://localhost:8080/rest/captcha-servlet"/>
-								  </div>
-								  <div className="col-md-7">
-									  <FormControl path="captcha" placeholder={i18n.t('input.captcha')} maxLength={7} required/>
-								  </div>
-							  </Form.Group> */}
               </Form.Group>
             </Form>
           </Card.Body>
