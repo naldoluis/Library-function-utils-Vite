@@ -103,7 +103,7 @@ export default function Weather() {
       temp_number.innerHTML = temperature
       temp_unit.innerHTML = `°c`
   
-      weather_t = weather.weather[0].description
+      let weather_t = weather.weather[0].description
       weather_t.innerText = capitalizeFirstLetter(weather_t)
   
       low_high.innerText = `${Math.round(weather.main.temp_min)}°c / ${Math.round(weather.main.temp_max)}°c`
@@ -124,7 +124,7 @@ export default function Weather() {
     container_temp.addEventListener('click', changeTemp)
   
     function changeTemp() {
-      temp_number = temp_number.innerHTML
+      let temp_number = temp_number.innerHTML
   
       if (temp_unit.innerHTML === "°c") {
         let f = (temp_number * 1.8) + 32
@@ -140,26 +140,28 @@ export default function Weather() {
   
     function capitalizeFirstLetter(string) {
       return string.charAt(0).toUpperCase() + string.slice(1)
-    }}
+    }
+    return Weather()
+  }
 
   return (
     <>
       <div className="text-white">☂️ Weather
        <p></p>
         <div className="card-body">
-         <div className="city">🧭 Américo Brasiliense, BR</div>
-          <div className="date">Monday, 25 March 2019</div>
-          <div className="container-weather mx-4 my-3">
+         <div align="center" className="city">🧭 Américo Brasiliense, BR</div>
+          <div align="center" className="date">Monday, 25 March 2019</div>
+           <div className="container-weather mx-4 my-3">
             <div className="container-img">
               <img src={iconWeather}/>
             </div>🌡 25°c</div>
-          <div className="weather py-2">Overcast</div>
-         <div className="low-high">20°c ☀️ / 19°c 🌙</div>
+          <div align="center" className="weather py-2">Overcast</div>
+         <div align="center" className="low-high">20°c ☀️ / 19°c 🌙</div>
         </div>
-        <div className="card-footer">
-          <div className="input-group">
-           <input className="form-control" placeholder="Enter city name"/>
-            <button className="btn btn-outline-success text-white bg-success" type="button" id="button-addon2">
+        <div className="input-group">
+         <input className="form-control" placeholder="Enter city name"/>
+          <div className="card-footer">
+            <button style={{ margin: "-18px 0 0 0" }} className="btn btn-outline-success text-white bg-success" type="button" id="button-addon2">
               <FontAwesomeIcon icon={faSearch}/>
             </button>
           </div>

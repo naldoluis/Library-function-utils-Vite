@@ -35,13 +35,11 @@
 .modal-body {text-align: center;margin-top: 1rem;padding: 1rem 1rem}
 #modal-container {border: 1px solid #bfb4c5;width: 700px;position: absolute;top: 46%;left: 50%;transform: translate(-50%, -50%);background: #4c4b4b;box-shadow: 0 0 20px #fff;border-radius: 20px}
 
-/* ================================================ CAPTCHA VANILLA 🔑 ================================================== */
+/* ============================================= WEATHER ⚡ 🌪 🌈 ☀️ 🌙 ================================================= */
 
-.city {font-size: 32px;text-align: center}
-.date {font-size: 16px;text-align: center}
-
-.weather {font-size: 32px;text-align: center}
-.low-high {font-size: 22px;text-align: center}
+.city,.weather {font-size: 32px}
+.date {font-size: 16px}
+.low-high {font-size: 22px}
 
 .container-img {display: flex;width: auto;height: 120px}
 .container-weather {display: flex;justify-content: center}
