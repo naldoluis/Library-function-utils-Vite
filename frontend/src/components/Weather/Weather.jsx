@@ -13,12 +13,12 @@ export default function Weather() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
        console.log(position)
-        lon = position.coords.longitude
         lat = position.coords.latitude
+        lon = position.coords.longitude
 
       const api = "6d055e39ee237af35ca066f35474e9df"
 
-      const base = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&` + `lon=${lon}&appid=6d055e39ee237af35ca066f35474e9df`
+      const base = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=6d055e39ee237af35ca066f35474e9df`
 
       fetch(base)
         .then(response => {
@@ -38,15 +38,16 @@ export default function Weather() {
 
   return (
     <>
-     <div className="text-white">☂️ Weather
-       <div className="containex">
-         <div className="icon"></div>
-         <div className="temp">- 20 °C ☀️ / 🌙</div>
+      <div className="text-white">☂️ Weather
+       <p></p>
+        <div className="display">
+          <div className="icon"></div>
           <p></p>
-         <div className="summary">summary ----</div>
+          <div className="temp">- 20 °C ☀️ / 🌙</div>
           <p></p>
-        <div className="location" style={{ marginTop: 40 }}>🧭</div>
-       </div>
+          <div className="summary">summary</div>
+          <div className="location" style={{ marginTop: 40 }}>🧭 location = Américo Brasiliense - SP</div>
+        </div>
       </div>
     </>
   )}
@@ -253,48 +254,140 @@ JAVASCRIPT
 
 /* ================================================================================================================ */
 
-{/* * {margin: 0;padding: 0;box-sizing: border-box}
-body {height: 100vh;display: flex;flex-direction: column;align-items: centerjustify-content: center;background: linear-gradient(rgb(123, 184, 104), rgb(13, 87, 10));font-size: 2rem;font-family: sans-serif;color: rgb(7, 9, 10)}
-.container {height: 20rem;width: 15rem;background: rgb(152, 228, 165);text-align: center;padding-top: 12px;border-radius: 16px;border: 2px solid rgb(14, 43, 1)}
+{/*
 
-    <div class="container">
-      <div class="icon">---</div>
-      <div class="temp">-°C</div>
-      <div class="summary">----</div>
-      <div class="location"></div>
-    </div>
+HTML
 
-let lon
-let lat
-let temperature = document.querySelector(".temp")
-let summary = document.querySelector(".summary")
-let loc = document.querySelector(".location")
-let icon = document.querySelector(".icon")
-const kelvin = 273
+
+    <section class="top-banner">
+      <div class="container">
+        <form>
+          <input type="text" placeholder="Search for a city" autofocus>
+          <button type="submit">SUBMIT</button>
+          <span class="msg"></span>
+        </form>
+      </div>
+    </section>
+    <section class="ajax-section">
+      <div class="container">
+        <ul class="cities"></ul>
+      </div>
+    </section>
+    <footer class="page-footer">
+    </footer>
+
+CSS
+
+:root {
+  --bg_main: #0a1f44;
+  --text_light: #fff;
+  --text_med: #53627c;
+  --text_dark: #1e2432;
+  --red: #ff1e42;
+  --darkred: #c3112d;
+  --orange: #ff8c00
+}
+
+a {color: inherit;text-decoration: none}
+* {margin: 0;padding: 0;box-sizing: border-box;font-weight: normal}
+
+button {cursor: pointer}
+button,input {border: none;background: none;outline: none;color: inherit}
+
+input {-webkit-appearance: none}
+img {display: block;max-width: 100%;height: auto}
+
+ul {list-style: none}
+body {font: 1rem/1.3 "Roboto", sans-serif;background: var(--bg_main);color: var(--text_dark);padding: 70px}
+
+.container {width: 100%;max-width: 1200px;margin: 0 auto;padding: 0 15px}
+.heading {font-weight: bold;font-size: 4rem;letter-spacing: 0.02em;padding: 0 0 30px 0}
+
+.top-banner {color: var(--text_light)}
+.top-banner form {position: relative;display: flex;align-items: center}
+.top-banner form input {font-size: 2rem;height: 40px;padding: 5px 5px 10px;border-bottom: 1px solid}
+.top-banner form input::placeholder {color: currentColor}
+.top-banner form button {font-size: 1rem;font-weight: bold;letter-spacing: 0.1em;padding: 15px 20px;margin-left: 15px;border-radius: 5px;background: var(--red);transition: background 0.3s ease-in-out}
+.top-banner form button:hover {background: var(--darkred)}
+.top-banner form .msg {position: absolute;bottom: -40px;left: 0;max-width: 450px;min-height: 40px}
+
+.ajax-section {margin: 70px 0 20px}
+.ajax-section .cities {display: grid;grid-gap: 32px 20px;grid-template-columns: repeat(4, 1fr)}
+.ajax-section .city {position: relative;padding: 40px 10%;border-radius: 20px;background: var(--text_light);color: var(--text_med)}
+.ajax-section .city::after {content: '';width: 90%;height: 50px;position: absolute;bottom: -12px;left: 5%;z-index: -1;opacity: 0.3;border-radius: 20px;background: var(--text_light)}
+.ajax-section figcaption {margin-top: 10px;text-transform: uppercase;letter-spacing: 0.05em}
+.ajax-section .city-temp {font-size: 5rem;font-weight: bold;margin-top: 10px;color: var(--text_dark)}
+.ajax-section .city sup {font-size: 0.5em}
+.ajax-section .city-name sup {padding: 0.2em 0.6em;border-radius: 30px;color: var(--text_light);background: var(--orange)}
+.ajax-section .city-icon {margin-top: 10px;width: 100px;height: 100px}
+
+@media screen and (max-width: 1000px) {
+body {padding: 30px}
+
+.ajax-section .cities {grid-template-columns: repeat(3, 1fr)}}
+
+@media screen and (max-width: 700px) {
+.heading,
+.ajax-section .city-temp {font-size: 3rem}
+.ajax-section {margin-top: 20p}
+
+.top-banner form {flex-direction: column;align-items: flex-start}
+.top-banner form input,.top-banner form button {width: 100%}
+.top-banner form button {margin: 20px 0 0 0}
+.top-banner form .msg {position: static;max-width: none;min-height: 0;margin-top: 10px}
+
+.ajax-section .cities {grid-template-columns: repeat(2, 1fr)}}
+
+@media screen and (max-width: 500px) {
+body {padding: 15px}
   
-window.addEventListener("load", () => {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(position => {
-      console.log(position)
-      lon = position.coords.longitude
-      lat = position.coords.latitude
-  
-      const api = "6d055e39ee237af35ca066f35474e9df"
-  
-      const base = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&` + `lon=${lon}&appid=6d055e39ee237af35ca066f35474e9df`
-  
-      fetch(base)
-        .then(response => {
-          return response.json()
-        })
-        .then(data => {
-          console.log(data)
-          temperature.textContent = Math.floor(data.main.temp - kelvin) + "°C"
-          summary.textContent = data.weather[0].description
-          loc.textContent = data.name + "," + data.sys.country
-          let icon1 = data.weather[0].icon
-          icon.innerHTML = `<img src="icons/${icon1}.svg" style= 'height:10rem'/>`
-        })
-     })
-   }
-}) */}
+.ajax-section .cities {grid-template-columns: repeat(1, 1fr)}}
+
+.page-footer {text-align: right;font-size: 1rem;color: var(--text_light);margin-top: 40px}
+.page-footer span {color: var(--red)}
+
+.api {background: #fffbbc;position: fixed;top: 0;left: 0;width: 100%;padding: 10px}
+.api a {text-decoration: underline}
+.api a:hover {text-decoration: none}
+
+
+JAVASCRIPT
+
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputVal}&appid=${apiKey}&units=metric`
+
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        const { main, name, sys, weather } = data
+        const icon = `https://openweathermap.org/img/wn/${weather[0]["icon"]}@2x.png`
+
+        const li = document.createElement("li")
+        li.classList.add("city")
+        const markup = `
+          <h2 class="city-name" data-name="${name},${sys.country}">
+            <span>${name}</span>
+            <sup>${sys.country}</sup>
+          </h2>
+          <div class="city-temp">${Math.round(main.temp)}<sup>°C</sup></div>
+          <figure>
+            <img class="city-icon" src=${icon} alt=${weather[0]["main"]}>
+            <figcaption>${weather[0]["description"]}</figcaption>
+          </figure>
+        `
+        li.innerHTML = markup
+        list.appendChild(li)
+      })
+      .catch(() => {
+        msg.textContent = "Please search for a valid city"
+      })
+
+    msg.textContent = ""
+    form.reset()
+    input.focus()
+  })
+
+    const icon = `https://openweathermap.org/img/wn/${weather[0]["icon"]}@2x.png`
+
+    const icon = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${weather[0]["icon"]}.svg`
+
+*/}
