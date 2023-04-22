@@ -4,7 +4,7 @@
                                         *  Node v18.14.1                   *
                                         *  apache-maven 3.9.0              *
                                         *  git version 2.39.2.windows.1    *
-                                        * ================================ *                      package size: 7,92 MB
+                                        * ================================ *                      package size: 7,97 MB
 
 # POST
 	    ==>  ⚡	http://localhost:8080/rest/user/authenticate                                                              - ❐ ❌
@@ -1699,8 +1699,6 @@ function resetarImagens() {
 }
 var intervalo = setInterval(avancarImagem, 2000)
 
-
-
 # HTML
 
 <div id="container">
@@ -1748,13 +1746,12 @@ div {overflow: hidden;position: relative;width: 350px;height: 200px}
 
 # CSS
 
-
 #sliders {list-style: none;position: relative;width: 800px;height:300px;margin:0 auto;overflow: hidden}
 #slider li {position: absolute;top:0;left:0;opacity: 0;z-index: 0;-webkit-transition: opacity 1s;-moz-transition: opacity 1s;transition: opacity 1s}
 #sliders li.slider-active {z-index: 1;opacity: 1}
 
-# JAVASCRIPT
 
+# JAVASCRIPT
 
     var sliders  = document.querySelectorAll('#sliders li')
     var current  = 0
@@ -1777,7 +1774,6 @@ div {overflow: hidden;position: relative;width: 350px;height: 200px}
 
 # CSS
 
-
 * {box-sizing:border-box}
 
 
@@ -1795,7 +1791,6 @@ div {overflow: hidden;position: relative;width: 350px;height: 200px}
 
 
 # HTML
-
 
   <div class="slideshow-container">
     <div class="mySlides fade">
