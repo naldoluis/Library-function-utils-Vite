@@ -1,7 +1,6 @@
 import { i18n } from '../../assets/translate/i18n'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
-import iconWeather from '../../assets/icons/weather/02d.png'
 
 export default function Weather() {
 
@@ -50,7 +49,7 @@ export default function Weather() {
             return response.json()
         })
         .catch(error => {
-            console.log("Fetch not found:" + error.message)
+            console.log("Fetch not found: " + error.message)
         })
         .then(response => {
             displayResults(response)
@@ -78,7 +77,7 @@ export default function Weather() {
             return response.json()
         })
         .catch(error => {
-            console.log("Fetch not found:" + error.message)
+            console.log("Fetch not found: " + error.message)
         })
         .then(response => {
             displayResults(response)
@@ -94,10 +93,10 @@ export default function Weather() {
     date.innerHTML = dateBuilder(now)
 
     let iconName = weather.weather[0].icon
-    container_img.innerHTML = `<img src="./icons/${iconName}.png">`
+    container_img.innerHTML = `<img src="./src/assets/icons/weather/${iconName}.svg">`
 
     let temperature = `${Math.round(weather.main.temp)}`
-    temp_number.innerHTML = temperature
+    temp_number = temperature(temperature)
     temp_unit.innerHTML = `°c`
 
     const weather_time = weather.weather[0].description
@@ -149,13 +148,13 @@ export default function Weather() {
           <div align="center" className="date">Monday, 25 March 2019</div>
            <div className="container-weather mx-4 my-3">
             <div className="container-img">
-              <img src={iconWeather}/>
+              <img src="./src/assets/icons/weather/unknown.svg"/>
             </div>🌡 25°c</div>
           <div align="center" className="weather py-2">Overcast</div>
          <div align="center" className="low-high">20°c ☀️ / 19°c 🌙</div>
         </div>
         <div className="input-group">
-         <input className="form-control" placeholder="Enter city name"/>
+         <input className="form-control bg-dark text-white" placeholder="Enter city name"/>
           <div className="card-footer">
             <button style={{ margin: "-18px 0 0 0" }} className="btn btn-outline-success text-white bg-success" type="button" id="button-addon2" aria-label="Recipient's username" aria-describedby="button-addon2">
               <FontAwesomeIcon icon={faSearch}/>
