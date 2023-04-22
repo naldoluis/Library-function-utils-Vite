@@ -96,7 +96,7 @@ export default function Weather() {
     container_img.innerHTML = `<img src="./src/assets/icons/weather/${iconName}.svg">`
 
     let temperature = `${Math.round(weather.main.temp)}`
-    temp_number = temperature(temperature)
+    temp_number.innerHTML = temperature
     temp_unit.innerHTML = `°c`
 
     const weather_time = weather.weather[0].description
