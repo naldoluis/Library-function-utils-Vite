@@ -91,6 +91,11 @@ const messages = {
                 video: 'Vídeo',
                 bonus: 'Bônus'
             },
+            weather: {
+                title: 'Clima',
+                situation: 'Nublado',
+                input: 'Insira o nome da cidade'
+            },
             footer: {
                 message: 'Toda Esquerda Reservada para Naldo Luis'
             }

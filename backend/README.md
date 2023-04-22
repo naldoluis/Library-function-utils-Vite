@@ -632,6 +632,7 @@ public class SpringSecurityConfig {
                    @import "https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css";
                    @import "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
                    @import "https://fonts.googleapis.com/css?family=Roboto|Varela+Round";
+                   @import "https://fonts.googleapis.com/css2?family=Arvo&display=swap";
 
 # Fonts index.html
 

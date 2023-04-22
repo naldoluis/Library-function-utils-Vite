@@ -1,13 +1,12 @@
-import { i18n } from '../../assets/translate/i18n'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import { i18n } from '../../assets/translate/i18n'
 
 export default function Weather() {
 
   const api = {
     key: "64ed82577ced7f69cb1687f0ce536131",
     base: "https://api.openweathermap.org/data/2.5/",
-    lang: "en",
     units: "metric"
   }
 
@@ -95,7 +94,7 @@ export default function Weather() {
     let iconName = weather.weather[0].icon
     container_img.innerHTML = `<img src="./src/assets/icons/weather/${iconName}.svg">`
 
-    let temperature = `${Math.round(weather.main.temp)}`
+    temperature = `${Math.round(weather.main.temp)}`
     temp_number.innerHTML = temperature
     temp_unit.innerHTML = `°c`
 
@@ -121,7 +120,7 @@ export default function Weather() {
 
   function changeTemp() {
 
-      const temp_number = temp_number.innerHTML
+      var temp_number = temp_number.innerHTML
 
       if (temp_unit.innerHTML === "°c") {
           let f = (temp_number * 1.8) + 32
@@ -141,7 +140,7 @@ export default function Weather() {
 
   return (
     <>
-      <div className="text-white">☂️ Weather
+      <div className="text-white">☂️ {i18n.t('weather.title')}
        <p></p>
         <div className="card-body">
          <div align="center" className="city">🧭 Américo Brasiliense, BR</div>
@@ -150,13 +149,13 @@ export default function Weather() {
             <div className="container-img">
               <img src="./src/assets/icons/weather/unknown.svg"/>
             </div>🌡 25°c</div>
-          <div align="center" className="weather py-2">Overcast</div>
+          <div align="center" className="weather py-2">{i18n.t('weather.situation')}</div>
          <div align="center" className="low-high">20°c ☀️ / 19°c 🌙</div>
         </div>
         <div className="input-group">
-         <input className="form-control bg-dark text-white" placeholder="Enter city name"/>
+         <input className="form-control bg-dark text-white" placeholder={i18n.t('weather.input')}/>
           <div className="card-footer">
-            <button style={{ margin: "-18px 0 0 0" }} className="btn btn-outline-success text-white bg-success" type="button" id="button-addon2" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button style={{ marginTop: -18 }} className="btn btn-outline-success text-white bg-success" type="button" id="button-addon2" aria-label="Recipient's username" aria-describedby="button-addon2">
               <FontAwesomeIcon icon={faSearch}/>
             </button>
           </div>

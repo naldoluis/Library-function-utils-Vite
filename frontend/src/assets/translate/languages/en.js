@@ -91,6 +91,11 @@ const messages = {
                 video: 'Video',
                 bonus: 'Bonus'
             },
+            weather: {
+                title: 'Weather',
+                situation: 'Overcast',
+                input: 'Enter city name'
+            },
             footer: {
                 message: 'All Left Reserved by Naldo Luis'
             }
