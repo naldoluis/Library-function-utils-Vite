@@ -155,7 +155,7 @@ export default function Weather() {
         <div className="input-group">
          <input className="form-control bg-dark text-white" placeholder={i18n.t('weather.input')} aria-label="Recipient's username" aria-describedby="button-addon2"/>
          <div className="card-footer">
-          <button style={{ marginTop: -18 }} className="btn btn-outline-success text-white bg-success" type="button">
+          <button style={{ marginTop: -18 }} className="btn btn-outline-success text-white bg-success" type="button" id="button-addon2">
             <FontAwesomeIcon icon={faSearch}/>
           </button>
         </div>
