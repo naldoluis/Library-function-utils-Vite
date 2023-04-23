@@ -1,9 +1,11 @@
+import { useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { i18n } from '../../assets/translate/i18n'
 
 export default function Weather() {
 
+useEffect(() => {
   const api = {
     key: "64ed82577ced7f69cb1687f0ce536131",
     base: "https://api.openweathermap.org/data/2.5/",
@@ -60,7 +62,8 @@ export default function Weather() {
   })
 
   search_input?.addEventListener('keypress', (e) => {
-      if (e.key === 'Enter') {
+    let key = e.keyCode
+      if (key === 13) {
         searchResults(search_input.value)
       }
   })
@@ -92,7 +95,7 @@ export default function Weather() {
     let iconName = weather.weather[0].icon
     container_img.innerHTML = `<img src="./src/assets/icons/weather/${iconName}.svg">`
 
-    var temperature = `${Math.round(weather.main.temp)}`
+    let temperature = `${Math.round(weather.main.temp)}`
     temp_number.innerHTML = temperature
     temp_unit.innerHTML = `°c`
 
@@ -114,11 +117,10 @@ export default function Weather() {
     return `${day}, ${date} ${month} ${year}`
   }
 
-    container_temp?.addEventListener('click', changeTemp)
-
+  container_temp?.addEventListener('click', changeTemp)
   function changeTemp() {
 
-      var temp_number = temp_number.innerHTML
+      temp_number.innerHTML = temp_number
 
       if (temp_unit.innerHTML === "°c") {
           let f = (temp_number * 1.8) + 32
@@ -134,7 +136,7 @@ export default function Weather() {
 
   function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1)
-  }
+  }},[Weather])
 
   return (
     <>
@@ -146,16 +148,16 @@ export default function Weather() {
            <div className="container-img my-2">
             <img src="./src/assets/icons/weather/unknown.svg"/></div>
             <div className="container-temp mx-4">
-            <div>25</div>
-            <span>°c</span>
+            <div className="container-temp div">25</div>
+            <span className="container-temp span">°c</span>
            </div>
           <div align="center" className="weather py-2">{i18n.t('weather.situation')}</div>
          <div align="center" className="low-high">20°c ☀️ / 19°c 🌙</div>
         </div>
         <div className="input-group">
-         <input className="form-control bg-dark text-white" placeholder={i18n.t('weather.input')} aria-label="Recipient's username" aria-describedby="button-addon2"/>
+         <input className="form-control bg-dark text-white" placeholder={i18n.t('weather.input')}/>
          <div className="card-footer">
-          <button style={{ marginTop: -18 }} className="btn btn-outline-success text-white bg-success" type="button" id="button-addon2">
+          <button style={{ marginTop: -18 }} className="btn btn-outline-success text-white bg-success" type="button">
             <FontAwesomeIcon icon={faSearch}/>
           </button>
         </div>
