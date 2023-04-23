@@ -57,11 +57,11 @@ useEffect(() => {
       })
   }
 
-  search_button?.addEventListener('click', function() {
-    searchResults(search_input.value)
+  search_button?.addEventListener('click', () => {
+      searchResults(search_input.value)
   })
 
-  search_input?.addEventListener('keypress', (e) => {
+  search_input?.addEventListener('keypress', e => {
     let key = e.keyCode
       if (key === 13) {
         searchResults(search_input.value)
