@@ -60,13 +60,11 @@ export default function Weather() {
     searchResults(search_input.value)
   })
 
-  search_input?.addEventListener('keypress', enter)
-    function enter(e) {
-      key = e.keyCode
-      if (key === 13) {
-          searchResults(search_input.value)
+  search_input?.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        searchResults(search_input.value)
       }
-  }
+  })
 
   function searchResults(city) {
     fetch(`${api.base}weather?q=${city}&lang=${api.lang}&units=${api.units}&APPID=${api.key}`)
@@ -141,9 +139,9 @@ export default function Weather() {
 
   return (
     <>
-      <div className="text-white">☂️ {i18n.t('weather.title')}
+      <div style={{ fontSize: 20 }} className="text-white">☂️ {i18n.t('weather.title')}</div>
        <p></p>
-        <div className="card-body">
+        <div className="card-body text-white">
          <div align="center" className="city">🧭 Américo Brasiliense, BR</div>
           <div align="center" className="date">Monday, 25 March 2019</div>
            <div className="container-img my-2">
@@ -157,11 +155,10 @@ export default function Weather() {
         </div>
         <div className="input-group">
          <input className="form-control bg-dark text-white" placeholder={i18n.t('weather.input')}/>
-          <div className="card-footer">
-            <button style={{ marginTop: -18 }} className="btn btn-outline-success text-white bg-success" type="button">
-              <FontAwesomeIcon icon={faSearch}/>
-            </button>
-          </div>
+         <div className="card-footer">
+          <button style={{ marginTop: -18 }} className="btn btn-outline-success text-white bg-success" type="button">
+            <FontAwesomeIcon icon={faSearch}/>
+          </button>
         </div>
       </div>
     </>
