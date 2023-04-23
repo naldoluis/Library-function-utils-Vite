@@ -159,8 +159,8 @@ useEffect(() => {
          <div className="card-footer">
           <button style={{ marginTop: -18 }} className="find btn btn-outline-success text-white bg-success" type="button">
             <FontAwesomeIcon icon={faSearch}/>
-          </button>
-        </div>
-      </div>
-    </>
-  )}
+             </button>
+              </div>
+               </div>
+                 </>
+                   )}
