@@ -41,5 +41,5 @@
 .date {font-size: 16px}
 .low-high {font-size: 22px}
 
-.container-img {display: flex;width: auto;height: 120px}
-.container-weather {display: flex;justify-content: center}
+.container-img {display: flex;width: auto;height: 120px;justify-content: center}
+.container-temp {display: flex;justify-content: center}

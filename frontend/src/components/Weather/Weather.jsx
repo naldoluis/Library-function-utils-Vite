@@ -7,6 +7,7 @@ export default function Weather() {
   const api = {
     key: "64ed82577ced7f69cb1687f0ce536131",
     base: "https://api.openweathermap.org/data/2.5/",
+    lang: "en",
     units: "metric"
   }
 
@@ -16,7 +17,7 @@ export default function Weather() {
   const container_temp = document.querySelector('.container-temp')
   const temp_number = document.querySelector('.container-temp div')
   const temp_unit = document.querySelector('.container-temp span')
-  const weather_t = document.querySelector('.weather');
+  const weather_t = document.querySelector('.weather')
   const search_input = document.querySelector('.form-control')
   const search_button = document.querySelector('.btn')
   const low_high = document.querySelector('.low-high')
@@ -60,8 +61,8 @@ export default function Weather() {
   })
 
   search_input?.addEventListener('keypress', enter)
-    function enter(event) {
-      key = event.keyCode
+    function enter(e) {
+      key = e.keyCode
       if (key === 13) {
           searchResults(search_input.value)
       }
@@ -94,7 +95,7 @@ export default function Weather() {
     let iconName = weather.weather[0].icon
     container_img.innerHTML = `<img src="./src/assets/icons/weather/${iconName}.svg">`
 
-    temperature = `${Math.round(weather.main.temp)}`
+    var temperature = `${Math.round(weather.main.temp)}`
     temp_number.innerHTML = temperature
     temp_unit.innerHTML = `°c`
 
@@ -145,17 +146,19 @@ export default function Weather() {
         <div className="card-body">
          <div align="center" className="city">🧭 Américo Brasiliense, BR</div>
           <div align="center" className="date">Monday, 25 March 2019</div>
-           <div className="container-weather mx-4 my-3">
-            <div className="container-img">
-              <img src="./src/assets/icons/weather/unknown.svg"/>
-            </div>🌡 25°c</div>
+           <div className="container-img my-2">
+            <img src="./src/assets/icons/weather/unknown.svg"/></div>
+            <div className="container-temp mx-4">
+            <div>25</div>
+            <span>°c</span>
+           </div>
           <div align="center" className="weather py-2">{i18n.t('weather.situation')}</div>
          <div align="center" className="low-high">20°c ☀️ / 19°c 🌙</div>
         </div>
         <div className="input-group">
          <input className="form-control bg-dark text-white" placeholder={i18n.t('weather.input')}/>
           <div className="card-footer">
-            <button style={{ marginTop: -18 }} className="btn btn-outline-success text-white bg-success" type="button" id="button-addon2" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button style={{ marginTop: -18 }} className="btn btn-outline-success text-white bg-success" type="button">
               <FontAwesomeIcon icon={faSearch}/>
             </button>
           </div>
