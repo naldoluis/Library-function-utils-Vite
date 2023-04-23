@@ -4,7 +4,7 @@
                                         *  Node v18.14.1                   *
                                         *  apache-maven 3.9.0              *
                                         *  git version 2.39.2.windows.1    *
-                                        * ================================ *                      package size: 7,97 MB
+                                        * ================================ *                      package size: 8,02 MB
 
 # POST
 	    ==>  ⚡	http://localhost:8080/rest/user/authenticate                                                              - ❐ ❌
@@ -2361,4 +2361,4 @@ onSwipeMove	                   –	              Executar alguma função no car
           </svg>
         </a>
 
-                                                                                                               ⋈ vscode: 1.73.0
+                                                                                                               ⋈ vscode: 1.77.3

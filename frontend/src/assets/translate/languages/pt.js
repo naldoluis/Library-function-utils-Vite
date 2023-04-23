@@ -93,7 +93,7 @@ const messages = {
             },
             weather: {
                 title: 'Clima',
-                situation: 'Nublado',
+                forecast: 'Nublado',
                 input: 'Insira o nome da cidade'
             },
             footer: {

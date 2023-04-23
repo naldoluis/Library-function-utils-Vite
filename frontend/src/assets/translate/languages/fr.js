@@ -93,7 +93,7 @@ const messages = {
             },
             weather: {
                 title: 'Climat',
-                situation: 'Couverte',
+                forecast: 'Couverte',
                 input: 'Entrez le nom de la ville'
             },
             footer: {

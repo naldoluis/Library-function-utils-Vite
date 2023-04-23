@@ -99,7 +99,7 @@ useEffect(() => {
     temp_number.innerHTML = temperature
     temp_unit.innerHTML = `°c`
 
-    const weather_time = weather.weather[0].description
+    let weather_time = weather.weather[0].description
     weather_t.innerText = capitalizeFirstLetter(weather_time)
 
     low_high.innerText = `${Math.round(weather.main.temp_min)}°c / ${Math.round(weather.main.temp_max)}°c`
@@ -148,10 +148,10 @@ useEffect(() => {
            <div className="container-img my-2">
             <img src="./src/assets/icons/weather/unknown.svg"/></div>
             <div className="container-temp mx-4">
-            <div className="container-temp div">25</div>
-            <span className="container-temp span">°c</span>
+            <div>25</div>
+            <span>°c</span>
            </div>
-          <div align="center" className="weather py-2">{i18n.t('weather.situation')}</div>
+          <div align="center" className="weather py-2">{i18n.t('weather.forecast')}</div>
          <div align="center" className="low-high">20°c ☀️ / 19°c 🌙</div>
         </div>
         <div className="input-group">

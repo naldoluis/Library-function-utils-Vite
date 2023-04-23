@@ -93,7 +93,7 @@ const messages = {
             },
             weather: {
                 title: 'Weather',
-                situation: 'Overcast',
+                forecast: 'Overcast',
                 input: 'Enter city name'
             },
             footer: {
