@@ -25,9 +25,8 @@ export default function Weather() {
   window.addEventListener('load', () => {
       if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(setPosition, showError)
-      }
-      else {
-        alert('Browser does not support geolocation.')
+      } else {
+          alert('Browser does not support geolocation.')
       }
       function setPosition(position) {
           console.log(position)
@@ -53,7 +52,7 @@ export default function Weather() {
         })
         .then(response => {
             displayResults(response)
-     })
+      })
   }
 
   search_button?.addEventListener('click', function() {
@@ -79,7 +78,7 @@ export default function Weather() {
         })
         .then(response => {
             displayResults(response)
-     })
+      })
   }
 
   function displayResults(weather) {
