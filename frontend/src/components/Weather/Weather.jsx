@@ -147,17 +147,18 @@ useEffect(() => {
           <div className="date">Monday, 25 March 2019</div>
            <div className="container-img my-2">
             <img src="./src/assets/icons/weather/unknown.svg"/></div>
-            <div className="container-temp mx-4">
+            <div className="container-temp py-4">
             <div>25</div>
             <span>°c</span>
+            <b className="weather-title">🌡</b>
            </div>
           <div className="weather py-2">{i18n.t('weather.forecast')}</div>
          <div className="low-high">20°c ☀️ / 19°c 🌙</div>
         </div>
         <div className="input-group">
-         <input className="form-control bg-dark text-white" placeholder={i18n.t('weather.input')}/>
+        <input className="form-control bg-dark text-white" placeholder={i18n.t('weather.input')}/>
          <div className="card-footer">
-          <button style={{ marginTop: -18 }} className="find btn btn-outline-success text-white bg-success" type="button">
+          <button style={{ marginTop: -18 }} className="find btn btn-outline-success text-white bg-success">
             <FontAwesomeIcon icon={faSearch}/>
              </button>
               </div>

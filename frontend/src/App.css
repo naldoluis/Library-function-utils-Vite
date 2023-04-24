@@ -19,6 +19,7 @@
 .card-video {background: #383940;width: 1260px;margin-left: -62px;border-radius: 20px}
 
 .clock-svg {width: 60px;display: flex;margin: auto}
+.weather-title {font-size: 50px;margin: -33px 0 0 10px}
 
 .slide {transition: transform .45s ease-in-out}
 
