@@ -7,8 +7,6 @@ import { faEdit, faList, faPlusSquare, faSave, faUndo } from '@fortawesome/free-
 import { fetchBook, fetchGenres, fetchLanguages, patchBook, saveBook, updateBook } from '../../services'
 import { MyToast } from '../MyToast'
 import { i18n } from '../../assets/translate/i18n'
-import iconCam from '../../assets/icons/camera.png'
-import iconLang from '../../assets/icons/language.png'
 
 export default function Book() {
 
@@ -184,7 +182,7 @@ export default function Book() {
                 </div>
                 <div className="form-row">
                 <Form.Group as={Col}>
-                 <Form.Label>{i18n.t('tableBook.photoUrl')} <img className="cam" src={iconCam}/></Form.Label>
+                 <Form.Label>{i18n.t('tableBook.photoUrl')} <img className="cam" src="./src/assets/icons/camera.png"/></Form.Label>
                   <div className="input-group">
                     <Form.Control
                       autoComplete="off"
@@ -233,7 +231,7 @@ export default function Book() {
                   />
                  </Form.Group>
                 <Form.Group as={Col}>
-                 <Form.Label>{i18n.t('tableBook.language')} <img className="lang" src={iconLang}/></Form.Label>
+                 <Form.Label>{i18n.t('tableBook.language')} <img className="lang" src="./src/assets/icons/language.png"/></Form.Label>
                   <Form.Control
                     required
                     as="select"

@@ -139,8 +139,10 @@ useEffect(() => {
   }},[Weather])
 
   return (
-    <>
-      <div style={{ fontSize: 20 }} className="text-white">☂️ {i18n.t('weather.title')}</div>
+   <>
+    <div style={{ fontSize: 20 }} className="text-white">☂️ {i18n.t('weather.title')}
+     <img className="clock-svg" src="./src/assets/icons/animationclock.svg"/>
+      </div>
        <p></p>
         <div className="card-body text-white" align="center">
          <div className="city">🧭 Américo Brasiliense, BR</div>

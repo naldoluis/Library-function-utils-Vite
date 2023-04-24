@@ -1,9 +1,9 @@
 import { Alert, Button, OverlayTrigger, Popover } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
 import { useState } from 'react'
+import { i18n } from '../assets/translate/i18n'
 import authToken from '../utils/authToken'
 import ModalCustom from './ModalCustom'
-import { i18n } from '../assets/translate/i18n'
 
 export default function Home() {
   if (localStorage.jwtToken) {

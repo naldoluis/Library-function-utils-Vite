@@ -1925,7 +1925,7 @@ HTML
       </div>
     </>
 
-JAVASCRIPT
+# JAVASCRIPT
 
   let lat
   let lon
@@ -1963,7 +1963,7 @@ JAVASCRIPT
     }
   })
 
-CSS
+# CSS
 
 .display {height: 24rem;width: 70rem;background: #4b4b4b96;text-align: center;padding-top: 19px;border-radius: 14px;border: .1px solid #d2d2d2;margin: auto}
 
@@ -1974,7 +1974,7 @@ CSS
 <!-- <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'/>
 <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'/> -->
 
-HTML
+# HTML
 
     <>
       <div className="wrapper">
@@ -2020,7 +2020,7 @@ HTML
       </div>
     </>
 
-CSS
+# CSS
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
@@ -2070,7 +2070,7 @@ header i {font-size: 0em;cursor: pointer;margin-right: 8px}
 .details .temp, .humidity span {font-size: 18px;font-weight: 500;margin-top: -3px}
 .details .temp .deg {margin: 0;font-size: 17px;padding: 0 2px 0 1px}
 
-JAVASCRIPT
+# JAVASCRIPT
 
   const wrapper = document.querySelector(".wrapper"),
   inputPart = document.querySelector(".input-part"),

@@ -18,6 +18,8 @@
 .card-store {background: #383940;width: 1160px;margin-left: -5px;border-radius: 20px}
 .card-video {background: #383940;width: 1260px;margin-left: -62px;border-radius: 20px}
 
+.clock-svg {width: 60px;display: flex;margin: auto}
+
 .slide {transition: transform .45s ease-in-out}
 
 /* ============================================ MODAL VANILLA of STORE ❐ ================================================
@@ -37,9 +39,9 @@
 
 /* ============================================= WEATHER ⚡ 🌪 🌈 ☀️ 🌙 ================================================= */
 
-.city,.weather {font-size: 32px}
+.city,.weather {margin-top: -25px;font-size: 32px}
 .date {font-size: 16px}
 .low-high {font-size: 22px}
 
-.container-img {display: flex;width: auto;height: 120px;justify-content: center}
-.container-temp {display: flex;justify-content: center}
+.container-img {width: auto;height: 120px}
+.container-temp,.container-img {display: flex;justify-content: center}

@@ -14,14 +14,14 @@ export default function Help() {
 
   return (
     <Card bg="dark" text="light">
-      <Card.Header>🗨 {i18n.t('messages.comments')}</Card.Header>
+     <Card.Header>🗨 {i18n.t('messages.comments')}</Card.Header>
       <Card.Body style={{ overflowY: "scroll", height: 570 }}>
         {comments &&
           comments.map((comments, id) => (
-            <blockquote className="blockquote mb-0" key={id}>
+           <blockquote className="blockquote mb-0" key={id}>
               <p>{comments.name}</p>
             <footer className="blockquote-footer">{comments.email}</footer>
-           </blockquote>
+          </blockquote>
         ))}
       </Card.Body>
     </Card>
