@@ -43,11 +43,11 @@ useEffect(() => {
 
   function coordResults(lat, long) {
     fetch(`${api.base}weather?lat=${lat}&lon=${long}&lang=${api.lang}&units=${api.units}&APPID=${api.key}`)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`Http error: status ${response.status}`)
+       .then(response => {
+           if (!response.ok) {
+               throw new Error(`Http error: status ${response.status}`)
             }
-            return response.json()
+           return response.json()
         })
         .catch(error => {
             console.log("Fetch not found: " + error.message)
@@ -70,11 +70,11 @@ useEffect(() => {
 
   function searchResults(city) {
     fetch(`${api.base}weather?q=${city}&lang=${api.lang}&units=${api.units}&APPID=${api.key}`)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`Http error: status ${response.status}`)
+       .then(response => {
+           if (!response.ok) {
+               throw new Error(`Http error: status ${response.status}`)
             }
-            return response.json()
+           return response.json()
         })
         .catch(error => {
             console.log("Fetch not found: " + error.message)
@@ -126,8 +126,7 @@ useEffect(() => {
           let f = (temp_number * 1.8) + 32
           temp_unit.innerHTML = "°f"
           temp_number.innerHTML = Math.round(f)
-      }
-      else {
+      } else {
           let c = (temp_number - 32) / 1.8
           temp_unit.innerHTML = "°c"
           temp_number.innerHTML = Math.round(c)
@@ -141,9 +140,8 @@ useEffect(() => {
   return (
    <>
     <div style={{ fontSize: 20 }} className="text-white">☂️ {i18n.t('weather.title')}
-     <img className="clock-svg" src="./src/assets/icons/animationclock.svg"/>
+     <img className="clock-svg py-2" src="./src/assets/icons/animationclock.svg"/>
       </div>
-       <p></p>
         <div className="card-body text-white" align="center">
          <div className="city">🧭 Américo Brasiliense, BR</div>
           <div className="date">Monday, 25 March 2019</div>
