@@ -18,13 +18,10 @@
 .card-store {background: #383940;width: 1160px;margin-left: -5px;border-radius: 20px}
 .card-video {background: #383940;width: 1260px;margin-left: -62px;border-radius: 20px}
 
-.clock-svg {width: 60px;display: flex;margin: auto}
-.weather-title {font-size: 50px;margin: -33px 0 0 10px}
-
 .slide {transition: transform .45s ease-in-out}
 
 /* ============================================ MODAL VANILLA of STORE ❐ ================================================
-                          Enable = class with name(.modal) & uncomment line 127 in Store.jsx                              */
+                          Enable = class with name(.modal) & uncomment line 112 in Store.jsx                              */
 
 .modall {display: flex;background: hwb(0 0 100% / .4);align-items: center;justify-content: center;transform: scale(1.14);visibility: hidden;transition: transform .15s ease-in-out}
 .content-modal {border: .1px solid #695c4a;background: #36373e;padding: 20px;width: 550px;height: 250px;border-radius: .5rem}
@@ -40,9 +37,21 @@
 
 /* ============================================= WEATHER ⚡ 🌪 🌈 ☀️ 🌙 ================================================= */
 
-.city,.weather {margin-top: -25px;font-size: 32px}
+.city,.weather {margin-top: -50px;font-size: 32px}
 .date {font-size: 16px}
 .low-high {font-size: 22px}
+
+.clock-svg {width: 60px;display: flex;margin: auto}
+.compass {font-size: 33px;margin-left: -397px}
+
+.thermometer {font-size: 35px;margin: -17px 0 0 10px}
+.thermometer:hover {transform: scale(1);filter: drop-shadow(0 0 .05em)}
+
+.temp-air {width: 80px;margin-top: -130px}
+.temp-pressure {width: 80px;margin: -130px 0 0 -590px}
+
+.thermometer,.temp-air,.temp-pressure {transform: scale(.98);transition: all ease .2s}
+.temp-air:hover,.temp-pressure:hover {transform: scale(1);filter: drop-shadow(0 0 .4em)}
 
 .container-img {width: auto;height: 120px}
 .container-temp,.container-img {display: flex;justify-content: center}

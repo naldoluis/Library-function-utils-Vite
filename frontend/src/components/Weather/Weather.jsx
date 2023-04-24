@@ -139,23 +139,26 @@ useEffect(() => {
 
   return (
    <>
-    <div style={{ fontSize: 20 }} className="text-white">☂️ {i18n.t('weather.title')}
-     <img className="clock-svg py-2" src="./src/assets/icons/animationclock.svg"/>
+    <div style={{ fontSize: 18 }} className="text-white">☂️ {i18n.t('weather.title')}
+     <img className="clock-svg" src="./src/assets/icons/animationclock.svg"/>
       </div>
-        <div className="card-body text-white" align="center">
-         <div className="city">🧭 Américo Brasiliense, BR</div>
+       <div className="text-white py-1" align="center">
+        <div className="compass">🧭</div>
+         <div className="city"> Américo Brasiliense, BR</div>
           <div className="date">Monday, 25 March 2019</div>
            <div className="container-img my-2">
             <img src="./src/assets/icons/weather/unknown.svg"/></div>
             <div className="container-temp py-4">
             <div>25</div>
             <span>°c</span>
-            <b className="weather-title">🌡</b>
+            <div className="thermometer">🌡</div>
            </div>
-          <div className="weather py-2">{i18n.t('weather.forecast')}</div>
-         <div className="low-high">20°c ☀️ / 19°c 🌙</div>
+           <img className="temp-air" src="./src/assets/icons/Startright-Carburetor-Air-Temperature-Gage.svg"/>
+           <img className="temp-pressure" src="./src/assets/icons/Startright-Manifold-Pressure-and-Fuel-Flow.svg"/>
+          <div className="weather">{i18n.t('weather.forecast')}</div>
+         <div className="low-high py-1">20°c ☀️ / 19°c 🌙</div>
         </div>
-        <div className="input-group">
+        <div className="input-group py-1">
         <input className="form-control bg-dark text-white" placeholder={i18n.t('weather.input')}/>
          <div className="card-footer">
           <button style={{ marginTop: -18 }} className="find btn btn-outline-success text-white bg-success">
