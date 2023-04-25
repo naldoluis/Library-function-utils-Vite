@@ -140,10 +140,10 @@ useEffect(() => {
   return (
    <>
     <div style={{ fontSize: 18 }} className="text-white">☂️ {i18n.t('weather.title')}
-     <img className="clock-svg" src="./src/assets/icons/animationclock.svg"/>
+     <img className="clock-svg" src="./src/assets/icons/clock/animationclock.svg"/>
       </div>
-       <div className="text-white py-1" align="center">
-        <div className="compass">🧭</div>
+       <div className="text-white py-2" align="center">
+        <img className="compass py-1" src="./src/assets/icons/clock/compass-simple.svg"/>
          <div className="city"> Américo Brasiliense, BR</div>
           <div className="date">Monday, 25 March 2019</div>
            <div className="container-img my-2">
@@ -153,8 +153,8 @@ useEffect(() => {
             <span>°c</span>
             <div className="thermometer">🌡</div>
            </div>
-           <img className="temp-air" src="./src/assets/icons/Startright-Carburetor-Air-Temperature-Gage.svg"/>
-           <img className="temp-pressure" src="./src/assets/icons/Startright-Automotive-Amp-Meter.svg"/>
+           <img className="temp-air" src="./src/assets/icons/clock/Startright-Carburetor-Air-Temperature-Gage.svg"/>
+           <img className="temp-pressure" src="./src/assets/icons/clock/Startright-Automotive-Amp-Meter.svg"/>
           <div className="weather">{i18n.t('weather.forecast')}</div>
          <div className="low-high py-1">20°c ☀️ / 19°c 🌙</div>
         </div>

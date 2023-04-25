@@ -108,11 +108,14 @@
           id="g3754"
           transform="matrix(.92122 0 0 .92122 -35.88 4.294)"
         >
+
+ <!-- FRAME -->
+
         <path
             id="path3225"
             sodipodi:rx="205.03279"
             sodipodi:ry="201.89453"
-            style="fill-rule:evenodd;fill:#5c625c"
+            style="fill-rule:evenodd;fill:#555555"
             sodipodi:type="arc"
             d="m633.93 381.82a205.03 201.89 0 1 1 -410.07 0 205.03 201.89 0 1 1 410.07 0z"
             transform="matrix(.53605 0 0 .54439 204.02 -52.374)"
@@ -130,6 +133,9 @@
             sodipodi:cy="381.82126"
             sodipodi:cx="428.89511"
         />
+
+<!-- ======================================================================================================================================================== -->
+
       </g
       >
       <path
@@ -140,10 +146,10 @@
       />
       <path
           id="path3888"
-          style="stroke:#0c81f5;stroke-width:7.6719;fill:#0c81f5"
-          d="m304.34 144.78l35.15 30.35"
+          style="stroke:#10d12d;stroke-width:7.6719;fill:#10d12d"
+          d="m314.34 124.78l35.15 77.75"
           inkscape:connector-curvature="0">
-        <animateTransform id="asec" attributeName="transform" type="rotate" from="0,367.3,487.5" to="4,367.3,487.5" dur="30s" repeatCount="indefinite" />
+        <animateTransform id="asec" attributeName="transform" type="rotate" from="0,367.3,457.5" to="6,367.3,457.5" dur="30s" repeatCount="indefinite" />
       </path>
       <path
           id="path3834"

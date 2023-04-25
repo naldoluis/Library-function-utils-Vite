@@ -2361,13 +2361,13 @@ onSwipeMove	                   –	              Executar alguma função no car
           </svg>
         </a>
 
-        <g id="seconds">
-          <path transform="rotate(0,367.3,487.5)"
-          style="fill:#ffffff;fill-rule:evenodd;stroke:#ccc;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+      <g id="seconds">
+        <path transform="rotate(0,367.3,487.5)"
+          style="fill:#f5d20c;fill-rule:evenodd;stroke:#f5d20c;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
           d="m 365.93807,557.75098 c 6.01045,-20.12982 12.0209,-40.25972 18.03134,-60.38954 -6.01044,-91.81183 -12.02089,-183.62358 -18.03134,-275.4354 -6.01044,91.81182 -12.02089,183.62357 -18.03134,275.4354 6.01045,20.12982 12.0209,40.25972 18.03134,60.38954 z"
           inkscape:connector-curvature="0">
-          <animateTransform id="asec" attributeName="transform" type="rotate" from="-40,367.3,487.5" to="35,367.3,487.5" dur="60s" repeatCount="indefinite" />
-          </path>
-        </g>
+          <animateTransform id="asec" attributeName="transform" type="rotate" from="-45,347.3,457.5" to="35,367.3,457.5" dur="70s" repeatCount="indefinite" />
+        </path>
+      </g>
 
                                                                                                                ⋈ vscode: 1.77.3

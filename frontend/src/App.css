@@ -42,7 +42,7 @@
 .low-high {font-size: 22px}
 
 .clock-svg {width: 60px;display: flex;margin: auto}
-.compass {font-size: 33px;margin-left: -397px}
+.compass {width: 39px;margin-left: -397px}
 
 .thermometer {font-size: 35px;margin: -17px 0 0 10px}
 .thermometer:hover {transform: scale(1);filter: drop-shadow(0 0 .05em)}

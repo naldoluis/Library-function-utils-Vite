@@ -151,11 +151,17 @@
         id="g3505"
         transform="matrix(.5 0 0 .5 48.293 47.743)"
       >
+
+ <!-- FRAME -->
+
       <path
           id="path2383"
-          style="fill-rule:evenodd;stroke:#605e60;stroke-linecap:square;stroke-width:10.1094;fill:#1c1d1f"
+          style="fill-rule:evenodd;stroke:#605e60;stroke-linecap:square;stroke-width:10.1094;fill:#404040"
           d="m662.73 368.08c0 164.74-133.7 298.44-298.44 298.44-164.75 0-298.45-133.7-298.45-298.44 0-164.75 133.7-298.45 298.45-298.45 164.74 0.001 298.44 133.7 298.44 298.45z"
       />
+
+<!-- ===================================================================================================== -->
+
       <path
           id="path2638"
           style="fill-rule:evenodd;stroke:url(#radialGradient3533);stroke-linecap:square;stroke-width:2.2222;fill:#353736"
@@ -203,10 +209,10 @@
       />
       <g id="seconds">
         <path transform="rotate(0,367.3,487.5)"
-        style="fill:#f5d20c;fill-rule:evenodd;stroke:#f5d20c;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-        d="m 365.93807,557.75098 c 6.01045,-20.12982 12.0209,-40.25972 18.03134,-60.38954 -6.01044,-91.81183 -12.02089,-183.62358 -18.03134,-275.4354 -6.01044,91.81182 -12.02089,183.62357 -18.03134,275.4354 6.01045,20.12982 12.0209,40.25972 18.03134,60.38954 z"
-        inkscape:connector-curvature="0">
-        <animateTransform id="asec" attributeName="transform" type="rotate" from="-20,367.3,487.5" to="25,367.3,487.5" dur="75s" repeatCount="indefinite" />
+          style="fill:#f5d20c;fill-rule:evenodd;stroke:#f5d20c;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="m 365.93807,557.75098 c 6.01045,-20.12982 12.0209,-40.25972 18.03134,-60.38954 -6.01044,-91.81183 -12.02089,-183.62358 -18.03134,-275.4354 -6.01044,91.81182 -12.02089,183.62357 -18.03134,275.4354 6.01045,20.12982 12.0209,40.25972 18.03134,60.38954 z"
+          inkscape:connector-curvature="0">
+          <animateTransform id="asec" attributeName="transform" type="rotate" from="-45,347.3,457.5" to="35,367.3,457.5" dur="70s" repeatCount="indefinite" />
         </path>
       </g>
       <path
