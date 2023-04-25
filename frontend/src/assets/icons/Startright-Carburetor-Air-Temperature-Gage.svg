@@ -135,14 +135,16 @@
       <path
           id="path4050"
           sodipodi:nodetypes="ccccc"
-          style="fill-opacity:0;stroke:#f0bd3d;stroke-width:4.8483"
+          style="fill-opacity:0;stroke:#f5d20c;stroke-width:8.8483"
           d="m341.41 124.35l7.74-1.48 7.44-0.9 7.31-0.31 8.25 0.35"
       />
       <path
           id="path3888"
-          style="stroke:#cccccc;stroke-width:5.6719;fill:none"
+          style="stroke:#0c81f5;stroke-width:7.6719;fill:#0c81f5"
           d="m304.34 144.78l35.15 30.35"
-      />
+          inkscape:connector-curvature="0">
+        <animateTransform id="asec" attributeName="transform" type="rotate" from="0,367.3,487.5" to="3,367.3,487.5" dur="30s" repeatCount="indefinite" />
+      </path>
       <path
           id="path3834"
           sodipodi:rx="95.193794"

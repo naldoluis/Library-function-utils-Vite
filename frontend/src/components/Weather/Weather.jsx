@@ -154,7 +154,7 @@ useEffect(() => {
             <div className="thermometer">🌡</div>
            </div>
            <img className="temp-air" src="./src/assets/icons/Startright-Carburetor-Air-Temperature-Gage.svg"/>
-           <img className="temp-pressure" src="./src/assets/icons/Startright-Manifold-Pressure-and-Fuel-Flow.svg"/>
+           <img className="temp-pressure" src="./src/assets/icons/Startright-Automotive-Amp-Meter.svg"/>
           <div className="weather">{i18n.t('weather.forecast')}</div>
          <div className="low-high py-1">20°c ☀️ / 19°c 🌙</div>
         </div>
