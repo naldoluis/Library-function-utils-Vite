@@ -143,7 +143,7 @@
           style="stroke:#0c81f5;stroke-width:7.6719;fill:#0c81f5"
           d="m304.34 144.78l35.15 30.35"
           inkscape:connector-curvature="0">
-        <animateTransform id="asec" attributeName="transform" type="rotate" from="0,367.3,487.5" to="3,367.3,487.5" dur="30s" repeatCount="indefinite" />
+        <animateTransform id="asec" attributeName="transform" type="rotate" from="0,367.3,487.5" to="4,367.3,487.5" dur="30s" repeatCount="indefinite" />
       </path>
       <path
           id="path3834"
