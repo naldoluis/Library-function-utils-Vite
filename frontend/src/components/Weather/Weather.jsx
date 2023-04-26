@@ -131,11 +131,12 @@ useEffect(() => {
           temp_unit.innerHTML = "°c"
           temp_number.innerHTML = Math.round(c)
       }
-  }
+   }
 
-  function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1)
-  }},[Weather])
+    function capitalizeFirstLetter(string) {
+      return string.charAt(0).toUpperCase() + string.slice(1)
+    }
+  }, [Weather])
 
   return (
    <>
