@@ -143,21 +143,21 @@ useEffect(() => {
     <div style={{ fontSize: 18 }} className="text-white">☂️ {i18n.t('weather.title')}
      <img className="clock-svg" src="./src/assets/icons/clock/animationclock.svg"/>
       </div>
-       <div className="text-white py-2" align="center">
-        <img className="compass py-1" src="./src/assets/icons/clock/compass-simple.svg"/>
+       <div className="text-white" align="center">
+        <div className="compass py-2">🧭</div>
          <div className="city"> Américo Brasiliense, BR</div>
           <div className="date">Monday, 25 March 2019</div>
            <div className="container-img my-2">
             <img src="./src/assets/icons/weather/unknown.svg"/></div>
-            <div className="container-temp py-4">
-            <div>25</div>
-            <span>°c</span>
-            <div className="thermometer">🌡</div>
-           </div>
-           <img className="temp-air" src="./src/assets/icons/clock/Startright-Carburetor-Air-Temperature-Gage.svg"/>
+             <div className="container-temp py-4">
+              <div>25</div>
+              <span>°c</span>
+              <div><img className="temp-air" src="./src/assets/icons/clock/Startright-Carburetor-Air-Temperature-Gage.svg"/></div>
+             </div>
+            <img className="manometer" src="./src/assets/icons/clock/stefanolmo-Homebrewing-Manometer.svg"/>
            <img className="temp-pressure" src="./src/assets/icons/clock/Startright-Automotive-Amp-Meter.svg"/>
-          <div className="weather">{i18n.t('weather.forecast')}</div>
-         <div className="low-high py-1">20°c ☀️ / 19°c 🌙</div>
+          <div style={{ marginTop: -73.5 }}>{i18n.t('weather.forecast')}</div>
+         <div className="low-high">20°c ☀️ / 19°c 🌙</div>
         </div>
         <div className="input-group py-1">
         <input className="form-control bg-dark text-white" placeholder={i18n.t('weather.input')}/>

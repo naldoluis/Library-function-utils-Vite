@@ -37,21 +37,17 @@
 
 /* ============================================= WEATHER ⚡ 🌪 🌈 ☀️ 🌙 ================================================= */
 
-.city,.weather {margin-top: -50px;font-size: 32px}
+.city {margin-top: -60px;font-size: 32px}
 .date {font-size: 16px}
 .low-high {font-size: 22px}
 
 .clock-svg {width: 60px;display: flex;margin: auto}
-.compass {width: 39px;margin-left: -397px}
+.compass {font-size: 33px;margin-left: -397px}
 
-.thermometer {font-size: 35px;margin: -17px 0 0 10px}
-.thermometer:hover {transform: scale(1);filter: drop-shadow(0 0 .05em)}
+.manometer {width: 95px;margin-top: -110px}
 
-.temp-air {width: 80px;margin-top: -130px}
-.temp-pressure {width: 80px;margin: -130px 0 0 -590px}
+.temp-air {width: 90px;margin: -40px -180px 0 -90px}
+.temp-pressure {width: 100px;margin: -194px 0 0 -590px}
 
-.thermometer,.temp-air,.temp-pressure {transform: scale(.98);transition: all ease .2s}
-.temp-air:hover,.temp-pressure:hover {transform: scale(1);filter: drop-shadow(0 0 .4em)}
-
-.container-img {width: auto;height: 120px}
-.container-temp,.container-img {display: flex;justify-content: center}
+.container-img {width: auto;height: 120px;display: flex;justify-content: center}
+.container-temp {display: flex;justify-content: center;margin-left: -55px}
