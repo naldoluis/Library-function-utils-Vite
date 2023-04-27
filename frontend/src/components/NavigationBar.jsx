@@ -61,7 +61,7 @@ export default function NavigationBar() {
            </svg>
          </a>
         <div className="globe"><FlagLang/></div>
-        <Link to={"weather"} className="nav-link speedometer" style={{ margin: "-1.5px 0 0 -11px" }}>🌡</Link>
+        <Link to={"weather"} className="nav-link cloud text-secondary" style={{ margin: "-5px 0 0 -14px", fontSize: 19 }}>⛈</Link>
        </Nav>
       <Nav>
         <Link to={"logout"} className="nav-link" onClick={logout}><FontAwesomeIcon icon={faSignOutAlt}/> {i18n.t('access.logout')}</Link>

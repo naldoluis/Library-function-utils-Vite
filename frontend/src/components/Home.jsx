@@ -40,7 +40,7 @@ export default function Home() {
     <Popovers/>{" "}
      <Button size="sm" variant="primary"
        onClick={() => setModalShow(true)}>{i18n.t('buttons.modal')}
-      </Button>
-     <ModalCustom show={modalShow} onHide={() => setModalShow(false)}/>
-   </>
+     </Button>
+    <ModalCustom show={modalShow} onHide={() => setModalShow(false)}/>
+  </>
  )}

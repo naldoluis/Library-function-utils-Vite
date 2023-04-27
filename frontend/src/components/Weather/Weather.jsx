@@ -140,7 +140,7 @@ useEffect(() => {
 
   return (
    <>
-    <div style={{ fontSize: 18 }} className="text-white">☂️ {i18n.t('weather.title')}
+    <div style={{ fontSize: 18 }} className="text-white">⛈ {i18n.t('weather.title')}
      <img className="clock-svg" src="./src/assets/icons/clock/animationclock.svg"/>
       </div>
        <div className="text-white" align="center">
@@ -156,10 +156,10 @@ useEffect(() => {
              </div>
             <img className="manometer" src="./src/assets/icons/clock/stefanolmo-Homebrewing-Manometer.svg"/>
            <img className="temp-pressure" src="./src/assets/icons/clock/Startright-Automotive-Amp-Meter.svg"/>
-          <div className="weather" style={{ marginTop: -73.5 }}>{i18n.t('weather.forecast')}</div>
+          <div className="weather" style={{ marginTop: -84 }}>{i18n.t('weather.forecast')}</div>
          <div className="low-high">20°c 🔆 / 19°c ❄</div>
         </div>
-        <div className="input-group py-1">
+        <div className="input-group py-3">
         <input className="form-control bg-dark text-white" placeholder={i18n.t('weather.input')}/>
          <div className="card-footer">
           <button style={{ marginTop: -18 }} className="find btn btn-outline-success text-white bg-success">

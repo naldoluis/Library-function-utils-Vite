@@ -633,6 +633,8 @@ public class SpringSecurityConfig {
                    @import "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
                    @import "https://fonts.googleapis.com/css?family=Roboto|Varela+Round";
                    @import "https://fonts.googleapis.com/css2?family=Arvo&display=swap";
+                   @import "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap";
+                   @import "https://fonts.googleapis.com/css?family=Assistant:400,700|Playfair+Display:900";
 
 # Fonts index.html
 
@@ -1777,14 +1779,13 @@ div {overflow: hidden;position: relative;width: 350px;height: 200px}
 
 * {box-sizing:border-box}
 
-
 .slideshow-container {max-width: 1000px;position: relative;margin: auto}
 .mySlides {display: none}
 
 .prev, .next {cursor: pointer;position: absolute;top: 50%;width: auto;margin-top: -22px;padding: 16px;color: white;font-weight: bold;font-size: 18px;transition: 0.6s ease;border-radius: 0 3px 3px 0;user-select: none}
 .next {right: 0;border-radius: 3px 0 0 3px}
 
-.prev:hover, .next:hover {background-color: rgba(0,0,0,0.8)}
+.prev:hover, .next:hover {background: rgba(0 ,0 ,0 , .8)}
 
 .text {color: #f2f2f2;font-size: 15px;padding: 8px 12px;position: absolute;bottom: 8px;width: 100%;text-align: center}
 
@@ -2021,8 +2022,6 @@ HTML
     </>
 
 # CSS
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 * {margin: 0;padding: 0;box-sizing: border-box;font-family: 'Poppins', sans-serif}
 body {display: flex;align-items: center;justify-content: center;min-height: 100vh;background: #43AFFC}
@@ -2348,7 +2347,7 @@ onSwipeMove	                   –	              Executar alguma função no car
 
 💭 🗯 ⚡ 🌪 🌈 🕡 ✔ ✖  💬 🧭 ⛔️ ✅ 🛑 📰 🧪 ☑️ 🎄 🌪️ ☀️ 🗺 🗝 ❏ ➪ 🛎 🎟 ⛈ 👁 ➤➤ ➙ 📓 ⮜⮜ ⫷ ⫸ ៚ ༆ 乡 ♪ ϟ Ξ χ ⸕
 
-🌡 🌙 🌱 🤙 🌴 🌵 🌲 🌾 🍄 🌐 🎵 🔋 🎞️ 🗝️ ♻️ 📁 🗑️ 🧯 🇲🇽 🌞 ☁️ ⌚ ⏰ ⏱ ⏲ ⛈
+🌡 🌙 🌱 🤙 🌴 🌵 🌲 🌾 🍄 🌐 🎵 🔋 🎞️ 🗝️ ♻️ 📁 🗑️ 🧯 🇲🇽 🌞 ☁️ ⌚ ⏰ ⛈
 
 
         <a href="https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi" className="speedometer" style={{ margin: 6 }}>
@@ -2360,14 +2359,5 @@ onSwipeMove	                   –	              Executar alguma função no car
             <path d="M6.664 15.889A8 8 0 1 1 9.336.11a8 8 0 0 1-2.672 15.78zm-4.665-4.283A11.945 11.945 0 0 1 8 10c2.186 0 4.236.585 6.001 1.606a7 7 0 1 0-12.002 0z"/>
           </svg>
         </a>
-
-      <g id="seconds">
-        <path transform="rotate(0,367.3,487.5)"
-          style="fill:#f5d20c;fill-rule:evenodd;stroke:#f5d20c;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-          d="m 365.93807,557.75098 c 6.01045,-20.12982 12.0209,-40.25972 18.03134,-60.38954 -6.01044,-91.81183 -12.02089,-183.62358 -18.03134,-275.4354 -6.01044,91.81182 -12.02089,183.62357 -18.03134,275.4354 6.01045,20.12982 12.0209,40.25972 18.03134,60.38954 z"
-          inkscape:connector-curvature="0">
-          <animateTransform id="asec" attributeName="transform" type="rotate" from="-45,347.3,457.5" to="35,367.3,457.5" dur="70s" repeatCount="indefinite" />
-        </path>
-      </g>
 
                                                                                                                ⋈ vscode: 1.77.3

@@ -35,7 +35,7 @@
 .modal-body {text-align: center;margin-top: 1rem;padding: 1rem 1rem}
 #modal-container {border: 1px solid #bfb4c5;width: 700px;position: absolute;top: 46%;left: 50%;transform: translate(-50%, -50%);background: #4c4b4b;box-shadow: 0 0 20px #fff;border-radius: 20px}
 
-/* ============================================= WEATHER ⚡ 🌪 🌈 ☀️ 🌙 ================================================= */
+/* ===============================================  WEATHER ⚡ 🌪 🌈  ==================================================== */
 
 .city {margin-top: -60px;font-size: 32px}
 .date {font-size: 16px}
@@ -51,3 +51,8 @@
 
 .container-img {width: auto;height: 120px;display: flex;justify-content: center}
 .container-temp {display: flex;justify-content: center;margin-left: -55px}
+
+/* ============================================== THEME TOGGLE ☀️ / 🌙 ================================================== */
+
+.dark-mode-toggle {position: absolute;z-index: 100;top: 1em;right: 1em;color: #fff;border: 2px solid #9c9b9b;padding: 4px;background: transparent;cursor: pointer;border-radius: 5px;width: 30px;height: 30px}
+.click-here {width: 100px;right: 1.5em;position: absolute;top: 3em}

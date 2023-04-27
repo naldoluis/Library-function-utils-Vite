@@ -15,7 +15,7 @@
 .lang {width: 20px}
 .cam {width: 16px;margin-top: -5px}
 
-.next-page,.prev-page,.prev-fast,.next-fast,.speedometer,.clock {cursor: pointer}
+.next-page,.prev-page,.prev-fast,.next-fast,.clock {cursor: pointer}
 
 .arrow-up,.arrow-down,.link:hover,.link,.clock:hover,.globe:hover {color: #fff}
 
@@ -43,6 +43,9 @@
 
 .speedometer {transform: scale(.97);transition: all ease .2s}
 .speedometer:hover {color: #abd727}
+
+.cloud {transform: scale(.9);transition: all ease .2s}
+.cloud:hover {transform: scale(1)}
 
 ::-webkit-scrollbar {width: 5px}
 ::-webkit-scrollbar-track {background: #606060}
