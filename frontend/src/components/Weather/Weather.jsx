@@ -156,8 +156,8 @@ useEffect(() => {
              </div>
             <img className="manometer" src="./src/assets/icons/clock/stefanolmo-Homebrewing-Manometer.svg"/>
            <img className="temp-pressure" src="./src/assets/icons/clock/Startright-Automotive-Amp-Meter.svg"/>
-          <div style={{ marginTop: -73.5 }}>{i18n.t('weather.forecast')}</div>
-         <div className="low-high">20°c ☀️ / 19°c 🌙</div>
+          <div className="weather" style={{ marginTop: -73.5 }}>{i18n.t('weather.forecast')}</div>
+         <div className="low-high">20°c 🔆 / 19°c ❄</div>
         </div>
         <div className="input-group py-1">
         <input className="form-control bg-dark text-white" placeholder={i18n.t('weather.input')}/>

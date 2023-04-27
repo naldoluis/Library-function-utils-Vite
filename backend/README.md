@@ -2348,7 +2348,7 @@ onSwipeMove	                   –	              Executar alguma função no car
 
 💭 🗯 ⚡ 🌪 🌈 🕡 ✔ ✖  💬 🧭 ⛔️ ✅ 🛑 📰 🧪 ☑️ 🎄 🌪️ ☀️ 🗺 🗝 ❏ ➪ 🛎 🎟 ⛈ 👁 ➤➤ ➙ 📓 ⮜⮜ ⫷ ⫸ ៚ ༆ 乡 ♪ ϟ Ξ χ ⸕
 
-🌡 🌙 🌱 🤙 🌴 🌵 🌲 🌾 🍄 🌐 🎵 🔋 🎞️ 🗝️ ♻️ 📁 🗑️ 🧯 🇲🇽 🌞 ☁️
+🌡 🌙 🌱 🤙 🌴 🌵 🌲 🌾 🍄 🌐 🎵 🔋 🎞️ 🗝️ ♻️ 📁 🗑️ 🧯 🇲🇽 🌞 ☁️ ⌚ ⏰ ⏱ ⏲ ⛈
 
 
         <a href="https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi" className="speedometer" style={{ margin: 6 }}>
