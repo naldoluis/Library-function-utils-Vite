@@ -15,9 +15,9 @@ export default function Bonus() {
 
   function generate_string(size, charset) {
 
-    var serial = ""
+    let serial = ""
 
-    for (var i = 0; i < size; i++)
+    for (let i = 0; i < size; i++)
       serial += charset.charAt(Math.floor(Math.random() * charset.length))
     return serial
   }
@@ -37,7 +37,7 @@ export default function Bonus() {
         <Card.Header>
           <Card.Body className="row" style={{ height: 205 }}>
             <div>
-              <h5 style={{ fontFamily: 'Varela Round', fontWeight: "bold", color: "#fff", marginLeft: 34, padding: 4 }}>⭐ ⭐ {i18n.t('messages.card')} ⭐ ⭐</h5>
+             <h5 style={{ fontFamily: 'Varela Round', fontWeight: "bold", color: "#fff", marginLeft: 34, padding: 4 }}>⭐ ⭐ {i18n.t('messages.card')} ⭐ ⭐</h5>
               <div style={{ border: '.1px solid #6b5795', height: 200, width: 420, background: "#383940", borderRadius: 10, textAlign: 'center' }}>
                 <div style={{ fontFamily: "sans-serif", color: "#fff", fontSize: 12.7 }}>
                   <h4 style={{ margin: 25, color: "#f5d20c" }}>20% {i18n.t('messages.discount')}</h4>

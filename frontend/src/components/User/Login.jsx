@@ -63,8 +63,8 @@ export default function Login() {
             <FontAwesomeIcon icon={faSignInAlt}/> {i18n.t('access.login')}
           </Card.Header>
           <Card.Body>
-          <Form>
-              <Form.Group as={Col}>
+            <Form>
+             <Form.Group as={Col}>
                <InputGroup>
                    <InputGroup.Text className="envelope">
                      <FontAwesomeIcon icon={faEnvelope}/>

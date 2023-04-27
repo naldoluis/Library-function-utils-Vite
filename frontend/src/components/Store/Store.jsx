@@ -64,12 +64,12 @@ class Store extends React.Component {
   }
 
   openModalVanilla = () => {
-    var div = document.getElementById("id")
+    let div = document.getElementById("id")
     div.classList.add("modal-show")
   }
 
   closeModalVanilla = () => {
-    var div = document.getElementById("id")
+    let div = document.getElementById("id")
     div.classList.remove("modal-show")
   }
 

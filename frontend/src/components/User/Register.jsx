@@ -62,7 +62,7 @@ export default function Register() {
               <FontAwesomeIcon icon={faUserPlus}/> {i18n.t('access.register')}
             </Card.Header>
             <Card.Body>
-            <Form>
+              <Form>
                 <Form.Group as={Col}>
                   <InputGroup>
                      <InputGroup.Text className="name">

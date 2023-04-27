@@ -22,7 +22,7 @@ export default function Captcha() {
 
   const captcha = generateString(6)
 
-  let handleChange = e => {
+  const handleChange = e => {
     let name = e.target.name
     let value = e.target.value
     validate[name] = value
@@ -30,13 +30,13 @@ export default function Captcha() {
   }
 
   const onSubmit = () => {
-    var element = document.getElementById("successBTN")
-    var inputData = document.getElementById("inputType")
+    let element = document.getElementById("successBTN")
+    let inputData = document.getElementById("inputType")
     element.innerHTML = "Checking..."
     inputData.disabled = true
     element.disabled = true
 
-    var myFunctions = () => {
+    const myFunctions = () => {
       if (captcha == validate.codename) {
         element.style.background = "green"
         element.innerHTML = "Captcha Verified"
@@ -49,7 +49,7 @@ export default function Captcha() {
         element.innerHTML = "Incorrect Captcha"
         element.disabled = true
 
-        var captchaVerify = () => {
+        const captchaVerify = () => {
           element.style.background = "#007bff"
           element.style.cursor = "pointer"
           element.innerHTML = "Verify Captcha"
