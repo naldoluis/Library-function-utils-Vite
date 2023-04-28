@@ -147,9 +147,9 @@
       <path
           id="path3888"
           style="stroke:#cef50c;stroke-width:7.6719;fill:#cef50c"
-          d="m314.34 124.78l35.15 77.75"
+          d="m314.34 124.78l35.15 50.75"
           inkscape:connector-curvature="0">
-        <animateTransform id="asec" attributeName="transform" type="rotate" from="0,367.3,457.5" to="6,367.3,457.5" dur="30s" repeatCount="indefinite" />
+        <animateTransform id="asec" attributeName="transform" type="rotate" from="-3,367.3,257.5" to="9,367.3,257.5" dur="45s" repeatCount="indefinite" />
       </path>
       <path
           id="path3834"

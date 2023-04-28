@@ -154,8 +154,9 @@ useEffect(() => {
               <span>°c</span>
               <div><img className="temp-air" src="./src/assets/icons/clock/Startright-Carburetor-Air-Temperature-Gage.svg"/></div>
              </div>
-            <img className="manometer" src="./src/assets/icons/clock/stefanolmo-Homebrewing-Manometer.svg"/>
-           <img className="temp-pressure" src="./src/assets/icons/clock/Startright-Automotive-Amp-Meter.svg"/>
+             <img className="manometer" src="./src/assets/icons/clock/stefanolmo-Homebrewing-Manometer.svg"/>
+            <img className="temp-pressure" src="./src/assets/icons/clock/Startright-Automotive-Amp-Meter.svg"/>
+           <img className="volts" src="./src/assets/icons/clock/gauge-voltage-analog.svg"/>
           <div className="weather" style={{ marginTop: -84 }}>{i18n.t('weather.forecast')}</div>
          <div className="low-high">20°c 🔆 / 19°c ❄</div>
         </div>

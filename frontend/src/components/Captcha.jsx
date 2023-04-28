@@ -49,13 +49,13 @@ export default function Captcha() {
         element.innerHTML = "Incorrect Captcha"
         element.disabled = true
 
-        const captchaVerify = () => {
-          element.style.background = "#007bff"
-          element.style.cursor = "pointer"
-          element.innerHTML = "Verify Captcha"
-          element.disabled = false
-          inputData.disabled = false
-          inputData.value = ""
+    const captchaVerify = () => {
+        element.style.background = "#007bff"
+        element.style.cursor = "pointer"
+        element.innerHTML = "Verify Captcha"
+        element.disabled = false
+        inputData.disabled = false
+        inputData.value = ""
         }
         setTimeout(captchaVerify, 800)
       }

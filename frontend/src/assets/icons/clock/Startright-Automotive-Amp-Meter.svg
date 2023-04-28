@@ -41,12 +41,12 @@
       >
       <stop
           id="stop5800"
-          style="stop-color:#000000"
+          style="stop-color:#e8e8e8"
           offset="0"
       />
       <stop
           id="stop5802"
-          style="stop-color:#000000;stop-opacity:0"
+          style="stop-color:#e8e8e8;stop-opacity:0"
           offset="1"
       />
     </linearGradient
@@ -162,11 +162,16 @@
 
 <!-- ===================================================================================================== -->
 
+<!-- DISPLAY -->
+
       <path
           id="path2638"
           style="fill-rule:evenodd;stroke:url(#radialGradient3533);stroke-linecap:square;stroke-width:2.2222;fill:#353736"
           d="m612.99 368.08c0 137.28-111.42 248.7-248.7 248.7-137.29 0-248.71-111.42-248.71-248.7 0-137.29 111.42-248.71 248.71-248.71 137.28 0 248.7 111.42 248.7 248.71z"
       />
+
+<!-- ===================================================================================================== -->
+
       <path
           id="rect3332"
           style="fill-rule:evenodd;stroke:#000000;stroke-linecap:square;stroke-width:1.8555;fill:#ffffff"
@@ -279,7 +284,7 @@
 
       <path
           id="path5838"
-          style="opacity:0.84;filter:url(#filter5890);stroke:#000000;stroke-linecap:square;stroke-width:.87564;fill:none"
+          style="opacity:0.84;filter:url(#filter5890);stroke:#e8e8e8;stroke-linecap:square;stroke-width:.87564;fill:none"
           transform="matrix(2.7628 0 0 2.3311 -572.41 4.9916)"
           d="m398.29 192.79c0 5.62-3.85 10.18-8.59 10.18s-8.59-4.56-8.59-10.18 3.85-10.18 8.59-10.18 8.59 4.56 8.59 10.18z"
       />
@@ -291,7 +296,7 @@
       />
       <path
           id="path5912"
-          style="opacity:0.84;filter:url(#filter5890);stroke:#000000;stroke-linecap:square;stroke-width:.87564;fill:none"
+          style="opacity:0.84;filter:url(#filter5890);stroke:#e8e8e8;stroke-linecap:square;stroke-width:.87564;fill:none"
           transform="matrix(2.7628 0 0 2.3311 -852.4 4.9916)"
           d="m398.29 192.79c0 5.62-3.85 10.18-8.59 10.18s-8.59-4.56-8.59-10.18 3.85-10.18 8.59-10.18 8.59 4.56 8.59 10.18z"
       />
