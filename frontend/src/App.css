@@ -16,7 +16,7 @@
 .toast {position: fixed;top: 10px;right: 10px;z-index: 1;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2)}
 
 .card-store {background: #383940;width: 1160px;margin-left: -5px;border-radius: 20px}
-.card-video {background: #383940;width: 1260px;margin-left: -62px;border-radius: 20px}
+.card-video {background: #383940;width: 1190px;margin-left: -40px;border-radius: 20px}
 
 .slide {transition: transform .45s ease-in-out}
 
@@ -56,5 +56,10 @@
 
 /* ============================================== THEME TOGGLE ☀️ / 🌙 ================================================== */
 
-.dark-mode-toggle {position: absolute;z-index: 4;top: 1em;right: 1em;border: .1px solid #9c9b9b;padding: 4px;background: transparent;cursor: pointer;border-radius: 5px;width: 30px;height: 30px}
-.click-here {right: 1em;position: absolute;top: 3em}
+.toggle {position: absolute;right: 1em;padding: 4px;border-radius: 5px;cursor: pointer}
+#darkmode {display: flex;justify-content: center}
+#darkmode .dark {background: #292c35}
+#darkmode .checkbox {opacity: 0;position: absolute}
+#darkmode .label {background: #fff;border-radius:50px;transform: scale(1.5)}
+#darkmode .ball {width: 14px;height: 14px;background: #feffb34b;border-radius: 50%;transition: transform 0.2s linear;cursor: pointer;margin-top: -14px;margin-left: -18px}
+#darkmode .checkbox:checked + .label .ball{transform: translateX(24px)}

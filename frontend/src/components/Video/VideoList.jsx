@@ -69,7 +69,7 @@ class VideoList extends React.Component {
         <b style={{ color: "#fff", fontWeight: 400 }}>
             {i18n.t('navigate.video')} 🎬
           </b>
-           <Card.Body className="row" style={{ overflowY: "scroll", height: 500 }}>
+           <Card.Body className="row" style={{ overflowY: "scroll", height: 480 }}>
            {books.length === 0 ? (
               <Table bordered hover striped variant="dark">
                 <tbody>
@@ -83,7 +83,7 @@ class VideoList extends React.Component {
             ) : (
              books.map(book => (
               <div className="col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3" key={book.id}>
-                <video poster={book.poster} width="280" height="240" controls>
+                <video poster={book.poster} width="260" height="220" controls>
                   <source src={book.video} type="video/mp4"/>
                 </video>
               </div>

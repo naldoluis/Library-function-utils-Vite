@@ -21,7 +21,7 @@ useEffect(() => {
   const temp_unit = document.querySelector('.container-temp span')
   const weather_t = document.querySelector('.weather')
   const search_input = document.querySelector('.form-control')
-  const search_button = document.querySelector('.find')
+  const search_button = document.querySelector('.search-weather')
   const low_high = document.querySelector('.low-high')
 
   window.addEventListener('load', () => {
@@ -163,7 +163,7 @@ useEffect(() => {
         <div className="input-group py-3">
         <input className="form-control bg-dark text-white" placeholder={i18n.t('weather.input')}/>
          <div className="card-footer">
-          <button style={{ marginTop: -18 }} className="find btn btn-outline-success text-white bg-success">
+          <button style={{ marginTop: -18 }} className="search-weather btn btn-outline-success text-white bg-success">
             <FontAwesomeIcon icon={faSearch}/>
              </button>
               </div>

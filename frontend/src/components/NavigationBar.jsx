@@ -8,6 +8,7 @@ import { logoutUser } from '../services'
 import { MyToastOut, MyToastTimer } from './MyToast'
 import { i18n } from '../assets/translate/i18n'
 import FlagLang from './FlagLang'
+import ThemeToggle from './ThemeToggle'
 
 export default function NavigationBar() {
   const [show, setShow] = useState(false)
@@ -62,14 +63,9 @@ export default function NavigationBar() {
          </a>
         <div className="globe"><FlagLang/></div>
         <Link to={"weather"} className="nav-link cloud text-secondary" style={{ margin: "-5px 0 0 -14px", fontSize: 19 }}>⛈</Link>
-        <div className="cloud text-secondary" style={{ margin: "8.4px 0 0 -1px", fontSize: 13, cursor: "pointer" }}>
-          🔆/🌙
-        </div>
        </Nav>
       <Nav>
-        <Link to={"logout"} className="nav-link" onClick={logout}>
-          <FontAwesomeIcon icon={faSignOutAlt}/> {i18n.t('access.logout')}
-        </Link>
+        <Link to={"logout"} className="nav-link" onClick={logout}><FontAwesomeIcon icon={faSignOutAlt}/> {i18n.t('access.logout')}</Link>
       </Nav>
     </>
   )
@@ -86,5 +82,8 @@ export default function NavigationBar() {
       {auth.isLoggedIn ? userLinks : guestLinks}
         <b className="clock" onClick={clock}>⏱</b>
      </Navbar>
+     <div className="text-secondary toggle" style={{ fontSize: 14 }}>🔆 / 🌙
+       <ThemeToggle/>
+     </div>
    </>
   )}

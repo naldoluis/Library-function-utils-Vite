@@ -1,42 +1,37 @@
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { handleDarkMode } from '../services/theme/darkModeActions'
+
 export default function ThemeToggle() {
 
-  let darkMode = localStorage.getItem('darkMode')
+  const dispatch = useDispatch()
+  const mode = useSelector(state => state.darkMode)
 
-  const darkModeToggle = document.querySelector('#dark-mode-toggle')
+  const { isdarkMode } = mode
 
-  const enableDarkMode = () => {
-    document.body.classList.add('darkmode')
-    localStorage.setItem('darkMode', 'enabled')
+  const switchDarkMode = () => {
+    isdarkMode
+      ? dispatch(handleDarkMode(false))
+      : dispatch(handleDarkMode(true))
   }
 
-  const disableDarkMode = () => {
-    document.body.classList.remove('darkmode')
-    localStorage.setItem('darkMode', null)
-  }
+  useEffect(() => {
+    document.body.style.background = isdarkMode ? "#292c35" : "#414142"
+  }, [isdarkMode])
 
-  if (darkMode === 'enabled') {
-    enableDarkMode()
-  }
-
-  darkModeToggle?.addEventListener('click', () => {
-    darkMode = localStorage.getItem('darkMode')
-   if (darkMode !== 'enabled') {
-      enableDarkMode()
-    } else {
-      disableDarkMode()
-    }
- })
-
- return (
+  return (
     <>
-      <button id="dark-mode-toggle" className="dark-mode-toggle">
-        <svg width="100%">
-          <path fill="#ffffff"
-          d="M8,256C8,393,119,504,256,504S504,393,504,256,393,8,256,8,8,119,8,256ZM256,440V72a184,184,0,0,1,0,368Z"/>
-        </svg>
-      </button>
-      <div style={{ fontSize: 20 }} className="click-here text-light">
-        ThemeToggle
+      <div id="darkmode" style={{ background: isdarkMode ? "white" : "yellow", borderRadius: 20 }}>
+        <input
+          type="checkbox"
+          className="checkbox"
+          id="checkbox"
+          onChange={switchDarkMode}
+          checked={isdarkMode}
+        />
+        <label htmlFor="checkbox" className="label">
+          <div className="ball"></div>
+        </label>
       </div>
     </>
   )}
