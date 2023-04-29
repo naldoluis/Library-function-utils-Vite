@@ -160,7 +160,7 @@
      sodipodi:nodetypes="ccccc"
      inkscape:transform-center-y="-36.264927"
      inkscape:transform-center-x="-21.18454" >
-    <animateTransform id="asec" attributeName="transform" type="rotate" from="-99 177.025116062164307 212.259185183048248" to="27 177.025116062164307 212.259185183048248" dur="9s" repeatCount="indefinite" />
+    <animateTransform id="asec" attributeName="transform" type="rotate" from="-99 177.025116062164307 212.259185183048248" to="27 177.025116062164307 212.259185183048248" dur="95s" repeatCount="indefinite" />
    </path>
 
 <!-- ================================================================================================================ -->

@@ -56,5 +56,5 @@
 
 /* ============================================== THEME TOGGLE ☀️ / 🌙 ================================================== */
 
-.dark-mode-toggle {position: absolute;z-index: 100;top: 1em;right: 1em;color: #fff;border: 2px solid #9c9b9b;padding: 4px;background: transparent;cursor: pointer;border-radius: 5px;width: 30px;height: 30px}
-.click-here {width: 100px;right: 1.5em;position: absolute;top: 3em}
+.dark-mode-toggle {position: absolute;z-index: 4;top: 1em;right: 1em;border: .1px solid #9c9b9b;padding: 4px;background: transparent;cursor: pointer;border-radius: 5px;width: 30px;height: 30px}
+.click-here {right: 1em;position: absolute;top: 3em}

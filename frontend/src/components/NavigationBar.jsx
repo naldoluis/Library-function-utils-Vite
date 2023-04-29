@@ -62,9 +62,14 @@ export default function NavigationBar() {
          </a>
         <div className="globe"><FlagLang/></div>
         <Link to={"weather"} className="nav-link cloud text-secondary" style={{ margin: "-5px 0 0 -14px", fontSize: 19 }}>⛈</Link>
+        <div className="cloud text-secondary" style={{ margin: "8.4px 0 0 -1px", fontSize: 13, cursor: "pointer" }}>
+          🔆/🌙
+        </div>
        </Nav>
       <Nav>
-        <Link to={"logout"} className="nav-link" onClick={logout}><FontAwesomeIcon icon={faSignOutAlt}/> {i18n.t('access.logout')}</Link>
+        <Link to={"logout"} className="nav-link" onClick={logout}>
+          <FontAwesomeIcon icon={faSignOutAlt}/> {i18n.t('access.logout')}
+        </Link>
       </Nav>
     </>
   )
@@ -75,7 +80,9 @@ export default function NavigationBar() {
         <MyToastTimer message={i18n.t('toast.clockWarn')}/>
       </div>
      <Navbar bg="dark" variant="dark">
-      <Link style={{ fontSize: 19, fontWeight: 500 }} to={auth.isLoggedIn ? "home" : ""} className="navbar-brand">📓 {i18n.t('home.title')}</Link>
+      <Link style={{ fontSize: 19, fontWeight: 500 }} to={auth.isLoggedIn ? "home" : ""} className="navbar-brand">
+        📓 {i18n.t('home.title')}
+      </Link>
       {auth.isLoggedIn ? userLinks : guestLinks}
         <b className="clock" onClick={clock}>⏱</b>
      </Navbar>
