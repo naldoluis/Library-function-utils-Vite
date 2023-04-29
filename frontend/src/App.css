@@ -4,7 +4,7 @@
 .margin-top {margin-top : 22px}
 .clean-find,.edit:hover,.slide,.content-modal {color: aliceblue}
 
-.find {background: #82823c;color: hwb(0 22% 78%)}
+.find {background: #f5d20c;color: hwb(0 22% 78%)}
 .clean-find {background: hsl(0, 61%, 47%)}
 
 .edit {background: #598c0e;border: #598c0e;width: 28.2px;color: lightgreen}
@@ -46,7 +46,7 @@
 
 .manometer {width: 95px;margin-top: -110px}
 
-.temp-air {width: 90px;margin: -40px -180px 0 -20px}
+.temp-air {width: 90px;margin: -30px -190px 0 0}
 .temp-pressure {width: 100px;margin: -194px 0 0 -590px}
 
 .volts {width: 70px;margin: -187px -100px 0 60px}
@@ -58,8 +58,7 @@
 
 .toggle {position: absolute;right: 1em;padding: 4px;border-radius: 5px;cursor: pointer}
 #darkmode {display: flex;justify-content: center}
-#darkmode .dark {background: #292c35}
 #darkmode .checkbox {opacity: 0;position: absolute}
-#darkmode .label {background: #fff;border-radius:50px;transform: scale(1.5)}
-#darkmode .ball {width: 14px;height: 14px;background: #feffb34b;border-radius: 50%;transition: transform 0.2s linear;cursor: pointer;margin-top: -14px;margin-left: -18px}
+#darkmode .label {transform: scale(1.5)}
+#darkmode .ball {width: 14px;height: 14px;background: #feffb33b;border-radius: 50%;transition: transform 0.2s linear;cursor: pointer;margin-top: -13.7px;margin-left: -18px}
 #darkmode .checkbox:checked + .label .ball{transform: translateX(24px)}
