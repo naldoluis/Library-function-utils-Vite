@@ -56,9 +56,9 @@
 
 /* ============================================== THEME TOGGLE ☀️ / 🌙 ================================================== */
 
-.toggle {position: absolute;right: 1em;padding: 4px;border-radius: 5px;cursor: pointer}
+.toggle {position: absolute;right: 1em;padding: 6px}
 #darkmode {display: flex;justify-content: center}
-#darkmode .checkbox {opacity: 0;position: absolute}
+#darkmode .ball {width: 14px;height: 14px;background: #feffb33b;border-radius: 50%;transition: transform .15s linear;cursor: pointer;margin-top: -13.7px;margin-left: -18px}
 #darkmode .label {transform: scale(1.5)}
-#darkmode .ball {width: 14px;height: 14px;background: #feffb33b;border-radius: 50%;transition: transform 0.2s linear;cursor: pointer;margin-top: -13.7px;margin-left: -18px}
+#darkmode .checkbox {opacity: 0;position: absolute}
 #darkmode .checkbox:checked + .label .ball{transform: translateX(24px)}

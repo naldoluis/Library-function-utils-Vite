@@ -20,18 +20,15 @@ export default function ThemeToggle() {
   }, [isdarkMode])
 
   return (
-    <>
-      <div id="darkmode" style={{ background: isdarkMode ? "gray" : "yellow", borderRadius: 20 }}>
-        <input
-          id="checkbox"
-          type="checkbox"
-          className="checkbox"
-          onChange={switchDarkMode}
-          checked={isdarkMode}
-        />
-        <label htmlFor="checkbox" className="label">
-          <div className="ball"></div>
-        </label>
-      </div>
-    </>
+    <div id="darkmode" style={{ background: isdarkMode ? "gray" : "yellow", borderRadius: 20 }}>
+      <input
+        id="checkbox"
+        type="checkbox"
+        className="checkbox"
+        onChange={switchDarkMode}
+        checked={isdarkMode}/>
+      <label htmlFor="checkbox" className="label">
+        <div className="ball"></div>
+      </label>
+    </div>
   )}
