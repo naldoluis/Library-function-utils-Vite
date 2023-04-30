@@ -16,11 +16,11 @@ export default function ThemeToggle() {
   }
 
   useEffect(() => {
-    document.body.style.background = isdarkMode ? "#292c35" : "#414142"
+    document.body.style.background = isdarkMode ? "#272B30" : "#414142"
   }, [isdarkMode])
 
   return (
-    <div id="darkmode" style={{ background: isdarkMode ? "gray" : "yellow", borderRadius: 20 }}>
+    <div id="darkmode" style={{ background: isdarkMode ? "gray" : "yellow", borderRadius: 20, margin: 3 }}>
       <input
         id="checkbox"
         type="checkbox"

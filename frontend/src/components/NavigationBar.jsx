@@ -82,7 +82,7 @@ export default function NavigationBar() {
       {auth.isLoggedIn ? userLinks : guestLinks}
         <b className="clock" onClick={clock}>⏱</b>
      </Navbar>
-     <div className="text-secondary toggle" style={{ fontSize: 14 }}>🔆 / 🌙
+     <div className="toggle" style={{ fontSize: 14 }}>🔆{"---"}🌙
        <ThemeToggle/>
      </div>
    </>

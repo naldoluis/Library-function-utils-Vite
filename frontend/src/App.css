@@ -58,7 +58,7 @@
 
 .toggle {position: absolute;right: 1em;padding: 6px}
 #darkmode {display: flex;justify-content: center}
-#darkmode .ball {width: 14px;height: 14px;background: #feffb33b;border-radius: 50%;transition: transform .15s linear;cursor: pointer;margin-top: -13.7px;margin-left: -18px}
+#darkmode .ball {width: 14px;height: 14px;background: #feffb33b;border-radius: 50%;transition: transform .15s linear;cursor: pointer;margin: -15.7px 0 0 -19px}
 #darkmode .label {transform: scale(1.5)}
 #darkmode .checkbox {opacity: 0;position: absolute}
 #darkmode .checkbox:checked + .label .ball{transform: translateX(24px)}
