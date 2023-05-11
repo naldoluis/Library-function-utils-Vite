@@ -31,7 +31,7 @@
 
         yarn install 📦                                                         mvn install 📦
         yarn audit fix
-        yarn upgrade
+        yarn upgrade --latest
         yarn dev
 
 # GitHub
