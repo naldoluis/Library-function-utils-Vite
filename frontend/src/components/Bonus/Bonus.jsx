@@ -1,6 +1,7 @@
 import { Card } from 'react-bootstrap'
 import { useEffect } from 'react'
 import { i18n } from '../../assets/translate/i18n'
+import QrCode from '../QrCode'
 
 export default function Bonus() {
 
@@ -43,16 +44,19 @@ export default function Bonus() {
                   <h4 style={{ margin: 25, color: "#f5d20c" }}>20% {i18n.t('messages.discount')}</h4>
                   <h6>{i18n.t('messages.description')} : Google Cloud</h6>
                   <h6>JJ Geewax</h6>
-                  <img src='https://www.danyprint.com.br/wp-content/uploads/2020/08/codigo-de-barras.png' style={{ width: 150, height: 50 }}/>
-                </div>
+                  <div style={{ margin: "-80px 0 0 7px" }}>
+                 <QrCode/>
+                <img src="https://www.danyprint.com.br/wp-content/uploads/2020/08/codigo-de-barras.png" style={{ width: 150, height: 50, margin: -20 }}/>
+               </div>
               </div>
+             </div>
             </div>
-           <img src='https://m.media-amazon.com/images/I/61J6t27YllL.jpg' style={{ width: 200, height: 227, marginLeft: 70, borderRadius: 5 }}/>
+           <img src="https://m.media-amazon.com/images/I/61J6t27YllL.jpg" style={{ width: 200, height: 227, marginLeft: 70, borderRadius: 5 }}/>
           </Card.Body>
-          <Card.Footer style={{ textAlign: "right", color: "#fff" }}>
+           <Card.Footer style={{ textAlign: "right", color: "#fff" }}>
             <div style={{ fontFamily: "sans-serif", fontSize: 19, paddingTop: 40 }}>
               {generate_serial()}
-              <img src='https://www.helpconsult.com.br/wp-content/uploads/2019/04/selo_siteNOVO.png' style={{ width: 48, height: 40, marginRight: -24, paddingLeft: 10 }}/>
+              <img src="https://www.helpconsult.com.br/wp-content/uploads/2019/04/selo_siteNOVO.png" style={{ width: 48, height: 40, marginRight: -24, paddingLeft: 10 }}/>
             </div>
           </Card.Footer>
         </Card.Header>

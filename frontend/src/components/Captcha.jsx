@@ -74,8 +74,7 @@ export default function Captcha() {
           <FontAwesomeIcon icon={faKey}/>
         </InputGroup.Text>
         <input className="form-control" maxLength={6} id="inputType" placeholder={i18n.t('input.captcha')}
-          name="codename" onChange={handleChange} style={{ width: 200, margin: "13px 0 0 10px" }}
-        />
+          name="codename" onChange={handleChange} style={{ width: 200, margin: "13px 0 0 10px" }}/>
         <Button type="button" id="successBTN" onClick={onSubmit} style={{ margin: "12px 0 0 8px", border: "none" }}>
           {i18n.t('buttons.captcha')}
         </Button>

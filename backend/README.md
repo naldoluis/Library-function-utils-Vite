@@ -642,10 +642,16 @@ public class SpringSecurityConfig {
 
 >                  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
 
-# html
+>                  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Barcode+128">
+>                  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Barcode+128+Text">
+
+# html icon
 
 <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/b/ba/Book_icon_1.png"/>
 <link rel="icon" href="https://www.pngkey.com/png/full/110-1108637_free-png-stack-of-beautiful-books-png-images.png"/>
+
+<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'/>
+<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'/>
 
 # Bootstrap
                        https://react-bootstrap.github.io/components/pagination/
@@ -655,7 +661,7 @@ public class SpringSecurityConfig {
 
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                                                                                                                           - ❐ ❌
-# book
+# Book
 
 import React from 'react'
 import { Link } from 'react-router-dom'
@@ -980,7 +986,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(Book)
 !J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
                                                                                                                           - ❐ ❌
 # Book
-                                                      METHOD: 'PUT'
+                                                      [METHOD: 'PUT']
 
     const updatedBook = e => {
       e.preventDefault()
@@ -1020,8 +1026,9 @@ export default connect(mapStateToProps, mapDispatchToProps)(Book)
       setBooks(initialState)
     }
 
-!J------------------------------------------------------------------------------------------------------------------------------J!
-                                                      METHOD: 'GET'
+!J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
+                                                                                                                          - ❐ ❌
+                                                      [METHOD: 'GET']
 
     const findBookById = bookId => {
     fetch("http://localhost:8080/rest/books/" + bookId)
@@ -1044,8 +1051,9 @@ export default connect(mapStateToProps, mapDispatchToProps)(Book)
      })
    }
 
-!J------------------------------------------------------------------------------------------------------------------------------J!
-                                                      METHOD: 'GET'
+!J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
+                                                                                                                          - ❐ ❌
+                                                      [METHOD: 'GET']
 
    const findBookById = bookId => {
     axios("http://localhost:8080/rest/books/" + bookId)
@@ -1064,8 +1072,9 @@ export default connect(mapStateToProps, mapDispatchToProps)(Book)
      })
    }
 
-!J------------------------------------------------------------------------------------------------------------------------------J!
-                                                      METHOD: 'GET'
+!J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
+                                                                                                                          - ❐ ❌
+                                                      [METHOD: 'GET']
 
    findAllBooks(currentPage) {
       currentPage -= 1
@@ -1085,8 +1094,9 @@ export default connect(mapStateToProps, mapDispatchToProps)(Book)
       })
     }
 
-!J------------------------------------------------------------------------------------------------------------------------------J!
-                                                      METHOD: 'PUT'
+!J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
+                                                                                                                          - ❐ ❌
+                                                      [METHOD: 'PUT']
 
     const headers = new Headers()
     headers.append('Content-Type', 'application/json')
@@ -1108,8 +1118,9 @@ export default connect(mapStateToProps, mapDispatchToProps)(Book)
      })
   }
 
-!J------------------------------------------------------------------------------------------------------------------------------J!
-                                                      METHOD: 'PUT'
+!J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
+                                                                                                                          - ❐ ❌
+                                                      [METHOD: 'PUT']
 
  /*
     const requestOptions = {
@@ -1175,8 +1186,9 @@ export default connect(mapStateToProps, mapDispatchToProps)(Book)
     }, 200)
   }
 
-!J------------------------------------------------------------------------------------------------------------------------------J!
-                                                      METHOD: 'PUT'
+!J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
+                                                                                                                          - ❐ ❌
+                                                      [METHOD: 'PUT']
   const updatedBook = e => {
     e.preventDefault()
 
@@ -1216,7 +1228,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(Book)
   }
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
-
+                                                                                                                          - ❐ ❌
     const response = await fetch(url, {
        method: 'GET',
        headers: {
@@ -1226,55 +1238,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(Book)
      const string = await response.text()
      const json = string === "" ? {} : JSON.parse(string)
       return json
-
-!J------------------------------------------------------------------------------------------------------------------------------J!
-
-      return fetch(url, {
-        mode: "no-cors"
-    })
-    .then(res => {
-        return res.text()
-    })
-    .then(data => {
-        console.log(data)
-        return new Promise((resolve, reject) => {
-            resolve(data ? JSON.parse(data) : {})
-        })
-    })
-
-to
-
-      return fetch(url, {
-        mode: "cors"
-    })
-    .then(res => {
-        return res.text()
-    })
-    .then(data => {
-        console.log(data)
-        return new Promise((resolve, reject) => {
-            resolve(data ? JSON.parse(data) : {})
-        })
-    })
-
-!J------------------------------------------------------------------------------------------------------------------------------J!
-
-        fetch(url, {
-        method: 'POST',
-        body: JSON.stringify(requestPayload),           
-        headers: {
-            'Content-type': 'application/json; charset=UTF-8',
-            Authorization: 'Bearer ' + token
-        }
-    })
-      //.then(response => response.json())
-        .then(json => {
-            console.log("response :- ", json)
-            getCheckedInTrailersList()
-        }).catch(error => {
-            console.log("Api call error ", error.message)
-            alert(error.message)
-    })
 
 !J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
                                                                                                                           - ❐ ❌
@@ -1827,7 +1790,7 @@ div {overflow: hidden;position: relative;width: 350px;height: 200px}
 
 
 # JAVASCRIPT
-                                                  Automatic Slideshow
+                                                  [Automatic Slideshow]
 
     let slideIndex = 0
     showSlides()
@@ -1846,9 +1809,9 @@ div {overflow: hidden;position: relative;width: 350px;height: 200px}
     setTimeout(showSlides, 2000)
  }
 
----------------------------------------------------------------------------------------------------------------
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-                                                  Simple Slideshow
+                                                  [Simple Slideshow]
     let slideIndex = 1
     showSlides(slideIndex)
 
@@ -1881,9 +1844,9 @@ div {overflow: hidden;position: relative;width: 350px;height: 200px}
     dots[slideIndex-1].className += " active"
   }
 
----------------------------------------------------------------------------------------------------------------
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-                                                  Multiple Slideshows
+                                                  [Multiple Slideshows]
 
     let slideIndex = [1,1]
     let slideId = ["mySlides1", "mySlides2"]
@@ -1972,8 +1935,8 @@ HTML
                                                                                                                           - ❐ ❌
 # Weather method 2
 
-<!-- <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'/>
-<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'/> -->
+<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'/>
+<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'/>
 
 # HTML
 
@@ -2198,48 +2161,6 @@ header i {font-size: 0em;cursor: pointer;margin-right: 8px}
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
 
-# server.js
-
-              📦 npm i cors
-
-import cors from 'cors'
-
-app.use(cors({
-    origin: 'http://localhost:5173/',
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'HEAD', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Origin', 'X-Requested-With', 'Accept', 'x-client-key', 'x-client-token', 'x-client-secret', 'Authorization'],
-    credentials: true
-}))
-
-Access-Control-Allow-Origin : http://localhost:5173/
-Access-Control-Allow-Credentials : true
-Access-Control-Allow-Methods : GET, POST, OPTIONS, PATCH, DELETE, PUT, HEAD
-Access-Control-Allow-Headers : Origin, Content-Type, Accept
-
-[OR]
-
-const cors = require('cors')
-app.use(cors({
-    origin: '*',
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'HEAD', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Origin', 'X-Requested-With', 'Accept', 'x-client-key', 'x-client-token', 'x-client-secret', 'Authorization'],
-    credentials: true
-}))
-
-!J------------------------------------------------------------------------------------------------------------------------------J!
-
-preview: {
-    host: 'localhost',
-    port: 5173,
-    strictPort: true,
-    headers: {
-       'Access-Control-Allow-Origin': 'http://localhost:5173/',
-       'Access-Control-Allow-Headers': 'http://localhost:5173/'
-   }
-}
-
-!J------------------------------------------------------------------------------------------------------------------------------J!
-
 [React_Carousel]:
 
 >Nome	                       Valor	                Propriedade utilizada para
@@ -2313,17 +2234,7 @@ onSwipeEnd	                   –	              Executar alguma função no carr
 onSwipeMove	                   –	              Executar alguma função no carrossel quando um gesto de passar o dedo é concluído.
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
-
-# Cors
-
-      <httpProtocol>
-        <customHeaders>
-          <add name="Access-Control-Allow-Origin" value="*"/>
-          <add name="Access-Control-Allow-Headers" value="Content-Type"/>
-          <add name="Access-Control-Allow-Methods" value="GET, POST, PUT, PATCH, DELETE, OPTIONS"/>
-        </customHeaders>
-      </httpProtocol>
-
+                                                                                                                          - ❐ ❌
 # Chrome
 
       --disable-web-security --user-data-dir="C:\Users\Naldo.Luis.167\AppData\Local\Google\Chrome\User Data"
