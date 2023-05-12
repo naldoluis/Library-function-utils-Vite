@@ -268,6 +268,7 @@ const VanillaTilt = function () {
       this.left = rect.left
       this.top = rect.top
     }
+
     update() {
       let values = this.getValues()
 
