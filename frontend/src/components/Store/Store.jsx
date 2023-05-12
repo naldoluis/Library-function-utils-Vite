@@ -134,7 +134,7 @@ class Store extends React.Component {
                       autoComplete="off"
                       required
                       name="title"
-                      pattern="[A-Za-záàâãäéèêëíïîóôõöúùûüýÿřšşćçñžÁÀÂÃÄÉÈÊËÍÏÎÓÔÕÖÚÙÛÜÝŸŘŠŞĆÇÑŽ'/. ]{1,25}"
+                      pattern="[A-Za-záàâãäéèêëíïîóôõöúùûüýÿřšşćçñžÁÀÂÃÄÉÈÊËÍÏÎÓÔÕÖÚÙÛÜÝŸŘŠŞĆÇÑŽ']{1,25}"
                       maxLength={25}
                       className="bg-white border-secondary text-dark"
                       placeholder={i18n.t('input.book')}
@@ -146,7 +146,7 @@ class Store extends React.Component {
                       autoComplete="off"
                       required
                       name="author"
-                      pattern="[A-Za-záàâãäéèêëíïîóôõöúùûüýÿřšşćçñžÁÀÂÃÄÉÈÊËÍÏÎÓÔÕÖÚÙÛÜÝŸŘŠŞĆÇÑŽ'. ]{2,25}"
+                      pattern="[A-Za-záàâãäéèêëíïîóôõöúùûüýÿřšşćçñžÁÀÂÃÄÉÈÊËÍÏÎÓÔÕÖÚÙÛÜÝŸŘŠŞĆÇÑŽ']{2,25}"
                       maxLength={25}
                       className="bg-white border-secondary text-dark mb-3"
                       placeholder={i18n.t('input.author')}
