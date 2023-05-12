@@ -64,7 +64,9 @@ const messages = {
                 book: 'Succès',
                 deleteBook: 'Livre supprimé avec succès.',
                 createUser: 'Inscrit',
-                createUserWarn: 'Utilisateur enregistré avec succès.'
+                createUserWarn: 'Utilisateur enregistré avec succès.',
+                item: 'Élément sélectionné.',
+                purchase: 'Paiement jusqu´à 12 fois sans intérêt sur la carte!'
             },
             buttons: {
                 reset: 'Réinitialiser',

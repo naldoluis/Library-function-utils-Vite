@@ -111,7 +111,8 @@ let QRCode
 					}
 				}
 			}
-		}, getBestMaskPattern: function () {
+		},
+		getBestMaskPattern: function () {
 			let minLostPoint = 0
 			let pattern = 0
 			for (let i = 0; i < 8; i++) {

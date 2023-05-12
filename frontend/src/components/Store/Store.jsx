@@ -5,6 +5,7 @@ import { faBookQuran, faMoneyBills } from '@fortawesome/free-solid-svg-icons'
 import { Button, Card, Col, Form, Spinner, Table } from 'react-bootstrap'
 import { i18n } from '../../assets/translate/i18n'
 import { BASE_URL } from '../../utils/requests'
+import { MyToastPurchase } from '../MyToast'
 
 class Store extends React.Component {
   constructor() {
@@ -12,8 +13,7 @@ class Store extends React.Component {
     this.state = {
       books: [],
       currentPage: 1,
-      booksPerPage: 8,
-      show: false
+      booksPerPage: 8
     }
   }
 
@@ -86,6 +86,9 @@ class Store extends React.Component {
 
     return (
       <Card className="card-store">
+        <div style={{ display: this.state.show ? "block" : "none" }}>
+            <MyToastPurchase message={i18n.t('toast.purchase')}/>
+        </div>
         <Card.Header>
           <b style={{ color: "#fff", fontWeight: 400 }}>
             <FontAwesomeIcon icon={faBookQuran}/> {i18n.t('messages.edition')}
@@ -180,8 +183,12 @@ class Store extends React.Component {
                   </Form.Group>
                 </div>
                 <div className="btn-container">
-                  <button onClick={() => this.closeModal()} style={{ background: "#c3c600", width: 200, fontWeight: 500, borderRadius: 6 }}>{i18n.t('buttons.buy')}</button>
-                  <button onClick={() => this.closeModal()} style={{ background: "#c23f17", color: "#fff", fontWeight: 500, width: 200, borderRadius: 6 }}>{i18n.t('buttons.cancel')}</button>
+                  <button onClick={() => this.closeModal()} style={{ background: "#c3c600", width: 200, fontWeight: 500, borderRadius: 6 }}>
+                    {i18n.t('buttons.buy')}
+                  </button>
+                  <button onClick={() => this.closeModal()} style={{ background: "#c23f17", color: "#fff", fontWeight: 500, width: 200, borderRadius: 6 }}>
+                    {i18n.t('buttons.cancel')}
+                  </button>
                 </div>
               </div>
              </div>}

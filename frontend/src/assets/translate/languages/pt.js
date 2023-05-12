@@ -64,7 +64,9 @@ const messages = {
                 book: 'Sucesso',
                 deleteBook: 'Livro deletado com sucesso.',
                 createUser: 'Registrado',
-                createUserWarn: 'Usuário salvo com sucesso.'
+                createUserWarn: 'Usuário salvo com sucesso.',
+                item: 'Item selecionado.',
+                purchase: 'Parcele em até 12x sem juros no cartão!'
             },
             buttons: {
                 reset: 'Resetar',

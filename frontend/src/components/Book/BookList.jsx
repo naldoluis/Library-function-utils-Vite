@@ -47,6 +47,7 @@ class BookList extends React.Component {
           currentPage: data.number + 1
         })
      })
+     .catch(error => console.log('Not Found Books: ' + error.message))
   }
 
   deleteBook = bookId => {
@@ -140,6 +141,7 @@ class BookList extends React.Component {
           currentPage: data.number + 1
         })
      })
+     .catch(error => console.log('Not Found Search: ' + error.message))
   }
 
   render() {

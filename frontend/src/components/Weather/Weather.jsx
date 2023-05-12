@@ -146,7 +146,7 @@ useEffect(() => {
        <div className="text-white" align="center">
         <div className="compass py-2">🧭</div>
          <div className="city"> Américo Brasiliense, BR</div>
-          <div className="date">Monday, 25 March 2019</div>
+          <div className="date">📅 Monday, 25 March 2019</div>
            <div className="container-img my-2">
             <img src="./src/assets/icons/weather/unknown.svg"/></div>
              <div className="container-temp py-4">
