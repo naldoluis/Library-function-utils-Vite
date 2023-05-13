@@ -69,7 +69,7 @@ export default function Captcha() {
       <div className="form-group">
         <img src={captchaImg} height="50" style={{ marginLeft: 130 }}/>
       </div>
-      <div className="form-group row">
+       <div className="form-group row">
         <InputGroup.Text style={{ marginTop: 16, marginLeft: 30, width: 40, height: 32 }}>
           <FontAwesomeIcon icon={faKey}/>
         </InputGroup.Text>

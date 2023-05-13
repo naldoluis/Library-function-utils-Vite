@@ -61,13 +61,13 @@ export default function Register() {
             <Card.Header>
               <FontAwesomeIcon icon={faUserPlus}/> {i18n.t('access.register')}
             </Card.Header>
-            <Card.Body>
+             <Card.Body>
               <Form>
                 <Form.Group as={Col}>
                   <InputGroup>
-                     <InputGroup.Text className="name">
-                       <FontAwesomeIcon icon={faUser}/>
-                     </InputGroup.Text>
+                    <InputGroup.Text className="name">
+                      <FontAwesomeIcon icon={faUser}/>
+                    </InputGroup.Text>
                     <FormControl
                       autoComplete="off"
                       pattern="[A-Za-za ]{2,25}"
@@ -82,9 +82,9 @@ export default function Register() {
                 </Form.Group>
                 <Form.Group as={Col}>
                   <InputGroup>
-                     <InputGroup.Text className="envelope">
-                       <FontAwesomeIcon icon={faEnvelope}/>
-                     </InputGroup.Text>
+                    <InputGroup.Text className="envelope">
+                      <FontAwesomeIcon icon={faEnvelope}/>
+                    </InputGroup.Text>
                     <FormControl
                       required
                       autoComplete="off"
@@ -99,9 +99,9 @@ export default function Register() {
                 </Form.Group>
                 <Form.Group as={Col}>
                   <InputGroup>
-                     <InputGroup.Text className="lock">
-                       <FontAwesomeIcon icon={faLock}/>
-                     </InputGroup.Text>
+                    <InputGroup.Text className="lock">
+                      <FontAwesomeIcon icon={faLock}/>
+                    </InputGroup.Text>
                     <FormControl
                       required
                       autoComplete="off"
@@ -121,12 +121,11 @@ export default function Register() {
                    </b>
                   </InputGroup>
                 </Form.Group>
-              </Form>
                 <Form.Group as={Col}>
                   <InputGroup>
-                     <InputGroup.Text className="phone">
-                       <FontAwesomeIcon icon={faPhone}/>
-                     </InputGroup.Text>
+                    <InputGroup.Text className="phone">
+                      <FontAwesomeIcon icon={faPhone}/>
+                    </InputGroup.Text>
                     <FormControl
                       autoComplete="off"
                       name="mobile"
@@ -140,6 +139,7 @@ export default function Register() {
                   </InputGroup>
                  <Captcha/>
                </Form.Group>
+              </Form>
              </Card.Body>
             <Card.Footer style={{ textAlign: "right" }}>
               <Button

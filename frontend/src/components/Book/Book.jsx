@@ -136,174 +136,183 @@ export default function Book() {
     setBooks({ ...books, [name]: value })
   }
 
-    return (
-      <div>
-        <div style={{ display: show ? "block" : "none" }}>
-          <MyToast
-            message={show.method === "PUT" ? "Book Updated Successfully." : "Book Saved Successfully."}
-            type="success"
-          />
-        </div>
-        <Card className="border-secondary bg-dark text-white">
-          <Card.Header>
-            <FontAwesomeIcon icon={books.id ? faEdit : faPlusSquare}/>{" "}
-             {books.id ? "Update Book" : "Add New Book"}
-          </Card.Header>
-          <Form onSubmit={books.id ? updatedBook : onSubmit}
-           >
-            <Card.Body>
-              <div className="form-row">
-                <Form.Group as={Col}>
-                 <Form.Label>{i18n.t('tableBook.title')} 📙</Form.Label>
-                  <Form.Control
-                    autoComplete="off"
-                    required
-                    name="title"
-                    pattern="[A-Za-záàâãäéèêëíïîóôõöúùûüýÿřšşćçñžÁÀÂÃÄÉÈÊËÍÏÎÓÔÕÖÚÙÛÜÝŸŘŠŞĆÇÑŽ']{1,25}"
-                    maxLength={25}
-                    value={books.title ||''}
-                    onChange={bookChange}
-                    className="bg-dark border-secondary text-white"
-                    placeholder={i18n.t('input.book')}
-                  />
-                </Form.Group>
-                <Form.Group as={Col}>
-                 <Form.Label>{i18n.t('tableBook.author')} ✏️</Form.Label>
-                  <Form.Control
-                    autoComplete="off"
-                    required
-                    name="author"
-                    pattern="[A-Za-záàâãäéèêëíïîóôõöúùûüýÿřšşćçñžÁÀÂÃÄÉÈÊËÍÏÎÓÔÕÖÚÙÛÜÝŸŘŠŞĆÇÑŽ']{2,25}"
-                    maxLength={25}
-                    value={books.author ||''}
-                    onChange={bookChange}
-                    className="bg-dark border-secondary text-white mb-3"
-                    placeholder={i18n.t('input.author')}
-                  />
-                </Form.Group>
-                </div>
-                <div className="form-row">
-                <Form.Group as={Col}>
-                 <Form.Label>{i18n.t('tableBook.photoUrl')} <img className="cam" src={iconCam}/></Form.Label>
-                  <div className="input-group">
-                    <Form.Control
-                      autoComplete="off"
-                      required
-                      name="photo"
-                      value={books.photo ||''}
-                      onChange={bookChange}
-                      className="bg-dark border-secondary text-white"
-                      placeholder={i18n.t('input.photoUrl')}
-                    />
-                    <div>
-                      {books.photo !== "" && (
-                        <img src={books.photo} width="38" height="38"/>
-                      )}
-                    </div>
-                  </div>
-                </Form.Group>
-                <Form.Group as={Col}>
-                 <Form.Label>{i18n.t('tableBook.isbn')} ▥</Form.Label>
-                  <Form.Control
-                    autoComplete="off"
-                    required
-                    pattern="[0-9]{9}"
-                    name="isbn"
-                    maxLength={9}
-                    value={books.isbn ||''}
-                    onChange={bookChange}
-                    className="bg-dark border-secondary text-white mb-3"
-                    placeholder={i18n.t('input.isbn')}
-                  />
-                </Form.Group>
-                </div>
-                <div className="form-row">
-                <Form.Group as={Col}>
-                 <Form.Label className="price">{i18n.t('tableBook.price')} 💲</Form.Label>
-                  <Form.Control
-                    autoComplete="off"
-                    required
-                    name="price"
-                    pattern="[0-9]{2,3}.[0-9]{2}"
-                    maxLength={6}
-                    value={books.price ||''}
-                    onChange={bookChange}
-                    className="bg-dark border-secondary text-white"
-                    placeholder={i18n.t('input.price')}
-                  />
-                 </Form.Group>
-                <Form.Group as={Col}>
-                 <Form.Label>{i18n.t('tableBook.language')} <img className="lang" src={iconLang}/></Form.Label>
-                  <Form.Control
-                    required
-                    as="select"
-                    custom="true"
-                    name="language"
-                    value={books.language ||''}
-                    onChange={bookChange}
-                    className="bg-dark border-secondary text-white"
-                  >
-                    <option>English</option>
-                    <option>Portuguese</option>
-                    <option>French</option>
-                    <option>Russian</option>
-                    <option>Hindi</option>
-                    <option>Arabic</option>
-                    <option>Spanish</option>
-                    <option>Chinese</option>
-                    {/* {books.languages.map(language => (
+  return (
+    <div>
+      <div style={{ display: show ? "block" : "none" }}>
+        <MyToast
+          message={show.method === "PUT" ? "Book Updated Successfully." : "Book Saved Successfully."} type="success"/>
+      </div>
+      <Card className="border-secondary bg-dark text-white">
+       <Card.Header>
+        <FontAwesomeIcon icon={books.id ? faEdit : faPlusSquare}/>{" "}
+          {books.id ? "Update Book" : "Add New Book"}
+        </Card.Header>
+         <Form onSubmit={books.id ? updatedBook : onSubmit}>
+          <Card.Body>
+            <div className="form-row">
+              <Form.Group as={Col}>
+                <Form.Label>
+                  {i18n.t('tableBook.title')} 📙
+                </Form.Label>
+                <Form.Control
+                  autoComplete="off"
+                  required
+                  name="title"
+                  pattern="[A-Za-záàâãäéèêëíïîóôõöúùûüýÿřšşćçñžÁÀÂÃÄÉÈÊËÍÏÎÓÔÕÖÚÙÛÜÝŸŘŠŞĆÇÑŽ']{1,25}"
+                  maxLength={25}
+                  value={books.title || ''}
+                  onChange={bookChange}
+                  className="bg-dark border-secondary text-white"
+                  placeholder={i18n.t('input.book')}
+                />
+              </Form.Group>
+              <Form.Group as={Col}>
+                <Form.Label>
+                  {i18n.t('tableBook.author')} ✏️
+                </Form.Label>
+                <Form.Control
+                  autoComplete="off"
+                  required
+                  name="author"
+                  pattern="[A-Za-záàâãäéèêëíïîóôõöúùûüýÿřšşćçñžÁÀÂÃÄÉÈÊËÍÏÎÓÔÕÖÚÙÛÜÝŸŘŠŞĆÇÑŽ']{2,25}"
+                  maxLength={25}
+                  value={books.author || ''}
+                  onChange={bookChange}
+                  className="bg-dark border-secondary text-white mb-3"
+                  placeholder={i18n.t('input.author')}
+                />
+              </Form.Group>
+            </div>
+            <div className="form-row">
+            <Form.Group as={Col}>
+              <Form.Label>
+                {i18n.t('tableBook.photoUrl')} <img className="cam" src={iconCam}/>
+              </Form.Label>
+              <div className="input-group">
+                <Form.Control
+                  autoComplete="off"
+                  required
+                  name="photo"
+                  value={books.photo || ''}
+                  onChange={bookChange}
+                  className="bg-dark border-secondary text-white"
+                  placeholder={i18n.t('input.photoUrl')}
+                />
+                 {books.photo !== "" && (
+                   <img src={books.photo} width="38" height="38"/>
+                 )}
+               </div>
+              </Form.Group>
+              <Form.Group as={Col}>
+                <Form.Label>
+                  {i18n.t('tableBook.isbn')} ▥
+                </Form.Label>
+                <Form.Control
+                  autoComplete="off"
+                  required
+                  pattern="[0-9]{9}"
+                  name="isbn"
+                  maxLength={9}
+                  value={books.isbn || ''}
+                  onChange={bookChange}
+                  className="bg-dark border-secondary text-white mb-3"
+                  placeholder={i18n.t('input.isbn')}
+                />
+              </Form.Group>
+            </div>
+            <div className="form-row">
+              <Form.Group as={Col}>
+                <Form.Label className="price">
+                  {i18n.t('tableBook.price')} 💲
+                </Form.Label>
+                <Form.Control
+                  autoComplete="off"
+                  required
+                  name="price"
+                  pattern="[0-9]{2,3}.[0-9]{2}"
+                  maxLength={6}
+                  value={books.price || ''}
+                  onChange={bookChange}
+                  className="bg-dark border-secondary text-white"
+                  placeholder={i18n.t('input.price')}
+                />
+              </Form.Group>
+              <Form.Group as={Col}>
+                <Form.Label>
+                  {i18n.t('tableBook.language')} <img className="lang" src={iconLang}/>
+                </Form.Label>
+                <Form.Control
+                  required
+                  as="select"
+                  custom="true"
+                  name="language"
+                  value={books.language || ''}
+                  onChange={bookChange}
+                  className="bg-dark border-secondary text-white"
+                >
+                  <option>English</option>
+                  <option>Portuguese</option>
+                  <option>French</option>
+                  <option>Russian</option>
+                  <option>Hindi</option>
+                  <option>Arabic</option>
+                  <option>Spanish</option>
+                  <option>Chinese</option>
+                  {/* {books.languages.map(language => (
                       <option key={language.value} value={language.value}>
                         {language.display}
                       </option>
-                    ))} */}
-                  </Form.Control>
-                 </Form.Group>
-                <Form.Group as={Col}>
-                 <Form.Label>{i18n.t('tableBook.genre')} 📚</Form.Label>
-                  <Form.Control
-                    required
-                    as="select"
-                    custom="true"
-                    name="genre"
-                    value={books.genre || ''}
-                    onChange={bookChange}
-                    className="bg-dark border-secondary text-white"
-                  >
-                    <option>Technology</option>
-                    <option>Science</option>
-                    <option>History</option>
-                    <option>Fantasy</option>
-                    <option>Biography</option>
-                    <option>Horror</option>
-                    <option>Romance</option>
-                    {/* {books.genres.map(genre => (
+                  ))} */}
+                </Form.Control>
+              </Form.Group>
+              <Form.Group as={Col}>
+                <Form.Label>
+                  {i18n.t('tableBook.genre')} 📚
+                </Form.Label>
+                <Form.Control
+                  required
+                  as="select"
+                  custom="true"
+                  name="genre"
+                  value={books.genre || ''}
+                  onChange={bookChange}
+                  className="bg-dark border-secondary text-white"
+                >
+                  <option>Technology</option>
+                  <option>Science</option>
+                  <option>History</option>
+                  <option>Fantasy</option>
+                  <option>Biography</option>
+                  <option>Horror</option>
+                  <option>Romance</option>
+                  {/* {books.genres.map(genre => (
                       <option key={genre.value} value={genre.value}>
                         {genre.display}
                       </option>
-                    ))} */}
-                  </Form.Control>
-                </Form.Group>
-              </div>
-            </Card.Body>
-            <Card.Footer style={{ textAlign: "right" }}>
-              <Button size="sm" variant="success" type="submit">
-                 <FontAwesomeIcon icon={faSave}/>{" "}
-                {books.id ? "Update" : "Save"}
-              </Button>{" "}
-              <Button
-                size="sm"
-                type="reset"
-                variant="info"
-                onClick={resetBook}
-               >
-                <FontAwesomeIcon icon={faUndo}/> {i18n.t('buttons.reset')}
-              </Button>{" "}
-              <Link style={{ textDecoration: 'none' }}
-                to="/list" type="button" className="link">
-                 <FontAwesomeIcon icon={faList}/> {i18n.t('buttons.bookList')}
-              </Link>
-            </Card.Footer>
-          </Form>
-        </Card>
-      </div>
-    )}
+                  ))} */}
+                </Form.Control>
+              </Form.Group>
+            </div>
+          </Card.Body>
+          <Card.Footer style={{ textAlign: "right" }}>
+            <Button size="sm" variant="success" type="submit">
+             <FontAwesomeIcon icon={faSave}/>{" "}
+              {books.id ? "Update" : "Save"}
+            </Button>{" "}
+            <Button
+              size="sm"
+              type="reset"
+              variant="info"
+              onClick={resetBook}
+            >
+              <FontAwesomeIcon icon={faUndo}/> {i18n.t('buttons.reset')}
+            </Button>{" "}
+            <Link style={{ textDecoration: 'none' }} to="/list" type="button" className="link"
+            >
+              <FontAwesomeIcon icon={faList}/> {i18n.t('buttons.bookList')}
+            </Link>
+          </Card.Footer>
+        </Form>
+      </Card>
+    </div>
+  )}
