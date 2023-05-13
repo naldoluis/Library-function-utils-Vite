@@ -6,7 +6,7 @@
    <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
    <feOffset dx="0" dy="4" result="offsetblur"/>
    <feComponentTransfer>
-    <feFuncA slope="0.05" type="linear"/>
+    <feFuncA slope=".05" type="linear"/>
    </feComponentTransfer>
    <feMerge>
     <feMergeNode/>
@@ -19,24 +19,24 @@
 */
 @keyframes am-weather-cloud-2 {
   0% {
-    -webkit-transform: translate(0px,0px);
-       -moz-transform: translate(0px,0px);
-        -ms-transform: translate(0px,0px);
-            transform: translate(0px,0px);
+    -webkit-transform: translate(0, 0);
+       -moz-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+            transform: translate(0, 0)
   }
 
   50% {
-    -webkit-transform: translate(2px,0px);
-       -moz-transform: translate(2px,0px);
-        -ms-transform: translate(2px,0px);
-            transform: translate(2px,0px);
+    -webkit-transform: translate(2px, 0);
+       -moz-transform: translate(2px, 0);
+        -ms-transform: translate(2px, 0);
+            transform: translate(2px, 0)
   }
 
   100% {
-    -webkit-transform: translate(0px,0px);
-       -moz-transform: translate(0px,0px);
-        -ms-transform: translate(0px,0px);
-            transform: translate(0px,0px);
+    -webkit-transform: translate(0, 0);
+       -moz-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+            transform: translate(0, 0)
   }
 }
 
@@ -52,7 +52,7 @@
           animation-timing-function: linear;
   -webkit-animation-iteration-count: infinite;
      -moz-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
+          animation-iteration-count: infinite
 }
 
 /*
@@ -63,21 +63,21 @@
     -webkit-transform: translateX(0) translateY(0);
        -moz-transform: translateX(0) translateY(0);
         -ms-transform: translateX(0) translateY(0);
-            transform: translateX(0) translateY(0);
+            transform: translateX(0) translateY(0)
   }
 
   33.33% {
     -webkit-transform: translateX(-1.2px) translateY(2px);
        -moz-transform: translateX(-1.2px) translateY(2px);
         -ms-transform: translateX(-1.2px) translateY(2px);
-            transform: translateX(-1.2px) translateY(2px);
+            transform: translateX(-1.2px) translateY(2px)
   }
 
   66.66% {
     -webkit-transform: translateX(1.4px) translateY(4px);
        -moz-transform: translateX(1.4px) translateY(4px);
         -ms-transform: translateX(1.4px) translateY(4px);
-            transform: translateX(1.4px) translateY(4px);
+            transform: translateX(1.4px) translateY(4px)
     opacity: 1;
   }
 
@@ -85,7 +85,7 @@
     -webkit-transform: translateX(-1.6px) translateY(6px);
        -moz-transform: translateX(-1.6px) translateY(6px);
         -ms-transform: translateX(-1.6px) translateY(6px);
-            transform: translateX(-1.6px) translateY(6px);
+            transform: translateX(-1.6px) translateY(6px)
     opacity: 0;
   }
 }
@@ -106,7 +106,7 @@
   -webkit-animation-iteration-count: infinite;
      -moz-animation-iteration-count: infinite;
       -ms-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
+          animation-iteration-count: infinite
 }
 
 .am-weather-snow-2 {
@@ -129,7 +129,7 @@
   -webkit-animation-iteration-count: infinite;
      -moz-animation-iteration-count: infinite;
       -ms-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
+          animation-iteration-count: infinite
 }
 
         ]]></style>

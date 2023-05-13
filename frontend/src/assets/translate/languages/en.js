@@ -37,7 +37,8 @@ const messages = {
                 password: 'Enter Password',
                 phone: 'Mobile Number (xx) 91234-5678',
                 photoUrl: 'Enter Book Cover Photo URL',
-                price: 'Enter Book Price Ex: 123.45'
+                price: 'Enter Book Price Ex: 123.45',
+                search: 'Search'
             },
             tableBook: {
                 title: 'Title',

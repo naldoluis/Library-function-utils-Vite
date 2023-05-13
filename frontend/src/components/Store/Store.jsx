@@ -132,24 +132,26 @@ class Store extends React.Component {
                 </p>
                 <div className="form-row">
                   <Form.Group as={Col}>
-                   <Form.Label>{i18n.t('tableBook.title')} 📙</Form.Label>
+                   <div>
+                    {i18n.t('tableBook.title')} 📙
+                   </div>
                     <Form.Control
-                      autoComplete="off"
                       required
                       name="title"
-                      pattern="[A-Za-záàâãäéèêëíïîóôõöúùûüýÿřšşćçñžÁÀÂÃÄÉÈÊËÍÏÎÓÔÕÖÚÙÛÜÝŸŘŠŞĆÇÑŽ']{1,25}"
+                      pattern="[A-Za-záàâãäéèêëíïîóôõöúùûüýÿřšşćçñžÁÀÂÃÄÉÈÊËÍÏÎÓÔÕÖÚÙÛÜÝŸŘŠŞĆÇÑŽ ']{1,25}"
                       maxLength={25}
                       className="bg-white border-secondary text-dark"
                       placeholder={i18n.t('input.book')}
                     />
                   </Form.Group>
                   <Form.Group as={Col}>
-                   <Form.Label>{i18n.t('tableBook.author')} ✏️</Form.Label>
+                   <div>
+                    {i18n.t('tableBook.author')} ✏️
+                   </div>
                     <Form.Control
-                      autoComplete="off"
                       required
                       name="author"
-                      pattern="[A-Za-záàâãäéèêëíïîóôõöúùûüýÿřšşćçñžÁÀÂÃÄÉÈÊËÍÏÎÓÔÕÖÚÙÛÜÝŸŘŠŞĆÇÑŽ']{2,25}"
+                      pattern="[A-Za-záàâãäéèêëíïîóôõöúùûüýÿřšşćçñžÁÀÂÃÄÉÈÊËÍÏÎÓÔÕÖÚÙÛÜÝŸŘŠŞĆÇÑŽ ']{2,25}"
                       maxLength={25}
                       className="bg-white border-secondary text-dark mb-3"
                       placeholder={i18n.t('input.author')}
@@ -158,9 +160,10 @@ class Store extends React.Component {
                   </div>
                   <div className="form-row">
                   <Form.Group as={Col}>
-                   <Form.Label>{i18n.t('tableBook.isbn')} ▥</Form.Label>
+                   <div>
+                    {i18n.t('tableBook.isbn')} ▥
+                   </div>
                     <Form.Control
-                      autoComplete="off"
                       required
                       name="isbn"
                       pattern="[0-9]{9}"
@@ -170,9 +173,10 @@ class Store extends React.Component {
                     />
                   </Form.Group>
                   <Form.Group as={Col}>
-                   <Form.Label>{i18n.t('tableBook.price')} 💲</Form.Label>
+                   <div>
+                    {i18n.t('tableBook.price')} 💲
+                   </div>
                     <Form.Control
-                      autoComplete="off"
                       required
                       name="price"
                       pattern="[0-9]{2,3}.[0-9]{2}"

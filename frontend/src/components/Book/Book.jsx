@@ -123,12 +123,12 @@ export default function Book() {
       .then(response => response.json())
       .then(json => console.log(json))
       .catch(error => console.log('Authorization failed: ' + error.message))
-      if(bookObject.book) {
-        setShow({ show: true, method: "PUT" })
-        setTimeout(() => setShow({ show: false }), 2000)
-      } else {
-        setShow({ show: false })
-      }
+    if(bookObject.book) {
+      setShow({ show: true, method: "PUT" })
+      setTimeout(() => setShow({ show: false }), 2000)
+    } else {
+      setShow({ show: false })
+    }
   }
 
   const bookChange = e => {
@@ -137,7 +137,7 @@ export default function Book() {
   }
 
   return (
-    <div>
+    <>
       <div style={{ display: show ? "block" : "none" }}>
         <MyToast
           message={show.method === "PUT" ? "Book Updated Successfully." : "Book Saved Successfully."} type="success"/>
@@ -151,14 +151,13 @@ export default function Book() {
           <Card.Body>
             <div className="form-row">
               <Form.Group as={Col}>
-                <Form.Label>
+                <div className="py-2">
                   {i18n.t('tableBook.title')} 📙
-                </Form.Label>
+                </div>
                 <Form.Control
-                  autoComplete="off"
                   required
                   name="title"
-                  pattern="[A-Za-záàâãäéèêëíïîóôõöúùûüýÿřšşćçñžÁÀÂÃÄÉÈÊËÍÏÎÓÔÕÖÚÙÛÜÝŸŘŠŞĆÇÑŽ']{1,25}"
+                  pattern="[A-Za-záàâãäéèêëíïîóôõöúùûüýÿřšşćçñžÁÀÂÃÄÉÈÊËÍÏÎÓÔÕÖÚÙÛÜÝŸŘŠŞĆÇÑŽ ']{1,25}"
                   maxLength={25}
                   value={books.title || ''}
                   onChange={bookChange}
@@ -167,30 +166,28 @@ export default function Book() {
                 />
               </Form.Group>
               <Form.Group as={Col}>
-                <Form.Label>
+                <div className="py-2">
                   {i18n.t('tableBook.author')} ✏️
-                </Form.Label>
+                </div>
                 <Form.Control
-                  autoComplete="off"
                   required
                   name="author"
-                  pattern="[A-Za-záàâãäéèêëíïîóôõöúùûüýÿřšşćçñžÁÀÂÃÄÉÈÊËÍÏÎÓÔÕÖÚÙÛÜÝŸŘŠŞĆÇÑŽ']{2,25}"
+                  pattern="[A-Za-záàâãäéèêëíïîóôõöúùûüýÿřšşćçñžÁÀÂÃÄÉÈÊËÍÏÎÓÔÕÖÚÙÛÜÝŸŘŠŞĆÇÑŽ ']{2,25}"
                   maxLength={25}
                   value={books.author || ''}
                   onChange={bookChange}
-                  className="bg-dark border-secondary text-white mb-3"
+                  className="bg-dark border-secondary text-white mb-2"
                   placeholder={i18n.t('input.author')}
                 />
               </Form.Group>
             </div>
             <div className="form-row">
             <Form.Group as={Col}>
-              <Form.Label>
+              <div className="py-2">
                 {i18n.t('tableBook.photoUrl')} <img className="cam" src={iconCam}/>
-              </Form.Label>
+              </div>
               <div className="input-group">
                 <Form.Control
-                  autoComplete="off"
                   required
                   name="photo"
                   value={books.photo || ''}
@@ -204,29 +201,27 @@ export default function Book() {
                </div>
               </Form.Group>
               <Form.Group as={Col}>
-                <Form.Label>
+                <div className="py-2">
                   {i18n.t('tableBook.isbn')} ▥
-                </Form.Label>
+                </div>
                 <Form.Control
-                  autoComplete="off"
                   required
                   pattern="[0-9]{9}"
                   name="isbn"
                   maxLength={9}
                   value={books.isbn || ''}
                   onChange={bookChange}
-                  className="bg-dark border-secondary text-white mb-3"
+                  className="bg-dark border-secondary text-white mb-2"
                   placeholder={i18n.t('input.isbn')}
                 />
               </Form.Group>
             </div>
             <div className="form-row">
               <Form.Group as={Col}>
-                <Form.Label className="price">
+                <div className="price py-2">
                   {i18n.t('tableBook.price')} 💲
-                </Form.Label>
+                </div>
                 <Form.Control
-                  autoComplete="off"
                   required
                   name="price"
                   pattern="[0-9]{2,3}.[0-9]{2}"
@@ -238,9 +233,9 @@ export default function Book() {
                 />
               </Form.Group>
               <Form.Group as={Col}>
-                <Form.Label>
+                <div className="py-2">
                   {i18n.t('tableBook.language')} <img className="lang" src={iconLang}/>
-                </Form.Label>
+                </div>
                 <Form.Control
                   required
                   as="select"
@@ -266,9 +261,9 @@ export default function Book() {
                 </Form.Control>
               </Form.Group>
               <Form.Group as={Col}>
-                <Form.Label>
+                <div className="py-2">
                   {i18n.t('tableBook.genre')} 📚
-                </Form.Label>
+                </div>
                 <Form.Control
                   required
                   as="select"
@@ -314,5 +309,5 @@ export default function Book() {
           </Card.Footer>
         </Form>
       </Card>
-    </div>
+    </>
   )}

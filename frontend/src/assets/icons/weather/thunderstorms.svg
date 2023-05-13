@@ -6,7 +6,7 @@
    <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
    <feOffset dx="0" dy="4" result="offsetblur"/>
    <feComponentTransfer>
-    <feFuncA slope="0.05" type="linear"/>
+    <feFuncA slope=".05" type="linear"/>
    </feComponentTransfer>
    <feMerge>
     <feMergeNode/>
@@ -19,24 +19,24 @@
 */
 @keyframes am-weather-cloud-1 {
   0% {
-    -webkit-transform: translate(-5px,0px);
-       -moz-transform: translate(-5px,0px);
-        -ms-transform: translate(-5px,0px);
-            transform: translate(-5px,0px);
+    -webkit-transform: translate(-5px, 0);
+       -moz-transform: translate(-5px, 0);
+        -ms-transform: translate(-5px, 0);
+            transform: translate(-5px, 0)
   }
 
   50% {
-    -webkit-transform: translate(10px,0px);
-       -moz-transform: translate(10px,0px);
-        -ms-transform: translate(10px,0px);
-            transform: translate(10px,0px);
+    -webkit-transform: translate(10px, 0);
+       -moz-transform: translate(10px, 0);
+        -ms-transform: translate(10px, 0);
+            transform: translate(10px, 0)
   }
 
   100% {
-    -webkit-transform: translate(-5px,0px);
-       -moz-transform: translate(-5px,0px);
-        -ms-transform: translate(-5px,0px);
-            transform: translate(-5px,0px);
+    -webkit-transform: translate(-5px, 0);
+       -moz-transform: translate(-5px, 0);
+        -ms-transform: translate(-5px, 0);
+            transform: translate(-5px, 0)
   }
 }
 
@@ -52,29 +52,29 @@
           animation-timing-function: linear;
   -webkit-animation-iteration-count: infinite;
      -moz-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
+          animation-iteration-count: infinite
 }
 
 @keyframes am-weather-cloud-2 {
   0% {
-    -webkit-transform: translate(0px,0px);
-       -moz-transform: translate(0px,0px);
-        -ms-transform: translate(0px,0px);
-            transform: translate(0px,0px);
+    -webkit-transform: translate(0, 0);
+       -moz-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+            transform: translate(0, 0)
   }
 
   50% {
-    -webkit-transform: translate(2px,0px);
-       -moz-transform: translate(2px,0px);
-        -ms-transform: translate(2px,0px);
-            transform: translate(2px,0px);
+    -webkit-transform: translate(2px, 0);
+       -moz-transform: translate(2px, 0);
+        -ms-transform: translate(2px, 0);
+            transform: translate(2px, 0)
   }
 
   100% {
-    -webkit-transform: translate(0px,0px);
-       -moz-transform: translate(0px,0px);
-        -ms-transform: translate(0px,0px);
-            transform: translate(0px,0px);
+    -webkit-transform: translate(0, 0);
+       -moz-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+            transform: translate(0, 0)
   }
 }
 
@@ -90,7 +90,7 @@
           animation-timing-function: linear;
   -webkit-animation-iteration-count: infinite;
      -moz-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
+          animation-iteration-count: infinite
 }
 
 /*
@@ -98,135 +98,135 @@
 */
 @keyframes am-weather-stroke {
   0% {
-    -webkit-transform: translate(0.0px,0.0px);
-       -moz-transform: translate(0.0px,0.0px);
-        -ms-transform: translate(0.0px,0.0px);
-            transform: translate(0.0px,0.0px);
+    -webkit-transform: translate(0, 0);
+       -moz-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+            transform: translate(0, 0)
   }
 
   2% {
-    -webkit-transform: translate(0.3px,0.0px);
-       -moz-transform: translate(0.3px,0.0px);
-        -ms-transform: translate(0.3px,0.0px);
-            transform: translate(0.3px,0.0px);
+    -webkit-transform: translate(.3px, 0);
+       -moz-transform: translate(.3px, 0);
+        -ms-transform: translate(.3px, 0);
+            transform: translate(.3px, 0)
   }
 
   4% {
-    -webkit-transform: translate(0.0px,0.0px);
-       -moz-transform: translate(0.0px,0.0px);
-        -ms-transform: translate(0.0px,0.0px);
-            transform: translate(0.0px,0.0px);
+    -webkit-transform: translate(0, 0);
+       -moz-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+            transform: translate(0, 0)
   }
 
   6% {
-    -webkit-transform: translate(0.5px,0.4px);
-       -moz-transform: translate(0.5px,0.4px);
-        -ms-transform: translate(0.5px,0.4px);
-            transform: translate(0.5px,0.4px);
+    -webkit-transform: translate(.5px, .4px);
+       -moz-transform: translate(.5px, .4px);
+        -ms-transform: translate(.5px, .4px);
+            transform: translate(.5px, .4px)
   }
 
   8% {
-    -webkit-transform: translate(0.0px,0.0px);
-       -moz-transform: translate(0.0px,0.0px);
-        -ms-transform: translate(0.0px,0.0px);
-            transform: translate(0.0px,0.0px);
+    -webkit-transform: translate(0, 0);
+       -moz-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+            transform: translate(0, 0)
   }
 
   10% {
-    -webkit-transform: translate(0.3px,0.0px);
-       -moz-transform: translate(0.3px,0.0px);
-        -ms-transform: translate(0.3px,0.0px);
-            transform: translate(0.3px,0.0px);
+    -webkit-transform: translate(.3px, 0);
+       -moz-transform: translate(.3px, 0);
+        -ms-transform: translate(.3px, 0);
+            transform: translate(.3px, 0)
   }
 
   12% {
-    -webkit-transform: translate(0.0px,0.0px);
-       -moz-transform: translate(0.0px,0.0px);
-        -ms-transform: translate(0.0px,0.0px);
-            transform: translate(0.0px,0.0px);
+    -webkit-transform: translate(0, 0);
+       -moz-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+            transform: translate(0, 0)
   }
 
   14% {
-    -webkit-transform: translate(0.3px,0.0px);
-       -moz-transform: translate(0.3px,0.0px);
-        -ms-transform: translate(0.3px,0.0px);
-            transform: translate(0.3px,0.0px);
+    -webkit-transform: translate(.3px, 0);
+       -moz-transform: translate(.3px, 0);
+        -ms-transform: translate(.3px, 0);
+            transform: translate(.3px, 0)
   }
 
   16% {
-    -webkit-transform: translate(0.0px,0.0px);
-       -moz-transform: translate(0.0px,0.0px);
-        -ms-transform: translate(0.0px,0.0px);
-            transform: translate(0.0px,0.0px);
+    -webkit-transform: translate(0, 0);
+       -moz-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+            transform: translate(0, 0)
   }
 
   18% {
-    -webkit-transform: translate(0.3px,0.0px);
-       -moz-transform: translate(0.3px,0.0px);
-        -ms-transform: translate(0.3px,0.0px);
-            transform: translate(0.3px,0.0px);
+    -webkit-transform: translate(.3px, 0);
+       -moz-transform: translate(.3px, 0);
+        -ms-transform: translate(.3px, 0);
+            transform: translate(.3px, 0)
   }
 
   20% {
-    -webkit-transform: translate(0.0px,0.0px);
-       -moz-transform: translate(0.0px,0.0px);
-        -ms-transform: translate(0.0px,0.0px);
-            transform: translate(0.0px,0.0px);
+    -webkit-transform: translate(0, 0);
+       -moz-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+            transform: translate(0, 0)
   }
 
   22% {
-    -webkit-transform: translate(1px,0.0px);
-       -moz-transform: translate(1px,0.0px);
-        -ms-transform: translate(1px,0.0px);
-            transform: translate(1px,0.0px);
+    -webkit-transform: translate(1px, 0);
+       -moz-transform: translate(1px, 0);
+        -ms-transform: translate(1px, 0);
+            transform: translate(1px, 0)
   }
 
   24% {
-    -webkit-transform: translate(0.0px,0.0px);
-       -moz-transform: translate(0.0px,0.0px);
-        -ms-transform: translate(0.0px,0.0px);
-            transform: translate(0.0px,0.0px);
+    -webkit-transform: translate(0, 0);
+       -moz-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+            transform: translate(0, 0)
   }
 
   26% {
-    -webkit-transform: translate(-1px,0.0px);
-       -moz-transform: translate(-1px,0.0px);
-        -ms-transform: translate(-1px,0.0px);
-            transform: translate(-1px,0.0px);
+    -webkit-transform: translate(-1px, 0);
+       -moz-transform: translate(-1px, 0);
+        -ms-transform: translate(-1px, 0);
+            transform: translate(-1px, 0)
 
   }
 
   28% {
-    -webkit-transform: translate(0.0px,0.0px);
-       -moz-transform: translate(0.0px,0.0px);
-        -ms-transform: translate(0.0px,0.0px);
-            transform: translate(0.0px,0.0px);
+    -webkit-transform: translate(0, 0);
+       -moz-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+            transform: translate(0, 0)
   }
 
   40% {
     fill: orange;
-    -webkit-transform: translate(0.0px,0.0px);
-       -moz-transform: translate(0.0px,0.0px);
-        -ms-transform: translate(0.0px,0.0px);
-            transform: translate(0.0px,0.0px);
+    -webkit-transform: translate(0, 0);
+       -moz-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+            transform: translate(0, 0)
   }
 
   65% {
     fill: white;
-    -webkit-transform: translate(-1px,5.0px);
-       -moz-transform: translate(-1px,5.0px);
-        -ms-transform: translate(-1px,5.0px);
-            transform: translate(-1px,5.0px);
+    -webkit-transform: translate(-1px, 5px);
+       -moz-transform: translate(-1px, 5px);
+        -ms-transform: translate(-1px, 5px);
+            transform: translate(-1px, 5px)
   }
   61% {
     fill: orange;
   }
 
   100% {
-    -webkit-transform: translate(0.0px,0.0px);
-       -moz-transform: translate(0.0px,0.0px);
-        -ms-transform: translate(0.0px,0.0px);
-            transform: translate(0.0px,0.0px);
+    -webkit-transform: translate(0, 0);
+       -moz-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+            transform: translate(0, 0)
   }
 }
 
@@ -242,7 +242,7 @@
           animation-timing-function: linear;
   -webkit-animation-iteration-count: infinite;
      -moz-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
+          animation-iteration-count: infinite
 }
         ]]></style>
  </defs>

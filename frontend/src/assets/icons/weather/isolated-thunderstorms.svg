@@ -4,14 +4,14 @@
 <svg width="56" height="48" version="1.1" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <filter id="blur" x="-.20655" y="-.1975" width="1.403" height="1.4766">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
-      <feOffset dx="0" dy="4" result="offsetblur" />
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="0" dy="4" result="offsetblur"/>
       <feComponentTransfer>
-        <feFuncA slope="0.05" type="linear" />
+        <feFuncA slope=".05" type="linear"/>
       </feComponentTransfer>
       <feMerge>
-        <feMergeNode />
-        <feMergeNode in="SourceGraphic" />
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
     <style type="text/css">
@@ -21,24 +21,24 @@
 */
       @keyframes am-weather-cloud-1 {
         0% {
-          -webkit-transform: translate(-5px, 0px);
-          -moz-transform: translate(-5px, 0px);
-          -ms-transform: translate(-5px, 0px);
-          transform: translate(-5px, 0px);
+          -webkit-transform: translate(-5px, 0);
+          -moz-transform: translate(-5px, 0);
+          -ms-transform: translate(-5px, 0);
+          transform: translate(-5px, 0)
         }
 
         50% {
-          -webkit-transform: translate(10px, 0px);
-          -moz-transform: translate(10px, 0px);
-          -ms-transform: translate(10px, 0px);
-          transform: translate(10px, 0px);
+          -webkit-transform: translate(10px, 0);
+          -moz-transform: translate(10px, 0);
+          -ms-transform: translate(10px, 0);
+          transform: translate(10px, 0)
         }
 
         100% {
-          -webkit-transform: translate(-5px, 0px);
-          -moz-transform: translate(-5px, 0px);
-          -ms-transform: translate(-5px, 0px);
-          transform: translate(-5px, 0px);
+          -webkit-transform: translate(-5px, 0);
+          -moz-transform: translate(-5px, 0);
+          -ms-transform: translate(-5px, 0);
+          transform: translate(-5px, 0)
         }
       }
 
@@ -54,29 +54,29 @@
         animation-timing-function: linear;
         -webkit-animation-iteration-count: infinite;
         -moz-animation-iteration-count: infinite;
-        animation-iteration-count: infinite;
+        animation-iteration-count: infinite
       }
 
       @keyframes am-weather-cloud-2 {
         0% {
-          -webkit-transform: translate(0px, 0px);
-          -moz-transform: translate(0px, 0px);
-          -ms-transform: translate(0px, 0px);
-          transform: translate(0px, 0px);
+          -webkit-transform: translate(0, 0);
+          -moz-transform: translate(0, 0);
+          -ms-transform: translate(0, 0);
+          transform: translate(0, 0)
         }
 
         50% {
-          -webkit-transform: translate(2px, 0px);
-          -moz-transform: translate(2px, 0px);
-          -ms-transform: translate(2px, 0px);
-          transform: translate(2px, 0px);
+          -webkit-transform: translate(2px, 0);
+          -moz-transform: translate(2px, 0);
+          -ms-transform: translate(2px, 0);
+          transform: translate(2px, 0)
         }
 
         100% {
-          -webkit-transform: translate(0px, 0px);
-          -moz-transform: translate(0px, 0px);
-          -ms-transform: translate(0px, 0px);
-          transform: translate(0px, 0px);
+          -webkit-transform: translate(0, 0);
+          -moz-transform: translate(0, 0);
+          -ms-transform: translate(0, 0);
+          transform: translate(0, 0)
         }
       }
 
@@ -92,7 +92,7 @@
         animation-timing-function: linear;
         -webkit-animation-iteration-count: infinite;
         -moz-animation-iteration-count: infinite;
-        animation-iteration-count: infinite;
+        animation-iteration-count: infinite
       }
 
       /*
@@ -100,125 +100,125 @@
 */
       @keyframes am-weather-stroke {
         0% {
-          -webkit-transform: translate(0.0px, 0.0px);
-          -moz-transform: translate(0.0px, 0.0px);
-          -ms-transform: translate(0.0px, 0.0px);
-          transform: translate(0.0px, 0.0px);
+          -webkit-transform: translate(0, 0);
+          -moz-transform: translate(0, 0);
+          -ms-transform: translate(0, 0);
+          transform: translate(0, 0)
         }
 
         2% {
-          -webkit-transform: translate(0.3px, 0.0px);
-          -moz-transform: translate(0.3px, 0.0px);
-          -ms-transform: translate(0.3px, 0.0px);
-          transform: translate(0.3px, 0.0px);
+          -webkit-transform: translate(.3px, 0);
+          -moz-transform: translate(.3px, 0);
+          -ms-transform: translate(.3px, 0);
+          transform: translate(.3px, 0)
         }
 
         4% {
-          -webkit-transform: translate(0.0px, 0.0px);
-          -moz-transform: translate(0.0px, 0.0px);
-          -ms-transform: translate(0.0px, 0.0px);
-          transform: translate(0.0px, 0.0px);
+          -webkit-transform: translate(0, 0);
+          -moz-transform: translate(0, 0);
+          -ms-transform: translate(0, 0);
+          transform: translate(0, 0)
         }
 
         6% {
-          -webkit-transform: translate(0.5px, 0.4px);
-          -moz-transform: translate(0.5px, 0.4px);
-          -ms-transform: translate(0.5px, 0.4px);
-          transform: translate(0.5px, 0.4px);
+          -webkit-transform: translate(.5px, .4px);
+          -moz-transform: translate(.5px, .4px);
+          -ms-transform: translate(.5px, .4px);
+          transform: translate(.5px, .4px)
         }
 
         8% {
-          -webkit-transform: translate(0.0px, 0.0px);
-          -moz-transform: translate(0.0px, 0.0px);
-          -ms-transform: translate(0.0px, 0.0px);
-          transform: translate(0.0px, 0.0px);
+          -webkit-transform: translate(0, 0);
+          -moz-transform: translate(0, 0);
+          -ms-transform: translate(0, 0);
+          transform: translate(0, 0)
         }
 
         10% {
-          -webkit-transform: translate(0.3px, 0.0px);
-          -moz-transform: translate(0.3px, 0.0px);
-          -ms-transform: translate(0.3px, 0.0px);
-          transform: translate(0.3px, 0.0px);
+          -webkit-transform: translate(.3px, 0);
+          -moz-transform: translate(.3px, 0);
+          -ms-transform: translate(.3px, 0);
+          transform: translate(.3px, 0)
         }
 
         12% {
-          -webkit-transform: translate(0.0px, 0.0px);
-          -moz-transform: translate(0.0px, 0.0px);
-          -ms-transform: translate(0.0px, 0.0px);
-          transform: translate(0.0px, 0.0px);
+          -webkit-transform: translate(0, 0);
+          -moz-transform: translate(0, 0);
+          -ms-transform: translate(0, 0);
+          transform: translate(0, 0)
         }
 
         14% {
-          -webkit-transform: translate(0.3px, 0.0px);
-          -moz-transform: translate(0.3px, 0.0px);
-          -ms-transform: translate(0.3px, 0.0px);
-          transform: translate(0.3px, 0.0px);
+          -webkit-transform: translate(.3px, 0);
+          -moz-transform: translate(.3px, 0);
+          -ms-transform: translate(.3px, 0);
+          transform: translate(.3px, 0)
         }
 
         16% {
-          -webkit-transform: translate(0.0px, 0.0px);
-          -moz-transform: translate(0.0px, 0.0px);
-          -ms-transform: translate(0.0px, 0.0px);
-          transform: translate(0.0px, 0.0px);
+          -webkit-transform: translate(0, 0);
+          -moz-transform: translate(0, 0);
+          -ms-transform: translate(0, 0);
+          transform: translate(0, 0)
         }
 
         18% {
-          -webkit-transform: translate(0.3px, 0.0px);
-          -moz-transform: translate(0.3px, 0.0px);
-          -ms-transform: translate(0.3px, 0.0px);
-          transform: translate(0.3px, 0.0px);
+          -webkit-transform: translate(.3px, 0);
+          -moz-transform: translate(.3px, 0);
+          -ms-transform: translate(.3px, 0);
+          transform: translate(.3px, 0)
         }
 
         20% {
-          -webkit-transform: translate(0.0px, 0.0px);
-          -moz-transform: translate(0.0px, 0.0px);
-          -ms-transform: translate(0.0px, 0.0px);
-          transform: translate(0.0px, 0.0px);
+          -webkit-transform: translate(0, 0);
+          -moz-transform: translate(0, 0);
+          -ms-transform: translate(0, 0);
+          transform: translate(0, 0)
         }
 
         22% {
-          -webkit-transform: translate(1px, 0.0px);
-          -moz-transform: translate(1px, 0.0px);
-          -ms-transform: translate(1px, 0.0px);
-          transform: translate(1px, 0.0px);
+          -webkit-transform: translate(1px, 0);
+          -moz-transform: translate(1px, 0);
+          -ms-transform: translate(1px, 0);
+          transform: translate(1px, 0)
         }
 
         24% {
-          -webkit-transform: translate(0.0px, 0.0px);
-          -moz-transform: translate(0.0px, 0.0px);
-          -ms-transform: translate(0.0px, 0.0px);
-          transform: translate(0.0px, 0.0px);
+          -webkit-transform: translate(0, 0);
+          -moz-transform: translate(0, 0);
+          -ms-transform: translate(0, 0);
+          transform: translate(0, 0)
         }
 
         26% {
-          -webkit-transform: translate(-1px, 0.0px);
-          -moz-transform: translate(-1px, 0.0px);
-          -ms-transform: translate(-1px, 0.0px);
-          transform: translate(-1px, 0.0px);
+          -webkit-transform: translate(-1px, 0);
+          -moz-transform: translate(-1px, 0);
+          -ms-transform: translate(-1px, 0);
+          transform: translate(-1px, 0)
 
         }
 
         28% {
-          -webkit-transform: translate(0.0px, 0.0px);
-          -moz-transform: translate(0.0px, 0.0px);
-          -ms-transform: translate(0.0px, 0.0px);
-          transform: translate(0.0px, 0.0px);
+          -webkit-transform: translate(0, 0);
+          -moz-transform: translate(0, 0);
+          -ms-transform: translate(0, 0);
+          transform: translate(0, 0)
         }
 
         40% {
           fill: orange;
-          -webkit-transform: translate(0.0px, 0.0px);
-          -moz-transform: translate(0.0px, 0.0px);
-          -ms-transform: translate(0.0px, 0.0px);
-          transform: translate(0.0px, 0.0px);
+          -webkit-transform: translate(0, 0);
+          -moz-transform: translate(0, 0);
+          -ms-transform: translate(0, 0);
+          transform: translate(0, 0)
         }
 
         65% {
           fill: white;
-          -webkit-transform: translate(-1px, 5.0px);
-          -moz-transform: translate(-1px, 5.0px);
-          -ms-transform: translate(-1px, 5.0px);
-          transform: translate(-1px, 5.0px);
+          -webkit-transform: translate(-1px, 5px);
+          -moz-transform: translate(-1px, 5px);
+          -ms-transform: translate(-1px, 5px);
+          transform: translate(-1px, 5px)
         }
 
         61% {
@@ -226,10 +226,10 @@
         }
 
         100% {
-          -webkit-transform: translate(0.0px, 0.0px);
-          -moz-transform: translate(0.0px, 0.0px);
-          -ms-transform: translate(0.0px, 0.0px);
-          transform: translate(0.0px, 0.0px);
+          -webkit-transform: translate(0, 0);
+          -moz-transform: translate(0, 0);
+          -ms-transform: translate(0, 0);
+          transform: translate(0, 0)
         }
       }
 
@@ -245,7 +245,7 @@
         animation-timing-function: linear;
         -webkit-animation-iteration-count: infinite;
         -moz-animation-iteration-count: infinite;
-        animation-iteration-count: infinite;
+        animation-iteration-count: infinite
       }
       ]]>
     </style>
@@ -254,12 +254,12 @@
     <g class="am-weather-cloud-1">
       <path transform="translate(-20,-11)"
         d="m47.7 35.4c0-4.6-3.7-8.2-8.2-8.2-1 0-1.9 0.2-2.8 0.5-0.3-3.4-3.1-6.2-6.6-6.2-3.7 0-6.7 3-6.7 6.7 0 0.8 0.2 1.6 0.4 2.3-0.3-0.1-0.7-0.1-1-0.1-3.7 0-6.7 3-6.7 6.7 0 3.6 2.9 6.6 6.5 6.7h17.2c4.4-0.5 7.9-4 7.9-8.4z"
-        fill="#91c0f8" stroke="#fff" stroke-linejoin="round" stroke-width="1.2" />
+        fill="#91c0f8" stroke="#fff" stroke-linejoin="round" stroke-width="1.2"/>
     </g>
     <g class="am-weather-lightning" transform="matrix(1.2,0,0,1.2,-4,28)">
       <polygon class="am-weather-stroke" points="11.1 6.9 14.3 -2.9 20.5 -2.9 16.4 4.3 20.3 4.3 11.5 14.6 14.9 6.9"
         fill="#ffa500" stroke="#fff"
-        style="-moz-animation-duration:1.11s;-moz-animation-iteration-count:infinite;-moz-animation-name:am-weather-stroke;-moz-animation-timing-function:linear;-webkit-animation-duration:1.11s;-webkit-animation-iteration-count:infinite;-webkit-animation-name:am-weather-stroke;-webkit-animation-timing-function:linear" />
+        style="-moz-animation-duration:1.11s;-moz-animation-iteration-count:infinite;-moz-animation-name:am-weather-stroke;-moz-animation-timing-function:linear;-webkit-animation-duration:1.11s;-webkit-animation-iteration-count:infinite;-webkit-animation-name:am-weather-stroke;-webkit-animation-timing-function:linear"/>
     </g>
   </g>
 </svg>

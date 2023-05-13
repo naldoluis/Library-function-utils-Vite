@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { Alert, Button, Card, Col, Form, FormControl, InputGroup } from 'react-bootstrap'
+import { Alert, Button, Card, Col, Form, InputGroup } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faEye, faEyeLowVision, faKey, faLock, faSignInAlt, faUndo } from '@fortawesome/free-solid-svg-icons'
 import { authenticateUser } from '../../services'
@@ -69,7 +69,7 @@ export default function Login() {
                    <InputGroup.Text className="envelope">
                      <FontAwesomeIcon icon={faEnvelope}/>
                    </InputGroup.Text>
-                  <FormControl
+                  <Form.Control
                     required
                     autoComplete="off"
                     name="email"
@@ -86,7 +86,7 @@ export default function Login() {
                    <InputGroup.Text className="lock">
                      <FontAwesomeIcon icon={faLock}/>
                    </InputGroup.Text>
-                  <FormControl
+                  <Form.Control
                     required
                     autoComplete="off"
                     type={values.showPassword ? "text" : "password"}

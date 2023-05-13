@@ -148,7 +148,7 @@ class BookList extends React.Component {
     const { books, currentPage, totalPages, search } = this.state
 
     return (
-      <div>
+      <>
         <div style={{ display: this.state.show ? "block" : "none" }}>
           <MyToast message={i18n.t('toast.deleteBook')} type="danger"/>
         </div>
@@ -160,11 +160,11 @@ class BookList extends React.Component {
             <div style={{ float: "right" }}>
               <InputGroup size="sm">
                 <FormControl
-                  placeholder="Search"
                   name="search"
                   value={search}
                   className="border-secondary bg-dark text-white"
                   onChange={this.searchChange}
+                  placeholder={i18n.t('input.search')}
                 />
                   <Button
                     className="find"
@@ -250,9 +250,10 @@ class BookList extends React.Component {
                     <b className="prev-fast" onClick={this.firstPage}>➤➤</b>
                     <b className="prev-page" onClick={this.prevPage}>➤</b>
                   <FormControl
-                    className="border-secondary text-white page-num bg-dark"
+                    id="numberPage"
                     value={currentPage}
                     onChange={this.changePage}
+                    className="border-secondary text-white page-num bg-dark"
                    />
                     <b className="next-page" onClick={this.nextPage}>➤</b>
                     <b className="next-fast" onClick={this.lastPage}>➤➤</b>
@@ -261,7 +262,7 @@ class BookList extends React.Component {
             </Card.Footer>
           ) : null}
         </Card>
-      </div>
+      </>
     )}}
 
 const mapStateToProps = state => {

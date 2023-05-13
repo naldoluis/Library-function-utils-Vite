@@ -32,11 +32,11 @@ export default function QrCode() {
   })
 
   return (
-    <div>
+    <>
       <input className="bg-dark text-light"
         id="text"
         defaultValue="https://m.media-amazon.com/images/I/61J6t27YllL.jpg"
         style={{ fontSize: 9, marginTop: 12 }}/>
       <div id="qrcode"></div>
-    </div>
+    </>
   )}

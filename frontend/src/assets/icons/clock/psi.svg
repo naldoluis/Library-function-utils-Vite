@@ -13,28 +13,18 @@
 		>
           <animateTransform id="asec" attributeName="transform" type="rotate" from="0,347.3,457.5" to="2,367.3,457.5" dur="11s" repeatCount="indefinite" />
         </path>
-
 	<circle fill="#C4B291" cx="1277.398" cy="1012.714" r="38.505"/>
 	<path d="M1280,484.399c-309.023,0-559.536,249.736-559.536,557.8S970.977,1600,1280,1600s559.536-249.736,559.536-557.8
 		S1589.024,484.399,1280,484.399z M1280,1536.866c-277.891,0-503.165-224.576-503.165-501.604S1002.11,533.657,1280,533.657
 		s503.165,224.576,503.165,501.604S1557.891,1536.866,1280,1536.866z"/>
-	
 		<line fill="none" stroke="#000000" stroke-width="11.192" stroke-miterlimit="10" x1="1277.398" y1="583.524" x2="1277.398" y2="662.619"/>
-	
 		<line fill="none" stroke="#000000" stroke-width="11.192" stroke-miterlimit="10" x1="1491.993" y1="641.024" x2="1452.446" y2="709.523"/>
-	
 		<line fill="none" stroke="#000000" stroke-width="11.192" stroke-miterlimit="10" x1="1649.088" y1="798.119" x2="1580.589" y2="837.666"/>
-	
 		<line fill="none" stroke="#000000" stroke-width="11.192" stroke-miterlimit="10" x1="1706.588" y1="1012.714" x2="1627.493" y2="1012.714"/>
-	
 		<line fill="none" stroke="#000000" stroke-width="11.192" stroke-miterlimit="10" x1="1649.088" y1="1227.309" x2="1580.589" y2="1187.761"/>
-	
 		<line fill="none" stroke="#000000" stroke-width="11.192" stroke-miterlimit="10" x1="905.709" y1="1227.309" x2="974.207" y2="1187.761"/>
-	
 		<line fill="none" stroke="#000000" stroke-width="11.192" stroke-miterlimit="10" x1="848.209" y1="1012.714" x2="927.304" y2="1012.714"/>
-	
 		<line fill="none" stroke="#000000" stroke-width="11.192" stroke-miterlimit="10" x1="905.709" y1="798.119" x2="974.207" y2="837.666"/>
-	
 		<line fill="none" stroke="#000000" stroke-width="11.192" stroke-miterlimit="10" x1="1062.803" y1="641.024" x2="1102.351" y2="709.523"/>
 	<g>
 		<path d="M1201.816,932.166c0-3.937-0.127-7.111-0.253-10.032h5.015l0.254,5.27h0.127c2.286-3.746,5.905-5.968,10.92-5.968

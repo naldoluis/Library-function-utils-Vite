@@ -19,18 +19,6 @@
     inkscape:version="0.46"
     sodipodi:docbase="/home/fzap"
   >
-  
-  <desc>
-    Animated Clock
-    
-    Original work: https://openclipart.org/detail/16605/clock-sportstudio-design
-    
-    Modified to set the clock time and animate the hands
-    
-    Jay Nick
-    steamcoded.org
-  </desc>
-  
   <defs
       id="defs4"
     >
@@ -184,58 +172,55 @@
       inkscape:pageopacity="0.0"
       inkscape:document-units="px"
   />
-
   <script type="application/x-javascript"><![CDATA[
-    var Clock = new function()
+    const Clock = new function()
     {
-      window.addEventListener("load", setClock);
+      window.addEventListener("load", setClock)
 
       function setClock()
       {
-        var sec;
-        var min;
-        var hr;
-        var deg;
-        var node;
-        
-        var dt = new Date();
-        var deg=0;
-      
-        min = dt.getMinutes();
-        sec = dt.getSeconds();
-        ms = dt.getMilliseconds();
+        let sec
+        let min
+        let hr
+        let deg
+        let node
 
-        deg = (360/60)*(sec+ms/1000);
-        node = document.getElementById("seconds");
-        deg %= 360;
-        node.setAttribute("transform","rotate("+deg+",153.65,154.2)");
+        let dt = new Date()
+        let deg = 0
 
-        deg = (360/3600)*(60*min+sec);
-        node = document.getElementById("minutes");
-        deg %= 360;
-        node.setAttribute("transform","rotate("+deg+",153.65,154.2)");
-        
-        hr = dt.getHours();
-        deg = 30*hr + 30/60*min;
-        var node = document.getElementById("hours");
-        //deg-=150;
-        deg %= 360;
-        node.setAttribute("transform","rotate("+deg+",153.65,154.2)");
-        
-        document.getElementById("asec").beginElement();
-        document.getElementById("amin").beginElement();
-        document.getElementById("ahr").beginElement();
-        
-        var timeout = ((60-dt.getSeconds())%60)*1000;
-        timeout-=dt.getMilliseconds/1000;
-        
-        setTimeout(setClock,timeout);
+        min = dt.getMinutes()
+        sec = dt.getSeconds()
+        ms = dt.getMilliseconds()
+
+        deg = (360 / 60) * (sec + ms / 1000)
+        node = document.getElementById("seconds")
+        deg %= 360
+        node.setAttribute("transform", "rotate(" + deg + ",153.65,154.2)")
+
+        deg = (360 / 3600) * (60 * min + sec)
+        node = document.getElementById("minutes")
+        deg %= 360
+        node.setAttribute("transform", "rotate(" + deg + ",153.65,154.2)")
+
+        hr = dt.getHours()
+        deg = 30 * hr + 30 / 60 * min
+        let node = document.getElementById("hours")
+
+        deg %= 360
+        node.setAttribute("transform", "rotate(" + deg + ",153.65,154.2)")
+
+        document.getElementById("asec").beginElement()
+        document.getElementById("amin").beginElement()
+        document.getElementById("ahr").beginElement()
+
+        let timeout = ((60 - dt.getSeconds()) % 60) * 1000
+        timeout -= dt.getMilliseconds / 1000
+
+        setTimeout(setClock, timeout)
       }
-    }();
+    }()
   ]]>
   </script>
-  
-
   <g
       id="layer1"
       inkscape:label="Ebene 1"

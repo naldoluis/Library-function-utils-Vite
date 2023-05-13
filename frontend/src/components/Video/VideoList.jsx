@@ -67,7 +67,7 @@ class VideoList extends React.Component {
     <Card className="card-video">
       <Card.Header>
         <b style={{ color: "#fff", fontWeight: 400 }}>
-            {i18n.t('navigate.video')} 🎬
+            🎬 {i18n.t('navigate.video')}
           </b>
            <Card.Body className="row" style={{ overflowY: "scroll", height: 480 }}>
            {books.length === 0 ? (

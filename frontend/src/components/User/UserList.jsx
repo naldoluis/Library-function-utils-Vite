@@ -74,7 +74,7 @@ class UserList extends React.Component {
     const totalPages = users && users.length / usersPerPage
 
     return (
-      <div>
+      <>
         {userData.error ? (
           <Alert variant="danger">{userData.error}</Alert>
         ) : (
@@ -124,9 +124,10 @@ class UserList extends React.Component {
                      <b className="prev-fast" onClick={this.firstPage}>➤➤</b>
                      <b className="prev-page" onClick={this.prevPage}>➤</b>
                    <FormControl
-                     className="border-secondary text-white page-num bg-dark"
+                     id="numberPage"
                      value={currentPage}
                      onChange={this.changePage}
+                     className="border-secondary text-white page-num bg-dark"
                     />
                      <b className="next-page" onClick={this.nextPage}>➤</b>
                      <b className="next-fast" onClick={this.lastPage}>➤➤</b>
@@ -136,7 +137,7 @@ class UserList extends React.Component {
             ) : null}
           </Card>
         )}
-      </div>
+      </>
     )}}
 
 const mapStateToProps = state => {

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { Button, Col, Card, Form, FormControl, InputGroup } from 'react-bootstrap'
+import { Button, Col, Card, Form, InputGroup } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faEye, faEyeLowVision, faLock, faPhone, faUserPlus, faUndo, faUser } from '@fortawesome/free-solid-svg-icons'
 import { registerUser } from '../../services'
@@ -68,7 +68,7 @@ export default function Register() {
                     <InputGroup.Text className="name">
                       <FontAwesomeIcon icon={faUser}/>
                     </InputGroup.Text>
-                    <FormControl
+                    <Form.Control
                       autoComplete="off"
                       pattern="[A-Za-za ]{2,25}"
                       maxLength={25}
@@ -85,7 +85,7 @@ export default function Register() {
                     <InputGroup.Text className="envelope">
                       <FontAwesomeIcon icon={faEnvelope}/>
                     </InputGroup.Text>
-                    <FormControl
+                    <Form.Control
                       required
                       autoComplete="off"
                       name="email"
@@ -102,7 +102,7 @@ export default function Register() {
                     <InputGroup.Text className="lock">
                       <FontAwesomeIcon icon={faLock}/>
                     </InputGroup.Text>
-                    <FormControl
+                    <Form.Control
                       required
                       autoComplete="off"
                       type={values.showPassword ? "text" : "password"}
@@ -126,7 +126,7 @@ export default function Register() {
                     <InputGroup.Text className="phone">
                       <FontAwesomeIcon icon={faPhone}/>
                     </InputGroup.Text>
-                    <FormControl
+                    <Form.Control
                       autoComplete="off"
                       name="mobile"
                       pattern="[0-9]{2}-[0-9]{5}-[0-9]{4}"
