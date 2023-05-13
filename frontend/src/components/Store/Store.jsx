@@ -87,9 +87,9 @@ class Store extends React.Component {
     return (
       <Card className="card-store">
         <div style={{ display: this.state.show ? "block" : "none" }}>
-            <MyToastPurchase message={i18n.t('toast.purchase')}/>
+           <MyToastPurchase message={i18n.t('toast.purchase')}/>
         </div>
-        <Card.Header>
+         <Card.Header>
           <b style={{ color: "#fff", fontWeight: 400 }}>
             <FontAwesomeIcon icon={faBookQuran}/> {i18n.t('messages.edition')}
           </b>
@@ -109,9 +109,9 @@ class Store extends React.Component {
                 <div className="col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3 text-white"
                   key={book.id}>
                   <img className="card-photo" src={book.photo}/>
-                  <p style={{ margin: "6px 62px 0 0", fontSize: 15, textAlign: "center", fontWeight: 600 }}>{book.title}</p>
-                  <p style={{ margin: "1px 59px 0 0", fontSize: 12.5, textAlign: "center" }}>{book.genre}</p>
-                  <p style={{ margin: "1px 59px 0 0", fontSize: 12.5, textAlign: "center" }}>{book.language}</p>
+                    <p style={{ margin: "6px 62px 0 0", fontSize: 15, textAlign: "center", fontWeight: 600 }}>{book.title}</p>
+                    <p style={{ margin: "1px 59px 0 0", fontSize: 12.5, textAlign: "center" }}>{book.genre}</p>
+                    <p style={{ margin: "1px 59px 0 0", fontSize: 12.5, textAlign: "center" }}>{book.language}</p>
                   {/* <button className="purchase-button" onClick={() => this.openModalVanilla()}>
                     <FontAwesomeIcon icon={faMoneyBills}/> Buy
                   </button> */}

@@ -152,7 +152,7 @@ class BookList extends React.Component {
         <div style={{ display: this.state.show ? "block" : "none" }}>
           <MyToast message={i18n.t('toast.deleteBook')} type="danger"/>
         </div>
-        <Card className="border-secondary bg-dark text-white">
+         <Card className="border-secondary bg-dark text-white">
           <Card.Header>
             <div style={{ float: "left" }}>
               <FontAwesomeIcon icon={faList}/> {i18n.t('messages.bookList')}
@@ -185,7 +185,7 @@ class BookList extends React.Component {
               </InputGroup>
             </div>
           </Card.Header>
-          <Card.Body>
+           <Card.Body>
             <Table bordered hover striped variant="dark">
               <thead>
                 <tr className="table-title">
