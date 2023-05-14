@@ -165,7 +165,7 @@ export default function Book() {
                   placeholder={i18n.t('input.book')}
                 />
               </Form.Group>
-              <Form.Group as={Col}>
+               <Form.Group as={Col}>
                 <div className="py-2">
                   {i18n.t('tableBook.author')} ✏️
                 </div>
@@ -182,7 +182,7 @@ export default function Book() {
               </Form.Group>
             </div>
             <div className="form-row">
-            <Form.Group as={Col}>
+             <Form.Group as={Col}>
               <div className="py-2">
                 {i18n.t('tableBook.photoUrl')} <img className="cam" src={iconCam}/>
               </div>
@@ -200,7 +200,7 @@ export default function Book() {
                  )}
                </div>
               </Form.Group>
-              <Form.Group as={Col}>
+               <Form.Group as={Col}>
                 <div className="py-2">
                   {i18n.t('tableBook.isbn')} ▥
                 </div>
@@ -232,7 +232,7 @@ export default function Book() {
                   placeholder={i18n.t('input.price')}
                 />
               </Form.Group>
-              <Form.Group as={Col}>
+               <Form.Group as={Col}>
                 <div className="py-2">
                   {i18n.t('tableBook.language')} <img className="lang" src={iconLang}/>
                 </div>
@@ -260,7 +260,7 @@ export default function Book() {
                   ))} */}
                 </Form.Control>
               </Form.Group>
-              <Form.Group as={Col}>
+               <Form.Group as={Col}>
                 <div className="py-2">
                   {i18n.t('tableBook.genre')} 📚
                 </div>
