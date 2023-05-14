@@ -34,12 +34,11 @@ export default function Login() {
 
   const validateUser = () => {
     dispatch(authenticateUser(user.email, user.password))
-      .then(response => {
-        console.log(response.data)
+      .then(() => {
         navigate("/home")
       })
       .catch(error => {
-        console.log(error.message)
+        console.log('Email or password incorrect: ' + error.message)
         setShow(true)
         resetLoginForm()
         setError(" ⛔️ • Email or password invalid !")

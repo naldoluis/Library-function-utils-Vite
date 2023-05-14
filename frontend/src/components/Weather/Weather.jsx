@@ -160,8 +160,8 @@ useEffect(() => {
           <div className="weather" style={{ marginTop: -84 }}>{i18n.t('weather.forecast')}</div>
          <div className="low-high">20°c 🔆 / 19°c ❄</div>
         </div>
-        <div className="input-group py-3">
-        <input id="search" maxLength={30} className="form-control bg-dark text-white" placeholder={i18n.t('weather.input')}/>
+        <div className="input-group py-3 justify-content-md-center">
+        <input id="search" maxLength={30} className="form-control col-8 bg-dark text-white" placeholder={i18n.t('weather.input')}/>
          <div className="card-footer">
           <button style={{ marginTop: -18 }} className="search-weather btn btn-outline-success text-white bg-success">
             <FontAwesomeIcon icon={faSearch}/>
