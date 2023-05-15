@@ -16,9 +16,8 @@ export default function ModalCustom(props) {
           dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
           consectetur ac, vestibulum at eros.
         </p>
-          <input id="modal" maxLength={24} placeholder={i18n.t('input.modal')}/>
-        <img src='https://www.thomasvitale.com/content/images/2020/09/cloud-native-spring-boot-kubernetes-meap.jpg'
-         style={{ width: 400, height: 210, marginLeft: 150, borderRadius: 4 }}/>
+        <input id="modal" maxLength={24} placeholder={i18n.t('input.modal')}/>
+       <img src='https://www.thomasvitale.com/content/images/2020/09/cloud-native-spring-boot-kubernetes-meap.jpg' style={{ width: 400, height: 210, marginLeft: 150, borderRadius: 4 }}/>
       </Modal.Body>
       <Modal.Footer style={{ background: "#3c3c3c" }}>
         <Button size="sm" variant="success" onClick={props.onHide}>{i18n.t('buttons.buy')}</Button>

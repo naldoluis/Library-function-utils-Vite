@@ -2,6 +2,7 @@ import { Card } from 'react-bootstrap'
 import { useEffect } from 'react'
 import { i18n } from '../../assets/translate/i18n'
 import QrCode from '../QrCode'
+//import BarCode from '../BarCode'
 
 export default function Bonus() {
 
@@ -47,6 +48,7 @@ export default function Bonus() {
                  </div>
                  <div style={{ margin: "-89px 0 0 7px" }}>
                 <QrCode/>
+               {/* <BarCode/> */}
                <img src="https://www.danyprint.com.br/wp-content/uploads/2020/08/codigo-de-barras.png" style={{ width: 150, height: 50, margin: -20 }}/>
               </div>
              </div>

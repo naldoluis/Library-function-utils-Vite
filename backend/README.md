@@ -480,12 +480,10 @@ public class BookService implements IServiceBook<Book> {
 		return dto;
 	}
 
-	@Override
 	public Book saveOrUpdate(Book book) {
 		return bookRepository.save(book);
 	}
 
-	@Override
 	public String deleteById(Long id) {
 		JSONObject jsonObject = new JSONObject();
 		try {
@@ -555,7 +553,6 @@ public class SpringSecurityConfig implements WebMvcConfigurer {
     @Value("${cors.origins}")
     private String corsOrigins;
 
-    @Override
     public void addCorsMappings(CorsRegistry registry) {
         String[] origins = corsOrigins.split(",");
         registry.addMapping("/**")
