@@ -11,7 +11,7 @@ export default function Bonus() {
       max: 29,
       speed: 1000,
       glare: false,
-      "max-glare": 1
+      "max-glare": .5
     })
   })
 
