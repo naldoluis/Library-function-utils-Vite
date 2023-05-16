@@ -7,11 +7,11 @@ export default function BarCode() {
       let barcodeValue = document.getElementById("barcodeValue").value
       let barcodeType = document.getElementById("barcodeType").value
       let showText = document.getElementById("showText").value
-    JsBarcode("#barcode", barcodeValue, {
+      JsBarcode("#barcode", barcodeValue, {
         format: barcodeType,
         displayValue: showText,
         lineColor: "#24292e",
-        width: 2,
+        width: 2.5,
         height: 40,
         fontSize: 20
       })
@@ -25,8 +25,8 @@ export default function BarCode() {
          <div className="form-group">
           <input
             id="barcodeValue"
-            maxLength={9}
-            defaultValue="1203456"
+            defaultValue="12034567898"
+            maxLength={11}
             className="form-control"
           />
           </div>
@@ -48,6 +48,7 @@ export default function BarCode() {
           <input
             type="button"
             defaultValue="Generate"
+            variant="outline-success"
             onChange={JsBarcode}
             className="btn-success form-control"
           />
