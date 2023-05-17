@@ -7,7 +7,6 @@ export default function BarCode() {
   })
 
   return (
-    <div>
       <svg
         className="barcode"
         jsbarcode="barcodeType"
@@ -17,5 +16,4 @@ export default function BarCode() {
         jsbarcode-width="2.5"
         jsbarcode-height="25">
       </svg>
-    </div>
   )}
