@@ -296,7 +296,6 @@ export default function Book() {
             </Button>{" "}
             <Button
               size="sm"
-              type="reset"
               variant="info"
               onClick={resetBook}
             >

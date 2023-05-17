@@ -12,7 +12,6 @@ export default function QrCode() {
       let elText = document.getElementById("text")
 
       if (!elText.value) {
-        console.log("Error: Input a text.")
         elText.focus()
         return
       }

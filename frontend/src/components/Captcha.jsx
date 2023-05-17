@@ -80,7 +80,7 @@ export default function Captcha() {
             onChange={handleChange}
             style={{ width: 200, margin: "13px 0 0 10px" }}
             placeholder={i18n.t('input.captcha')}/>
-        <Button type="button" id="successBTN" onClick={onSubmit} style={{ margin: "12px 0 0 8px", border: "none" }}>
+        <Button id="successBTN" onClick={onSubmit} style={{ margin: "12px 0 0 8px", border: "none" }}>
           {i18n.t('buttons.captcha')}
         </Button>
       </div>
