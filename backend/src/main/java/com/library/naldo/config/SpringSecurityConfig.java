@@ -22,6 +22,17 @@ public class SpringSecurityConfig {
 	@Autowired
 	private JwtTokenProvider tokenProvider;
 
+/* 	@Autowired
+	private CaptchaAuthenticationProvider authenticationProvider;
+
+	@Override
+	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+		auth.authenticationProvider(authenticationProvider);
+	}
+
+	@Autowired
+	private CaptchaDetailsSource detailsSource; */
+
 	@Bean
 	public PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();

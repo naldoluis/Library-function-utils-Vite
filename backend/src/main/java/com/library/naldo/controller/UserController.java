@@ -1,5 +1,8 @@
 package com.library.naldo.controller;
 
+import nl.captcha.Captcha;
+import jakarta.servlet.http.HttpSession;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
 import org.slf4j.Logger;
@@ -13,14 +16,19 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.ui.ModelMap;
+import com.library.naldo.captcha.CaptchaGenerator;
+import com.library.naldo.captcha.CaptchaUtils;
 import com.library.naldo.config.JwtTokenProvider;
 import com.library.naldo.domain.User;
 import com.library.naldo.repository.RoleRepository;
 import com.library.naldo.repository.UserRepository;
+import com.library.naldo.utils.ConstantCaptcha;
 import com.library.naldo.utils.ConstantUtils;
 
 @RestController
@@ -41,6 +49,37 @@ public class UserController {
 
 	@Autowired
 	private UserRepository userRepository;
+
+	@Autowired
+	private CaptchaGenerator captchaGenerator;
+
+	@ModelAttribute("counter")
+	public AtomicInteger failureCounter() {
+		return new AtomicInteger(0);
+	}
+
+	@RequestMapping("/login")
+	public String login(ModelMap model, HttpSession httpSession) {
+		Object error = httpSession.getAttribute("error");
+		if (error != null) {
+			model.addAttribute("error", error);
+			httpSession.removeAttribute("error");
+		}
+
+		Object message = httpSession.getAttribute("message");
+		if (message != null) {
+			model.addAttribute("message", message);
+			httpSession.removeAttribute("message");
+		}
+
+		AtomicInteger counter = (AtomicInteger) model.get("counter");
+		if(counter.intValue() >= ConstantCaptcha.MAX_CAPTCHA_TRIES) {
+			Captcha captcha = captchaGenerator.createCaptcha(200, 50);
+			httpSession.setAttribute("captcha", captcha);
+			model.addAttribute("captchaEncode", CaptchaUtils.encodeBase64(captcha));
+		}
+		return "login";
+	}
 
 	@PostMapping(value = "/register", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<String> register(@RequestBody User user) {
