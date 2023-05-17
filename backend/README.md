@@ -1868,6 +1868,75 @@ div {overflow: hidden;position: relative;width: 350px;height: 200px}
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
                                                                                                                           - ❐ ❌
+# BarCode
+
+import { useEffect } from 'react'
+
+export default function BarCode() {
+
+  useEffect(() => {
+    const generateBarcode = () => {
+      let barcodeValue = document.getElementById("barcodeValue").value
+      let barcodeType = document.getElementById("barcodeType").value
+      let showText = document.getElementById("showText").value
+
+      JsBarcode("#barcode", barcodeValue, {
+        format: barcodeType,
+        displayValue: showText,
+        lineColor: "#24292e",
+        width: 2.5,
+        height: 40
+      })
+    }
+    generateBarcode()
+  })
+
+  return (
+    <div className="codeContainer">
+      <div className="pd-15">
+        <div className="form-group">
+          <input
+            id="barcodeValue"
+            defaultValue="12034567898"
+            maxLength={11}
+            className="form-control"
+          />
+        </div>
+        <div className="form-group">
+          <select id="barcodeType" className="form-control">
+            <option value="code128">Code 128</option>
+            <option value="codabar">Codabar</option>
+            <option value="code39">Code 39</option>
+            <option value="msi">MSI</option>
+            <option value="pharmacode">Pharmacode</option>
+          </select>
+        </div>
+        <div className="form-group">
+          <select id="showText" className="form-control">
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+          </select>
+        </div>
+        <input
+          type="button"
+          defaultValue="Generate"
+          variant="outline-success"
+          onChange={JsBarcode}
+          className="btn-success form-control"
+        />
+        <svg id="barcode"></svg>
+      </div>
+    </div>
+  )}
+
+/* =================================================== BarCode 1 ======================================================== */
+
+.codeContainer {margin-top: 50px;border-radius: 10px;padding: 0;background: #fff;box-shadow: 0 4px 5px 0 #00000024, 0 1px 10px 0 #0000001f, 0 2px 4px -1px #0000004d}
+.banner {background: #e0dddd;margin: 0;padding: 15px;border-top-left-radius: 10px;border-top-right-radius: 10px}
+.pd-15 {padding: 15px}
+
+!J------------------------------------------------------------------------------------------------------------------------------J!
+                                                                                                                          - ❐ ❌
 # Weather
 
 HTML
@@ -2232,17 +2301,6 @@ onSwipeMove	                   –	              Executar alguma função no car
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
                                                                                                                           - ❐ ❌
-# Chrome
-
-      --disable-web-security --user-data-dir="C:\Users\Naldo.Luis.167\AppData\Local\Google\Chrome\User Data"
-                                                             \
-                                                             🔎 YOU USER
-      --enable-usermedia-screen-capturing
-      --allow-http-screen-capture
-      --start-fullscreen
-      --kiosk
-      --disable-infobars
-
 # icons
 
 >                                                https://fontawesome.com/search
