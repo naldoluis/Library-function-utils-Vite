@@ -1599,17 +1599,18 @@ useEffect(() => {
                     </div>
                   </div>
                 </InputGroup.Text>
-                {/* <Form.Group>
-                   <InputGroup.Text className="key">
-                     <FontAwesomeIcon icon={faKey}/>
-                   </InputGroup.Text>
-								  <div className="col-md-6">
-									  <img src="http://localhost:8080/rest/captcha-servlet"/>
-								  </div>
-								  <div className="col-md-7">
-									  <FormControl path="captcha" placeholder={i18n.t('input.captcha')} maxLength={7} required/>
-								  </div>
-							  </Form.Group> */}
+
+              <Form.Group>
+                <InputGroup.Text className="key">
+                  <FontAwesomeIcon icon={faKey}/>
+                </InputGroup.Text>
+								<div className="col-md-6">
+									<img src="http://localhost:8080/rest/captcha-servlet"/>
+								</div>
+								<div className="col-md-7">
+									<Form.Control path="captcha" id="captcha" placeholder={i18n.t('input.captcha')} maxLength={7} required/>
+								</div>
+							</Form.Group>
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
                                                                                                                           - ❐ ❌
