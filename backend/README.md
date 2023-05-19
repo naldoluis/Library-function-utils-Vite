@@ -1604,10 +1604,10 @@ useEffect(() => {
                 <InputGroup.Text className="key">
                   <FontAwesomeIcon icon={faKey}/>
                 </InputGroup.Text>
-								<div className="col-md-6">
+								<div className="col-6">
 									<img src="http://localhost:8080/rest/captcha-servlet"/>
 								</div>
-								<div className="col-md-7">
+								<div className="col-7">
 									<Form.Control path="captcha" id="captcha" placeholder={i18n.t('input.captcha')} maxLength={7} required/>
 								</div>
 							</Form.Group>

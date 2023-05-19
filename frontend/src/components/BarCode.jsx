@@ -9,7 +9,6 @@ export default function BarCode() {
   return (
       <svg
         className="barcode"
-        jsbarcode="barcodeType"
         jsbarcode-value="1234567890"
         jsbarcode-textmargin="0"
         jsbarcode-linecolor="#24292e"
