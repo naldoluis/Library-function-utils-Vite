@@ -22,7 +22,6 @@ public class User {
 	private String email;
 	private String mobile;
 	private String password;
-	private transient String captcha;
 
 	@ManyToOne
 	@JoinColumn(name = "role_id")

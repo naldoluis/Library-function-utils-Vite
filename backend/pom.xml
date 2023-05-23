@@ -59,13 +59,6 @@
 			<version>1.0</version>
 		</dependency>
 		<dependency>
-			<groupId>nl.captcha</groupId>
-			<artifactId>simplecaptcha</artifactId>
-			<version>2.0</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/lib/simplecaptcha-1.2.jar</systemPath>
-		</dependency>
-		<dependency>
 			<groupId>com.google.zxing</groupId>
 			<artifactId>core</artifactId>
 			<version>3.4.0</version>
