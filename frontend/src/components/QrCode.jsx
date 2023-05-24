@@ -27,7 +27,7 @@ export default function QrCode() {
         if (e.keyCode == 13) {
           makeCode()
         }
-      })
+     })
   })
 
   return (

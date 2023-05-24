@@ -1,7 +1,6 @@
 package com.library.naldo.repository;
 
 import java.util.Collection;
-import java.util.List;
 import java.util.Optional;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -19,5 +18,4 @@ public interface BookRepository extends PagingAndSortingRepository<Book, Long> {
     Book save(Book book);
     void deleteById(Long id);
     Optional<Book> findById(Long id);
-    List<Book> save(List<Book> book);
 }

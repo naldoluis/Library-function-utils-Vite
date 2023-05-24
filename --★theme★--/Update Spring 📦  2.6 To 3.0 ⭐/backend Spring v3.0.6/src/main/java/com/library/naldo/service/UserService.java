@@ -1,7 +1,6 @@
 package com.library.naldo.service;
 
 import java.util.Collection;
-import java.util.List;
 import java.util.Optional;
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
@@ -38,9 +37,5 @@ public class UserService implements IService<User> {
 			e.printStackTrace();
 		}
 		return jsonObject.toString();
-	}
-
-	public List<User> saveAll(List<User> user) {
-		return null;
 	}
 }

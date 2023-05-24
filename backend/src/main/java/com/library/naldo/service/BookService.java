@@ -1,7 +1,6 @@
 package com.library.naldo.service;
 
 import java.util.Collection;
-import java.util.List;
 import java.util.Optional;
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
@@ -49,9 +48,5 @@ public class BookService implements IService<Book>, IPageService<Book> {
 			e.printStackTrace();
 		}
 		return jsonObject.toString();
-	}
-
-	public List<Book> saveAll(List<Book> book) {
-		return bookRepository.save(book);
 	}
 }
