@@ -86,7 +86,6 @@ export default function Register() {
                       <FontAwesomeIcon icon={faEnvelope}/>
                     </InputGroup.Text>
                     <Form.Control
-                      required
                       autoComplete="off"
                       name="email"
                       maxLength={34}
@@ -103,7 +102,6 @@ export default function Register() {
                       <FontAwesomeIcon icon={faLock}/>
                     </InputGroup.Text>
                     <Form.Control
-                      required
                       autoComplete="off"
                       type={values.showPassword ? "text" : "password"}
                       name="password"

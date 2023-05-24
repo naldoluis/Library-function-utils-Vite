@@ -8,13 +8,19 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Random;
 import javax.imageio.ImageIO;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+//import jakarta.servlet.annotation.WebServlet;
 
-@WebServlet("/captcha-servlet")
+@RestController
+@RequestMapping("/captcha-servlet")
+@CrossOrigin(origins="http://localhost:5173")
+//@WebServlet("/captcha-servlet")
 public class CaptchaServlet {
 
 	public static final String FILE_TYPE = "jpeg";
