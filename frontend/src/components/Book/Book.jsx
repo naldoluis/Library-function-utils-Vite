@@ -30,46 +30,46 @@ export default function Book() {
 
   const findAllLanguages = () => {
     dispatch(fetchLanguages())
-      let bookLanguages = bookObject.book
-      if(bookLanguages) {
-        setBooks({
-          books: [{ value: "", display: "Select Language" }].concat(
-            bookLanguages.map(language => {
-              return { value: language, display: language }
-           }))
-        })
-       findAllGenres()
-     }
+    let bookLanguages = bookObject.book
+    if(bookLanguages) {
+      setBooks({
+        books: [{ value: "", display: "Select Language" }].concat(
+          bookLanguages.map(language => {
+            return { value: language, display: language }
+         }))
+      })
+      findAllGenres()
+    }
   }
 
   const findAllGenres = () => {
     dispatch(fetchGenres())
-      let bookGenres = bookObject.book
-      if(bookGenres) {
-        setBooks({
-          books: [{ value: "", display: "Select Genre" }].concat(
-            bookGenres.map(genre => {
-              return { value: genre, display: genre }
-           }))
-        })
+    let bookGenres = bookObject.book
+    if(bookGenres) {
+      setBooks({
+        books: [{ value: "", display: "Select Genre" }].concat(
+          bookGenres.map(genre => {
+            return { value: genre, display: genre }
+          }))
+       })
      }
   }
 
   const findBookById = bookId => {
     dispatch(fetchBook(bookId))
-      let book = bookObject.book
-      if(book) {
-        setBooks({
-          id: book.id,
-          title: book.title,
-          author: book.author,
-          photo: book.photo,
-          isbn: book.isbn,
-          price: book.price,
-          language: book.language,
-          genre: book.genre
-        })
-     }
+    let book = bookObject.book
+    if(book) {
+      setBooks({
+        id: book.id,
+        title: book.title,
+        author: book.author,
+        photo: book.photo,
+        isbn: book.isbn,
+        price: book.price,
+        language: book.language,
+        genre: book.genre
+      })
+    }
   }
 
   const resetBook = () => {

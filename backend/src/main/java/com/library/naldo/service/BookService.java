@@ -43,7 +43,7 @@ public class BookService implements IService<Book>, IPageService<Book> {
 		JSONObject jsonObject = new JSONObject();
 		try {
 			bookRepository.deleteById(id);
-			jsonObject.put("message", "Book deleted successfully");
+			jsonObject.put("message", "Book deleted successfully ✔");
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}

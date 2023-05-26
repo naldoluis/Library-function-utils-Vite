@@ -61,7 +61,7 @@ export default function Login() {
           <Card.Header>
             <FontAwesomeIcon icon={faSignInAlt}/> {i18n.t('access.login')}
           </Card.Header>
-          <Card.Body>
+           <Card.Body>
             <Form>
              <Form.Group as={Col}>
                <InputGroup>
@@ -102,7 +102,7 @@ export default function Login() {
                 </InputGroup>
               </Form.Group>
             </Form>
-          </Card.Body>
+           </Card.Body>
           <Card.Footer style={{ textAlign: "right" }}>
             <Button
               size="sm"

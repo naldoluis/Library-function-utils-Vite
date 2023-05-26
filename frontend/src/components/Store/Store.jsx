@@ -93,7 +93,7 @@ class Store extends React.Component {
           <b style={{ color: "#fff", fontWeight: 400 }}>
             <FontAwesomeIcon icon={faBookQuran}/> {i18n.t('messages.edition')}
           </b>
-          <Card.Body className="row" style={{ overflowY: "scroll", height: 480 }}>
+           <Card.Body className="row" style={{ overflowY: "scroll", height: 480 }}>
             {books.length === 0 ? (
               <Table bordered hover striped variant="dark">
                 <tbody>
@@ -207,7 +207,7 @@ class Store extends React.Component {
                 <Button style={{ width: 60, margin: "45px 0 0 230px" }} size="sm" variant="warning" onClick={() => this.closeModalVanilla()}>OK</Button>
               </div>
             </div>
-          </Card.Body>
+           </Card.Body>
           {books.length > 0 ? (
             <Card.Footer style={{ textAlign: "right", color: "#fff" }}>
               <div style={{ float: "left", fontSize: 15 }}>

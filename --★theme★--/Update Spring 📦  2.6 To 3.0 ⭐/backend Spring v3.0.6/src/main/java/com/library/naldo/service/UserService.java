@@ -32,7 +32,7 @@ public class UserService implements IService<User> {
 		JSONObject jsonObject = new JSONObject();
 		try {
 			userRepository.deleteById(id);
-			jsonObject.put("message", "User deleted successfully");
+			jsonObject.put("message", "User deleted successfully ✔");
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}

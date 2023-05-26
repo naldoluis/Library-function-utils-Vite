@@ -11,16 +11,24 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.ui.Model;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
+import nl.captcha.Captcha;
+import com.library.naldo.captcha.CaptchaGenerator;
+import com.library.naldo.captcha.CaptchaUtils;
 import com.library.naldo.config.JwtTokenProvider;
 import com.library.naldo.domain.User;
 import com.library.naldo.repository.RoleRepository;
 import com.library.naldo.repository.UserRepository;
+import com.library.naldo.service.impl.UserServiceC;
 import com.library.naldo.utils.ConstantUtils;
 
 @RestController
@@ -42,11 +50,31 @@ public class UserController {
 	@Autowired
 	private UserRepository userRepository;
 
+	@Autowired
+	private CaptchaGenerator captchaGenerator;
+
+	@Autowired
+	private UserServiceC userServiceC;
+
+	private String message;
+
+	@GetMapping("/register")
+	public String add(Model model, HttpSession httpSession) {
+		model.addAttribute("message", message);
+		model.addAttribute("user", new User());
+		Captcha captcha = captchaGenerator.createCaptcha(200, 50);
+		httpSession.setAttribute("captcha", captcha.getAnswer());
+		model.addAttribute("captchaEncode", CaptchaUtils.encodeBase64(captcha));
+		return "register";
+	}
+
 	@PostMapping(value = "/register", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<String> register(@RequestBody User user) {
+	public ResponseEntity<String> register(@RequestBody User user, HttpServletRequest request) {
 		log.info("UserResourceImpl : register ✔");
 		JSONObject jsonObject = new JSONObject();
 		try {
+			user.getCaptcha().equals(request.getSession().getAttribute("captcha"));
+			userServiceC.add(user);
 			user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
 			user.setRole(roleRepository.findByName(ConstantUtils.USER.toString()));
 			User savedUser = userRepository.saveAndFlush(user);

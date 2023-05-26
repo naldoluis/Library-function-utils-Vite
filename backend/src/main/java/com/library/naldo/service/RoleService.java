@@ -36,7 +36,7 @@ public class RoleService implements IRoleService<Role> {
 		JSONObject jsonObject = new JSONObject();
 		try {
 			roleRepository.deleteById(id);
-			jsonObject.put("message", "Role deleted successfully");
+			jsonObject.put("message", "Role deleted successfully ✔");
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}

@@ -44,17 +44,17 @@ public class UserController {
 
 	@PostMapping(value = "/register", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<String> register(@RequestBody User user) {
-		log.info("UserResourceImpl : register");
+		log.info("UserResourceImpl : register ✔");
 		JSONObject jsonObject = new JSONObject();
 		try {
 			user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
 			user.setRole(roleRepository.findByName(ConstantUtils.USER.toString()));
 			User savedUser = userRepository.saveAndFlush(user);
-			jsonObject.put("message", savedUser.getName() + " saved successfully");
+			jsonObject.put("message", savedUser.getName() + " saved successfully ✔");
 			return ResponseEntity.ok(jsonObject.toString());
 		} catch (JSONException e) {
 			try {
-				jsonObject.put("exception", e.getMessage());
+				jsonObject.put("⛔️ exception", e.getMessage());
 			} catch (JSONException e1) {
 				e1.printStackTrace();
 			}
@@ -64,7 +64,7 @@ public class UserController {
 
 	@PostMapping(value = "/authenticate", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<String> authenticate(@RequestBody User user) {
-		log.info("UserResourceImpl : authenticate");
+		log.info("UserResourceImpl : authenticate ✔");
 		JSONObject jsonObject = new JSONObject();
 		try {
 			Authentication authentication = authenticationManager
@@ -78,7 +78,7 @@ public class UserController {
 			}
 		} catch (JSONException e) {
 			try {
-				jsonObject.put("exception", e.getMessage());
+				jsonObject.put("⛔️ exception", e.getMessage());
 			} catch (JSONException e1) {
 				e1.printStackTrace();
 			}

@@ -194,10 +194,7 @@ class BookList extends React.Component {
                   <th className="border-secondary">{i18n.t('tableBook.isbn')}</th>
                   <th className="border-secondary" onClick={this.sortData}>
                     {i18n.t('tableBook.price')}{" "}
-                    <div className={this.state.sortDir === "asc" ? "arrow arrow-up" : "arrow arrow-down"}
-                    >
-                      {" "}
-                    </div>
+                    <div className={this.state.sortDir === "asc" ? "arrow arrow-up" : "arrow arrow-down"}></div>
                   </th>
                   <th className="border-secondary">{i18n.t('tableBook.language')}</th>
                   <th className="border-secondary">{i18n.t('tableBook.genre')}</th>

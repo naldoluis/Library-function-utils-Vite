@@ -44,14 +44,14 @@ public class JwtTokenFilter extends OncePerRequestFilter {
 					SecurityContextHolder.clearContext();
 					response.setContentType("application/json");
 					response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-					response.getWriter().println(new JSONObject().put("exception", "expired or invalid JWT token " + e.getMessage()));
+					response.getWriter().println(new JSONObject().put("exception", "expired or invalid JWT token 🔐" + e.getMessage()));
 				} catch (IOException | JSONException e1) {
 					e1.printStackTrace();
 				}
 				return;
 			}
 		} else {
-			log.info("first time so creating token using UserResourceImpl - authenticate method");
+			log.info("⚠️ first time so creating token using UserResourceImpl - authenticate method");
 		}
 		filterChain.doFilter(request, response);
 	}

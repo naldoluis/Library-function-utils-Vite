@@ -4,24 +4,27 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "tb_book")
-public class Book {
+@Table(name = "tb_user")
+public class User {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	private String title;
-	private String author;
-	private String photo;
-	private Integer isbn;
-	private Double price;
-	private String language;
-	private String genre;
-	private byte[] base64QRCode;
+	private String name;
+	private String email;
+	private String mobile;
+	private String password;
+	private String captcha;
+
+	@ManyToOne
+	@JoinColumn(name = "role_id")
+	private Role role;
 }
