@@ -37,7 +37,7 @@ public class SpringSecurityConfig {
 
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-		http.cors();
+		http.cors(cors -> cors.configure(http));
 		http.csrf(csrf -> csrf.disable())
 		.authorizeHttpRequests().requestMatchers("/user/authenticate").permitAll().anyRequest().authenticated();
 		http.apply(new JwtTokenConfigurer(tokenProvider));
