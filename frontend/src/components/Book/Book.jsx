@@ -14,7 +14,7 @@ export default function Book() {
 
   const initialState = { id: "", title: "", author: "", photo: "", isbn: "", price: "", language: "", genre: "" }
 
-  const [books, setBooks] = useState([])
+  const [books, setBooks] = useState(initialState)
   const [show, setShow] = useState(false)
   const bookObject = useSelector(state => state.book)
   const dispatch = useDispatch()
@@ -89,13 +89,13 @@ export default function Book() {
       genre: e.target.genre.value
     }
 
-    dispatch(saveBook(bookSaved))
-      if(bookObject.book) {
-        setShow({ show: true, method: "POST" })
-        setTimeout(() => setShow({ show: false }), 2000)
-      } else {
-        setShow({ show: false })
-      }
+   dispatch(saveBook(bookSaved))
+    if (bookObject.book) {
+      setShow({ show: true, method: "POST" })
+      setTimeout(() => setShow({ show: false }), 2000)
+    } else {
+      setShow({ show: false })
+    }
   }
 
   const updatedBook = e => {

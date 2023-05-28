@@ -28,7 +28,7 @@ public class JwtTokenFilter extends OncePerRequestFilter {
 	}
 
 	public void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-		log.info("JwtTokenFilter : doFilterInternal");
+		log.info("JwtTokenFilter : doFilterInternal 🔑");
 		String token = request.getHeader("Authorization");
 		if (token != null) {
 			try {
@@ -44,7 +44,7 @@ public class JwtTokenFilter extends OncePerRequestFilter {
 					SecurityContextHolder.clearContext();
 					response.setContentType("application/json");
 					response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-					response.getWriter().println(new JSONObject().put("exception", "expired or invalid JWT token 🔐" + e.getMessage()));
+					response.getWriter().println(new JSONObject().put("exception", "expired or invalid JWT token 🔐 " + e.getMessage()));
 				} catch (IOException | JSONException e1) {
 					e1.printStackTrace();
 				}

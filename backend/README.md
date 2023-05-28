@@ -612,6 +612,29 @@ public class SpringSecurityConfig {
 }
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
+                                                                                                                          - ❐ ❌
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.1.0)
+
+# SpringSecurityConfig (FilterChain)
+
+ @Bean
+	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+		http.cors(cors -> cors.disable());
+		http.csrf(csrf -> csrf.disable());
+		http
+		.authorizeHttpRequests(authorize -> authorize
+        .dispatcherTypeMatchers().permitAll();
+		http.apply(new JwtTokenConfigurer(tokenProvider));
+		return http.build();
+	}
+
+!J------------------------------------------------------------------------------------------------------------------------------J!
 
 # pom.xml
 
@@ -826,9 +849,11 @@ class Book extends React.Component {
             id="bookFormId"
           >
             <Card.Body>
-            <div className="form-row">
+              <div className="form-row">
                 <Form.Group as={Col}>
-                 <Form.Label>{i18n.t('tableBook.title')} 📙</Form.Label>
+                 <Form.Label>
+                   {i18n.t('tableBook.title')} 📙
+                 </Form.Label>
                   <Form.Control
                     autoComplete="off"
                     required
@@ -842,7 +867,9 @@ class Book extends React.Component {
                   />
                 </Form.Group>
                 <Form.Group as={Col}>
-                 <Form.Label>{i18n.t('tableBook.author')} ✏️</Form.Label>
+                 <Form.Label>
+                   {i18n.t('tableBook.author')} ✏️
+                 </Form.Label>
                   <Form.Control
                     autoComplete="off"
                     required
@@ -858,7 +885,9 @@ class Book extends React.Component {
                 </div>
                 <div className="form-row">
                 <Form.Group as={Col}>
-                 <Form.Label>{i18n.t('tableBook.photoUrl')} <img className="cam" src={iconCam}/></Form.Label>
+                 <Form.Label>
+                   {i18n.t('tableBook.photoUrl')} <img className="cam" src={iconCam}/>
+                 </Form.Label>
                   <div className="input-group">
                     <Form.Control
                       autoComplete="off"
@@ -877,7 +906,9 @@ class Book extends React.Component {
                   </div>
                 </Form.Group>
                 <Form.Group as={Col}>
-                 <Form.Label>{i18n.t('tableBook.isbn')} ▥</Form.Label>
+                 <Form.Label>
+                   {i18n.t('tableBook.isbn')} ▥
+                 </Form.Label>
                   <Form.Control
                     autoComplete="off"
                     required
@@ -893,7 +924,9 @@ class Book extends React.Component {
                 </div>
                 <div className="form-row">
                 <Form.Group as={Col} controlId="formGridPrice">
-                 <Form.Label className="price">{i18n.t('tableBook.price')} 💲</Form.Label>
+                 <Form.Label className="price">
+                   {i18n.t('tableBook.price')} 💲
+                 </Form.Label>
                   <Form.Control
                     autoComplete="off"
                     required
@@ -907,7 +940,9 @@ class Book extends React.Component {
                   />
                 </Form.Group>
                 <Form.Group as={Col}>
-                 <Form.Label>{i18n.t('tableBook.language')} <img className="lang" src={iconLang}/></Form.Label>
+                 <Form.Label>
+                   {i18n.t('tableBook.language')} <img className="lang" src={iconLang}/>
+                 </Form.Label>
                   <Form.Control
                     required
                     as="select"
@@ -925,7 +960,9 @@ class Book extends React.Component {
                   </Form.Control>
                 </Form.Group>
                 <Form.Group as={Col}>
-                 <Form.Label>{i18n.t('tableBook.genre')} 📚</Form.Label>
+                 <Form.Label>
+                   {i18n.t('tableBook.genre')} 📚
+                 </Form.Label>
                   <Form.Control
                     required
                     as="select"
@@ -1025,6 +1062,101 @@ export default connect(mapStateToProps, mapDispatchToProps)(Book)
 
 !J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
                                                                                                                           - ❐ ❌
+                                                      [METHOD: 'PUT']
+  const updatedBook = e => {
+    e.preventDefault()
+
+    fetch("http://localhost:8080/rest/books/" + bookId, {
+      method: 'PUT',
+      mode: 'cors',
+      body: JSON.stringify({
+        id: e.target.id.value,
+        title: e.target.title.value,
+        author: e.target.author.value,
+        photo: e.target.photo.value,
+        isbn: e.target.isbn.value,
+        price: e.target.price.value,
+        language: e.target.language.value,
+        genre: e.target.genre.value
+      }),
+        config: {
+          headers: {Accept: "application/json", "Content-Type": "application/json", "Access-Control-Allow-Origin": "*"}
+        }
+      })
+      .then(response => {
+        if(response.status === 200) {
+          return response.json()
+        } else {
+          return Promise.reject(response)
+        }
+      })
+      .catch(error => console.log('Authorization failed: ' + error.message))
+    if(bookObject.book) {
+      setShow({ show: true, method: "PUT" })
+      setTimeout(() => setShow({ show: false }), 2000)
+    } else {
+      setShow({ show: false })
+    }
+    setBooks(initialState)
+  }
+
+  useEffect(() => {
+    axios.put("http://localhost:8080/rest/books/" + bookId)
+       .then(response => setBooks(response.data.books))
+}, []) 
+
+=======================================================================================
+
+  const element = document.querySelector('#put-request .date-updated')
+  const requestOptions = {
+      method: 'PUT',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ title: 'Fetch PUT Request Example' })
+  }
+  fetch('https://reqres.in/api/articles/1', requestOptions)
+      .then(response => response.json())
+      .then(data => element.innerHTML = data.updatedAt)
+
+=======================================================================================
+
+  (async () => {
+      const element = document.querySelector('#put-request-async-await .date-updated')
+      const requestOptions = {
+          method: 'PUT',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({ title: 'Fetch PUT Request Example' })
+      }
+      const response = await fetch('https://reqres.in/api/articles/1', requestOptions)
+      const data = await response.json()
+      element.innerHTML = data.updatedAt
+  })()
+
+=======================================================================================
+
+  const element = document.querySelector('#put-request-error-handling .date-updated')
+  const requestOptions = {
+      method: 'PUT',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ title: 'Fetch PUT Request Example' })
+  }
+  fetch('https://reqres.in/invalid-url', requestOptions)
+      .then(async response => {
+          const isJson = response.headers.get('content-type')?.includes('application/json')
+          const data = isJson && await response.json()
+
+          if (!response.ok) {
+              const error = (data && data.message) || response.status
+              return Promise.reject(error)
+          }
+          element.innerHTML = data.updatedAt
+      })
+      .catch(error => {
+          element.parentElement.innerHTML = `Error: ${error}`
+          console.error('There was an error!', error)
+      })
+
+!J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
+                                                                                                                          - ❐ ❌
                                                       [METHOD: 'GET']
 
     const findBookById = bookId => {
@@ -1090,30 +1222,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(Book)
           localStorage.removeItem("jwtToken")
       })
     }
-
-!J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
-                                                                                                                          - ❐ ❌
-                                                      [METHOD: 'PUT']
-
-    const headers = new Headers()
-    headers.append('Content-Type', 'application/json')
-
-    fetch("http://localhost:8080/rest/books/" + bookId, {
-      method: 'PUT',
-      body: JSON.stringify(bookEdit),
-      //body: JSON.parse(bookEdit),
-      headers
-    })
-      .then(response => response.data)
-      .then(book => {
-        if(book) {
-          setShow({ show: true, method: "PUT" })
-          setTimeout(() => setShow({ show: false }), 2000)
-        } else {
-          setShow({ show: false })
-        }
-     })
-  }
 
 !J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
                                                                                                                           - ❐ ❌
