@@ -188,7 +188,7 @@ class Store extends React.Component {
                 </div>
                 <div className="btn-container">
                   <button onClick={() => this.closeModal()} style={{ background: "#c3c600", width: 200, fontWeight: 500, borderRadius: 6 }}>
-                    {i18n.t('buttons.buy')}
+                    {i18n.t('buttons.buy')} 🛒
                   </button>
                   <button onClick={() => this.closeModal()} style={{ background: "#c23f17", color: "#fff", fontWeight: 500, width: 200, borderRadius: 6 }}>
                     {i18n.t('buttons.cancel')}
