@@ -4,7 +4,7 @@
                                         *  Node v18.14.1                   *
                                         *  apache-maven 3.9.0              *
                                         *  git version 2.39.2.windows.1    *
-                                        * ================================ *                      package size: 8,30 MB
+                                        * ================================ *                      package size: 10,30 MB
 
 # POST
 	    ==>  ⚡	http://localhost:8080/rest/user/authenticate                                                              - ❐ ❌
@@ -629,7 +629,7 @@ public class SpringSecurityConfig {
 		http.csrf(csrf -> csrf.disable());
 		http
 		.authorizeHttpRequests(authorize -> authorize
-        .dispatcherTypeMatchers().permitAll();
+        .dispatcherTypeMatchers().permitAll());
 		http.apply(new JwtTokenConfigurer(tokenProvider));
 		return http.build();
 	}
@@ -1021,7 +1021,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(Book)
                                                                                                                           - ❐ ❌
 # Book
                                                       [METHOD: 'PUT']
-
     const updatedBook = e => {
       e.preventDefault()
   

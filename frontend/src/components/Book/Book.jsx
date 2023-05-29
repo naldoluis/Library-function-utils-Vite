@@ -301,8 +301,7 @@ export default function Book() {
             >
               <FontAwesomeIcon icon={faUndo}/> {i18n.t('buttons.reset')}
             </Button>{" "}
-            <Link style={{ textDecoration: 'none' }} to="/list" type="button" className="link"
-            >
+            <Link style={{ textDecoration: 'none' }} to="/list" type="button" className="link">
               <FontAwesomeIcon icon={faList}/> {i18n.t('buttons.bookList')}
             </Link>
           </Card.Footer>

@@ -4,8 +4,7 @@ import { i18n } from '../assets/translate/i18n'
 export default function ModalCustom(props) {
 
   return (
-    <Modal className="text-white" {...props} size="lg" centered
-     >
+    <Modal className="text-white" {...props} size="lg" centered>
       <Modal.Header style={{ background: "#3c3c3c" }}>
         <Modal.Title>❐ Modal heading</Modal.Title>
       </Modal.Header>
