@@ -3,9 +3,10 @@ import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { Alert, Button, Card, Col, Form, InputGroup } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope, faEye, faEyeLowVision, faKey, faLock, faSignInAlt, faUndo } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope, faEye, faEyeLowVision, faLock, faSignInAlt, faUndo } from '@fortawesome/free-solid-svg-icons'
 import { authenticateUser } from '../../services'
 import { i18n } from '../../assets/translate/i18n'
+import Captcha from '../Captcha'
 
 export default function Login() {
 
@@ -100,6 +101,7 @@ export default function Login() {
                     {values.showPassword ? <FontAwesomeIcon icon={faEye}/> : <FontAwesomeIcon icon={faEyeLowVision}/>}
                   </b>
                 </InputGroup>
+               <Captcha/>
               </Form.Group>
             </Form>
            </Card.Body>
