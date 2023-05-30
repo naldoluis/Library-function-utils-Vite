@@ -65,7 +65,7 @@ export default function Captcha() {
 
   return (
     <div className="row mt-4">
-     <h4 style={{ marginTop: 10, marginLeft: 150, position: "absolute", color: "#444" }}>{captcha}</h4>
+     <h4 style={{ marginTop: 10, marginLeft: 165, position: "absolute", color: "#444" }}>{captcha}</h4>
       <div className="form-group">
         <img src={captchaImg} height="50" style={{ marginLeft: 130 }}/>
       </div>

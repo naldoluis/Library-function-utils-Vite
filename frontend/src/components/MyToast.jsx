@@ -1,5 +1,5 @@
 import { Toast } from 'react-bootstrap'
-import { faClock, faUser, faUsers, faCashRegister } from '@fortawesome/free-solid-svg-icons'
+import { faUser, faUsers, faCashRegister } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { i18n } from '../assets/translate/i18n'
 
@@ -26,7 +26,7 @@ export function MyToastOut(props) {
         closeButton={false}
       >
         <strong>
-          <FontAwesomeIcon icon={faUser}/> {i18n.t('toast.userLogout')}
+          <FontAwesomeIcon icon={faUser}/> {i18n.t('toast.userLogout')} ⛔️
         </strong>
       </Toast.Header>
      <Toast.Body>{props.message}</Toast.Body>
@@ -50,16 +50,16 @@ export function MyToastPurchase(props) {
 
 export function MyToastTimer(props) {
   return (
-    <Toast style={{ color: "#fff", background: "#00adc4" }}
+    <Toast style={{ color: "#444", background: "#fffbc3" }}
      >
-      <Toast.Header style={{ color: "#fff", background: "#00adc4" }}
+      <Toast.Header style={{ color: "#444", background: "#fffbc3" }}
         closeButton={false}
       >
         <strong>
-          <FontAwesomeIcon icon={faClock}/> {i18n.t('toast.clock')}
+          🕡 {i18n.t('toast.clock')}
         </strong>
       </Toast.Header>
-     <Toast.Body>{props.message}</Toast.Body>
+     <Toast.Body>⚠️ {props.message}</Toast.Body>
     </Toast>
   )}
   
@@ -71,9 +71,9 @@ export function MyToastUser(props) {
         closeButton={false}
       >
         <strong>
-          <FontAwesomeIcon icon={faUsers}/> {i18n.t('toast.createUser')} 🚧
+          <FontAwesomeIcon icon={faUsers}/> {i18n.t('toast.createUser')} ✅
         </strong>
       </Toast.Header>
-     <Toast.Body>{props.message}</Toast.Body>
+     <Toast.Body>ℹ️ {props.message}</Toast.Body>
     </Toast>
   )}

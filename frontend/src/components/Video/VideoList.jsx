@@ -69,7 +69,7 @@ class VideoList extends React.Component {
         <b style={{ color: "#fff", fontWeight: 400 }}>
           🎬 {i18n.t('navigate.video')}
         </b>
-          <b style={{ float: "right" }}>🌾</b>
+          <b style={{ float: "right" }}>🌾 🍄</b>
            <Card.Body className="row" style={{ overflowY: "scroll", height: 480 }}>
            {books.length === 0 ? (
               <Table bordered hover striped variant="dark">
