@@ -116,7 +116,7 @@ public class BookController implements Resource<Book> {
 	public ResponseEntity<String> invalid() {
 		JSONObject jsonObject = new JSONObject();
 		try {
-			jsonObject.put("message", "something is missing, please check everything before sending the request!!!");
+			jsonObject.put("message", "⚠️ something is missing, please check everything before sending the request!!!");
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
