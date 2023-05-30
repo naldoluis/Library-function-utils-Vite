@@ -13,7 +13,7 @@ export default function Footer() {
     <Navbar fixed="bottom" bg="dark">
       <Container>
         <Col lg={12} className="text-center text-muted">
-          {fullYear} - {fullYear + 3}, {i18n.t('footer.message')} ☢️
+          {fullYear} - {fullYear + 4}, {i18n.t('footer.message')} ☢️
         </Col>
       </Container>
     </Navbar>
