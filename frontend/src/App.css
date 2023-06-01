@@ -62,3 +62,14 @@
 #darkmode .label {transform: scale(1.5)}
 #darkmode .checkbox {opacity: 0;position: absolute}
 #darkmode .checkbox:checked + .label .ball{transform: translateX(24px)}
+
+/* ==================================================== CLOCK ⏲ ======================================================== */
+
+:root {
+  --r: #ff2972;
+  --g: #04fc43;
+  --y: #fee800;
+  --w: #fff;
+}
+
+.watch {margin-left: 462px;border: 2px solid var(--w);border-radius: 8px;color: var(--w);display: flex;font-size: 2em;justify-content: center;height: auto;width: 160px}

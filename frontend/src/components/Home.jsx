@@ -44,6 +44,6 @@ export default function Home() {
       <div style={{ margin: "-45px 0 0 260px" }}>
         <img style={{ borderRadius: 4, border: "4px solid #fff" }} width="320" src="https://miro.medium.com/v2/resize:fit:1358/1*L_QoAG863l8QvqxpNyBiqw.gif"/>
       </div>
-      <ModalCustom show={modalShow} onHide={() => setModalShow(false)}/>
+     <ModalCustom show={modalShow} onHide={() => setModalShow(false)}/>
     </>
   )}

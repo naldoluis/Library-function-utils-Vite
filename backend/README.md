@@ -2311,7 +2311,7 @@ export default function DigitalWatch() {
 
   useEffect(() => {
     const getHours = () => {
-      let clock = document.getElementsByClassName('watch')[0]
+     const clock = document.querySelector('.watch')
       let date = new Date()
       let hours = date.getHours()
       let minutes = date.getMinutes()
@@ -2319,7 +2319,7 @@ export default function DigitalWatch() {
       let hour = hours < 10 ? `0${hours}` : hours
       let minute = minutes < 10 ? `0${minutes}` : minutes
       let second = seconds < 10 ? `0${seconds}` : seconds
-      clock.innerHTML = `${hour}:${minute}:${second}`
+      clock = `${hour}:${minute}:${second}`
     }
     setInterval(() => {
       getHours()
