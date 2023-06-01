@@ -31,16 +31,19 @@ export default function Home() {
   )
 
   return (
-  <>
-    <Alert style={{ background: "#343A40", color: "#fff", fontSize: 30, fontWeight: "bold", fontFamily: "sans-serif", border: ".5px solid #222" }}>
-     {i18n.t('home.welcome')} <b style={{ color: "#f5d20c", fontSize: 24, fontWeight: 600 }}>{auth.username} ✔️</b>
-      <p className="title-home">{i18n.t('home.phrase')} 🌱</p>
-      <p className="title-home">-- Mark Twain</p>
-    </Alert>
-    <Popovers/>{" "}
-     <Button size="sm" variant="primary"
-       onClick={() => setModalShow(true)}>{i18n.t('buttons.modal')}
-     </Button>
-    <ModalCustom show={modalShow} onHide={() => setModalShow(false)}/>
-  </>
- )}
+    <>
+      <Alert style={{ background: "#343A40", color: "#fff", fontSize: 30, fontWeight: "bold", fontFamily: "sans-serif", border: ".5px solid #222" }}>
+      {i18n.t('home.welcome')} <b style={{ color: "#f5d20c", fontSize: 24, fontWeight: 600 }}>{auth.username} ✔️</b>
+        <p className="title-home">{i18n.t('home.phrase')} 🌱</p>
+        <p className="title-home">-- Mark Twain</p>
+      </Alert>
+      <Popovers/>{" "}
+      <Button size="sm" variant="primary"
+        onClick={() => setModalShow(true)}>{i18n.t('buttons.modal')}
+      </Button>
+      <div style={{ margin: "-45px 0 0 260px" }}>
+        <img style={{ borderRadius: 4, border: "4px solid #fff" }} width="320" src="https://miro.medium.com/v2/resize:fit:1358/1*L_QoAG863l8QvqxpNyBiqw.gif"/>
+      </div>
+      <ModalCustom show={modalShow} onHide={() => setModalShow(false)}/>
+    </>
+  )}

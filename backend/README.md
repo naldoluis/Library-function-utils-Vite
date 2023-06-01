@@ -2303,6 +2303,42 @@ header i {font-size: 0em;cursor: pointer;margin-right: 8px}
       wrapper.classList.remove("active")
   })
 
+!J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
+                                                                                                                          - ❐ ❌
+import { useEffect } from 'react'
+
+export default function DigitalWatch() {
+
+  useEffect(() => {
+    const getHours = () => {
+      let clock = document.getElementsByClassName('watch')[0]
+      let date = new Date()
+      let hours = date.getHours()
+      let minutes = date.getMinutes()
+      let seconds = date.getSeconds()
+      let hour = hours < 10 ? `0${hours}` : hours
+      let minute = minutes < 10 ? `0${minutes}` : minutes
+      let second = seconds < 10 ? `0${seconds}` : seconds
+      clock.innerHTML = `${hour}:${minute}:${second}`
+    }
+    setInterval(() => {
+      getHours()
+    }, 1000)
+  })
+  return <div className="watch"></div>
+}
+
+/* ==================================================== CLOCK ⏲ ======================================================== */
+
+:root {
+  --r: #ff2972;
+  --g: #04fc43;
+  --y: #fee800;
+  --w: #fff;
+}
+
+.watch {margin-left: 462px;border: 1px solid var(--w);border-radius: 4px;color: var(--w);display: flex;font-size: 2em;justify-content: center;height: auto;width: 160px}
+
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 											  	                         !J ⚙️ CONFIG 🔧 !J
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -2434,4 +2470,4 @@ onSwipeMove	                   –	              Executar alguma função no car
           </svg>
         </a>
 
-                                                                                                               ⋈ vscode: 1.77.3
+                                                                                                               ⋈ vscode: 1.78.2
