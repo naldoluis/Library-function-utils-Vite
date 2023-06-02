@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
 <svg
     xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -14,12 +13,12 @@
     sodipodi:docname="MP and Fuel Flow.svg"
     inkscape:export-filename="F:\Aviation\SVGs\Engine Gages\MP and Fuel Flow.png"
     viewBox="0 0 281.26 281.24"
-    sodipodi:version="0.32"
+    sodipodi:version=".32"
     inkscape:export-xdpi="90"
     version="1.0"
     inkscape:output_extension="org.inkscape.output.svg.inkscape"
     inkscape:export-ydpi="90"
-    inkscape:version="0.46"
+    inkscape:version=".46"
     sodipodi:docbase="F:\Aviation\Cessna 736RY\SVGs\Engine Gages"
   >
   <sodipodi:namedview
@@ -38,7 +37,7 @@
       objecttolerance="10"
       inkscape:window-y="-4"
       inkscape:window-width="1024"
-      inkscape:pageopacity="0.0"
+      inkscape:pageopacity="0"
       inkscape:pageshadow="2"
       pagecolor="#ffffff"
       gridtolerance="10000"

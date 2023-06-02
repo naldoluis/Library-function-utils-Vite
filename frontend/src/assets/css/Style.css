@@ -23,7 +23,6 @@
 
 .input-password,.input-email,.input-name,.input-phone {margin: 9px 9px}
 .lock,.envelope,.name,.phone {margin-top: 12px;width: 40px}
-.key {margin-top: 39px;width: 40px;height: 32px}
 
 .link {background: #b00fd0;border-radius: 3px;width: 90px;height: 31.3px;padding-top: 4.5px;font-size: 14px}
 .link:hover {background: #9f0ebc}

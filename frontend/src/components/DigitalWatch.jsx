@@ -27,14 +27,8 @@ export default function DigitalWatch() {
 
   return (
     <div className="watch">
-      <div>
-        <span id="hours"></span>:
-      </div>
-      <div>
-        <span id="minutes"></span>:
-      </div>
-      <div>
-        <span id="seconds"></span>
-      </div>
+      <span id="hours"></span>:
+      <span id="minutes"></span>:
+      <span id="seconds"></span>
     </div>
   )}
