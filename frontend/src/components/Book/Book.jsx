@@ -112,16 +112,13 @@ export default function Book() {
       genre: e.target.genre.value
     }
 
-    const headers = new Headers()
-    headers.append("Content-Type", "application/json")
-
     fetch("http://localhost:8080/rest/books/" + bookId, {
       method: 'PUT',
       body: JSON.stringify(bookEdit),
-      headers
+      headers: {'Content-Type': 'application/json'}
     })
       .then(response => response.json())
-      .then(json => console.log(json))
+      .then(data => console.log(data))
       .catch(error => console.log('Authorization failed: ' + error.message))
     if(bookObject.book) {
       setShow({ show: true, method: "PUT" })
