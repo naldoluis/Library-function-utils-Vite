@@ -1,9 +1,8 @@
 package com.library.naldo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.text.DateFormat;
@@ -11,8 +10,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import com.library.naldo.service.PDFGeneratorService;
 
-@RestController
-@CrossOrigin(origins="http://localhost:5173")
+@Controller
 public class PDFController {
 
     @Autowired
