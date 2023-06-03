@@ -84,6 +84,27 @@
 # Image QR Code
 		      ==> ⚡	http://localhost:8080/rest/books/generateImageQRCode/27
 
+# GET PDF
+          ==> ⚡	http://localhost:8080/rest/pdf/generate
+
+# GET Page
+          ==> ⚡	http://localhost:8080/rest/books/search/English?page=0&size=5
+
+# GET Search
+          ==> ⚡	http://localhost:8080/rest/books?pageNumber=1&pageSize=5&sortBy=price&sortDir=asc
+
+# GET Genres
+          ==> ⚡ http://localhost:8080/rest/books/genres
+
+# GET Languages
+          ==> ⚡ http://localhost:8080/rest/books/languages
+
+# GET Store
+          ==> ⚡	http://localhost:8080/rest/store
+
+# GET Invalid
+          ==> ⚡	http://localhost:8080/rest/books/invalid
+
 !J------------------------------------------------------------------------------------------------------------------------------J!
                                                                                                                           - ❐ ❌
 # Requests
