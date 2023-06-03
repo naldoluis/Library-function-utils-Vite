@@ -1,4 +1,6 @@
 import { Alert, Button, OverlayTrigger, Popover } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFilePdf } from '@fortawesome/free-solid-svg-icons'
 import { useSelector } from 'react-redux'
 import { useState } from 'react'
 import { i18n } from '../assets/translate/i18n'
@@ -24,7 +26,7 @@ export default function Home() {
 
   const Popovers = () => (
     <OverlayTrigger trigger="click" placement="top" overlay={popover}>
-      <Button size="sm" variant="info">
+      <Button size="sm" variant="warning">
         {i18n.t('buttons.popover')}
       </Button>
     </OverlayTrigger>
@@ -38,10 +40,13 @@ export default function Home() {
         <p className="title-home">-- Mark Twain</p>
       </Alert>
       <Popovers/>{" "}
-      <Button size="sm" variant="primary" onClick={() => setModalShow(true)}>
+      <Button size="sm" variant="success" onClick={() => setModalShow(true)}>
         {i18n.t('buttons.modal')}
+      </Button>{" "}
+      <Button size="sm" variant="danger">
+        <FontAwesomeIcon style={{ fontSize: 18 }} icon={faFilePdf}/>
       </Button>
-      <div style={{ margin: "-45px 0 0 260px" }}>
+      <div style={{ margin: "-40px 0 0 270px" }}>
         <img style={{ borderRadius: 4, border: "4px solid #fff" }} width="320" src="https://miro.medium.com/v2/resize:fit:1358/1*L_QoAG863l8QvqxpNyBiqw.gif"/>
       </div>
      <ModalCustom show={modalShow} onHide={() => setModalShow(false)}/>
