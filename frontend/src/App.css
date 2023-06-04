@@ -4,7 +4,7 @@
 .margin-top {margin-top : 22px}
 .clean-find,.edit:hover,.slide,.content-modal {color: aliceblue}
 
-.find {background: #f5d20c;color: hwb(0 22% 78%)}
+.find {background: #585858;color: hwb(0 22% 78%)}
 .clean-find {background: hsl(0, 61%, 47%)}
 
 .edit {background: #598c0e;border: #598c0e;width: 28.2px;color: lightgreen}
@@ -73,3 +73,9 @@
 }
 
 .watch {margin-left: 462px;border: 2px solid var(--w);border-radius: 8px;color: var(--w);display: flex;font-size: 2em;justify-content: center;height: auto;width: 160px}
+
+/* ===================================================== PDF 📄 ========================================================= */
+
+.card-pdf {background: #383940;width: 990px;margin: auto;border-radius: 20px}
+.pdf {background: #d00f0f;border-radius: 3px;width: 37px;height: 31.3px;font-size: 18px;color: #fff;text-align: center}
+.pdf:hover {color: #fff}

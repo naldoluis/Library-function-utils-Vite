@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFilePdf } from '@fortawesome/free-solid-svg-icons'
 import { useSelector } from 'react-redux'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { i18n } from '../assets/translate/i18n'
 import authToken from '../utils/authToken'
 import ModalCustom from './ModalCustom'
@@ -43,9 +44,9 @@ export default function Home() {
       <Button size="sm" variant="success" onClick={() => setModalShow(true)}>
         {i18n.t('buttons.modal')}
       </Button>{" "}
-      <Button size="sm" variant="danger">
-        <FontAwesomeIcon style={{ fontSize: 18 }} icon={faFilePdf}/>
-      </Button>
+      <Link to={"pdf"} className="pdf" type="button">
+        <FontAwesomeIcon icon={faFilePdf}/>
+      </Link>
       <div style={{ margin: "-40px 0 0 270px" }}>
         <img style={{ borderRadius: 4, border: "4px solid #fff" }} width="320" src="https://miro.medium.com/v2/resize:fit:1358/1*L_QoAG863l8QvqxpNyBiqw.gif"/>
       </div>

@@ -9,6 +9,7 @@ import Help from './components/Help'
 import Home from './components/Home'
 import Login from './components/User/Login'
 import NavigationBar from './components/NavigationBar'
+import PDFReader from './components/PDFReader'
 import Register from './components/User/Register'
 import News from './components/News/News'
 import Store from './components/Store/Store'
@@ -34,6 +35,7 @@ export default function App() {
               <Route path="/edit/:bookId" element={<Book/>}/>
               <Route path="/list" element={<BookList/>}/>
               <Route path="/register" element={<Register/>}/>
+              <Route path="home/pdf" element={<PDFReader/>}/>
               <Route path="/store" element={<Store/>}/>
               <Route path="/news" element={<News/>}/>
               <Route path="/bonus" element={<Bonus/>}/>
