@@ -18,6 +18,7 @@ const styles = StyleSheet.create({
   },
   links: {
     fontSize: 8,
+    padding: -10,
     textAlign: "right"
   },
   content: {
@@ -196,7 +197,7 @@ export default function PDFReader() {
                   <Text>Atenção: mesmo depois do processo finalizar no terminal, pode levar uns minutos para a API responder corretamente as requisições com acesso a dados.</Text>
                 </View>
                 <Text style={styles.links}>
-                  <Link src="https://facebook.com/naldo-luis-568">Go to Facebook</Link>
+                  <Link style={{ color: "#fff" }} src="https://facebook.com/naldo-luis-568">Go to Facebook</Link>
                 </Text>
               </Page>
             </Document>
