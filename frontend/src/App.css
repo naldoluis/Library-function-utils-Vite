@@ -4,7 +4,7 @@
 .margin-top {margin-top : 22px}
 .clean-find,.edit:hover,.slide,.content-modal {color: aliceblue}
 
-.find {background: #585858;color: hwb(0 22% 78%)}
+.find {background: #f5d20c;color: hwb(0 22% 78%)}
 .clean-find {background: hsl(0, 61%, 47%)}
 
 .edit {background: #598c0e;border: #598c0e;width: 28.2px;color: lightgreen}
