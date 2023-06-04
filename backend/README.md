@@ -4,7 +4,7 @@
                                         *  Node v18.14.1                   *
                                         *  apache-maven 3.9.0              *
                                         *  git version 2.39.2.windows.1    *
-                                        * ================================ *                      package size: 10,30 MB
+                                        * ================================ *                      package size: 12,23 MB
 
 # POST
 	    ==>  ⚡	http://localhost:8080/rest/user/authenticate                                                              - ❐ ❌
@@ -30,6 +30,7 @@
      📁 cd C:\Library-Vite\frontend                                          📁 cd C:\Library-Vite\backend
 
         yarn install 📦                                                         mvn install 📦
+        yarn add <!-- package name here! --> 📦
         yarn audit fix
         yarn upgrade --latest
         yarn dev

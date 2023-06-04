@@ -123,7 +123,7 @@ class Store extends React.Component {
             )}
            {this.state.show && <div className="border-secondary" id="modal-container">
             <p className="close-btn" onClick={() => this.closeModal()}>❌</p>
-              <div className="modal-body text-white">
+              <div className="modal-body text-dark">
                <h4>❐ Centered Modal</h4>
                 <p>
                    Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
@@ -132,7 +132,7 @@ class Store extends React.Component {
                 </p>
                 <div className="form-row">
                   <Form.Group as={Col}>
-                   <div>
+                   <div className="py-1">
                     {i18n.t('tableBook.title')} 📙
                    </div>
                     <Form.Control
@@ -145,7 +145,7 @@ class Store extends React.Component {
                     />
                   </Form.Group>
                   <Form.Group as={Col}>
-                   <div>
+                   <div className="py-1">
                     {i18n.t('tableBook.author')} ✏️
                    </div>
                     <Form.Control
@@ -160,7 +160,7 @@ class Store extends React.Component {
                   </div>
                   <div className="form-row">
                   <Form.Group as={Col}>
-                   <div>
+                   <div className="py-1">
                     {i18n.t('tableBook.isbn')} ▥
                    </div>
                     <Form.Control
@@ -173,7 +173,7 @@ class Store extends React.Component {
                     />
                   </Form.Group>
                   <Form.Group as={Col}>
-                   <div>
+                   <div className="py-1">
                     {i18n.t('tableBook.price')} 💲
                    </div>
                     <Form.Control
