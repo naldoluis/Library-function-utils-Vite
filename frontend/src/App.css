@@ -33,7 +33,7 @@
 .btn-container button {margin: auto;padding: 5px}
 .close-btn {position: fixed;top: 4px;right: 13px;cursor: pointer;font-size: small}
 .modal-body {text-align: center;margin-top: 14px;padding: 1rem 1rem}
-#modal-container {width: 700px;position: absolute;top: 46%;left: 50%;transform: translate(-50%, -50%);background: #e2e2e2;box-shadow: 0 0 39px #00ffee;border-radius: 8px}
+#modal-container {width: 700px;position: absolute;top: 46%;left: 50%;transform: translate(-50%, -50%);background: #e2e2e2;box-shadow: 0 0 30px #00ffee;border-radius: 8px}
 
 /* ===============================================  WEATHER ⚡ 🌪 🌈  ==================================================== */
 
