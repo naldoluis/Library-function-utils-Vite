@@ -1272,6 +1272,20 @@ export default connect(mapStateToProps, mapDispatchToProps)(Book)
       }
  */
 
+ /*
+    useEffect(() => {
+      fetch("http://localhost:8080/rest/pdf/generate")
+        .then(response => {
+          if (response.ok) {
+            response.json()
+          }
+          throw response
+        })
+        .then(data => setPdf(data))
+        .catch(error => console.log('Not Found PDF: ' + error.message))
+    }, [])
+ */
+
  /* 
     const headers = new Headers()
 
@@ -1457,129 +1471,6 @@ export default function Home() {
     }
     return ""
   }
-
-!J------------------------------------------------------------------------------------------------------------------------------J!
-                                                                                                                          - ❐ ❌
-# UserList
-
-                  <InputGroup size="sm">
-                      <Button
-                        className="first bg-warning text-dark"
-                        size="sm"
-                        variant="outline-warning"
-                        disabled={currentPage === 1 ? true : false}
-                        onClick={this.firstPage}
-                      >
-                        <FontAwesomeIcon icon={faFastBackward}/> First
-                      </Button>
-                      <Button
-                        className="prev bg-success text-light"
-                        size="sm"
-                        variant="outline-success"
-                        disabled={currentPage === 1 ? true : false}
-                        onClick={this.prevPage}
-                      >
-                        <FontAwesomeIcon icon={faStepBackward}/> Prev
-                      </Button>
-                    <FormControl
-                      size="sm"
-                      className="border-secondary text-white page-num bg-dark"
-                      value={currentPage}
-                      onChange={this.changePage}
-                    />
-                      <Button
-                        className="next bg-success text-light"
-                        size="sm"
-                        variant="outline-success"
-                        disabled={currentPage === totalPages ? true : false}
-                        onClick={this.nextPage}
-                      >
-                        <FontAwesomeIcon icon={faStepForward}/> Next
-                      </Button>
-                      <Button
-                        className="last bg-warning text-dark"
-                        size="sm"
-                        variant="outline-warning"
-                        disabled={currentPage === totalPages ? true : false}
-                        onClick={this.lastPage}
-                      >
-                        <FontAwesomeIcon icon={faFastForward}/> Last
-                      </Button>
-                  </InputGroup>
-                </div>
-              </Card.Footer>
-            ) : null}
-          </Card>
-        )}
-      </div>
-    )}}
-
-const mapStateToProps = state => {
-  return {
-    userData: state.user
-  }
-}
-
-const mapDispatchToProps = dispatch => {
-  return {
-    fetchUsers: () => dispatch(fetchUsers())
-  }
-}
-export default connect(mapStateToProps, mapDispatchToProps)(UserList)
-
-# Css
-
-.page-num {width: 50px !important;height: 28px !important}
-.arrow {width: 0;height: 0;margin-top: 5px;border-left: 5px solid transparent;border-right: 5px solid transparent;display: inline-block}
-.arrow-up {border-bottom: 10px solid}
-.arrow-down {border-top: 10px solid}
-.title-home {font-size: 13.5px;font-weight: 400;font-family: 'Segoe UI', sans-serif;padding-top: 5px}
-
-.first,.prev {margin: -.4px 4px 0 0;font-family: 'Varela Round';height: 29px}
-.next,.last {margin: -.4px 0 0 4px;font-family: 'Varela Round';height: 29px}
-
-.next-page {margin-left: 20px;color:#ffb742}
-.prev-page {margin-right: 20px;transform: rotate(180deg);color:#70ff8e}
-.prev-fast {transform: rotate(180deg);margin-right: 20px;color:#8aecff}
-.next-fast {margin-left: 20px;color:#ff5842}
-
-.next-page,.prev-page,.prev-fast,.next-fast {transition: all ease .17s;font-size: 23px;margin-top: -2.7px}
-.next-page:hover,.prev-page:hover,.prev-fast:hover,.next-fast:hover {filter: drop-shadow(0 0 .085em)}
-
-.lang {width: 20px}
-.cam {width: 16px;margin-top: -5px}
-
-.next-page,.prev-page,.prev-fast,.next-fast,.speedometer,.clock {cursor: pointer}
-
-.arrow-up,.arrow-down,.link:hover,.link,.card-title,.clock:hover,.card-desc {color: #fff}
-
-.card-title,.link,.table-title,.page-num {text-align: center}
-
-.input-password,.input-email,.input-name,.input-phone {margin: 9px 9px}
-.lock,.envelope,.name,.phone {margin-top: 12px;width: 40px}
-
-.link {background: #b00fd0;border-radius: 3px;width: 90px;height: 31.3px;padding-top: 4.5px;font-size: 14px}
-.link:hover {background: #9f0ebc}
-
-.table-title {font-size: 14.1px;color: #bebcbc;font-family: 'Varela Round'}
-.table-content {font-size: 13.7px}
-
-.purchase-button {font-size: 12px;margin: 7px 0 0 50px;height: 25px;width: 90px;color: #333;background: #bbbe10;font-weight: 500;border-radius: .3rem}
-.purchase-button:hover {background: #abd727}
-
-.card-photo {width: 77px;margin: 44px 0 0 56.5px;border-radius: 3%}
-.card-title {margin: 7px 62px 0 0;font-size: 13px}
-.card-desc {font-size: 12px;margin: -9px 0 0 65px}
-
-.clock {transform: scale(.92);transition: all ease .2s}
-.clock:hover,.speedometer:hover {transform: scale(1);filter: drop-shadow(0 0 .05em)}
-
-.speedometer {transform: scale(.97);transition: all ease .2s}
-.speedometer:hover {color: #abd727}
-
-::-webkit-scrollbar {width: 5px}
-::-webkit-scrollbar-track {background: #606060}
-::-webkit-scrollbar-thumb {background: #bebebe}
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
                                                                                                                           - ❐ ❌
@@ -2324,116 +2215,6 @@ header i {font-size: 0em;cursor: pointer;margin-right: 8px}
   arrowBack.addEventListener("click", () => {
       wrapper.classList.remove("active")
   })
-
-!J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
-                                                                                                                          - ❐ ❌
-# DigitalWatch
-
-import { useEffect } from 'react'
-
-export default function DigitalWatch() {
-
-  useEffect(() => {
-    const getHours = () => {
-     const clock = document.querySelector('.watch')
-      let date = new Date()
-      let hours = date.getHours()
-      let minutes = date.getMinutes()
-      let seconds = date.getSeconds()
-      let hour = hours < 10 ? `0${hours}` : hours
-      let minute = minutes < 10 ? `0${minutes}` : minutes
-      let second = seconds < 10 ? `0${seconds}` : seconds
-      clock = `${hour}:${minute}:${second}`
-    }
-    setInterval(() => {
-      getHours()
-    }, 1000)
-  })
-  return <div className="watch"></div>
-}
-
-/* ==================================================== CLOCK ⏲ ======================================================== */
-
-:root {
-  --r: #ff2972;
-  --g: #04fc43;
-  --y: #fee800;
-  --w: #fff;
-}
-
-.watch {margin-left: 462px;border: 1px solid var(--w);border-radius: 4px;color: var(--w);display: flex;font-size: 2em;justify-content: center;height: auto;width: 160px}
-
-!J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
-                                                                                                                          - ❐ ❌
-# Home (PDF generate)
-
-import { Alert, Button, OverlayTrigger, Popover } from 'react-bootstrap'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFilePdf } from '@fortawesome/free-solid-svg-icons'
-import { useSelector } from 'react-redux'
-import { useEffect, useState } from 'react'
-import { i18n } from '../assets/translate/i18n'
-import authToken from '../utils/authToken'
-import ModalCustom from './ModalCustom'
-
-export default function Home() {
-  if (localStorage.jwtToken) {
-    authToken(localStorage.jwtToken)
-  }
-
-  const [pdf, setPdf] = useState()
-  const [modalShow, setModalShow] = useState(false)
-  const auth = useSelector(state => state.auth)
-
-  const popover = (
-    <Popover style={{ margin: 0 }}>
-     <Popover.Header as="h3">💬 Popover top</Popover.Header>
-      <Popover.Body>
-        {i18n.t('messages.popover')}
-      </Popover.Body>
-    </Popover>
-  )
-
-  const Popovers = () => (
-    <OverlayTrigger trigger="click" placement="top" overlay={popover}>
-      <Button size="sm" variant="warning">
-        {i18n.t('buttons.popover')}
-      </Button>
-    </OverlayTrigger>
-  )
-
-  useEffect(() => {
-    fetch("http://localhost:8080/rest/pdf/generate")
-      .then(response => {
-        if (response.ok) {
-           response.json()
-        }
-        throw response
-      })
-      .then(data => setPdf(data))
-      .catch(error => console.log('Not Found PDF: ' + error.message))
-  }, [])
-
-  return (
-    <>
-      <Alert style={{ background: "#343A40", color: "#fff", fontSize: 30, fontWeight: "bold", fontFamily: "sans-serif", border: ".5px solid #222" }}>
-      {i18n.t('home.welcome')} <b style={{ color: "#f5d20c", fontSize: 24, fontWeight: 600 }}>{auth.username} ✔️</b>
-        <p className="title-home">{i18n.t('home.phrase')} 🌱</p>
-        <p className="title-home">-- Mark Twain</p>
-      </Alert>
-      <Popovers/>{" "}
-      <Button size="sm" variant="success" onClick={() => setModalShow(true)}>
-        {i18n.t('buttons.modal')}
-      </Button>{" "}
-      <Button size="sm" variant="danger">
-        <FontAwesomeIcon style={{ fontSize: 18 }} icon={faFilePdf}/>
-      </Button>
-      <div style={{ margin: "-45px 0 0 270px" }}>
-        <img style={{ borderRadius: 4, border: "4px solid #fff" }} width="320" src="https://miro.medium.com/v2/resize:fit:1358/1*L_QoAG863l8QvqxpNyBiqw.gif"/>
-      </div>
-     <ModalCustom show={modalShow} onHide={() => setModalShow(false)}/>
-    </>
-  )}
 
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 											  	                         !J ⚙️ CONFIG 🔧 !J
