@@ -70,7 +70,7 @@ export default function PDFReader() {
                   <Text>Não esqueça de incluir a pasta bin do MySQL no PATH do seu sistema.</Text>
                 </View>
 
-                <View style={styles.section}>
+                <View break style={styles.section}>
                   <Text>Criando profile de teste:</Text>
                 </View>
 
@@ -121,7 +121,7 @@ export default function PDFReader() {
                   <Text>  Escolha a localidade.</Text>
                 </View>
 
-                <View style={styles.section}>
+                <View break style={styles.section}>
                   <Text>Instalação do MySQL no Heroku:</Text>
                 </View>
 
@@ -164,7 +164,7 @@ export default function PDFReader() {
                   --reconnect heroku_71216a81091a2da arquivo.sql</Text>
                 </View>
 
-                <View style={styles.section}>
+                <View break style={styles.section}>
                   <Text>Configuração e envio do projeto para produção:</Text>
                 </View>
 

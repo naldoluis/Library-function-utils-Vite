@@ -88,12 +88,6 @@
 # GET PDF
           ==> ⚡	http://localhost:8080/rest/pdf/generate
 
-# GET Page
-          ==> ⚡	http://localhost:8080/rest/books/search/English?page=0&size=5
-
-# GET Search
-          ==> ⚡	http://localhost:8080/rest/books?pageNumber=1&pageSize=5&sortBy=price&sortDir=asc
-
 # GET Genres
           ==> ⚡ http://localhost:8080/rest/books/genres
 
