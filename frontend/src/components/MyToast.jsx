@@ -5,7 +5,7 @@ import { i18n } from '../assets/translate/i18n'
 
 export function MyToast(props) {
   return (
-    <Toast className={`text-white ${props.type === "success" ? "border-success bg-success" : "border-danger bg-danger"}`}
+    <Toast style={{ zIndex: 12 }} className={`text-white ${props.type === "success" ? "border-success bg-success" : "border-danger bg-danger"}`}
      >
       <Toast.Header className={`text-white ${props.type === "success" ? "bg-success" : "bg-danger"}`}
         closeButton={false}
@@ -20,7 +20,7 @@ export function MyToast(props) {
 
 export function MyToastOut(props) {
   return (
-    <Toast style={{ background: "#fff" }}
+    <Toast style={{ background: "#fff", zIndex: 12 }}
      >
       <Toast.Header style={{ color: "#444", background: "#fff" }}
         closeButton={false}
@@ -35,7 +35,7 @@ export function MyToastOut(props) {
 
 export function MyToastPurchase(props) {
   return (
-    <Toast style={{ background: "#61f50c" }}
+    <Toast style={{ background: "#61f50c", zIndex: 12 }}
      >
       <Toast.Header style={{ color: "#444", background: "#61f50c" }}
         closeButton={false}
@@ -50,7 +50,7 @@ export function MyToastPurchase(props) {
 
 export function MyToastTimer(props) {
   return (
-    <Toast style={{ color: "#444", background: "#fffbc3" }}
+    <Toast style={{ color: "#444", background: "#fffbc3", zIndex: 12 }}
      >
       <Toast.Header style={{ color: "#444", background: "#fffbc3" }}
         closeButton={false}
@@ -65,7 +65,7 @@ export function MyToastTimer(props) {
   
 export function MyToastUser(props) {
   return (
-    <Toast style={{ background: "#ffc107" }}
+    <Toast style={{ background: "#ffc107", zIndex: 12 }}
      >
       <Toast.Header style={{ color: "#444", background: "#ffc107" }}
         closeButton={false}
