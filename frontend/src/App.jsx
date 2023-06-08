@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Book from './components/Book/Book'
 import BookList from './components/Book/BookList'
 import Bonus from './components/Bonus/Bonus'
+import ScientificCalculator from './components/ScientificCalculator'
 import Footer from './components/Footer'
 import Help from './components/Help'
 import Home from './components/Home'
@@ -34,6 +35,7 @@ export default function App() {
               <Route path="/add" element={<Book/>}/>
               <Route path="/edit/:bookId" element={<Book/>}/>
               <Route path="/list" element={<BookList/>}/>
+              <Route path="home/calculator" element={<ScientificCalculator/>}/>
               <Route path="/register" element={<Register/>}/>
               <Route path="home/pdf" element={<PDFReader/>}/>
               <Route path="/store" element={<Store/>}/>
