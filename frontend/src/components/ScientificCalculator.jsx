@@ -1,11 +1,10 @@
 export default function ScientificCalculator() {
 
     $(document).ready(() => {
-
       $("#n1").val("")
       $("#m1").val("")
       let op = ""
-      $("#muestra").val("")
+      $("#display-calc").val("")
 
       $("#n1").on("click", () => {
           $("#n1").val("")
@@ -14,7 +13,7 @@ export default function ScientificCalculator() {
       $("#c").on("click", () => {
           $("#n1").val("")
           op = ""
-          $("#muestra").val("")
+          $("#display-calc").val("")
         })
 
       $("#tom").on("click", () => {
@@ -52,22 +51,22 @@ export default function ScientificCalculator() {
           $("#n1").val($("#n1").val() + a)
         })
 
-      $("#cuadrado").on("click", () => {
+      $("#squad").on("click", () => {
           let num = $("#n1")
           $("#n1").val(num.val() * num.val())
         })
 
-      $("#inverso").on("click", () => {
+      $("#reverse").on("click", () => {
           let num = $("#n1")
           $("#n1").val(1 / num.val())
         })
 
-      $("#raiz").on("click", () => {
+      $("#root").on("click", () => {
           let num = $("#n1")
           $("#n1").val(Math.sqrt(num.val()))
         })
 
-      $("#parte_entera").on("click", () => {
+      $("#whole part").on("click", () => {
           let num = $("#n1")
           if (num.val() >= 0) {
             $("#n1").val(Math.floor(num.val()))
@@ -90,11 +89,11 @@ export default function ScientificCalculator() {
           $("#n1").val(total)
         })
 
-      $("#suma").on("click", () => {
+      $("#sum").on("click", () => {
           num = $("#n1")
           acc = num.val()
           op = op + acc + "+"
-          $("#muestra").val(op)
+          $("#display-calc").val(op)
           $("#n1").val("")
         })
 
@@ -102,7 +101,7 @@ export default function ScientificCalculator() {
           num = $("#n1")
           acc = num.val()
           op = op + acc + "-"
-          $("#muestra").val(op)
+          $("#display-calc").val(op)
           $("#n1").val("")
         })
 
@@ -110,19 +109,19 @@ export default function ScientificCalculator() {
           num = $("#n1")
           acc = num.val()
           op = op + acc + "*"
-          $("#muestra").val(op)
+          $("#display-calc").val(op)
           $("#n1").val("")
         })
 
-      $("#entre").on("click", () => {
+      $("#enter").on("click", () => {
           num = $("#n1")
           acc = num.val()
           op = op + acc + "/"
-          $("#muestra").val(op)
+          $("#display-calc").val(op)
           $("#n1").val("")
         })
 
-      $("#parentesis").on("click", () => {
+      $("#parentheses").on("click", () => {
           num = $("#n1")
           acc = num.val()
           if (op.lastIndexOf("(") <= op.lastIndexOf(")")) {
@@ -130,11 +129,11 @@ export default function ScientificCalculator() {
           } else {
             op = op + acc + ")"
           }
-          $("#muestra").val(op)
+          $("#display-calc").val(op)
           $("#n1").val("")
         })
 
-      $("#sumatorio").on("click", () => {
+      $("#summary").on("click", () => {
           let num = $("#n1")
           listado = num.val().split(",")
           for (let n = 0, total = 0; n < listado.length; n++) {
@@ -143,7 +142,7 @@ export default function ScientificCalculator() {
           $("#n1").val(total)
         })
 
-      $("#producto").on("click", () => {
+      $("#product").on("click", () => {
           let num = $("#n1")
           listado = num.val().split(",")
           for (let n = 0, total = 1; n < listado.length; n++) {
@@ -156,7 +155,7 @@ export default function ScientificCalculator() {
           var num = $("#n1")
           acc = num.val()
           op += acc
-          $("#muestra").val(op)
+          $("#display-calc").val(op)
           $("#n1").val(eval(op))
           op = ""
 
@@ -180,38 +179,38 @@ export default function ScientificCalculator() {
           if (op === "e") {
             $("#n1").val(Math.pow(+acc, +num.val()))
           }
-        })
-     })
+       })
+    })
 
   return (
     <>
-      <div className="ejercicio wallpaper">
-        <div id="calculadora">
-          <div className="trabajo">
+      <div className="wallpaper">
+        <div id="calculator">
+          <div className="job">
             <div className="">
-              <div className="hueco arras sueltaN">
-                <input maxLength={19} className="pantalla memoria" type="text" id="m1" disabled/></div>
+              <div className="gap arras sueltaN">
+                <input maxLength={19} className="screen memory" type="text" id="m1" disabled/></div>
               <div className="pant">
-                <input maxLength={9} type="text" id="muestra" disabled/></div>
+                <input maxLength={9} type="text" id="display-calc" disabled/></div>
               </div>
-            <div className="hueco2 arras sueltaM">
-              <input maxLength={19} className="pantalla" type="text" id="n1"/>
+            <div className="gap2 arras sueltaM">
+              <input maxLength={19} className="screen" type="text" id="n1"/>
             </div>
            <div className="clear"></div>
-            <div id="operaciones">
-              <button id="cuadrado">x<sup>2</sup></button>
-              <button id="inverso">1/x</button>
-              <button id="raiz">&radic;<span style={{ textDecoration: "overline" }}> x</span></button>
-              <button id="parte_entera">To N</button>
+            <div id="operator">
+              <button id="squad">x<sup>2</sup></button>
+              <button id="reverse">1/x</button>
+              <button id="root">&radic;<span style={{ textDecoration: "overline" }}> x</span></button>
+              <button id="whole part">To N</button>
               <button id="n">2<sup>n</sup></button>
               <button id="fact">n!</button>
-              <button id="sumatorio">&#8512; csv</button>
-              <button id="producto">* csv</button>
+              <button id="summary">&#8512; csv</button>
+              <button id="product">* csv</button>
               <button href="," className="val">,&nbsp; csv</button>
               <button id="tom" className="largo" >ToM</button>
               <button id="fromM" className="largo">FromM</button>
-              <button id="parentesis">(&nbsp;&nbsp;)</button>
-              <button id="suma" style={{ background: "#6e952f" }}>
+              <button id="parentheses">(&nbsp;&nbsp;)</button>
+              <button id="sum" style={{ background: "#6e952f" }}>
                 <b style={{ color: "#fff", fontSize: 15 }}>+</b>
               </button>
               <button id="resta" style={{ background: "#ff5647" }}>
@@ -220,14 +219,14 @@ export default function ScientificCalculator() {
               <button id="por" style={{ background: "#fcb707" }}>
                 <div style={{ color: "#fff", fontSize: 15 }}>*</div>
               </button>
-              <button id="entre" style={{ background: "#b535f0" }}>
+              <button id="enter" style={{ background: "#b535f0" }}>
                 <div style={{ color: "#fff", fontSize: 15 }}>/</div>
               </button>
               <button id="c" className="esp">
                 <div style={{ color: "#fff", fontSize: 15 }}>C</div>
               </button>
             </div>
-            <div id="teclado">
+            <div id="keyboard">
               <button href="7" className="val">7</button>
               <button href="8" className="val">8</button>
               <button href="9" className="val">9</button>
