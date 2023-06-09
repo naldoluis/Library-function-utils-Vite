@@ -142,7 +142,6 @@ useEffect(() => {
   return (
    <>
     <div style={{ fontSize: 18 }} className="text-white">⛈ {i18n.t('weather.title')}
-     {/* <img className="clock-svg" src="./src/assets/icons/clock/animationclock.svg"/> */}
      <DigitalWatch/>
       </div>
        <div className="text-white" align="center">

@@ -1,10 +1,11 @@
 export default function ScientificCalculator() {
 
     $(document).ready(() => {
+
       $("#n1").val("")
       $("#m1").val("")
       let op = ""
-      $("#display-calc").val("")
+      $("#show-display").val("")
 
       $("#n1").on("click", () => {
           $("#n1").val("")
@@ -13,7 +14,7 @@ export default function ScientificCalculator() {
       $("#c").on("click", () => {
           $("#n1").val("")
           op = ""
-          $("#display-calc").val("")
+          $("#show-display").val("")
         })
 
       $("#tom").on("click", () => {
@@ -61,12 +62,12 @@ export default function ScientificCalculator() {
           $("#n1").val(1 / num.val())
         })
 
-      $("#root").on("click", () => {
+      $("#square_root").on("click", () => {
           let num = $("#n1")
           $("#n1").val(Math.sqrt(num.val()))
         })
 
-      $("#whole part").on("click", () => {
+      $("#whole_part").on("click", () => {
           let num = $("#n1")
           if (num.val() >= 0) {
             $("#n1").val(Math.floor(num.val()))
@@ -89,11 +90,11 @@ export default function ScientificCalculator() {
           $("#n1").val(total)
         })
 
-      $("#sum").on("click", () => {
+      $("#addition").on("click", () => {
           num = $("#n1")
           acc = num.val()
           op = op + acc + "+"
-          $("#display-calc").val(op)
+          $("#show-display").val(op)
           $("#n1").val("")
         })
 
@@ -101,23 +102,23 @@ export default function ScientificCalculator() {
           num = $("#n1")
           acc = num.val()
           op = op + acc + "-"
-          $("#display-calc").val(op)
+          $("#show-display").val(op)
           $("#n1").val("")
         })
 
-      $("#por").on("click", () => {
+      $("#multiplication").on("click", () => {
           num = $("#n1")
           acc = num.val()
           op = op + acc + "*"
-          $("#display-calc").val(op)
+          $("#show-display").val(op)
           $("#n1").val("")
         })
 
-      $("#enter").on("click", () => {
+      $("#division").on("click", () => {
           num = $("#n1")
           acc = num.val()
           op = op + acc + "/"
-          $("#display-calc").val(op)
+          $("#show-display").val(op)
           $("#n1").val("")
         })
 
@@ -129,7 +130,7 @@ export default function ScientificCalculator() {
           } else {
             op = op + acc + ")"
           }
-          $("#display-calc").val(op)
+          $("#show-display").val(op)
           $("#n1").val("")
         })
 
@@ -155,7 +156,7 @@ export default function ScientificCalculator() {
           var num = $("#n1")
           acc = num.val()
           op += acc
-          $("#display-calc").val(op)
+          $("#show-display").val(op)
           $("#n1").val(eval(op))
           op = ""
 
@@ -179,8 +180,8 @@ export default function ScientificCalculator() {
           if (op === "e") {
             $("#n1").val(Math.pow(+acc, +num.val()))
           }
-       })
-    })
+        })
+     })
 
   return (
     <>
@@ -191,7 +192,7 @@ export default function ScientificCalculator() {
               <div className="gap arras sueltaN">
                 <input maxLength={19} className="screen memory" type="text" id="m1" disabled/></div>
               <div className="pant">
-                <input maxLength={9} type="text" id="display-calc" disabled/></div>
+                <input maxLength={9} type="text" id="show-display" disabled/></div>
               </div>
             <div className="gap2 arras sueltaM">
               <input maxLength={19} className="screen" type="text" id="n1"/>
@@ -200,8 +201,8 @@ export default function ScientificCalculator() {
             <div id="operator">
               <button id="squad">x<sup>2</sup></button>
               <button id="reverse">1/x</button>
-              <button id="root">&radic;<span style={{ textDecoration: "overline" }}> x</span></button>
-              <button id="whole part">To N</button>
+              <button id="square_root">&radic;<span style={{ textDecoration: "overline" }}> x</span></button>
+              <button id="whole_part">To N</button>
               <button id="n">2<sup>n</sup></button>
               <button id="fact">n!</button>
               <button id="summary">&#8512; csv</button>
@@ -210,16 +211,16 @@ export default function ScientificCalculator() {
               <button id="tom" className="largo" >ToM</button>
               <button id="fromM" className="largo">FromM</button>
               <button id="parentheses">(&nbsp;&nbsp;)</button>
-              <button id="sum" style={{ background: "#6e952f" }}>
+              <button id="addition" style={{ background: "#6e952f" }}>
                 <b style={{ color: "#fff", fontSize: 15 }}>+</b>
               </button>
-              <button id="resta" style={{ background: "#ff5647" }}>
+              <button id="subtraction" style={{ background: "#ff5647" }}>
                 <b style={{ color: "#fff", fontSize: 15 }}>-</b>
               </button>
-              <button id="por" style={{ background: "#fcb707" }}>
+              <button id="multiplication" style={{ background: "#fcb707" }}>
                 <div style={{ color: "#fff", fontSize: 15 }}>*</div>
               </button>
-              <button id="enter" style={{ background: "#b535f0" }}>
+              <button id="division" style={{ background: "#b535f0" }}>
                 <div style={{ color: "#fff", fontSize: 15 }}>/</div>
               </button>
               <button id="c" className="esp">
