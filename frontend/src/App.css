@@ -97,7 +97,7 @@ body {overflow-x: hidden}
 
 #calculator {border-radius: 10px;width: 495px;height: 580px;margin: auto;background: #606061;border-color: #555;border-width: 3px 6px 5px 3px;border-style: outset;overflow: hidden}
 #show-display {width: 170px;color: #aaa;font-size: .8em;border-radius: 7px;background: #14145433;text-align: right}
-#operator button {padding: 0;margin: 6px;width: 50px;height: 20px;padding: 8px 0 8px;color: #4b4b4b;font-size: 15px;letter-spacing: -2px;border: #969595 4px outset;border-radius: 9px;text-align: center;box-sizing: content-box;text-decoration: none}
+#operator button {padding: 0;margin: 6px;width: 50px;height: 20px;padding: 6px 0 8px;color: #4b4b4b;font-size: 15px;letter-spacing: -2px;border: #969595 4px outset;border-radius: 9px;text-align: center;box-sizing: content-box;text-decoration: none}
 #operator button:active {border: #626587 4px inset;text-decoration: none}
 #keyboard button {padding: 0;margin-right: 7px;margin-left: 3px;margin-bottom: 5px;width: 130px;height: 55px;padding: 8px 0 8px;color: #fff;font-size: 22px;background: #464646;border: #626587 4px outset;border-radius: 9px;text-align: center;box-sizing: border-box}
 #keyboard button:active {border: #626587 .01px inset;font-size: 20px}

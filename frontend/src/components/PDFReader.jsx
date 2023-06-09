@@ -38,7 +38,7 @@ export default function PDFReader() {
   return (
     <Card className="card-pdf">
       <Card.Header>
-        <Card.Body className="row" style={{ overflowY: "scroll", height: 480 }}>
+        <Card.Body className="row" style={{ overflowY: "hidden", height: 480 }}>
           <PDFViewer style={styles.viewer}>
             <Document>
               <Page size="A4" style={styles.page}>

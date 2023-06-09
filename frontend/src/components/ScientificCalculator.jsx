@@ -189,15 +189,17 @@ export default function ScientificCalculator() {
           <div className="job">
             <div className="">
               <div className="gap arras sueltaN">
-                <input maxLength={19} className="screen memory" type="text" id="m1" disabled/></div>
-              <div className="pant">
-                <input maxLength={9} type="text" id="show-display" disabled/></div>
+                <input maxLength={19} className="screen memory" type="text" id="m1" disabled/>
               </div>
-            <div className="gap2 arras sueltaM">
-              <input maxLength={19} className="screen" type="text" id="n1"/>
+              <div className="pant">
+                <input maxLength={9} type="text" id="show-display" disabled/>
+              </div>
             </div>
-           <div className="clear"></div>
-            <div id="operator">
+              <div className="gap2 arras sueltaM">
+                <input maxLength={19} className="screen" type="text" id="n1"/>
+              </div>
+             <div className="clear"></div>
+            <div id="operator" style={{ color: "#fff"}}>
               <button id="squad">x<sup>2</sup></button>
               <button id="reverse">1/x</button>
               <button id="square_root">&radic;<span style={{ textDecoration: "overline" }}> x</span></button>
@@ -210,21 +212,11 @@ export default function ScientificCalculator() {
               <button id="tom" className="largo" >ToM</button>
               <button id="fromM" className="largo">FromM</button>
               <button id="parentheses">(&nbsp;&nbsp;)</button>
-              <button id="addition" style={{ background: "#6e952f" }}>
-                <b style={{ color: "#fff", fontSize: 15 }}>+</b>
-              </button>
-              <button id="subtraction" style={{ background: "#ff5647" }}>
-                <b style={{ color: "#fff", fontSize: 15 }}>-</b>
-              </button>
-              <button id="multiplication" style={{ background: "#fcb707" }}>
-                <div style={{ color: "#fff", fontSize: 15 }}>*</div>
-              </button>
-              <button id="division" style={{ background: "#b535f0" }}>
-                <div style={{ color: "#fff", fontSize: 15 }}>/</div>
-              </button>
-              <button id="c" className="esp">
-                <div style={{ color: "#fff", fontSize: 15 }}>C</div>
-              </button>
+              <button id="addition" style={{ background: "#6e952f", color: "#fff" }}>+</button>
+              <button id="subtraction" style={{ background: "#ff5647", color: "#fff" }}>-</button>
+              <button id="multiplication" style={{ background: "#fcb707", color: "#fff" }}>*</button>
+              <button id="division" style={{ background: "#b535f0", color: "#fff" }}>/</button>
+              <button id="c" className="esp" style={{ color: "#fff" }}>C</button>
             </div>
             <div id="keyboard">
               <button href="7" className="val">7</button>
