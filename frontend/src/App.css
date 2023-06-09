@@ -1,6 +1,8 @@
 @import "https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css";
 @import "https://fonts.googleapis.com/css?family=Roboto|Varela+Round";
 
+body {overflow-x: hidden}
+
 .margin-top {margin-top : 22px}
 .clean-find,.edit:hover,.slide,.content-modal {color: aliceblue}
 
@@ -115,4 +117,4 @@
 .pant {width: 60%}
 }
 
-.wallpaper {background-image: url(assets/icons/wallpaper-calc.jpg);background-size: contain;width: 1421px;height: 87vh;margin: -20px 0 0 -156px}
+.wallpaper {background-image: url(assets/icons/wallpaper-calc.jpg);background-size: contain;background-attachment: fixed;width: 1421px;height: 87vh;margin: -20px 0 0 -156px}

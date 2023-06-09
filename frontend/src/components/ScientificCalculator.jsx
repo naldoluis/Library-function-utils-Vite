@@ -1,7 +1,6 @@
 export default function ScientificCalculator() {
 
     $(document).ready(() => {
-
       $("#n1").val("")
       $("#m1").val("")
       let op = ""
@@ -180,8 +179,8 @@ export default function ScientificCalculator() {
           if (op === "e") {
             $("#n1").val(Math.pow(+acc, +num.val()))
           }
-        })
-     })
+       })
+    })
 
   return (
     <>

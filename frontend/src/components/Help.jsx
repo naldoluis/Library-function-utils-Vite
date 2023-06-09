@@ -15,7 +15,7 @@ export default function Help() {
   return (
     <Card bg="dark" text="light">
      <Card.Header>🗨 {i18n.t('messages.comments')}</Card.Header>
-      <Card.Body style={{ overflowY: "scroll", height: 570 }}>
+      <Card.Body style={{ overflowY: "scroll", height: 530 }}>
         {comments &&
           comments.map((comments, id) => (
            <blockquote className="blockquote mb-0" key={id}>

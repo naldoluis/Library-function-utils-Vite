@@ -2341,4 +2341,4 @@ onSwipeMove	                   –	              Executar alguma função no car
           </svg>
         </a>
 
-                                                                                                               ⋈ vscode: 1.78.2
+                                                                                                               ⋈ vscode: 1.79.0
