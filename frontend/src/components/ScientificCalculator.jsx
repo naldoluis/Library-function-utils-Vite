@@ -135,18 +135,18 @@ export default function ScientificCalculator() {
 
       $("#summary").on("click", () => {
           let num = $("#n1")
-          listado = num.val().split(",")
-          for (let n = 0, total = 0; n < listado.length; n++) {
-            total = +total + (+listado[n])
+          listed = num.val().split(",")
+          for (let n = 0, total = 0; n < listed.length; n++) {
+            total = +total + (+listed[n])
           }
           $("#n1").val(total)
         })
 
       $("#product").on("click", () => {
           let num = $("#n1")
-          listado = num.val().split(",")
-          for (let n = 0, total = 1; n < listado.length; n++) {
-            total = +total * +listado[n]
+          listed = num.val().split(",")
+          for (let n = 0, total = 1; n < listed.length; n++) {
+            total = +total * +listed[n]
           }
           $("#n1").val(total)
         })
