@@ -671,6 +671,7 @@ public class SpringSecurityConfig {
                    @import "https://fonts.googleapis.com/css2?family=Arvo&display=swap";
                    @import "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap";
                    @import "https://fonts.googleapis.com/css?family=Assistant:400,700|Playfair+Display:900";
+                   @import "https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap";
 
 # Fonts index.html
 
@@ -1468,6 +1469,252 @@ export default function Home() {
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
                                                                                                                           - ❐ ❌
+# Calculator & Theme
+
+HTML
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calc container-fluid">
+        <div class="row calc-content justify-content-center w-100 mx-auto">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-4 ">
+                <div class="container calc-top">
+                    <div class="row justify-content-end">
+                        <span class="col-1">1</span>
+                        <span class="col-1">2</span>
+                        <span class="col-1">3</span>
+                    </div>
+                    <div class="calc-top row">
+                        <h3 class="col-6">calc</h3>
+                        <h4 class="col-3">theme</h4>
+                        <div class="col-3 toggle">
+                            <div class="btn-group">
+                                <input type="range" id="btnTheme" min="1" max="3" value="1" onchange="myFunction_set(this.value);">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calc-top-result row">
+                        <input type="text" class="col-12" id="result" placeholder="0" disabled></input>
+                    </div>
+                </div>
+                <div class="calc-keys">
+                    <div class="container">
+                        <div class="row">
+                            <input class="col" type="button" value="7" onclick="input('7')">
+                            <input class="col" type="button" value="8" onclick="input('8')">
+                            <input class="col" type="button" value="9" onclick="input('9')">
+                            <input class="col" type="button" value="DEL" id="del" onclick="del()">
+                        </div>
+                        <div class="row">
+                            <input class="col" type="button" value="4" onclick="input('4')">
+                            <input class="col" type="button" value="5" onclick="input('5')">
+                            <input class="col" type="button" value="6" onclick="input('6')">
+                            <input class="col" type="button" value="+" onclick="input('+')">
+                        </div>
+                        <div class="row">
+                            <input class="col" type="button" value="1" onclick="input('1')">
+                            <input class="col" type="button" value="2" onclick="input('2')">
+                            <input class="col" type="button" value="3" onclick="input('3')">
+                            <input class="col" type="button" value="-" onclick="input('-')">
+                        </div>
+                        <div class="row">
+                            <input class="col" type="button" value="." onclick="input('.')">
+                            <input class="col" type="button" value="0" onclick="input('0')">
+                            <input class="col" type="button" value="/" onclick="input('/')">
+                            <input class="col" type="button" value="x" onclick="input('*')">
+                        </div>
+                        <div class="row">
+                            <input class="col" type="button" value="RESET" id="reset" onclick="reset()">
+                            <input class="col" type="button" value="=" id="equals" onclick="calc()">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
+JAVASCRIPT
+
+/*
+    ====================================================
+    ================= CALCULATOR LOGIC =================
+    ====================================================
+*/ 
+
+let result  = document.getElementById("result")
+
+function input(num) {
+    let number = result.value
+    result.value = number + num
+}
+
+function calc() {
+    if(result.value != "") {
+        let result2  = result.value
+        result.value = eval(result2)
+    } else {
+        alert("Erro! Adicione valores válidos.")
+    }
+}
+
+function reset() {
+    result.value = ""
+}
+
+function del() {
+    let result2  = result.value
+    result.value = result2.substring(0, result2.length - 1)
+}
+
+/*
+    ====================================================
+    =================== TOGGLE THEME ===================
+    ====================================================
+*/
+
+  const theme = {
+      defaul() {
+          root.style.setProperty('--background'          , '#3a4764')
+          root.style.setProperty('--background-dark'     , '#232c43')
+          root.style.setProperty('--background-very-dark', '#182034')
+          
+          root.style.setProperty('--key-color-top'       , '#ffffff')
+          root.style.setProperty('--key-color-bottom'    , '#3a4764')
+          root.style.setProperty('--key-background'      , '#eae3dc')
+          root.style.setProperty('--key-background-dark' , '#dfd9d2')
+          root.style.setProperty('--key-shadow'          , '#b4a597')
+
+          root.style.setProperty('--key-blue-background' , '#637097')
+          root.style.setProperty('--key-blue-shadow'     , '#404e72')
+
+          root.style.setProperty('--key-red-background'  , '#d03f2f')
+          root.style.setProperty('--key-red-shadow'      , '#93261a')
+      },
+      light() {
+          root.style.setProperty('--background'          , '#e6e6e6')
+          root.style.setProperty('--background-dark'     , '#d3cdcd')
+          root.style.setProperty('--background-very-dark', '#eeeeee')
+          
+          root.style.setProperty('--key-color-top'       , '#3d3d33')
+          root.style.setProperty('--key-color-bottom'    , '#3d3d33')
+          root.style.setProperty('--key-background'      , '#e5e4e0')
+          root.style.setProperty('--key-background-dark' , '#dfd9d2')
+          root.style.setProperty('--key-shadow'          , '#b4a597')
+
+          root.style.setProperty('--key-blue-background' , '#388187')
+          root.style.setProperty('--key-blue-shadow'     , '#1c6166')
+
+          root.style.setProperty('--key-red-background'  , '#d03f2f')
+          root.style.setProperty('--key-red-shadow'      , '#93261a')
+      }
+      dark() {
+          root.style.setProperty('--background'          , '#17062a')
+          root.style.setProperty('--background-dark'     , '#1e0836')
+          root.style.setProperty('--background-very-dark', '#1e0836')
+          
+          root.style.setProperty('--key-color-top'       , '#f7de43')
+          root.style.setProperty('--key-color-bottom'    , '#f7de43')
+          root.style.setProperty('--key-background'      , '#331b4d')
+          root.style.setProperty('--key-shadow'          , '#851c9c')
+
+          root.style.setProperty('--key-blue-background' , '#56077c')
+          root.style.setProperty('--key-blue-shadow'     , '#851c9c')
+
+          root.style.setProperty('--key-red-background'  , '#00decf')
+          root.style.setProperty('--key-red-shadow'      , '#00decf')
+      }
+  }
+
+    const root = document.querySelector(':root')
+
+    const darkThemeMq  = window.matchMedia("(prefers-color-scheme: dark)")
+    const lightThemeMq = window.matchMedia("(prefers-color-scheme: light)")
+
+    if (darkThemeMq.matches) {
+        document.getElementById('btnTheme').value = "3"
+        theme.dark()
+    } else if(lightThemeMq.matches) {
+        document.getElementById('btnTheme').value = "2"
+        theme.light() 
+    } else {
+        document.getElementById('btnTheme').value = "1"
+        theme.defaul()
+    }
+
+    function myFunction_set(val) {
+        document.getElementById('btnTheme').value = val
+
+        if(val == 1) {
+            theme.defaul()
+        } else if(val == 2) {
+            theme.light()
+        } else {
+            theme.dark()
+        }
+    }
+
+CSS
+
+:root {
+    --background          : #3a4764;
+    --background-dark     : #232c43;
+    --background-very-dark: #182034;
+    --key-color-top       : #ffffff;
+    --key-color-bottom    : #3a4764;
+    --key-background      : #eae3dc;
+    --key-background-dark : #dfd9d2;
+    --key-shadow          : #b4a597;
+    --key-blue-background : #637097;
+    --key-blue-shadow     : #404e72;
+    --key-red-background  : #d03f2f;
+    --key-red-shadow      : #93261a;
+    --transition: 1s;
+}
+
+.calc {background: var(--background);width: 100vw;height: 100vh;transition: var(--transition)}
+.calc-content {position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%)}
+.calc-top h3 {color: var(--key-color-top);transition: var(--transition)}
+.calc-top h4 {color: var(--key-color-top);text-transform: uppercase;font-size: 15px;text-align: center;margin-top: 5px;transition: var(--transition)}
+.calc-top span {color: var(--key-color-top);font-size: 13px;transition: var(--transition);}
+.calc-top-result input{background: var(--background-very-dark); color: var(--key-color-top);border: none;margin-bottom: 20px;text-align: right;padding: 17px;font-size: 32px;border-radius: 10px;transition: var(--transition)}
+.calc-keys {background: var(--background-dark);border-radius: 10px;padding: 10px;transition: var(--transition)}
+.calc-keys input {background: var(--key-background);color: var(--key-color-bottom);border: 2px solid var(--key-background);border-radius: 5px;box-shadow: 1px 1.5px 1px var(--key-shadow);margin: 10px;height: 35px;transition: var(--transition)}
+.calc-keys input:hover {border: 2px solid var(--key-background);color: var(--key-color-top);background: hsla(0, 0%, 100%, 0);transition: .5s}
+
+#del {font-size: 13px;padding: 0 3%}
+#reset, #del {background: var(--key-blue-background);color: #FFF;box-shadow: 1px 1.5px 1px var(--key-blue-shadow);border: 2px solid var(--key-blue-background);transition: var(--transition)}
+#reset:hover, #del:hover {border: 2px solid var(--key-blue-background);color: var(--key-blue-background);background: hsla(0, 0%, 100%, 0);transition: .5s}
+.calc-keys input:active {box-shadow: 3px 3px 3px var(--key-shadow);background: var(--key-background);color: var(--background)}
+#reset:active, #del:active {box-shadow: 3px 3px 3px var(--key-blue-shadow);background: var(--key-blue-background);color: var(--key-background)}
+
+#equals:active {box-shadow: 3px 3px 3px var(--key-red-shadow);background: var(--key-red-background);color: var(--key-background)}
+#equals:hover {border: 2px solid var(--key-red-background);color: var(--key-red-background);background: hsla(0, 0%, 100%, 0);transition: .5s}
+#equals {background: var(--key-red-background);color: var(--key-background);box-shadow: 1px 1.5px 1px var(--key-red-shadow);border: 2px solid var(--key-red-background);transition: var(--transition)}
+
+input[type=range] {width: 100%;background: transparent}
+input[type=range]::-webkit-slider-thumb {-webkit-appearance: none}
+input[type=range]:focus {outline: none}
+input[type=range]::-ms-track {width: 100%;cursor: pointer;background: transparent; border-color: transparent;color: transparent}
+input[type=range]::-webkit-slider-thumb {-webkit-appearance: none;border: none;height: 18px;width: 18px;border-radius: 20px;background: var(--key-red-background);cursor: pointer;box-shadow: 1px 1px 1px var(--key-red-shadow);transition: var(--transition)}
+input[type=range]::-moz-range-thumb {border: none;height: 18px;width: 18px;border-radius: 20px;background: var(--key-red-background);cursor: pointer;box-shadow: 1px 1px 1px var(--key-red-shadow)}
+input[type=range]::-ms-thumb {border: none;height: 18px;width: 18px;border-radius: 20px;background: var(--key-red-background);cursor: pointer;box-shadow: 1px 1px 1px var(--key-red-shadow)}
+
+.toggle {background: var(--background-dark);border-radius: 25px;height: 25px;padding: 0 6px !important;transition: var(--transition)}
+.toggle input {width: 100%}
+
+!J------------------------------------------------------------------------------------------------------------------------------J!
+                                                                                                                          - ❐ ❌
 # Captcha Vanilla
 
   // document.querySelector() é usado para selecionar um elemento do documento usando seu ID
@@ -1757,7 +2004,7 @@ div {overflow: hidden;position: relative;width: 350px;height: 200px}
 .slideshow-container {max-width: 1000px;position: relative;margin: auto}
 .mySlides {display: none}
 
-.prev, .next {cursor: pointer;position: absolute;top: 50%;width: auto;margin-top: -22px;padding: 16px;color: white;font-weight: bold;font-size: 18px;transition: 0.6s ease;border-radius: 0 3px 3px 0;user-select: none}
+.prev, .next {cursor: pointer;position: absolute;top: 50%;width: auto;margin-top: -22px;padding: 16px;color: white;font-weight: bold;font-size: 18px;transition: .6s ease;border-radius: 0 3px 3px 0;user-select: none}
 .next {right: 0;border-radius: 3px 0 0 3px}
 
 .prev:hover, .next:hover {background: rgba(0 ,0 ,0 , .8)}
@@ -2328,7 +2575,7 @@ onSwipeMove	                   –	              Executar alguma função no car
 
 💭 🗯 ⚡ 🌪 🌈 🕡 ✔ ✖  💬 🧭 ⛔️ ✅ 🛑 📰 🧪 ☑️ 🎄 🌪️ ☀️ 🗺 🗝 ❏ ➪ 🛎 🎟 ⛈ 👁 ➤➤ ➙ 📓 ⮜⮜ ⫷ ⫸ ៚ ༆ 乡 ♪ ϟ Ξ χ ⸕
 
-🌡 🌙 🌱 🤙 🌴 🌵 🌲 🌾 🍄 🌐 🎵 🔋 🎞️ 🗝️ ♻️ 📁 🗑️ 🧯 🇲🇽 🌞 ☁️ ⏰ ⛈
+🌡 🌙 🌱 🤙 🌴 🌵 🌲 🌾 🍄 🌐 🎵 🔋 🎞️ 🗝️ ♻️ 📁 🗑️ 🧯 🇲🇽 🌞 ☁️ ⏰ ⛈ 🌗
 
 
         <a href="https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi" className="speedometer" style={{ margin: 6 }}>
