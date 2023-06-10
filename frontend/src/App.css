@@ -95,7 +95,7 @@ body {overflow-x: hidden}
 .screen {width: 413px;margin: 2px auto 2px;padding: 4px 2px;color: #202020;text-align: right;font-size: 30px;letter-spacing: 3px;overflow: hidden;border:#000 1px inset;border-radius: 7px;background: linear-gradient(to bottom, rgba(211, 211, 211, 1) 0%,rgba(180, 180, 180, 1) 47%,rgba(160, 160, 160, 1) 100%);box-sizing: border-box}
 .job {margin: 2em}
 
-#calculator {border-radius: 10px;width: 495px;height: 580px;margin: auto;background: #606061;border-color: #555;border-width: 3px 6px 5px 3px;border-style: outset;overflow: hidden}
+#calculator {border-radius: 10px;width: 495px;height: 580px;margin: auto;background: #606061;border-color: #555;border-width: 3px 6px 5px 3px;border-style: outset}
 #show-display {width: 170px;color: #aaa;font-size: .8em;border-radius: 7px;background: #14145433;text-align: right}
 #operator button {padding: 0;margin: 6px;width: 50px;height: 20px;padding: 6px 0 8px;color: #4b4b4b;font-size: 15px;letter-spacing: -2px;border: #969595 4px outset;border-radius: 9px;text-align: center;box-sizing: content-box;text-decoration: none}
 #operator button:active {border: #626587 4px inset;text-decoration: none}
