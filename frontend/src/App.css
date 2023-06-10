@@ -102,19 +102,4 @@ body {overflow-x: hidden}
 #keyboard button {padding: 0;margin-right: 7px;margin-left: 3px;margin-bottom: 5px;width: 130px;height: 55px;padding: 8px 0 8px;color: #fff;font-size: 22px;background: #464646;border: #626587 4px outset;border-radius: 9px;text-align: center;box-sizing: border-box}
 #keyboard button:active {border: #626587 .01px inset;font-size: 20px}
 
-@media screen and (max-width: 500px) {
-#calculator {width: 100%;height: 53vh;padding: 0;margin: 0 auto}
-#show-display {width: 90%}
-#operator button {margin: 1%;width: 10%;padding: 8px 1px 8px;font-size: .9em}
-#keyboard button {margin-right: 1%;margin-left: 1%;margin-bottom: 1%;width: 30%;height: 50px}
-.job {margin: 0}
-.clear {clear: both}
-.gap {width: 30%}
-.gap2 {width: 100%}
-.screen {width: 95%}
-.memory {width: 90%}
-.esp {width: 25% !important}
-.pant {width: 60%}
-}
-
 .wallpaper {background-image: url(assets/icons/wallpaper-calc.jpg);background-size: contain;background-attachment: fixed;width: 1421px;height: 87vh;margin: -20px 0 0 -156px}
