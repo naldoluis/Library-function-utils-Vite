@@ -88,11 +88,11 @@ body {overflow-x: hidden}
 .calc-button:hover {color: #fff}
 .clear {clear: both}
 .esp {background: #ff0000;width: 120px !important}
-.gap2 {width: 415.5px;float: left;background: #000;border: #000 1px inset;border-radius: 7px}
-.gap {width: 220px;float: left;background: #000;border: #000 1px inset;border-radius: 7px}
+.gap2 {width: 417.5px;float: left;border: #808080 1px inset;border-radius: 7px}
+.gap {width: 220px;float: left;border-radius: 7px}
 .memory {font-size: .8em;width: 195px}
 .pant {margin: -28px 2px 0 0;width: 200px;background: #303030;border: #000 2px outset;border-radius: 7px;float: right}
-.screen {width: 413px;margin: 2px auto 2px;padding: 5px 2px;color: #202020;text-align: right;font-size: 30px;letter-spacing: 3px;overflow: hidden;border:#000 1px inset;border-radius: 7px;background: linear-gradient(to bottom, rgba(211, 211, 211, 1) 0%,rgba(180, 180, 180, 1) 47%,rgba(160, 160, 160, 1) 100%);box-sizing: border-box}
+.screen {width: 413px;margin: 2px auto 2px;padding: 4px 2px;color: #202020;text-align: right;font-size: 30px;letter-spacing: 3px;overflow: hidden;border:#000 1px inset;border-radius: 7px;background: linear-gradient(to bottom, rgba(211, 211, 211, 1) 0%,rgba(180, 180, 180, 1) 47%,rgba(160, 160, 160, 1) 100%);box-sizing: border-box}
 .job {margin: 2em}
 
 #calculator {border-radius: 10px;width: 495px;height: 580px;margin: auto;background: #606061;border-color: #555;border-width: 3px 6px 5px 3px;border-style: outset;overflow: hidden}
