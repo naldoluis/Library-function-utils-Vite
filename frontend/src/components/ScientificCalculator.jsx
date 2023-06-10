@@ -159,7 +159,7 @@ export default function ScientificCalculator() {
           $("#n1").val(eval(op))
           op = ""
 
-          var num = $("#n1")
+/*           var num = $("#n1")
           if (op === "+") {
             $("#n1").val(+acc + (+num.val()))
           }
@@ -178,7 +178,7 @@ export default function ScientificCalculator() {
 
           if (op === "e") {
             $("#n1").val(Math.pow(+acc, +num.val()))
-          }
+          } */
        })
     })
 
