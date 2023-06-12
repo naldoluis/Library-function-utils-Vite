@@ -57,14 +57,14 @@ export default function ScientificCalculator() {
           <div className="job">
             <div>
               <div className="gap">
-                <input id="screen" maxLength={19} disabled/>
+                <input id="screen1" className="screen" maxLength={19} disabled/>
               </div>
               <div className="pant">
                 <input id="show-display" maxLength={9} disabled/>
               </div>
             </div>
               <div className="gap2">
-                <input id="screen" maxLength={19} value={num} disabled/>
+                <input id="screen2" className="screen" maxLength={19} value={num} disabled/>
               </div>
             <div className="clear"></div>
             <div id="operator" style={{ marginLeft: 4 }}>
