@@ -22,7 +22,7 @@ const pdata = [
         sales: 17
     },
     {
-        name: 'Enterprise OSGI#',
+        name: 'Enterprise OSGI',
         student: 20,
         sales: 46
     },
