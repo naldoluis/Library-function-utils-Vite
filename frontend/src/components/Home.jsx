@@ -1,6 +1,6 @@
 import { Alert, Button, OverlayTrigger, Popover } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCalculator, faFilePdf } from '@fortawesome/free-solid-svg-icons'
+import { faCalculator, faBalanceScale, faFilePdf } from '@fortawesome/free-solid-svg-icons'
 import { useSelector } from 'react-redux'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
@@ -49,8 +49,11 @@ export default function Home() {
       </Link>{" "}
       <Link to={"calculator"} className="calc-button" type="button">
         <FontAwesomeIcon icon={faCalculator}/>
+      </Link>{" "}
+      <Link to={"graphic"} className="graphic" type="button">
+        <FontAwesomeIcon icon={faBalanceScale}/>
       </Link>
-      <div style={{ margin: "-40px 0 0 365px" }}>
+      <div style={{ margin: "-40px 0 0 400px" }}>
         <img style={{ borderRadius: 4, border: "4px solid #fff" }} width="320" src="https://miro.medium.com/v2/resize:fit:1358/1*L_QoAG863l8QvqxpNyBiqw.gif"/>
       </div>
      <ModalCustom show={modalShow} onHide={() => setModalShow(false)}/>

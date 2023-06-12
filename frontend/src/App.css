@@ -102,3 +102,8 @@ body {overflow-x: hidden}
 #show-display {width: 170px;color: #aaa;font-size: .8em;border-radius: 7px;background: #14145433;text-align: right}
 
 .wallpaper {background-image: url(assets/icons/wallpaper-calc.jpg);background-size: contain;background-attachment: fixed;width: 1421px;height: 87vh;margin: -20px 0 0 -156px}
+
+/* =================================================== GRAPHIC 📊 ======================================================= */
+
+.graphic {background: #7c6352;border-radius: 3px;width: 37px;height: 31.3px;font-size: 18px;color: #fff;text-align: center}
+.graphic:hover {color: #fff}

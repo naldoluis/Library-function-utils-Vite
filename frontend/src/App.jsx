@@ -6,6 +6,7 @@ import BookList from './components/Book/BookList'
 import Bonus from './components/Bonus/Bonus'
 import ScientificCalculator from './components/ScientificCalculator'
 import Footer from './components/Footer'
+import Graphic from './components/Graphic'
 import Help from './components/Help'
 import Home from './components/Home'
 import Login from './components/User/Login'
@@ -34,9 +35,9 @@ export default function App() {
               <Route path="/home" element={<Home/>}/>
               <Route path="/add" element={<Book/>}/>
               <Route path="/edit/:bookId" element={<Book/>}/>
+              <Route path="home/graphic" element={<Graphic/>}/>
               <Route path="/list" element={<BookList/>}/>
               <Route path="home/calculator" element={<ScientificCalculator/>}/>
-              <Route path="/register" element={<Register/>}/>
               <Route path="home/pdf" element={<PDFReader/>}/>
               <Route path="/store" element={<Store/>}/>
               <Route path="/news" element={<News/>}/>
@@ -44,6 +45,7 @@ export default function App() {
               <Route path="/user" element={<UserList/>}/>
               <Route path="/video" element={<VideoList/>}/>
               <Route path="/weather" element={<Weather/>}/>
+              <Route path="/register" element={<Register/>}/>
               <Route path="/login" element={<Login/>}/>
               <Route path="/logout" element={<Login/>}/>
               <Route path="*" element={<h5 style={{ color: "#f0f8ff" }}>{i18n.t('page.notFound')}</h5>}/>
