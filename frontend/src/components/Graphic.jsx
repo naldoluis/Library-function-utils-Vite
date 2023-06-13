@@ -168,7 +168,7 @@ export default function Graphic() {
           <Card.Body className="row" style={{ overflowY: "scroll", height: 430 }}>
            <h6 className="text-light" style={{ margin: "auto" }}>{i18n.t('graphic.title')} 📊</h6>
             <ResponsiveContainer className="py-4" width="96%" aspect={3}>
-              <LineChart data={bookData} margin={{  bottom: -34 }}>
+              <LineChart data={bookData} margin={{ bottom: -14 }}>
                 <CartesianGrid/>
                 <XAxis dataKey="name" stroke="#cdcccc" style={{ fontSize: 12 }} interval={'preserveStart'}/>
                 <YAxis stroke="#c4c4c4" style={{ fontSize: 12 }}/>
