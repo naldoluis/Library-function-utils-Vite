@@ -168,7 +168,7 @@ export default function Graphic() {
           <Card.Body className="row" style={{ overflowY: "scroll", height: 430 }}>
            <h6 className="text-light" style={{ margin: "auto" }}>{i18n.t('graphic.title')} 📊</h6>
             <ResponsiveContainer className="py-4" width="96%" aspect={3}>
-              <LineChart data={bookData} margin={{ top: 0, right: 12, left: 0, bottom: -29 }}>
+              <LineChart data={bookData} margin={{  bottom: -34 }}>
                 <CartesianGrid/>
                 <XAxis dataKey="name" stroke="#cdcccc" style={{ fontSize: 12 }} interval={'preserveStart'}/>
                 <YAxis stroke="#c4c4c4" style={{ fontSize: 12 }}/>
@@ -182,7 +182,7 @@ export default function Graphic() {
             </ResponsiveContainer>
 
             <ResponsiveContainer className="py-4" width="97%" height={200}>
-              <AreaChart width={500} height={200} data={bookData} syncId="anyId" margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
+              <AreaChart width={500} height={200} data={bookData} syncId="anyId" margin={{ right: 30, bottom: -10 }}>
                 <CartesianGrid strokeDasharray="1 1"/>
                 <XAxis stroke="#c4c4c4" style={{ fontSize: 12 }} dataKey="name"/>
                 <YAxis stroke="#c4c4c4" style={{ fontSize: 12 }}/>
@@ -191,7 +191,7 @@ export default function Graphic() {
               </AreaChart>
             </ResponsiveContainer>
 
-            <ResponsiveContainer width="96%" height="90%">
+            <ResponsiveContainer className="py-1" width="96%" height="90%">
               <RadarChart cx="50%" cy="50%" outerRadius="70%" data={genreData}>
                 <PolarGrid/>
                 <PolarAngleAxis stroke="#c4c4c4" style={{ fontSize: 11 }} dataKey="subject"/>
@@ -202,8 +202,8 @@ export default function Graphic() {
               </RadarChart>
             </ResponsiveContainer>
 
-            <ResponsiveContainer className="py-2" width="97%" height="100%">
-              <BarChart width={500} height={300} data={bookData} margin={{ top: 20, right: 40, left: 20, bottom: 5 }}>
+            <ResponsiveContainer className="py-2" width="97%" height="90%">
+              <BarChart width={500} height={300} data={bookData} margin={{ top: 20, right: 40, left: 20, bottom: -10 }}>
                 <CartesianGrid strokeDasharray="1 1"/>
                 <XAxis stroke="#c4c4c4" style={{ fontSize: 11 }} dataKey="name"/>
                 <YAxis stroke="#c4c4c4" style={{ fontSize: 11 }}/>
