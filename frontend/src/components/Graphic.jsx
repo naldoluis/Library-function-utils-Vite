@@ -66,17 +66,17 @@ export default function ScientificCalculator() {
       <Card className="card-graphic">
         <Card.Header>
           <Card.Body className="row" style={{ overflowY: "hidden", height: 430 }}>
-            <h6 className="text-light py-4" style={{ margin: "auto" }}>{i18n.t('graphic.title')} 📊</h6>
+            <h6 className="text-light py-3" style={{ margin: "auto" }}>{i18n.t('graphic.title')} 📊</h6>
             <ResponsiveContainer width="96%" aspect={3}>
-              <LineChart data={pdata}>
+              <LineChart data={pdata} margin={{ top: 0, right: 12, left: 0, bottom: -29 }}>
                 <CartesianGrid/>
-                <XAxis dataKey="name" stroke="mintcream" style={{ fontSize: 12 }} interval={'preserveStartEnd'}/>
-                <YAxis></YAxis>
+                <XAxis dataKey="name" stroke="#cdcccc" style={{ fontSize: 12 }} interval={'preserveStart'}/>
+                <YAxis stroke="#c4c4c4"/>
                 <Legend/>
                 <Tooltip/>
-                <Line dataKey="students" stroke="chartreuse" activeDot={{ r: 8 }}/>
-                <Line dataKey="clients" stroke="#00ffee" activeDot={{ r: 8 }}/>
-                <Line dataKey="sales" stroke="gold" activeDot={{ r: 8 }}/>
+                <Line type="basicClosed" dataKey="students" strokeDasharray="2" stroke="chartreuse" activeDot={{ r: 8 }}/>
+                <Line type="basicClosed" dataKey="clients" stroke="#00ffee" activeDot={{ r: 8 }}/>
+                <Line type="basicClosed" dataKey="sales" stroke="gold" activeDot={{ r: 8 }}/>
               </LineChart>
             </ResponsiveContainer>
           </Card.Body>
