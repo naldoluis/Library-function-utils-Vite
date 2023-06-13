@@ -1,4 +1,4 @@
-import { Area, AreaChart, Bar, BarChart, CartesianGrid, Cross, Customized, Legend, Line, LineChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer, Radar, RadarChart, Tooltip, XAxis, YAxis } from 'recharts'
+import { Area, AreaChart, Bar, BarChart, CartesianGrid, Cross, Customized, Legend, Line, LineChart, PolarAngleAxis, PolarGrid, PolarRadiusAxis, Radar, RadarChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import { Card } from 'react-bootstrap'
 import { i18n } from '../assets/translate/i18n'
 
@@ -62,7 +62,7 @@ const bookData = [
 const genreData = [
   {
     subject: 'Horror',
-    A: 120,
+    A: 130,
     B: 110,
     fullScale: 150
   },
@@ -93,7 +93,7 @@ const genreData = [
   {
     subject: 'Biography',
     A: 65,
-    B: 85,
+    B: 109,
     fullScale: 150
   }
 ]
@@ -169,7 +169,7 @@ export default function Graphic() {
            <h6 className="text-light" style={{ margin: "auto" }}>{i18n.t('graphic.title')} 📊</h6>
             <ResponsiveContainer className="py-4" width="96%" aspect={3}>
               <LineChart data={bookData} margin={{ bottom: -34 }}>
-                <CartesianGrid/>
+                <CartesianGrid strokeDasharray="1"/>
                 <XAxis dataKey="name" stroke="#cdcccc" style={{ fontSize: 12 }} interval={'preserveStart'}/>
                 <YAxis stroke="#c4c4c4" style={{ fontSize: 12 }}/>
                 <Legend/>
@@ -182,16 +182,16 @@ export default function Graphic() {
             </ResponsiveContainer>
 
             <ResponsiveContainer className="py-4" width="97%" height={200}>
-              <AreaChart width={500} height={200} data={bookData} syncId="anyId" margin={{ right: 30, bottom: -10 }}>
-                <CartesianGrid strokeDasharray="1 1"/>
+              <AreaChart width={500} height={200} data={bookData} syncId="anyId" margin={{ right: 20, bottom: -10 }}>
+                <CartesianGrid strokeDasharray="1"/>
                 <XAxis stroke="#c4c4c4" style={{ fontSize: 12 }} dataKey="name"/>
                 <YAxis stroke="#c4c4c4" style={{ fontSize: 12 }}/>
                 <Tooltip/>
-                <Area type="monotone" dataKey="students" stroke="#82ca9d" fill="#00ffee"/>
+                <Area type="monotone" dataKey="students" strokeDasharray="2" stroke="#82ca9d" fill="#00ffee"/>
               </AreaChart>
             </ResponsiveContainer>
 
-            <ResponsiveContainer className="py-1" width="96%" height="90%">
+            <ResponsiveContainer className="py-3" width="96%" height="90%">
               <RadarChart cx="50%" cy="50%" outerRadius="70%" data={genreData}>
                 <PolarGrid/>
                 <PolarAngleAxis stroke="#c4c4c4" style={{ fontSize: 11 }} dataKey="subject"/>
@@ -202,9 +202,9 @@ export default function Graphic() {
               </RadarChart>
             </ResponsiveContainer>
 
-            <ResponsiveContainer className="py-2" width="97%" height="90%">
-              <BarChart width={500} height={300} data={bookData} margin={{ top: 20, right: 40, left: 20, bottom: -10 }}>
-                <CartesianGrid strokeDasharray="1 1"/>
+            <ResponsiveContainer className="py-4" width="97%" height="90%">
+              <BarChart width={500} height={300} data={bookData} margin={{ top: 20, right: 20, bottom: -10 }}>
+                <CartesianGrid strokeDasharray="1"/>
                 <XAxis stroke="#c4c4c4" style={{ fontSize: 11 }} dataKey="name"/>
                 <YAxis stroke="#c4c4c4" style={{ fontSize: 11 }}/>
                 <Tooltip/>
