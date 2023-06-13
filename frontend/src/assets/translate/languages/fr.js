@@ -80,6 +80,9 @@ const messages = {
                 previus: 'Précédent ⮜',
                 next: 'Suivant ➤'
             },
+            graphic: {
+                title: 'Tableau des Ventes de Livres'
+            },
             access: {
                 login: 'connecter',
                 logout: 'Sortir',

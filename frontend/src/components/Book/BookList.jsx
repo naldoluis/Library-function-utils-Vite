@@ -172,7 +172,7 @@ class BookList extends React.Component {
                     variant="outline-warning"
                     onClick={this.searchData}
                   >
-                    <FontAwesomeIcon icon={faSearch}/>
+                   <FontAwesomeIcon icon={faSearch}/>
                   </Button>
                   <Button
                     className="clean-find"
