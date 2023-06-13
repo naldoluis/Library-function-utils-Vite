@@ -1,4 +1,4 @@
-import { Area, AreaChart, CartesianGrid, Cross, Customized, Legend, Line, LineChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer, Radar, RadarChart, Tooltip, XAxis, YAxis } from 'recharts'
+import { Area, AreaChart, Bar, BarChart, CartesianGrid, Cross, Customized, Legend, Line, LineChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer, Radar, RadarChart, Tooltip, XAxis, YAxis } from 'recharts'
 import { Card } from 'react-bootstrap'
 import { i18n } from '../assets/translate/i18n'
 
@@ -166,8 +166,8 @@ export default function Graphic() {
       <Card className="card-graphic">
         <Card.Header>
           <Card.Body className="row" style={{ overflowY: "scroll", height: 430 }}>
-           <h6 className="text-light py-2" style={{ margin: "auto" }}>{i18n.t('graphic.title')} 📊</h6>
-            <ResponsiveContainer width="96%" aspect={3}>
+           <h6 className="text-light" style={{ margin: "auto" }}>{i18n.t('graphic.title')} 📊</h6>
+            <ResponsiveContainer className="py-4" width="96%" aspect={3}>
               <LineChart data={bookData} margin={{ top: 0, right: 12, left: 0, bottom: -29 }}>
                 <CartesianGrid/>
                 <XAxis dataKey="name" stroke="#cdcccc" style={{ fontSize: 12 }} interval={'preserveStart'}/>
@@ -181,7 +181,7 @@ export default function Graphic() {
               </LineChart>
             </ResponsiveContainer>
 
-            <ResponsiveContainer width="97%" height={200}>
+            <ResponsiveContainer className="py-4" width="97%" height={200}>
               <AreaChart width={500} height={200} data={bookData} syncId="anyId" margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
                 <CartesianGrid strokeDasharray="1 1"/>
                 <XAxis stroke="#c4c4c4" style={{ fontSize: 12 }} dataKey="name"/>
@@ -200,6 +200,19 @@ export default function Graphic() {
                 <Radar name="Sales" dataKey="B" stroke="turquoise" fill="turquoise" fillOpacity={.6}/>
                 <Legend/>
               </RadarChart>
+            </ResponsiveContainer>
+
+            <ResponsiveContainer className="py-2" width="97%" height="100%">
+              <BarChart width={500} height={300} data={bookData} margin={{ top: 20, right: 40, left: 20, bottom: 5 }}>
+                <CartesianGrid strokeDasharray="1 1"/>
+                <XAxis stroke="#c4c4c4" style={{ fontSize: 11 }} dataKey="name"/>
+                <YAxis stroke="#c4c4c4" style={{ fontSize: 11 }}/>
+                <Tooltip/>
+                <Legend/>
+                <Bar dataKey="sales" stackId="a" fill="#8884d8"/>
+                <Bar dataKey="clients" stackId="a" fill="turquoise"/>
+                <Bar dataKey="students" fill="#c3ce28"/>
+              </BarChart>
             </ResponsiveContainer>
 
           </Card.Body>
