@@ -62,37 +62,37 @@ const bookData = [
 const genreData = [
   {
     subject: 'Horror',
-    A: 130,
+    A: 100,
     B: 110,
     fullScale: 150
   },
   {
     subject: 'Fantasy',
-    A: 98,
+    A: 1,
     B: 130,
     fullScale: 150
   },
   {
     subject: 'Romance',
-    A: 86,
+    A: 155,
     B: 130,
     fullScale: 150
   },
   {
     subject: 'Science',
-    A: 99,
+    A: 45,
     B: 100,
     fullScale: 150
   },
   {
     subject: 'Technology',
-    A: 85,
+    A: 60,
     B: 90,
     fullScale: 150
   },
   {
     subject: 'Biography',
-    A: 65,
+    A: 130,
     B: 109,
     fullScale: 150
   }
