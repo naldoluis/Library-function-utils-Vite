@@ -84,7 +84,7 @@ body {overflow-x: hidden}
 
 /* ================================================= CALCULATOR 💻 ====================================================== */
 
-.calc-button {background: #52687c;border-radius: 3px;width: 37px;height: 31.3px;font-size: 18px;color: #fff;text-align: center}
+.calc-button {background: #d47d00;border-radius: 3px;width: 37px;height: 31.3px;font-size: 18px;color: #fff;text-align: center}
 .calc-button:hover {color: #fff}
 .clear {clear: both}
 .esp {background: #ff0000;width: 120px !important}
