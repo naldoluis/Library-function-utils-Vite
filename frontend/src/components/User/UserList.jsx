@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Alert, Card, FormControl, InputGroup, Table } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUsers } from '@fortawesome/free-solid-svg-icons'
+import { faUsersBetweenLines } from '@fortawesome/free-solid-svg-icons'
 import { i18n } from '../../assets/translate/i18n'
 import { fetchUsers } from '../../services'
 import '../../assets/css/Style.css'
@@ -80,7 +80,7 @@ class UserList extends React.Component {
         ) : (
           <Card className="border-secondary bg-dark text-white">
             <Card.Header>
-              <FontAwesomeIcon icon={faUsers}/> {i18n.t('messages.userList')}
+              <FontAwesomeIcon icon={faUsersBetweenLines}/> {i18n.t('messages.userList')}
             </Card.Header>
             <Card.Body>
               <Table bordered hover striped variant="dark">

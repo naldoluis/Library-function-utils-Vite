@@ -696,6 +696,9 @@ public class SpringSecurityConfig {
 # Editor Photo
                        https://www.fotor.com/photo-editor-app/editor/cloud
 
+# Svg Animated
+                       https://lottiefiles.com/animation/svg
+
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                                                                                                                           - ❐ ❌
 # Book

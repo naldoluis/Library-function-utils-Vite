@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { Button, Card, Col, Form } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEdit, faList, faPlusSquare, faSave, faUndo } from '@fortawesome/free-solid-svg-icons'
+import { faEdit, faListCheck, faFileCirclePlus, faSave, faUndo } from '@fortawesome/free-solid-svg-icons'
 import { fetchBook, fetchGenres, fetchLanguages, patchBook, saveBook, updateBook } from '../../services'
 import { MyToast } from '../MyToast'
 import { i18n } from '../../assets/translate/i18n'
@@ -141,7 +141,7 @@ export default function Book() {
       </div>
       <Card className="border-secondary bg-dark text-white">
        <Card.Header>
-        <FontAwesomeIcon icon={books.id ? faEdit : faPlusSquare}/>{" "}
+        <FontAwesomeIcon icon={books.id ? faEdit : faFileCirclePlus}/>{" "}
           {books.id ? "Update Book" : "Add New Book"}
         </Card.Header>
          <Form onSubmit={books.id ? updatedBook : onSubmit}>
@@ -299,7 +299,7 @@ export default function Book() {
               <FontAwesomeIcon icon={faUndo}/> {i18n.t('buttons.reset')}
             </Button>{" "}
             <Link style={{ textDecoration: 'none' }} to="/list" type="button" className="link">
-              <FontAwesomeIcon icon={faList}/> {i18n.t('buttons.bookList')}
+              <FontAwesomeIcon icon={faListCheck}/> {i18n.t('buttons.bookList')}
             </Link>
           </Card.Footer>
         </Form>

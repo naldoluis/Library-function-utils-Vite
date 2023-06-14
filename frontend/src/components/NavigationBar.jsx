@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Nav, Navbar } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSignInAlt, faSignOutAlt, faUserPlus } from '@fortawesome/free-solid-svg-icons'
+import { faSignInAlt, faSignOutAlt, faUserAstronaut } from '@fortawesome/free-solid-svg-icons'
 import { logoutUser } from '../services'
 import { MyToastOut, MyToastTimer } from './MyToast'
 import { i18n } from '../assets/translate/i18n'
@@ -38,7 +38,7 @@ export default function NavigationBar() {
       </div>
       <div className="mr-auto"></div>
       <Nav className="navbar-right">
-        <Link to={"register"} className="nav-link"><FontAwesomeIcon icon={faUserPlus}/> {i18n.t('access.register')}</Link>
+        <Link to={"register"} className="nav-link"><FontAwesomeIcon icon={faUserAstronaut}/> {i18n.t('access.register')}</Link>
         <Link to={"login"} className="nav-link"><FontAwesomeIcon icon={faSignInAlt}/> {i18n.t('access.login')}</Link>
       </Nav>
     </>

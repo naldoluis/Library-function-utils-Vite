@@ -862,15 +862,15 @@ let QRCode
 					_oContext.fillRect(nLeft, nTop, nWidth, nHeight)
 
 					_oContext.strokeRect(
-						Math.floor(nLeft) + 0.5,
-						Math.floor(nTop) + 0.5,
+						Math.floor(nLeft) + .5,
+						Math.floor(nTop) + .5,
 						nRoundedWidth,
 						nRoundedHeight
 					)
 
 					_oContext.strokeRect(
-						Math.ceil(nLeft) - 0.5,
-						Math.ceil(nTop) - 0.5,
+						Math.ceil(nLeft) - .5,
+						Math.ceil(nTop) - .5,
 						nRoundedWidth,
 						nRoundedHeight
 					)

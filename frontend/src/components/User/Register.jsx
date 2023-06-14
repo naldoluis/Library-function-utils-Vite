@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { Button, Col, Card, Form, InputGroup } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope, faEye, faEyeLowVision, faLock, faPhone, faUserPlus, faUndo, faUser } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope, faEye, faEyeLowVision, faLock, faPhone, faUndo, faUserAstronaut, faUserGraduate } from '@fortawesome/free-solid-svg-icons'
 import { registerUser } from '../../services'
 import { MyToastUser } from '../MyToast'
 import { i18n } from '../../assets/translate/i18n'
@@ -59,14 +59,14 @@ export default function Register() {
         <Col xs={5}>
           <Card className="border-dark bg-dark text-white">
             <Card.Header>
-              <FontAwesomeIcon icon={faUserPlus}/> {i18n.t('access.register')}
+              <FontAwesomeIcon icon={faUserAstronaut}/> {i18n.t('access.register')}
             </Card.Header>
              <Card.Body>
               <Form>
                 <Form.Group as={Col}>
                   <InputGroup>
                     <InputGroup.Text className="name">
-                      <FontAwesomeIcon icon={faUser}/>
+                      <FontAwesomeIcon icon={faUserGraduate}/>
                     </InputGroup.Text>
                     <Form.Control
                       autoComplete="off"
@@ -146,7 +146,7 @@ export default function Register() {
                 onClick={saveUser}
                 disabled={user.email.length === 0 || user.password.length === 0}
               >
-                <FontAwesomeIcon icon={faUserPlus}/> {i18n.t('access.register')}
+                <FontAwesomeIcon icon={faUserAstronaut}/> {i18n.t('access.register')}
               </Button>{" "}
               <Button
                 size="sm"

@@ -3,7 +3,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Button, Card, FormControl, Image, InputGroup, Table } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEdit, faList, faSearch, faTimes, faTrash } from '@fortawesome/free-solid-svg-icons'
+import { faEdit, faListCheck, faSearch, faTimes, faTrash } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
 import { BASE_URL } from '../../utils/requests'
 import { i18n } from '../../assets/translate/i18n'
@@ -155,7 +155,7 @@ class BookList extends React.Component {
          <Card className="border-secondary bg-dark text-white">
           <Card.Header>
             <div style={{ float: "left" }}>
-              <FontAwesomeIcon icon={faList}/> {i18n.t('messages.bookList')}
+              <FontAwesomeIcon icon={faListCheck}/> {i18n.t('messages.bookList')}
             </div>
             <div style={{ float: "right" }}>
               <InputGroup size="sm">
