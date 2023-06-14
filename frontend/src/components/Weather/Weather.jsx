@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import { faCloudSunRain, faSearch } from '@fortawesome/free-solid-svg-icons'
 import { i18n } from '../../assets/translate/i18n'
 import DigitalWatch from '../DigitalWatch'
 
@@ -141,7 +141,8 @@ useEffect(() => {
 
   return (
    <>
-    <div style={{ fontSize: 18 }} className="text-white">⛈ {i18n.t('weather.title')}
+    <div style={{ fontSize: 18 }} className="text-white">
+    <FontAwesomeIcon icon={faCloudSunRain}/> {i18n.t('weather.title')}
      <DigitalWatch/>
       </div>
        <div className="text-white" align="center">
