@@ -1,5 +1,5 @@
 import { Toast } from 'react-bootstrap'
-import { faUserGraduate, faUsersGear, faCashRegister } from '@fortawesome/free-solid-svg-icons'
+import { faUserGraduate, faContactCard, faCashRegister } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { i18n } from '../assets/translate/i18n'
 
@@ -71,7 +71,7 @@ export function MyToastUser(props) {
         closeButton={false}
       >
         <strong>
-          <FontAwesomeIcon icon={faUsersGear}/> {i18n.t('toast.createUser')} ✅
+          <FontAwesomeIcon icon={faContactCard}/> {i18n.t('toast.createUser')} ✅
         </strong>
       </Toast.Header>
      <Toast.Body>ℹ️ {props.message}</Toast.Body>
