@@ -137,12 +137,12 @@ export default function Book() {
     <>
       <div style={{ display: show ? "block" : "none" }}>
         <MyToast
-          message={show.method === "PUT" ? "Book Updated Successfully." : "Book Saved Successfully."} type="success"/>
+          message={show.method === "PUT" ? i18n.t('toast.bookUpdate') : i18n.t('toast.bookSave')} type="success"/>
       </div>
       <Card className="border-secondary bg-dark text-white">
        <Card.Header>
         <FontAwesomeIcon icon={books.id ? faEdit : faFileCirclePlus}/>{" "}
-          {books.id ? "Update Book" : "Add New Book"}
+          {books.id ? i18n.t('navigate.editBook') : i18n.t('navigate.newBook')}
         </Card.Header>
          <Form onSubmit={books.id ? updatedBook : onSubmit}>
           <Card.Body>

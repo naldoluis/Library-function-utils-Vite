@@ -63,6 +63,8 @@ const messages = {
                 userLogout: '- Usuário Desconectado.',
                 userLogoutWarn: 'Usuário desconectado com sucesso.',
                 book: 'Sucesso',
+                bookSave: 'Livro salvo com sucesso.',
+                bookUpdate: 'Livro atualizado com sucesso.',
                 deleteBook: 'Livro deletado com sucesso.',
                 createUser: 'Registrado',
                 createUserWarn: 'Usuário salvo com sucesso.',
@@ -94,6 +96,8 @@ const messages = {
                 userList: 'Lista de Usuário',
                 store: 'Loja',
                 news: 'Notícias',
+                newBook: 'Adicionar Novo Livro',
+                editBook: 'Atualizar Livro',
                 video: 'Vídeo',
                 bonus: 'Bônus'
             },
