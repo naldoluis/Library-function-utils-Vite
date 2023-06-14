@@ -331,10 +331,10 @@
     </defs>
     <g id="thunder" transform="translate(-3.9995 -8)" filter="url(#blur)">
         <g transform="translate(20,5)">
-            <g id="tornado" transform="translate(-5,30)" fill="#bfbebe" stroke="#fff"
+            <g id="tornado" transform="translate(-5,30)" fill="#1d1d1d" stroke="#fff"
                 style="-moz-animation-duration:3s;-moz-animation-iteration-count:infinite;-moz-animation-name:tornado;-moz-animation-timing-function:linear;-webkit-animation-duration:3s;-webkit-animation-iteration-count:infinite;-webkit-animation-name:tornado;-webkit-animation-timing-function:linear">
                 <path id="Polygon"
-                    d="m9.239 0h2.1597c1.403 0 2.7694 0.44812 4.9 0.279l0.07492 0.055065c0.84792 0.62321 1.0301 1.8158 0.40688 2.6637-0.06273 0.085346-0.13246 0.16531-0.20848 -1.23907l-2.8266 2.7425c-1.0913 1.0589-1.8597 2.4058-2.2157 3.8841-0.35503 1.4743-1.1473 2.8068-2.2729 3.823l-3.1203 2.8168-1.9597 1.3737c-0.85678 0.00058-1.0382 0.3929-2.9388-0.06388-8.5411-0.77192-0.43235-1.8242 0.25517-2.4692l1.0781-0.0966c1.2556-1.1607 4.6695-2.793 3.3695-4.5029 0-1.7724-0.33249-0.529-0.98022-3.0788l-2.5105-9.8473c-0.20966-0.53401 0.053275-1.1369 0.58729-1.3465 0.12094-0.047481 0.24971-0.071854 0.37963-0.071854h6.922z"/>
+                    d="m9.239 0h2.1597c1.403 0 2.7694 0.44812 4.9 1.279l0.07492 0.055065c0.84792 0.62321 1.0301 1.8158 0.40688 2.6637-0.06273 0.085346-0.13246 0.16531-0.20848 0.23907l-2.8266 2.7425c-1.0913 1.0589-1.8597 2.4058-2.2157 3.8841-0.35503 1.4743-1.1473 2.8068-2.2729 3.823l-3.1203 2.8168-1.9597 1.3737c-0.85678 0.60058-2.0382 0.3929-2.6388-0.46388-0.5411-0.77192-0.43235-1.8242 0.25517-2.4692l1.0781-0.9966c1.2556-1.1607 1.9695-2.793 1.9695-4.5029 0-1.7724-0.33249-3.529-0.98022-5.1788l-1.5105-3.8473c-0.20966-0.53401 0.053275-1.1369 0.58729-1.3465 0.12094-0.047481 0.24971-0.071854 0.37963-0.071854h6.922z"/>
             </g>
             <g class="am-weather-cloud-1"
                 style="-moz-animation-duration:7s;-moz-animation-iteration-count:infinite;-moz-animation-name:am-weather-cloud-1;-moz-animation-timing-function:linear;-webkit-animation-duration:7s;-webkit-animation-iteration-count:infinite;-webkit-animation-name:am-weather-cloud-1;-webkit-animation-timing-function:linear">
