@@ -1,5 +1,7 @@
 import { Area, AreaChart, Bar, BarChart, CartesianGrid, Cross, Customized, Legend, Line, LineChart, PolarAngleAxis, PolarGrid, PolarRadiusAxis, Radar, RadarChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import { Card } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAreaChart, faBarChart, faChartLine, faChartPie } from '@fortawesome/free-solid-svg-icons'
 import { i18n } from '../assets/translate/i18n'
 
 const bookData = [
@@ -163,10 +165,10 @@ export default function Graphic() {
 
   return (
     <>
-      <Card className="card-graphic">
+      <Card className="card-graphic text-light">
         <Card.Header>
           <Card.Body className="row" style={{ overflowY: "scroll", height: 430 }}>
-           <h6 className="text-light" style={{ margin: "auto" }}>{i18n.t('graphic.title')} 📊</h6>
+           <h6 style={{ margin: "auto" }}>{i18n.t('graphic.title')} <FontAwesomeIcon icon={faChartLine}/></h6>
             <ResponsiveContainer className="py-4" width="96%" aspect={3}>
               <LineChart data={bookData} margin={{ bottom: -34 }}>
                 <CartesianGrid strokeDasharray="1"/>
@@ -181,7 +183,8 @@ export default function Graphic() {
               </LineChart>
             </ResponsiveContainer>
 
-            <ResponsiveContainer className="py-4" width="97%" height={200}>
+           <h6 className="py-4" style={{ margin: "auto" }}>AreaChart <FontAwesomeIcon icon={faAreaChart}/></h6>
+            <ResponsiveContainer className="py-2" width="97%" height={200}>
               <AreaChart width={500} height={200} data={bookData} syncId="anyId" margin={{ right: 20, bottom: -10 }}>
                 <CartesianGrid strokeDasharray="1"/>
                 <XAxis stroke="#c4c4c4" style={{ fontSize: 12 }} dataKey="name"/>
@@ -191,18 +194,19 @@ export default function Graphic() {
               </AreaChart>
             </ResponsiveContainer>
 
-            <ResponsiveContainer className="py-3" width="96%" height="90%">
-              <RadarChart cx="50%" cy="50%" outerRadius="70%" data={genreData}>
+           <h6 className="py-5" style={{ margin: "auto" }}>RadarChart <FontAwesomeIcon icon={faChartPie}/></h6>
+            <ResponsiveContainer width="96%" height="90%">
+              <RadarChart cx="52%" cy="41%" outerRadius="70%" data={genreData}>
                 <PolarGrid/>
                 <PolarAngleAxis stroke="#c4c4c4" style={{ fontSize: 11 }} dataKey="subject"/>
                 <PolarRadiusAxis angle={30} domain={[0, 180]} stroke="white" style={{ fontSize: 11 }}/>
                 <Radar name="Genre" dataKey="A" stroke="gold" fill="gold" fillOpacity={.9}/>
                 <Radar name="Sales" dataKey="B" stroke="turquoise" fill="turquoise" fillOpacity={.6}/>
-                <Legend/>
               </RadarChart>
             </ResponsiveContainer>
 
-            <ResponsiveContainer className="py-4" width="97%" height="90%">
+           <h6 style={{ margin: "auto" }}>BarChart <FontAwesomeIcon icon={faBarChart}/></h6>
+            <ResponsiveContainer width="97%" height="90%">
               <BarChart width={500} height={300} data={bookData} margin={{ top: 20, right: 20, bottom: -10 }}>
                 <CartesianGrid strokeDasharray="1"/>
                 <XAxis stroke="#c4c4c4" style={{ fontSize: 11 }} dataKey="name"/>
