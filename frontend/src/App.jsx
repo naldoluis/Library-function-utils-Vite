@@ -6,7 +6,7 @@ import BookList from './components/Book/BookList'
 import Bonus from './components/Bonus/Bonus'
 import ScientificCalculator from './components/ScientificCalculator'
 import Footer from './components/Footer'
-import Graphic from './components/Graphic'
+import Chart from './components/Chart'
 import Help from './components/Help'
 import Home from './components/Home'
 import Login from './components/User/Login'
@@ -35,7 +35,7 @@ export default function App() {
               <Route path="/home" element={<Home/>}/>
               <Route path="/add" element={<Book/>}/>
               <Route path="/edit/:bookId" element={<Book/>}/>
-              <Route path="home/graphic" element={<Graphic/>}/>
+              <Route path="home/chart" element={<Chart/>}/>
               <Route path="/list" element={<BookList/>}/>
               <Route path="home/calculator" element={<ScientificCalculator/>}/>
               <Route path="home/pdf" element={<PDFReader/>}/>

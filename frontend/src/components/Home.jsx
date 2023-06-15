@@ -50,7 +50,7 @@ export default function Home() {
       <Link to={"calculator"} className="calc-button" type="button">
         <FontAwesomeIcon icon={faCalculator}/>
       </Link>{" "}
-      <Link to={"graphic"} className="graphic" type="button">
+      <Link to={"chart"} className="chart" type="button">
         <FontAwesomeIcon icon={faBalanceScale}/>
       </Link>
       <div style={{ margin: "-40px 0 0 410px" }}>

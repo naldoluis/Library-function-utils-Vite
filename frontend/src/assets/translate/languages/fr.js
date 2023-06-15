@@ -82,8 +82,11 @@ const messages = {
                 previus: 'Précédent ⮜',
                 next: 'Suivant ➤'
             },
-            graphic: {
-                title: 'Tableau des Ventes de Livres'
+            chart: {
+                title1: 'Graphique en Ligne',
+                title2: 'Graphique en Aires',
+                title3: 'Graphique en Radar',
+                title4: 'Graphique à Barres'
             },
             access: {
                 login: 'connecter',

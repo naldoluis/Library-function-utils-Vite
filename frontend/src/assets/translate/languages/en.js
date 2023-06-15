@@ -82,8 +82,11 @@ const messages = {
                 previus: 'Previus ⮜',
                 next: 'Next ➤'
             },
-            graphic: {
-                title: 'Book Sales Graph'
+            chart: {
+                title1: 'Chart Line',
+                title2: 'Area Chart',
+                title3: 'Radar Chart',
+                title4: 'Bar Chart'
             },
             access: {
                 login: 'Login',
