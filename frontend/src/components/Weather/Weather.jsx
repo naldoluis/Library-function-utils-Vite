@@ -100,8 +100,8 @@ useEffect(() => {
     temp_number.innerHTML = temperature
     temp_unit.innerHTML = `°c`
 
-    let weather_time = weather.weather[0].description
-    weather_t.innerText = capitalizeFirstLetter(weather_time)
+    let weather_temp = weather.weather[0].description
+    weather_t.innerText = capitalizeFirstLetter(weather_temp)
 
     low_high.innerText = `${Math.round(weather.main.temp_min)}°c / ${Math.round(weather.main.temp_max)}°c`
   }
@@ -118,21 +118,20 @@ useEffect(() => {
     return `${day}, ${date} ${month} ${year}`
   }
 
-  container_temp?.addEventListener('click', changeTemp)
+  container_temp.addEventListener('click', changeTemp)
   function changeTemp() {
-
-      temp_number.innerHTML = temp_number
-
+      let temp_number_now = temp_number.innerHTML
+  
       if (temp_unit.innerHTML === "°c") {
-          let f = (temp_number * 1.8) + 32
+          let f = (temp_number_now * 1.8) + 32
           temp_unit.innerHTML = "°f"
           temp_number.innerHTML = Math.round(f)
       } else {
-          let c = (temp_number - 32) / 1.8
+          let c = (temp_number_now - 32) / 1.8
           temp_unit.innerHTML = "°c"
           temp_number.innerHTML = Math.round(c)
       }
-   }
+  }
 
     function capitalizeFirstLetter(string) {
       return string.charAt(0).toUpperCase() + string.slice(1)
@@ -151,7 +150,7 @@ useEffect(() => {
           <div className="date">📅 Monday, 25 March 2019</div>
            <div className="container-img my-2">
             <img src="./src/assets/icons/weather/unknown.svg"/></div>
-             <div className="container-temp py-4">
+             <div className="container-temp mx-4 my-3">
               <div>25</div>
               <span>°c</span>
               <div><img className="temp-air" src="./src/assets/icons/clock/Startright-Carburetor-Air-Temperature-Gage.svg"/></div>
