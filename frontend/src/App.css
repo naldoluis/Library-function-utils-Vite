@@ -91,17 +91,17 @@ body {overflow-x: hidden}
 .gap2 {width: 417.5px;float: left;border-radius: 7px}
 .gap {width: 220px;float: left;border-radius: 7px}
 .job {margin: 2em}
-.pant {margin: -28px 0;width: 200px;background: #303030;border: #000 2px outset;border-radius: 7px;float: right}
-.screen {border:#a0a0a0 2.5px inset;width: 410px;margin: 3px;color: #202020;text-align: right;font-size: 30px;letter-spacing: 3px;border-radius: 7px;background: linear-gradient(to bottom, rgba(211, 211, 211, 1) 0%,rgba(180, 180, 180, 1) 47%,rgba(160, 160, 160, 1) 100%)}
+.pant {margin: -29px 0;width: 170px;background: #303030;border: #000 2px outset;border-radius: 7px;float: right}
+.screen {border:#a0a0a0 2.5px inset;width: 410px;margin: 3.5px;color: #202020;text-align: right;font-size: 30px;letter-spacing: 3px;border-radius: 7px;background: linear-gradient(to bottom, rgba(211, 211, 211, 1) 0%,rgba(180, 180, 180, 1) 47%,rgba(160, 160, 160, 1) 100%)}
 
 #calculator {border-radius: 10px;width: 495px;height: 580px;margin: auto;background: #606061;border-color: #555;border-width: 3px 6px 5px 3px;border-style: outset}
 #operator button {margin: 6px;width: 50px;padding: 6px 0;color: #5e5e5e;font-size: 15px;letter-spacing: -2px;border: #969595 3px outset;border-radius: 9px;box-sizing: content-box}
 #operator button:active {border: #626587 3px inset;text-decoration: none}
-#keyboard button {margin-right: 7px;margin-left: 3px;margin-bottom: 5px;width: 130px;height: 57px;color: #fff;font-size: 20px;background: #464646;border: #626587 3px outset;border-radius: 9px}
+#keyboard button {margin-left: 10px;margin-bottom: 5px;width: 125px;height: 57px;color: #fff;font-size: 20px;background: #464646;border: #626587 3px outset;border-radius: 9px}
 #keyboard button:active {border: #626587 3px inset;font-size: 20px}
 #show-display {width: 170px;color: #aaa;font-size: .8em;border-radius: 7px;background: #14145433;text-align: right}
 
-.wallpaper {background-image: url(assets/icons/wallpaper-calc.jpg);background-size: contain;background-attachment: fixed;width: 1421px;height: 87vh;margin: -20px 0 0 -156px}
+.wallpaper {background-image: url(assets/icons/wallpaper-calc.jpg);background-size: contain;background-attachment: fixed;width: 1421px;height: 88vh;margin: -21.5px 0 0 -156px}
 
 /* ==================================================== CHART 📊 ======================================================== */
 

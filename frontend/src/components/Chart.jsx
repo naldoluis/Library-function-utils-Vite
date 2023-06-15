@@ -168,7 +168,7 @@ export default function Chart() {
       <Card className="card-chart text-light">
         <Card.Header>
           <Card.Body className="row" style={{ overflowY: "scroll", height: 430 }}>
-           <h6 style={{ margin: "auto" }}>{i18n.t('chart.title1')} <FontAwesomeIcon icon={faChartLine}/></h6>
+           <h6 style={{ margin: "auto" }}>{i18n.t('chart.title1')} - <FontAwesomeIcon icon={faChartLine}/></h6>
             <ResponsiveContainer className="py-4" width="96%" aspect={3}>
               <LineChart data={bookData} margin={{ bottom: -34 }}>
                 <CartesianGrid strokeDasharray="1"/>
@@ -183,7 +183,7 @@ export default function Chart() {
               </LineChart>
             </ResponsiveContainer>
 
-           <h6 className="py-4" style={{ margin: "auto" }}>{i18n.t('chart.title2')} <FontAwesomeIcon icon={faAreaChart}/></h6>
+           <h6 className="py-4" style={{ margin: "auto" }}>{i18n.t('chart.title2')} - <FontAwesomeIcon icon={faAreaChart}/></h6>
             <ResponsiveContainer className="py-2" width="97%" height={200}>
               <AreaChart width={500} height={200} data={bookData} syncId="anyId" margin={{ right: 20, bottom: -10 }}>
                 <CartesianGrid strokeDasharray="1"/>
@@ -194,7 +194,7 @@ export default function Chart() {
               </AreaChart>
             </ResponsiveContainer>
 
-           <h6 className="py-5" style={{ margin: "auto" }}>{i18n.t('chart.title3')} <FontAwesomeIcon icon={faChartPie}/></h6>
+           <h6 className="py-5" style={{ margin: "auto" }}>{i18n.t('chart.title3')} - <FontAwesomeIcon icon={faChartPie}/></h6>
             <ResponsiveContainer width="96%" height="90%">
               <RadarChart cx="52%" cy="41%" outerRadius="70%" data={genreData}>
                 <PolarGrid/>
@@ -205,7 +205,7 @@ export default function Chart() {
               </RadarChart>
             </ResponsiveContainer>
 
-           <h6 style={{ margin: "auto" }}>{i18n.t('chart.title4')} <FontAwesomeIcon icon={faBarChart}/></h6>
+           <h6 style={{ margin: "auto" }}>{i18n.t('chart.title4')} - <FontAwesomeIcon icon={faBarChart}/></h6>
             <ResponsiveContainer width="97%" height="90%">
               <BarChart width={500} height={300} data={bookData} margin={{ top: 20, right: 20, bottom: -10 }}>
                 <CartesianGrid strokeDasharray="1"/>
