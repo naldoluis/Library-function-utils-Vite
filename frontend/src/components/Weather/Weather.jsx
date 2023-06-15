@@ -121,7 +121,7 @@ useEffect(() => {
   container_temp.addEventListener('click', changeTemp)
   function changeTemp() {
       let temp_number_now = temp_number.innerHTML
-  
+
       if (temp_unit.innerHTML === "°c") {
           let f = (temp_number_now * 1.8) + 32
           temp_unit.innerHTML = "°f"
