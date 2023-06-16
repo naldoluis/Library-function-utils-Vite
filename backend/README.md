@@ -699,6 +699,9 @@ public class SpringSecurityConfig {
 # Svg Animated
                        https://lottiefiles.com/animation/svg
 
+# Emojis
+                       https://www.pontodefusao.com/significado-emojis/
+
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
                                                                                                                           - ❐ ❌
 # Book
@@ -1364,6 +1367,46 @@ export default connect(mapStateToProps, mapDispatchToProps)(Book)
         setShow({ show: false })
       }
   }
+
+!J---------------------------------------------------------⚠️-------------------------------------------------------------------J!
+                                                                                                                          - ❐ ❌
+                                                      [METHOD: 'PUT']
+
+import React, { useState, useEffect } from 'react'
+
+export default function PutRequestErrorHandling() {
+    const [postId, setPostId] = useState(null)
+    const [errorMessage, setErrorMessage] = useState(null)
+
+    useEffect(() => {
+        const requestOptions = {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ title: 'React Hooks PUT Request Example' })
+        }
+        fetch('https://jsonplaceholder.typicode.com/invalid-url', requestOptions)
+            .then(async response => {
+                const data = await response.json()
+                if (!response.ok) {
+                    const error = (data && data.message) || response.status
+                    return Promise.reject(error)
+                }
+                setPostId(data.id)
+            })
+            .catch(error => {
+                setErrorMessage(error)
+                console.error('There was an error!', error)
+            })
+    }, [])
+
+    return (
+        <div className="card text-center m-3">
+            <h5 className="card-header">PUT Request with Error Handling</h5>
+            <div className="card-body">
+                Error: {errorMessage}
+            </div>
+        </div>
+    )}
 
 !J------------------------------------------------------------------------------------------------------------------------------J!
                                                                                                                           - ❐ ❌
@@ -2822,8 +2865,12 @@ onSwipeMove	                   –	              Executar alguma função no car
 
 💭 🗯 ⚡ 🌪 🌈 🕡 ✔ ✖  💬 🧭 ⛔️ ✅ 🛑 📰 🧪 ☑️ 🎄 🌪️ ☀️ 🗺 🗝 ❏ ➪ 🛎 🎟 ⛈ 👁 ➤➤ ➙ 📓 ⮜⮜ ⫷ ⫸ ៚ ༆ 乡 ♪ ϟ Ξ χ ⸕
 
-🌡 🌙 🌱 🤙 🌴 🌵 🌲 🌾 🍄 🌐 🎵 🔋 🎞️ 🗝️ ♻️ 📁 🗑️ 🧯 🇲🇽 🌞 ☁️ ⏰ ⛈ 🌗
+🌡 🌙 🌱 🤙 🌴 🌵 🌲 🌾 🍄 🌐 🎵 🔋 🎞️ 🗝️ ♻️ 📁 🗑️ 🧯 🇲🇽 🌞 ☁️ ⏰ ⛈ 🌗 🍂 🎛️	📟 🖥️ 🖨️ 📈 📉 ⚖️
 
+╔═══╗ ♪
+║███║ ♫
+║(●)║ ♫
+╚═══╝♪ ♪
 
         <a href="https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi" className="speedometer" style={{ margin: 6 }}>
           <svg width="16" height="16" fill="#e8e8e8">

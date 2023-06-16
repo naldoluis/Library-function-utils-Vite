@@ -82,7 +82,7 @@ body {overflow-x: hidden}
 .pdf {background: #d00f0f;border-radius: 3px;width: 37px;height: 31.3px;font-size: 18px;color: #fff;text-align: center}
 .pdf:hover {color: #fff}
 
-/* ================================================= CALCULATOR 💻 ====================================================== */
+/* ================================================= CALCULATOR 📟 ===================================================== */
 
 .calc-button {background: #d47d00;border-radius: 3px;width: 37px;height: 31.3px;font-size: 18px;color: #fff;text-align: center}
 .calc-button:hover {color: #fff}
@@ -103,7 +103,7 @@ body {overflow-x: hidden}
 
 .wallpaper {background-image: url(assets/icons/wallpaper-calc.jpg);background-size: contain;background-attachment: fixed;width: 1421px;height: 88vh;margin: -21.5px 0 0 -156px}
 
-/* ==================================================== CHART 📊 ======================================================== */
+/* ================================================== CHART 📈 📉 ======================================================= */
 
 .card-chart {background: #474747;width: 1090px;margin: auto;border-radius: 10px;border: 3.3px solid #676666}
 .chart {background: #7c6352;border-radius: 3px;width: 37px;height: 31.3px;font-size: 18px;color: #fff;text-align: center}
