@@ -63,9 +63,9 @@ export default function ScientificCalculator() {
                 <input id="show-display" maxLength={9} disabled/>
               </div>
             </div>
-              <div className="gap2">
-                <input id="screen2" className="screen" maxLength={19} value={num} disabled/>
-              </div>
+             <div className="gap2">
+               <input id="screen2" className="screen" maxLength={19} value={num} disabled/>
+             </div>
             <div className="clear"></div>
             <div id="operator" style={{ marginLeft: 4 }}>
               <button>x <sup> 2</sup></button>

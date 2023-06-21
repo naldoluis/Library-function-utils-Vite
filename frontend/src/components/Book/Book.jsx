@@ -1,15 +1,15 @@
+import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { Button, Card, Col, Form } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEdit, faListCheck, faFileCirclePlus, faSave, faUndo } from '@fortawesome/free-solid-svg-icons'
-import { fetchBook, fetchGenres, fetchLanguages, patchBook, saveBook, updateBook } from '../../services'
+import { fetchBook, fetchGenres, fetchLanguages, saveBook } from '../../services'
 import { MyToast } from '../MyToast'
 import { i18n } from '../../assets/translate/i18n'
 import iconCam from '../../assets/icons/camera.png'
 import iconLang from '../../assets/icons/language.png'
-//import axios from 'axios'
 
 export default function Book() {
 
@@ -17,7 +17,7 @@ export default function Book() {
 
   const [books, setBooks] = useState(initialState)
   const [show, setShow] = useState(false)
-//const [refresh, setRefresh] = useState(0)
+  const [refresh, setRefresh] = useState(0)
   const bookObject = useSelector(state => state.book)
   const dispatch = useDispatch()
 
@@ -103,24 +103,11 @@ export default function Book() {
   const updatedBook = e => {
     e.preventDefault()
 
-    const bookEdit = {
-      id: e.target.id.value,
-      title: e.target.title.value,
-      author: e.target.author.value,
-      photo: e.target.photo.value,
-      isbn: e.target.isbn.value,
-      price: e.target.price.value,
-      language: e.target.language.value,
-      genre: e.target.genre.value
-    }
-
-    fetch("http://localhost:8080/rest/books/" + bookId, {
-      method: 'PUT',
-      body: JSON.stringify(bookEdit),
-      headers: {'Content-Type': 'application/json'}
+    axios.put("http://localhost:8080/rest/books/" + bookId, books)
+      .then(() => {
+        setBooks(initialState)
+        setRefresh(refresh + 1)
     })
-      .then(response => response.json())
-      .then(data => console.log(data))
       .catch(error => console.log('Authorization failed: ' + error.message))
     if(bookObject.book) {
       setShow({ show: true, method: "PUT" })
@@ -129,15 +116,6 @@ export default function Book() {
       setShow({ show: false })
     }
   }
-
-/*     const updatedBook = () => {
-      axios.put("http://localhost:8080/rest/books/" + bookId, books)
-      .then(response => {
-        setBooks(initialState)
-        setRefresh(refresh + 1)
-    })
-      .catch(error => console.log('Authorization failed: ' + error.message))
-  } */
 
   const bookChange = e => {
     setBooks({ ...books, [e.target.name]: e.target.value })
