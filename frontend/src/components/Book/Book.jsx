@@ -107,7 +107,7 @@ export default function Book() {
       .then(() => {
         setBooks(initialState)
         setRefresh(refresh + 1)
-    })
+      })
       .catch(error => console.log('Authorization failed: ' + error.message))
     if(bookObject.book) {
       setShow({ show: true, method: "PUT" })
