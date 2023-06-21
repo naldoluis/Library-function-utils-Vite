@@ -9,6 +9,7 @@ import { MyToast } from '../MyToast'
 import { i18n } from '../../assets/translate/i18n'
 import iconCam from '../../assets/icons/camera.png'
 import iconLang from '../../assets/icons/language.png'
+//import axios from 'axios'
 
 export default function Book() {
 
@@ -16,6 +17,7 @@ export default function Book() {
 
   const [books, setBooks] = useState(initialState)
   const [show, setShow] = useState(false)
+//const [refresh, setRefresh] = useState(0)
   const bookObject = useSelector(state => state.book)
   const dispatch = useDispatch()
 
@@ -128,9 +130,17 @@ export default function Book() {
     }
   }
 
+/*     const updatedBook = () => {
+      axios.put("http://localhost:8080/rest/books/" + bookId, books)
+      .then(response => {
+        setBooks(initialState)
+        setRefresh(refresh + 1)
+    })
+      .catch(error => console.log('Authorization failed: ' + error.message))
+  } */
+
   const bookChange = e => {
-    const { name, value } = e.target
-    setBooks({ ...books, [name]: value })
+    setBooks({ ...books, [e.target.name]: e.target.value })
   }
 
   return (
