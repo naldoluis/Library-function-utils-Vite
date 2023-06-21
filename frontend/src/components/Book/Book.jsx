@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Button, Card, Col, Form } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEdit, faListCheck, faFileCirclePlus, faSave, faUndo } from '@fortawesome/free-solid-svg-icons'
-import { fetchBook, fetchGenres, fetchLanguages, saveBook } from '../../services'
+import { fetchBook, saveBook } from '../../services'
 import { MyToast } from '../MyToast'
 import { i18n } from '../../assets/translate/i18n'
 import iconCam from '../../assets/icons/camera.png'
@@ -27,35 +27,7 @@ export default function Book() {
     if(bookId) {
       findBookById(bookId)
     }
-    //findAllLanguages()
   }, [])
-
-  const findAllLanguages = () => {
-    dispatch(fetchLanguages())
-    let bookLanguages = bookObject.book
-    if(bookLanguages) {
-      setBooks({
-        books: [{ value: "", display: "Select Language" }].concat(
-          bookLanguages.map(language => {
-            return { value: language, display: language }
-         }))
-      })
-      findAllGenres()
-    }
-  }
-
-  const findAllGenres = () => {
-    dispatch(fetchGenres())
-    let bookGenres = bookObject.book
-    if(bookGenres) {
-      setBooks({
-        books: [{ value: "", display: "Select Genre" }].concat(
-          bookGenres.map(genre => {
-            return { value: genre, display: genre }
-          }))
-       })
-     }
-  }
 
   const findBookById = bookId => {
     dispatch(fetchBook(bookId))
@@ -238,11 +210,6 @@ export default function Book() {
                   <option>Arabic</option>
                   <option>Spanish</option>
                   <option>Chinese</option>
-                  {/* {books.languages.map(language => (
-                      <option key={language.value} value={language.value}>
-                        {language.display}
-                      </option>
-                  ))} */}
                 </Form.Control>
               </Form.Group>
                <Form.Group as={Col}>
@@ -265,11 +232,6 @@ export default function Book() {
                   <option>Biography</option>
                   <option>Horror</option>
                   <option>Romance</option>
-                  {/* {books.genres.map(genre => (
-                      <option key={genre.value} value={genre.value}>
-                        {genre.display}
-                      </option>
-                  ))} */}
                 </Form.Control>
               </Form.Group>
             </div>
