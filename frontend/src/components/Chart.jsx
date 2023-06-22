@@ -185,7 +185,7 @@ export default function Chart() {
 
            <h6 className="py-4" style={{ margin: "auto" }}>{i18n.t('chart.title2')} - <FontAwesomeIcon icon={faAreaChart}/></h6>
             <ResponsiveContainer className="py-2" width="97%" height={200}>
-              <AreaChart width={500} height={200} data={bookData} syncId="anyId" margin={{ right: 20, bottom: -10 }}>
+              <AreaChart data={bookData} syncId="anyId" margin={{ right: 20, bottom: -10 }}>
                 <CartesianGrid strokeDasharray="1"/>
                 <XAxis stroke="#c4c4c4" style={{ fontSize: 12 }} dataKey="name"/>
                 <YAxis stroke="#c4c4c4" style={{ fontSize: 12 }}/>
@@ -207,7 +207,7 @@ export default function Chart() {
 
            <h6 style={{ margin: "auto" }}>{i18n.t('chart.title4')} - <FontAwesomeIcon icon={faBarChart}/></h6>
             <ResponsiveContainer width="97%" height="90%">
-              <BarChart width={500} height={300} data={bookData} margin={{ top: 20, right: 20, bottom: -10 }}>
+              <BarChart data={bookData} margin={{ top: 20, right: 20, bottom: -10 }}>
                 <CartesianGrid strokeDasharray="1"/>
                 <XAxis stroke="#c4c4c4" style={{ fontSize: 11 }} dataKey="name"/>
                 <YAxis stroke="#c4c4c4" style={{ fontSize: 11 }}/>
@@ -218,7 +218,6 @@ export default function Chart() {
                 <Bar dataKey="students" fill="#c3ce28"/>
               </BarChart>
             </ResponsiveContainer>
-
           </Card.Body>
         </Card.Header>
       </Card>

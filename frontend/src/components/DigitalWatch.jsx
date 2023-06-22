@@ -7,7 +7,7 @@ export default function DigitalWatch() {
     const minutes = document.getElementById('minutes')
     const seconds = document.getElementById('seconds')
 
-    let clock = setInterval(function time() {
+    let clock = setInterval(() => {
       let dateToday = new Date()
       let hr = dateToday.getHours()
       let min = dateToday.getMinutes()
