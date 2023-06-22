@@ -90,7 +90,7 @@ class UserList extends React.Component {
                     <td className="border-secondary">{i18n.t('tableUser.email')}</td>
                     <td className="border-secondary">{i18n.t('tableUser.address')}</td>
                     <td className="border-secondary">{i18n.t('tableUser.created')}</td>
-                    <td className="border-secondary">{i18n.t('tableUser.balance')}</td>
+                    <td className="border-secondary" align="center">{i18n.t('tableUser.balance')} ⚖️</td>
                   </tr>
                 </thead>
                 <tbody>
