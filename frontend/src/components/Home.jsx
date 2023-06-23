@@ -1,6 +1,6 @@
 import { Alert, Button, OverlayTrigger, Popover } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCalculator, faBalanceScale, faFilePdf } from '@fortawesome/free-solid-svg-icons'
+import { faCalculator, faBalanceScale, faFilePdf, faHeadphonesAlt } from '@fortawesome/free-solid-svg-icons'
 import { useSelector } from 'react-redux'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
@@ -40,6 +40,9 @@ export default function Home() {
         <p className="title-home">{i18n.t('home.phrase')} 🌱</p>
         <p className="title-home">-- Mark Twain</p>
       </Alert>
+      <div style={{ margin: "0 0 0 32px" }}>
+        <img style={{ borderRadius: 4, border: "4px solid #fff" }} width="320" src="https://miro.medium.com/v2/resize:fit:1358/1*L_QoAG863l8QvqxpNyBiqw.gif"/>
+      </div>
       <Popovers/>{" "}
       <Button size="sm" variant="success" onClick={() => setModalShow(true)}>
         {i18n.t('buttons.modal')}
@@ -52,10 +55,10 @@ export default function Home() {
       </Link>{" "}
       <Link to={"chart"} className="chart" type="button">
         <FontAwesomeIcon icon={faBalanceScale}/>
+      </Link>{" "}
+      <Link to={"music"} className="music" type="button">
+        <FontAwesomeIcon icon={faHeadphonesAlt}/>
       </Link>
-      <div style={{ margin: "-40px 0 0 410px" }}>
-        <img style={{ borderRadius: 4, border: "4px solid #fff" }} width="320" src="https://miro.medium.com/v2/resize:fit:1358/1*L_QoAG863l8QvqxpNyBiqw.gif"/>
-      </div>
      <ModalCustom show={modalShow} onHide={() => setModalShow(false)}/>
     </>
   )}
