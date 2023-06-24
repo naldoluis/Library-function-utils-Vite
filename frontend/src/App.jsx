@@ -10,6 +10,7 @@ import Help from './components/Help'
 import Home from './components/Home'
 import Login from './components/User/Login'
 import MusicPlayer from './components/MusicPlayer'
+/* import Player from './components/MusicPlayer/screens/player' */
 import NavigationBar from './components/NavigationBar'
 import News from './components/News/News'
 import PDFReader from './components/PDFReader'
@@ -40,6 +41,7 @@ export default function App() {
               <Route path="/list" element={<BookList/>}/>
               <Route path="home/calculator" element={<ScientificCalculator/>}/>
               <Route path="home/music" element={<MusicPlayer/>}/>
+              {/* <Route path="home/music" element={<Player/>}/> */}
               <Route path="home/pdf" element={<PDFReader/>}/>
               <Route path="/store" element={<Store/>}/>
               <Route path="/news" element={<News/>}/>
